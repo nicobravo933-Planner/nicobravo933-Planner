@@ -1,2 +1,4 @@
-# Practicas_Supply
-Documentos de practa utilizando RMarkdown, para analisis de optimizaciones
+# Practicas\_Supply
+
+Documentaciones de practica utilizando RMarkdown, para análisis de optimizaciones
+
