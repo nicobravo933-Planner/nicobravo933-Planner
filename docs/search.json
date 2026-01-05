@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Supply Chain - Book",
+    "title": "Optimizacion de Inventarios",
     "section": "",
-    "text": "Bienvenido\nBienvenido a este manual para el Supply Planner. Este libro ha sido diseñado para ser tu hoja de ruta en la transformación de una cadena de suministro reactiva a una dirigida por datos y algoritmos de alta precisión.",
+    "text": "Bienvenido\nEste libro te será de ayuda para entender los diversos conceptos que forman parte de la cadena de suministro y como incorporarlos en una estructura paso a paso super amigable, obvio no escaparás de las matemáticas, pero tampoco profundizaremos en estadistica mega avanzada y especifica. Trataremos de abordar cada capitulo de una manera super amena, que nos ayude a incorporar cada concepto y como impactan en la cadena.",
     "crumbs": [
       "Bienvenido"
     ]
@@ -12,19 +12,19 @@
   {
     "objectID": "index.html#de-qué-trata-este-libro",
     "href": "index.html#de-qué-trata-este-libro",
-    "title": "Supply Chain - Book",
+    "title": "Optimizacion de Inventarios",
     "section": "¿De qué trata este libro?",
-    "text": "¿De qué trata este libro?\nEste no es un texto de teoría abstracta. Es un manual de ingeniería aplicada ,el manual que te hubiese gustado te dieran cuando ingresaste por primera vez a un rol en Supply Chain.\nMaso menos siempre es igual, ingresas a una empresa haces el Onboarding, conoces al equipo, te adaptas a tu rol y a las formas de trabajar, “las de siempre”. No haces demasiadas preguntas (para no ofender a nadie), y con el tiempo ves algunas cosas, ya sea procesos tediosos, mucho Excel, indicadores que no cuadran o te hacen ruido, ese Lead Time que no cambia y ese Stock Máximo que alguien puso y nuca se actualizó.\nLa idea no es revolucionar nada (al menos en un principio…), iremos entendiendo esos conceptos típicos de Supply que nadie te enseña a como aplicarlos desde cero. Capaz los ves nombrar en LinkedIn y ves como te cuentan de su importancia, pero hasta ahí… Así que veamos como llevar todo a la practica y generar propuestas de valor con datos.\nAprenderás a construir tu “cerebro” analítico propio, ya que a veces tu ERP/MRP/WMS/TMS, etc…. puede engañarte con es datos desactualizados, con basura o con “parámetros fijos” que no se actualizan, que no entienden que la demanda fluctua, que no entienden que la “realidad” es mas compleja.\nA lo largo de las páginas, desarrollaremos un ecosistema completo de herramientas de lo básico a lo avanzado, nada de conceptos aislados sin tener la más remota idea de como aplicarlo. Hablaremos de lo que te sirve a vos como Analista y de lo que le sirve a tu Manager, trabajaremos y documentaremos utilizando Rstudio y sus diversas librerias, puedes hacer lo mismo en Python (ya que es “más escalable”), aplicaremos código y crearemos dataset maestro para reflejar los problemas reales de la industria: variabilidad, incertidumbre y caos operativo.",
+    "text": "¿De qué trata este libro?\nEs basicamente un manual de ingeniería aplicada ,el manual que te hubiese gustado te dieran cuando ingresaste por primera vez en un rol de Supply Chain.\nLa idea no es revolucionar nada (al menos en un principio…), iremos entendiendo esos conceptos típicos de Supply que nadie te enseña a como aplicarlos desde cero. Capaz los ves nombrar en LinkedIn y ves como te cuentan de su importancia, pero hasta ahí… Así que veamos como llevar todo eso a la practica y generar propuestas de valor con datos.\nLa realidad es compleja de entender, suceden muchísimas cosas impredecibles y muchisimas variables que impactan en un proceso que pareciera ordenado pero no lo es tanto, iremos viendo como podemos defendernos ante ella.\nA lo largo de las páginas, desarrollaremos un ecosistema completo de herramientas de lo básico a lo avanzado, nada de conceptos aislados sin tener la más remota idea de como aplicarlo. Hablaremos de lo que realmente te sirve a vos como Analista y de lo que le sirve a tu Gerente.\nNos ayudaremos de Rstudio y sus diversas librerías, puedes hacer lo mismo en Python (ya que es “más escalable”), aplicaremos código y iremos crearemos visualizaciones y tableros de control para reflejar los problemas reales de la industria: la variabilidad, la incertidumbre y el caos operativo.",
     "crumbs": [
       "Bienvenido"
     ]
   },
   {
-    "objectID": "index.html#cómo-leer-este-libro",
-    "href": "index.html#cómo-leer-este-libro",
-    "title": "Supply Chain - Book",
-    "section": "Cómo leer este libro",
-    "text": "Cómo leer este libro\nSigue este paso a paso, donde iremos viendo muchos KPIs conocidos, veremos matemáticas de esas que te enseñan en la facu y luego no las aplicas (dejemos que R y Python las hagan por vos), veras como logras interpretar los datos, las visualizaciones y el “para que me sirve esto?”:",
+    "objectID": "index.html#cómo-leer",
+    "href": "index.html#cómo-leer",
+    "title": "Optimizacion de Inventarios",
+    "section": "Cómo leer",
+    "text": "Cómo leer\nAqui te presento esta hoja de ruta donde iremos viendo muchos KPIs conocidos, veremos matemáticas de esas que te enseñan en la facu y luego no las aplicas (dejemos que R y Python las hagan por nosotros), veras como logras interpretar los datos, las visualizaciones y el “para que me sirve esto?”:",
     "crumbs": [
       "Bienvenido"
     ]
@@ -32,9 +32,9 @@
   {
     "objectID": "index.html#estructura-del-manual",
     "href": "index.html#estructura-del-manual",
-    "title": "Supply Chain - Book",
+    "title": "Optimizacion de Inventarios",
     "section": "Estructura del manual",
-    "text": "Estructura del manual\nEl libro está organizado en cinco partes principales:\n\nParte I: El Motor de Datos\nComenzamos con la limpieza y preparación de datos, el fundamento de cualquier sistema de optimización.\n\n\nParte II: Optimización de Inventarios\nAprenderás a calcular puntos de reorden (ROP) y a clasificar productos mediante ABC-XYZ.\n\n\nParte III: Predicción y Valor\nDominarás técnicas de forecasting, desde métodos estadísticos hasta Machine Learning.\n\n\nParte IV: Operaciones Avanzadas\nExplorarás gestión de perecederos, redes multi-escalón y optimización de servicio.\n\n\nParte V: Validación y Control\nCerrarás el círculo con simulación Monte Carlo, análisis financiero y construcción de torres de control.\n\n\n\n\n\n\n\nNoteRequisitos previos\n\n\n\nPara aprovechar al máximo este libro, necesitarás:\n\nConocimientos básicos de R, Python.\nFamiliaridad con conceptos de Supply Chain\nAcceso a RStudio y las librerías mencionadas en cada capítulo\n\n\n\n\nPrepárate para “ensuciarte las manos” con código y cambiar tu forma de ver un almacén para siempre.",
+    "text": "Estructura del manual\nEl libro está organizado en cinco partes principales:\n\nParte I: El Motor de Datos\nComenzamos con la limpieza y preparación de datos, el fundamento de cualquier sistema de optimización.\n\n\nParte II: Optimización de Inventarios\nAprenderás a calcular puntos de reorden (ROP) y a clasificar productos mediante ABC-XYZ.\n\n\nParte III: Predicción y Valor\nDominarás técnicas de forecasting, desde métodos estadísticos hasta Machine Learning.\n\n\nParte IV: Operaciones Avanzadas\nExplorarás gestión de perecederos, redes multi-escalón y optimización de servicio.\n\n\nParte V: Validación y Control\nCerrarás el círculo con simulación Monte Carlo, análisis financiero y construcción de torres de control.\n\n\n\n\n\n\n\nNoteRequisitos previos\n\n\n\nPara aprovechar al máximo este libro, necesitarás:\n\nConocimientos básicos de R, Python.\nFamiliaridad con conceptos de Supply Chain\nAcceso a RStudio y las librerías mencionadas en cada capítulo\n\n\n\n\nPrepárate para “ensuciarte las manos” y cambiar tu forma de ver un inventario para siempre.",
     "crumbs": [
       "Bienvenido"
     ]

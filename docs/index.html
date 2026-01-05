@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Nicolás Bravo">
+<meta name="author" content="Nicolás A. Bravo">
 <meta name="dcterms.date" content="2026-01-04">
 
-<title>Supply Chain - Book</title>
+<title>Optimizacion de Inventarios</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -265,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Supply Chain - Book</a> 
+      <a href="./">Optimizacion de Inventarios</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/nicobravo933-Planner/Practicas_Supply" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -424,7 +424,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#bienvenido" id="toc-bienvenido" class="nav-link active" data-scroll-target="#bienvenido">Bienvenido</a>
   <ul class="collapse">
   <li><a href="#de-qué-trata-este-libro" id="toc-de-qué-trata-este-libro" class="nav-link" data-scroll-target="#de-qué-trata-este-libro">¿De qué trata este libro?</a></li>
-  <li><a href="#cómo-leer-este-libro" id="toc-cómo-leer-este-libro" class="nav-link" data-scroll-target="#cómo-leer-este-libro">Cómo leer este libro</a></li>
+  <li><a href="#cómo-leer" id="toc-cómo-leer" class="nav-link" data-scroll-target="#cómo-leer">Cómo leer</a></li>
   <li><a href="#estructura-del-manual" id="toc-estructura-del-manual" class="nav-link" data-scroll-target="#estructura-del-manual">Estructura del manual</a>
   <ul class="collapse">
   <li><a href="#parte-i-el-motor-de-datos" id="toc-parte-i-el-motor-de-datos" class="nav-link" data-scroll-target="#parte-i-el-motor-de-datos">Parte I: El Motor de Datos</a></li>
@@ -443,8 +443,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Supply Chain - Book</h1>
-<p class="subtitle lead">Manual de Ingeniería de Inventarios: De la Intuición al Algoritmo</p>
+<h1 class="title">Optimizacion de Inventarios</h1>
+<p class="subtitle lead">Ingeniería de Inventarios: De la Intuición al Algoritmo</p>
 </div>
 
 
@@ -454,7 +454,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Nicolás Bravo </p>
+             <p>Nicolás A. Bravo </p>
           </div>
   </div>
     
@@ -482,18 +482,18 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </div>
-<p>Bienvenido a este manual para el <strong>Supply</strong> <strong>Planner</strong>. Este libro ha sido diseñado para ser tu hoja de ruta en la transformación de una cadena de suministro reactiva a una dirigida por datos y algoritmos de alta precisión.</p>
+<p>Este libro te será de ayuda para entender los diversos conceptos que forman parte de la cadena de suministro y como incorporarlos en una estructura paso a paso super amigable, obvio no escaparás de las matemáticas, pero tampoco profundizaremos en estadistica mega avanzada y especifica. Trataremos de abordar cada capitulo de una manera super amena, que nos ayude a incorporar cada concepto y como impactan en la cadena.</p>
 <section id="de-qué-trata-este-libro" class="level2">
 <h2 class="anchored" data-anchor-id="de-qué-trata-este-libro">¿De qué trata este libro?</h2>
-<p>Este no es un texto de teoría abstracta. Es un manual de <strong>ingeniería aplicada</strong> ,el manual que te hubiese gustado te dieran cuando ingresaste por primera vez a un rol en Supply Chain.</p>
-<p>Maso menos siempre es igual, ingresas a una empresa haces el Onboarding, conoces al equipo, te adaptas a tu rol y a las formas de trabajar, “las de siempre”. No haces demasiadas preguntas (para no ofender a nadie), y con el tiempo ves algunas cosas, ya sea procesos tediosos, mucho Excel, indicadores que no cuadran o te hacen ruido, ese Lead Time que no cambia y ese Stock Máximo que alguien puso y nuca se actualizó.</p>
-<p>La idea no es revolucionar nada (al menos en un principio…), iremos entendiendo esos conceptos típicos de Supply que nadie te enseña a como aplicarlos desde cero. Capaz los ves nombrar en LinkedIn y ves como te cuentan de su importancia, pero hasta ahí… Así que veamos como llevar todo a la practica y generar propuestas de valor con datos.</p>
-<p>Aprenderás a construir tu “cerebro” analítico propio, ya que a veces tu ERP/MRP/WMS/TMS, etc…. puede engañarte con es datos desactualizados, con basura o con “parámetros fijos” que no se actualizan, que no entienden que la demanda fluctua, que no entienden que la “realidad” es mas compleja.</p>
-<p>A lo largo de las páginas, desarrollaremos un ecosistema completo de herramientas de lo básico a lo avanzado, nada de conceptos aislados sin tener la más remota idea de como aplicarlo. Hablaremos de lo que te sirve a vos como Analista y de lo que le sirve a tu Manager, trabajaremos y documentaremos utilizando Rstudio y sus diversas librerias, puedes hacer lo mismo en Python (ya que es “más escalable”), aplicaremos código y crearemos dataset maestro para reflejar los problemas reales de la industria: variabilidad, incertidumbre y caos operativo.</p>
+<p>Es basicamente un manual de <strong>ingeniería aplicada</strong> ,el manual que te hubiese gustado te dieran cuando ingresaste por primera vez en un rol de <strong>Supply Chain</strong>.</p>
+<p>La idea no es revolucionar nada (al menos en un principio…), iremos entendiendo esos conceptos típicos de Supply que nadie te enseña a como aplicarlos desde cero. Capaz los ves nombrar en LinkedIn y ves como te cuentan de su importancia, pero hasta ahí… Así que veamos como llevar todo eso a la practica y generar propuestas de valor con datos.</p>
+<p>La realidad es compleja de entender, suceden muchísimas cosas impredecibles y muchisimas variables que impactan en un proceso que pareciera ordenado pero no lo es tanto, iremos viendo como podemos defendernos ante ella.</p>
+<p>A lo largo de las páginas, desarrollaremos un ecosistema completo de herramientas de lo básico a lo avanzado, nada de conceptos aislados sin tener la más remota idea de como aplicarlo. Hablaremos de lo que realmente te sirve a vos como Analista y de lo que le sirve a tu Gerente.</p>
+<p>Nos ayudaremos de Rstudio y sus diversas librerías, puedes hacer lo mismo en Python (ya que es “más escalable”), aplicaremos código y iremos crearemos visualizaciones y tableros de control para reflejar los problemas reales de la industria: la variabilidad, la incertidumbre y el caos operativo.</p>
 </section>
-<section id="cómo-leer-este-libro" class="level2">
-<h2 class="anchored" data-anchor-id="cómo-leer-este-libro">Cómo leer este libro</h2>
-<p>Sigue este paso a paso, donde iremos viendo muchos KPIs conocidos, veremos matemáticas de esas que te enseñan en la facu y luego no las aplicas (dejemos que R y Python las hagan por vos), veras como logras interpretar los datos, las visualizaciones y el “para que me sirve esto?”:</p>
+<section id="cómo-leer" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-leer">Cómo leer</h2>
+<p>Aqui te presento esta hoja de ruta donde iremos viendo muchos KPIs conocidos, veremos matemáticas de esas que te enseñan en la facu y luego no las aplicas (dejemos que R y Python las hagan por nosotros), veras como logras interpretar los datos, las visualizaciones y el “para que me sirve esto?”:</p>
 </section>
 <section id="estructura-del-manual" class="level2">
 <h2 class="anchored" data-anchor-id="estructura-del-manual">Estructura del manual</h2>
@@ -537,7 +537,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <hr>
-<p><strong>Prepárate para “ensuciarte las manos” con código y cambiar tu forma de ver un almacén para siempre.</strong></p>
+<p><strong>Prepárate para “ensuciarte las manos” y cambiar tu forma de ver un inventario para siempre.</strong></p>
 
 
 </section>
