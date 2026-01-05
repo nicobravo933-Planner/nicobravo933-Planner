@@ -14,7 +14,17 @@
     "href": "index.html#de-qué-trata-este-libro",
     "title": "Manual Supply Planner",
     "section": "¿De qué trata este libro?",
-    "text": "¿De qué trata este libro?\nEste no es un texto de teoría abstracta. Es un manual de ingeniería aplicada. Aquí aprenderás a construir el “cerebro” analítico que tu ERP probablemente no tiene. A lo largo de las páginas, desarrollaremos un ecosistema completo de herramientas en R, utilizando un dataset maestro diseñado para reflejar los problemas reales de la industria: variabilidad, incertidumbre y caos operativo. ## Cómo leer este libro\nSi eres un Supply Planner buscando mejorar tus KPIs, puedes seguir el orden secuencial. Si eres un Data Scientist enfocado en logística, te interesarán especialmente los capítulos de Machine Learning y Simulación.\nIndependientemente de tu rol, el objetivo es el mismo: liberar capital de trabajo sin arriesgar el nivel de servicio.",
+    "text": "¿De qué trata este libro?\nEste no es un texto de teoría abstracta. Es un manual de ingeniería aplicada. Aquí aprenderás a construir el “cerebro” analítico que tu ERP probablemente no tiene. A lo largo de las páginas, desarrollaremos un ecosistema completo de herramientas en R, utilizando un dataset maestro diseñado para reflejar los problemas reales de la industria: variabilidad, incertidumbre y caos operativo.",
+    "crumbs": [
+      "Bienvenido"
+    ]
+  },
+  {
+    "objectID": "index.html#cómo-leer-este-libro",
+    "href": "index.html#cómo-leer-este-libro",
+    "title": "Manual Supply Planner",
+    "section": "Cómo leer este libro",
+    "text": "Cómo leer este libro\nSi eres un Supply Planner buscando mejorar tus KPIs, puedes seguir el orden secuencial. Si eres un Data Scientist enfocado en logística, te interesarán especialmente los capítulos de Machine Learning y Simulación.\nIndependientemente de tu rol, el objetivo es el mismo: liberar capital de trabajo sin arriesgar el nivel de servicio.",
     "crumbs": [
       "Bienvenido"
     ]
