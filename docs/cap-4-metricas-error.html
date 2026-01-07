@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Nicolás A. Bravo">
-<meta name="dcterms.date" content="2026-01-06">
 
-<title>Arquitectura de suministros</title>
+<title>4. ¿Qué tan mal estamos? Estableciendo el Baseline y Métricas de Error – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,7 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cap-1-auditoria.html" rel="next">
+<link href="./cap-5-pronostico-ingenuo.html" rel="next">
+<link href="./cap-3-abcxyz-dinamico.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -76,6 +110,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -250,7 +313,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Bienvenido</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-1-auditoria.html">I: El Diagnóstico</a></li><li class="breadcrumb-item"><a href="./cap-4-metricas-error.html"><span class="chapter-title">4. ¿Qué tan mal estamos? Estableciendo el Baseline y Métricas de Error</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -281,7 +344,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bienvenido</span></a>
   </div>
 </li>
@@ -311,7 +374,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-4-metricas-error.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. ¿Qué tan mal estamos? Estableciendo el Baseline y Métricas de Error</span></a>
+  <a href="./cap-4-metricas-error.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">4. ¿Qué tan mal estamos? Estableciendo el Baseline y Métricas de Error</span></a>
   </div>
 </li>
       </ul>
@@ -466,50 +529,44 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bienvenido" id="toc-bienvenido" class="nav-link active" data-scroll-target="#bienvenido">Bienvenido</a>
+  <li><a href="#el-concepto-de-baseline-el-modelo-naive" id="toc-el-concepto-de-baseline-el-modelo-naive" class="nav-link active" data-scroll-target="#el-concepto-de-baseline-el-modelo-naive">4.1 El Concepto de Baseline: El Modelo “Naive”</a>
   <ul class="collapse">
-  <li><a href="#de-qué-trata-este-libro" id="toc-de-qué-trata-este-libro" class="nav-link" data-scroll-target="#de-qué-trata-este-libro">¿De qué trata este libro?</a></li>
-  <li><a href="#para-quién-es-este-manual" id="toc-para-quién-es-este-manual" class="nav-link" data-scroll-target="#para-quién-es-este-manual">¿Para quién es este manual?</a></li>
-  <li><a href="#estructura-detallada-del-manual" id="toc-estructura-detallada-del-manual" class="nav-link" data-scroll-target="#estructura-detallada-del-manual">Estructura Detallada del Manual</a>
+  <li><a href="#el-s-naive-para-negocios-con-memoria-estacional" id="toc-el-s-naive-para-negocios-con-memoria-estacional" class="nav-link" data-scroll-target="#el-s-naive-para-negocios-con-memoria-estacional">4.1.1 El S-Naive: Para negocios con memoria estacional</a></li>
+  </ul></li>
+  <li><a href="#anatomía-del-error-magnitud-y-dirección" id="toc-anatomía-del-error-magnitud-y-dirección" class="nav-link" data-scroll-target="#anatomía-del-error-magnitud-y-dirección">4.2 Anatomía del Error: Magnitud y Dirección</a>
   <ul class="collapse">
-  <li><a href="#parte-i-el-diagnóstico-llegando-a-la-empresa" id="toc-parte-i-el-diagnóstico-llegando-a-la-empresa" class="nav-link" data-scroll-target="#parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</a></li>
-  <li><a href="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" id="toc-parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="nav-link" data-scroll-target="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</a></li>
-  <li><a href="#parte-iii-el-arsenal-del-científico-de-datos" id="toc-parte-iii-el-arsenal-del-científico-de-datos" class="nav-link" data-scroll-target="#parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</a></li>
-  <li><a href="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios" id="toc-parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="nav-link" data-scroll-target="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</a></li>
-  <li><a href="#parte-v-simulaciones-y-redes-complejas" id="toc-parte-v-simulaciones-y-redes-complejas" class="nav-link" data-scroll-target="#parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</a></li>
-  <li><a href="#parte-vi-el-factor-humano-y-la-ejecución" id="toc-parte-vi-el-factor-humano-y-la-ejecución" class="nav-link" data-scroll-target="#parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</a></li>
+  <li><a href="#magnitud-mae-y-rmse-qué-tan-fuerte-fue-el-golpe" id="toc-magnitud-mae-y-rmse-qué-tan-fuerte-fue-el-golpe" class="nav-link" data-scroll-target="#magnitud-mae-y-rmse-qué-tan-fuerte-fue-el-golpe">4.2.1 Magnitud: MAE y RMSE (¿Qué tan fuerte fue el golpe?)</a></li>
+  <li><a href="#dirección-el-bias-sesgo-o-la-inclinación-al-error" id="toc-dirección-el-bias-sesgo-o-la-inclinación-al-error" class="nav-link" data-scroll-target="#dirección-el-bias-sesgo-o-la-inclinación-al-error">4.2.2 Dirección: El BIAS (Sesgo o la inclinación al error)</a></li>
   </ul></li>
+  <li><a href="#la-batalla-de-las-métricas-mae-bias-vs.-mape" id="toc-la-batalla-de-las-métricas-mae-bias-vs.-mape" class="nav-link" data-scroll-target="#la-batalla-de-las-métricas-mae-bias-vs.-mape">4.3 La Batalla de las Métricas: MAE + BIAS vs.&nbsp;MAPE</a>
+  <ul class="collapse">
+  <li><a href="#por-qué-los-expertos-cuestionan-el-mape" id="toc-por-qué-los-expertos-cuestionan-el-mape" class="nav-link" data-scroll-target="#por-qué-los-expertos-cuestionan-el-mape">4.3.1 ¿Por qué los expertos cuestionan el MAPE?</a></li>
+  <li><a href="#el-experimento-del-espejismo-cómo-nos-miente-el-mape" id="toc-el-experimento-del-espejismo-cómo-nos-miente-el-mape" class="nav-link" data-scroll-target="#el-experimento-del-espejismo-cómo-nos-miente-el-mape">4.3.2 El Experimento del Espejismo: ¿Cómo nos miente el MAPE?</a></li>
+  <li><a href="#tabla-comparativa-de-defensa-mae-vs-mape" id="toc-tabla-comparativa-de-defensa-mae-vs-mape" class="nav-link" data-scroll-target="#tabla-comparativa-de-defensa-mae-vs-mape">4.3.3 Tabla Comparativa de Defensa: MAE vs MAPE</a></li>
+  <li><a href="#la-psicología-del-interlocutor-quién-quiere-ver-qué" id="toc-la-psicología-del-interlocutor-quién-quiere-ver-qué" class="nav-link" data-scroll-target="#la-psicología-del-interlocutor-quién-quiere-ver-qué">4.3.4 La Psicología del Interlocutor: ¿Quién quiere ver qué?</a></li>
   </ul></li>
+  <li><a href="#el-wape-weighted-mape-el-puente-estratégico" id="toc-el-wape-weighted-mape-el-puente-estratégico" class="nav-link" data-scroll-target="#el-wape-weighted-mape-el-puente-estratégico">4.4 El WAPE (Weighted MAPE): El Puente Estratégico</a></li>
+  <li><a href="#el-concepto-de-forecastability-pronosticabilidad" id="toc-el-concepto-de-forecastability-pronosticabilidad" class="nav-link" data-scroll-target="#el-concepto-de-forecastability-pronosticabilidad">4.5 El Concepto de “Forecastability” (Pronosticabilidad)</a></li>
+  <li><a href="#el-tracking-signal-tu-sistema-de-alertas-automáticas" id="toc-el-tracking-signal-tu-sistema-de-alertas-automáticas" class="nav-link" data-scroll-target="#el-tracking-signal-tu-sistema-de-alertas-automáticas">4.6 El “Tracking Signal”: Tu sistema de alertas automáticas</a></li>
+  <li><a href="#visualización-y-cálculo-en-r" id="toc-visualización-y-cálculo-en-r" class="nav-link" data-scroll-target="#visualización-y-cálculo-en-r">4.7 Visualización y Cálculo en R</a></li>
+  <li><a href="#conclusión-del-diagnóstico-el-fin-de-la-parte-i" id="toc-conclusión-del-diagnóstico-el-fin-de-la-parte-i" class="nav-link" data-scroll-target="#conclusión-del-diagnóstico-el-fin-de-la-parte-i">4.8 Conclusión del Diagnóstico: El Fin de la Parte I</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-4-metricas-error.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-1-auditoria.html">I: El Diagnóstico</a></li><li class="breadcrumb-item"><a href="./cap-4-metricas-error.html"><span class="chapter-title">4. ¿Qué tan mal estamos? Estableciendo el Baseline y Métricas de Error</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Arquitectura de suministros</h1>
-<p class="subtitle lead">Ciencia de Datos Aplicada a la Gestión de Demanda e Inventarios.</p>
+<h1 class="title"><span class="chapter-title">4. ¿Qué tan mal estamos? Estableciendo el Baseline y Métricas de Error</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta column-body">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Nicolás A. Bravo </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 6, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -519,111 +576,297 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bienvenido" class="level1 unnumbered">
-<h1 class="unnumbered">Bienvenido</h1>
-<p>Este libro no es solo un texto teórico sobre logística; es una hoja de ruta diseñada para transformar datos crudos en decisiones estratégicas. En el mundo real de la Supply Chain, la teoría académica suele chocar con la fricción de los datos sucios, la incertidumbre de los tiempos de entrega y la volatilidad implacable de la demanda. Aquí no encontrarás soluciones ideales para problemas inexistentes; aprenderás a navegar el caos real, paso a paso.</p>
-<div style="float: right">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><img src="images/img2.png" class="float-right img-fluid quarto-figure quarto-figure-right figure-img" style="margin-right: 0px; margin-bottom: 00px;" width="462"></p>
-</figure>
+<p>¡Bienvenido al momento de la verdad! Si llegaste hasta aquí, ya has construido los cimientos: tienes un mapa de tu red (Cap. 1), una demanda reconstruida que refleja la intención real de compra (Cap. 2) y tus productos clasificados por su importancia estratégica y su dificultad técnica (Cap. 3).</p>
+<p>Ahora toca enfrentar la realidad. La pregunta que todo director financiero o de operaciones te hará no es si el modelo es “bonito” o si usaste una Red Neuronal, sino: <em>“¿Y qué tanto estamos fallando hoy?”</em>.</p>
+<p>En Supply Chain, la honestidad brutal es tu mejor aliada. “Estamos más o menos” no es una métrica; es una opinión subjetiva que bloquea la mejora continua. Medir el error es, a menudo, un ejercicio de humildad corporativa que muchas empresas evitan para no evidenciar ineficiencias. Sin embargo, en este capítulo estableceremos el <strong>Baseline</strong> (tu punto cero de comparación) y aprenderemos a diseccionar el error en sus componentes de magnitud y dirección. Te voy avisando: si no eres capaz de medir el dolor financiero que causa tu error hoy, nunca podrás cuantificar el ahorro que traerán tus modelos avanzados mañana. Este es el “kilómetro cero” de tu transformación digital hacia una cadena inteligente.</p>
+<hr>
+<section id="el-concepto-de-baseline-el-modelo-naive" class="level2">
+<h2 class="anchored" data-anchor-id="el-concepto-de-baseline-el-modelo-naive">4.1 El Concepto de Baseline: El Modelo “Naive”</h2>
+<p>Antes de intentar predecir el futuro con modelos complejos, necesitamos un punto de referencia mínimo que represente el “esfuerzo cero”. En ciencia de datos aplicada, esto se llama el <strong>Modelo Base o Naive</strong>. Es el “rival a vencer” y la medida de tu propia ineficacia: si tu proceso actual no le gana a un modelo Naive, estás desperdiciando recursos humanos y tecnológicos.</p>
+<p>La lógica del <strong>Pronóstico Ingenuo (Naive Forecast)</strong> es la persistencia absoluta: <em>“El mercado se comportará mañana exactamente igual que hoy”</em>.</p>
+<p><span class="math display">\[
+\large \hat{y}_{t+1} = y_t
+\]</span></p>
+<p><strong>Desglose de la fórmula y origen de datos:</strong></p>
+<ul>
+<li><span class="math inline">\(\large \hat{y}_{t+1}\)</span> (Pronóstico): Es la cantidad que estimamos que se demandará en el próximo periodo. Representa tu “apuesta” de inventario para el futuro inmediato.</li>
+<li><span class="math inline">\(\large y_t\)</span> (Demanda Real): Es el valor de la <strong>Demanda Reconstruida</strong> (Unconstrained Demand) del Capítulo 2.</li>
+<li><strong>Origen de los datos:</strong> Este valor debe venir de tu tabla de transacciones históricas filtradas. <strong>Crucial:</strong> Debe ser la demanda después de corregir quiebres de stock. Si usas la venta facturada (que es una venta restringida por tu propia falta de stock), tu baseline será artificialmente bajo y tus métricas de error parecerán mejores de lo que realmente son, ocultando el costo de oportunidad.</li>
+</ul>
+<section id="el-s-naive-para-negocios-con-memoria-estacional" class="level3">
+<h3 class="anchored" data-anchor-id="el-s-naive-para-negocios-con-memoria-estacional">4.1.1 El S-Naive: Para negocios con memoria estacional</h3>
+<p>Si tu negocio vende helados o calefactores, el Naive simple fallará. En ese caso, usamos el <strong>Seasonal Naive (S-Naive)</strong>: <em>“Diciembre de este año será igual a diciembre del año pasado”</em>.</p>
+<p><span class="math display">\[
+\large \hat{y}_{t+1} = y_{t+1-periodo}
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>La Prueba de Fuego del Analista (FVA)
 </div>
 </div>
-<p>Nuestra premisa es clara: en la cadena de suministro moderna, la intuición ya no es suficiente. A medida que los mercados se vuelven más complejos, la capacidad de procesar, modelar y simular escenarios se convierte en la ventaja competitiva definitiva. Este manual ha sido creado para cerrar la brecha entre el analista tradicional y el Supply Chain Data Scientist, dotándote de un arsenal de herramientas que van desde la limpieza profunda de datos hasta la optimización multi-escalón.</p>
-<section id="de-qué-trata-este-libro" class="level2">
-<h2 class="anchored" data-anchor-id="de-qué-trata-este-libro">¿De qué trata este libro?</h2>
-<p>Es, fundamentalmente, un manual de ingeniería aplicada. Es el recurso que a muchos nos hubiera gustado tener al iniciar nuestra carrera en la intersección de las operaciones y la analítica: un puente que no solo explica qué es un inventario, sino cómo optimizarlo utilizando el poder del código y la Ciencia de Datos moderna.</p>
-<p>Nuestra filosofía es simple: hacer lo complejo, accionable. No pretendemos reinventar la rueda, sino enseñarte a construir una que ruede mejor bajo presión. A lo largo de estas páginas, pasaremos de los conceptos básicos a la implementación robusta en R y Python, priorizando siempre la generación de valor que impacte directamente en el nivel de servicio y la salud financiera de la organización.</p>
-<p>La realidad de la cadena de suministro es un sistema vivo, dinámico y, a menudo, desordenado. En este manual, desarrollaremos un ecosistema de herramientas para domesticar esa incertidumbre, transitando desde la auditoría inicial de visibilidad hasta la simulación avanzada de redes complejas.</p>
+<div class="callout-body-container callout-body">
+<p>El modelo Naive es tu “competidor silencioso”. En la Parte VI del libro utilizaremos este concepto para calcular el <strong>Forecast Value Added (FVA)</strong>. Si un equipo de 10 personas y un software de 100k USD no logran ser al menos un 10% mejores que un simple Naive, el proceso está “destruyendo valor”. Es preferible automatizar el Naive y dedicar a la gente a otra tarea.</p>
+</div>
+</div>
+<hr>
 </section>
-<section id="para-quién-es-este-manual" class="level2">
-<h2 class="anchored" data-anchor-id="para-quién-es-este-manual">¿Para quién es este manual?</h2>
-<p>Si eres un analista que busca evolucionar hacia el Data Science, un planeador de demanda que desea automatizar sus modelos para ganar tiempo estratégico, o un líder de operaciones que necesita entender la “caja negra” de los algoritmos para tomar mejores decisiones, este libro es para ti.</p>
-<p>Aquí no solo encontrarás ecuaciones; aprenderás a interpretar visualizaciones que cuentan historias, a detectar y mitigar sesgos humanos y, sobre todo, a responder con confianza a la pregunta crítica del negocio: “¿Para qué nos sirve esto hoy?”</p>
 </section>
-<section id="estructura-detallada-del-manual" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-detallada-del-manual">Estructura Detallada del Manual</h2>
-<p>A través de estas páginas, no solo construiremos modelos; construiremos un criterio técnico para saber cuándo confiar en un algoritmo y cuándo intervenir con el juicio de negocio. El objetivo final es simple pero ambicioso: que dejes de ser un espectador de los problemas de inventario y te conviertas en el arquitecto de una red de suministro resiliente, eficiente y, sobre todo, inteligente.</p>
-<p>El libro está diseñado como una hoja de ruta técnica y estratégica, dividida en seis ejes fundamentales:</p>
-<section id="parte-i-el-diagnóstico-llegando-a-la-empresa" class="level3">
-<h3 class="anchored" data-anchor-id="parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</h3>
-<p><strong>Enfoque:</strong> Visibilidad y limpieza. No puedes arreglar lo que no ves.</p>
+<section id="anatomía-del-error-magnitud-y-dirección" class="level2">
+<h2 class="anchored" data-anchor-id="anatomía-del-error-magnitud-y-dirección">4.2 Anatomía del Error: Magnitud y Dirección</h2>
+<p>Un error de 100 unidades no significa lo mismo en el balance contable si te sobraron que si te faltaron. Para un ingeniero de Supply Chain, el error tiene dos dimensiones críticas que deben analizarse de forma simultánea: la <strong>magnitud</strong> (¿qué tan lejos estuve?) y la <strong>dirección</strong> (¿hacia qué lado fallé?).</p>
+<section id="magnitud-mae-y-rmse-qué-tan-fuerte-fue-el-golpe" class="level3">
+<h3 class="anchored" data-anchor-id="magnitud-mae-y-rmse-qué-tan-fuerte-fue-el-golpe">4.2.1 Magnitud: MAE y RMSE (¿Qué tan fuerte fue el golpe?)</h3>
+<p>Estas métricas nos dicen qué tan grande fue la “distancia” entre nuestro plan y la realidad. No les importa el signo; solo miden el impacto del desvío total en unidades físicas.</p>
+<ol type="1">
+<li><p><strong>MAE (Mean Absolute Error):</strong> Es el promedio de los errores en valor absoluto. Es la métrica más “operativa” porque se expresa en unidades físicas. Si el MAE es 50, significa que, en promedio, tus pronósticos fallan por 50 unidades de espacio físico o capacidad de transporte. <span class="math display">\[
+\large MAE = \frac{1}{n} \sum_{i=1}^{n} |Actual_i - Forecast_i|
+\]</span></p></li>
+<li><p><strong>RMSE (Root Mean Square Error):</strong> Eleva el error al cuadrado antes de promediar. Esto tiene una implicación logística brutal: <strong>penaliza de forma desproporcionada los errores grandes</strong>. El RMSE es el “sensor” que detecta esos “bombazos” que quiebran financieramente la operación. <span class="math display">\[
+\large RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (Actual_i - Forecast_i)^2}
+\]</span></p></li>
+</ol>
+<p><strong>Variables:</strong> * <span class="math inline">\(\large Actual_i\)</span>: Demanda real corregida del periodo <span class="math inline">\(i\)</span> (Cap. 2). * <span class="math inline">\(\large Forecast_i\)</span>: Tu apuesta para ese periodo (Naive o plan oficial). * <span class="math inline">\(\large n\)</span>: Número de periodos evaluados (ventana de error).</p>
+</section>
+<section id="dirección-el-bias-sesgo-o-la-inclinación-al-error" class="level3">
+<h3 class="anchored" data-anchor-id="dirección-el-bias-sesgo-o-la-inclinación-al-error">4.2.2 Dirección: El BIAS (Sesgo o la inclinación al error)</h3>
+<p>El sesgo es el cáncer silencioso de la planificación. Nos dice si existe una tendencia psicológica (comercial) o sistémica (parámetros de software) a equivocarnos hacia un lado específico.</p>
+<p><span class="math display">\[
+\large BIAS = \sum_{i=1}^{n} (Forecast_i - Actual_i)
+\]</span></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>El Peligro de “Netear” Errores
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nunca presentes un error promedio simple en un reporte de desempeño sin valor absoluto. Si en enero fallaste por +100 (te sobró) y en febrero por -100 (te faltó), el error neto es 0. En el reporte financiero eres un genio, pero en la realidad física: 1) pagaste almacenamiento por lo que sobró y 2) perdiste clientes por lo que faltó. El <strong>BIAS</strong> sirve para diagnosticar si tu equipo comercial infla las cuotas por optimismo (sesgo positivo) o si producción es demasiado conservadora para no tener merma (sesgo negativo).</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="la-batalla-de-las-métricas-mae-bias-vs.-mape" class="level2">
+<h2 class="anchored" data-anchor-id="la-batalla-de-las-métricas-mae-bias-vs.-mape">4.3 La Batalla de las Métricas: MAE + BIAS vs.&nbsp;MAPE</h2>
+<p>En los pasillos de las empresas, el <strong>MAPE (Mean Absolute Percentage Error)</strong> suele ser el rey indiscutido. ¿La razón? Es fácil de decir: <em>“Nuestro error es del 10%”</em>. Sin embargo, desde una perspectiva de ingeniería master, algunos expertos opinan que el MAPE es una de las métricas más peligrosas y sesgadas que existen.</p>
+<section id="por-qué-los-expertos-cuestionan-el-mape" class="level3">
+<h3 class="anchored" data-anchor-id="por-qué-los-expertos-cuestionan-el-mape">4.3.1 ¿Por qué los expertos cuestionan el MAPE?</h3>
+<p>El MAPE divide el error entre la demanda real para dar un porcentaje, lo que esconde trampas matemáticas:</p>
+<ol type="1">
+<li><strong>Sesgo de Subestimación:</strong> El MAPE castiga mucho más el hecho de que te sobre stock que el hecho de que te falte. Matemáticamente, es más “barato” fallar hacia abajo. Un modelo que optimiza el MAPE tenderá a dar pronósticos bajos, lo que provoca quiebres de stock sistemáticos.</li>
+<li><strong>El problema del cero:</strong> Si en un mes no hubo ventas (demanda = 0), la fórmula explota por división entre cero.</li>
+<li><strong>Indiferencia Económica:</strong> Trata igual un error del 10% en un producto Clase C que un 10% en un Clase A de alto costo.</li>
+</ol>
+</section>
+<section id="el-experimento-del-espejismo-cómo-nos-miente-el-mape" class="level3">
+<h3 class="anchored" data-anchor-id="el-experimento-del-espejismo-cómo-nos-miente-el-mape">4.3.2 El Experimento del Espejismo: ¿Cómo nos miente el MAPE?</h3>
+<p>Para entender por qué el MAPE es peligroso para tu inventario, mira esta tabla comparativa. Imagina dos escenarios donde fallamos por las mismas <strong>90 unidades</strong> de magnitud absoluta:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Escenario</th>
+<th>Demanda Real (<span class="math inline">\(\large y_t\)</span>)</th>
+<th>Pronóstico (<span class="math inline">\(\large \hat{y}_t\)</span>)</th>
+<th>Error Absoluto (<span class="math inline">\(\large MAE\)</span>)</th>
+<th><strong>MAPE (%)</strong></th>
+<th>Consecuencia Operativa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A: Optimista</strong></td>
+<td>10</td>
+<td>100</td>
+<td>90</td>
+<td><strong>900%</strong></td>
+<td>Te sobra muchísimo stock.</td>
+</tr>
+<tr class="even">
+<td><strong>B: Pesimista</strong></td>
+<td>100</td>
+<td>10</td>
+<td>90</td>
+<td><strong>90%</strong></td>
+<td><strong>Quiebre de stock.</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>La trampa:</strong> Si le pides a un sistema que “optimice el MAPE”, elegirá siempre el <strong>Escenario B</strong>, porque un error del 90% “se ve mejor” que uno de 900%. Sin embargo, en el Escenario B dejaste de vender. El MAPE prefiere el desabasto antes que el exceso.</p>
+</section>
+<section id="tabla-comparativa-de-defensa-mae-vs-mape" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-comparativa-de-defensa-mae-vs-mape">4.3.3 Tabla Comparativa de Defensa: MAE vs MAPE</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Característica</th>
+<th>MAPE (%)</th>
+<th>MAE + BIAS (Unidades)</th>
+<th>Impacto para el Negocio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Interpretación</strong></td>
+<td>Abstracta y subjetiva</td>
+<td>Física y tangible</td>
+<td>El MAE se traduce en camiones y paletas.</td>
+</tr>
+<tr class="even">
+<td><strong>Sesgo Matemático</strong></td>
+<td>Tiende a pedir de menos</td>
+<td>Neutral e imparcial</td>
+<td>El MAE protege el nivel de servicio.</td>
+</tr>
+<tr class="odd">
+<td><strong>Manejo de Ceros</strong></td>
+<td>Fallo total (Div/0)</td>
+<td>Robusto y funcional</td>
+<td>El MAE sirve para todo el catálogo.</td>
+</tr>
+<tr class="even">
+<td><strong>Sumabilidad</strong></td>
+<td>No se puede promediar</td>
+<td>Se suma por categorías</td>
+<td>Puedes ver el error total en unidades.</td>
+</tr>
+<tr class="odd">
+<td><strong>Finanzas</strong></td>
+<td>Oculto tras el %</td>
+<td>Cuantificable en USD</td>
+<td>$MAE Costo = $ Dinero en riesgo.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="la-psicología-del-interlocutor-quién-quiere-ver-qué" class="level3">
+<h3 class="anchored" data-anchor-id="la-psicología-del-interlocutor-quién-quiere-ver-qué">4.3.4 La Psicología del Interlocutor: ¿Quién quiere ver qué?</h3>
 <ul>
-<li><p><strong>Capítulo 1: ¿Dónde estoy parado?</strong> Auditoría de datos, identificación de fuentes y mapeo del flujo de la cadena de suministro.</p></li>
-<li><p><strong>Capítulo 2: El Espejo de la Realidad:</strong> Diferenciación entre ventas históricas y demanda real (no restringida), analizando el impacto oculto de los quiebres de stock.</p></li>
-<li><p><strong>Capítulo 3: Clasificando el Caos:</strong> Implementación de segmentación ABC/XYZ dinámica utilizando Python para priorizar productos según valor y variabilidad.</p></li>
-<li><p><strong>Capítulo 4: ¿Qué tan mal estamos?</strong> Definición del <em>Baseline</em> y métricas críticas de error como MAE, RMSE y Bias para medir la precisión actual.</p></li>
+<li><strong>Gerencia General / CEO:</strong> Quieren sensación de escala. A ellos dales el <strong>WAPE</strong> (Cap. 4.4).</li>
+<li><strong>Finanzas:</strong> Quieren saber cuánto dinero hay “en riesgo”. Dales el <strong>MAE en USD</strong> (<span class="math inline">\(\large MAE \times Costo\)</span>).</li>
+<li><strong>Operaciones / Almacén:</strong> Quieren saber cuántas manos y camiones necesitan. El <strong>MAE en unidades</strong> es su lenguaje.</li>
+<li><strong>S&amp;OP / Planeación:</strong> Quieren corregir el comportamiento. El <strong>BIAS</strong> es su brújula.</li>
 </ul>
+<hr>
 </section>
-<section id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="level3">
-<h3 class="anchored" data-anchor-id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</h3>
-<p><strong>Enfoque:</strong> Pasar de la intuición a la estadística descriptiva e inferencial.</p>
-<ul>
-<li><p><strong>Capítulo 5: El Pronóstico Ingenuo:</strong> Implementación de modelos <em>Naive</em> para establecer un punto de comparación (Benchmark) mínimo.</p></li>
-<li><p><strong>Capítulo 6: Suavizando la Curva:</strong> Aplicación de Suavizamiento Exponencial (Simple, Holt y Holt-Winters) y modelos estadísticos tradicionales.</p></li>
-<li><p><strong>Capítulo 7: Detectando Patrones:</strong> Identificación y descomposición de series de tiempo en sus componentes: Estacionalidad, Tendencia y Ciclos.</p></li>
-</ul>
 </section>
-<section id="parte-iii-el-arsenal-del-científico-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</h3>
-<p><strong>Enfoque:</strong> Escalando la precisión mediante el uso de Machine Learning avanzado.</p>
-<ul>
-<li><p><strong>Capítulo 8: Creando Inteligencia:</strong> Ingeniería de atributos (<em>Feature Engineering</em>), creación de Lags, impacto de precios y uso de variables externas.</p></li>
-<li><p><strong>Capítulo 9: El Bosque de las Decisiones:</strong> Aplicación práctica de algoritmos Random Forest y XGBoost para capturar patrones no lineales en la demanda.</p></li>
-<li><p><strong>Capítulo 10: Evitando el Espejismo:</strong> Técnicas de Validación Cruzada (Time Series Split) y estrategias para prevenir el sobreajuste (<em>Overfitting</em>).</p></li>
-</ul>
+<section id="el-wape-weighted-mape-el-puente-estratégico" class="level2">
+<h2 class="anchored" data-anchor-id="el-wape-weighted-mape-el-puente-estratégico">4.4 El WAPE (Weighted MAPE): El Puente Estratégico</h2>
+<p>Para reportar a gerencia con un porcentaje sin caer en las trampas del MAPE, usamos el <strong>WAPE</strong>. Pondera el error por el volumen total del portafolio.</p>
+<p><span class="math display">\[
+\large WAPE = \frac{\sum |Actual_i - Forecast_i|}{\sum Actual_i}
+\]</span></p>
+<p><strong>¿Por qué es superior?</strong> Porque le da el peso correcto a lo que realmente mueve la aguja. Un error de 1,000 unidades en un producto Clase A tiene un impacto enorme, mientras que el mismo error en un Clase C se diluye.</p>
 </section>
-<section id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</h3>
-<p><strong>Enfoque:</strong> Traducir el pronóstico en decisiones de compra y almacenamiento: ¿Cuánto y cuándo pedir?</p>
-<ul>
-<li><p><strong>Capítulo 11: El Costo del Dinero y el Costo del Vacío:</strong> Modelado financiero de los costos de mantener inventario frente a los costos de escasez.</p></li>
-<li><p><strong>Capítulo 12: La Receta Básica:</strong> Aplicación del Lote Económico (EOQ) y Punto de Reorden en entornos de demanda estable.</p></li>
-<li><p><strong>Capítulo 13: El Colchón contra la Incertidumbre:</strong> Cálculo científico del Stock de Seguridad basado en el Nivel de Servicio objetivo y la variabilidad.</p></li>
-<li><p><strong>Capítulo 14: Más allá de la Curva Normal:</strong> Modelado de demandas erráticas o “Lumpy” utilizando Distribución Gamma y otros enfoques no tradicionales.</p></li>
-</ul>
+<section id="el-concepto-de-forecastability-pronosticabilidad" class="level2">
+<h2 class="anchored" data-anchor-id="el-concepto-de-forecastability-pronosticabilidad">4.5 El Concepto de “Forecastability” (Pronosticabilidad)</h2>
+<p>Te voy avisando: no todo error es culpa de un mal modelo. Aquí conectamos con la <strong>Matriz ABC-XYZ del Capítulo 3</strong>. * <strong>Productos Smooth (AX):</strong> El error aceptable es bajo (ej. WAPE &lt; 15%). Si es mayor, tu proceso está roto. * <strong>Productos Lumpy (CZ):</strong> Un WAPE del 60% puede ser un éxito rotundo. Esos productos son inherentemente impredecibles.</p>
 </section>
-<section id="parte-v-simulaciones-y-redes-complejas" class="level3">
-<h3 class="anchored" data-anchor-id="parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</h3>
-<p><strong>Enfoque:</strong> Reconocer que el mundo real es un sistema dinámico y no una fórmula estática.</p>
-<ul>
-<li><p><strong>Capítulo 15: El Laboratorio Virtual:</strong> Uso de Simulación de Monte Carlo para someter a prueba las políticas de inventario bajo miles de escenarios posibles.</p></li>
-<li><p><strong>Capítulo 16: El Efecto Dominó:</strong> Comprensión y mitigación del Efecto Látigo (<em>Bullwhip Effect</em>) y optimización de redes multi-escalón (MEIO).</p></li>
-<li><p><strong>Capítulo 17: Optimizando bajo Presión:</strong> Uso de Sim-Opt (Simulación-Optimización) para hallar la política perfecta en sistemas complejos.</p></li>
-</ul>
+<section id="el-tracking-signal-tu-sistema-de-alertas-automáticas" class="level2">
+<h2 class="anchored" data-anchor-id="el-tracking-signal-tu-sistema-de-alertas-automáticas">4.6 El “Tracking Signal”: Tu sistema de alertas automáticas</h2>
+<p>Mide cuántos MAEs de error acumulado tenemos para detectar cuándo el BIAS se volvió inaceptable.</p>
+<p><span class="math display">\[
+\large Tracking Signal = \frac{BIAS_{acumulado}}{MAE}
+\]</span></p>
+<p>Si supera +/- 4, dispara una alerta roja: el modelo está sesgado y requiere intervención manual.</p>
+<hr>
 </section>
-<section id="parte-vi-el-factor-humano-y-la-ejecución" class="level3">
-<h3 class="anchored" data-anchor-id="parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</h3>
-<p><strong>Enfoque:</strong> Asegurar la adopción de los modelos por parte de la organización.</p>
-<ul>
-<li><p><strong>Capítulo 18: ¿Aportamos Valor?:</strong> Implementación del marco FVA (<em>Forecast Value Added</em>) para medir qué pasos del proceso realmente mejoran la precisión.</p></li>
-<li><p><strong>Capítulo 19: La Guerra contra los Sesgos:</strong> Cómo gestionar el juicio humano y aprovechar la “sabiduría de las multitudes” sin dañar el pronóstico.</p></li>
-<li><p><strong>Capítulo 20: El Plan Maestro:</strong> Integración final de los modelos en el proceso de S&amp;OP (Sales and Operations Planning) y comunicación efectiva hacia la alta gerencia.</p></li>
-</ul>
+<section id="visualización-y-cálculo-en-r" class="level2">
+<h2 class="anchored" data-anchor-id="visualización-y-cálculo-en-r">4.7 Visualización y Cálculo en R</h2>
+<p>Vamos a comparar el desempeño del año pasado contra nuestro modelo Naive.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># --- SIMULACIÓN DE DATOS MAESTROS ---</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>evaluacion <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">mes =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Demanda Reconstruida del Cap 2 (Variables: y_t)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">demanda_real =</span> <span class="fu">rnorm</span>(<span class="dv">12</span>, <span class="dv">100</span>, <span class="dv">15</span>),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Pronóstico Comercial (y_hat - con sesgo optimista simulado)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">forecast_comercial =</span> demanda_real <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">25</span>) </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Modelo Naive: El pronóstico hoy es lo que pasó ayer</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">forecast_naive =</span> <span class="fu">lag</span>(demanda_real, <span class="at">default =</span> <span class="dv">100</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># --- CÁLCULO DE MÉTRICAS PASO A PASO ---</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>metricas <span class="ot">&lt;-</span> evaluacion <span class="sc">%&gt;%</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Magnitud relativa (Ponderada por volumen)</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">WAPE_Comercial =</span> <span class="fu">sum</span>(<span class="fu">abs</span>(demanda_real <span class="sc">-</span> forecast_comercial)) <span class="sc">/</span> <span class="fu">sum</span>(demanda_real),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">WAPE_Naive =</span> <span class="fu">sum</span>(<span class="fu">abs</span>(demanda_real <span class="sc">-</span> forecast_naive)) <span class="sc">/</span> <span class="fu">sum</span>(demanda_real),</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Dirección (BIAS acumulado)</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">BIAS_Total =</span> <span class="fu">sum</span>(forecast_comercial <span class="sc">-</span> demanda_real),</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Magnitud absoluta (Unidades reales)</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">MAE_Unidades =</span> <span class="fu">mean</span>(<span class="fu">abs</span>(demanda_real <span class="sc">-</span> forecast_comercial))</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(metricas)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Requisitos previos
+<span class="screen-reader-only">Note</span>Interpretación de Resultados
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Para aprovechar al máximo este libro, necesitarás:</p>
-<ul>
-<li>Conocimientos básicos de R, Python.</li>
-<li>Familiaridad con conceptos de Supply Chain</li>
-<li>Acceso a RStudio y las librerías mencionadas en cada capítulo</li>
-</ul>
+<p>Si el <code>WAPE_Naive</code> es menor que el <code>WAPE_Comercial</code>, significa que tu proceso manual está ensuciando la señal de demanda. Es el momento de dejar de intentar “adivinar” y dejar que los datos hablen.</p>
 </div>
 </div>
-<hr>
-<p><strong>Prepárate para “ensuciarte las manos” y cambiar tu forma de ver un inventario para siempre.</strong></p>
+</section>
+<section id="conclusión-del-diagnóstico-el-fin-de-la-parte-i" class="level2">
+<h2 class="anchored" data-anchor-id="conclusión-del-diagnóstico-el-fin-de-la-parte-i">4.8 Conclusión del Diagnóstico: El Fin de la Parte I</h2>
+<p>Hemos terminado la primera gran etapa de este manual. Si has seguido los pasos, ahora tienes una infraestructura de pensamiento robusta:</p>
+<ol type="1">
+<li><strong>Datos Auditados:</strong> Sabes de dónde vienen (Cap. 1).</li>
+<li><strong>Demanda Real:</strong> Limpiaste el historial (Cap. 2).</li>
+<li><strong>Segmentación Estratégica:</strong> Clasificaste tu mundo (Cap. 3).</li>
+<li><strong>Punto de Partida:</strong> Tienes un número (WAPE/BIAS) que representa tu realidad actual (Cap. 4).</li>
+</ol>
+<p>Te voy avisando: hasta ahora solo hemos hablado del pasado. A partir del próximo capítulo, entramos en la <strong>Parte II</strong>, donde tomaremos el bisturí de la estadística para predecir <strong>“qué va a pasar”</strong>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Resumen del Capítulo 4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Baseline:</strong> El modelo Naive es tu piso mínimo de calidad.</li>
+<li><strong>MAE + BIAS:</strong> La combinación necesaria para no engañarse con promedios.</li>
+<li><strong>WAPE:</strong> Tu traductor para gerencia ponderando por lo que importa.</li>
+<li><strong>Pronosticabilidad:</strong> El error es relativo a la variabilidad.</li>
+</ol>
+</div>
+</div>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1042,10 +1285,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./cap-3-abcxyz-dinamico.html" class="pagination-link" aria-label="3. Clasificando el Caos: Segmentación ABC/XYZ Dinámica">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">3. Clasificando el Caos: Segmentación ABC/XYZ Dinámica</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cap-1-auditoria.html" class="pagination-link" aria-label="1. ¿Dónde estoy parado? ¿Como empiezo?">
-        <span class="nav-page-text"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./cap-5-pronostico-ingenuo.html" class="pagination-link" aria-label="5. El Pronóstico Ingenuo: Modelos Simples y Benchmarking">
+        <span class="nav-page-text"><span class="chapter-title">5. El Pronóstico Ingenuo: Modelos Simples y Benchmarking</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1054,4 +1300,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-4-metricas-error.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

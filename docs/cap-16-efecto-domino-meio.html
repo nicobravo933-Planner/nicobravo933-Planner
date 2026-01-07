@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Nicolás A. Bravo">
-<meta name="dcterms.date" content="2026-01-06">
 
-<title>Arquitectura de suministros</title>
+<title>16. El Efecto Dominó – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,7 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cap-1-auditoria.html" rel="next">
+<link href="./cap-17-sim-opt-politica-perfecta.html" rel="next">
+<link href="./cap-15-monte-carlo.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -76,6 +110,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -250,7 +313,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Bienvenido</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-15-monte-carlo.html">V: Simulaciones y Redes Complejas</a></li><li class="breadcrumb-item"><a href="./cap-16-efecto-domino-meio.html"><span class="chapter-title">16. El Efecto Dominó</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -281,7 +344,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bienvenido</span></a>
   </div>
 </li>
@@ -415,7 +478,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-16-efecto-domino-meio.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. El Efecto Dominó</span></a>
+  <a href="./cap-16-efecto-domino-meio.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">16. El Efecto Dominó</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -466,50 +529,36 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bienvenido" id="toc-bienvenido" class="nav-link active" data-scroll-target="#bienvenido">Bienvenido</a>
+  <li><a href="#la-física-de-la-distorsión-el-efecto-látigo-bullwhip-effect" id="toc-la-física-de-la-distorsión-el-efecto-látigo-bullwhip-effect" class="nav-link active" data-scroll-target="#la-física-de-la-distorsión-el-efecto-látigo-bullwhip-effect">16.1 La Física de la Distorsión: El Efecto Látigo (Bullwhip Effect)</a>
   <ul class="collapse">
-  <li><a href="#de-qué-trata-este-libro" id="toc-de-qué-trata-este-libro" class="nav-link" data-scroll-target="#de-qué-trata-este-libro">¿De qué trata este libro?</a></li>
-  <li><a href="#para-quién-es-este-manual" id="toc-para-quién-es-este-manual" class="nav-link" data-scroll-target="#para-quién-es-este-manual">¿Para quién es este manual?</a></li>
-  <li><a href="#estructura-detallada-del-manual" id="toc-estructura-detallada-del-manual" class="nav-link" data-scroll-target="#estructura-detallada-del-manual">Estructura Detallada del Manual</a>
+  <li><a href="#los-cuatro-jinetes-del-caos-sistémico" id="toc-los-cuatro-jinetes-del-caos-sistémico" class="nav-link" data-scroll-target="#los-cuatro-jinetes-del-caos-sistémico">16.1.1 Los Cuatro Jinetes del Caos Sistémico</a></li>
+  </ul></li>
+  <li><a href="#la-filosofía-meio-el-posicionamiento-del-capital" id="toc-la-filosofía-meio-el-posicionamiento-del-capital" class="nav-link" data-scroll-target="#la-filosofía-meio-el-posicionamiento-del-capital">16.2 La Filosofía MEIO: El Posicionamiento del Capital</a>
   <ul class="collapse">
-  <li><a href="#parte-i-el-diagnóstico-llegando-a-la-empresa" id="toc-parte-i-el-diagnóstico-llegando-a-la-empresa" class="nav-link" data-scroll-target="#parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</a></li>
-  <li><a href="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" id="toc-parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="nav-link" data-scroll-target="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</a></li>
-  <li><a href="#parte-iii-el-arsenal-del-científico-de-datos" id="toc-parte-iii-el-arsenal-del-científico-de-datos" class="nav-link" data-scroll-target="#parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</a></li>
-  <li><a href="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios" id="toc-parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="nav-link" data-scroll-target="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</a></li>
-  <li><a href="#parte-v-simulaciones-y-redes-complejas" id="toc-parte-v-simulaciones-y-redes-complejas" class="nav-link" data-scroll-target="#parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</a></li>
-  <li><a href="#parte-vi-el-factor-humano-y-la-ejecución" id="toc-parte-vi-el-factor-humano-y-la-ejecución" class="nav-link" data-scroll-target="#parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</a></li>
+  <li><a href="#el-poder-del-inventario-consolidado-inventory-pooling" id="toc-el-poder-del-inventario-consolidado-inventory-pooling" class="nav-link" data-scroll-target="#el-poder-del-inventario-consolidado-inventory-pooling">16.2.1 El Poder del Inventario Consolidado (Inventory Pooling)</a></li>
+  <li><a href="#estrategia-de-postergación-postponement" id="toc-estrategia-de-postergación-postponement" class="nav-link" data-scroll-target="#estrategia-de-postergación-postponement">16.2.2 Estrategia de Postergación (Postponement)</a></li>
   </ul></li>
-  </ul></li>
+  <li><a href="#estrategias-para-mitigar-el-efecto-dominó" id="toc-estrategias-para-mitigar-el-efecto-dominó" class="nav-link" data-scroll-target="#estrategias-para-mitigar-el-efecto-dominó">16.3 Estrategias para Mitigar el Efecto Dominó</a></li>
+  <li><a href="#modelado-de-redes-complejas-en-la-simulación" id="toc-modelado-de-redes-complejas-en-la-simulación" class="nav-link" data-scroll-target="#modelado-de-redes-complejas-en-la-simulación">16.4 Modelado de Redes Complejas en la Simulación</a></li>
+  <li><a href="#el-conflicto-de-incentivos-los-silos-organizacionales" id="toc-el-conflicto-de-incentivos-los-silos-organizacionales" class="nav-link" data-scroll-target="#el-conflicto-de-incentivos-los-silos-organizacionales">16.5 El Conflicto de Incentivos: Los Silos Organizacionales</a></li>
+  <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-16-efecto-domino-meio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-15-monte-carlo.html">V: Simulaciones y Redes Complejas</a></li><li class="breadcrumb-item"><a href="./cap-16-efecto-domino-meio.html"><span class="chapter-title">16. El Efecto Dominó</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Arquitectura de suministros</h1>
-<p class="subtitle lead">Ciencia de Datos Aplicada a la Gestión de Demanda e Inventarios.</p>
+<h1 class="title"><span class="chapter-title">16. El Efecto Dominó</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta column-body">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Nicolás A. Bravo </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 6, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -519,111 +568,110 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bienvenido" class="level1 unnumbered">
-<h1 class="unnumbered">Bienvenido</h1>
-<p>Este libro no es solo un texto teórico sobre logística; es una hoja de ruta diseñada para transformar datos crudos en decisiones estratégicas. En el mundo real de la Supply Chain, la teoría académica suele chocar con la fricción de los datos sucios, la incertidumbre de los tiempos de entrega y la volatilidad implacable de la demanda. Aquí no encontrarás soluciones ideales para problemas inexistentes; aprenderás a navegar el caos real, paso a paso.</p>
-<div style="float: right">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><img src="images/img2.png" class="float-right img-fluid quarto-figure quarto-figure-right figure-img" style="margin-right: 0px; margin-bottom: 00px;" width="462"></p>
-</figure>
-</div>
-</div>
-<p>Nuestra premisa es clara: en la cadena de suministro moderna, la intuición ya no es suficiente. A medida que los mercados se vuelven más complejos, la capacidad de procesar, modelar y simular escenarios se convierte en la ventaja competitiva definitiva. Este manual ha sido creado para cerrar la brecha entre el analista tradicional y el Supply Chain Data Scientist, dotándote de un arsenal de herramientas que van desde la limpieza profunda de datos hasta la optimización multi-escalón.</p>
-<section id="de-qué-trata-este-libro" class="level2">
-<h2 class="anchored" data-anchor-id="de-qué-trata-este-libro">¿De qué trata este libro?</h2>
-<p>Es, fundamentalmente, un manual de ingeniería aplicada. Es el recurso que a muchos nos hubiera gustado tener al iniciar nuestra carrera en la intersección de las operaciones y la analítica: un puente que no solo explica qué es un inventario, sino cómo optimizarlo utilizando el poder del código y la Ciencia de Datos moderna.</p>
-<p>Nuestra filosofía es simple: hacer lo complejo, accionable. No pretendemos reinventar la rueda, sino enseñarte a construir una que ruede mejor bajo presión. A lo largo de estas páginas, pasaremos de los conceptos básicos a la implementación robusta en R y Python, priorizando siempre la generación de valor que impacte directamente en el nivel de servicio y la salud financiera de la organización.</p>
-<p>La realidad de la cadena de suministro es un sistema vivo, dinámico y, a menudo, desordenado. En este manual, desarrollaremos un ecosistema de herramientas para domesticar esa incertidumbre, transitando desde la auditoría inicial de visibilidad hasta la simulación avanzada de redes complejas.</p>
+<p>En los capítulos anteriores, nos convertimos en maestros de la optimización local. Aprendimos a calcular el stock de seguridad perfecto para un nodo y el lote económico para un proveedor. Sin embargo, en la Supply Chain moderna, ningún almacén es una isla independiente. Tu Centro de Distribución (CD) alimenta a diez bodegas regionales, que a su vez surten a cientos de tiendas o clientes finales.</p>
+<p>Si optimizas cada punto de forma aislada, estás cometiendo un error sistémico grave: la <strong>Sub-optimización Local</strong>. Lo que parece una decisión brillante para el jefe de la Bodega A (como pedir lotes gigantes para ahorrar un 5% en flete) puede ser una catástrofe financiera para la Fábrica, al generar picos de producción artificiales que saturan las máquinas y destruyen la planificación. En este capítulo, aprenderemos a ver la red como un organismo vivo y a implementar la <strong>Optimización de Inventarios Multi-escalón (MEIO)</strong>.</p>
+<section id="la-física-de-la-distorsión-el-efecto-látigo-bullwhip-effect" class="level2">
+<h2 class="anchored" data-anchor-id="la-física-de-la-distorsión-el-efecto-látigo-bullwhip-effect">16.1 La Física de la Distorsión: El Efecto Látigo (Bullwhip Effect)</h2>
+<p>El <strong>Efecto Látigo</strong> es el fenómeno donde pequeñas fluctuaciones en la demanda del consumidor final se transforman en oscilaciones violentas y erráticas a medida que la señal viaja hacia atrás en la cadena (aguas arriba). Una variación del 5% en la venta semanal de una tienda puede llegar a la fábrica de materia prima convertida en una orden del 100% de aumento.</p>
+<section id="los-cuatro-jinetes-del-caos-sistémico" class="level3">
+<h3 class="anchored" data-anchor-id="los-cuatro-jinetes-del-caos-sistémico">16.1.1 Los Cuatro Jinetes del Caos Sistémico</h3>
+<p>Como arquitectos, debemos identificar las causas raíz para poder diseñar las defensas:</p>
+<ol type="1">
+<li><strong>Actualización de Pronósticos en Cascada:</strong> Cada eslabón utiliza los pedidos de su cliente inmediato como su “demanda real”. Si la tienda añade un pequeño margen de seguridad, el CD añade otro sobre ese, y la fábrica recibe una señal totalmente desconectada de lo que el cliente final está comprando.</li>
+<li><strong>Agrupamiento de Lotes (Batching):</strong> Por querer optimizar el transporte (EOQ), acumulamos pedidos para llenar camiones. Esto crea periodos de “silencio” seguidos de pedidos masivos que el proveedor interpreta como un crecimiento del mercado, cuando es solo una acumulación logística.</li>
+<li><strong>Fluctuaciones de Precio y Promociones:</strong> El <em>Forward Buying</em> (comprar para aprovechar un descuento hoy) destruye la señal de demanda real. El inventario se mueve por incentivos de precio, no por consumo, lo que genera una resaca de demanda nula en los periodos siguientes.</li>
+<li><strong>Juego de Escasez y Racionamiento:</strong> Cuando el mercado sospecha que habrá escasez, todos piden el doble de lo que necesitan esperando recibir al menos la mitad. Esto infla artificialmente las carteras de pedidos y lleva a inversiones masivas en capacidad que luego quedan ociosas.</li>
+</ol>
 </section>
-<section id="para-quién-es-este-manual" class="level2">
-<h2 class="anchored" data-anchor-id="para-quién-es-este-manual">¿Para quién es este manual?</h2>
-<p>Si eres un analista que busca evolucionar hacia el Data Science, un planeador de demanda que desea automatizar sus modelos para ganar tiempo estratégico, o un líder de operaciones que necesita entender la “caja negra” de los algoritmos para tomar mejores decisiones, este libro es para ti.</p>
-<p>Aquí no solo encontrarás ecuaciones; aprenderás a interpretar visualizaciones que cuentan historias, a detectar y mitigar sesgos humanos y, sobre todo, a responder con confianza a la pregunta crítica del negocio: “¿Para qué nos sirve esto hoy?”</p>
 </section>
-<section id="estructura-detallada-del-manual" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-detallada-del-manual">Estructura Detallada del Manual</h2>
-<p>A través de estas páginas, no solo construiremos modelos; construiremos un criterio técnico para saber cuándo confiar en un algoritmo y cuándo intervenir con el juicio de negocio. El objetivo final es simple pero ambicioso: que dejes de ser un espectador de los problemas de inventario y te conviertas en el arquitecto de una red de suministro resiliente, eficiente y, sobre todo, inteligente.</p>
-<p>El libro está diseñado como una hoja de ruta técnica y estratégica, dividida en seis ejes fundamentales:</p>
-<section id="parte-i-el-diagnóstico-llegando-a-la-empresa" class="level3">
-<h3 class="anchored" data-anchor-id="parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</h3>
-<p><strong>Enfoque:</strong> Visibilidad y limpieza. No puedes arreglar lo que no ves.</p>
-<ul>
-<li><p><strong>Capítulo 1: ¿Dónde estoy parado?</strong> Auditoría de datos, identificación de fuentes y mapeo del flujo de la cadena de suministro.</p></li>
-<li><p><strong>Capítulo 2: El Espejo de la Realidad:</strong> Diferenciación entre ventas históricas y demanda real (no restringida), analizando el impacto oculto de los quiebres de stock.</p></li>
-<li><p><strong>Capítulo 3: Clasificando el Caos:</strong> Implementación de segmentación ABC/XYZ dinámica utilizando Python para priorizar productos según valor y variabilidad.</p></li>
-<li><p><strong>Capítulo 4: ¿Qué tan mal estamos?</strong> Definición del <em>Baseline</em> y métricas críticas de error como MAE, RMSE y Bias para medir la precisión actual.</p></li>
-</ul>
+<section id="la-filosofía-meio-el-posicionamiento-del-capital" class="level2">
+<h2 class="anchored" data-anchor-id="la-filosofía-meio-el-posicionamiento-del-capital">16.2 La Filosofía MEIO: El Posicionamiento del Capital</h2>
+<p>La <strong>Optimización Multi-escalón (MEIO)</strong> rompe con la tradición de “stock en todos lados”. Su objetivo no es preguntar cuánto stock tener en cada nodo, sino <strong>en qué eslabón de la red es más eficiente financieramente posicionar el inventario</strong>.</p>
+<section id="el-poder-del-inventario-consolidado-inventory-pooling" class="level3">
+<h3 class="anchored" data-anchor-id="el-poder-del-inventario-consolidado-inventory-pooling">16.2.1 El Poder del Inventario Consolidado (Inventory Pooling)</h3>
+<p>Aquí aplicamos una de las leyes más potentes de la estadística, la <strong>Ley de la Raíz Cuadrada</strong>: El stock de seguridad total de una red se reduce si consolidamos los puntos de inventario. * <strong>Matemática:</strong> <span class="math inline">\(SS_{centralizado} \approx \frac{SS_{descentralizado}}{\sqrt{n}}\)</span>, donde <span class="math inline">\(n\)</span> es el número de almacenes. * <strong>Implicación:</strong> Si tienes 10 tiendas con stock de seguridad independiente, tu inventario total será mucho mayor que si tienes un almacén central que reabastece rápidamente a las 10. Los errores de demanda tienden a cancelarse entre sí.</p>
 </section>
-<section id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="level3">
-<h3 class="anchored" data-anchor-id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</h3>
-<p><strong>Enfoque:</strong> Pasar de la intuición a la estadística descriptiva e inferencial.</p>
-<ul>
-<li><p><strong>Capítulo 5: El Pronóstico Ingenuo:</strong> Implementación de modelos <em>Naive</em> para establecer un punto de comparación (Benchmark) mínimo.</p></li>
-<li><p><strong>Capítulo 6: Suavizando la Curva:</strong> Aplicación de Suavizamiento Exponencial (Simple, Holt y Holt-Winters) y modelos estadísticos tradicionales.</p></li>
-<li><p><strong>Capítulo 7: Detectando Patrones:</strong> Identificación y descomposición de series de tiempo en sus componentes: Estacionalidad, Tendencia y Ciclos.</p></li>
-</ul>
+<section id="estrategia-de-postergación-postponement" class="level3">
+<h3 class="anchored" data-anchor-id="estrategia-de-postergación-postponement">16.2.2 Estrategia de Postergación (Postponement)</h3>
+<p>El MEIO favorece mantener el stock en su forma más genérica y centralizada el mayor tiempo posible. * <strong>Aguas Arriba (CD):</strong> El inventario es más barato de mantener y es versátil. * <strong>Aguas Abajo (Tienda):</strong> El inventario es más caro y está “atrapado”.</p>
 </section>
-<section id="parte-iii-el-arsenal-del-científico-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</h3>
-<p><strong>Enfoque:</strong> Escalando la precisión mediante el uso de Machine Learning avanzado.</p>
-<ul>
-<li><p><strong>Capítulo 8: Creando Inteligencia:</strong> Ingeniería de atributos (<em>Feature Engineering</em>), creación de Lags, impacto de precios y uso de variables externas.</p></li>
-<li><p><strong>Capítulo 9: El Bosque de las Decisiones:</strong> Aplicación práctica de algoritmos Random Forest y XGBoost para capturar patrones no lineales en la demanda.</p></li>
-<li><p><strong>Capítulo 10: Evitando el Espejismo:</strong> Técnicas de Validación Cruzada (Time Series Split) y estrategias para prevenir el sobreajuste (<em>Overfitting</em>).</p></li>
-</ul>
 </section>
-<section id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</h3>
-<p><strong>Enfoque:</strong> Traducir el pronóstico en decisiones de compra y almacenamiento: ¿Cuánto y cuándo pedir?</p>
-<ul>
-<li><p><strong>Capítulo 11: El Costo del Dinero y el Costo del Vacío:</strong> Modelado financiero de los costos de mantener inventario frente a los costos de escasez.</p></li>
-<li><p><strong>Capítulo 12: La Receta Básica:</strong> Aplicación del Lote Económico (EOQ) y Punto de Reorden en entornos de demanda estable.</p></li>
-<li><p><strong>Capítulo 13: El Colchón contra la Incertidumbre:</strong> Cálculo científico del Stock de Seguridad basado en el Nivel de Servicio objetivo y la variabilidad.</p></li>
-<li><p><strong>Capítulo 14: Más allá de la Curva Normal:</strong> Modelado de demandas erráticas o “Lumpy” utilizando Distribución Gamma y otros enfoques no tradicionales.</p></li>
-</ul>
+<section id="estrategias-para-mitigar-el-efecto-dominó" class="level2">
+<h2 class="anchored" data-anchor-id="estrategias-para-mitigar-el-efecto-dominó">16.3 Estrategias para Mitigar el Efecto Dominó</h2>
+<p>La clave para estabilizar una red compleja es sustituir el <strong>Inventario</strong> por <strong>Información</strong>.</p>
+<ol type="1">
+<li><strong>Visibilidad de Datos de Punto de Venta (POS):</strong> La fábrica debe mirar lo que la cajera escanea en la tienda. Esta es la “señal de demanda pura”.</li>
+<li><strong>Reducción del Lead Time:</strong> El efecto látigo es directamente proporcional al tiempo de espera.</li>
+<li><strong>VMI (Vendor Managed Inventory):</strong> El proveedor decide cuándo reponer basándose en los niveles de stock del cliente.</li>
+<li><strong>Sincronización de Promociones:</strong> El S&amp;OP es el pegamento que evita que el látigo golpee a la producción.</li>
+</ol>
 </section>
-<section id="parte-v-simulaciones-y-redes-complejas" class="level3">
-<h3 class="anchored" data-anchor-id="parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</h3>
-<p><strong>Enfoque:</strong> Reconocer que el mundo real es un sistema dinámico y no una fórmula estática.</p>
-<ul>
-<li><p><strong>Capítulo 15: El Laboratorio Virtual:</strong> Uso de Simulación de Monte Carlo para someter a prueba las políticas de inventario bajo miles de escenarios posibles.</p></li>
-<li><p><strong>Capítulo 16: El Efecto Dominó:</strong> Comprensión y mitigación del Efecto Látigo (<em>Bullwhip Effect</em>) y optimización de redes multi-escalón (MEIO).</p></li>
-<li><p><strong>Capítulo 17: Optimizando bajo Presión:</strong> Uso de Sim-Opt (Simulación-Optimización) para hallar la política perfecta en sistemas complejos.</p></li>
-</ul>
+<section id="modelado-de-redes-complejas-en-la-simulación" class="level2">
+<h2 class="anchored" data-anchor-id="modelado-de-redes-complejas-en-la-simulación">16.4 Modelado de Redes Complejas en la Simulación</h2>
+<p>En nuestro <strong>Laboratorio Virtual</strong>, simulamos el flujo entre nodos. En R, modelamos la salida de un nodo como el activador del pedido al nodo superior.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Motor de Simulación Multi-escalón Profesional</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>simular_red_meio <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">dias =</span> <span class="dv">365</span>) {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  stock_tiendas <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">100</span>, <span class="dv">5</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  stock_cd <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  backlog_total <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(d <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>dias) {</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Demanda del Cliente Final</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    demandas_dia <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">5</span>, <span class="at">shape=</span><span class="dv">2</span>, <span class="at">scale=</span><span class="dv">15</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Descuento en Tiendas</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    stock_tiendas <span class="ot">&lt;-</span> stock_tiendas <span class="sc">-</span> demandas_dia</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Identificar Quiebres Locales</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    backlog_total <span class="ot">&lt;-</span> backlog_total <span class="sc">+</span> <span class="fu">sum</span>(<span class="fu">abs</span>(<span class="fu">pmin</span>(<span class="dv">0</span>, stock_tiendas)))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    stock_tiendas <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, stock_tiendas)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 4. Señal de Reabastecimiento al CD (MEIO)</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(stock_tiendas[i] <span class="sc">&lt;</span> <span class="dv">50</span>) { </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        pedido <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">-</span> stock_tiendas[i] </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        surtido <span class="ot">&lt;-</span> <span class="fu">min</span>(stock_cd, pedido)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        stock_cd <span class="ot">&lt;-</span> stock_cd <span class="sc">-</span> surtido</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        stock_tiendas[i] <span class="ot">&lt;-</span> stock_tiendas[i] <span class="sc">+</span> surtido</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 5. Reabastecimiento del CD desde Fábrica</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(stock_cd <span class="sc">&lt;</span> <span class="dv">400</span>) { stock_cd <span class="ot">&lt;-</span> stock_cd <span class="sc">+</span> <span class="dv">800</span> }</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(backlog_total)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="parte-vi-el-factor-humano-y-la-ejecución" class="level3">
-<h3 class="anchored" data-anchor-id="parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</h3>
-<p><strong>Enfoque:</strong> Asegurar la adopción de los modelos por parte de la organización.</p>
-<ul>
-<li><p><strong>Capítulo 18: ¿Aportamos Valor?:</strong> Implementación del marco FVA (<em>Forecast Value Added</em>) para medir qué pasos del proceso realmente mejoran la precisión.</p></li>
-<li><p><strong>Capítulo 19: La Guerra contra los Sesgos:</strong> Cómo gestionar el juicio humano y aprovechar la “sabiduría de las multitudes” sin dañar el pronóstico.</p></li>
-<li><p><strong>Capítulo 20: El Plan Maestro:</strong> Integración final de los modelos en el proceso de S&amp;OP (Sales and Operations Planning) y comunicación efectiva hacia la alta gerencia.</p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="el-conflicto-de-incentivos-los-silos-organizacionales" class="level2">
+<h2 class="anchored" data-anchor-id="el-conflicto-de-incentivos-los-silos-organizacionales">16.5 El Conflicto de Incentivos: Los Silos Organizacionales</h2>
+<p>El mayor obstáculo para el MEIO no es la matemática, es la estructura de la empresa. Los incentivos contrapuestos (ahorro en flete vs.&nbsp;nivel de servicio) suelen destruir la salud de la red.</p>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Requisitos previos
+<span class="screen-reader-only">Important</span>La Visión Sistémica
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Para aprovechar al máximo este libro, necesitarás:</p>
-<ul>
-<li>Conocimientos básicos de R, Python.</li>
-<li>Familiaridad con conceptos de Supply Chain</li>
-<li>Acceso a RStudio y las librerías mencionadas en cada capítulo</li>
+<p>Tu competencia real no es el producto de la otra empresa; es la agilidad de la red de suministro de la otra empresa. Una cadena que colabora y centraliza su stock de seguridad siempre derrotará a una red de actores individuales.</p>
+</div>
+</div>
+</section>
+<section id="checklist-de-cierre-del-capítulo" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">¿He identificado los puntos de “batching” en mi cadena?</label></li>
+<li><label><input type="checkbox">¿Tengo acceso a la demanda del cliente final (POS)?</label></li>
+<li><label><input type="checkbox">¿He aplicado la ley de la raíz cuadrada para evaluar la consolidación en CD?</label></li>
+<li><label><input type="checkbox">¿He simulado el impacto de un retraso de transporte en la última milla?</label></li>
+<li><label><input type="checkbox">¿Existen incentivos contrapuestos entre gerentes de diferentes nodos?</label></li>
 </ul>
-</div>
-</div>
-<hr>
-<p><strong>Prepárate para “ensuciarte las manos” y cambiar tu forma de ver un inventario para siempre.</strong></p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1042,10 +1090,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./cap-15-monte-carlo.html" class="pagination-link" aria-label="15. El Laboratorio Virtual">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">15. El Laboratorio Virtual</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cap-1-auditoria.html" class="pagination-link" aria-label="1. ¿Dónde estoy parado? ¿Como empiezo?">
-        <span class="nav-page-text"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./cap-17-sim-opt-politica-perfecta.html" class="pagination-link" aria-label="17. Optimizando bajo Presión">
+        <span class="nav-page-text"><span class="chapter-title">17. Optimizando bajo Presión</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1054,4 +1105,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-16-efecto-domino-meio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

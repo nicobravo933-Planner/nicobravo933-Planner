@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Nicolás A. Bravo">
-<meta name="dcterms.date" content="2026-01-06">
 
-<title>Arquitectura de suministros</title>
+<title>Notas y Recomendaciones Estratégicas – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cap-1-auditoria.html" rel="next">
+<link href="./cap-20-plan-maestro-sop.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -76,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -250,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Bienvenido</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./notas-finales-estrategia.html"><span class="chapter-title">Notas y Recomendaciones Estratégicas</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -281,7 +308,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bienvenido</span></a>
   </div>
 </li>
@@ -453,7 +480,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notas-finales-estrategia.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notas y Recomendaciones Estratégicas</span></a>
+  <a href="./notas-finales-estrategia.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Notas y Recomendaciones Estratégicas</span></a>
   </div>
 </li>
     </ul>
@@ -466,22 +493,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bienvenido" id="toc-bienvenido" class="nav-link active" data-scroll-target="#bienvenido">Bienvenido</a>
+  <li><a href="#el-rigor-estadístico-como-base" id="toc-el-rigor-estadístico-como-base" class="nav-link active" data-scroll-target="#el-rigor-estadístico-como-base">1. El Rigor Estadístico como Base</a>
   <ul class="collapse">
-  <li><a href="#de-qué-trata-este-libro" id="toc-de-qué-trata-este-libro" class="nav-link" data-scroll-target="#de-qué-trata-este-libro">¿De qué trata este libro?</a></li>
-  <li><a href="#para-quién-es-este-manual" id="toc-para-quién-es-este-manual" class="nav-link" data-scroll-target="#para-quién-es-este-manual">¿Para quién es este manual?</a></li>
-  <li><a href="#estructura-detallada-del-manual" id="toc-estructura-detallada-del-manual" class="nav-link" data-scroll-target="#estructura-detallada-del-manual">Estructura Detallada del Manual</a>
+  <li><a href="#la-auditoría-de-métricas-más-allá-del-mape" id="toc-la-auditoría-de-métricas-más-allá-del-mape" class="nav-link" data-scroll-target="#la-auditoría-de-métricas-más-allá-del-mape">1.1 La Auditoría de Métricas: Más allá del MAPE</a></li>
+  </ul></li>
+  <li><a href="#quiénes-se-benefician-y-quiénes-no" id="toc-quiénes-se-benefician-y-quiénes-no" class="nav-link" data-scroll-target="#quiénes-se-benefician-y-quiénes-no">¿Quiénes se benefician y quiénes no?</a>
   <ul class="collapse">
-  <li><a href="#parte-i-el-diagnóstico-llegando-a-la-empresa" id="toc-parte-i-el-diagnóstico-llegando-a-la-empresa" class="nav-link" data-scroll-target="#parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</a></li>
-  <li><a href="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" id="toc-parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="nav-link" data-scroll-target="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</a></li>
-  <li><a href="#parte-iii-el-arsenal-del-científico-de-datos" id="toc-parte-iii-el-arsenal-del-científico-de-datos" class="nav-link" data-scroll-target="#parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</a></li>
-  <li><a href="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios" id="toc-parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="nav-link" data-scroll-target="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</a></li>
-  <li><a href="#parte-v-simulaciones-y-redes-complejas" id="toc-parte-v-simulaciones-y-redes-complejas" class="nav-link" data-scroll-target="#parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</a></li>
-  <li><a href="#parte-vi-el-factor-humano-y-la-ejecución" id="toc-parte-vi-el-factor-humano-y-la-ejecución" class="nav-link" data-scroll-target="#parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</a></li>
+  <li><a href="#quienes-se-benefician-aparentemente" id="toc-quienes-se-benefician-aparentemente" class="nav-link" data-scroll-target="#quienes-se-benefician-aparentemente">Quienes se “benefician” (aparentemente):</a></li>
+  <li><a href="#quienes-no-se-benefician-los-perjudicados" id="toc-quienes-no-se-benefician-los-perjudicados" class="nav-link" data-scroll-target="#quienes-no-se-benefician-los-perjudicados">Quienes NO se benefician (los perjudicados):</a></li>
   </ul></li>
-  </ul></li>
+  <li><a href="#modelado-probabilístico-vs.-distribución-normal" id="toc-modelado-probabilístico-vs.-distribución-normal" class="nav-link" data-scroll-target="#modelado-probabilístico-vs.-distribución-normal">2. Modelado Probabilístico vs.&nbsp;Distribución Normal</a></li>
+  <li><a href="#optimización-del-capital-el-tco-del-inventario" id="toc-optimización-del-capital-el-tco-del-inventario" class="nav-link" data-scroll-target="#optimización-del-capital-el-tco-del-inventario">3. Optimización del Capital: El TCO del Inventario</a></li>
+  <li><a href="#arquitectura-tecnológica-el-cerebro-y-el-músculo" id="toc-arquitectura-tecnológica-el-cerebro-y-el-músculo" class="nav-link" data-scroll-target="#arquitectura-tecnológica-el-cerebro-y-el-músculo">4. Arquitectura Tecnológica: El Cerebro y el Músculo</a></li>
+  <li><a href="#el-factor-humano-forecast-value-added-fva" id="toc-el-factor-humano-forecast-value-added-fva" class="nav-link" data-scroll-target="#el-factor-humano-forecast-value-added-fva">5. El Factor Humano: Forecast Value Added (FVA)</a></li>
+  <li><a href="#conclusión-estratégica" id="toc-conclusión-estratégica" class="nav-link" data-scroll-target="#conclusión-estratégica">6. Conclusión Estratégica</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/notas-finales-estrategia.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
@@ -489,27 +516,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Arquitectura de suministros</h1>
-<p class="subtitle lead">Ciencia de Datos Aplicada a la Gestión de Demanda e Inventarios.</p>
+<h1 class="title"><span class="chapter-title">Notas y Recomendaciones Estratégicas</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta column-body">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Nicolás A. Bravo </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 6, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -519,111 +533,75 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bienvenido" class="level1 unnumbered">
-<h1 class="unnumbered">Bienvenido</h1>
-<p>Este libro no es solo un texto teórico sobre logística; es una hoja de ruta diseñada para transformar datos crudos en decisiones estratégicas. En el mundo real de la Supply Chain, la teoría académica suele chocar con la fricción de los datos sucios, la incertidumbre de los tiempos de entrega y la volatilidad implacable de la demanda. Aquí no encontrarás soluciones ideales para problemas inexistentes; aprenderás a navegar el caos real, paso a paso.</p>
-<div style="float: right">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><img src="images/img2.png" class="float-right img-fluid quarto-figure quarto-figure-right figure-img" style="margin-right: 0px; margin-bottom: 00px;" width="462"></p>
-</figure>
-</div>
-</div>
-<p>Nuestra premisa es clara: en la cadena de suministro moderna, la intuición ya no es suficiente. A medida que los mercados se vuelven más complejos, la capacidad de procesar, modelar y simular escenarios se convierte en la ventaja competitiva definitiva. Este manual ha sido creado para cerrar la brecha entre el analista tradicional y el Supply Chain Data Scientist, dotándote de un arsenal de herramientas que van desde la limpieza profunda de datos hasta la optimización multi-escalón.</p>
-<section id="de-qué-trata-este-libro" class="level2">
-<h2 class="anchored" data-anchor-id="de-qué-trata-este-libro">¿De qué trata este libro?</h2>
-<p>Es, fundamentalmente, un manual de ingeniería aplicada. Es el recurso que a muchos nos hubiera gustado tener al iniciar nuestra carrera en la intersección de las operaciones y la analítica: un puente que no solo explica qué es un inventario, sino cómo optimizarlo utilizando el poder del código y la Ciencia de Datos moderna.</p>
-<p>Nuestra filosofía es simple: hacer lo complejo, accionable. No pretendemos reinventar la rueda, sino enseñarte a construir una que ruede mejor bajo presión. A lo largo de estas páginas, pasaremos de los conceptos básicos a la implementación robusta en R y Python, priorizando siempre la generación de valor que impacte directamente en el nivel de servicio y la salud financiera de la organización.</p>
-<p>La realidad de la cadena de suministro es un sistema vivo, dinámico y, a menudo, desordenado. En este manual, desarrollaremos un ecosistema de herramientas para domesticar esa incertidumbre, transitando desde la auditoría inicial de visibilidad hasta la simulación avanzada de redes complejas.</p>
+<p>La culminación de este manual no representa solo la entrega de un conjunto de algoritmos, sino la propuesta de un nuevo modelo para la cadena de suministro. La transición de una gestión basada en la intuición hacia una arquitectura basada en la evidencia requiere una comprensión profunda de las palancas financieras y los límites estadísticos.</p>
+<section id="el-rigor-estadístico-como-base" class="level2">
+<h2 class="anchored" data-anchor-id="el-rigor-estadístico-como-base">1. El Rigor Estadístico como Base</h2>
+<section id="la-auditoría-de-métricas-más-allá-del-mape" class="level3">
+<h3 class="anchored" data-anchor-id="la-auditoría-de-métricas-más-allá-del-mape">1.1 La Auditoría de Métricas: Más allá del MAPE</h3>
+<p>Aunque el MAPE (<em>Mean Absolute Percentage Error</em>) es un estándar reconocido por su simplicidad comunicativa, presenta defectos estructurales matemáticos que lo hacen inadecuado para la toma de decisiones estratégicas en Supply Chain. Un Arquitecto de Suministros debe entender que el MAPE no es neutral; tiene “opiniones” matemáticas que pueden inducir a errores graves:</p>
+<ol type="1">
+<li><p><strong>Sesgo hacia la subestimación:</strong> El MAPE penaliza más a los pronósticos que están por encima de la demanda real que a los que están por debajo. Matemáticamente, el error no puede superar el 100% si predices de menos (el mínimo es 0), pero no tiene límite si predices de más. Esto empuja a los planificadores a ser “conservadores”, lo que causa rupturas de stock (<em>out-of-stock</em>).</p></li>
+<li><p><strong>Problemas con el cero:</strong> Si la demanda real es 0, el MAPE no se puede calcular (división por cero). Si la demanda es muy baja, cualquier pequeño error absoluto se convierte en un error porcentual astronómico que arruina el promedio del KPI.</p></li>
+<li><p><strong>No prioriza el valor:</strong> El MAPE trata por igual un error del 10% en un producto que vende un millón de unidades que en uno que vende diez. Para Vandeput, esto es un error de gestión, ya que el impacto financiero es totalmente distinto.</p></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>La recomendación:</strong> Utilizar el <strong>MAE (Error Absoluto Medio)</strong> combinado con el <strong>Sesgo (Bias)</strong>, o preferiblemente el <strong>WMAPE (MAPE Ponderado)</strong>, el cual evita los problemas de los valores bajos al ponderar por el volumen total.</p>
+</blockquote>
 </section>
-<section id="para-quién-es-este-manual" class="level2">
-<h2 class="anchored" data-anchor-id="para-quién-es-este-manual">¿Para quién es este manual?</h2>
-<p>Si eres un analista que busca evolucionar hacia el Data Science, un planeador de demanda que desea automatizar sus modelos para ganar tiempo estratégico, o un líder de operaciones que necesita entender la “caja negra” de los algoritmos para tomar mejores decisiones, este libro es para ti.</p>
-<p>Aquí no solo encontrarás ecuaciones; aprenderás a interpretar visualizaciones que cuentan historias, a detectar y mitigar sesgos humanos y, sobre todo, a responder con confianza a la pregunta crítica del negocio: “¿Para qué nos sirve esto hoy?”</p>
 </section>
-<section id="estructura-detallada-del-manual" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-detallada-del-manual">Estructura Detallada del Manual</h2>
-<p>A través de estas páginas, no solo construiremos modelos; construiremos un criterio técnico para saber cuándo confiar en un algoritmo y cuándo intervenir con el juicio de negocio. El objetivo final es simple pero ambicioso: que dejes de ser un espectador de los problemas de inventario y te conviertas en el arquitecto de una red de suministro resiliente, eficiente y, sobre todo, inteligente.</p>
-<p>El libro está diseñado como una hoja de ruta técnica y estratégica, dividida en seis ejes fundamentales:</p>
-<section id="parte-i-el-diagnóstico-llegando-a-la-empresa" class="level3">
-<h3 class="anchored" data-anchor-id="parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</h3>
-<p><strong>Enfoque:</strong> Visibilidad y limpieza. No puedes arreglar lo que no ves.</p>
+<section id="quiénes-se-benefician-y-quiénes-no" class="level2">
+<h2 class="anchored" data-anchor-id="quiénes-se-benefician-y-quiénes-no">¿Quiénes se benefician y quiénes no?</h2>
+<p>El uso del MAPE crea “ganadores” y “perdedores” dentro de la organización debido a su naturaleza matemática:</p>
+<section id="quienes-se-benefician-aparentemente" class="level3">
+<h3 class="anchored" data-anchor-id="quienes-se-benefician-aparentemente">Quienes se “benefician” (aparentemente):</h3>
 <ul>
-<li><p><strong>Capítulo 1: ¿Dónde estoy parado?</strong> Auditoría de datos, identificación de fuentes y mapeo del flujo de la cadena de suministro.</p></li>
-<li><p><strong>Capítulo 2: El Espejo de la Realidad:</strong> Diferenciación entre ventas históricas y demanda real (no restringida), analizando el impacto oculto de los quiebres de stock.</p></li>
-<li><p><strong>Capítulo 3: Clasificando el Caos:</strong> Implementación de segmentación ABC/XYZ dinámica utilizando Python para priorizar productos según valor y variabilidad.</p></li>
-<li><p><strong>Capítulo 4: ¿Qué tan mal estamos?</strong> Definición del <em>Baseline</em> y métricas críticas de error como MAE, RMSE y Bias para medir la precisión actual.</p></li>
+<li><p><strong>Planificadores que subestiman la demanda:</strong> Como el MAPE castiga menos el quedarse corto que el pasarse, alguien que siempre pronostica por debajo de lo real obtendrá “mejores” números de KPI (aunque deje a la empresa sin stock).</p></li>
+<li><p><strong>Vendedores de software básico:</strong> Muchas herramientas antiguas incluyen el MAPE porque es fácil de explicar a personas que no saben de estadística, aunque sea técnicamente deficiente.</p></li>
+<li><p><strong>Productos de alto volumen y baja variabilidad:</strong> En estos casos, el MAPE suele ser estable y no presenta tantas distorsiones.</p></li>
 </ul>
 </section>
-<section id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="level3">
-<h3 class="anchored" data-anchor-id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</h3>
-<p><strong>Enfoque:</strong> Pasar de la intuición a la estadística descriptiva e inferencial.</p>
+<section id="quienes-no-se-benefician-los-perjudicados" class="level3">
+<h3 class="anchored" data-anchor-id="quienes-no-se-benefician-los-perjudicados">Quienes NO se benefician (los perjudicados):</h3>
 <ul>
-<li><p><strong>Capítulo 5: El Pronóstico Ingenuo:</strong> Implementación de modelos <em>Naive</em> para establecer un punto de comparación (Benchmark) mínimo.</p></li>
-<li><p><strong>Capítulo 6: Suavizando la Curva:</strong> Aplicación de Suavizamiento Exponencial (Simple, Holt y Holt-Winters) y modelos estadísticos tradicionales.</p></li>
-<li><p><strong>Capítulo 7: Detectando Patrones:</strong> Identificación y descomposición de series de tiempo en sus componentes: Estacionalidad, Tendencia y Ciclos.</p></li>
+<li><p><strong>El Departamento de Finanzas y Operaciones:</strong> El MAPE no refleja el costo real del error. Puedes tener un MAPE “bajo” pero estar perdiendo millones en los productos más importantes.</p></li>
+<li><p><strong>Productos de “cola larga” (Long Tail):</strong> Los productos con demanda intermitente o baja (repuestos, artículos de lujo, etc.) siempre tendrán un MAPE desastroso, haciendo que parezca que el modelo de predicción es inútil cuando quizás no lo es.</p></li>
+<li><p><strong>La Gerencia:</strong> Reciben informes de “80% de precisión” que no se traducen en una mejor disponibilidad de producto o menores costos de inventario.</p></li>
 </ul>
 </section>
-<section id="parte-iii-el-arsenal-del-científico-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</h3>
-<p><strong>Enfoque:</strong> Escalando la precisión mediante el uso de Machine Learning avanzado.</p>
+</section>
+<section id="modelado-probabilístico-vs.-distribución-normal" class="level2">
+<h2 class="anchored" data-anchor-id="modelado-probabilístico-vs.-distribución-normal">2. Modelado Probabilístico vs.&nbsp;Distribución Normal</h2>
+<p>La “falsa seguridad” de la campana de Gauss ignora los riesgos de cola (<em>Tail Risk</em>). En mercados volátiles, la demanda rara vez es simétrica.</p>
 <ul>
-<li><p><strong>Capítulo 8: Creando Inteligencia:</strong> Ingeniería de atributos (<em>Feature Engineering</em>), creación de Lags, impacto de precios y uso de variables externas.</p></li>
-<li><p><strong>Capítulo 9: El Bosque de las Decisiones:</strong> Aplicación práctica de algoritmos Random Forest y XGBoost para capturar patrones no lineales en la demanda.</p></li>
-<li><p><strong>Capítulo 10: Evitando el Espejismo:</strong> Técnicas de Validación Cruzada (Time Series Split) y estrategias para prevenir el sobreajuste (<em>Overfitting</em>).</p></li>
+<li><strong>Recomendación:</strong> Priorice el uso de la <strong>Distribución Gamma</strong> para el cálculo del stock de seguridad. Este enfoque permite modelar con precisión la asimetría de la demanda, asegurando que la inversión en inventario cubra las variaciones reales y no supuestos teóricos que suelen subestimar el riesgo de quiebre.</li>
 </ul>
 </section>
-<section id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</h3>
-<p><strong>Enfoque:</strong> Traducir el pronóstico en decisiones de compra y almacenamiento: ¿Cuánto y cuándo pedir?</p>
+<section id="optimización-del-capital-el-tco-del-inventario" class="level2">
+<h2 class="anchored" data-anchor-id="optimización-del-capital-el-tco-del-inventario">3. Optimización del Capital: El TCO del Inventario</h2>
+<p>El stock de seguridad es un síntoma de incertidumbre, no una solución operativa. Para optimizar el <strong>Costo Total de Propiedad (TCO)</strong>, actúe sobre tres palancas:</p>
+<ol type="1">
+<li><p><strong>Z (Nivel de Servicio):</strong> Segmente clientes y productos. No todo requiere el mismo nivel de protección; la sobre-protección en Clase C es destrucción de valor.</p></li>
+<li><p><span class="math inline">\(\sigma_d\)</span> <strong>(Variabilidad):</strong> Mejore la calidad del pronóstico mediante S&amp;OP disciplinado y el uso de señales reales de consumo (sell-out).</p></li>
+<li><p><strong>LT (Lead Time):</strong> Ataque la variabilidad de sus proveedores. Un <em>Lead Time</em> consistente es financieramente superior a uno rápido pero errático.</p></li>
+</ol>
+</section>
+<section id="arquitectura-tecnológica-el-cerebro-y-el-músculo" class="level2">
+<h2 class="anchored" data-anchor-id="arquitectura-tecnológica-el-cerebro-y-el-músculo">4. Arquitectura Tecnológica: El Cerebro y el Músculo</h2>
+<p>Es imperativo definir las responsabilidades de la infraestructura:</p>
 <ul>
-<li><p><strong>Capítulo 11: El Costo del Dinero y el Costo del Vacío:</strong> Modelado financiero de los costos de mantener inventario frente a los costos de escasez.</p></li>
-<li><p><strong>Capítulo 12: La Receta Básica:</strong> Aplicación del Lote Económico (EOQ) y Punto de Reorden en entornos de demanda estable.</p></li>
-<li><p><strong>Capítulo 13: El Colchón contra la Incertidumbre:</strong> Cálculo científico del Stock de Seguridad basado en el Nivel de Servicio objetivo y la variabilidad.</p></li>
-<li><p><strong>Capítulo 14: Más allá de la Curva Normal:</strong> Modelado de demandas erráticas o “Lumpy” utilizando Distribución Gamma y otros enfoques no tradicionales.</p></li>
+<li><p><strong>El ERP es el Músculo Transaccional:</strong> Su función es la robustez y el registro. No fuerce al ERP a realizar analítica avanzada para la que no fue diseñado.</p></li>
+<li><p><strong>El Motor Analítico es el Cerebro Predictivo:</strong> Utilice herramientas de código abierto (R/Python) para gestionar la inteligencia estocástica y la optimización de parámetros dinámicos.</p></li>
 </ul>
 </section>
-<section id="parte-v-simulaciones-y-redes-complejas" class="level3">
-<h3 class="anchored" data-anchor-id="parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</h3>
-<p><strong>Enfoque:</strong> Reconocer que el mundo real es un sistema dinámico y no una fórmula estática.</p>
-<ul>
-<li><p><strong>Capítulo 15: El Laboratorio Virtual:</strong> Uso de Simulación de Monte Carlo para someter a prueba las políticas de inventario bajo miles de escenarios posibles.</p></li>
-<li><p><strong>Capítulo 16: El Efecto Dominó:</strong> Comprensión y mitigación del Efecto Látigo (<em>Bullwhip Effect</em>) y optimización de redes multi-escalón (MEIO).</p></li>
-<li><p><strong>Capítulo 17: Optimizando bajo Presión:</strong> Uso de Sim-Opt (Simulación-Optimización) para hallar la política perfecta en sistemas complejos.</p></li>
-</ul>
+<section id="el-factor-humano-forecast-value-added-fva" class="level2">
+<h2 class="anchored" data-anchor-id="el-factor-humano-forecast-value-added-fva">5. El Factor Humano: Forecast Value Added (FVA)</h2>
+<p>El juicio humano debe ser auditado. El ajuste manual solo añade valor cuando inyecta información exógena que el algoritmo no posee (promociones, cambios de ley). Si la intervención humana incrementa el error de forma constante, el proceso debe favorecer la parsimonia estadística para proteger el flujo de caja.</p>
 </section>
-<section id="parte-vi-el-factor-humano-y-la-ejecución" class="level3">
-<h3 class="anchored" data-anchor-id="parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</h3>
-<p><strong>Enfoque:</strong> Asegurar la adopción de los modelos por parte de la organización.</p>
-<ul>
-<li><p><strong>Capítulo 18: ¿Aportamos Valor?:</strong> Implementación del marco FVA (<em>Forecast Value Added</em>) para medir qué pasos del proceso realmente mejoran la precisión.</p></li>
-<li><p><strong>Capítulo 19: La Guerra contra los Sesgos:</strong> Cómo gestionar el juicio humano y aprovechar la “sabiduría de las multitudes” sin dañar el pronóstico.</p></li>
-<li><p><strong>Capítulo 20: El Plan Maestro:</strong> Integración final de los modelos en el proceso de S&amp;OP (Sales and Operations Planning) y comunicación efectiva hacia la alta gerencia.</p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Requisitos previos
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Para aprovechar al máximo este libro, necesitarás:</p>
-<ul>
-<li>Conocimientos básicos de R, Python.</li>
-<li>Familiaridad con conceptos de Supply Chain</li>
-<li>Acceso a RStudio y las librerías mencionadas en cada capítulo</li>
-</ul>
-</div>
-</div>
-<hr>
-<p><strong>Prepárate para “ensuciarte las manos” y cambiar tu forma de ver un inventario para siempre.</strong></p>
+<section id="conclusión-estratégica" class="level2">
+<h2 class="anchored" data-anchor-id="conclusión-estratégica">6. Conclusión Estratégica</h2>
+<p>El inventario es capital en espera. Cada unidad reducida mediante la precisión analítica es flujo de caja liberado para la innovación y el crecimiento. Al adoptar estos principios, la organización deja de reaccionar ante la volatilidad para empezar a diseñarla.</p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1042,11 +1020,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./cap-20-plan-maestro-sop.html" class="pagination-link" aria-label="20. El Plan Maestro">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">20. El Plan Maestro</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cap-1-auditoria.html" class="pagination-link" aria-label="1. ¿Dónde estoy parado? ¿Como empiezo?">
-        <span class="nav-page-text"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -1054,4 +1032,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/notas-finales-estrategia.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

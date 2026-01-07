@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Nicolás A. Bravo">
-<meta name="dcterms.date" content="2026-01-06">
 
-<title>Arquitectura de suministros</title>
+<title>13. Bienvenidos al Mundo Estocástico – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cap-1-auditoria.html" rel="next">
+<link href="./cap-14-demandas-erraticas.html" rel="next">
+<link href="./cap-12-eoq-punto-reorden.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -76,6 +75,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -250,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Bienvenido</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-11-costos-inventario.html">IV: La Ciencia del Stock</a></li><li class="breadcrumb-item"><a href="./cap-13-stock-seguridad.html"><span class="chapter-title">13. Bienvenidos al Mundo Estocástico</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -281,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bienvenido</span></a>
   </div>
 </li>
@@ -389,7 +417,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-13-stock-seguridad.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">13. Bienvenidos al Mundo Estocástico</span></a>
+  <a href="./cap-13-stock-seguridad.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">13. Bienvenidos al Mundo Estocástico</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -466,50 +494,38 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bienvenido" id="toc-bienvenido" class="nav-link active" data-scroll-target="#bienvenido">Bienvenido</a>
+  <li><a href="#qué-es-realmente-el-stock-de-seguridad" id="toc-qué-es-realmente-el-stock-de-seguridad" class="nav-link active" data-scroll-target="#qué-es-realmente-el-stock-de-seguridad">13.1 ¿Qué es realmente el Stock de Seguridad?</a></li>
+  <li><a href="#los-ingredientes-de-la-receta-estocástica" id="toc-los-ingredientes-de-la-receta-estocástica" class="nav-link" data-scroll-target="#los-ingredientes-de-la-receta-estocástica">13.2 Los Ingredientes de la Receta Estocástica</a>
   <ul class="collapse">
-  <li><a href="#de-qué-trata-este-libro" id="toc-de-qué-trata-este-libro" class="nav-link" data-scroll-target="#de-qué-trata-este-libro">¿De qué trata este libro?</a></li>
-  <li><a href="#para-quién-es-este-manual" id="toc-para-quién-es-este-manual" class="nav-link" data-scroll-target="#para-quién-es-este-manual">¿Para quién es este manual?</a></li>
-  <li><a href="#estructura-detallada-del-manual" id="toc-estructura-detallada-del-manual" class="nav-link" data-scroll-target="#estructura-detallada-del-manual">Estructura Detallada del Manual</a>
+  <li><a href="#la-incertidumbre-sigma-el-rol-del-rmse" id="toc-la-incertidumbre-sigma-el-rol-del-rmse" class="nav-link" data-scroll-target="#la-incertidumbre-sigma-el-rol-del-rmse">13.2.1 La Incertidumbre (<span class="math inline">\(\sigma\)</span>): El rol del RMSE</a></li>
+  <li><a href="#el-tiempo-de-exposición-l-la-raíz-cuadrada-del-tiempo" id="toc-el-tiempo-de-exposición-l-la-raíz-cuadrada-del-tiempo" class="nav-link" data-scroll-target="#el-tiempo-de-exposición-l-la-raíz-cuadrada-del-tiempo">13.2.2 El Tiempo de Exposición (<span class="math inline">\(L\)</span>): La Raíz Cuadrada del Tiempo</a></li>
+  <li><a href="#el-factor-de-servicio-k-tu-apetito-al-riesgo" id="toc-el-factor-de-servicio-k-tu-apetito-al-riesgo" class="nav-link" data-scroll-target="#el-factor-de-servicio-k-tu-apetito-al-riesgo">13.2.3 El Factor de Servicio (<span class="math inline">\(k\)</span>): Tu Apetito al Riesgo</a></li>
+  </ul></li>
+  <li><a href="#la-ecuación-maestra-del-stock-de-seguridad" id="toc-la-ecuación-maestra-del-stock-de-seguridad" class="nav-link" data-scroll-target="#la-ecuación-maestra-del-stock-de-seguridad">13.3 La Ecuación Maestra del Stock de Seguridad</a>
   <ul class="collapse">
-  <li><a href="#parte-i-el-diagnóstico-llegando-a-la-empresa" id="toc-parte-i-el-diagnóstico-llegando-a-la-empresa" class="nav-link" data-scroll-target="#parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</a></li>
-  <li><a href="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" id="toc-parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="nav-link" data-scroll-target="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</a></li>
-  <li><a href="#parte-iii-el-arsenal-del-científico-de-datos" id="toc-parte-iii-el-arsenal-del-científico-de-datos" class="nav-link" data-scroll-target="#parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</a></li>
-  <li><a href="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios" id="toc-parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="nav-link" data-scroll-target="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</a></li>
-  <li><a href="#parte-v-simulaciones-y-redes-complejas" id="toc-parte-v-simulaciones-y-redes-complejas" class="nav-link" data-scroll-target="#parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</a></li>
-  <li><a href="#parte-vi-el-factor-humano-y-la-ejecución" id="toc-parte-vi-el-factor-humano-y-la-ejecución" class="nav-link" data-scroll-target="#parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</a></li>
+  <li><a href="#análisis-de-sensibilidad-financiera" id="toc-análisis-de-sensibilidad-financiera" class="nav-link" data-scroll-target="#análisis-de-sensibilidad-financiera">13.3.1 Análisis de Sensibilidad Financiera</a></li>
   </ul></li>
-  </ul></li>
+  <li><a href="#la-tiranía-del-nivel-de-servicio-rendimientos-decrecientes" id="toc-la-tiranía-del-nivel-de-servicio-rendimientos-decrecientes" class="nav-link" data-scroll-target="#la-tiranía-del-nivel-de-servicio-rendimientos-decrecientes">13.4 La Tiranía del Nivel de Servicio: Rendimientos Decrecientes</a></li>
+  <li><a href="#integración-el-rop-estocástico" id="toc-integración-el-rop-estocástico" class="nav-link" data-scroll-target="#integración-el-rop-estocástico">13.5 Integración: El ROP Estocástico</a></li>
+  <li><a href="#la-variabilidad-del-lead-time-el-enemigo-oculto" id="toc-la-variabilidad-del-lead-time-el-enemigo-oculto" class="nav-link" data-scroll-target="#la-variabilidad-del-lead-time-el-enemigo-oculto">13.6 La Variabilidad del Lead Time: El Enemigo Oculto</a></li>
+  <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-13-stock-seguridad.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-11-costos-inventario.html">IV: La Ciencia del Stock</a></li><li class="breadcrumb-item"><a href="./cap-13-stock-seguridad.html"><span class="chapter-title">13. Bienvenidos al Mundo Estocástico</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Arquitectura de suministros</h1>
-<p class="subtitle lead">Ciencia de Datos Aplicada a la Gestión de Demanda e Inventarios.</p>
+<h1 class="title"><span class="chapter-title">13. Bienvenidos al Mundo Estocástico</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta column-body">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Nicolás A. Bravo </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 6, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -519,111 +535,80 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bienvenido" class="level1 unnumbered">
-<h1 class="unnumbered">Bienvenido</h1>
-<p>Este libro no es solo un texto teórico sobre logística; es una hoja de ruta diseñada para transformar datos crudos en decisiones estratégicas. En el mundo real de la Supply Chain, la teoría académica suele chocar con la fricción de los datos sucios, la incertidumbre de los tiempos de entrega y la volatilidad implacable de la demanda. Aquí no encontrarás soluciones ideales para problemas inexistentes; aprenderás a navegar el caos real, paso a paso.</p>
-<div style="float: right">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><img src="images/img2.png" class="float-right img-fluid quarto-figure quarto-figure-right figure-img" style="margin-right: 0px; margin-bottom: 00px;" width="462"></p>
-</figure>
-</div>
-</div>
-<p>Nuestra premisa es clara: en la cadena de suministro moderna, la intuición ya no es suficiente. A medida que los mercados se vuelven más complejos, la capacidad de procesar, modelar y simular escenarios se convierte en la ventaja competitiva definitiva. Este manual ha sido creado para cerrar la brecha entre el analista tradicional y el Supply Chain Data Scientist, dotándote de un arsenal de herramientas que van desde la limpieza profunda de datos hasta la optimización multi-escalón.</p>
-<section id="de-qué-trata-este-libro" class="level2">
-<h2 class="anchored" data-anchor-id="de-qué-trata-este-libro">¿De qué trata este libro?</h2>
-<p>Es, fundamentalmente, un manual de ingeniería aplicada. Es el recurso que a muchos nos hubiera gustado tener al iniciar nuestra carrera en la intersección de las operaciones y la analítica: un puente que no solo explica qué es un inventario, sino cómo optimizarlo utilizando el poder del código y la Ciencia de Datos moderna.</p>
-<p>Nuestra filosofía es simple: hacer lo complejo, accionable. No pretendemos reinventar la rueda, sino enseñarte a construir una que ruede mejor bajo presión. A lo largo de estas páginas, pasaremos de los conceptos básicos a la implementación robusta en R y Python, priorizando siempre la generación de valor que impacte directamente en el nivel de servicio y la salud financiera de la organización.</p>
-<p>La realidad de la cadena de suministro es un sistema vivo, dinámico y, a menudo, desordenado. En este manual, desarrollaremos un ecosistema de herramientas para domesticar esa incertidumbre, transitando desde la auditoría inicial de visibilidad hasta la simulación avanzada de redes complejas.</p>
+<p>En el Capítulo 12, exploramos el “mundo determinista”, un laboratorio donde la demanda es una línea recta y el proveedor nunca falla. En ese escenario, el inventario es sencillo: pides exactamente lo que vas a vender y llega justo a tiempo. Sin embargo, si has trabajado más de un día en una cadena de suministro real, sabes que ese mundo es una utopía.</p>
+<p>La realidad es <strong>Estocástica</strong> (aleatoria y probabilística). La demanda real rara vez coincide con tu pronóstico de punto, y el Lead Time de tu proveedor suele ser una sugerencia optimista más que una promesa inquebrantable. Aquí es donde entra el <strong>Stock de Seguridad (SS)</strong>: el colchón diseñado no para cubrir lo que <em>sabemos</em> que va a pasar, sino para protegernos de lo que <em>no podemos prever</em>. En este capítulo, aprenderemos a calcular este escudo usando la ciencia de la probabilidad y conectándolo con el error de los modelos que construimos en la Parte III.</p>
+<section id="qué-es-realmente-el-stock-de-seguridad" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-realmente-el-stock-de-seguridad">13.1 ¿Qué es realmente el Stock de Seguridad?</h2>
+<p>El Stock de Seguridad no debe verse como “inventario extra” o “por si acaso”. En la mente de un Arquitecto de Suministros, el SS es una <strong>inversión de capital</strong> destinada a comprar una póliza de seguro contra dos variabilidades críticas:</p>
+<ol type="1">
+<li><strong>Variabilidad de la Demanda:</strong> La diferencia entre lo que el modelo predijo y lo que el mercado realmente pidió.</li>
+<li><strong>Variabilidad del Lead Time:</strong> La incertidumbre sobre si el camión llegará en 5 días o en 12 debido a factores logísticos.</li>
+</ol>
+<p><strong>La Regla de Oro de Vandeput:</strong> El Stock de Seguridad no debe calcularse sobre el volumen total de la demanda, sino sobre el <strong>Error del Pronóstico</strong>. Este es un cambio de paradigma vital. Si tu pronóstico es perfecto (Error = 0), no necesitas stock de seguridad. El SS es el <strong>castigo económico por la imperfección de tus modelos</strong>.</p>
 </section>
-<section id="para-quién-es-este-manual" class="level2">
-<h2 class="anchored" data-anchor-id="para-quién-es-este-manual">¿Para quién es este manual?</h2>
-<p>Si eres un analista que busca evolucionar hacia el Data Science, un planeador de demanda que desea automatizar sus modelos para ganar tiempo estratégico, o un líder de operaciones que necesita entender la “caja negra” de los algoritmos para tomar mejores decisiones, este libro es para ti.</p>
-<p>Aquí no solo encontrarás ecuaciones; aprenderás a interpretar visualizaciones que cuentan historias, a detectar y mitigar sesgos humanos y, sobre todo, a responder con confianza a la pregunta crítica del negocio: “¿Para qué nos sirve esto hoy?”</p>
+<section id="los-ingredientes-de-la-receta-estocástica" class="level2">
+<h2 class="anchored" data-anchor-id="los-ingredientes-de-la-receta-estocástica">13.2 Los Ingredientes de la Receta Estocástica</h2>
+<p>Para dimensionar este colchón sin asfixiar el flujo de caja, necesitamos tres palancas de riesgo:</p>
+<section id="la-incertidumbre-sigma-el-rol-del-rmse" class="level3">
+<h3 class="anchored" data-anchor-id="la-incertidumbre-sigma-el-rol-del-rmse">13.2.1 La Incertidumbre (<span class="math inline">\(\sigma\)</span>): El rol del RMSE</h3>
+<p>En la ciencia del stock, el <strong>RMSE</strong> (Root Mean Squared Error) calculado en capítulos anteriores es nuestra medida de la desviación estándar del error (<span class="math inline">\(\sigma_{error}\)</span>). * <strong>Implicación:</strong> Si tu modelo de XGBoost redujo el RMSE en un 20%, tu inversión en inventario de seguridad puede reducirse en una proporción similar.</p>
 </section>
-<section id="estructura-detallada-del-manual" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-detallada-del-manual">Estructura Detallada del Manual</h2>
-<p>A través de estas páginas, no solo construiremos modelos; construiremos un criterio técnico para saber cuándo confiar en un algoritmo y cuándo intervenir con el juicio de negocio. El objetivo final es simple pero ambicioso: que dejes de ser un espectador de los problemas de inventario y te conviertas en el arquitecto de una red de suministro resiliente, eficiente y, sobre todo, inteligente.</p>
-<p>El libro está diseñado como una hoja de ruta técnica y estratégica, dividida en seis ejes fundamentales:</p>
-<section id="parte-i-el-diagnóstico-llegando-a-la-empresa" class="level3">
-<h3 class="anchored" data-anchor-id="parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</h3>
-<p><strong>Enfoque:</strong> Visibilidad y limpieza. No puedes arreglar lo que no ves.</p>
-<ul>
-<li><p><strong>Capítulo 1: ¿Dónde estoy parado?</strong> Auditoría de datos, identificación de fuentes y mapeo del flujo de la cadena de suministro.</p></li>
-<li><p><strong>Capítulo 2: El Espejo de la Realidad:</strong> Diferenciación entre ventas históricas y demanda real (no restringida), analizando el impacto oculto de los quiebres de stock.</p></li>
-<li><p><strong>Capítulo 3: Clasificando el Caos:</strong> Implementación de segmentación ABC/XYZ dinámica utilizando Python para priorizar productos según valor y variabilidad.</p></li>
-<li><p><strong>Capítulo 4: ¿Qué tan mal estamos?</strong> Definición del <em>Baseline</em> y métricas críticas de error como MAE, RMSE y Bias para medir la precisión actual.</p></li>
-</ul>
+<section id="el-tiempo-de-exposición-l-la-raíz-cuadrada-del-tiempo" class="level3">
+<h3 class="anchored" data-anchor-id="el-tiempo-de-exposición-l-la-raíz-cuadrada-del-tiempo">13.2.2 El Tiempo de Exposición (<span class="math inline">\(L\)</span>): La Raíz Cuadrada del Tiempo</h3>
+<p>La incertidumbre crece con el tiempo, pero no de forma lineal. Matemáticamente, el riesgo crece con la <strong>raíz cuadrada del Lead Time</strong> (<span class="math inline">\(\sqrt{L}\)</span>). Esto se debe a que los errores diarios tienden a cancelarse parcialmente entre sí.</p>
 </section>
-<section id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="level3">
-<h3 class="anchored" data-anchor-id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</h3>
-<p><strong>Enfoque:</strong> Pasar de la intuición a la estadística descriptiva e inferencial.</p>
-<ul>
-<li><p><strong>Capítulo 5: El Pronóstico Ingenuo:</strong> Implementación de modelos <em>Naive</em> para establecer un punto de comparación (Benchmark) mínimo.</p></li>
-<li><p><strong>Capítulo 6: Suavizando la Curva:</strong> Aplicación de Suavizamiento Exponencial (Simple, Holt y Holt-Winters) y modelos estadísticos tradicionales.</p></li>
-<li><p><strong>Capítulo 7: Detectando Patrones:</strong> Identificación y descomposición de series de tiempo en sus componentes: Estacionalidad, Tendencia y Ciclos.</p></li>
-</ul>
+<section id="el-factor-de-servicio-k-tu-apetito-al-riesgo" class="level3">
+<h3 class="anchored" data-anchor-id="el-factor-de-servicio-k-tu-apetito-al-riesgo">13.2.3 El Factor de Servicio (<span class="math inline">\(k\)</span>): Tu Apetito al Riesgo</h3>
+<p>El factor <span class="math inline">\(k\)</span> representa cuántas desviaciones estándar quieres cubrir. Este valor sale de la <strong>Distribución Normal</strong> y define tu <strong>Nivel de Servicio (Cycle Service Level)</strong>.</p>
 </section>
-<section id="parte-iii-el-arsenal-del-científico-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</h3>
-<p><strong>Enfoque:</strong> Escalando la precisión mediante el uso de Machine Learning avanzado.</p>
-<ul>
-<li><p><strong>Capítulo 8: Creando Inteligencia:</strong> Ingeniería de atributos (<em>Feature Engineering</em>), creación de Lags, impacto de precios y uso de variables externas.</p></li>
-<li><p><strong>Capítulo 9: El Bosque de las Decisiones:</strong> Aplicación práctica de algoritmos Random Forest y XGBoost para capturar patrones no lineales en la demanda.</p></li>
-<li><p><strong>Capítulo 10: Evitando el Espejismo:</strong> Técnicas de Validación Cruzada (Time Series Split) y estrategias para prevenir el sobreajuste (<em>Overfitting</em>).</p></li>
-</ul>
 </section>
-<section id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</h3>
-<p><strong>Enfoque:</strong> Traducir el pronóstico en decisiones de compra y almacenamiento: ¿Cuánto y cuándo pedir?</p>
-<ul>
-<li><p><strong>Capítulo 11: El Costo del Dinero y el Costo del Vacío:</strong> Modelado financiero de los costos de mantener inventario frente a los costos de escasez.</p></li>
-<li><p><strong>Capítulo 12: La Receta Básica:</strong> Aplicación del Lote Económico (EOQ) y Punto de Reorden en entornos de demanda estable.</p></li>
-<li><p><strong>Capítulo 13: El Colchón contra la Incertidumbre:</strong> Cálculo científico del Stock de Seguridad basado en el Nivel de Servicio objetivo y la variabilidad.</p></li>
-<li><p><strong>Capítulo 14: Más allá de la Curva Normal:</strong> Modelado de demandas erráticas o “Lumpy” utilizando Distribución Gamma y otros enfoques no tradicionales.</p></li>
-</ul>
+<section id="la-ecuación-maestra-del-stock-de-seguridad" class="level2">
+<h2 class="anchored" data-anchor-id="la-ecuación-maestra-del-stock-de-seguridad">13.3 La Ecuación Maestra del Stock de Seguridad</h2>
+<p>Combinando estos factores, llegamos a la fórmula fundamental:</p>
+<p><span class="math display">\[SS = k    imes \sigma_{error}     imes \sqrt{L}\]</span></p>
+<p>Donde: * <span class="math inline">\(k\)</span>: Factor de servicio (ej. 1.65 para un 95% de nivel de servicio). * <span class="math inline">\(\sigma_{error}\)</span>: Desviación estándar del error (RMSE del modelo). * <span class="math inline">\(L\)</span>: Lead Time expresado en las mismas unidades que el error.</p>
+<section id="análisis-de-sensibilidad-financiera" class="level3">
+<h3 class="anchored" data-anchor-id="análisis-de-sensibilidad-financiera">13.3.1 Análisis de Sensibilidad Financiera</h3>
+<p>Para un producto con RMSE mensual de 500 unidades y Lead Time de 1 mes: * <strong>90% SL (</strong><span class="math inline">\(k=1.28\)</span>): <span class="math inline">\(SS = 640  ext{ unidades}\)</span>. * <strong>99.9% SL (</strong><span class="math inline">\(k=3.09\)</span>): <span class="math inline">\(SS = 1,545  ext{ unidades}\)</span>. <em>Implicación:</em> La perfección financiera es costosa; proteger ese último 10% requiere casi triplicar el inventario.</p>
 </section>
-<section id="parte-v-simulaciones-y-redes-complejas" class="level3">
-<h3 class="anchored" data-anchor-id="parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</h3>
-<p><strong>Enfoque:</strong> Reconocer que el mundo real es un sistema dinámico y no una fórmula estática.</p>
-<ul>
-<li><p><strong>Capítulo 15: El Laboratorio Virtual:</strong> Uso de Simulación de Monte Carlo para someter a prueba las políticas de inventario bajo miles de escenarios posibles.</p></li>
-<li><p><strong>Capítulo 16: El Efecto Dominó:</strong> Comprensión y mitigación del Efecto Látigo (<em>Bullwhip Effect</em>) y optimización de redes multi-escalón (MEIO).</p></li>
-<li><p><strong>Capítulo 17: Optimizando bajo Presión:</strong> Uso de Sim-Opt (Simulación-Optimización) para hallar la política perfecta en sistemas complejos.</p></li>
-</ul>
 </section>
-<section id="parte-vi-el-factor-humano-y-la-ejecución" class="level3">
-<h3 class="anchored" data-anchor-id="parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</h3>
-<p><strong>Enfoque:</strong> Asegurar la adopción de los modelos por parte de la organización.</p>
-<ul>
-<li><p><strong>Capítulo 18: ¿Aportamos Valor?:</strong> Implementación del marco FVA (<em>Forecast Value Added</em>) para medir qué pasos del proceso realmente mejoran la precisión.</p></li>
-<li><p><strong>Capítulo 19: La Guerra contra los Sesgos:</strong> Cómo gestionar el juicio humano y aprovechar la “sabiduría de las multitudes” sin dañar el pronóstico.</p></li>
-<li><p><strong>Capítulo 20: El Plan Maestro:</strong> Integración final de los modelos en el proceso de S&amp;OP (Sales and Operations Planning) y comunicación efectiva hacia la alta gerencia.</p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="la-tiranía-del-nivel-de-servicio-rendimientos-decrecientes" class="level2">
+<h2 class="anchored" data-anchor-id="la-tiranía-del-nivel-de-servicio-rendimientos-decrecientes">13.4 La Tiranía del Nivel de Servicio: Rendimientos Decrecientes</h2>
+<p>El costo de la perfección es infinito. Debido a la campana de Gauss, protegerse contra eventos extremos requiere volúmenes masivos de stock. * <strong>Estrategia ABC:</strong> * <strong>Clase A:</strong> <span class="math inline">\(k\)</span> alto (Protección premium). * <strong>Clase C:</strong> <span class="math inline">\(k\)</span> bajo (Aceptamos quiebres para salvar flujo de caja).</p>
+</section>
+<section id="integración-el-rop-estocástico" class="level2">
+<h2 class="anchored" data-anchor-id="integración-el-rop-estocástico">13.5 Integración: El ROP Estocástico</h2>
+<p>El Punto de Reorden evoluciona para incluir el escudo contra lo inesperado:</p>
+<p><span class="math display">\[ROP = (d  imes L) + SS\]</span></p>
+<p>Donde <span class="math inline">\((d   imes L)\)</span> es el consumo previsto y <span class="math inline">\(SS\)</span> es tu margen de error.</p>
+</section>
+<section id="la-variabilidad-del-lead-time-el-enemigo-oculto" class="level2">
+<h2 class="anchored" data-anchor-id="la-variabilidad-del-lead-time-el-enemigo-oculto">13.6 La Variabilidad del Lead Time: El Enemigo Oculto</h2>
+<p>Si tu proveedor es inestable (<span class="math inline">\(\sigma_L\)</span>), la incertidumbre se expande. A menudo es más rentable negociar un Lead Time estable con el proveedor que intentar mejorar el algoritmo de pronóstico.</p>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Requisitos previos
+<span class="screen-reader-only">Important</span>La Trampa de la Normalidad
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Para aprovechar al máximo este libro, necesitarás:</p>
-<ul>
-<li>Conocimientos básicos de R, Python.</li>
-<li>Familiaridad con conceptos de Supply Chain</li>
-<li>Acceso a RStudio y las librerías mencionadas en cada capítulo</li>
+<p>La mayoría de los softwares asumen una <strong>Distribución Normal</strong>. Si tu demanda tiene “colas pesadas” (picos extremos frecuentes), el SS calculado será insuficiente. En esos casos, recurrimos al <strong>Pronóstico Probabilístico</strong> (Capítulo 14).</p>
+</div>
+</div>
+</section>
+<section id="checklist-de-cierre-del-capítulo" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">¿He extraído el RMSE final de mis modelos de la Parte III?</label></li>
+<li><label><input type="checkbox">¿He definido niveles de servicio diferenciados por segmentación ABC?</label></li>
+<li><label><input type="checkbox">¿He calculado el costo anual de mantener mi stock de seguridad (<span class="math inline">\(SS   imes h\)</span>)?</label></li>
+<li><label><input type="checkbox">¿Soy capaz de explicar por qué un nivel de servicio del 100% es financieramente irresponsable?</label></li>
 </ul>
-</div>
-</div>
-<hr>
-<p><strong>Prepárate para “ensuciarte las manos” y cambiar tu forma de ver un inventario para siempre.</strong></p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1042,10 +1027,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./cap-12-eoq-punto-reorden.html" class="pagination-link" aria-label="12. El Paso del Pronóstico a la Orden">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">12. El Paso del Pronóstico a la Orden</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cap-1-auditoria.html" class="pagination-link" aria-label="1. ¿Dónde estoy parado? ¿Como empiezo?">
-        <span class="nav-page-text"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./cap-14-demandas-erraticas.html" class="pagination-link" aria-label="14. Más allá de la Curva Normal">
+        <span class="nav-page-text"><span class="chapter-title">14. Más allá de la Curva Normal</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1054,4 +1042,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-13-stock-seguridad.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

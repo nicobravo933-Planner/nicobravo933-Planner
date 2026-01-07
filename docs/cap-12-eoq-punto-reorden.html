@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Nicolás A. Bravo">
-<meta name="dcterms.date" content="2026-01-06">
 
-<title>Arquitectura de suministros</title>
+<title>12. El Paso del Pronóstico a la Orden – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cap-1-auditoria.html" rel="next">
+<link href="./cap-13-stock-seguridad.html" rel="next">
+<link href="./cap-11-costos-inventario.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -76,6 +75,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -250,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Bienvenido</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-11-costos-inventario.html">IV: La Ciencia del Stock</a></li><li class="breadcrumb-item"><a href="./cap-12-eoq-punto-reorden.html"><span class="chapter-title">12. El Paso del Pronóstico a la Orden</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -281,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bienvenido</span></a>
   </div>
 </li>
@@ -384,7 +412,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-12-eoq-punto-reorden.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12. El Paso del Pronóstico a la Orden</span></a>
+  <a href="./cap-12-eoq-punto-reorden.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">12. El Paso del Pronóstico a la Orden</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -466,50 +494,37 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bienvenido" id="toc-bienvenido" class="nav-link active" data-scroll-target="#bienvenido">Bienvenido</a>
+  <li><a href="#el-escenario-determinista-las-reglas-del-juego" id="toc-el-escenario-determinista-las-reglas-del-juego" class="nav-link active" data-scroll-target="#el-escenario-determinista-las-reglas-del-juego">12.1 El Escenario Determinista: Las Reglas del Juego</a></li>
+  <li><a href="#el-tamaño-de-lote-económico-eoq" id="toc-el-tamaño-de-lote-económico-eoq" class="nav-link" data-scroll-target="#el-tamaño-de-lote-económico-eoq">12.2 El Tamaño de Lote Económico (EOQ)</a>
   <ul class="collapse">
-  <li><a href="#de-qué-trata-este-libro" id="toc-de-qué-trata-este-libro" class="nav-link" data-scroll-target="#de-qué-trata-este-libro">¿De qué trata este libro?</a></li>
-  <li><a href="#para-quién-es-este-manual" id="toc-para-quién-es-este-manual" class="nav-link" data-scroll-target="#para-quién-es-este-manual">¿Para quién es este manual?</a></li>
-  <li><a href="#estructura-detallada-del-manual" id="toc-estructura-detallada-del-manual" class="nav-link" data-scroll-target="#estructura-detallada-del-manual">Estructura Detallada del Manual</a>
+  <li><a href="#el-conflicto-de-costos-la-gran-balanza" id="toc-el-conflicto-de-costos-la-gran-balanza" class="nav-link" data-scroll-target="#el-conflicto-de-costos-la-gran-balanza">12.2.1 El Conflicto de Costos: La Gran Balanza</a></li>
+  <li><a href="#la-fórmula-maestra-y-el-stock-de-ciclo" id="toc-la-fórmula-maestra-y-el-stock-de-ciclo" class="nav-link" data-scroll-target="#la-fórmula-maestra-y-el-stock-de-ciclo">12.2.2 La Fórmula Maestra y el Stock de Ciclo</a></li>
+  </ul></li>
+  <li><a href="#el-punto-de-reorden-rop-la-gestión-del-tiempo" id="toc-el-punto-de-reorden-rop-la-gestión-del-tiempo" class="nav-link" data-scroll-target="#el-punto-de-reorden-rop-la-gestión-del-tiempo">12.3 El Punto de Reorden (ROP): La Gestión del Tiempo</a>
   <ul class="collapse">
-  <li><a href="#parte-i-el-diagnóstico-llegando-a-la-empresa" id="toc-parte-i-el-diagnóstico-llegando-a-la-empresa" class="nav-link" data-scroll-target="#parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</a></li>
-  <li><a href="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" id="toc-parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="nav-link" data-scroll-target="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</a></li>
-  <li><a href="#parte-iii-el-arsenal-del-científico-de-datos" id="toc-parte-iii-el-arsenal-del-científico-de-datos" class="nav-link" data-scroll-target="#parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</a></li>
-  <li><a href="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios" id="toc-parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="nav-link" data-scroll-target="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</a></li>
-  <li><a href="#parte-v-simulaciones-y-redes-complejas" id="toc-parte-v-simulaciones-y-redes-complejas" class="nav-link" data-scroll-target="#parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</a></li>
-  <li><a href="#parte-vi-el-factor-humano-y-la-ejecución" id="toc-parte-vi-el-factor-humano-y-la-ejecución" class="nav-link" data-scroll-target="#parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</a></li>
+  <li><a href="#posición-de-inventario-vs.-inventario-físico" id="toc-posición-de-inventario-vs.-inventario-físico" class="nav-link" data-scroll-target="#posición-de-inventario-vs.-inventario-físico">12.3.1 Posición de Inventario vs.&nbsp;Inventario Físico</a></li>
   </ul></li>
-  </ul></li>
+  <li><a href="#la-magia-de-la-raíz-cuadrada-la-robustez-del-eoq" id="toc-la-magia-de-la-raíz-cuadrada-la-robustez-del-eoq" class="nav-link" data-scroll-target="#la-magia-de-la-raíz-cuadrada-la-robustez-del-eoq">12.4 La “Magia” de la Raíz Cuadrada: La Robustez del EOQ</a></li>
+  <li><a href="#limitaciones-donde-el-modelo-choca-con-la-realidad" id="toc-limitaciones-donde-el-modelo-choca-con-la-realidad" class="nav-link" data-scroll-target="#limitaciones-donde-el-modelo-choca-con-la-realidad">12.5 Limitaciones: Donde el Modelo Choca con la Realidad</a></li>
+  <li><a href="#aplicación-estratégica-según-segmentación" id="toc-aplicación-estratégica-según-segmentación" class="nav-link" data-scroll-target="#aplicación-estratégica-según-segmentación">12.6 Aplicación Estratégica según Segmentación</a></li>
+  <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-12-eoq-punto-reorden.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-11-costos-inventario.html">IV: La Ciencia del Stock</a></li><li class="breadcrumb-item"><a href="./cap-12-eoq-punto-reorden.html"><span class="chapter-title">12. El Paso del Pronóstico a la Orden</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Arquitectura de suministros</h1>
-<p class="subtitle lead">Ciencia de Datos Aplicada a la Gestión de Demanda e Inventarios.</p>
+<h1 class="title"><span class="chapter-title">12. El Paso del Pronóstico a la Orden</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta column-body">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Nicolás A. Bravo </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 6, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -519,111 +534,92 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bienvenido" class="level1 unnumbered">
-<h1 class="unnumbered">Bienvenido</h1>
-<p>Este libro no es solo un texto teórico sobre logística; es una hoja de ruta diseñada para transformar datos crudos en decisiones estratégicas. En el mundo real de la Supply Chain, la teoría académica suele chocar con la fricción de los datos sucios, la incertidumbre de los tiempos de entrega y la volatilidad implacable de la demanda. Aquí no encontrarás soluciones ideales para problemas inexistentes; aprenderás a navegar el caos real, paso a paso.</p>
-<div style="float: right">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><img src="images/img2.png" class="float-right img-fluid quarto-figure quarto-figure-right figure-img" style="margin-right: 0px; margin-bottom: 00px;" width="462"></p>
-</figure>
-</div>
-</div>
-<p>Nuestra premisa es clara: en la cadena de suministro moderna, la intuición ya no es suficiente. A medida que los mercados se vuelven más complejos, la capacidad de procesar, modelar y simular escenarios se convierte en la ventaja competitiva definitiva. Este manual ha sido creado para cerrar la brecha entre el analista tradicional y el Supply Chain Data Scientist, dotándote de un arsenal de herramientas que van desde la limpieza profunda de datos hasta la optimización multi-escalón.</p>
-<section id="de-qué-trata-este-libro" class="level2">
-<h2 class="anchored" data-anchor-id="de-qué-trata-este-libro">¿De qué trata este libro?</h2>
-<p>Es, fundamentalmente, un manual de ingeniería aplicada. Es el recurso que a muchos nos hubiera gustado tener al iniciar nuestra carrera en la intersección de las operaciones y la analítica: un puente que no solo explica qué es un inventario, sino cómo optimizarlo utilizando el poder del código y la Ciencia de Datos moderna.</p>
-<p>Nuestra filosofía es simple: hacer lo complejo, accionable. No pretendemos reinventar la rueda, sino enseñarte a construir una que ruede mejor bajo presión. A lo largo de estas páginas, pasaremos de los conceptos básicos a la implementación robusta en R y Python, priorizando siempre la generación de valor que impacte directamente en el nivel de servicio y la salud financiera de la organización.</p>
-<p>La realidad de la cadena de suministro es un sistema vivo, dinámico y, a menudo, desordenado. En este manual, desarrollaremos un ecosistema de herramientas para domesticar esa incertidumbre, transitando desde la auditoría inicial de visibilidad hasta la simulación avanzada de redes complejas.</p>
+<p>En las secciones anteriores de este libro, nos obsesionamos con la precisión. Aprendimos a diseccionar la demanda para encontrar niveles, tendencias y estacionalidades utilizando desde suavizamiento exponencial hasta algoritmos de gradiente. Sin embargo, en la trinchera de la Supply Chain, el pronóstico es simplemente una “declaración de intenciones”. La realidad financiera y el impacto operativo solo se materializan cuando el camión llega al muelle de descarga, se firma la factura y el inventario se asienta en el balance general como capital inmovilizado.</p>
+<p>Muchos planificadores operan bajo “reglas de dedo” heredadas: <em>“Pedimos cada lunes”</em>, <em>“Mantenemos dos semanas de stock”</em> o <em>“Pedimos cuando el estante se vea vacío”</em>. Estas heurísticas son peligrosas porque ignoran el equilibrio de costos que modelamos en el Capítulo 11. En este capítulo, estableceremos la <strong>física básica</strong> del inventario mediante la <strong>Fórmula de Wilson</strong> (EOQ). Aunque tiene más de un siglo de antigüedad, sigue siendo la brújula fundamental para dimensionar lotes de forma racional, asegurando que cada dólar invertido en logística esté justificado por un ahorro en costos operativos.</p>
+<section id="el-escenario-determinista-las-reglas-del-juego" class="level2">
+<h2 class="anchored" data-anchor-id="el-escenario-determinista-las-reglas-del-juego">12.1 El Escenario Determinista: Las Reglas del Juego</h2>
+<p>Para entender la base de la optimización, primero debemos simplificar el caos. En este capítulo, trabajaremos en un “laboratorio determinista”. Aquí, el mundo es predecible, lo que nos permite aislar las fuerzas que mueven el costo total. Las reglas son:</p>
+<ol type="1">
+<li><strong>Demanda Constante y Conocida (</strong><span class="math inline">\(D\)</span>): No hay sorpresas. Sabemos exactamente cuántas unidades se venderán por año y la tasa de consumo es uniforme cada día.</li>
+<li><strong>Lead Time Invariante (</strong><span class="math inline">\(L\)</span>): El proveedor es una máquina de precisión. Si dice que tarda 5 días, tarda exactamente 5 días.</li>
+<li><strong>Costo de Pedido Fijo (</strong><span class="math inline">\(S\)</span>): Cada orden emitida genera un gasto administrativo y logístico constante.</li>
+<li><strong>Costo de Mantenimiento Lineal (</strong><span class="math inline">\(h\)</span>): El “impuesto” por tener stock visto en el capítulo anterior.</li>
+<li><strong>Sin Quiebres de Stock:</strong> El objetivo es que el inventario llegue a cero justo cuando el camión del proveedor llega.</li>
+</ol>
 </section>
-<section id="para-quién-es-este-manual" class="level2">
-<h2 class="anchored" data-anchor-id="para-quién-es-este-manual">¿Para quién es este manual?</h2>
-<p>Si eres un analista que busca evolucionar hacia el Data Science, un planeador de demanda que desea automatizar sus modelos para ganar tiempo estratégico, o un líder de operaciones que necesita entender la “caja negra” de los algoritmos para tomar mejores decisiones, este libro es para ti.</p>
-<p>Aquí no solo encontrarás ecuaciones; aprenderás a interpretar visualizaciones que cuentan historias, a detectar y mitigar sesgos humanos y, sobre todo, a responder con confianza a la pregunta crítica del negocio: “¿Para qué nos sirve esto hoy?”</p>
-</section>
-<section id="estructura-detallada-del-manual" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-detallada-del-manual">Estructura Detallada del Manual</h2>
-<p>A través de estas páginas, no solo construiremos modelos; construiremos un criterio técnico para saber cuándo confiar en un algoritmo y cuándo intervenir con el juicio de negocio. El objetivo final es simple pero ambicioso: que dejes de ser un espectador de los problemas de inventario y te conviertas en el arquitecto de una red de suministro resiliente, eficiente y, sobre todo, inteligente.</p>
-<p>El libro está diseñado como una hoja de ruta técnica y estratégica, dividida en seis ejes fundamentales:</p>
-<section id="parte-i-el-diagnóstico-llegando-a-la-empresa" class="level3">
-<h3 class="anchored" data-anchor-id="parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</h3>
-<p><strong>Enfoque:</strong> Visibilidad y limpieza. No puedes arreglar lo que no ves.</p>
+<section id="el-tamaño-de-lote-económico-eoq" class="level2">
+<h2 class="anchored" data-anchor-id="el-tamaño-de-lote-económico-eoq">12.2 El Tamaño de Lote Económico (EOQ)</h2>
+<p>El <strong>EOQ</strong> (<em>Economic Order Quantity</em>) responde a la pregunta arquitectónica: <strong>¿Cuál es el tamaño óptimo de cada pedido?</strong>. No se trata de comprar “mucho” o “poco”, sino de encontrar el punto de equilibrio donde la eficiencia administrativa se encuentra con la eficiencia financiera.</p>
+<section id="el-conflicto-de-costos-la-gran-balanza" class="level3">
+<h3 class="anchored" data-anchor-id="el-conflicto-de-costos-la-gran-balanza">12.2.1 El Conflicto de Costos: La Gran Balanza</h3>
 <ul>
-<li><p><strong>Capítulo 1: ¿Dónde estoy parado?</strong> Auditoría de datos, identificación de fuentes y mapeo del flujo de la cadena de suministro.</p></li>
-<li><p><strong>Capítulo 2: El Espejo de la Realidad:</strong> Diferenciación entre ventas históricas y demanda real (no restringida), analizando el impacto oculto de los quiebres de stock.</p></li>
-<li><p><strong>Capítulo 3: Clasificando el Caos:</strong> Implementación de segmentación ABC/XYZ dinámica utilizando Python para priorizar productos según valor y variabilidad.</p></li>
-<li><p><strong>Capítulo 4: ¿Qué tan mal estamos?</strong> Definición del <em>Baseline</em> y métricas críticas de error como MAE, RMSE y Bias para medir la precisión actual.</p></li>
+<li><strong>Si pides mucho (Lotes gigantes):</strong> Realizas pocos pedidos al año (<span class="math inline">\(S\)</span> mínimo). Sin embargo, tu inventario promedio será enorme, lo que disparará el costo de mantenimiento (<span class="math inline">\(h\)</span>), ocupará todo tu almacén y asfixiará tu flujo de caja.</li>
+<li><strong>Si pides poco (Lotes minúsculos):</strong> Tu inventario promedio será bajo, pero vivirás en un estado de “hiperactividad administrativa”. Tendrás que procesar cientos de órdenes, pagar fletes diarios y saturar al equipo de recepción, elevando el costo total de pedidos.</li>
 </ul>
 </section>
-<section id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="level3">
-<h3 class="anchored" data-anchor-id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</h3>
-<p><strong>Enfoque:</strong> Pasar de la intuición a la estadística descriptiva e inferencial.</p>
+<section id="la-fórmula-maestra-y-el-stock-de-ciclo" class="level3">
+<h3 class="anchored" data-anchor-id="la-fórmula-maestra-y-el-stock-de-ciclo">12.2.2 La Fórmula Maestra y el Stock de Ciclo</h3>
+<p>La intersección de estas dos curvas de costo nos entrega la <strong>Raíz Cuadrada de Wilson</strong>:</p>
+<p><span class="math display">\[EOQ = \sqrt{rac{2    imes D  imes S}{h}}\]</span></p>
+<p>Donde: * <span class="math inline">\(D\)</span>: Demanda anual (unidades/año). * <span class="math inline">\(S\)</span>: Costo fijo de realizar un pedido ($ / pedido). * <span class="math inline">\(h\)</span>: Costo de mantenimiento anual por unidad ($/unidad/año).</p>
+<p><strong>El Concepto de Stock de Ciclo:</strong> En este modelo, tu inventario sigue un patrón de “dientes de sierra”. Comienzas con un lote completo (<span class="math inline">\(EOQ\)</span>) y lo consumes linealmente. Por lo tanto, tu <strong>Inventario Promedio</strong> es exactamente <span class="math inline">\(EOQ / 2\)</span>.</p>
+</section>
+</section>
+<section id="el-punto-de-reorden-rop-la-gestión-del-tiempo" class="level2">
+<h2 class="anchored" data-anchor-id="el-punto-de-reorden-rop-la-gestión-del-tiempo">12.3 El Punto de Reorden (ROP): La Gestión del Tiempo</h2>
+<p>Ya definimos <em>cuánto</em> pedir (<span class="math inline">\(EOQ\)</span>). Ahora debemos determinar el <em>cuándo</em>. El Punto de Reorden es el nivel de inventario que activa la señal de compra. Debe cubrir exactamente la demanda que ocurrirá durante el tiempo que el proveedor tarda en entregar (<em>Lead Time</em>).</p>
+<p><span class="math display">\[ROP = d   imes L\]</span></p>
+<p>Donde: * <span class="math inline">\(d\)</span>: Tasa de demanda diaria (Demanda anual / 365). * <span class="math inline">\(L\)</span>: Lead Time del proveedor en días.</p>
+<section id="posición-de-inventario-vs.-inventario-físico" class="level3">
+<h3 class="anchored" data-anchor-id="posición-de-inventario-vs.-inventario-físico">12.3.1 Posición de Inventario vs.&nbsp;Inventario Físico</h3>
+<p>Un error común es mirar solo el inventario que está en el estante. El Arquitecto de Suministros mira la <strong>Posición de Inventario</strong>:</p>
+<p><span class="math display">\[  ext{Posición} =     ext{Stock Físico} +     ext{Stock en Tránsito} -    ext{Backorders}\]</span></p>
+<p>El ROP debe compararse siempre contra la Posición de Inventario. Ignorar el tránsito es la receta perfecta para el exceso de inventario y la duplicidad de pedidos.</p>
+</section>
+</section>
+<section id="la-magia-de-la-raíz-cuadrada-la-robustez-del-eoq" class="level2">
+<h2 class="anchored" data-anchor-id="la-magia-de-la-raíz-cuadrada-la-robustez-del-eoq">12.4 La “Magia” de la Raíz Cuadrada: La Robustez del EOQ</h2>
+<p>Vandeput defiende con fervor la generosidad matemática del EOQ. Debido a que la fórmula utiliza una raíz cuadrada, si te equivocas al estimar el costo de pedido (<span class="math inline">\(S\)</span>) o el costo de mantenimiento (<span class="math inline">\(h\)</span>), el impacto financiero es menor de lo que parece.</p>
 <ul>
-<li><p><strong>Capítulo 5: El Pronóstico Ingenuo:</strong> Implementación de modelos <em>Naive</em> para establecer un punto de comparación (Benchmark) mínimo.</p></li>
-<li><p><strong>Capítulo 6: Suavizando la Curva:</strong> Aplicación de Suavizamiento Exponencial (Simple, Holt y Holt-Winters) y modelos estadísticos tradicionales.</p></li>
-<li><p><strong>Capítulo 7: Detectando Patrones:</strong> Identificación y descomposición de series de tiempo en sus componentes: Estacionalidad, Tendencia y Ciclos.</p></li>
+<li><strong>La Curva Plana:</strong> El fondo de la curva de costo total es muy plano. Pedir un poco más o un poco menos del EOQ exacto apenas castiga el balance.</li>
+<li><strong>El Efecto Mitigador:</strong> Si sobreestimas el costo de orden en un 100%, tu <span class="math inline">\(EOQ\)</span> solo se desviará un 41% (<span class="math inline">\(\sqrt{2} pprox 1.41\)</span>).</li>
 </ul>
 </section>
-<section id="parte-iii-el-arsenal-del-científico-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</h3>
-<p><strong>Enfoque:</strong> Escalando la precisión mediante el uso de Machine Learning avanzado.</p>
-<ul>
-<li><p><strong>Capítulo 8: Creando Inteligencia:</strong> Ingeniería de atributos (<em>Feature Engineering</em>), creación de Lags, impacto de precios y uso de variables externas.</p></li>
-<li><p><strong>Capítulo 9: El Bosque de las Decisiones:</strong> Aplicación práctica de algoritmos Random Forest y XGBoost para capturar patrones no lineales en la demanda.</p></li>
-<li><p><strong>Capítulo 10: Evitando el Espejismo:</strong> Técnicas de Validación Cruzada (Time Series Split) y estrategias para prevenir el sobreajuste (<em>Overfitting</em>).</p></li>
-</ul>
+<section id="limitaciones-donde-el-modelo-choca-con-la-realidad" class="level2">
+<h2 class="anchored" data-anchor-id="limitaciones-donde-el-modelo-choca-con-la-realidad">12.5 Limitaciones: Donde el Modelo Choca con la Realidad</h2>
+<p>El EOQ es la “física” del inventario, pero la realidad es caótica: 1. <strong>Variabilidad:</strong> La demanda nunca es constante. Necesitaremos un Stock de Seguridad (Capítulo 13). 2. <strong>Restricciones Logísticas:</strong> Redondear el EOQ a múltiplos de pallets o cajas. 3. <strong>Descuentos por Cantidad:</strong> El precio unitario baja al comprar más, alterando la balanza de <span class="math inline">\(h\)</span> y <span class="math inline">\(S\)</span>.</p>
 </section>
-<section id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</h3>
-<p><strong>Enfoque:</strong> Traducir el pronóstico en decisiones de compra y almacenamiento: ¿Cuánto y cuándo pedir?</p>
+<section id="aplicación-estratégica-según-segmentación" class="level2">
+<h2 class="anchored" data-anchor-id="aplicación-estratégica-según-segmentación">12.6 Aplicación Estratégica según Segmentación</h2>
 <ul>
-<li><p><strong>Capítulo 11: El Costo del Dinero y el Costo del Vacío:</strong> Modelado financiero de los costos de mantener inventario frente a los costos de escasez.</p></li>
-<li><p><strong>Capítulo 12: La Receta Básica:</strong> Aplicación del Lote Económico (EOQ) y Punto de Reorden en entornos de demanda estable.</p></li>
-<li><p><strong>Capítulo 13: El Colchón contra la Incertidumbre:</strong> Cálculo científico del Stock de Seguridad basado en el Nivel de Servicio objetivo y la variabilidad.</p></li>
-<li><p><strong>Capítulo 14: Más allá de la Curva Normal:</strong> Modelado de demandas erráticas o “Lumpy” utilizando Distribución Gamma y otros enfoques no tradicionales.</p></li>
+<li><strong>Productos Clase A:</strong> Calcule el EOQ mensualmente. La precisión aquí libera millones en capital de trabajo.</li>
+<li><strong>Productos Clase C:</strong> No pierda tiempo analítico. Use el EOQ para justificar compras de largo plazo (ej. pedir una vez cada 6 meses) y libere capacidad operativa.</li>
 </ul>
-</section>
-<section id="parte-v-simulaciones-y-redes-complejas" class="level3">
-<h3 class="anchored" data-anchor-id="parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</h3>
-<p><strong>Enfoque:</strong> Reconocer que el mundo real es un sistema dinámico y no una fórmula estática.</p>
-<ul>
-<li><p><strong>Capítulo 15: El Laboratorio Virtual:</strong> Uso de Simulación de Monte Carlo para someter a prueba las políticas de inventario bajo miles de escenarios posibles.</p></li>
-<li><p><strong>Capítulo 16: El Efecto Dominó:</strong> Comprensión y mitigación del Efecto Látigo (<em>Bullwhip Effect</em>) y optimización de redes multi-escalón (MEIO).</p></li>
-<li><p><strong>Capítulo 17: Optimizando bajo Presión:</strong> Uso de Sim-Opt (Simulación-Optimización) para hallar la política perfecta en sistemas complejos.</p></li>
-</ul>
-</section>
-<section id="parte-vi-el-factor-humano-y-la-ejecución" class="level3">
-<h3 class="anchored" data-anchor-id="parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</h3>
-<p><strong>Enfoque:</strong> Asegurar la adopción de los modelos por parte de la organización.</p>
-<ul>
-<li><p><strong>Capítulo 18: ¿Aportamos Valor?:</strong> Implementación del marco FVA (<em>Forecast Value Added</em>) para medir qué pasos del proceso realmente mejoran la precisión.</p></li>
-<li><p><strong>Capítulo 19: La Guerra contra los Sesgos:</strong> Cómo gestionar el juicio humano y aprovechar la “sabiduría de las multitudes” sin dañar el pronóstico.</p></li>
-<li><p><strong>Capítulo 20: El Plan Maestro:</strong> Integración final de los modelos en el proceso de S&amp;OP (Sales and Operations Planning) y comunicación efectiva hacia la alta gerencia.</p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Requisitos previos
+<span class="screen-reader-only">Important</span>La Parsimonia en el Lote
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Para aprovechar al máximo este libro, necesitarás:</p>
-<ul>
-<li>Conocimientos básicos de R, Python.</li>
-<li>Familiaridad con conceptos de Supply Chain</li>
-<li>Acceso a RStudio y las librerías mencionadas en cada capítulo</li>
+<p>El mayor valor estratégico del EOQ no es el número exacto, sino demostrar que <strong>pedir más seguido no siempre es mejor</strong>. Si tus costos de transporte son altos, la eficiencia exige lotes más grandes.</p>
+</div>
+</div>
+</section>
+<section id="checklist-de-cierre-del-capítulo" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">¿He auditado cuánto cuesta realmente procesar un pedido (<span class="math inline">\(S\)</span>)?</label></li>
+<li><label><input type="checkbox">¿He calculado el EOQ para mis 20 productos con mayor impacto en capital?</label></li>
+<li><label><input type="checkbox">¿He verificado que mi ROP considera el stock en tránsito?</label></li>
+<li><label><input type="checkbox">¿Entiendo que en este modelo el stock promedio es <span class="math inline">\(EOQ/2\)</span>?</label></li>
+<li><label><input type="checkbox">¿Estoy listo para introducir el error de pronóstico (RMSE) en el próximo capítulo?</label></li>
 </ul>
-</div>
-</div>
-<hr>
-<p><strong>Prepárate para “ensuciarte las manos” y cambiar tu forma de ver un inventario para siempre.</strong></p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1042,10 +1038,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./cap-11-costos-inventario.html" class="pagination-link" aria-label="11. El Costo del Dinero y el Costo del Vacío">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">11. El Costo del Dinero y el Costo del Vacío</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cap-1-auditoria.html" class="pagination-link" aria-label="1. ¿Dónde estoy parado? ¿Como empiezo?">
-        <span class="nav-page-text"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./cap-13-stock-seguridad.html" class="pagination-link" aria-label="13. Bienvenidos al Mundo Estocástico">
+        <span class="nav-page-text"><span class="chapter-title">13. Bienvenidos al Mundo Estocástico</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1054,4 +1053,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-12-eoq-punto-reorden.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

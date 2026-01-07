@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Nicolás A. Bravo">
-<meta name="dcterms.date" content="2026-01-06">
 
-<title>Arquitectura de suministros</title>
+<title>3. Clasificando el Caos: Segmentación ABC/XYZ Dinámica – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,7 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cap-1-auditoria.html" rel="next">
+<link href="./cap-4-metricas-error.html" rel="next">
+<link href="./cap-2-espejo-realidad.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -76,6 +110,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -250,7 +313,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Bienvenido</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-1-auditoria.html">I: El Diagnóstico</a></li><li class="breadcrumb-item"><a href="./cap-3-abcxyz-dinamico.html"><span class="chapter-title">3. Clasificando el Caos: Segmentación ABC/XYZ Dinámica</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -281,7 +344,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bienvenido</span></a>
   </div>
 </li>
@@ -306,7 +369,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-3-abcxyz-dinamico.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3. Clasificando el Caos: Segmentación ABC/XYZ Dinámica</span></a>
+  <a href="./cap-3-abcxyz-dinamico.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">3. Clasificando el Caos: Segmentación ABC/XYZ Dinámica</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -466,50 +529,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bienvenido" id="toc-bienvenido" class="nav-link active" data-scroll-target="#bienvenido">Bienvenido</a>
-  <ul class="collapse">
-  <li><a href="#de-qué-trata-este-libro" id="toc-de-qué-trata-este-libro" class="nav-link" data-scroll-target="#de-qué-trata-este-libro">¿De qué trata este libro?</a></li>
-  <li><a href="#para-quién-es-este-manual" id="toc-para-quién-es-este-manual" class="nav-link" data-scroll-target="#para-quién-es-este-manual">¿Para quién es este manual?</a></li>
-  <li><a href="#estructura-detallada-del-manual" id="toc-estructura-detallada-del-manual" class="nav-link" data-scroll-target="#estructura-detallada-del-manual">Estructura Detallada del Manual</a>
-  <ul class="collapse">
-  <li><a href="#parte-i-el-diagnóstico-llegando-a-la-empresa" id="toc-parte-i-el-diagnóstico-llegando-a-la-empresa" class="nav-link" data-scroll-target="#parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</a></li>
-  <li><a href="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" id="toc-parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="nav-link" data-scroll-target="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</a></li>
-  <li><a href="#parte-iii-el-arsenal-del-científico-de-datos" id="toc-parte-iii-el-arsenal-del-científico-de-datos" class="nav-link" data-scroll-target="#parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</a></li>
-  <li><a href="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios" id="toc-parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="nav-link" data-scroll-target="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</a></li>
-  <li><a href="#parte-v-simulaciones-y-redes-complejas" id="toc-parte-v-simulaciones-y-redes-complejas" class="nav-link" data-scroll-target="#parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</a></li>
-  <li><a href="#parte-vi-el-factor-humano-y-la-ejecución" id="toc-parte-vi-el-factor-humano-y-la-ejecución" class="nav-link" data-scroll-target="#parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#fase-1-entender-el-valor-abc-multi-criterio" id="toc-fase-1-entender-el-valor-abc-multi-criterio" class="nav-link active" data-scroll-target="#fase-1-entender-el-valor-abc-multi-criterio">3.1 Fase 1: Entender el Valor (ABC Multi-criterio)</a></li>
+  <li><a href="#fase-2-medir-la-incertidumbre-matemática-xyz" id="toc-fase-2-medir-la-incertidumbre-matemática-xyz" class="nav-link" data-scroll-target="#fase-2-medir-la-incertidumbre-matemática-xyz">3.2 Fase 2: Medir la Incertidumbre (Matemática XYZ)</a></li>
+  <li><a href="#fase-3-decodificar-la-personalidad-syntetos-boylan" id="toc-fase-3-decodificar-la-personalidad-syntetos-boylan" class="nav-link" data-scroll-target="#fase-3-decodificar-la-personalidad-syntetos-boylan">3.3 Fase 3: Decodificar la Personalidad (Syntetos-Boylan)</a></li>
+  <li><a href="#fase-4-ejecución-dinámica-y-el-fenómeno-del-drift" id="toc-fase-4-ejecución-dinámica-y-el-fenómeno-del-drift" class="nav-link" data-scroll-target="#fase-4-ejecución-dinámica-y-el-fenómeno-del-drift">3.4 Fase 4: Ejecución Dinámica y el Fenómeno del “Drift”</a></li>
+  <li><a href="#todos-merecen-stock-de-seguridad-la-estrategia-del-pooling" id="toc-todos-merecen-stock-de-seguridad-la-estrategia-del-pooling" class="nav-link" data-scroll-target="#todos-merecen-stock-de-seguridad-la-estrategia-del-pooling">3.5 ¿Todos merecen Stock de Seguridad? (La Estrategia del Pooling)</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-3-abcxyz-dinamico.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-1-auditoria.html">I: El Diagnóstico</a></li><li class="breadcrumb-item"><a href="./cap-3-abcxyz-dinamico.html"><span class="chapter-title">3. Clasificando el Caos: Segmentación ABC/XYZ Dinámica</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Arquitectura de suministros</h1>
-<p class="subtitle lead">Ciencia de Datos Aplicada a la Gestión de Demanda e Inventarios.</p>
+<h1 class="title"><span class="chapter-title">3. Clasificando el Caos: Segmentación ABC/XYZ Dinámica</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta column-body">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Nicolás A. Bravo </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 6, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -519,111 +560,191 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bienvenido" class="level1 unnumbered">
-<h1 class="unnumbered">Bienvenido</h1>
-<p>Este libro no es solo un texto teórico sobre logística; es una hoja de ruta diseñada para transformar datos crudos en decisiones estratégicas. En el mundo real de la Supply Chain, la teoría académica suele chocar con la fricción de los datos sucios, la incertidumbre de los tiempos de entrega y la volatilidad implacable de la demanda. Aquí no encontrarás soluciones ideales para problemas inexistentes; aprenderás a navegar el caos real, paso a paso.</p>
-<div style="float: right">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><img src="images/img2.png" class="float-right img-fluid quarto-figure quarto-figure-right figure-img" style="margin-right: 0px; margin-bottom: 00px;" width="462"></p>
-</figure>
-</div>
-</div>
-<p>Nuestra premisa es clara: en la cadena de suministro moderna, la intuición ya no es suficiente. A medida que los mercados se vuelven más complejos, la capacidad de procesar, modelar y simular escenarios se convierte en la ventaja competitiva definitiva. Este manual ha sido creado para cerrar la brecha entre el analista tradicional y el Supply Chain Data Scientist, dotándote de un arsenal de herramientas que van desde la limpieza profunda de datos hasta la optimización multi-escalón.</p>
-<section id="de-qué-trata-este-libro" class="level2">
-<h2 class="anchored" data-anchor-id="de-qué-trata-este-libro">¿De qué trata este libro?</h2>
-<p>Es, fundamentalmente, un manual de ingeniería aplicada. Es el recurso que a muchos nos hubiera gustado tener al iniciar nuestra carrera en la intersección de las operaciones y la analítica: un puente que no solo explica qué es un inventario, sino cómo optimizarlo utilizando el poder del código y la Ciencia de Datos moderna.</p>
-<p>Nuestra filosofía es simple: hacer lo complejo, accionable. No pretendemos reinventar la rueda, sino enseñarte a construir una que ruede mejor bajo presión. A lo largo de estas páginas, pasaremos de los conceptos básicos a la implementación robusta en R y Python, priorizando siempre la generación de valor que impacte directamente en el nivel de servicio y la salud financiera de la organización.</p>
-<p>La realidad de la cadena de suministro es un sistema vivo, dinámico y, a menudo, desordenado. En este manual, desarrollaremos un ecosistema de herramientas para domesticar esa incertidumbre, transitando desde la auditoría inicial de visibilidad hasta la simulación avanzada de redes complejas.</p>
-</section>
-<section id="para-quién-es-este-manual" class="level2">
-<h2 class="anchored" data-anchor-id="para-quién-es-este-manual">¿Para quién es este manual?</h2>
-<p>Si eres un analista que busca evolucionar hacia el Data Science, un planeador de demanda que desea automatizar sus modelos para ganar tiempo estratégico, o un líder de operaciones que necesita entender la “caja negra” de los algoritmos para tomar mejores decisiones, este libro es para ti.</p>
-<p>Aquí no solo encontrarás ecuaciones; aprenderás a interpretar visualizaciones que cuentan historias, a detectar y mitigar sesgos humanos y, sobre todo, a responder con confianza a la pregunta crítica del negocio: “¿Para qué nos sirve esto hoy?”</p>
-</section>
-<section id="estructura-detallada-del-manual" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-detallada-del-manual">Estructura Detallada del Manual</h2>
-<p>A través de estas páginas, no solo construiremos modelos; construiremos un criterio técnico para saber cuándo confiar en un algoritmo y cuándo intervenir con el juicio de negocio. El objetivo final es simple pero ambicioso: que dejes de ser un espectador de los problemas de inventario y te conviertas en el arquitecto de una red de suministro resiliente, eficiente y, sobre todo, inteligente.</p>
-<p>El libro está diseñado como una hoja de ruta técnica y estratégica, dividida en seis ejes fundamentales:</p>
-<section id="parte-i-el-diagnóstico-llegando-a-la-empresa" class="level3">
-<h3 class="anchored" data-anchor-id="parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</h3>
-<p><strong>Enfoque:</strong> Visibilidad y limpieza. No puedes arreglar lo que no ves.</p>
-<ul>
-<li><p><strong>Capítulo 1: ¿Dónde estoy parado?</strong> Auditoría de datos, identificación de fuentes y mapeo del flujo de la cadena de suministro.</p></li>
-<li><p><strong>Capítulo 2: El Espejo de la Realidad:</strong> Diferenciación entre ventas históricas y demanda real (no restringida), analizando el impacto oculto de los quiebres de stock.</p></li>
-<li><p><strong>Capítulo 3: Clasificando el Caos:</strong> Implementación de segmentación ABC/XYZ dinámica utilizando Python para priorizar productos según valor y variabilidad.</p></li>
-<li><p><strong>Capítulo 4: ¿Qué tan mal estamos?</strong> Definición del <em>Baseline</em> y métricas críticas de error como MAE, RMSE y Bias para medir la precisión actual.</p></li>
-</ul>
-</section>
-<section id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="level3">
-<h3 class="anchored" data-anchor-id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</h3>
-<p><strong>Enfoque:</strong> Pasar de la intuición a la estadística descriptiva e inferencial.</p>
-<ul>
-<li><p><strong>Capítulo 5: El Pronóstico Ingenuo:</strong> Implementación de modelos <em>Naive</em> para establecer un punto de comparación (Benchmark) mínimo.</p></li>
-<li><p><strong>Capítulo 6: Suavizando la Curva:</strong> Aplicación de Suavizamiento Exponencial (Simple, Holt y Holt-Winters) y modelos estadísticos tradicionales.</p></li>
-<li><p><strong>Capítulo 7: Detectando Patrones:</strong> Identificación y descomposición de series de tiempo en sus componentes: Estacionalidad, Tendencia y Ciclos.</p></li>
-</ul>
-</section>
-<section id="parte-iii-el-arsenal-del-científico-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</h3>
-<p><strong>Enfoque:</strong> Escalando la precisión mediante el uso de Machine Learning avanzado.</p>
-<ul>
-<li><p><strong>Capítulo 8: Creando Inteligencia:</strong> Ingeniería de atributos (<em>Feature Engineering</em>), creación de Lags, impacto de precios y uso de variables externas.</p></li>
-<li><p><strong>Capítulo 9: El Bosque de las Decisiones:</strong> Aplicación práctica de algoritmos Random Forest y XGBoost para capturar patrones no lineales en la demanda.</p></li>
-<li><p><strong>Capítulo 10: Evitando el Espejismo:</strong> Técnicas de Validación Cruzada (Time Series Split) y estrategias para prevenir el sobreajuste (<em>Overfitting</em>).</p></li>
-</ul>
-</section>
-<section id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</h3>
-<p><strong>Enfoque:</strong> Traducir el pronóstico en decisiones de compra y almacenamiento: ¿Cuánto y cuándo pedir?</p>
-<ul>
-<li><p><strong>Capítulo 11: El Costo del Dinero y el Costo del Vacío:</strong> Modelado financiero de los costos de mantener inventario frente a los costos de escasez.</p></li>
-<li><p><strong>Capítulo 12: La Receta Básica:</strong> Aplicación del Lote Económico (EOQ) y Punto de Reorden en entornos de demanda estable.</p></li>
-<li><p><strong>Capítulo 13: El Colchón contra la Incertidumbre:</strong> Cálculo científico del Stock de Seguridad basado en el Nivel de Servicio objetivo y la variabilidad.</p></li>
-<li><p><strong>Capítulo 14: Más allá de la Curva Normal:</strong> Modelado de demandas erráticas o “Lumpy” utilizando Distribución Gamma y otros enfoques no tradicionales.</p></li>
-</ul>
-</section>
-<section id="parte-v-simulaciones-y-redes-complejas" class="level3">
-<h3 class="anchored" data-anchor-id="parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</h3>
-<p><strong>Enfoque:</strong> Reconocer que el mundo real es un sistema dinámico y no una fórmula estática.</p>
-<ul>
-<li><p><strong>Capítulo 15: El Laboratorio Virtual:</strong> Uso de Simulación de Monte Carlo para someter a prueba las políticas de inventario bajo miles de escenarios posibles.</p></li>
-<li><p><strong>Capítulo 16: El Efecto Dominó:</strong> Comprensión y mitigación del Efecto Látigo (<em>Bullwhip Effect</em>) y optimización de redes multi-escalón (MEIO).</p></li>
-<li><p><strong>Capítulo 17: Optimizando bajo Presión:</strong> Uso de Sim-Opt (Simulación-Optimización) para hallar la política perfecta en sistemas complejos.</p></li>
-</ul>
-</section>
-<section id="parte-vi-el-factor-humano-y-la-ejecución" class="level3">
-<h3 class="anchored" data-anchor-id="parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</h3>
-<p><strong>Enfoque:</strong> Asegurar la adopción de los modelos por parte de la organización.</p>
-<ul>
-<li><p><strong>Capítulo 18: ¿Aportamos Valor?:</strong> Implementación del marco FVA (<em>Forecast Value Added</em>) para medir qué pasos del proceso realmente mejoran la precisión.</p></li>
-<li><p><strong>Capítulo 19: La Guerra contra los Sesgos:</strong> Cómo gestionar el juicio humano y aprovechar la “sabiduría de las multitudes” sin dañar el pronóstico.</p></li>
-<li><p><strong>Capítulo 20: El Plan Maestro:</strong> Integración final de los modelos en el proceso de S&amp;OP (Sales and Operations Planning) y comunicación efectiva hacia la alta gerencia.</p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>¡Qué bueno verte por aquí otra vez! Ya sabemos cuánto nos están “mintiendo” nuestras ventas (Capítulo 2) y ya tenemos una serie de demanda reconstruida que refleja la intención real del mercado o de la planta. Ahora, la pregunta del millón es: <strong>¿A qué productos le dedico mi tiempo, mis neuronas y, sobre todo, el capital de trabajo de la empresa?</strong></p>
+<p>No todos los productos nacieron iguales bajo el sol de la cadena de suministro. En cualquier ecosistema industrial o de consumo, existen componentes que son el “corazón” del flujo de caja (los que pagan los sueldos) y otros que son, francamente, un ruido estadístico que solo ocupa espacio en la estantería y tiempo de procesamiento en tu servidor. Gestionarlos a todos con la misma política es una receta para el agotamiento del planificador y la ineficiencia financiera. Este capítulo no es solo teoría; es un sistema de triaje para que tu esfuerzo genere el máximo retorno.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Requisitos previos
+<span class="screen-reader-only">Tip</span>El Pareto del Esfuerzo: Maximizando el ROII
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Para aprovechar al máximo este libro, necesitarás:</p>
+<p>Como ingeniero, tu objetivo no es solo tener stock, sino maximizar el <strong>ROII</strong> (Return on Inventory Investment). Esta segmentación te enseñará a decidir qué se queda en “piloto automático” y a qué le pones una lupa y una revisión semanal. Aprenderás que el silencio operativo en los productos Clase C es tan valioso como la precisión quirúrgica en los Clase A.</p>
+</div>
+</div>
+<section id="fase-1-entender-el-valor-abc-multi-criterio" class="level2">
+<h2 class="anchored" data-anchor-id="fase-1-entender-el-valor-abc-multi-criterio">3.1 Fase 1: Entender el Valor (ABC Multi-criterio)</h2>
+<p><strong>El Concepto:</strong> El ABC clásico se basa en la Ley de Pareto (80/20), que sugiere que una pequeña minoría de SKUs genera la gran mayoría del valor. Sin embargo, para un ingeniero de suministro, el “valor” es una moneda de tres caras. Clasificar solo por facturación es tener una visión miope que ignora la realidad de la operación.</p>
+<p><strong>Entonces, hagamos esto:</strong> No clasifiques solo por venta o costo. Implementa un sistema de puntaje que cruce estas tres variables fundamentales:</p>
+<ol type="1">
+<li><p><strong>Valor de Utilización Anual (VUA):</strong> <span class="math inline">\((\text{Costo Unitario} \times \text{Demanda Reconstruida})\)</span>.</p>
 <ul>
-<li>Conocimientos básicos de R, Python.</li>
-<li>Familiaridad con conceptos de Supply Chain</li>
-<li>Acceso a RStudio y las librerías mencionadas en cada capítulo</li>
+<li><strong>¿De dónde sale?</strong> El <em>Costo Unitario</em> viene de tu tabla maestro de materiales (maestro de artículos). La <em>Demanda Reconstruida</em> es la sumatoria anual de la serie de tiempo que saneamos en el Capítulo 2.</li>
+</ul></li>
+<li><p><strong>Criticidad Técnica (Modelo V.E.D.):</strong></p>
+<ul>
+<li><p><strong>Vital (V):</strong> Su ausencia detiene la producción (ej. repuesto crítico).</p></li>
+<li><p><strong>Essential (E):</strong> Su ausencia degrada el rendimiento.</p></li>
+<li><p><strong>Desirable (D):</strong> Su ausencia es una molestia menor.</p></li>
+</ul></li>
+<li><p><strong>Intensidad Logística (Picking):</strong> Frecuencia de movimientos. Un tornillo de 1 centavo pedido 50 veces al día genera más costo de gestión (HH) que un motor caro de pedido mensual.</p></li>
+</ol>
+<p><strong>Y así logramos esto:</strong> Una jerarquía estratégica donde el esfuerzo es proporcional al riesgo. Un componente “C” en valor pero “V” en criticidad sube automáticamente a la categoría <strong>A Estratégico</strong>.</p>
+</section>
+<section id="fase-2-medir-la-incertidumbre-matemática-xyz" class="level2">
+<h2 class="anchored" data-anchor-id="fase-2-medir-la-incertidumbre-matemática-xyz">3.2 Fase 2: Medir la Incertidumbre (Matemática XYZ)</h2>
+<p><strong>El Concepto:</strong> El ABC nos dice qué es importante, pero no nos dice qué tan difícil será predecirlo. Aquí es donde entra la segmentación XYZ, que mide la <strong>volatilidad de la señal de demanda</strong>. Un producto AX es el sueño del planner (mucho dinero, poca sorpresa), pero un producto AZ es una pesadilla (mucho dinero, caos absoluto).</p>
+<p><strong>Entonces, hagamos esto:</strong> Calcula el Coeficiente de Variación (<span class="math inline">\(CV\)</span>) de tu demanda reconstruida para cada SKU:</p>
+<p><span class="math display">\[
+\large CV = \frac{\sigma}{\mu}
+\]</span></p>
+<p><strong>Desglose de la fórmula y origen de datos:</strong></p>
+<ul>
+<li><p><span class="math inline">\(\mu\)</span> <strong>(Media aritmética):</strong> Es el promedio de la demanda en el horizonte de tiempo analizado.</p>
+<ul>
+<li><p><em>Cálculo:</em> <span class="math inline">\(\sum Demanda_t / n\)</span>.</p></li>
+<li><p><em>Origen:</em> Serie de tiempo de demanda reconstruida (Capítulo 2).</p></li>
+</ul></li>
+<li><p><span class="math inline">\(\sigma\)</span> <strong>(Desviación Estándar):</strong> Mide cuánto se alejan los datos diarios (o semanales) de ese promedio.</p>
+<ul>
+<li><p><em>Cálculo:</em> <span class="math inline">\(\sqrt{\frac{\sum (Demanda_t - \mu)^2}{n}}\)</span>. Representa la dispersión o el “ruido”.</p></li>
+<li><p><em>Origen:</em> Se calcula sobre la misma serie de tiempo que el promedio.</p></li>
+</ul></li>
 </ul>
+<p><strong>Interpretación para ingeniería:</strong></p>
+<ul>
+<li><p><strong>X (Estables):</strong> <span class="math inline">\(CV &lt; 0.5\)</span>. La desviación es pequeña respecto al promedio. Modelos lineales funcionan bien.</p></li>
+<li><p><strong>Y (Variables):</strong> <span class="math inline">\(0.5 \le CV \le 1.0\)</span>. Hay oscilaciones importantes (estacionalidad).</p></li>
+<li><p><strong>Z (Inciertos):</strong> <span class="math inline">\(CV &gt; 1.0\)</span>. La desviación supera al promedio. El riesgo de error es altísimo.</p></li>
+</ul>
+<p><strong>Consecuencia:</strong> El <strong>Stock de Seguridad (</strong><span class="math inline">\(SS\)</span><strong>)</strong> depende directamente de <span class="math inline">\(\sigma\)</span>. Si tienes un producto con <span class="math inline">\(CV &gt; 1\)</span>, el costo de protegerse contra el quiebre puede devorar el margen del producto.</p>
+</section>
+<section id="fase-3-decodificar-la-personalidad-syntetos-boylan" class="level2">
+<h2 class="anchored" data-anchor-id="fase-3-decodificar-la-personalidad-syntetos-boylan">3.3 Fase 3: Decodificar la Personalidad (Syntetos-Boylan)</h2>
+<p><strong>El Concepto:</strong> Para un ingeniero de datos, el <span class="math inline">\(CV\)</span> es incompleto porque no distingue entre un producto que se vende poco pero constante y uno que vende mucho pero en un solo “golpe” al año. Necesitamos conocer la “textura” del dato para elegir el algoritmo de IA correcto.</p>
+<p><strong>Entonces, hagamos esto:</strong> Calculamos dos indicadores técnicos sobre tu serie histórica (se recomienda usar granularidad semanal para este análisis):</p>
+<ol type="1">
+<li><p><strong>ADI (Average Demand Interval):</strong> Mide la frecuencia o “densidad” de la demanda.</p>
+<p><span class="math display">\[
+\large p = \frac{\text{Número de Periodos Totales}}{\text{Número de Periodos con Demanda}}
+\]</span></p>
+<ul>
+<li><p><strong>¿De dónde sale?</strong> Del conteo de periodos (días/semanas) en tu serie de tiempo. Si analizas 52 semanas y hubo demanda en 10, tu <span class="math inline">\(p = 5.2\)</span>.</p></li>
+<li><p><strong>Significado:</strong> Si <span class="math inline">\(p\)</span> es alto, el producto es “lento” o intermitente.</p></li>
+</ul></li>
+<li><p><span class="math inline">\(CV^2\)</span> <strong>(Variabilidad del Tamaño):</strong> Mide la estabilidad de las cantidades cuando <em>sí</em> hay demanda.</p>
+<p><span class="math display">\[
+\large CV^2 = \left( \frac{\sigma_{no\_cero}}{\mu_{no\_cero}} \right)^2
+\]</span></p>
+<ul>
+<li><p><strong>¿De dónde sale?</strong> Tomas solo los días donde la demanda fue mayor a cero. Calculas su desviación estándar y su promedio, los divides y elevas al cuadrado.</p></li>
+<li><p><strong>Significado:</strong> Si es bajo, cuando piden, piden siempre lo mismo. Si es alto, las cantidades son una lotería.</p></li>
+</ul></li>
+</ol>
+<p><strong>Y así logramos esto:</strong> Clasificamos el SKU en uno de los cuatro perfiles de personalidad de demanda:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Perfil</th>
+<th>Características Matemáticas</th>
+<th>Implicación de Ingeniería</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Smooth</strong></td>
+<td>(<span class="math inline">\(p &lt; 1.32, CV^2 &lt; 0.49\)</span>)</td>
+<td>Constante. Usa <strong>Distribución Normal</strong>. Ideal para JIT.</td>
+</tr>
+<tr class="even">
+<td><strong>Erratic</strong></td>
+<td>(<span class="math inline">\(p &lt; 1.32, CV^2 \ge 0.49\)</span>)</td>
+<td>Siempre presente, pero cantidades locas. Requiere <strong>Buffering</strong>.</td>
+</tr>
+<tr class="odd">
+<td><strong>Intermittent</strong></td>
+<td>(<span class="math inline">\(p \ge 1.32, CV^2 &lt; 0.49\)</span>)</td>
+<td>Goteo lento pero predecible. Usa <strong>Modelos de Croston</strong>.</td>
+</tr>
+<tr class="even">
+<td><strong>Lumpy</strong></td>
+<td>(<span class="math inline">\(p \ge 1.32, CV^2 \ge 0.49\)</span>)</td>
+<td>El caos: ráfagas inciertas. Requiere <strong>Stock de Seguridad no-normal</strong>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fase-4-ejecución-dinámica-y-el-fenómeno-del-drift" class="level2">
+<h2 class="anchored" data-anchor-id="fase-4-ejecución-dinámica-y-el-fenómeno-del-drift">3.4 Fase 4: Ejecución Dinámica y el Fenómeno del “Drift”</h2>
+<p><strong>El Concepto:</strong> El mercado es un organismo vivo. Un producto que hoy es una estrella estable (<strong>AX Smooth</strong>) puede convertirse en un peso muerto (<strong>CZ Lumpy</strong>) en seis meses. A esto lo llamamos <strong>Drift</strong> (Deriva).</p>
+<p><strong>Entonces, hagamos esto:</strong> Implementa un recálculo trimestral automatizado. No es una tarea manual; es un script que corre sobre tus datos.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Hagamos esto: Simular un portafolio de 500 SKUs para visualizar el riesgo real</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df_portfolio <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">sku =</span> <span class="fu">paste0</span>(<span class="st">"SKU-"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">500</span>),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">adi =</span> <span class="fu">runif</span>(<span class="dv">500</span>, <span class="dv">1</span>, <span class="dv">4</span>),    </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">cv2 =</span> <span class="fu">runif</span>(<span class="dv">500</span>, <span class="fl">0.1</span>, <span class="fl">1.2</span>) </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">perfil =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    adi <span class="sc">&lt;</span> <span class="fl">1.32</span> <span class="sc">&amp;</span> cv2 <span class="sc">&lt;</span> <span class="fl">0.49</span> <span class="sc">~</span> <span class="st">"Smooth"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    adi <span class="sc">&gt;=</span> <span class="fl">1.32</span> <span class="sc">&amp;</span> cv2 <span class="sc">&lt;</span> <span class="fl">0.49</span> <span class="sc">~</span> <span class="st">"Intermittent"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    adi <span class="sc">&lt;</span> <span class="fl">1.32</span> <span class="sc">&amp;</span> cv2 <span class="sc">&gt;=</span> <span class="fl">0.49</span> <span class="sc">~</span> <span class="st">"Erratic"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Lumpy"</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualización para la toma de decisiones estratégicas</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_portfolio, <span class="fu">aes</span>(<span class="at">x =</span> adi, <span class="at">y =</span> cv2, <span class="at">color =</span> perfil)) <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.32</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"darkred"</span>) <span class="sc">+</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.49</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"darkred"</span>) <span class="sc">+</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Smooth"</span><span class="ot">=</span><span class="st">"#27ae60"</span>, <span class="st">"Erratic"</span><span class="ot">=</span><span class="st">"#f1c40f"</span>, </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Intermittent"</span><span class="ot">=</span><span class="st">"#2980b9"</span>, <span class="st">"Lumpy"</span><span class="ot">=</span><span class="st">"#c0392b"</span>)) <span class="sc">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mapa de Personalidad de Inventarios (Syntetos-Boylan)"</span>,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Frecuencia de Demanda (ADI)"</span>, <span class="at">y =</span> <span class="st">"Variabilidad del Tamaño (CV2)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="todos-merecen-stock-de-seguridad-la-estrategia-del-pooling" class="level2">
+<h2 class="anchored" data-anchor-id="todos-merecen-stock-de-seguridad-la-estrategia-del-pooling">3.5 ¿Todos merecen Stock de Seguridad? (La Estrategia del Pooling)</h2>
+<p><strong>El Concepto:</strong> El stock de seguridad tiene un costo de oportunidad masivo. Si tienes 1,000 SKUs del tipo CZ/Lumpy y a cada uno le pones un colchón de seguridad, tendrás capital inmovilizado que probablemente caduque o se vuelva obsoleto.</p>
+<p><strong>Entonces, hagamos esto:</strong> Aplica la segmentación para decidir la ubicación física del stock.</p>
+<ul>
+<li><p><strong>Para AX/Smooth:</strong> Descentraliza. Tenlo cerca de la línea de producción o del cliente. El flujo es seguro y el costo de transporte justifica el stock local.</p></li>
+<li><p><strong>Para CZ/Lumpy:</strong> Aplica <strong>Inventory Pooling</strong>. No guardes esto en todas las sucursales. Guárdalo solo en el Centro de Distribución Central. Al consolidar la demanda incierta de 10 puntos en uno solo, la variabilidad se compensa estadísticamente y necesitas mucho menos inventario total para el mismo nivel de servicio.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Resumen del Paso 3
 </div>
 </div>
-<hr>
-<p><strong>Prepárate para “ensuciarte las manos” y cambiar tu forma de ver un inventario para siempre.</strong></p>
+<div class="callout-body-container callout-body">
+<p>Hemos transformado el caos de miles de referencias en una estrategia constructiva:</p>
+<ol type="1">
+<li><p><strong>Segmentamos por Valor y Criticidad (ABC)</strong> <span class="math inline">\(\rightarrow\)</span> Sabemos qué defender a muerte.</p></li>
+<li><p><strong>Medimos la Predictibilidad (XYZ)</strong> <span class="math inline">\(\rightarrow\)</span> Entendemos el riesgo del error (<span class="math inline">\(\sigma\)</span>).</p></li>
+<li><p><strong>Decodificamos el Patrón (ADI y</strong> <span class="math inline">\(CV^2\)</span><strong>)</strong> <span class="math inline">\(\rightarrow\)</span> Elegimos el “motor matemático” adecuado.</p></li>
+<li><p><strong>Aceptamos el Cambio (Drift Dinámico)</strong> <span class="math inline">\(\rightarrow\)</span> Recalculamos para no planificar con el pasado.</p></li>
+</ol>
+<p>Ahora que ya sabemos qué productos importan y cuál es su “personalidad”, es hora de mirarnos al espejo: ¿Qué tan bien (o mal) estamos pronosticando hoy? En el <strong>Capítulo 4</strong>, estableceremos nuestro <strong>Baseline</strong> y las métricas de error.</p>
+</div>
+</div>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1042,10 +1163,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./cap-2-espejo-realidad.html" class="pagination-link" aria-label="2. El Espejo de la Realidad: Ventas vs. Demanda">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cap-1-auditoria.html" class="pagination-link" aria-label="1. ¿Dónde estoy parado? ¿Como empiezo?">
-        <span class="nav-page-text"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./cap-4-metricas-error.html" class="pagination-link" aria-label="4. ¿Qué tan mal estamos? Estableciendo el Baseline y Métricas de Error">
+        <span class="nav-page-text"><span class="chapter-title">4. ¿Qué tan mal estamos? Estableciendo el Baseline y Métricas de Error</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1054,4 +1178,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-3-abcxyz-dinamico.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

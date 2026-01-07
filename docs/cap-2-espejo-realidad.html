@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Nicolás A. Bravo">
-<meta name="dcterms.date" content="2026-01-06">
 
-<title>Arquitectura de suministros</title>
+<title>2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cap-1-auditoria.html" rel="next">
+<link href="./cap-3-abcxyz-dinamico.html" rel="next">
+<link href="./cap-1-auditoria.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -76,6 +75,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -250,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Bienvenido</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-1-auditoria.html">I: El Diagnóstico</a></li><li class="breadcrumb-item"><a href="./cap-2-espejo-realidad.html"><span class="chapter-title">2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -281,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bienvenido</span></a>
   </div>
 </li>
@@ -301,7 +329,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-2-espejo-realidad.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda</span></a>
+  <a href="./cap-2-espejo-realidad.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -466,50 +494,50 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bienvenido" id="toc-bienvenido" class="nav-link active" data-scroll-target="#bienvenido">Bienvenido</a>
+  <li><a href="#i.-fundamentos-la-ecuación-universal" id="toc-i.-fundamentos-la-ecuación-universal" class="nav-link active" data-scroll-target="#i.-fundamentos-la-ecuación-universal">I. Fundamentos: La Ecuación Universal</a>
   <ul class="collapse">
-  <li><a href="#de-qué-trata-este-libro" id="toc-de-qué-trata-este-libro" class="nav-link" data-scroll-target="#de-qué-trata-este-libro">¿De qué trata este libro?</a></li>
-  <li><a href="#para-quién-es-este-manual" id="toc-para-quién-es-este-manual" class="nav-link" data-scroll-target="#para-quién-es-este-manual">¿Para quién es este manual?</a></li>
-  <li><a href="#estructura-detallada-del-manual" id="toc-estructura-detallada-del-manual" class="nav-link" data-scroll-target="#estructura-detallada-del-manual">Estructura Detallada del Manual</a>
+  <li><a href="#la-ecuación-de-la-mentira-salidas-vs.-necesidad" id="toc-la-ecuación-de-la-mentira-salidas-vs.-necesidad" class="nav-link" data-scroll-target="#la-ecuación-de-la-mentira-salidas-vs.-necesidad">2.1 La Ecuación de la Mentira: Salidas vs.&nbsp;Necesidad</a></li>
+  <li><a href="#el-ciclo-de-la-mediocridad-automatizada-sesgo-de-ia" id="toc-el-ciclo-de-la-mediocridad-automatizada-sesgo-de-ia" class="nav-link" data-scroll-target="#el-ciclo-de-la-mediocridad-automatizada-sesgo-de-ia">2.2 El Ciclo de la Mediocridad Automatizada (Sesgo de IA)</a></li>
+  </ul></li>
+  <li><a href="#ii.-diagnóstico-detectando-el-ruido-en-el-espejo" id="toc-ii.-diagnóstico-detectando-el-ruido-en-el-espejo" class="nav-link" data-scroll-target="#ii.-diagnóstico-detectando-el-ruido-en-el-espejo">II. Diagnóstico: Detectando el “Ruido” en el Espejo</a>
   <ul class="collapse">
-  <li><a href="#parte-i-el-diagnóstico-llegando-a-la-empresa" id="toc-parte-i-el-diagnóstico-llegando-a-la-empresa" class="nav-link" data-scroll-target="#parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</a></li>
-  <li><a href="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" id="toc-parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="nav-link" data-scroll-target="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</a></li>
-  <li><a href="#parte-iii-el-arsenal-del-científico-de-datos" id="toc-parte-iii-el-arsenal-del-científico-de-datos" class="nav-link" data-scroll-target="#parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</a></li>
-  <li><a href="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios" id="toc-parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="nav-link" data-scroll-target="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</a></li>
-  <li><a href="#parte-v-simulaciones-y-redes-complejas" id="toc-parte-v-simulaciones-y-redes-complejas" class="nav-link" data-scroll-target="#parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</a></li>
-  <li><a href="#parte-vi-el-factor-humano-y-la-ejecución" id="toc-parte-vi-el-factor-humano-y-la-ejecución" class="nav-link" data-scroll-target="#parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</a></li>
+  <li><a href="#los-días-de-stock-out-como-herramienta-forense" id="toc-los-días-de-stock-out-como-herramienta-forense" class="nav-link" data-scroll-target="#los-días-de-stock-out-como-herramienta-forense">2.3 Los “Días de Stock Out” como Herramienta Forense</a></li>
+  <li><a href="#la-trampa-de-la-granularidad-el-mes-es-el-escondite-del-fracaso" id="toc-la-trampa-de-la-granularidad-el-mes-es-el-escondite-del-fracaso" class="nav-link" data-scroll-target="#la-trampa-de-la-granularidad-el-mes-es-el-escondite-del-fracaso">2.4 La Trampa de la Granularidad: El Mes es el Escondite del Fracaso</a></li>
   </ul></li>
+  <li><a href="#iii.-el-enfoque-industrial-mro-proyectos-y-clientes-internos" id="toc-iii.-el-enfoque-industrial-mro-proyectos-y-clientes-internos" class="nav-link" data-scroll-target="#iii.-el-enfoque-industrial-mro-proyectos-y-clientes-internos">III. El Enfoque Industrial: MRO, Proyectos y Clientes Internos</a>
+  <ul class="collapse">
+  <li><a href="#el-elemento-pep-como-segmentador-de-demanda" id="toc-el-elemento-pep-como-segmentador-de-demanda" class="nav-link" data-scroll-target="#el-elemento-pep-como-segmentador-de-demanda">2.5 El Elemento PEP como Segmentador de Demanda</a></li>
+  <li><a href="#fecha-de-necesidad-vs.-fecha-de-despacho" id="toc-fecha-de-necesidad-vs.-fecha-de-despacho" class="nav-link" data-scroll-target="#fecha-de-necesidad-vs.-fecha-de-despacho">2.6 Fecha de Necesidad vs.&nbsp;Fecha de Despacho</a></li>
   </ul></li>
+  <li><a href="#iv.-ingeniería-de-conceptos-la-caja-de-herramientas-del-planner" id="toc-iv.-ingeniería-de-conceptos-la-caja-de-herramientas-del-planner" class="nav-link" data-scroll-target="#iv.-ingeniería-de-conceptos-la-caja-de-herramientas-del-planner">IV. Ingeniería de Conceptos: La Caja de Herramientas del Planner</a>
+  <ul class="collapse">
+  <li><a href="#definiciones-críticas-los-cuatro-pilares" id="toc-definiciones-críticas-los-cuatro-pilares" class="nav-link" data-scroll-target="#definiciones-críticas-los-cuatro-pilares">2.7 Definiciones Críticas: Los Cuatro Pilares</a></li>
+  <li><a href="#la-fórmula-de-la-posición-de-inventario-ip" id="toc-la-fórmula-de-la-posición-de-inventario-ip" class="nav-link" data-scroll-target="#la-fórmula-de-la-posición-de-inventario-ip">2.8 La Fórmula de la Posición de Inventario (<span class="math inline">\(IP\)</span>)</a></li>
+  </ul></li>
+  <li><a href="#v.-el-ruido-del-éxito-promociones-y-eventos" id="toc-v.-el-ruido-del-éxito-promociones-y-eventos" class="nav-link" data-scroll-target="#v.-el-ruido-del-éxito-promociones-y-eventos">V. El Ruido del Éxito: Promociones y Eventos</a></li>
+  <li><a href="#vi.-reconstrucción-curando-la-serie-de-tiempo" id="toc-vi.-reconstrucción-curando-la-serie-de-tiempo" class="nav-link" data-scroll-target="#vi.-reconstrucción-curando-la-serie-de-tiempo">VI. Reconstrucción: Curando la Serie de Tiempo</a>
+  <ul class="collapse">
+  <li><a href="#el-efecto-rebote-y-la-redistribución-de-backlog" id="toc-el-efecto-rebote-y-la-redistribución-de-backlog" class="nav-link" data-scroll-target="#el-efecto-rebote-y-la-redistribución-de-backlog">2.9 El Efecto Rebote y la Redistribución de Backlog</a></li>
+  <li><a href="#técnicas-de-imputación-estadística" id="toc-técnicas-de-imputación-estadística" class="nav-link" data-scroll-target="#técnicas-de-imputación-estadística">2.10 Técnicas de Imputación Estadística</a></li>
+  </ul></li>
+  <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-2-espejo-realidad.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-1-auditoria.html">I: El Diagnóstico</a></li><li class="breadcrumb-item"><a href="./cap-2-espejo-realidad.html"><span class="chapter-title">2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Arquitectura de suministros</h1>
-<p class="subtitle lead">Ciencia de Datos Aplicada a la Gestión de Demanda e Inventarios.</p>
+<h1 class="title"><span class="chapter-title">2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta column-body">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Nicolás A. Bravo </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 6, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -519,86 +547,24 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bienvenido" class="level1 unnumbered">
-<h1 class="unnumbered">Bienvenido</h1>
-<p>Este libro no es solo un texto teórico sobre logística; es una hoja de ruta diseñada para transformar datos crudos en decisiones estratégicas. En el mundo real de la Supply Chain, la teoría académica suele chocar con la fricción de los datos sucios, la incertidumbre de los tiempos de entrega y la volatilidad implacable de la demanda. Aquí no encontrarás soluciones ideales para problemas inexistentes; aprenderás a navegar el caos real, paso a paso.</p>
-<div style="float: right">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><img src="images/img2.png" class="float-right img-fluid quarto-figure quarto-figure-right figure-img" style="margin-right: 0px; margin-bottom: 00px;" width="462"></p>
-</figure>
-</div>
-</div>
-<p>Nuestra premisa es clara: en la cadena de suministro moderna, la intuición ya no es suficiente. A medida que los mercados se vuelven más complejos, la capacidad de procesar, modelar y simular escenarios se convierte en la ventaja competitiva definitiva. Este manual ha sido creado para cerrar la brecha entre el analista tradicional y el Supply Chain Data Scientist, dotándote de un arsenal de herramientas que van desde la limpieza profunda de datos hasta la optimización multi-escalón.</p>
-<section id="de-qué-trata-este-libro" class="level2">
-<h2 class="anchored" data-anchor-id="de-qué-trata-este-libro">¿De qué trata este libro?</h2>
-<p>Es, fundamentalmente, un manual de ingeniería aplicada. Es el recurso que a muchos nos hubiera gustado tener al iniciar nuestra carrera en la intersección de las operaciones y la analítica: un puente que no solo explica qué es un inventario, sino cómo optimizarlo utilizando el poder del código y la Ciencia de Datos moderna.</p>
-<p>Nuestra filosofía es simple: hacer lo complejo, accionable. No pretendemos reinventar la rueda, sino enseñarte a construir una que ruede mejor bajo presión. A lo largo de estas páginas, pasaremos de los conceptos básicos a la implementación robusta en R y Python, priorizando siempre la generación de valor que impacte directamente en el nivel de servicio y la salud financiera de la organización.</p>
-<p>La realidad de la cadena de suministro es un sistema vivo, dinámico y, a menudo, desordenado. En este manual, desarrollaremos un ecosistema de herramientas para domesticar esa incertidumbre, transitando desde la auditoría inicial de visibilidad hasta la simulación avanzada de redes complejas.</p>
+<p>Ya pasamos la escoba en el Capítulo 1. Tenemos datos limpios, sin duplicados y con las jerarquías de productos y ubicaciones perfectamente claras. En este punto, es probable que te sientas confiado. Miras tu base de datos, ves una columna que dice “Venta Histórica” o “Consumos de Almacén”, calculas un promedio de 100 unidades mensuales y piensas: <em>“Listo, mi demanda promedio es 100 y mi desviación es 15; ya puedo calcular mi stock de seguridad”</em>.</p>
+<p>Te voy avisando desde ahora: <strong>Probablemente te estés mintiendo a vos mismo.</strong></p>
+<p>Lo que ves en tu pantalla no es la realidad del mercado ni la necesidad real de tu planta de producción; es un reflejo de tus propias limitaciones operativas. En Supply Chain, confundir lo que el sistema registró como una transacción exitosa (Salida) con lo que el cliente realmente requería (Necesidad) es el pecado capital número uno. Es como intentar conducir un vehículo de carga mirando únicamente por el espejo retrovisor mientras este está empañado por la lluvia: ves lo que dejaste atrás, pero no ves los obstáculos que tienes enfrente ni la velocidad real a la que deberías ir.</p>
+<section id="i.-fundamentos-la-ecuación-universal" class="level2">
+<h2 class="anchored" data-anchor-id="i.-fundamentos-la-ecuación-universal">I. Fundamentos: La Ecuación Universal</h2>
+<section id="la-ecuación-de-la-mentira-salidas-vs.-necesidad" class="level3">
+<h3 class="anchored" data-anchor-id="la-ecuación-de-la-mentira-salidas-vs.-necesidad">2.1 La Ecuación de la Mentira: Salidas vs.&nbsp;Necesidad</h3>
+<p>La desigualdad fundamental que rige la vida de un planificador es: <span class="math inline">\(Salida_t \leq Necesidad_t\)</span>. En términos de ingeniería de datos, la <strong>Salida</strong> es una función restringida por la realidad física de tu almacén:</p>
+<p><span class="math display">\[
+\large Salida_t = \min(Necesidad_t, Disponibilidad_t)
+\]</span></p>
+<p>Esta simple fórmula tiene implicaciones profundas. Si el cliente tiene una necesidad de 150 unidades, pero tu disponibilidad es de solo 80, tu sistema grabará “80”. El problema es que para el ERP, ese 80 es una “verdad contable”, pero para el pronosticador es una “mentira estadística”. Al registrar solo lo que pudiste entregar, has borrado el rastro de la demanda real.</p>
 </section>
-<section id="para-quién-es-este-manual" class="level2">
-<h2 class="anchored" data-anchor-id="para-quién-es-este-manual">¿Para quién es este manual?</h2>
-<p>Si eres un analista que busca evolucionar hacia el Data Science, un planeador de demanda que desea automatizar sus modelos para ganar tiempo estratégico, o un líder de operaciones que necesita entender la “caja negra” de los algoritmos para tomar mejores decisiones, este libro es para ti.</p>
-<p>Aquí no solo encontrarás ecuaciones; aprenderás a interpretar visualizaciones que cuentan historias, a detectar y mitigar sesgos humanos y, sobre todo, a responder con confianza a la pregunta crítica del negocio: “¿Para qué nos sirve esto hoy?”</p>
-</section>
-<section id="estructura-detallada-del-manual" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-detallada-del-manual">Estructura Detallada del Manual</h2>
-<p>A través de estas páginas, no solo construiremos modelos; construiremos un criterio técnico para saber cuándo confiar en un algoritmo y cuándo intervenir con el juicio de negocio. El objetivo final es simple pero ambicioso: que dejes de ser un espectador de los problemas de inventario y te conviertas en el arquitecto de una red de suministro resiliente, eficiente y, sobre todo, inteligente.</p>
-<p>El libro está diseñado como una hoja de ruta técnica y estratégica, dividida en seis ejes fundamentales:</p>
-<section id="parte-i-el-diagnóstico-llegando-a-la-empresa" class="level3">
-<h3 class="anchored" data-anchor-id="parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</h3>
-<p><strong>Enfoque:</strong> Visibilidad y limpieza. No puedes arreglar lo que no ves.</p>
+<section id="el-ciclo-de-la-mediocridad-automatizada-sesgo-de-ia" class="level3">
+<h3 class="anchored" data-anchor-id="el-ciclo-de-la-mediocridad-automatizada-sesgo-de-ia">2.2 El Ciclo de la Mediocridad Automatizada (Sesgo de IA)</h3>
+<p>Si utilizas estos datos “censurados” para entrenar un modelo de Inteligencia Artificial, estarás creando un bucle de retroalimentación negativa. El modelo aprenderá que tu capacidad de servicio es la demanda real.</p>
 <ul>
-<li><p><strong>Capítulo 1: ¿Dónde estoy parado?</strong> Auditoría de datos, identificación de fuentes y mapeo del flujo de la cadena de suministro.</p></li>
-<li><p><strong>Capítulo 2: El Espejo de la Realidad:</strong> Diferenciación entre ventas históricas y demanda real (no restringida), analizando el impacto oculto de los quiebres de stock.</p></li>
-<li><p><strong>Capítulo 3: Clasificando el Caos:</strong> Implementación de segmentación ABC/XYZ dinámica utilizando Python para priorizar productos según valor y variabilidad.</p></li>
-<li><p><strong>Capítulo 4: ¿Qué tan mal estamos?</strong> Definición del <em>Baseline</em> y métricas críticas de error como MAE, RMSE y Bias para medir la precisión actual.</p></li>
-</ul>
-</section>
-<section id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="level3">
-<h3 class="anchored" data-anchor-id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</h3>
-<p><strong>Enfoque:</strong> Pasar de la intuición a la estadística descriptiva e inferencial.</p>
-<ul>
-<li><p><strong>Capítulo 5: El Pronóstico Ingenuo:</strong> Implementación de modelos <em>Naive</em> para establecer un punto de comparación (Benchmark) mínimo.</p></li>
-<li><p><strong>Capítulo 6: Suavizando la Curva:</strong> Aplicación de Suavizamiento Exponencial (Simple, Holt y Holt-Winters) y modelos estadísticos tradicionales.</p></li>
-<li><p><strong>Capítulo 7: Detectando Patrones:</strong> Identificación y descomposición de series de tiempo en sus componentes: Estacionalidad, Tendencia y Ciclos.</p></li>
-</ul>
-</section>
-<section id="parte-iii-el-arsenal-del-científico-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</h3>
-<p><strong>Enfoque:</strong> Escalando la precisión mediante el uso de Machine Learning avanzado.</p>
-<ul>
-<li><p><strong>Capítulo 8: Creando Inteligencia:</strong> Ingeniería de atributos (<em>Feature Engineering</em>), creación de Lags, impacto de precios y uso de variables externas.</p></li>
-<li><p><strong>Capítulo 9: El Bosque de las Decisiones:</strong> Aplicación práctica de algoritmos Random Forest y XGBoost para capturar patrones no lineales en la demanda.</p></li>
-<li><p><strong>Capítulo 10: Evitando el Espejismo:</strong> Técnicas de Validación Cruzada (Time Series Split) y estrategias para prevenir el sobreajuste (<em>Overfitting</em>).</p></li>
-</ul>
-</section>
-<section id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</h3>
-<p><strong>Enfoque:</strong> Traducir el pronóstico en decisiones de compra y almacenamiento: ¿Cuánto y cuándo pedir?</p>
-<ul>
-<li><p><strong>Capítulo 11: El Costo del Dinero y el Costo del Vacío:</strong> Modelado financiero de los costos de mantener inventario frente a los costos de escasez.</p></li>
-<li><p><strong>Capítulo 12: La Receta Básica:</strong> Aplicación del Lote Económico (EOQ) y Punto de Reorden en entornos de demanda estable.</p></li>
-<li><p><strong>Capítulo 13: El Colchón contra la Incertidumbre:</strong> Cálculo científico del Stock de Seguridad basado en el Nivel de Servicio objetivo y la variabilidad.</p></li>
-<li><p><strong>Capítulo 14: Más allá de la Curva Normal:</strong> Modelado de demandas erráticas o “Lumpy” utilizando Distribución Gamma y otros enfoques no tradicionales.</p></li>
-</ul>
-</section>
-<section id="parte-v-simulaciones-y-redes-complejas" class="level3">
-<h3 class="anchored" data-anchor-id="parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</h3>
-<p><strong>Enfoque:</strong> Reconocer que el mundo real es un sistema dinámico y no una fórmula estática.</p>
-<ul>
-<li><p><strong>Capítulo 15: El Laboratorio Virtual:</strong> Uso de Simulación de Monte Carlo para someter a prueba las políticas de inventario bajo miles de escenarios posibles.</p></li>
-<li><p><strong>Capítulo 16: El Efecto Dominó:</strong> Comprensión y mitigación del Efecto Látigo (<em>Bullwhip Effect</em>) y optimización de redes multi-escalón (MEIO).</p></li>
-<li><p><strong>Capítulo 17: Optimizando bajo Presión:</strong> Uso de Sim-Opt (Simulación-Optimización) para hallar la política perfecta en sistemas complejos.</p></li>
-</ul>
-</section>
-<section id="parte-vi-el-factor-humano-y-la-ejecución" class="level3">
-<h3 class="anchored" data-anchor-id="parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</h3>
-<p><strong>Enfoque:</strong> Asegurar la adopción de los modelos por parte de la organización.</p>
-<ul>
-<li><p><strong>Capítulo 18: ¿Aportamos Valor?:</strong> Implementación del marco FVA (<em>Forecast Value Added</em>) para medir qué pasos del proceso realmente mejoran la precisión.</p></li>
-<li><p><strong>Capítulo 19: La Guerra contra los Sesgos:</strong> Cómo gestionar el juicio humano y aprovechar la “sabiduría de las multitudes” sin dañar el pronóstico.</p></li>
-<li><p><strong>Capítulo 20: El Plan Maestro:</strong> Integración final de los modelos en el proceso de S&amp;OP (Sales and Operations Planning) y comunicación efectiva hacia la alta gerencia.</p></li>
+<li><strong>Consecuencia:</strong> Si el modelo ve que en Navidad vendiste 500 unidades (estando quebrado), el próximo año predecirá una demanda de 500. Comprarás 500, volverás a quebrar, y el modelo confirmará su “acierto”. Estarás institucionalizando la escasez mediante algoritmos.</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -606,24 +572,162 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Requisitos previos
+<span class="screen-reader-only">Note</span>Plan de Acción: Identificación de la Señal
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Para aprovechar al máximo este libro, necesitarás:</p>
 <ul>
-<li>Conocimientos básicos de R, Python.</li>
-<li>Familiaridad con conceptos de Supply Chain</li>
-<li>Acceso a RStudio y las librerías mencionadas en cada capítulo</li>
+<li><p><strong>Auditoría de Tablas:</strong> Localiza en tu base de datos la tabla de pedidos originales (<code>Sales Orders</code> o <code>Requirements</code>) y compárala con la de facturación o salidas reales. El gap entre ambas es tu primer indicador de “Demanda No Restringida”.</p></li>
+<li><p><strong>Creación del Flag de Censura:</strong> En tu dataset maestro, crea una columna booleana llamada <code>es_dato_censurado</code>. Será <code>TRUE</code> si en ese periodo el inventario fue insuficiente para cubrir la demanda promedio.</p></li>
 </ul>
 </div>
 </div>
-<hr>
-<p><strong>Prepárate para “ensuciarte las manos” y cambiar tu forma de ver un inventario para siempre.</strong></p>
-
-
 </section>
 </section>
+<section id="ii.-diagnóstico-detectando-el-ruido-en-el-espejo" class="level2">
+<h2 class="anchored" data-anchor-id="ii.-diagnóstico-detectando-el-ruido-en-el-espejo">II. Diagnóstico: Detectando el “Ruido” en el Espejo</h2>
+<section id="los-días-de-stock-out-como-herramienta-forense" class="level3">
+<h3 class="anchored" data-anchor-id="los-días-de-stock-out-como-herramienta-forense">2.3 Los “Días de Stock Out” como Herramienta Forense</h3>
+<p>Un día se marca como censurado mediante un análisis forense de datos. No basta con que no haya ventas; debemos validar que no hubo ventas <em>porque</em> no había producto. Si el inventario llega a niveles críticos y las salidas caen drásticamente, estamos ante un quiebre.</p>
+</section>
+<section id="la-trampa-de-la-granularidad-el-mes-es-el-escondite-del-fracaso" class="level3">
+<h3 class="anchored" data-anchor-id="la-trampa-de-la-granularidad-el-mes-es-el-escondite-del-fracaso">2.4 La Trampa de la Granularidad: El Mes es el Escondite del Fracaso</h3>
+<p><strong>La detección de demanda real debe ser diaria.</strong> Si analizas datos mensuales, podrías ver que vendiste 100 unidades teniendo 100 en stock al cierre de mes, lo que te daría una falsa sensación de cumplimiento del 100%.</p>
+<p>Sin embargo, si bajamos a nivel diario, podríamos descubrir que esas 100 unidades se agotaron el día 10 del mes. Durante los 20 días restantes, el stock fue cero. Tu demanda real mensual era probablemente de 300 unidades. <strong>La agregación mensual es el mayor enemigo de la visibilidad.</strong></p>
+</section>
+</section>
+<section id="iii.-el-enfoque-industrial-mro-proyectos-y-clientes-internos" class="level2">
+<h2 class="anchored" data-anchor-id="iii.-el-enfoque-industrial-mro-proyectos-y-clientes-internos">III. El Enfoque Industrial: MRO, Proyectos y Clientes Internos</h2>
+<p>Si trabajas en una industria pesada, tu “cliente” es un <strong>Ingeniero de Proyecto</strong> o un líder de mantenimiento. Aquí, la demanda no se “predice” tanto como se “gestiona”.</p>
+<section id="el-elemento-pep-como-segmentador-de-demanda" class="level3">
+<h3 class="anchored" data-anchor-id="el-elemento-pep-como-segmentador-de-demanda">2.5 El Elemento PEP como Segmentador de Demanda</h3>
+<p>En entornos de proyectos, la demanda está vinculada a una estructura de desglose (Elemento PEP). Esto introduce el concepto de <strong>Inventario Etiquetado</strong>. Puedes tener 10 unidades en el patio, pero si 8 están asignadas contablemente al “Proyecto A”, tu disponibilidad para el “Mantenimiento B” es de solo 2 unidades. Ignorar este bloqueo contable genera quiebres artificiales en tus modelos.</p>
+</section>
+<section id="fecha-de-necesidad-vs.-fecha-de-despacho" class="level3">
+<h3 class="anchored" data-anchor-id="fecha-de-necesidad-vs.-fecha-de-despacho">2.6 Fecha de Necesidad vs.&nbsp;Fecha de Despacho</h3>
+<p>Este es el mayor conflicto en la planificación industrial.</p>
+<ul>
+<li><p><strong>Fecha de Necesidad:</strong> Cuándo el ingeniero solicitó el material para que la planta no se detenga.</p></li>
+<li><p><strong>Fecha de Despacho:</strong> Cuándo finalmente el almacén pudo entregar el material.</p></li>
+</ul>
+<p>Si el planner analiza la historia basándose en la fecha de despacho, estará modelando el historial de sus propios retrasos. <strong>La demanda real siempre viaja en la fecha de necesidad.</strong></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Plan de Acción: Sincronización Operativa
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><strong>Auditoría de Reservas:</strong> Compara sistemáticamente la fecha de solicitud original con la fecha de salida física. El diferencial es tu Lead Time Interno de ineficiencia.</p></li>
+<li><p><strong>Limpieza de Hoarding:</strong> Identifica reservas cargadas con excesiva antelación por “miedo” al desabasto. Ajusta esas señales para que coincidan con el cronograma real del proyecto.</p></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="iv.-ingeniería-de-conceptos-la-caja-de-herramientas-del-planner" class="level2">
+<h2 class="anchored" data-anchor-id="iv.-ingeniería-de-conceptos-la-caja-de-herramientas-del-planner">IV. Ingeniería de Conceptos: La Caja de Herramientas del Planner</h2>
+<p>Para reconstruir la realidad, trabajamos con la <strong>Posición de Inventario (</strong><span class="math inline">\(IP\)</span><strong>)</strong>.</p>
+<section id="definiciones-críticas-los-cuatro-pilares" class="level3">
+<h3 class="anchored" data-anchor-id="definiciones-críticas-los-cuatro-pilares">2.7 Definiciones Críticas: Los Cuatro Pilares</h3>
+<section id="a.-stock-comprometido-committed" class="level4">
+<h4 class="anchored" data-anchor-id="a.-stock-comprometido-committed">A. Stock Comprometido (Committed)</h4>
+<p>Inventario físicamente presente pero que <strong>ya tiene dueño</strong> (reservas de proyectos o pedidos confirmados). No restarlo te llevará a prometer material que ya no te pertenece.</p>
+</section>
+<section id="b.-backlog-pendientes-por-entregar" class="level4">
+<h4 class="anchored" data-anchor-id="b.-backlog-pendientes-por-entregar">B. Backlog (Pendientes por Entregar)</h4>
+<p>Es la <strong>deuda de tiempo</strong> con tus clientes. Pedidos cuya fecha de necesidad ya pasó. El Backlog es “demanda reprimida” que explotará en forma de picos masivos apenas llegue el suministro.</p>
+</section>
+<section id="c.-stock-en-tránsito-in-transit" class="level4">
+<h4 class="anchored" data-anchor-id="c.-stock-en-tránsito-in-transit">C. Stock en Tránsito (In-Transit)</h4>
+<p>Material que ya salió del proveedor pero no ha ingresado. Es fundamental para el cálculo del punto de reorden y evitar compras duplicadas.</p>
+</section>
+<section id="d.-fill-rate-tasa-de-surtido" class="level4">
+<h4 class="anchored" data-anchor-id="d.-fill-rate-tasa-de-surtido">D. Fill Rate (Tasa de Surtido)</h4>
+<p>Mide el porcentaje de la necesidad que pudiste satisfacer inmediatamente. Es el factor matemático que nos permite “de-censurar” la historia:</p>
+<p><span class="math display">\[
+\large Demanda_{Estimada} = \frac{Salida_{Registrada}}{Fill Rate}
+\]</span></p>
+</section>
+</section>
+<section id="la-fórmula-de-la-posición-de-inventario-ip" class="level3">
+<h3 class="anchored" data-anchor-id="la-fórmula-de-la-posición-de-inventario-ip">2.8 La Fórmula de la Posición de Inventario (<span class="math inline">\(IP\)</span>)</h3>
+<p><span class="math display">\[
+\large \text{IP} = \text{Stock Físico} + \text{En Tránsito} - \text{Backlog} - \text{Comprometido}
+\]</span></p>
+</section>
+</section>
+<section id="v.-el-ruido-del-éxito-promociones-y-eventos" class="level2">
+<h2 class="anchored" data-anchor-id="v.-el-ruido-del-éxito-promociones-y-eventos">V. El Ruido del Éxito: Promociones y Eventos</h2>
+<p>No todo el ruido en el espejo son valles (quiebres); también hay picos que pueden engañarnos.</p>
+<ul>
+<li><p><strong>Uplift (Incremento Promocional):</strong> Si vendiste 1,000 unidades en una semana de oferta, tu demanda base quizás sigue siendo 100. Pronosticar 1,000 para una semana normal es una receta para el sobrestock masivo.</p></li>
+<li><p><strong>Canibalización:</strong> Si el Producto A subió por una promoción, revisa si el Producto B (su sustituto) cayó. Esa caída no es falta de demanda, es desplazamiento.</p></li>
+</ul>
+</section>
+<section id="vi.-reconstrucción-curando-la-serie-de-tiempo" class="level2">
+<h2 class="anchored" data-anchor-id="vi.-reconstrucción-curando-la-serie-de-tiempo">VI. Reconstrucción: Curando la Serie de Tiempo</h2>
+<section id="el-efecto-rebote-y-la-redistribución-de-backlog" class="level3">
+<h3 class="anchored" data-anchor-id="el-efecto-rebote-y-la-redistribución-de-backlog">2.9 El Efecto Rebote y la Redistribución de Backlog</h3>
+<p>Cuando el stock llega tras un quiebre, el Backlog se libera y verás una salida gigante en un solo día.</p>
+<ul>
+<li><strong>La Solución:</strong> Debes “aplanar” ese pico. Esas unidades deben ser redistribuidas hacia atrás en la serie de tiempo, asignándolas a las <strong>Fechas de Necesidad</strong> originales. Solo así la IA entenderá el ritmo real del consumo.</li>
+</ul>
+</section>
+<section id="técnicas-de-imputación-estadística" class="level3">
+<h3 class="anchored" data-anchor-id="técnicas-de-imputación-estadística">2.10 Técnicas de Imputación Estadística</h3>
+<p>Para los días de quiebre donde la demanda se perdió (Lost Sales), usamos:</p>
+<ul>
+<li><p><strong>Media Móvil Local:</strong> Promedio de los días vecinos sanos.</p></li>
+<li><p><strong>Sustitución Estacional:</strong> ¿Qué pasó el mismo lunes del año pasado?</p></li>
+</ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Plan de Acción: Algoritmos de Curación
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><strong>Script de Redistribución:</strong> Implementa una lógica que detecte picos post-quiebre y los reparta proporcionalmente en el periodo de stockout.</p></li>
+<li><p><strong>Validación de Datos Curados:</strong> Si tu demanda reconstruida es 3 veces más alta que tu presupuesto comercial, revisa tus cálculos de Fill Rate.</p></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="checklist-de-cierre-del-capítulo" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
+<p>Antes de pasar al siguiente nivel, asegúrate de haber respondido:</p>
+<ul class="task-list">
+<li><p><label><input type="checkbox">¿He identificado los días donde mi inventario limitó mi capacidad de venta/despacho?</label></p></li>
+<li><p><label><input type="checkbox">¿He separado el stock asignado a proyectos (PEP) de mi disponibilidad general?</label></p></li>
+<li><p><label><input type="checkbox">¿He recalculado mi historia basándome en la Fecha de Necesidad y no en la de Despacho?</label></p></li>
+<li><p><label><input type="checkbox">¿He limpiado los picos de promociones y redistribuido el backlog?</label></p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Resumen y Próximos Pasos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hemos transformado datos contables en <strong>Señales de Demanda Real</strong>. Ya no tenemos simplemente una lista de facturas; tenemos el registro de lo que el mundo nos pidió.</p>
+<p>Ahora la pregunta es: ¿Debo aplicar este nivel de rigor analítico a los 10,000 tornillos de mi inventario? No.&nbsp;En el <strong>Capítulo 3</strong>, aprenderemos a usar la segmentación <strong>ABC/XYZ dinámica</strong> para enfocar nuestro esfuerzo donde realmente está el valor.</p>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1042,10 +1146,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./cap-1-auditoria.html" class="pagination-link" aria-label="1. ¿Dónde estoy parado? ¿Como empiezo?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cap-1-auditoria.html" class="pagination-link" aria-label="1. ¿Dónde estoy parado? ¿Como empiezo?">
-        <span class="nav-page-text"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./cap-3-abcxyz-dinamico.html" class="pagination-link" aria-label="3. Clasificando el Caos: Segmentación ABC/XYZ Dinámica">
+        <span class="nav-page-text"><span class="chapter-title">3. Clasificando el Caos: Segmentación ABC/XYZ Dinámica</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1054,4 +1161,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-2-espejo-realidad.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

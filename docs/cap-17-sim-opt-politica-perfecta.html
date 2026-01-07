@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Nicolás A. Bravo">
-<meta name="dcterms.date" content="2026-01-06">
 
-<title>Arquitectura de suministros</title>
+<title>17. Optimizando bajo Presión – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,7 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cap-1-auditoria.html" rel="next">
+<link href="./cap-18-fva-valor-pronostico.html" rel="next">
+<link href="./cap-16-efecto-domino-meio.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -76,6 +110,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -250,7 +313,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Bienvenido</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-15-monte-carlo.html">V: Simulaciones y Redes Complejas</a></li><li class="breadcrumb-item"><a href="./cap-17-sim-opt-politica-perfecta.html"><span class="chapter-title">17. Optimizando bajo Presión</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -281,7 +344,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bienvenido</span></a>
   </div>
 </li>
@@ -420,7 +483,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-17-sim-opt-politica-perfecta.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">17. Optimizando bajo Presión</span></a>
+  <a href="./cap-17-sim-opt-politica-perfecta.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">17. Optimizando bajo Presión</span></a>
   </div>
 </li>
       </ul>
@@ -466,50 +529,38 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bienvenido" id="toc-bienvenido" class="nav-link active" data-scroll-target="#bienvenido">Bienvenido</a>
+  <li><a href="#la-anatomía-de-sim-opt-motor-y-cerebro" id="toc-la-anatomía-de-sim-opt-motor-y-cerebro" class="nav-link active" data-scroll-target="#la-anatomía-de-sim-opt-motor-y-cerebro">17.1 La Anatomía de Sim-Opt: Motor y Cerebro</a></li>
+  <li><a href="#el-paisaje-de-la-decisión-por-qué-fallan-los-métodos-simples" id="toc-el-paisaje-de-la-decisión-por-qué-fallan-los-métodos-simples" class="nav-link" data-scroll-target="#el-paisaje-de-la-decisión-por-qué-fallan-los-métodos-simples">17.2 El Paisaje de la Decisión: ¿Por qué fallan los métodos simples?</a></li>
+  <li><a href="#la-caja-de-herramientas-del-optimizador-metaheurísticas" id="toc-la-caja-de-herramientas-del-optimizador-metaheurísticas" class="nav-link" data-scroll-target="#la-caja-de-herramientas-del-optimizador-metaheurísticas">17.3 La Caja de Herramientas del Optimizador (Metaheurísticas)</a>
   <ul class="collapse">
-  <li><a href="#de-qué-trata-este-libro" id="toc-de-qué-trata-este-libro" class="nav-link" data-scroll-target="#de-qué-trata-este-libro">¿De qué trata este libro?</a></li>
-  <li><a href="#para-quién-es-este-manual" id="toc-para-quién-es-este-manual" class="nav-link" data-scroll-target="#para-quién-es-este-manual">¿Para quién es este manual?</a></li>
-  <li><a href="#estructura-detallada-del-manual" id="toc-estructura-detallada-del-manual" class="nav-link" data-scroll-target="#estructura-detallada-del-manual">Estructura Detallada del Manual</a>
-  <ul class="collapse">
-  <li><a href="#parte-i-el-diagnóstico-llegando-a-la-empresa" id="toc-parte-i-el-diagnóstico-llegando-a-la-empresa" class="nav-link" data-scroll-target="#parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</a></li>
-  <li><a href="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" id="toc-parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="nav-link" data-scroll-target="#parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</a></li>
-  <li><a href="#parte-iii-el-arsenal-del-científico-de-datos" id="toc-parte-iii-el-arsenal-del-científico-de-datos" class="nav-link" data-scroll-target="#parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</a></li>
-  <li><a href="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios" id="toc-parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="nav-link" data-scroll-target="#parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</a></li>
-  <li><a href="#parte-v-simulaciones-y-redes-complejas" id="toc-parte-v-simulaciones-y-redes-complejas" class="nav-link" data-scroll-target="#parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</a></li>
-  <li><a href="#parte-vi-el-factor-humano-y-la-ejecución" id="toc-parte-vi-el-factor-humano-y-la-ejecución" class="nav-link" data-scroll-target="#parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</a></li>
+  <li><a href="#algoritmos-genéticos-ga" id="toc-algoritmos-genéticos-ga" class="nav-link" data-scroll-target="#algoritmos-genéticos-ga">17.3.1 Algoritmos Genéticos (GA)</a></li>
+  <li><a href="#optimización-bayesiana" id="toc-optimización-bayesiana" class="nav-link" data-scroll-target="#optimización-bayesiana">17.3.2 Optimización Bayesiana</a></li>
+  <li><a href="#recocido-simulado-simulated-annealing" id="toc-recocido-simulado-simulated-annealing" class="nav-link" data-scroll-target="#recocido-simulado-simulated-annealing">17.3.3 Recocido Simulado (Simulated Annealing)</a></li>
   </ul></li>
+  <li><a href="#la-función-objetivo-definiendo-el-éxito-financiero" id="toc-la-función-objetivo-definiendo-el-éxito-financiero" class="nav-link" data-scroll-target="#la-función-objetivo-definiendo-el-éxito-financiero">17.4 La Función Objetivo: Definiendo el Éxito Financiero</a></li>
+  <li><a href="#implementación-profesional-en-r" id="toc-implementación-profesional-en-r" class="nav-link" data-scroll-target="#implementación-profesional-en-r">17.5 Implementación Profesional en R</a></li>
+  <li><a href="#el-frente-de-pareto-equilibrando-lo-imposible" id="toc-el-frente-de-pareto-equilibrando-lo-imposible" class="nav-link" data-scroll-target="#el-frente-de-pareto-equilibrando-lo-imposible">17.6 El Frente de Pareto: Equilibrando lo Imposible</a></li>
+  <li><a href="#resiliencia-ante-la-incertidumbre" id="toc-resiliencia-ante-la-incertidumbre" class="nav-link" data-scroll-target="#resiliencia-ante-la-incertidumbre">17.7 Resiliencia ante la Incertidumbre</a>
+  <ul class="collapse">
+  <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-17-sim-opt-politica-perfecta.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-15-monte-carlo.html">V: Simulaciones y Redes Complejas</a></li><li class="breadcrumb-item"><a href="./cap-17-sim-opt-politica-perfecta.html"><span class="chapter-title">17. Optimizando bajo Presión</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Arquitectura de suministros</h1>
-<p class="subtitle lead">Ciencia de Datos Aplicada a la Gestión de Demanda e Inventarios.</p>
+<h1 class="title"><span class="chapter-title">17. Optimizando bajo Presión</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta column-body">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Nicolás A. Bravo </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 6, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -519,110 +570,149 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bienvenido" class="level1 unnumbered">
-<h1 class="unnumbered">Bienvenido</h1>
-<p>Este libro no es solo un texto teórico sobre logística; es una hoja de ruta diseñada para transformar datos crudos en decisiones estratégicas. En el mundo real de la Supply Chain, la teoría académica suele chocar con la fricción de los datos sucios, la incertidumbre de los tiempos de entrega y la volatilidad implacable de la demanda. Aquí no encontrarás soluciones ideales para problemas inexistentes; aprenderás a navegar el caos real, paso a paso.</p>
-<div style="float: right">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><img src="images/img2.png" class="float-right img-fluid quarto-figure quarto-figure-right figure-img" style="margin-right: 0px; margin-bottom: 00px;" width="462"></p>
-</figure>
-</div>
-</div>
-<p>Nuestra premisa es clara: en la cadena de suministro moderna, la intuición ya no es suficiente. A medida que los mercados se vuelven más complejos, la capacidad de procesar, modelar y simular escenarios se convierte en la ventaja competitiva definitiva. Este manual ha sido creado para cerrar la brecha entre el analista tradicional y el Supply Chain Data Scientist, dotándote de un arsenal de herramientas que van desde la limpieza profunda de datos hasta la optimización multi-escalón.</p>
-<section id="de-qué-trata-este-libro" class="level2">
-<h2 class="anchored" data-anchor-id="de-qué-trata-este-libro">¿De qué trata este libro?</h2>
-<p>Es, fundamentalmente, un manual de ingeniería aplicada. Es el recurso que a muchos nos hubiera gustado tener al iniciar nuestra carrera en la intersección de las operaciones y la analítica: un puente que no solo explica qué es un inventario, sino cómo optimizarlo utilizando el poder del código y la Ciencia de Datos moderna.</p>
-<p>Nuestra filosofía es simple: hacer lo complejo, accionable. No pretendemos reinventar la rueda, sino enseñarte a construir una que ruede mejor bajo presión. A lo largo de estas páginas, pasaremos de los conceptos básicos a la implementación robusta en R y Python, priorizando siempre la generación de valor que impacte directamente en el nivel de servicio y la salud financiera de la organización.</p>
-<p>La realidad de la cadena de suministro es un sistema vivo, dinámico y, a menudo, desordenado. En este manual, desarrollaremos un ecosistema de herramientas para domesticar esa incertidumbre, transitando desde la auditoría inicial de visibilidad hasta la simulación avanzada de redes complejas.</p>
+<p>En el Capítulo 15, construimos nuestro <strong>Laboratorio Virtual</strong> y aprendimos a “romper” nuestra cadena de suministro miles de veces para medir el riesgo de forma científica. Fue un hito: pasamos de la fe ciega en las fórmulas estáticas a la evidencia dinámica de la simulación de Monte Carlo. Sin embargo, nos quedó una brecha operativa. Si la simulación nos permite evaluar una política (un punto de reorden <span class="math inline">\(s\)</span> y una cantidad de pedido <span class="math inline">\(Q\)</span>), ¿cómo encontramos la combinación <em>perfecta</em> entre millones de posibilidades?</p>
+<p>Intentar encontrar el óptimo mediante “ensayo y error” manual es como intentar encontrar una aguja en un pajar que cambia de forma. Si tienes solo 2 variables (<span class="math inline">\(s\)</span> y <span class="math inline">\(Q\)</span>) y quieres probar 100 valores razonables para cada una, tienes 10,000 combinaciones. Si añades el tiempo de revisión (<span class="math inline">\(T\)</span>), el nivel máximo (<span class="math inline">\(S\)</span>) y las restricciones de transporte (MOQs), las combinaciones explotan exponencialmente. Aquí es donde entra la <strong>Simulación-Optimización (Sim-Opt)</strong>: el uso de algoritmos inteligentes que “navegan” por tu simulador para encontrar la máxima eficiencia financiera bajo presión.</p>
+<section id="la-anatomía-de-sim-opt-motor-y-cerebro" class="level2">
+<h2 class="anchored" data-anchor-id="la-anatomía-de-sim-opt-motor-y-cerebro">17.1 La Anatomía de Sim-Opt: Motor y Cerebro</h2>
+<p>La Simulación-Optimización es la sinergia de dos disciplinas que suelen trabajar por separado:</p>
+<ol type="1">
+<li><strong>El Simulador (El Motor de Realidad):</strong> Es el entorno que creamos en los capítulos anteriores. Su función es recibir un conjunto de parámetros (una política) y simular meses de operación, devolviendo los resultados: ¿Cuántas ventas perdimos? ¿Cuánto inventario promedio acumulamos? ¿Cuántas órdenes emitimos? Considera la demanda Gamma, el Lead Time variable y las mermas.</li>
+<li><strong>El Optimizador (El Cerebro Estratégico):</strong> Es un algoritmo de búsqueda (metaheurística) que no sabe nada de logística, pero sabe mucho de matemáticas. Su función es proponer nuevas combinaciones de parámetros, observar los resultados del simulador y “aprender” hacia qué dirección debe moverse para mejorar los KPIs.</li>
+</ol>
+<p><strong>La Filosofía de Vandeput:</strong> En Supply Chain, no buscamos el “Óptimo Matemático” de un libro de texto (que suele ser frágil). Buscamos la <strong>Política Robusta</strong>: aquella configuración que, en el promedio de mil futuros posibles, ofrece el menor costo total y la mayor resiliencia.</p>
 </section>
-<section id="para-quién-es-este-manual" class="level2">
-<h2 class="anchored" data-anchor-id="para-quién-es-este-manual">¿Para quién es este manual?</h2>
-<p>Si eres un analista que busca evolucionar hacia el Data Science, un planeador de demanda que desea automatizar sus modelos para ganar tiempo estratégico, o un líder de operaciones que necesita entender la “caja negra” de los algoritmos para tomar mejores decisiones, este libro es para ti.</p>
-<p>Aquí no solo encontrarás ecuaciones; aprenderás a interpretar visualizaciones que cuentan historias, a detectar y mitigar sesgos humanos y, sobre todo, a responder con confianza a la pregunta crítica del negocio: “¿Para qué nos sirve esto hoy?”</p>
-</section>
-<section id="estructura-detallada-del-manual" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-detallada-del-manual">Estructura Detallada del Manual</h2>
-<p>A través de estas páginas, no solo construiremos modelos; construiremos un criterio técnico para saber cuándo confiar en un algoritmo y cuándo intervenir con el juicio de negocio. El objetivo final es simple pero ambicioso: que dejes de ser un espectador de los problemas de inventario y te conviertas en el arquitecto de una red de suministro resiliente, eficiente y, sobre todo, inteligente.</p>
-<p>El libro está diseñado como una hoja de ruta técnica y estratégica, dividida en seis ejes fundamentales:</p>
-<section id="parte-i-el-diagnóstico-llegando-a-la-empresa" class="level3">
-<h3 class="anchored" data-anchor-id="parte-i-el-diagnóstico-llegando-a-la-empresa">Parte I: El Diagnóstico (Llegando a la empresa)</h3>
-<p><strong>Enfoque:</strong> Visibilidad y limpieza. No puedes arreglar lo que no ves.</p>
+<section id="el-paisaje-de-la-decisión-por-qué-fallan-los-métodos-simples" class="level2">
+<h2 class="anchored" data-anchor-id="el-paisaje-de-la-decisión-por-qué-fallan-los-métodos-simples">17.2 El Paisaje de la Decisión: ¿Por qué fallan los métodos simples?</h2>
+<p>Si graficáramos el Costo Total de una política de inventarios, no veríamos una línea suave. Veríamos un “paisaje” accidentado con valles (zonas de bajo costo) y picos (zonas de alto riesgo).</p>
 <ul>
-<li><p><strong>Capítulo 1: ¿Dónde estoy parado?</strong> Auditoría de datos, identificación de fuentes y mapeo del flujo de la cadena de suministro.</p></li>
-<li><p><strong>Capítulo 2: El Espejo de la Realidad:</strong> Diferenciación entre ventas históricas y demanda real (no restringida), analizando el impacto oculto de los quiebres de stock.</p></li>
-<li><p><strong>Capítulo 3: Clasificando el Caos:</strong> Implementación de segmentación ABC/XYZ dinámica utilizando Python para priorizar productos según valor y variabilidad.</p></li>
-<li><p><strong>Capítulo 4: ¿Qué tan mal estamos?</strong> Definición del <em>Baseline</em> y métricas críticas de error como MAE, RMSE y Bias para medir la precisión actual.</p></li>
+<li><strong>No-Convexidad:</strong> A diferencia de los problemas de álgebra simple, en inventarios hay “múltiples valles”. Puedes encontrar una política que parece buena, pero a la vuelta de la esquina hay una mucho mejor que tu fórmula no detectó.</li>
+<li><strong>Ruido Estocástico:</strong> Debido a que simulamos con azar, una política puede parecer buena en una corrida y mala en otra. El optimizador debe ser capaz de ver “a través del ruido”.</li>
+<li><strong>Restricciones de la Vida Real (Constraints):</strong> Aquí es donde la presión se vuelve real. El optimizador debe trabajar dentro de límites físicos:
+<ul>
+<li><strong>Capacidad de Almacén:</strong> No puedes pedir más de lo que cabe.</li>
+<li><strong>Presupuesto de Capital:</strong> No puedes invertir más de $X en stock de seguridad.</li>
+<li><strong>Nivel de Servicio Garantizado:</strong> El Fill Rate debe ser estrictamente <span class="math inline">\(\ge 98\%\)</span>. Cualquier política que ahorre dinero pero baje del 98% es rechazada automáticamente.</li>
+</ul></li>
 </ul>
 </section>
-<section id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico" class="level3">
-<h3 class="anchored" data-anchor-id="parte-ii-prediciendo-el-futuro-la-base-del-pronóstico">Parte II: Prediciendo el Futuro (La Base del Pronóstico)</h3>
-<p><strong>Enfoque:</strong> Pasar de la intuición a la estadística descriptiva e inferencial.</p>
+<section id="la-caja-de-herramientas-del-optimizador-metaheurísticas" class="level1">
+<h1>17.3 La Caja de Herramientas del Optimizador (Metaheurísticas)</h1>
+<p>Como no podemos probar todas las combinaciones, usamos estrategias de búsqueda inspiradas en la naturaleza:</p>
+<section id="algoritmos-genéticos-ga" class="level3">
+<h3 class="anchored" data-anchor-id="algoritmos-genéticos-ga">17.3.1 Algoritmos Genéticos (GA)</h3>
+<p>Inspirados en la evolución de Darwin. Creamos una “población” de políticas. Las que tienen menores costos “sobreviven” y se “cruzan” entre sí (intercambiando sus valores de <span class="math inline">\(s\)</span> y <span class="math inline">\(Q\)</span>) para dar lugar a una nueva generación más eficiente. Las mutaciones aleatorias aseguran que el algoritmo no se quede atrapado en una solución mediocre.</p>
+</section>
+<section id="optimización-bayesiana" class="level3">
+<h3 class="anchored" data-anchor-id="optimización-bayesiana">17.3.2 Optimización Bayesiana</h3>
+<p>Es la técnica más avanzada para cuando el simulador es lento. El algoritmo crea un “modelo sustituto” (un <em>surrogate model</em>) que intenta adivinar cómo se ve el paisaje de costos. Solo corre la simulación real en los puntos donde cree que hay una alta probabilidad de encontrar un ahorro masivo.</p>
+</section>
+<section id="recocido-simulado-simulated-annealing" class="level3">
+<h3 class="anchored" data-anchor-id="recocido-simulado-simulated-annealing">17.3.3 Recocido Simulado (Simulated Annealing)</h3>
+<p>Inspirado en la metalurgia. El algoritmo comienza explorando de forma muy agresiva y aleatoria (alta temperatura) y, a medida que avanza, se vuelve más conservador, refinando la búsqueda en las zonas que demostraron ser rentables.</p>
+</section>
+</section>
+<section id="la-función-objetivo-definiendo-el-éxito-financiero" class="level1">
+<h1>17.4 La Función Objetivo: Definiendo el Éxito Financiero</h1>
+<p>Para que Sim-Opt funcione, debemos darle un objetivo claro. En un entorno profesional, este objetivo es el <strong>Valor Esperado del Costo Total (</strong><span class="math inline">\(E[CT]\)</span>):</p>
+<p><span class="math display">\[Minimizar \ Z = E[    ext{Costo de Posesión}] + E[    ext{Costo de Faltante}] + E[    ext{Costo de Pedido}]\]</span></p>
 <ul>
-<li><p><strong>Capítulo 5: El Pronóstico Ingenuo:</strong> Implementación de modelos <em>Naive</em> para establecer un punto de comparación (Benchmark) mínimo.</p></li>
-<li><p><strong>Capítulo 6: Suavizando la Curva:</strong> Aplicación de Suavizamiento Exponencial (Simple, Holt y Holt-Winters) y modelos estadísticos tradicionales.</p></li>
-<li><p><strong>Capítulo 7: Detectando Patrones:</strong> Identificación y descomposición de series de tiempo en sus componentes: Estacionalidad, Tendencia y Ciclos.</p></li>
+<li><strong>Penalización por Incumplimiento:</strong> Si la política no cumple con el nivel de servicio exigido por la gerencia, le asignamos un “costo infinito”. Esto obliga al cerebro del optimizador a ignorar cualquier política que ponga en riesgo la promesa al cliente.</li>
 </ul>
 </section>
-<section id="parte-iii-el-arsenal-del-científico-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iii-el-arsenal-del-científico-de-datos">Parte III: El Arsenal del Científico de Datos</h3>
-<p><strong>Enfoque:</strong> Escalando la precisión mediante el uso de Machine Learning avanzado.</p>
+<section id="implementación-profesional-en-r" class="level1">
+<h1>17.5 Implementación Profesional en R</h1>
+<p>A continuación, presentamos cómo se estructura un motor de Sim-Opt utilizando el paquete <code>GA</code> para navegar por nuestro simulador de Monte Carlo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Motor de Simulación-Optimización (Sim-Opt)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GA)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. El Simulador (El Motor)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>simular_politica <span class="ot">&lt;-</span> <span class="cf">function</span>(s, Q) {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Simulamos 5,000 días de operación con demanda Gamma y LT Poisson</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  dias <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  inventario <span class="ot">&lt;-</span> s <span class="sc">+</span> Q</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  ventas_perdidas <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  costo_mantenimiento <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>dias) {</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    demanda <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1</span>, <span class="at">shape =</span> <span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">20</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    inventario <span class="ot">&lt;-</span> inventario <span class="sc">-</span> demanda</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(inventario <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      ventas_perdidas <span class="ot">&lt;-</span> ventas_perdidas <span class="sc">+</span> <span class="fu">abs</span>(inventario)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      inventario <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(inventario <span class="sc">&lt;=</span> s) {</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>      inventario <span class="ot">&lt;-</span> inventario <span class="sc">+</span> Q <span class="co"># Simplificado: Reabastecimiento</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    costo_mantenimiento <span class="ot">&lt;-</span> costo_mantenimiento <span class="sc">+</span> (inventario <span class="sc">*</span> <span class="fl">0.05</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  fill_rate <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (ventas_perdidas <span class="sc">/</span> (dias <span class="sc">*</span> <span class="dv">40</span>))</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">costo =</span> costo_mantenimiento <span class="sc">+</span> (ventas_perdidas <span class="sc">*</span> <span class="dv">150</span>), <span class="at">fr =</span> fill_rate))</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. La Función de Evaluación (Lo que el Cerebro optimiza)</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>fitness_func <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  s_propuesto <span class="ot">&lt;-</span> x[<span class="dv">1</span>]</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  Q_propuesto <span class="ot">&lt;-</span> x[<span class="dv">2</span>]</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">simular_politica</span>(s_propuesto, Q_propuesto)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Restricción dura: Si el FR es &lt; 95%, la política es "inútil"</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(res<span class="sc">$</span>fr <span class="sc">&lt;</span> <span class="fl">0.95</span>) <span class="fu">return</span>(<span class="sc">-</span><span class="dv">999999</span>) </span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span>res<span class="sc">$</span>costo) <span class="co"># Negativo porque el GA maximiza</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Ejecución de la Optimización</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>optimizacion <span class="ot">&lt;-</span> <span class="fu">ga</span>(<span class="at">type =</span> <span class="st">"real-valued"</span>, </span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>                   <span class="at">fitness =</span> fitness_func,</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>                   <span class="at">lower =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">200</span>), <span class="at">upper =</span> <span class="fu">c</span>(<span class="dv">1000</span>, <span class="dv">5000</span>), </span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>                   <span class="at">popSize =</span> <span class="dv">50</span>, <span class="at">maxiter =</span> <span class="dv">30</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(optimizacion)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="el-frente-de-pareto-equilibrando-lo-imposible" class="level1">
+<h1>17.6 El Frente de Pareto: Equilibrando lo Imposible</h1>
+<p>Bajo presión, a menudo descubres que no hay una única solución perfecta, sino un <strong>Frente de Pareto</strong>. Este es el conjunto de políticas donde es imposible mejorar un objetivo (ej. bajar costos) sin empeorar otro (ej. bajar el nivel de servicio).</p>
 <ul>
-<li><p><strong>Capítulo 8: Creando Inteligencia:</strong> Ingeniería de atributos (<em>Feature Engineering</em>), creación de Lags, impacto de precios y uso de variables externas.</p></li>
-<li><p><strong>Capítulo 9: El Bosque de las Decisiones:</strong> Aplicación práctica de algoritmos Random Forest y XGBoost para capturar patrones no lineales en la demanda.</p></li>
-<li><p><strong>Capítulo 10: Evitando el Espejismo:</strong> Técnicas de Validación Cruzada (Time Series Split) y estrategias para prevenir el sobreajuste (<em>Overfitting</em>).</p></li>
+<li><strong>Curva de Intercambio (Trade-off):</strong> Como Arquitecto de Suministros, tu labor es presentar a la gerencia el “Menú de Riesgos”:
+<ol type="1">
+<li><strong>Política de Eficiencia:</strong> Costo mínimo, pero con un 94% de servicio (Riesgo alto).</li>
+<li><strong>Política de Equilibrio:</strong> El punto dulce del costo total con 97% de servicio.</li>
+<li><strong>Política de Resiliencia:</strong> 99.5% de servicio, aceptando un sobrecosto en inventario (Seguro total).</li>
+</ol></li>
 </ul>
 </section>
-<section id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios" class="level3">
-<h3 class="anchored" data-anchor-id="parte-iv-la-ciencia-del-stock-optimización-de-inventarios">Parte IV: La Ciencia del Stock (Optimización de Inventarios)</h3>
-<p><strong>Enfoque:</strong> Traducir el pronóstico en decisiones de compra y almacenamiento: ¿Cuánto y cuándo pedir?</p>
-<ul>
-<li><p><strong>Capítulo 11: El Costo del Dinero y el Costo del Vacío:</strong> Modelado financiero de los costos de mantener inventario frente a los costos de escasez.</p></li>
-<li><p><strong>Capítulo 12: La Receta Básica:</strong> Aplicación del Lote Económico (EOQ) y Punto de Reorden en entornos de demanda estable.</p></li>
-<li><p><strong>Capítulo 13: El Colchón contra la Incertidumbre:</strong> Cálculo científico del Stock de Seguridad basado en el Nivel de Servicio objetivo y la variabilidad.</p></li>
-<li><p><strong>Capítulo 14: Más allá de la Curva Normal:</strong> Modelado de demandas erráticas o “Lumpy” utilizando Distribución Gamma y otros enfoques no tradicionales.</p></li>
-</ul>
-</section>
-<section id="parte-v-simulaciones-y-redes-complejas" class="level3">
-<h3 class="anchored" data-anchor-id="parte-v-simulaciones-y-redes-complejas">Parte V: Simulaciones y Redes Complejas</h3>
-<p><strong>Enfoque:</strong> Reconocer que el mundo real es un sistema dinámico y no una fórmula estática.</p>
-<ul>
-<li><p><strong>Capítulo 15: El Laboratorio Virtual:</strong> Uso de Simulación de Monte Carlo para someter a prueba las políticas de inventario bajo miles de escenarios posibles.</p></li>
-<li><p><strong>Capítulo 16: El Efecto Dominó:</strong> Comprensión y mitigación del Efecto Látigo (<em>Bullwhip Effect</em>) y optimización de redes multi-escalón (MEIO).</p></li>
-<li><p><strong>Capítulo 17: Optimizando bajo Presión:</strong> Uso de Sim-Opt (Simulación-Optimización) para hallar la política perfecta en sistemas complejos.</p></li>
-</ul>
-</section>
-<section id="parte-vi-el-factor-humano-y-la-ejecución" class="level3">
-<h3 class="anchored" data-anchor-id="parte-vi-el-factor-humano-y-la-ejecución">Parte VI: El Factor Humano y la Ejecución</h3>
-<p><strong>Enfoque:</strong> Asegurar la adopción de los modelos por parte de la organización.</p>
-<ul>
-<li><p><strong>Capítulo 18: ¿Aportamos Valor?:</strong> Implementación del marco FVA (<em>Forecast Value Added</em>) para medir qué pasos del proceso realmente mejoran la precisión.</p></li>
-<li><p><strong>Capítulo 19: La Guerra contra los Sesgos:</strong> Cómo gestionar el juicio humano y aprovechar la “sabiduría de las multitudes” sin dañar el pronóstico.</p></li>
-<li><p><strong>Capítulo 20: El Plan Maestro:</strong> Integración final de los modelos en el proceso de S&amp;OP (Sales and Operations Planning) y comunicación efectiva hacia la alta gerencia.</p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="resiliencia-ante-la-incertidumbre" class="level1">
+<h1>17.7 Resiliencia ante la Incertidumbre</h1>
+<p>La mayor ventaja de Sim-Opt sobre las fórmulas de Excel es la <strong>robustez</strong>. Una política derivada de Sim-Opt ha sido “entrenada” para soportar variaciones. Mientras que el EOQ tradicional puede colapsar si el Lead Time sube un día, el óptimo de Sim-Opt suele incluir un margen de maniobra implícito que lo hace mucho más estable en la operación diaria.</p>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Requisitos previos
+<span class="screen-reader-only">Important</span>La Sabiduría del Arquitecto
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Para aprovechar al máximo este libro, necesitarás:</p>
-<ul>
-<li>Conocimientos básicos de R, Python.</li>
-<li>Familiaridad con conceptos de Supply Chain</li>
-<li>Acceso a RStudio y las librerías mencionadas en cada capítulo</li>
+<p>Optimizar no es encontrar el número más pequeño; es encontrar la decisión que te permita decir al CFO: <em>“Este inventario es el mínimo necesario para que nuestra promesa al cliente no se rompa bajo las condiciones actuales del mercado”</em>. Sim-Opt es tu escudo técnico ante la presión de resultados.</p>
+</div>
+</div>
+<section id="checklist-de-cierre-del-capítulo" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">¿He definido funciones de costo que penalicen el quiebre de stock de forma realista?</label></li>
+<li><label><input type="checkbox">¿Mi optimizador está respetando las restricciones físicas (MOQ, Capacidad)?</label></li>
+<li><label><input type="checkbox">¿He analizado el Frente de Pareto para ofrecer alternativas estratégicas a la dirección?</label></li>
+<li><label><input type="checkbox">¿He validado la política “ganadora” con una simulación de 100,000 iteraciones para asegurar su estabilidad?</label></li>
+<li><label><input type="checkbox">¿He comparado el ahorro de Sim-Opt frente a mi política actual para reportar el FVA de la optimización?</label></li>
 </ul>
-</div>
-</div>
-<hr>
-<p><strong>Prepárate para “ensuciarte las manos” y cambiar tu forma de ver un inventario para siempre.</strong></p>
 
 
-</section>
 </section>
 </section>
 
@@ -1042,10 +1132,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./cap-16-efecto-domino-meio.html" class="pagination-link" aria-label="16. El Efecto Dominó">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">16. El Efecto Dominó</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cap-1-auditoria.html" class="pagination-link" aria-label="1. ¿Dónde estoy parado? ¿Como empiezo?">
-        <span class="nav-page-text"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./cap-18-fva-valor-pronostico.html" class="pagination-link" aria-label="18. ¿Aportamos Valor? (Forecast Value Added)">
+        <span class="nav-page-text"><span class="chapter-title">18. ¿Aportamos Valor? (Forecast Value Added)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1054,4 +1147,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-17-sim-opt-politica-perfecta.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

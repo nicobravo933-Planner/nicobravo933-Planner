@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1. ¿Dónde estoy parado? ¿Como empiezo? – Arquitectura de suministros</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./cap-2-espejo-realidad.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-37f97b4dfc99813de07ac4a6dfc6e37d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/plotly-binding-4.11.0/plotly.js"></script>
+
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-1-auditoria.html">I: El Diagnóstico</a></li><li class="breadcrumb-item"><a href="./cap-1-auditoria.html"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Arquitectura de suministros</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/nicobravo933-Planner/Practicas_Supply" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bienvenido</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">I: El Diagnóstico</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-2-espejo-realidad.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-3-abcxyz-dinamico.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3. Clasificando el Caos: Segmentación ABC/XYZ Dinámica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-4-metricas-error.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. ¿Qué tan mal estamos? Estableciendo el Baseline y Métricas de Error</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">II: Prediciendo el Futuro</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-5-pronostico-ingenuo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. El Pronóstico Ingenuo: Modelos Simples y Benchmarking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-6-suavizamiento-exponencial.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Suavizando la Curva - La Inteligencia Estadística</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-7-arima-y-alternativas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Introducción: El Salto de la Suavización a la Correlación</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">III: El Arsenal del Científico de Datos</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-8-ingenieria-atributos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Introducción: El Cambio de Paradigma</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-9-bosque-decisiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. El Bosque de las Decisiones - Random Forest y XGBoost</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-10-validacion-overfitting.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10. El Desierto de los Datos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">IV: La Ciencia del Stock</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-11-costos-inventario.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11. El Costo del Dinero y el Costo del Vacío</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-12-eoq-punto-reorden.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12. El Paso del Pronóstico a la Orden</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-13-stock-seguridad.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">13. Bienvenidos al Mundo Estocástico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-14-demandas-erraticas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Más allá de la Curva Normal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">V: Simulaciones y Redes Complejas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-15-monte-carlo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. El Laboratorio Virtual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-16-efecto-domino-meio.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. El Efecto Dominó</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-17-sim-opt-politica-perfecta.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">17. Optimizando bajo Presión</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">VI: El Factor Humano y la Ejecución</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-18-fva-valor-pronostico.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">18. ¿Aportamos Valor? (Forecast Value Added)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20. El Plan Maestro</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notas-finales-estrategia.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notas y Recomendaciones Estratégicas</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#auditoría-de-datos-y-arquitectura-de-red" id="toc-auditoría-de-datos-y-arquitectura-de-red" class="nav-link active" data-scroll-target="#auditoría-de-datos-y-arquitectura-de-red">Auditoría de Datos y Arquitectura de Red</a>
+  <ul class="collapse">
+  <li><a href="#arquitectura-de-la-cadena-de-la-línea-a-la-red" id="toc-arquitectura-de-la-cadena-de-la-línea-a-la-red" class="nav-link" data-scroll-target="#arquitectura-de-la-cadena-de-la-línea-a-la-red">1.1 Arquitectura de la Cadena: De la Línea a la Red</a>
+  <ul class="collapse">
+  <li><a href="#definición-de-nodos-vertices" id="toc-definición-de-nodos-vertices" class="nav-link" data-scroll-target="#definición-de-nodos-vertices">1.1.1 Definición de Nodos (Vertices)</a></li>
+  <li><a href="#definición-de-arcos-edges" id="toc-definición-de-arcos-edges" class="nav-link" data-scroll-target="#definición-de-arcos-edges">1.1.2 Definición de Arcos (Edges)</a></li>
+  </ul></li>
+  <li><a href="#estandarización-de-la-nomenclatura-y-jerarquías" id="toc-estandarización-de-la-nomenclatura-y-jerarquías" class="nav-link" data-scroll-target="#estandarización-de-la-nomenclatura-y-jerarquías">1.2 Estandarización de la Nomenclatura y Jerarquías</a>
+  <ul class="collapse">
+  <li><a href="#la-unidad-fundamental-sku-vs.-dfu" id="toc-la-unidad-fundamental-sku-vs.-dfu" class="nav-link" data-scroll-target="#la-unidad-fundamental-sku-vs.-dfu">1.2.1 La Unidad Fundamental: SKU vs.&nbsp;DFU</a></li>
+  <li><a href="#jerarquías-de-producto" id="toc-jerarquías-de-producto" class="nav-link" data-scroll-target="#jerarquías-de-producto">1.2.2 Jerarquías de Producto</a></li>
+  <li><a href="#consistencia-en-unidades-de-medida-uom-y-el-factor-de-conversión" id="toc-consistencia-en-unidades-de-medida-uom-y-el-factor-de-conversión" class="nav-link" data-scroll-target="#consistencia-en-unidades-de-medida-uom-y-el-factor-de-conversión">1.2.3 Consistencia en Unidades de Medida (UoM) y el Factor de Conversión</a></li>
+  </ul></li>
+  <li><a href="#el-ecosistema-de-sistemas-de-información-el-mapa-de-la-verdad" id="toc-el-ecosistema-de-sistemas-de-información-el-mapa-de-la-verdad" class="nav-link" data-scroll-target="#el-ecosistema-de-sistemas-de-información-el-mapa-de-la-verdad">1.3 El Ecosistema de Sistemas de Información: El Mapa de la Verdad</a></li>
+  <li><a href="#selección-de-herramientas-excel-pythonr-y-sql" id="toc-selección-de-herramientas-excel-pythonr-y-sql" class="nav-link" data-scroll-target="#selección-de-herramientas-excel-pythonr-y-sql">1.4 Selección de Herramientas: Excel, Python/R y SQL</a>
+  <ul class="collapse">
+  <li><a href="#limitaciones-de-la-hoja-de-cálculo" id="toc-limitaciones-de-la-hoja-de-cálculo" class="nav-link" data-scroll-target="#limitaciones-de-la-hoja-de-cálculo">1.4.1 Limitaciones de la Hoja de Cálculo</a></li>
+  <li><a href="#el-rol-de-sql-la-fuente-de-la-verdad" id="toc-el-rol-de-sql-la-fuente-de-la-verdad" class="nav-link" data-scroll-target="#el-rol-de-sql-la-fuente-de-la-verdad">1.4.2 El Rol de SQL: La Fuente de la Verdad</a></li>
+  </ul></li>
+  <li><a href="#análisis-exploratorio-de-datos-eda-y-calidad" id="toc-análisis-exploratorio-de-datos-eda-y-calidad" class="nav-link" data-scroll-target="#análisis-exploratorio-de-datos-eda-y-calidad">1.5 Análisis Exploratorio de Datos (EDA) y Calidad</a>
+  <ul class="collapse">
+  <li><a href="#completitud-corte-de-datos-y-el-peligro-de-trabajar-con-fantasmas" id="toc-completitud-corte-de-datos-y-el-peligro-de-trabajar-con-fantasmas" class="nav-link" data-scroll-target="#completitud-corte-de-datos-y-el-peligro-de-trabajar-con-fantasmas">1.5.1 Completitud, Corte de Datos y el Peligro de Trabajar con “Fantasmas”</a></li>
+  </ul></li>
+  <li><a href="#gestión-de-valores-atípicos-outliers-y-winsorización" id="toc-gestión-de-valores-atípicos-outliers-y-winsorización" class="nav-link" data-scroll-target="#gestión-de-valores-atípicos-outliers-y-winsorización">1.6 Gestión de Valores Atípicos (Outliers) y Winsorización</a>
+  <ul class="collapse">
+  <li><a href="#técnica-de-winsorización" id="toc-técnica-de-winsorización" class="nav-link" data-scroll-target="#técnica-de-winsorización">Técnica de Winsorización</a></li>
+  <li><a href="#el-método-tradicional---desviación-estándar-sigma" id="toc-el-método-tradicional---desviación-estándar-sigma" class="nav-link" data-scroll-target="#el-método-tradicional---desviación-estándar-sigma">El Método Tradicional - Desviación Estándar (<span class="math inline">\(\sigma\)</span>)</a></li>
+  <li><a href="#el-método-mad-median-absolute-deviation" id="toc-el-método-mad-median-absolute-deviation" class="nav-link" data-scroll-target="#el-método-mad-median-absolute-deviation">El Método MAD (Median Absolute Deviation)</a></li>
+  <li><a href="#comparación-tradicional-vs.-mad" id="toc-comparación-tradicional-vs.-mad" class="nav-link" data-scroll-target="#comparación-tradicional-vs.-mad">Comparación: Tradicional vs.&nbsp;MAD</a></li>
+  </ul></li>
+  <li><a href="#latencia-de-la-información-flujo-físico-vs.-digital" id="toc-latencia-de-la-información-flujo-físico-vs.-digital" class="nav-link" data-scroll-target="#latencia-de-la-información-flujo-físico-vs.-digital">1.7 Latencia de la Información: Flujo Físico vs.&nbsp;Digital</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-1-auditoria.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-1-auditoria.html">I: El Diagnóstico</a></li><li class="breadcrumb-item"><a href="./cap-1-auditoria.html"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="auditoría-de-datos-y-arquitectura-de-red" class="level1">
+<h1>Auditoría de Datos y Arquitectura de Red</h1>
+<p>Si estás leyendo esto, probablemente acabas de aterrizar en un nuevo rol, te han asignado un proyecto de mejora o simplemente te cansaste de vivir apagando incendios. Tienes tu café en mano, tu notebook moderna y acceso a un montón de carpetas compartidas y esa clásica sensación de “¿por dónde empiezo?”.</p>
+<p>Tranquilo, todos hemos estado ahí. No vamos a empezar tirando código a lo loco ni hablando de algoritmos complejos. Primero vamos a entender el terreno, como quien revisa el mapa y el equipo antes de salir de excursión a la montaña. Relájate, tómate un sorbo de ese café y veamos qué tenemos realmente entre manos antes de ponernos el casco de ingeniero.</p>
+<hr>
+<p>Al iniciar un proyecto de optimización de cadena de suministro, la primera tarea crítica no es la selección del algoritmo de predicción, sino la <strong>auditoría estructural de la información</strong>. Independientemente de si la organización opera con un ERP<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> de última generación (como SAP S/4HANA) o con sistemas legados fragmentados, el principio fundamental de la ingeniería de datos permanece inalterable: <strong>la validación de la fuente</strong>.</p>
+<p>En el entorno actual, es común encontrar iniciativas de transformación digital que fallan no por la tecnología, sino por la calidad de la materia prima: los datos. Si no existe certeza sobre la integridad del inventario, la veracidad de los tiempos de entrega (Lead Times) o la consistencia de las unidades de medida, cualquier modelo avanzado actuará simplemente como un amplificador de errores sistémicos.</p>
+<p>Este capítulo establece el protocolo técnico para auditar la infraestructura de datos y definir la arquitectura de la red antes de iniciar cualquier modelado.</p>
+<p>Sonó complejo, eh? Vamos de a poco.</p>
+<section id="arquitectura-de-la-cadena-de-la-línea-a-la-red" class="level2">
+<h2 class="anchored" data-anchor-id="arquitectura-de-la-cadena-de-la-línea-a-la-red">1.1 Arquitectura de la Cadena: De la Línea a la Red</h2>
+<p>Un error conceptual frecuente en la fase de diseño es la simplificación excesiva de la cadena de suministro, asumiendo un flujo lineal unidireccional (Proveedor <span class="math inline">\(\rightarrow\)</span> Fábrica <span class="math inline">\(\rightarrow\)</span> Cliente). La realidad operativa moderna se configura como una <strong>red de grafos complejos</strong> compuesta por nodos y arcos con restricciones específicas.</p>
+<p>Para modelar correctamente el flujo de materiales e información, debemos mapear la topología de la red con precisión:</p>
+<section id="definición-de-nodos-vertices" class="level3">
+<h3 class="anchored" data-anchor-id="definición-de-nodos-vertices">1.1.1 Definición de Nodos (Vertices)</h3>
+<p>Los nodos representan los puntos estáticos donde el producto se detiene, se transforma o cambia de propiedad.</p>
+<ul>
+<li><strong>Centros de Manufactura:</strong> Deben caracterizarse por sus restricciones de capacidad finita, calendarios operativos y tiempos de cambio (setup times).</li>
+<li><strong>Centros de Distribución (CDs</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a><strong>) y Hubs:</strong> Es crítico distinguir entre CDs propios y operadores logísticos externos (3PL<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>). La visibilidad de datos en un 3PL suele tener mayor latencia.</li>
+<li><strong>Puntos de Venta / Nodos Finales:</strong> La estructura debe diferenciar si el nodo final posee capacidad de almacenamiento (<em>Back-room</em>) o si opera bajo modelos de flujo tenso.</li>
+</ul>
+</section>
+<section id="definición-de-arcos-edges" class="level3">
+<h3 class="anchored" data-anchor-id="definición-de-arcos-edges">1.1.2 Definición de Arcos (Edges)</h3>
+<p>Los arcos representan el movimiento y las reglas de flujo entre nodos.</p>
+<ul>
+<li><strong>Rutas Logísticas:</strong> No todos los flujos son directos. Existen operaciones de <em>Cross-docking</em>, <em>Milk-runs</em> y <em>Transbordos</em>.</li>
+<li><strong>Impacto en la Modelación:</strong> Si el sistema registra una venta directa A <span class="math inline">\(\rightarrow\)</span> B, pero físicamente el producto pasa por un nodo C, la omisión del nodo C en el modelo resultará en una subestimación de costos y tiempos.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Consejo de Implementación
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Al documentar la arquitectura, no confíes solo en el plano teórico del sistema. Valida físicamente los flujos con el Jefe de Tráfico. A menudo, las “rutas excepcionales” (que no están en el manual) representan el 20% del volumen real y son las causantes de la variabilidad no explicada en el Lead Time.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="estandarización-de-la-nomenclatura-y-jerarquías" class="level2">
+<h2 class="anchored" data-anchor-id="estandarización-de-la-nomenclatura-y-jerarquías">1.2 Estandarización de la Nomenclatura y Jerarquías</h2>
+<p>La falta de un léxico estandarizado entre Operaciones, Comercial y Data Science es la causa raíz de numerosas discrepancias analíticas. Es imperativo definir la <strong>Unidad de Análisis</strong>.</p>
+<section id="la-unidad-fundamental-sku-vs.-dfu" class="level3">
+<h3 class="anchored" data-anchor-id="la-unidad-fundamental-sku-vs.-dfu">1.2.1 La Unidad Fundamental: SKU vs.&nbsp;DFU</h3>
+<ul>
+<li><strong>SKU (Stock Keeping Unit):</strong> Referencia al ítem físico con sus atributos intrínsecos (peso, dimensiones, fórmula). Definición estática.</li>
+<li><strong>DFU (Demand Forecasting Unit):</strong> Unidad mínima de planificación. Intersección entre <strong>Producto</strong>, <strong>Ubicación</strong> y <strong>Canal</strong>.</li>
+<li><strong>EAN / UPC :</strong> Es el código de barras universal. Un mismo SKU puede tener varios EAN si el proveedor cambió el empaque pero el producto es el mismo.</li>
+</ul>
+<p><strong>Justificación Técnica:</strong> Analizar la demanda a nivel SKU agregado oculta la variabilidad geográfica. Los parámetros de inventario (Stock de Seguridad, ROP) deben calcularse siempre a nivel <strong>DFU</strong>.</p>
+</section>
+<section id="jerarquías-de-producto" class="level3">
+<h3 class="anchored" data-anchor-id="jerarquías-de-producto">1.2.2 Jerarquías de Producto</h3>
+<p>Para gestionar la complejidad de miles de SKUs, es necesario estructurar una jerarquía de agregación robusta (SKU <span class="math inline">\(\rightarrow\)</span> Subfamilia <span class="math inline">\(\rightarrow\)</span> Familia <span class="math inline">\(\rightarrow\)</span> Categoría).</p>
+<p><strong>El BOM (Bill of Materials) o Explosión de Materiales</strong></p>
+<p>El BOM es la “receta” que define los componentes necesarios para fabricar o ensamblar un producto terminado.</p>
+<p><strong>Integridad de la Planificación:</strong> Si el BOM en el ERP tiene errores (cantidades incorrectas o componentes obsoletos), cualquier modelo de optimización generará compras erróneas de materia prima.</p>
+<p><strong>Demanda Independiente:</strong> Es la del producto final (SKU Padre) que se vende al cliente y que debemos pronosticar.</p>
+<p><strong>Demanda Dependiente:</strong> Es la de los componentes (SKUs Hijos) definidos en el BOM. Esta no se pronostica, se <strong>calcula</strong> a partir del plan de producción del producto padre.</p>
+<p><strong>Kits y Packs:</strong> En distribución, el BOM define si ciertos SKUs se venden como “combos”. Auditar esto evita duplicar el pronóstico del producto individual y del kit simultáneamente.</p>
+</section>
+<section id="consistencia-en-unidades-de-medida-uom-y-el-factor-de-conversión" class="level3">
+<h3 class="anchored" data-anchor-id="consistencia-en-unidades-de-medida-uom-y-el-factor-de-conversión">1.2.3 Consistencia en Unidades de Medida (UoM) y el Factor de Conversión</h3>
+<p>La inconsistencia en las unidades de medida es uno de los riesgos más subestimados y críticos en la integración de datos. Mientras el departamento comercial habla en “pesos”, el almacén opera en “pallets” y el cliente final compra en “unidades”.</p>
+<p>Para un modelo de Ciencia de Datos, trabajar con unidades heterogéneas es una receta para el desastre. Imagina que tu algoritmo de Machine Learning predice una demanda de “10”, pero el sistema de compras lo interpreta como “10 cajas de 24 unidades” en lugar de “10 unidades sueltas”. El error resultante es de un <strong>2,400%</strong>.</p>
+<section id="el-problema-de-la-multiplicidad-de-unidades" class="level4">
+<h4 class="anchored" data-anchor-id="el-problema-de-la-multiplicidad-de-unidades">El Problema de la Multiplicidad de Unidades:</h4>
+<ul>
+<li><p><strong>Ventas:</strong> Suele reportar en Moneda o Unidades de Venta (Cajas/Packs).</p></li>
+<li><p><strong>Almacén (WMS):</strong> Gestiona Pallets, Camas o Ubicaciones.</p></li>
+<li><p><strong>Marketing/Comercial:</strong> Analiza Unidades de Consumo (EAN individual).</p></li>
+<li><p><strong>Producción/Compras:</strong> Utiliza Unidades de Medida Base (Kilos, Litros, Metros).</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="el-ecosistema-de-sistemas-de-información-el-mapa-de-la-verdad" class="level2">
+<h2 class="anchored" data-anchor-id="el-ecosistema-de-sistemas-de-información-el-mapa-de-la-verdad">1.3 El Ecosistema de Sistemas de Información: El Mapa de la Verdad</h2>
+<p>La información de la cadena de suministro no es monolítica; reside en un ecosistema de aplicaciones interconectadas. Para un científico de datos, identificar el <strong>Sistema de Registro (System of Record - SoR)</strong> es vital para asegurar que se está extrayendo la variable de la fuente primaria y no de una réplica distorsionada.</p>
+<ol type="1">
+<li><p><strong>ERP (Enterprise Resource Planning):</strong> Es la columna vertebral financiera y el repositorio de los <strong>Datos Maestros</strong>. Aquí auditaremos los precios netos, los costos unitarios (PPP) y las jerarquías oficiales de productos. Sin embargo, el ERP suele ser “ciego” a los movimientos granulares de la bodega.</p></li>
+<li><p><strong>WMS (Warehouse Management System):</strong> Es la autoridad absoluta sobre el <strong>Inventario Físico</strong>. A diferencia del ERP, el WMS registra mermas, bloqueos de calidad y ubicaciones en tiempo real. Es nuestra fuente para calcular la disponibilidad real frente a la teórica.</p></li>
+<li><p><strong>TMS (Transportation Management System):</strong> Es la fuente esencial para auditar el <strong>Lead Time de Transporte</strong>. Mientras el ERP dice cuándo “debería” llegar un camión, el TMS registra mediante GPS o estatus de transportista cuándo llegó realmente, permitiéndonos modelar la variabilidad del suministro.</p></li>
+<li><p><strong>POS (Point of Sale):</strong> En entornos de Retail, el POS proporciona el <strong>Sell-out</strong> (la venta real al consumidor final)<sup>9</sup>. Este dato es la “demanda pura”, libre del ruido que generan los pedidos intermedios de los distribuidores o el reabastecimiento a tiendas.</p></li>
+<li><p><strong>MRP (Material Requirements Planning):</strong> Es el motor lógico que orquestra la ejecución. El MRP toma el pronóstico de demanda, consulta el <strong>BOM (Bill of Materials)</strong> para realizar la explosión de materiales y revisa los niveles de stock para generar órdenes de compra o producción.</p></li>
+</ol>
+<blockquote class="blockquote">
+<h3 id="el-riesgo-del-dato-duplicado" class="anchored"><strong>El riesgo del dato “duplicado”</strong></h3>
+<p>Es común que el ERP y el WMS tengan cifras de inventario distintas. En tu auditoría, establece siempre una <strong>jerarquía de verdad</strong>: si hay discrepancia en unidades físicas, el WMS manda; si la hay en valor monetario, el ERP manda. Ignorar estas jerarquías llevará a que tus modelos de optimización (Parte IV) sugieran comprar productos que ya tienes “escondidos” en alguna ubicación del WMS no sincronizada con el ERP.</p>
+</blockquote>
+</section>
+<section id="selección-de-herramientas-excel-pythonr-y-sql" class="level2">
+<h2 class="anchored" data-anchor-id="selección-de-herramientas-excel-pythonr-y-sql">1.4 Selección de Herramientas: Excel, Python/R y SQL</h2>
+<p>Antes de proceder al análisis, debemos justificar la elección de la plataforma tecnológica. Si bien las hojas de cálculo son omnipresentes, presentan limitaciones severas para la ingeniería de datos robusta.</p>
+<section id="limitaciones-de-la-hoja-de-cálculo" class="level3">
+<h3 class="anchored" data-anchor-id="limitaciones-de-la-hoja-de-cálculo">1.4.1 Limitaciones de la Hoja de Cálculo</h3>
+<ul>
+<li><strong>Volumen:</strong> Excel tiene un límite físico de 1,048,576 filas. Una cadena de suministro mediana genera este volumen de transacciones en cuestión de semanas. R y Python están limitados únicamente por la memoria RAM del equipo.</li>
+<li><strong>Trazabilidad:</strong> En una hoja de cálculo, las acciones (filtrar, borrar, ordenar) son efímeras. Si un analista elimina un registro por error (“Fat Finger”), no queda rastro de la operación.</li>
+<li><strong>Reproducibilidad:</strong> Este es el factor decisivo. Un análisis basado en código (script) es una “receta” auditable y repetible. Si los datos base cambian, el script se ejecuta nuevamente sin intervención manual, garantizando consistencia.</li>
+</ul>
+</section>
+<section id="el-rol-de-sql-la-fuente-de-la-verdad" class="level3">
+<h3 class="anchored" data-anchor-id="el-rol-de-sql-la-fuente-de-la-verdad">1.4.2 El Rol de SQL: La Fuente de la Verdad</h3>
+<p>Una práctica común pero deficiente es basar el análisis en archivos planos (CSV, TXT) exportados manualmente. * <strong>El problema del CSV:</strong> Es una “foto estática” (snapshot). En el momento en que se descarga, el dato comienza a volverse obsoleto. Además, pierde los tipos de datos (fechas que se vuelven texto, números que pierden decimales). * <strong>La ventaja de SQL:</strong> Conectarse directamente a la base de datos permite consultar la <strong>Fuente de la Verdad (SSOT)</strong> en tiempo real. Permite realizar el filtrado y agregación en el servidor antes de traer los datos a la memoria local.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Flujo de Trabajo Recomendado
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El flujo profesional recomendado hoy en dia es: <strong>SQL (Extracción y Filtrado)</strong> <span class="math inline">\(\rightarrow\)</span> R/Python (Limpieza y Modelado) <span class="math inline">\(\rightarrow\)</span> BI/Reporte (Visualización) Power BI / Tableau</p>
+</div>
+</div>
+</section>
+</section>
+<section id="análisis-exploratorio-de-datos-eda-y-calidad" class="level2">
+<h2 class="anchored" data-anchor-id="análisis-exploratorio-de-datos-eda-y-calidad">1.5 Análisis Exploratorio de Datos (EDA) y Calidad</h2>
+<section id="completitud-corte-de-datos-y-el-peligro-de-trabajar-con-fantasmas" class="level3">
+<h3 class="anchored" data-anchor-id="completitud-corte-de-datos-y-el-peligro-de-trabajar-con-fantasmas">1.5.1 Completitud, Corte de Datos y el Peligro de Trabajar con “Fantasmas”</h3>
+<p>El análisis de completitud no es más que una inspección de salud: ¿están todos los que deberían estar? En Supply Chain, los datos no son solo números; son el rastro digital de camiones moviéndose, gente haciendo picking y clientes comprando. Si faltan datos, es como intentar armar un rompecabezas al que le faltan las piezas del centro.</p>
+<section id="cómo-hacerlo-de-forma-sencilla" class="level4">
+<h4 class="anchored" data-anchor-id="cómo-hacerlo-de-forma-sencilla">¿Cómo hacerlo de forma sencilla?</h4>
+<p>No necesitas ser un experto en estadística. Cualquiera puede realizar esta auditoría siguiendo estos tres pasos:</p>
+<ol type="1">
+<li><p><strong>El recuento de días:</strong> Si estás analizando un año, deberías tener 365 registros de venta (o 52 semanas). Si tienes 340, algo se “perdió” en el camino.</p></li>
+<li><p><strong>La prueba de los ceros vs.&nbsp;los vacíos (NAs):</strong> Un cero es un dato (nadie compró). Un vacío es un error (el sistema no grabó). Aprender a distinguirlos es la primera regla del analista.</p></li>
+<li><p><strong>El semáforo de integridad:</strong> Crear una visualización simple (como el mapa que vimos antes) donde el rojo nos diga “aquí el sistema se cayó”.</p></li>
+</ol>
+</section>
+<section id="qué-pasa-si-no-lo-haces" class="level4">
+<h4 class="anchored" data-anchor-id="qué-pasa-si-no-lo-haces">¿Qué pasa si NO lo haces?</h4>
+<p>Ignorar la completitud de los datos y el punto de corte (<em>Data Cut-off</em>) te llevará inevitablemente a tres desastres operativos:</p>
+<ul>
+<li><p><strong>El Sesgo del Mes Incompleto:</strong> Si hoy es 20 de octubre y descargas los datos de octubre, tus modelos verán que las ventas “cayeron” drásticamente respecto a septiembre. El algoritmo no sabe que el mes no ha terminado; pensará que tu producto está muriendo y dejará de pedir stock, provocando un desabasto masivo en noviembre.</p></li>
+<li><p><strong>Decisiones basadas en “Silencios”:</strong> Si una interfaz de datos entre tu 3PL (operador logístico) y tu ERP falló durante una semana, verás ventas en cero. Si el modelo de Ciencia de Datos toma ese cero como real, bajará tus niveles de inventario justo cuando más los necesitas.</p></li>
+<li><p><strong>El Efecto Látigo Digital:</strong> Si los datos del <strong>BOM</strong> (los componentes) no están completos pero el producto final sí, el <strong>MRP</strong> generará órdenes de compra para fabricar algo para lo que “no tiene” piezas en el sistema. Resultado: líneas de producción paradas y exceso de materia prima incorrecta.v</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork) <span class="co"># Para combinar gráficos</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Simulación de datos con "Ruido de Sistema"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>datos_auditoria <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Fecha =</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">"2024-01-01"</span>), <span class="at">by=</span><span class="st">"day"</span>, <span class="at">length.out=</span><span class="dv">120</span>),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Demanda =</span> <span class="fu">rnorm</span>(<span class="dv">120</span>, <span class="dv">100</span>, <span class="dv">15</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulamos dos tipos de problemas comunes:</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># A. Caída de Interfaz (Datos faltantes/NA)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>datos_auditoria<span class="sc">$</span>Demanda[<span class="dv">40</span><span class="sc">:</span><span class="dv">52</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># B. El "Efecto Cero" (Falla de registro de venta perdida, tema del Cap 2)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>datos_auditoria<span class="sc">$</span>Demanda[<span class="dv">80</span><span class="sc">:</span><span class="dv">85</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Visualización Mejorada</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">vis_miss</span>(datos_auditoria) <span class="sc">+</span> </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Análisis de Vacíos (NA)"</span>, <span class="at">subtitle =</span> <span class="st">"Fallas técnicas de interfaz"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos_auditoria, <span class="fu">aes</span>(<span class="at">x =</span> Fecha, <span class="at">y =</span> Demanda)) <span class="sc">+</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> <span class="fu">filter</span>(datos_auditoria, <span class="fu">is.na</span>(Demanda)), </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">y =</span> <span class="dv">0</span>), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">shape =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Serie Temporal de Demanda"</span>, <span class="at">subtitle =</span> <span class="st">"Cruces (X) indican datos perdidos"</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">/</span> p2 <span class="co"># Combinamos ambos gráficos</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cap-1-auditoria_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Interpretación del Gráfico
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Los bloques negros en <code>Missing</code> indican ausencia de datos. Si observas patrones rítmicos (ej. faltan datos cada 7 días), podrías estar ante un problema de <strong>interfaz de sistema</strong> los fines de semana y no ante una falta de demanda. Nunca imputes ceros a estos valores sin verificar primero si fue una falla técnica (Null vs.&nbsp;Zero).</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nunca imputes ceros a los valores <code>NA</code> sin investigar. Un <code>NA</code> es una duda (falló el sistema); un <code>0</code> es una certeza (nadie quiso comprar). Mezclarlos destruirá la precisión de tus algoritmos de Machine Learning.</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="gestión-de-valores-atípicos-outliers-y-winsorización" class="level2">
+<h2 class="anchored" data-anchor-id="gestión-de-valores-atípicos-outliers-y-winsorización">1.6 Gestión de Valores Atípicos (Outliers) y Winsorización</h2>
+<p>La presencia de valores extremos puede originarse por eventos legítimos o errores de captura. La eliminación simple conlleva pérdida de información de volumen; la inclusión sin tratamiento infla el Stock de Seguridad.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><strong>Outliers: ¿Eliminar o Suavizar?</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Existe una diferencia crítica entre borrar datos y limpiar la señal. Se aconseja que <strong>nunca debemos eliminar un outlier</strong>, ya que representa una transacción real que existió. Lo que debemos hacer es <strong>suavizar su impacto</strong> para que no distorsione el futuro.</p>
+</div>
+</div>
+<section id="técnica-de-winsorización" class="level3">
+<h3 class="anchored" data-anchor-id="técnica-de-winsorización">Técnica de Winsorización</h3>
+<p>En lugar de eliminar los datos extraños (lo que podría causar huecos en tu serie temporal), la <strong>Winsorización</strong> los “recorta”.</p>
+<ul>
+<li><p>Si un dato es demasiado alto, se reemplaza por el valor máximo permitido (el “techo”).</p></li>
+<li><p>Esto permite mantener la cronología de los datos pero reduciendo el impacto de picos inexplicables.</p></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Mes</strong></td>
+<td style="text-align: center;"><strong>Demanda Real</strong></td>
+<td style="text-align: center;"><strong>¿Es Outlier?</strong></td>
+<td style="text-align: center;"><strong>Demanda Winsorizada (Limpia)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Enero</td>
+<td style="text-align: center;">95</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">95</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Febrero</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">110</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Marzo</strong></td>
+<td style="text-align: center;"><strong>500</strong></td>
+<td style="text-align: center;"><strong>SÍ (Error)</strong></td>
+<td style="text-align: center;"><strong>145 (Se ajusta al techo)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Abril</td>
+<td style="text-align: center;">105</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">105</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Entonces es suavizar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“Un outlier no es un error, es un evento”. Si lo eliminas, ignoras que tu cadena de suministro fue capaz de entregar ese volumen. Si lo suavizas, proteges tu pronóstico futuro de eventos que probablemente no se repitan el próximo mes.</p>
+</div>
+</div>
+</section>
+<section id="el-método-tradicional---desviación-estándar-sigma" class="level3">
+<h3 class="anchored" data-anchor-id="el-método-tradicional---desviación-estándar-sigma">El Método Tradicional - Desviación Estándar (<span class="math inline">\(\sigma\)</span>)</h3>
+<p>En estadística tradicional es común ver la winsorización al percentil 95 o a 3 desviaciones estándar.</p>
+<p>Normalmente, una persona usaría la <strong>Regla de las 3 Sigmas</strong>. Se asume que los datos siguen una distribución normal y se calcula el límite así:</p>
+<p><span class="math display">\[
+\large Límite = Media \pm \left( 3 \cdot Desviación\ Estándar \right)
+\]</span></p>
+<p><strong>El problema con este enfoque:</strong></p>
+<ul>
+<li><p><strong>La Media y la Desviación Estándar “se rompen” con los outliers:</strong> Si tienes un pico de demanda de 500 cuando lo normal es 100, la media sube a 150 y la desviación estándar se dispara.</p></li>
+<li><p><strong>El efecto “Smeared” (Manchado):</strong> Como el outlier infla la desviación estándar, el “techo” se vuelve tan alto que otros errores más pequeños ya no se detectan como anomalías. El outlier se “protege” a sí mismo moviendo la vara de medir.</p></li>
+</ul>
+</section>
+<section id="el-método-mad-median-absolute-deviation" class="level3">
+<h3 class="anchored" data-anchor-id="el-método-mad-median-absolute-deviation">El Método MAD (Median Absolute Deviation)</h3>
+<p>El MAD es <strong>más robusto</strong> que la desviación estándar tradicional.</p>
+<ul>
+<li><p><strong>El problema de la Desviación Estándar:</strong> Si tienes un outlier masivo, la media y la desviación estándar se inflan artificialmente, haciendo que el “filtro” sea menos eficaz.</p></li>
+<li><p><strong>La ventaja del MAD:</strong> Utiliza la <strong>mediana</strong>, que no se mueve aunque existan valores extremos. Es como calcular qué tan lejos está el dato típico de la mayoría, sin dejar que el outlier “engañe” al cálculo.</p>
+<p><span class="math display">\[
+\large Límite = \text{Mediana} \pm \left( K \cdot MAD \right)
+\]</span></p></li>
+<li><p><strong>Mediana:</strong> El centro de tus datos.</p></li>
+</ul>
+<!-- -->
+<ul>
+<li><p><strong>K:</strong> Es un multiplicador de sensibilidad (normalmente entre 2 y 3).</p></li>
+<li><p><strong>MAD:</strong> La medida de dispersión robusta.</p></li>
+</ul>
+<p><strong>Ejemplo:</strong></p>
+<p>Imagina que vendes un producto y tu demanda mensual habitual ronda las <strong>100 unidades</strong>. Pero un mes hubo un error en el sistema y se registraron <strong>500 unidades</strong> (un outlier masivo).</p>
+<p>Primero calculamos los límites usando la fórmula de tu imagen:</p>
+<ul>
+<li><p><strong>Mediana:</strong> Es más estable. Si la mayoría de tus meses vendes 100, la mediana será 100, aunque haya un mes de 500.</p></li>
+<li><p><strong>MAD (Desviación Absoluta de la Mediana):</strong> Mide cuánto varían tus datos típicos. Digamos que tu MAD es <strong>15</strong>.</p></li>
+<li><p><strong>K (Sensibilidad):</strong> Usemos un factor común de <strong>3</strong>.</p></li>
+</ul>
+<p><strong>Cálculo del Techo:</strong> <span class="math inline">\(100+(3⋅15)=145.\)</span></p>
+<p>Cualquier valor por encima de <strong>145</strong> se considera un “accidente logístico” y no negocio recurrente.</p>
+</section>
+<section id="comparación-tradicional-vs.-mad" class="level3">
+<h3 class="anchored" data-anchor-id="comparación-tradicional-vs.-mad">Comparación: Tradicional vs.&nbsp;MAD</h3>
+<p>Imagina estos datos de demanda: <code>100, 100, 100, 100, 500</code></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Característica</strong></td>
+<td style="text-align: center;"><strong>Método Tradicional (Media / DS)</strong></td>
+<td style="text-align: center;"><strong>Método MAD (Mediana / MAD)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Centro</strong></td>
+<td style="text-align: center;">La Media sería <strong>180</strong>. (Muy influenciada por el 500).</td>
+<td style="text-align: center;">La Mediana sería <strong>100</strong>. (No le importa el 500).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Sensibilidad</strong></td>
+<td style="text-align: center;">El límite sube tanto que el 500 podría parecer “normal”.</td>
+<td style="text-align: center;">El límite se queda cerca de 100, marcando el 500 como outlier claro.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Robustez</strong></td>
+<td style="text-align: center;">Baja. Los accidentes logísticos deforman el cálculo.</td>
+<td style="text-align: center;">Alta. Detecta el accidente sin que este afecte al límite.</td>
+</tr>
+</tbody>
+</table>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Función para detectar outliers usando IQR</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>detectar_outliers <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">k =</span> <span class="fl">1.5</span>) {</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(x, <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(x, <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  iqr <span class="ot">&lt;-</span> q3 <span class="sc">-</span> q1</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  lower <span class="ot">&lt;-</span> q1 <span class="sc">-</span> k <span class="sc">*</span> iqr</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  upper <span class="ot">&lt;-</span> q3 <span class="sc">+</span> k <span class="sc">*</span> iqr</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">valor =</span> x,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">es_outlier =</span> x <span class="sc">&lt;</span> lower <span class="sc">|</span> x <span class="sc">&gt;</span> upper,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">tipo =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      x <span class="sc">&lt;</span> lower <span class="sc">|</span> x <span class="sc">&gt;</span> upper <span class="sc">~</span> <span class="st">"Outlier"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Normal"</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Función de winsorización</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>winsorizar <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">percentil =</span> <span class="fl">0.95</span>) {</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  limite_inferior <span class="ot">&lt;-</span> <span class="fu">quantile</span>(x, <span class="dv">1</span> <span class="sc">-</span> percentil, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  limite_superior <span class="ot">&lt;-</span> <span class="fu">quantile</span>(x, percentil, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  x_wins <span class="ot">&lt;-</span> x</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  x_wins[x <span class="sc">&lt;</span> limite_inferior] <span class="ot">&lt;-</span> limite_inferior</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  x_wins[x <span class="sc">&gt;</span> limite_superior] <span class="ot">&lt;-</span> limite_superior</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x_wins)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Generar dataset de ejemplo con demanda simulada</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>n_meses <span class="ot">&lt;-</span> <span class="dv">24</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear fechas</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>fechas <span class="ot">&lt;-</span> <span class="fu">seq.Date</span>(<span class="at">from =</span> <span class="fu">as.Date</span>(<span class="st">"2023-01-01"</span>), </span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>                   <span class="at">to =</span> <span class="fu">as.Date</span>(<span class="st">"2024-12-31"</span>), </span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>                   <span class="at">by =</span> <span class="st">"month"</span>)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Simular demanda de inventario con estacionalidad y outliers</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>demanda_base <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>estacionalidad <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">*</span> <span class="fu">sin</span>(<span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">*</span> (<span class="dv">1</span><span class="sc">:</span>n_meses) <span class="sc">/</span> <span class="dv">12</span>)</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>ruido <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_meses, <span class="dv">0</span>, <span class="dv">8</span>)</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>demanda <span class="ot">&lt;-</span> demanda_base <span class="sc">+</span> estacionalidad <span class="sc">+</span> ruido</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Insertar outliers en posiciones específicas</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>demanda[<span class="dv">10</span>] <span class="ot">&lt;-</span> <span class="dv">250</span>  <span class="co"># Pico extremo (promoción especial)</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>demanda[<span class="dv">15</span>] <span class="ot">&lt;-</span> <span class="dv">25</span>   <span class="co"># Caída extrema (ruptura de stock)</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear dataset</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>  <span class="at">fecha =</span> fechas,</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>  <span class="at">unidades =</span> demanda</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicar winsorización</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">unidades_wins =</span> <span class="fu">winsorizar</span>(unidades, <span class="at">percentil =</span> <span class="fl">0.95</span>)</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Detectar outliers</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>outliers_info <span class="ot">&lt;-</span> <span class="fu">detectar_outliers</span>(datos<span class="sc">$</span>unidades)</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(datos, outliers_info)</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular límites para la banda de confianza</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(datos<span class="sc">$</span>unidades_wins)</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>sd_wins <span class="ot">&lt;-</span> <span class="fu">sd</span>(datos<span class="sc">$</span>unidades_wins)</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>limite_sup <span class="ot">&lt;-</span> media <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> sd_wins</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>limite_inf <span class="ot">&lt;-</span> media <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> sd_wins</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparar datos para outliers</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>datos_normales <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>es_outlier)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>datos_outliers <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span> <span class="fu">filter</span>(es_outlier)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear gráfico interactivo</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>fig_antes <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Banda de confianza (zona verde)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_ribbons</span>(</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> datos,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">~</span>fecha,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymin =</span> limite_inf,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymax =</span> limite_sup,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">fillcolor =</span> <span class="st">"rgba(144, 238, 144, 0.3)"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"transparent"</span>),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Rango Normal"</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">hoverinfo =</span> <span class="st">"skip"</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Línea de tendencia suavizada</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_lines</span>(</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> datos,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">~</span>fecha,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="sc">~</span><span class="fu">fitted</span>(<span class="fu">loess</span>(unidades_wins <span class="sc">~</span> <span class="fu">as.numeric</span>(fecha), <span class="at">span =</span> <span class="fl">0.3</span>)),</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"rgba(150, 150, 150, 0.6)"</span>, <span class="at">dash =</span> <span class="st">"dash"</span>, <span class="at">width =</span> <span class="dv">2</span>),</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Tendencia"</span>,</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">hovertemplate =</span> <span class="st">"Tendencia: %{y:.1f}&lt;extra&gt;&lt;/extra&gt;"</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Puntos normales (negros)</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_markers</span>(</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> datos_normales,</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">~</span>fecha,</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="sc">~</span>unidades,</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">marker =</span> <span class="fu">list</span>(</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="dv">10</span>,</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">width =</span> <span class="dv">1</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Normal"</span>,</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">hovertemplate =</span> <span class="st">"&lt;b&gt;%{x|%Y-%m}&lt;/b&gt;&lt;br&gt;Unidades: %{y:.0f}&lt;br&gt;Estado: Normal&lt;extra&gt;&lt;/extra&gt;"</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Puntos outliers (rojos grandes)</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_markers</span>(</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> datos_outliers,</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">~</span>fecha,</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="sc">~</span>unidades,</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">marker =</span> <span class="fu">list</span>(</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"#FF3333"</span>,</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="dv">16</span>,</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>      <span class="at">symbol =</span> <span class="st">"circle"</span>,</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"darkred"</span>, <span class="at">width =</span> <span class="dv">2</span>)</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Outlier"</span>,</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">hovertemplate =</span> <span class="st">"&lt;b&gt;%{x|%Y-%m}&lt;/b&gt;&lt;br&gt;Unidades: %{y:.0f}&lt;br&gt;Estado: &lt;b&gt;OUTLIER&lt;/b&gt;&lt;extra&gt;&lt;/extra&gt;"</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Líneas verticales conectando outliers al rango</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_segments</span>(</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> datos_outliers <span class="sc">%&gt;%</span> <span class="fu">filter</span>(unidades <span class="sc">&gt;</span> limite_sup),</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">~</span>fecha, <span class="at">xend =</span> <span class="sc">~</span>fecha,</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="sc">~</span>unidades, <span class="at">yend =</span> limite_sup,</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"rgba(150, 150, 150, 0.5)"</span>, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">dash =</span> <span class="st">"dot"</span>),</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">showlegend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    <span class="at">hoverinfo =</span> <span class="st">"skip"</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_segments</span>(</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> datos_outliers <span class="sc">%&gt;%</span> <span class="fu">filter</span>(unidades <span class="sc">&lt;</span> limite_inf),</span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">~</span>fecha, <span class="at">xend =</span> <span class="sc">~</span>fecha,</span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="sc">~</span>unidades, <span class="at">yend =</span> limite_inf,</span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"rgba(150, 150, 150, 0.5)"</span>, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">dash =</span> <span class="st">"dot"</span>),</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">showlegend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>    <span class="at">hoverinfo =</span> <span class="st">"skip"</span></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Layout</span></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">list</span>(</span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>      <span class="at">text =</span> <span class="st">"&lt;b&gt;&lt;/b&gt;&lt;br&gt;&lt;sub&gt;&lt;/sub&gt;"</span>,</span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">16</span>)</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">xaxis =</span> <span class="fu">list</span>(</span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">""</span>,</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>      <span class="at">tickformat =</span> <span class="st">"%Y-%m"</span>,</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>      <span class="at">showgrid =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>      <span class="at">gridcolor =</span> <span class="st">"rgba(200, 200, 200, 0.3)"</span></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">yaxis =</span> <span class="fu">list</span>(</span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Unidades"</span>,</span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>      <span class="at">showgrid =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>      <span class="at">gridcolor =</span> <span class="st">"rgba(200, 200, 200, 0.3)"</span></span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">hovermode =</span> <span class="st">"closest"</span>,</span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot_bgcolor =</span> <span class="st">"white"</span>,</span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">paper_bgcolor =</span> <span class="st">"white"</span>,</span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend =</span> <span class="fu">list</span>(</span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>      <span class="at">orientation =</span> <span class="st">"h"</span>,</span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>      <span class="at">yanchor =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="fl">1.02</span>,</span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>      <span class="at">xanchor =</span> <span class="st">"right"</span>,</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="dv">1</span></span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>fig_antes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-antes-outliers" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-antes-outliers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-57a1256a5de20eef6003" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-57a1256a5de20eef6003">{"x":{"visdat":{"4c3c5dd56978":["function () ","plotlyVisDat"],"4c3c26fa261":["function () ","data"],"4c3c54d3e36":["function () ","data"],"4c3c73d661cf":["function () ","data"],"4c3c7ec668ed":["function () ","data"],"4c3c46457e00":["function () ","data"],"4c3c3df754d":["function () ","data"]},"cur_data":"4c3c3df754d","attrs":{"4c3c26fa261":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"ymin":81.695676101277144,"ymax":123.18195319369775,"type":"scatter","mode":"lines","hoveron":"points","fill":"toself","fillcolor":"rgba(144, 238, 144, 0.3)","line":{"color":"transparent"},"name":"Rango Normal","hoverinfo":"skip","inherit":true},"4c3c54d3e36":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"rgba(150, 150, 150, 0.6)","dash":"dash","width":2},"name":"Tendencia","hovertemplate":"Tendencia: %{y:.1f}<extra><\/extra>","inherit":true},"4c3c73d661cf":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"markers","marker":{"color":"black","size":10,"line":{"color":"white","width":1}},"name":"Normal","hovertemplate":"<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","inherit":true},"4c3c7ec668ed":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"markers","marker":{"color":"#FF3333","size":16,"symbol":"circle","line":{"color":"darkred","width":2}},"name":"Outlier","hovertemplate":"<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: <b>OUTLIER<\/b><extra><\/extra>","inherit":true},"4c3c46457e00":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"xend":{},"yend":123.18195319369775,"type":"scatter","mode":"lines","line":{"color":"rgba(150, 150, 150, 0.5)","width":2,"dash":"dot"},"showlegend":false,"hoverinfo":"skip","inherit":true},"4c3c3df754d":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"xend":{},"yend":81.695676101277144,"type":"scatter","mode":"lines","line":{"color":"rgba(150, 150, 150, 0.5)","width":2,"dash":"dot"},"showlegend":false,"hoverinfo":"skip","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":{"text":"<b><\/b><br><sub><\/sub>","font":{"size":16}},"xaxis":{"domain":[0,1],"automargin":true,"title":"","tickformat":"%Y-%m","showgrid":true,"gridcolor":"rgba(200, 200, 200, 0.3)"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Unidades","showgrid":true,"gridcolor":"rgba(200, 200, 200, 0.3)"},"hovermode":"closest","plot_bgcolor":"white","paper_bgcolor":"white","legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1},"showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"fillcolor":"rgba(144, 238, 144, 0.3)","x":["2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2024-12-01","2024-12-01","2024-11-01","2024-10-01","2024-09-01","2024-08-01","2024-07-01","2024-06-01","2024-05-01","2024-04-01","2024-03-01","2024-02-01","2024-01-01","2023-12-01","2023-11-01","2023-10-01","2023-09-01","2023-08-01","2023-07-01","2023-06-01","2023-05-01","2023-04-01","2023-03-01","2023-02-01","2023-01-01"],"type":"scatter","mode":"lines","hoveron":"points","fill":"toself","line":{"color":"transparent"},"name":"Rango Normal","hoverinfo":["skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip"],"y":[81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775],"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01"],"y":[97.472851188114419,108.27389695295514,110.41580010403604,102.46763759111349,96.743809654183934,99.271100553527361,97.63057750374395,94.253806970139038,105.35132715375819,108.13188508161562,103.12124220741325,102.19336098494989,119.70378705065562,105.93217749863979,100.47238829740365,110.50245957189449,119.25360283804689,109.46653188817081,108.73550575028597,103.27127554326196,87.257381065572829,80.481415120334674,85.271188860605875,100.62256865005381],"type":"scatter","mode":"lines","line":{"color":"rgba(150, 150, 150, 0.6)","dash":"dash","width":2},"name":"Tendencia","hovertemplate":["Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>","Tendencia: %{y:.1f}<extra><\/extra>"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01"],"y":[94.251828736534179,113.63445846707089,116.40699731906108,97.5491147408637,99.285145128949651,97.407511579711269,100.52514396475947,93.344129172752758,98.058818167038766,87.673515849141879,110.48877958720615,112.90981051572669,121.89168352453002,124.23910551147569,118.89548941498218,103.09986660462391,113.24027177669572,103.64281245833155,86.203169535359137,77.601275547516309,83.585357523356564,101.66588735835084],"type":"scatter","mode":"markers","marker":{"color":"black","size":10,"line":{"color":"white","width":1}},"name":"Normal","hovertemplate":["<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: Normal<extra><\/extra>"],"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"line":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2023-10-01","2024-03-01"],"y":[250,25],"type":"scatter","mode":"markers","marker":{"color":"#FF3333","size":16,"symbol":"circle","line":{"color":"darkred","width":2}},"name":"Outlier","hovertemplate":["<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: <b>OUTLIER<\/b><extra><\/extra>","<b>%{x|%Y-%m}<\/b><br>Unidades: %{y:.0f}<br>Estado: <b>OUTLIER<\/b><extra><\/extra>"],"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"line":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2023-10-01","2023-10-01"],"y":[250,123.18195319369775],"type":"scatter","mode":"lines","line":{"color":"rgba(150, 150, 150, 0.5)","width":2,"dash":"dot"},"showlegend":false,"hoverinfo":["skip","skip"],"marker":{"color":"rgba(148,103,189,1)","line":{"color":"rgba(148,103,189,1)"}},"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2024-03-01","2024-03-01"],"y":[25,81.695676101277144],"type":"scatter","mode":"lines","line":{"color":"rgba(150, 150, 150, 0.5)","width":2,"dash":"dot"},"showlegend":false,"hoverinfo":["skip","skip"],"marker":{"color":"rgba(140,86,75,1)","line":{"color":"rgba(140,86,75,1)"}},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-antes-outliers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparar datos con información adicional para tooltips</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>datos_info <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">diferencia =</span> unidades <span class="sc">-</span> unidades_wins,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct_cambio =</span> <span class="fu">ifelse</span>(unidades <span class="sc">!=</span> unidades_wins, </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">abs</span>(diferencia) <span class="sc">/</span> unidades <span class="sc">*</span> <span class="dv">100</span>, </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                        <span class="dv">0</span>),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">ajustado =</span> <span class="fu">ifelse</span>(<span class="fu">abs</span>(diferencia) <span class="sc">&gt;</span> <span class="fl">0.1</span>, <span class="st">"Sí"</span>, <span class="st">"No"</span>),</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">desviacion_original =</span> (unidades <span class="sc">-</span> <span class="fu">mean</span>(unidades)) <span class="sc">/</span> <span class="fu">sd</span>(unidades),</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">desviacion_wins =</span> (unidades_wins <span class="sc">-</span> <span class="fu">mean</span>(unidades_wins)) <span class="sc">/</span> <span class="fu">sd</span>(unidades_wins)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear gráfico interactivo DESPUÉS mejorado</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>fig_despues <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Banda de confianza (zona verde)</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_ribbons</span>(</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> datos_info,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">~</span>fecha,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymin =</span> limite_inf,</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymax =</span> limite_sup,</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">fillcolor =</span> <span class="st">"rgba(144, 238, 144, 0.3)"</span>,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"transparent"</span>),</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Rango Normal (±1.5σ)"</span>,</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">hoverinfo =</span> <span class="st">"skip"</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Línea ORIGINAL (roja, punteada) - datos con outliers</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_lines</span>(</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> datos_info,</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">~</span>fecha,</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="sc">~</span>unidades,</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"#FF6B6B"</span>, <span class="at">dash =</span> <span class="st">"dash"</span>, <span class="at">width =</span> <span class="fl">2.5</span>),</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Serie Original"</span>,</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">hoverinfo =</span> <span class="st">"skip"</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Puntos ORIGINALES con info detallada</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_markers</span>(</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> datos_info,</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">~</span>fecha,</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="sc">~</span>unidades,</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">marker =</span> <span class="fu">list</span>(</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"#FF6B6B"</span>,</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="dv">9</span>,</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>      <span class="at">opacity =</span> <span class="fl">0.7</span>,</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>      <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">width =</span> <span class="fl">1.5</span>)</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Demanda Original"</span>,</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="sc">~</span><span class="fu">paste0</span>(</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;b&gt;📅 "</span>, <span class="fu">format</span>(fecha, <span class="st">"%B %Y"</span>), <span class="st">"&lt;/b&gt;"</span>,</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;&lt;b&gt;Demanda Original:&lt;/b&gt; "</span>, <span class="fu">round</span>(unidades, <span class="dv">0</span>), <span class="st">" unidades"</span>,</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;&lt;b&gt;Desviación σ:&lt;/b&gt; "</span>, <span class="fu">round</span>(desviacion_original, <span class="dv">2</span>),</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;&lt;b&gt;Estado:&lt;/b&gt; "</span>, tipo,</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;&lt;b&gt;Ajustado:&lt;/b&gt; "</span>, ajustado,</span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ifelse</span>(<span class="fu">abs</span>(diferencia) <span class="sc">&gt;</span> <span class="fl">0.1</span>,</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>             <span class="fu">paste0</span>(<span class="st">"&lt;br&gt;&lt;b&gt;Diferencia:&lt;/b&gt; "</span>, <span class="fu">round</span>(diferencia, <span class="dv">0</span>), <span class="st">" unidades ("</span>,</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">round</span>(pct_cambio, <span class="dv">1</span>), <span class="st">"%)"</span>),</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>             <span class="st">""</span>)</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">hovertemplate =</span> <span class="st">"%{text}&lt;extra&gt;&lt;/extra&gt;"</span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Línea WINSORIZADA (azul, sólida)</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_lines</span>(</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> datos_info,</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">~</span>fecha,</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="sc">~</span>unidades_wins,</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"#2E7D99"</span>, <span class="at">width =</span> <span class="fl">3.5</span>),</span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Serie Winsorizada"</span>,</span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">hoverinfo =</span> <span class="st">"skip"</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Puntos WINSORIZADOS con info detallada</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_markers</span>(</span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> datos_info,</span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">~</span>fecha,</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="sc">~</span>unidades_wins,</span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">marker =</span> <span class="fu">list</span>(</span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"#2E7D99"</span>,</span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="dv">11</span>,</span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>      <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">width =</span> <span class="dv">2</span>)</span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Demanda Winsorizada"</span>,</span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="sc">~</span><span class="fu">paste0</span>(</span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;b&gt;📅 "</span>, <span class="fu">format</span>(fecha, <span class="st">"%B %Y"</span>), <span class="st">"&lt;/b&gt;"</span>,</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;&lt;b&gt;Demanda Winsorizada:&lt;/b&gt; "</span>, <span class="fu">round</span>(unidades_wins, <span class="dv">0</span>), <span class="st">" unidades"</span>,</span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;&lt;b&gt;Desviación σ:&lt;/b&gt; "</span>, <span class="fu">round</span>(desviacion_wins, <span class="dv">2</span>),</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;&lt;b&gt;Media:&lt;/b&gt; "</span>, <span class="fu">round</span>(<span class="fu">mean</span>(unidades_wins), <span class="dv">0</span>),</span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;&lt;b&gt;Límite Superior:&lt;/b&gt; "</span>, <span class="fu">round</span>(limite_sup, <span class="dv">0</span>),</span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;&lt;b&gt;Límite Inferior:&lt;/b&gt; "</span>, <span class="fu">round</span>(limite_inf, <span class="dv">0</span>)</span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">hovertemplate =</span> <span class="st">"%{text}&lt;extra&gt;&lt;/extra&gt;"</span></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Líneas verticales en posiciones de outliers</span></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_segments</span>(</span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> datos_outliers,</span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="sc">~</span>fecha, <span class="at">xend =</span> <span class="sc">~</span>fecha,</span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">300</span>,</span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>    <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"rgba(100, 100, 100, 0.2)"</span>, <span class="at">dash =</span> <span class="st">"dot"</span>, <span class="at">width =</span> <span class="dv">1</span>),</span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>    <span class="at">showlegend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>    <span class="at">hoverinfo =</span> <span class="st">"skip"</span></span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Layout mejorado</span></span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(</span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">list</span>(</span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>      <span class="at">text =</span> <span class="st">"&lt;b&gt;&lt;/b&gt;&lt;br&gt;&lt;sub&gt;&lt;/sub&gt;"</span>,</span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">17</span>, <span class="at">family =</span> <span class="st">"Arial"</span>)</span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>    <span class="at">xaxis =</span> <span class="fu">list</span>(</span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">list</span>(</span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="st">"&lt;b&gt;Período&lt;/b&gt;"</span>,</span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">13</span>),</span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>        <span class="at">standoff =</span> <span class="dv">20</span></span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>      <span class="at">tickformat =</span> <span class="st">"%b&lt;br&gt;%Y"</span>,</span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>      <span class="at">tickangle =</span> <span class="dv">0</span>,</span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>      <span class="at">showgrid =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>      <span class="at">gridcolor =</span> <span class="st">"rgba(200, 200, 200, 0.3)"</span>,</span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>      <span class="at">dtick =</span> <span class="st">"M1"</span>,</span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>      <span class="at">tickfont =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">11</span>)</span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>    <span class="at">yaxis =</span> <span class="fu">list</span>(</span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">list</span>(</span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="st">"&lt;b&gt;Unidades de Demanda&lt;/b&gt;"</span>,</span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">13</span>)</span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a>      <span class="at">showgrid =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>      <span class="at">gridcolor =</span> <span class="st">"rgba(200, 200, 200, 0.3)"</span>,</span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a>      <span class="at">zeroline =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>      <span class="at">zerolinecolor =</span> <span class="st">"rgba(150, 150, 150, 0.4)"</span>,</span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a>      <span class="at">zerolinewidth =</span> <span class="dv">1</span></span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>    <span class="at">hovermode =</span> <span class="st">"closest"</span>,</span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot_bgcolor =</span> <span class="st">"rgba(250, 250, 250, 0.5)"</span>,</span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a>    <span class="at">paper_bgcolor =</span> <span class="st">"white"</span>,</span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>    <span class="at">margin =</span> <span class="fu">list</span>(<span class="at">b =</span> <span class="dv">100</span>, <span class="at">t =</span> <span class="dv">80</span>),</span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend =</span> <span class="fu">list</span>(</span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>      <span class="at">orientation =</span> <span class="st">"h"</span>,</span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a>      <span class="at">yanchor =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="fl">1.02</span>,</span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a>      <span class="at">xanchor =</span> <span class="st">"right"</span>,</span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="dv">1</span>,</span>
+<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">11</span>)</span>
+<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a>    <span class="at">annotations =</span> <span class="fu">list</span>(</span>
+<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a>      <span class="fu">list</span>(</span>
+<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="st">"&lt;i&gt;💡 La serie azul (winsorizada) se utiliza para calcular el Stock de Seguridad de manera más eficiente,&lt;br&gt;reduciendo el impacto de eventos extremos y optimizando el capital de trabajo.&lt;/i&gt;"</span>,</span>
+<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a>        <span class="at">xref =</span> <span class="st">"paper"</span>, <span class="at">yref =</span> <span class="st">"paper"</span>,</span>
+<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="fl">0.5</span>, <span class="at">y =</span> <span class="sc">-</span><span class="fl">0.22</span>,</span>
+<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a>        <span class="at">xanchor =</span> <span class="st">"center"</span>,</span>
+<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a>        <span class="at">showarrow =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">color =</span> <span class="st">"#555555"</span>)</span>
+<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Configuración adicional</span></span>
+<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">config</span>(</span>
+<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a>    <span class="at">displayModeBar =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a>    <span class="at">displaylogo =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a>    <span class="at">modeBarButtonsToRemove =</span> <span class="fu">c</span>(<span class="st">"lasso2d"</span>, <span class="st">"select2d"</span>),</span>
+<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a>    <span class="at">toImageButtonOptions =</span> <span class="fu">list</span>(</span>
+<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a>      <span class="at">format =</span> <span class="st">"png"</span>,</span>
+<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a>      <span class="at">filename =</span> <span class="st">"winsorization_resultado"</span>,</span>
+<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a>      <span class="at">height =</span> <span class="dv">600</span>,</span>
+<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a>      <span class="at">width =</span> <span class="dv">1200</span>,</span>
+<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a>      <span class="at">scale =</span> <span class="dv">2</span></span>
+<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a>fig_despues</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-despues-winsorizado" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-despues-winsorizado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-530f6898bd41d61acf4f" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-530f6898bd41d61acf4f">{"x":{"visdat":{"4c3c3c417cc2":["function () ","plotlyVisDat"],"4c3c58144a49":["function () ","data"],"4c3c171a768d":["function () ","data"],"4c3c35f4102d":["function () ","data"],"4c3c6327476":["function () ","data"],"4c3c544026f":["function () ","data"],"4c3c352d6343":["function () ","data"]},"cur_data":"4c3c352d6343","attrs":{"4c3c58144a49":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"ymin":81.695676101277144,"ymax":123.18195319369775,"type":"scatter","mode":"lines","hoveron":"points","fill":"toself","fillcolor":"rgba(144, 238, 144, 0.3)","line":{"color":"transparent"},"name":"Rango Normal (±1.5σ)","hoverinfo":"skip","inherit":true},"4c3c171a768d":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#FF6B6B","dash":"dash","width":2.5},"name":"Serie Original","hoverinfo":"skip","inherit":true},"4c3c35f4102d":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"markers","marker":{"color":"#FF6B6B","size":9,"opacity":0.69999999999999996,"line":{"color":"white","width":1.5}},"name":"Demanda Original","text":{},"hovertemplate":"%{text}<extra><\/extra>","inherit":true},"4c3c6327476":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#2E7D99","width":3.5},"name":"Serie Winsorizada","hoverinfo":"skip","inherit":true},"4c3c544026f":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"markers","marker":{"color":"#2E7D99","size":11,"line":{"color":"white","width":2}},"name":"Demanda Winsorizada","text":{},"hovertemplate":"%{text}<extra><\/extra>","inherit":true},"4c3c352d6343":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":0,"xend":{},"yend":300,"type":"scatter","mode":"lines","line":{"color":"rgba(100, 100, 100, 0.2)","dash":"dot","width":1},"showlegend":false,"hoverinfo":"skip","inherit":true}},"layout":{"margin":{"b":100,"l":60,"t":80,"r":10},"title":{"text":"<b><\/b><br><sub><\/sub>","font":{"size":17,"family":"Arial"}},"xaxis":{"domain":[0,1],"automargin":true,"title":{"text":"<b>Período<\/b>","font":{"size":13},"standoff":20},"tickformat":"%b<br>%Y","tickangle":0,"showgrid":true,"gridcolor":"rgba(200, 200, 200, 0.3)","dtick":"M1","tickfont":{"size":11}},"yaxis":{"domain":[0,1],"automargin":true,"title":{"text":"<b>Unidades de Demanda<\/b>","font":{"size":13}},"showgrid":true,"gridcolor":"rgba(200, 200, 200, 0.3)","zeroline":true,"zerolinecolor":"rgba(150, 150, 150, 0.4)","zerolinewidth":1},"hovermode":"closest","plot_bgcolor":"rgba(250, 250, 250, 0.5)","paper_bgcolor":"white","legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1,"font":{"size":11}},"annotations":[{"text":"<i>💡 La serie azul (winsorizada) se utiliza para calcular el Stock de Seguridad de manera más eficiente,<br>reduciendo el impacto de eventos extremos y optimizando el capital de trabajo.<\/i>","xref":"paper","yref":"paper","x":0.5,"y":-0.22,"xanchor":"center","showarrow":false,"font":{"size":11,"color":"#555555"}}],"showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":true,"displaylogo":false,"modeBarButtonsToRemove":["lasso2d","select2d"],"toImageButtonOptions":{"format":"png","filename":"winsorization_resultado","height":600,"width":1200,"scale":2}},"data":[{"fillcolor":"rgba(144, 238, 144, 0.3)","x":["2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2024-12-01","2024-12-01","2024-11-01","2024-10-01","2024-09-01","2024-08-01","2024-07-01","2024-06-01","2024-05-01","2024-04-01","2024-03-01","2024-02-01","2024-01-01","2023-12-01","2023-11-01","2023-10-01","2023-09-01","2023-08-01","2023-07-01","2023-06-01","2023-05-01","2023-04-01","2023-03-01","2023-02-01","2023-01-01"],"type":"scatter","mode":"lines","hoveron":"points","fill":"toself","line":{"color":"transparent"},"name":"Rango Normal (±1.5σ)","hoverinfo":["skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip"],"y":[81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,81.695676101277144,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775,123.18195319369775],"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01"],"y":[94.251828736534179,113.63445846707089,116.40699731906108,97.5491147408637,99.285145128949651,97.407511579711269,100.52514396475947,93.344129172752758,98.058818167038766,250,87.673515849141879,110.48877958720615,112.90981051572669,121.89168352453002,25,124.23910551147569,118.89548941498218,103.09986660462391,113.24027177669572,103.64281245833155,86.203169535359137,77.601275547516309,83.585357523356564,101.66588735835084],"type":"scatter","mode":"lines","line":{"color":"#FF6B6B","dash":"dash","width":2.5},"name":"Serie Original","hoverinfo":["skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01"],"y":[94.251828736534179,113.63445846707089,116.40699731906108,97.5491147408637,99.285145128949651,97.407511579711269,100.52514396475947,93.344129172752758,98.058818167038766,250,87.673515849141879,110.48877958720615,112.90981051572669,121.89168352453002,25,124.23910551147569,118.89548941498218,103.09986660462391,113.24027177669572,103.64281245833155,86.203169535359137,77.601275547516309,83.585357523356564,101.66588735835084],"type":"scatter","mode":"markers","marker":{"color":"#FF6B6B","size":9,"opacity":0.69999999999999996,"line":{"color":"white","width":1.5}},"name":"Demanda Original","text":["<b>📅 enero 2023<\/b><br><br><b>Demanda Original:<\/b> 94 unidades<br><b>Desviación σ:<\/b> -0.3<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 febrero 2023<\/b><br><br><b>Demanda Original:<\/b> 114 unidades<br><b>Desviación σ:<\/b> 0.22<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 marzo 2023<\/b><br><br><b>Demanda Original:<\/b> 116 unidades<br><b>Desviación σ:<\/b> 0.3<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 abril 2023<\/b><br><br><b>Demanda Original:<\/b> 98 unidades<br><b>Desviación σ:<\/b> -0.22<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 mayo 2023<\/b><br><br><b>Demanda Original:<\/b> 99 unidades<br><b>Desviación σ:<\/b> -0.17<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 junio 2023<\/b><br><br><b>Demanda Original:<\/b> 97 unidades<br><b>Desviación σ:<\/b> -0.22<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 julio 2023<\/b><br><br><b>Demanda Original:<\/b> 101 unidades<br><b>Desviación σ:<\/b> -0.13<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 agosto 2023<\/b><br><br><b>Demanda Original:<\/b> 93 unidades<br><b>Desviación σ:<\/b> -0.33<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 septiembre 2023<\/b><br><br><b>Demanda Original:<\/b> 98 unidades<br><b>Desviación σ:<\/b> -0.2<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 octubre 2023<\/b><br><br><b>Demanda Original:<\/b> 250 unidades<br><b>Desviación σ:<\/b> 3.94<br><b>Estado:<\/b> Outlier<br><br><b>Ajustado:<\/b> Sí<br><b>Diferencia:<\/b> 126 unidades (50.4%)","<b>📅 noviembre 2023<\/b><br><br><b>Demanda Original:<\/b> 88 unidades<br><b>Desviación σ:<\/b> -0.48<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 diciembre 2023<\/b><br><br><b>Demanda Original:<\/b> 110 unidades<br><b>Desviación σ:<\/b> 0.14<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 enero 2024<\/b><br><br><b>Demanda Original:<\/b> 113 unidades<br><b>Desviación σ:<\/b> 0.2<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 febrero 2024<\/b><br><br><b>Demanda Original:<\/b> 122 unidades<br><b>Desviación σ:<\/b> 0.45<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 marzo 2024<\/b><br><br><b>Demanda Original:<\/b> 25 unidades<br><b>Desviación σ:<\/b> -2.19<br><b>Estado:<\/b> Outlier<br><br><b>Ajustado:<\/b> Sí<br><b>Diferencia:<\/b> -53 unidades (214%)","<b>📅 abril 2024<\/b><br><br><b>Demanda Original:<\/b> 124 unidades<br><b>Desviación σ:<\/b> 0.51<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> Sí<br><b>Diferencia:<\/b> 0 unidades (0.3%)","<b>📅 mayo 2024<\/b><br><br><b>Demanda Original:<\/b> 119 unidades<br><b>Desviación σ:<\/b> 0.37<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 junio 2024<\/b><br><br><b>Demanda Original:<\/b> 103 unidades<br><b>Desviación σ:<\/b> -0.06<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 julio 2024<\/b><br><br><b>Demanda Original:<\/b> 113 unidades<br><b>Desviación σ:<\/b> 0.21<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 agosto 2024<\/b><br><br><b>Demanda Original:<\/b> 104 unidades<br><b>Desviación σ:<\/b> -0.05<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 septiembre 2024<\/b><br><br><b>Demanda Original:<\/b> 86 unidades<br><b>Desviación σ:<\/b> -0.52<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 octubre 2024<\/b><br><br><b>Demanda Original:<\/b> 78 unidades<br><b>Desviación σ:<\/b> -0.76<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> Sí<br><b>Diferencia:<\/b> -1 unidades (1.2%)","<b>📅 noviembre 2024<\/b><br><br><b>Demanda Original:<\/b> 84 unidades<br><b>Desviación σ:<\/b> -0.6<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No","<b>📅 diciembre 2024<\/b><br><br><b>Demanda Original:<\/b> 102 unidades<br><b>Desviación σ:<\/b> -0.1<br><b>Estado:<\/b> Normal<br><br><b>Ajustado:<\/b> No"],"hovertemplate":["%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>"],"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"line":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01"],"y":[94.251828736534179,113.63445846707089,116.40699731906108,97.5491147408637,99.285145128949651,97.407511579711269,100.52514396475947,93.344129172752758,98.058818167038766,123.88699221343384,87.673515849141879,110.48877958720615,112.90981051572669,121.89168352453002,78.498887843892362,123.88699221343384,118.89548941498218,103.09986660462391,113.24027177669572,103.64281245833155,86.203169535359137,78.498887843892362,83.585357523356564,101.66588735835084],"type":"scatter","mode":"lines","line":{"color":"#2E7D99","width":3.5},"name":"Serie Winsorizada","hoverinfo":["skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip","skip"],"marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01"],"y":[94.251828736534179,113.63445846707089,116.40699731906108,97.5491147408637,99.285145128949651,97.407511579711269,100.52514396475947,93.344129172752758,98.058818167038766,123.88699221343384,87.673515849141879,110.48877958720615,112.90981051572669,121.89168352453002,78.498887843892362,123.88699221343384,118.89548941498218,103.09986660462391,113.24027177669572,103.64281245833155,86.203169535359137,78.498887843892362,83.585357523356564,101.66588735835084],"type":"scatter","mode":"markers","marker":{"color":"#2E7D99","size":11,"line":{"color":"white","width":2}},"name":"Demanda Winsorizada","text":["<b>📅 enero 2023<\/b><br><br><b>Demanda Winsorizada:<\/b> 94 unidades<br><b>Desviación σ:<\/b> -0.59<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 febrero 2023<\/b><br><br><b>Demanda Winsorizada:<\/b> 114 unidades<br><b>Desviación σ:<\/b> 0.81<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 marzo 2023<\/b><br><br><b>Demanda Winsorizada:<\/b> 116 unidades<br><b>Desviación σ:<\/b> 1.01<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 abril 2023<\/b><br><br><b>Demanda Winsorizada:<\/b> 98 unidades<br><b>Desviación σ:<\/b> -0.35<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 mayo 2023<\/b><br><br><b>Demanda Winsorizada:<\/b> 99 unidades<br><b>Desviación σ:<\/b> -0.23<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 junio 2023<\/b><br><br><b>Demanda Winsorizada:<\/b> 97 unidades<br><b>Desviación σ:<\/b> -0.36<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 julio 2023<\/b><br><br><b>Demanda Winsorizada:<\/b> 101 unidades<br><b>Desviación σ:<\/b> -0.14<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 agosto 2023<\/b><br><br><b>Demanda Winsorizada:<\/b> 93 unidades<br><b>Desviación σ:<\/b> -0.66<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 septiembre 2023<\/b><br><br><b>Demanda Winsorizada:<\/b> 98 unidades<br><b>Desviación σ:<\/b> -0.32<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 octubre 2023<\/b><br><br><b>Demanda Winsorizada:<\/b> 124 unidades<br><b>Desviación σ:<\/b> 1.55<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 noviembre 2023<\/b><br><br><b>Demanda Winsorizada:<\/b> 88 unidades<br><b>Desviación σ:<\/b> -1.07<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 diciembre 2023<\/b><br><br><b>Demanda Winsorizada:<\/b> 110 unidades<br><b>Desviación σ:<\/b> 0.58<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 enero 2024<\/b><br><br><b>Demanda Winsorizada:<\/b> 113 unidades<br><b>Desviación σ:<\/b> 0.76<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 febrero 2024<\/b><br><br><b>Demanda Winsorizada:<\/b> 122 unidades<br><b>Desviación σ:<\/b> 1.41<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 marzo 2024<\/b><br><br><b>Demanda Winsorizada:<\/b> 78 unidades<br><b>Desviación σ:<\/b> -1.73<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 abril 2024<\/b><br><br><b>Demanda Winsorizada:<\/b> 124 unidades<br><b>Desviación σ:<\/b> 1.55<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 mayo 2024<\/b><br><br><b>Demanda Winsorizada:<\/b> 119 unidades<br><b>Desviación σ:<\/b> 1.19<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 junio 2024<\/b><br><br><b>Demanda Winsorizada:<\/b> 103 unidades<br><b>Desviación σ:<\/b> 0.05<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 julio 2024<\/b><br><br><b>Demanda Winsorizada:<\/b> 113 unidades<br><b>Desviación σ:<\/b> 0.78<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 agosto 2024<\/b><br><br><b>Demanda Winsorizada:<\/b> 104 unidades<br><b>Desviación σ:<\/b> 0.09<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 septiembre 2024<\/b><br><br><b>Demanda Winsorizada:<\/b> 86 unidades<br><b>Desviación σ:<\/b> -1.17<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 octubre 2024<\/b><br><br><b>Demanda Winsorizada:<\/b> 78 unidades<br><b>Desviación σ:<\/b> -1.73<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 noviembre 2024<\/b><br><br><b>Demanda Winsorizada:<\/b> 84 unidades<br><b>Desviación σ:<\/b> -1.36<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82","<b>📅 diciembre 2024<\/b><br><br><b>Demanda Winsorizada:<\/b> 102 unidades<br><b>Desviación σ:<\/b> -0.06<br><b>Media:<\/b> 102<br><b>Límite Superior:<\/b> 123<br><b>Límite Inferior:<\/b> 82"],"hovertemplate":["%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>"],"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"line":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2023-10-01","2023-10-01",null,"2024-03-01","2024-03-01"],"y":[0,300,null,0,300],"type":"scatter","mode":"lines","line":{"color":"rgba(100, 100, 100, 0.2)","dash":"dot","width":1},"showlegend":false,"hoverinfo":["skip","skip",null,"skip","skip"],"marker":{"color":"rgba(140,86,75,1)","line":{"color":"rgba(140,86,75,1)"}},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-despues-winsorizado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Resumiendo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>1. La Winsorización es la ACCIÓN</strong></p>
+<p>La Winsorización es el acto de <strong>recortar</strong> un valor extremo y reemplazarlo por un límite (techo o suelo). Independientemente de cómo calcules ese límite, si reemplazas el outlier en lugar de borrarlo, estás haciendo Winsorización.</p>
+<p><strong>2. MAD y el metodo Tradicional son los CRITERIOS</strong></p>
+<p>Son las reglas matemáticas que usas para decidir <strong>dónde poner el techo</strong>.</p>
+<ul>
+<li><p><strong>Método Tradicional:</strong> Usa la <strong>Media</strong> y la <strong>Desviación Estándar</strong> para poner el techo. Es como usar una regla elástica que se estira si hay valores muy grandes.</p></li>
+<li><p><strong>Método MAD:</strong> Usa la <strong>Mediana</strong> y la <strong>Desviación Absoluta de la Mediana</strong>. Es como usar una regla de acero que no se dobla, sin importar qué tan grande sea el outlier.</p></li>
+</ul>
+<p>Entonces lo que hicimos fue aplicar un “filtro de Winsorización basado en el método de MAD”</p>
+</div>
+</div>
+</section>
+</section>
+<section id="latencia-de-la-información-flujo-físico-vs.-digital" class="level2">
+<h2 class="anchored" data-anchor-id="latencia-de-la-información-flujo-físico-vs.-digital">1.7 Latencia de la Información: Flujo Físico vs.&nbsp;Digital</h2>
+<p>En un mundo ideal, cuando un cliente saca un producto de la góndola o un operario sube un pallet al camión, el sistema debería actualizarse en ese mismo microsegundo. En el mundo real, existe un desfase llamado <strong>Latencia</strong>.</p>
+<p>La latencia es la diferencia de tiempo entre el <strong>Flujo Físico</strong> (lo que ocurre en la bodega) y el <strong>Flujo Digital</strong> (lo que el analista ve en su pantalla).</p>
+<section id="el-lead-time-de-información-delta_t" class="level4">
+<h4 class="anchored" data-anchor-id="el-lead-time-de-información-delta_t">1.7.1 El Lead Time de Información (<span class="math inline">\(\Delta_t\)</span>)</h4>
+<p>No solo debemos medir cuánto tarda el proveedor en entregarnos (Lead Time Logístico), sino cuánto tardamos nosotros en “enterarnos” de que algo pasó.</p>
+<p><span class="math display">\[
+\Delta t = \text{Fecha} \ Registro\ {Sistema} - \text{Fecha}\ Evento\ {Real}
+\]</span></p>
+<p><strong>Causas comunes:</strong> Procesos manuales de conteo, turnos nocturnos que no cargan datos hasta la mañana siguiente, o interfaces de sistemas (como la del 3PL al ERP) que solo corren una vez al día.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Síntesis del Diagnóstico
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Al finalizar este capítulo, hemos establecido una base sólida:</p>
+<p>1. Modelación de la red (Grafos).</p>
+<p>2. Definición de DFU y Jerarquías.</p>
+<p>3. Validación de fuentes (ERP, WMS, TMS).</p>
+<p>4. Selección de herramientas (SQL + R/Python) por sobre Excel.</p>
+<p>5. Tratamiento robusto de outliers (Winsorización).</p>
+<p>6. Reconocimiento de la latencia como variable de diseño.</p>
+<p>Con datos auditados, estamos listos para abordar la discrepancia entre ventas registradas y demanda real.</p>
+</div>
+</div>
+<p>Hemos completado el paso más difícil y, a menudo, el más ignorado: <strong>mirar debajo del capó</strong>.</p>
+<p>Ahora que has auditado tus datos, ya no estás navegando a ciegas. Sabes dónde están tus “puntos ciegos” tecnológicos, entiendes que un SKU no es solo un código sino una relación compleja dentro de una red, y has aprendido a limpiar el ruido para quedarte con la señal real.</p>
+<p>Sé que puede parecer mucho trabajo administrativo antes de llegar a la “magia” de la Inteligencia Artificial, pero recuerda esto: <strong>el mejor algoritmo del mundo no puede salvar un mal dato</strong>, pero un dato limpio y bien estructurado puede hacer brillar hasta el modelo más sencillo</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Existe un consenso silencioso entre los científicos de datos: <strong>el 80% de cualquier proyecto de analítica consiste en limpiar, organizar y entender los datos; el otro 20% es quejarse de ese 80%.</strong> Aunque todos queremos llegar rápido a la parte de los algoritmos y la Inteligencia Artificial, la realidad es que el éxito no se construye en el modelo, sino en la limpieza obsesiva de la base sobre la que este descansa.</p>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p><strong>ERP</strong> (siglas en inglés de <em>Enterprise Resource Planning</em>) o <strong>Sistema de Planificación de Recursos Empresariales</strong>, es un software diseñado para gestionar y automatizar las operaciones diarias de una empresa desde una <strong>única plataforma</strong>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Centros de distribucion<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>El término <strong>3PL</strong> significa <strong>Third-Party Logistics</strong> (Logística de Terceros). Se refiere a la externalización de las funciones de logística y gestión de la cadena de suministro a una empresa especializada.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Bienvenido">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bienvenido</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./cap-2-espejo-realidad.html" class="pagination-link" aria-label="2. El Espejo de la Realidad: Ventas vs. Demanda">
+        <span class="nav-page-text"><span class="chapter-title">2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-1-auditoria.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
