@@ -30,7 +30,7 @@ Soy un apasionado por la optimización operativa, especializado en transformar d
 ---
 
 ## 🚀 Proyectos Destacados
-Actualmente documento mis análisis y optimizaciones en el repositorio [**Practicas_Supply**](https://github.com/nicobravo933-Planner/nicobravo933-Planificador), donde aplico RMarkdown para generar soluciones de Supply Chain reproducibles.
+Actualmente documento mis análisis y optimizaciones en el repositorio [**Planificador**](https://github.com/nicobravo933-Planner/nicobravo933-Planificador), donde aplico RMarkdown para generar soluciones de Supply Chain reproducibles.
 
 > **Mi objetivo:** Transformar datos en decisiones que optimicen inventarios, reduzcan costos y eleven el nivel de servicio.
 
