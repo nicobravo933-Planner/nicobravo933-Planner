@@ -1,0 +1,16 @@
+name: Update README
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Se ejecuta cada hora
+  workflow_dispatch: # Permite ejecutarlo manualmente
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gautamkrishnar/blog-post-workflow@master
+        with:
+          comment_tag_name: "RECENT_ACTIVITY"
+          feed_list: "https://github.com/nicobravo933-Planner.atom"
