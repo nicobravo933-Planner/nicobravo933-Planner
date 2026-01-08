@@ -45,3 +45,4 @@ Actualmente documento mis análisis y optimizaciones en el repositorio [**Practi
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tu-perfil)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tu-correo@ejemplo.com)
 
+### 🛠️ Últimas actualizaciones en mis proyectos
