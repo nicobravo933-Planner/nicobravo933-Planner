@@ -143,7 +143,7 @@
     "href": "cap-2-espejo-realidad.html",
     "title": "2. El Espejo de la Realidad: Ventas vs. Demanda",
     "section": "",
-    "text": "I. Fundamentos: La Ecuación Universal\nYa pasamos la escoba en el Capítulo 1. Tenemos datos limpios, sin duplicados y con las jerarquías de productos y ubicaciones perfectamente claras. En este punto, es probable que te sientas confiado. Miras tu base de datos, ves una columna que dice “Venta Histórica” o “Consumos de Almacén”, calculas un promedio de 100 unidades mensuales y piensas: “Listo, mi demanda promedio es 100 y mi desviación es 15; ya puedo calcular mi stock de seguridad”.\nTe voy avisando desde ahora: Probablemente te estés mintiendo a vos mismo.\nLo que ves en tu pantalla no es la realidad del mercado ni la necesidad real de tu planta de producción; es un reflejo de tus propias limitaciones operativas. En Supply Chain, confundir lo que el sistema registró como una transacción exitosa (Salida) con lo que el cliente realmente requería (Necesidad) es el pecado capital número uno. Es como intentar conducir un vehículo de carga mirando únicamente por el espejo retrovisor mientras este está empañado por la lluvia: ves lo que dejaste atrás, pero no ves los obstáculos que tienes enfrente ni la velocidad real a la que deberías ir.",
+    "text": "I. Fundamentos: La Diferencia entre “Vender” y “Necesitar”\nYa pasamos la escoba en el Capítulo 1. Tenemos datos limpios, sin duplicados y con las jerarquías de productos y ubicaciones perfectamente claras. En este punto, es probable que te sientas confiado. Miras tu base de datos, ves una columna que dice “Venta Histórica” o “Consumos de Almacén”, calculas un promedio de 100 unidades mensuales y piensas: “Listo, mi demanda promedio es 100 y mi desviación es 15; ya puedo calcular mi stock de seguridad”.\nTe voy avisando desde ahora: No siempre es tan fácil.\nLo que ves en tu pantalla no es la realidad del mercado ni la necesidad real de tu planta de producción; es un reflejo de tus propias limitaciones operativas. En Supply Chain, es facil confundir lo que el sistema registró como una transacción exitosa (Salida) con lo que el cliente realmente requería (Necesidad).\nMuchas personas cometen el error de pensar que sus reportes de ventas muestran lo que el mercado quiere. En realidad, esos reportes solo muestran lo que pudiste entregar. Para ser un buen planificador, debes aprender a ver más allá de la factura.",
     "crumbs": [
       "I: El Diagnóstico",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. El Espejo de la Realidad: Ventas vs. Demanda</span>"
@@ -1800,6 +1800,50 @@
     "crumbs": [
       "I: El Diagnóstico",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>1. Auditoría de Datos y Arquitectura de Red</span>"
+    ]
+  },
+  {
+    "objectID": "cap-2-espejo-realidad.html#i.-fundamentos-la-diferencia-entre-vender-y-necesitar",
+    "href": "cap-2-espejo-realidad.html#i.-fundamentos-la-diferencia-entre-vender-y-necesitar",
+    "title": "2. El Espejo de la Realidad: Ventas vs. Demanda",
+    "section": "",
+    "text": "2.1 Lo que el sistema dice vs. Lo que el cliente quería\nImagina que tienes una frutería. Hoy vinieron 10 personas queriendo comprar una manzana cada una, pero tú solo tenías 3 en el mostrador. Al final del día, tu registro dirá: “Ventas: 3 unidades”.\nSi te basas solo en ese número para el futuro, pensarás que tu demanda es de 3, cuando en realidad el mercado te pedía 10. Esta es la Ecuación Universal simplificada:\n\\[\n\\large Salida_t = \\min(Necesidad_t, Disponibilidad_t)\n\\]\nEn términos simples: Tus ventas tienen un “techo” que es tu propio inventario. Si no tienes producto, tu venta será cero, aunque el cliente esté afuera gritando que quiere comprar. El sistema registrará un “cero”, ocultando la verdadera necesidad.\n\n\n2.2 El peligro de enseñar errores a tus algoritmos (Sesgo de IA)\nHoy en día usamos programas o Inteligencia Artificial (IA) para que nos digan cuánto comprar. Estos programas aprenden del pasado, pero no tienen sentido común. Si les das datos “mentirosos” (ventas bajas porque no tenías stock), crearás un círculo vicioso de escasez:\n\nEl pasado: No tenías stock, vendiste poco.\nEl aprendizaje: El algoritmo ve esa venta baja y piensa: “A nadie le gusta este producto, no se vende”.\nEl futuro: El algoritmo te recomienda comprar muy poco.\nEl resultado: Vuelves a quedarte sin nada, el cliente se va frustrado y el sistema cree que “acertó” porque se vendió lo poquito que compraste.\n\nEstamos institucionalizando la escasez. En lugar de usar la tecnología para crecer, la estamos usando para limitar nuestro propio negocio basándonos en errores del pasado.\n\n\n2.3 El Objetivo: La Demanda No Restringida\nPara romper este círculo, el planificador debe buscar la Demanda No Restringida. Este es el número mágico que representa lo que habrías vendido si hubieras tenido stock infinito.\n\\[\n\\large \\text{Demanda No Restringida} = \\text{Venta Real} + \\text{Venta Perdida}\n\\]\nSi no calculas la “Venta Perdida”, tu pronóstico siempre será una sombra pequeña de lo que tu empresa podría llegar a ser.\n\n\n\n\n\n\nTipPlan de Acción: Empezar a ver la realidad\n\n\n\n\nBusca la intención, no solo el resultado: No mires solo las facturas. Busca en tu sistema la tabla de “Pedidos” o “Reservas”. Ahí es donde el cliente dejó escrita su verdadera intención antes de que tú le dijeras que no tenías stock.\nMarca los datos “mentirosos”: Crea una marca o etiqueta en tu base de datos para los días en los que no tuviste suficiente mercancía. Dile a tu sistema: “Este dato de venta es bajo porque yo fallé, no porque el cliente no quisiera el producto”.\nCalcula tu tasa de servicio (Fill Rate): Empieza a medir qué porcentaje de los pedidos completas a tiempo. Si solo entregas el 80% de lo que te piden, tu demanda real es mucho mayor de lo que dicen tus ventas.",
+    "crumbs": [
+      "I: El Diagnóstico",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. El Espejo de la Realidad: Ventas vs. Demanda</span>"
+    ]
+  },
+  {
+    "objectID": "cap-2-espejo-realidad.html#ii.-diagnóstico-dónde-se-esconde-la-verdad",
+    "href": "cap-2-espejo-realidad.html#ii.-diagnóstico-dónde-se-esconde-la-verdad",
+    "title": "2. El Espejo de la Realidad: Ventas vs. Demanda",
+    "section": "II. Diagnóstico: ¿Dónde se esconde la verdad?",
+    "text": "II. Diagnóstico: ¿Dónde se esconde la verdad?\n\n2.3 El “Día Cero” (Stock Out)\nNo basta con ver que no hubo ventas; hay que saber por qué.\n\nEscenario A: No hubo ventas porque nadie quiso comprar (Demanda baja).\nEscenario B: No hubo ventas porque el estante estaba vacío (Quiebre de stock).\n\nPara el planificador, el Escenario B es una emergencia que debe marcarse. Si el inventario llegó a cero y las ventas cayeron, ese dato de “cero ventas” debe ser descartado o corregido.\n\n\n2.4 La Trampa del Mes: Cuidado con la Granularidad\nSi miras tus ventas de forma mensual, podrías ver que vendiste 100 teniendo 100 en stock. Parece un éxito total. Pero si miras el día a día, quizás descubres que las 100 unidades se agotaron el día 10. Durante los otros 20 días estuviste vacío. Tu demanda real no era 100, ¡era probablemente 300! El análisis mensual es el escondite favorito de los errores.",
+    "crumbs": [
+      "I: El Diagnóstico",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. El Espejo de la Realidad: Ventas vs. Demanda</span>"
+    ]
+  },
+  {
+    "objectID": "cap-2-espejo-realidad.html#iii.-el-mundo-industrial-proyectos-y-clientes-internos",
+    "href": "cap-2-espejo-realidad.html#iii.-el-mundo-industrial-proyectos-y-clientes-internos",
+    "title": "2. El Espejo de la Realidad: Ventas vs. Demanda",
+    "section": "III. El Mundo Industrial: Proyectos y Clientes Internos",
+    "text": "III. El Mundo Industrial: Proyectos y Clientes Internos\nEn la industria pesada, tu cliente no es un extraño en la calle, sino un Ingeniero de Mantenimiento o de Proyectos. Aquí, la demanda tiene “nombre y apellido”.\n\n2.5 El concepto PEP: Inventario con Dueño\nImagina que tienes 10 motores en el patio, pero 8 ya están “prometidos” para la construcción de una nueva planta (Proyecto PEP1). Aunque los veas ahí, no están disponibles para el mantenimiento diario. Ignorar estas reservas contables es la forma más rápida de causar un accidente operativo.\n\n\n2.6 Fecha de Necesidad vs. Fecha de Entrega\nEste es el mayor error en la planificación:\n\nFecha de Necesidad: Cuándo el ingeniero pidió el repuesto para que la máquina no se detenga.\nFecha de Entrega: Cuándo finalmente pudiste dárselo (quizás semanas después).\n\nSi analizas tu historia con la fecha de entrega, estarás planificando basándote en tus propios retrasos. La demanda real siempre se mide en la fecha en que el cliente levantó la mano.\n\n\n\n\n\n\nImportantPlan de Acción: Sincronización Operativa\n\n\n\n\nAuditoría de Reservas: Compara sistemáticamente la fecha de solicitud original con la fecha de salida física. El diferencial es tu Lead Time Interno de ineficiencia.\nLimpieza de Hoarding: Identifica reservas cargadas con excesiva antelación por “miedo” al desabasto. Ajusta esas señales para que coincidan con el cronograma real del proyecto.",
+    "crumbs": [
+      "I: El Diagnóstico",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. El Espejo de la Realidad: Ventas vs. Demanda</span>"
+    ]
+  },
+  {
+    "objectID": "cap-2-espejo-realidad.html#footnotes",
+    "href": "cap-2-espejo-realidad.html#footnotes",
+    "title": "2. El Espejo de la Realidad: Ventas vs. Demanda",
+    "section": "",
+    "text": "En el ecosistema de SAP (específicamente en el módulo de PS - Project System), un Elemento PEP (Plan de Estructura de Proyecto) es la unidad organizativa fundamental para planificar, gestionar y controlar los costes y fechas de un proyecto.↩︎",
+    "crumbs": [
+      "I: El Diagnóstico",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. El Espejo de la Realidad: Ventas vs. Demanda</span>"
     ]
   }
 ]
