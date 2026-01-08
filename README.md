@@ -45,9 +45,9 @@ Actualmente documento mis análisis y optimizaciones en el repositorio [**Planif
 ---
 
 ## 🛠️ Últimas actualizaciones en mis proyectos
-<!-- RECENT_ACTIVITY_START -->
+<!-- RECENT_ACTIVITY:START -->
+<!-- RECENT_ACTIVITY:END -->
 
-<!-- RECENT_ACTIVITY_END -->
 ---
 
 ## 📫 Conectemos
