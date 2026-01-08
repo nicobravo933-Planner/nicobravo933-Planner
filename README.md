@@ -10,12 +10,12 @@ Soy un apasionado por la optimización operativa, especializado en transformar d
 
 | Área | Especialidad |
 | :--- | :--- |
-| **📈 Optimización de Demanda** | Modelos predictivos para reducción de sesgo y mejora de precisión. Análisis de **FVA** (*Forecast Value Added*) para optimizar la toma de decisiones. |
-| **📦 Gestión de Inventarios** | Modelado científico: **EOQ, ROP y Stock de Seguridad** con Lead Times dinámicos. Aplicación de **Distribución Gamma** para niveles de servicio objetivo. |
-| **📊 Analytics & Automation** | Desarrollo de herramientas en **R (Shiny/Quarto)** y **Python** para reportes reproducibles. Dashboards avanzados en Power BI y Tableau. |
-| **🚚 S&OP & Supply Control** | Plan de Suministro (**DRP**), Proyección de Inventarios y Distribución Multiescalón. Gestión de vida útil (**FEFO**) para mitigación de mermas. |
+| **📈 Optimización de Demanda** | Modelos predictivos para reducción de sesgo y mejora de precisión. Análisis de **FVA** (*Forecast Value Added*). |
+| **📦 Gestión de Inventarios** | Modelado científico: **EOQ, ROP y Stock de Seguridad** con Lead Times dinámicos. Aplicación de **Distribución Gamma**. |
+| **📊 Analytics & Automation** | Desarrollo de herramientas en **R (Shiny/Quarto)** y **Python** para reportes reproducibles. |
+| **🚚 S&OP & Supply Control** | Plan de Suministro (**DRP**), Proyección de Inventarios y Distribución Multiescalón. Gestión **FEFO**. |
 | **🎯 Inteligencia de Producto** | Segmentación avanzada mediante **Matriz ABC/XYZ** para priorización estratégica de SKUs. |
-| **🗄️ Data Engineering** | Diseño y gestión de bases de datos **SQL** estructuradas para garantizar la integridad del flujo de información en la cadena. |
+| **🗄️ Data Engineering** | Diseño y gestión de bases de datos **SQL** estructuradas para garantizar la integridad del flujo de información. |
 
 ---
 
@@ -30,24 +30,23 @@ Soy un apasionado por la optimización operativa, especializado en transformar d
 ---
 
 ## 🚀 Proyectos Destacados
-Actualmente documento mis análisis y optimizaciones en el repositorio [**Practicas_Supply**](https://github.com/tu-usuario/Practicas_Supply), donde aplico RMarkdown para generar soluciones de Supply Chain reproducibles.
+Actualmente documento mis análisis y optimizaciones en el repositorio [**Practicas_Supply**](https://github.com/nicobravo933-Planner/Practicas_Supply), donde aplico RMarkdown para generar soluciones de Supply Chain reproducibles.
 
 > **Mi objetivo:** Transformar datos en decisiones que optimicen inventarios, reduzcan costos y eleven el nivel de servicio.
 
 ---
 
-## 📈 Estadísticas
-![Estadísticas de Nicolás](https://github-readme-stats.vercel.app/api?username=tu-usuario&show_icons=true&theme=radical&count_private=true)
+## 📈 Estadísticas y Dominio Técnico
 
----
+![Estadísticas de Nicolás](https://github-readme-stats.vercel.app/api?username=nicobravo933-Planner&show_icons=true&theme=radical&count_private=true)
 
-## 🛠️ Mi Dominio Técnico (Auto-generado)
 ![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=nicobravo933-Planner&layout=compact&theme=radical&hide_border=true&langs_count=6)
 
 ---
 
-## 📫 Conectemos
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tu-perfil)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tu-correo@ejemplo.com)
+## 🛠️ Últimas actualizaciones en mis proyectos
+---
 
-### 🛠️ Últimas actualizaciones en mis proyectos
+## 📫 Conectemos
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicolás-adrian-bravo-675070b8)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nicobravo933@gmail.com)
