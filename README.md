@@ -10,12 +10,12 @@ Soy un apasionado por la optimización operativa, especializado en transformar d
 
 | Área | Especialidad |
 | :--- | :--- |
-| **📈 Optimización de Demanda** | Modelos predictivos para reducción de sesgo y mejora de precisión. Análisis de **FVA** (*Forecast Value Added*). |
+| **📈 Predictive Forecasting** | Modelos avanzados con **XGBoost, LightGBM y Scikit-Learn** para reducción de sesgo y mejora de precisión. |
+| **⚙️ Optimización Operativa** | Resolución de problemas complejos de Supply Chain mediante programación lineal con **PuLP** y simulación de procesos con **SimPy**. |
 | **📦 Gestión de Inventarios** | Modelado científico: **EOQ, ROP y Stock de Seguridad** con Lead Times dinámicos. Aplicación de **Distribución Gamma**. |
-| **📊 Analytics & Automation** | Desarrollo de herramientas en **R (Shiny/Quarto)** y **Python** para reportes reproducibles. |
+| **📊 Analytics & Custom Reporting** | Aplicaciones en **R (Shiny)** y reportes dinámicos en **Quarto**, personalizados con **HTML, CSS y componentes de React**. |
 | **🚚 S&OP & Supply Control** | Plan de Suministro (**DRP**), Proyección de Inventarios y Distribución Multiescalón. Gestión **FEFO**. |
-| **🎯 Inteligencia de Producto** | Segmentación avanzada mediante **Matriz ABC/XYZ** para priorización estratégica de SKUs. |
-| **🗄️ Data Engineering** | Diseño y gestión de bases de datos **SQL** estructuradas para garantizar la integridad del flujo de información. |
+| **🗄️ Data Engineering** | Diseño y gestión de bases de datos **SQL** y manipulación masiva de datos con **Pandas** para garantizar la integridad del flujo. |
 
 ---
 
