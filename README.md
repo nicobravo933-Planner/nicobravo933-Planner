@@ -21,13 +21,27 @@ Soy un apasionado por la optimización operativa, especializado en transformar d
 
 ## 🛠️ Mi Stack Tecnológico
 
+### 💻 Lenguajes y Frameworks Web
 ![R](https://img.shields.io/badge/r-%23276DC3.svg?style=for-the-badge&logo=r&logoColor=white)
 ![Shiny](https://img.shields.io/badge/Shiny-0433FF?style=for-the-badge&logo=rstudio&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![SQL](https://img.shields.io/badge/sql-%2300000f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+### 📊 Ciencia de Datos y Machine Learning
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-black?style=for-the-badge&logo=xgboost&logoColor=white)
+![LightGBM](https://img.shields.io/badge/LightGBM-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
+
+### 🚀 Optimización y Simulación
+![PuLP](https://img.shields.io/badge/PuLP-Optimization-green?style=for-the-badge)
+![SimPy](https://img.shields.io/badge/SimPy-Simulation-blue?style=for-the-badge)
+
+### 📈 Herramientas de Negocio y Reporting
+![SQL](https://img.shields.io/badge/sql-%2300000f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 ![Power Bi](https://img.shields.io/badge/power_bi-F2C811?style=for-the-badge&logo=microsoftpowerbi&logoColor=black)
 ![Quarto](https://img.shields.io/badge/Quarto-475287?style=for-the-badge&logo=quarto&logoColor=white)
 
