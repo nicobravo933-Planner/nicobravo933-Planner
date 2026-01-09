@@ -1,0 +1,10 @@
+# Archivo de variables de entorno (Secretos)
+.env
+.env.local
+
+# Dependencias
+node_modules/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
