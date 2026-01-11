@@ -537,21 +537,52 @@ window.Quarto = {
   </ul></li>
   <li><a href="#anatomía-del-error-magnitud-y-dirección" id="toc-anatomía-del-error-magnitud-y-dirección" class="nav-link" data-scroll-target="#anatomía-del-error-magnitud-y-dirección">4.2 Anatomía del Error: Magnitud y Dirección</a>
   <ul class="collapse">
-  <li><a href="#magnitud-mae-y-rmse-qué-tan-fuerte-fue-el-golpe" id="toc-magnitud-mae-y-rmse-qué-tan-fuerte-fue-el-golpe" class="nav-link" data-scroll-target="#magnitud-mae-y-rmse-qué-tan-fuerte-fue-el-golpe">4.2.1 Magnitud: MAE y RMSE (¿Qué tan fuerte fue el golpe?)</a></li>
+  <li><a href="#magnitud-mae-vs.-rmse-lineal-o-exponencial" id="toc-magnitud-mae-vs.-rmse-lineal-o-exponencial" class="nav-link" data-scroll-target="#magnitud-mae-vs.-rmse-lineal-o-exponencial">4.2.1 Magnitud: MAE vs.&nbsp;RMSE (¿Lineal o Exponencial?)</a></li>
   <li><a href="#dirección-el-bias-sesgo-o-la-inclinación-al-error" id="toc-dirección-el-bias-sesgo-o-la-inclinación-al-error" class="nav-link" data-scroll-target="#dirección-el-bias-sesgo-o-la-inclinación-al-error">4.2.2 Dirección: El BIAS (Sesgo o la inclinación al error)</a></li>
+  <li><a href="#matriz-de-decisión-qué-métrica-usar-y-cuándo" id="toc-matriz-de-decisión-qué-métrica-usar-y-cuándo" class="nav-link" data-scroll-target="#matriz-de-decisión-qué-métrica-usar-y-cuándo">4.2.3 Matriz de Decisión: ¿Qué métrica usar y cuándo?</a></li>
   </ul></li>
   <li><a href="#la-batalla-de-las-métricas-mae-bias-vs.-mape" id="toc-la-batalla-de-las-métricas-mae-bias-vs.-mape" class="nav-link" data-scroll-target="#la-batalla-de-las-métricas-mae-bias-vs.-mape">4.3 La Batalla de las Métricas: MAE + BIAS vs.&nbsp;MAPE</a>
   <ul class="collapse">
-  <li><a href="#por-qué-los-expertos-cuestionan-el-mape" id="toc-por-qué-los-expertos-cuestionan-el-mape" class="nav-link" data-scroll-target="#por-qué-los-expertos-cuestionan-el-mape">4.3.1 ¿Por qué los expertos cuestionan el MAPE?</a></li>
-  <li><a href="#el-experimento-del-espejismo-cómo-nos-miente-el-mape" id="toc-el-experimento-del-espejismo-cómo-nos-miente-el-mape" class="nav-link" data-scroll-target="#el-experimento-del-espejismo-cómo-nos-miente-el-mape">4.3.2 El Experimento del Espejismo: ¿Cómo nos miente el MAPE?</a></li>
-  <li><a href="#tabla-comparativa-de-defensa-mae-vs-mape" id="toc-tabla-comparativa-de-defensa-mae-vs-mape" class="nav-link" data-scroll-target="#tabla-comparativa-de-defensa-mae-vs-mape">4.3.3 Tabla Comparativa de Defensa: MAE vs MAPE</a></li>
-  <li><a href="#la-psicología-del-interlocutor-quién-quiere-ver-qué" id="toc-la-psicología-del-interlocutor-quién-quiere-ver-qué" class="nav-link" data-scroll-target="#la-psicología-del-interlocutor-quién-quiere-ver-qué">4.3.4 La Psicología del Interlocutor: ¿Quién quiere ver qué?</a></li>
+  <li><a href="#la-maldición-del-porcentaje-por-qué-el-mape-es-tramposo" id="toc-la-maldición-del-porcentaje-por-qué-el-mape-es-tramposo" class="nav-link" data-scroll-target="#la-maldición-del-porcentaje-por-qué-el-mape-es-tramposo">4.3.1 La Maldición del Porcentaje: ¿Por qué el MAPE es tramposo?</a></li>
+  <li><a href="#el-experimento-del-espejismo-cómo-el-mape-destruye-tus-ventas" id="toc-el-experimento-del-espejismo-cómo-el-mape-destruye-tus-ventas" class="nav-link" data-scroll-target="#el-experimento-del-espejismo-cómo-el-mape-destruye-tus-ventas">4.3.2 El Experimento del Espejismo: Cómo el MAPE destruye tus ventas</a></li>
+  <li><a href="#cuadro-comparativo-en-qué-bando-estás" id="toc-cuadro-comparativo-en-qué-bando-estás" class="nav-link" data-scroll-target="#cuadro-comparativo-en-qué-bando-estás">4.3.3 Cuadro Comparativo: ¿En qué bando estás?</a></li>
+  <li><a href="#el-traductor-corporativo-a-quién-le-cuento-qué" id="toc-el-traductor-corporativo-a-quién-le-cuento-qué" class="nav-link" data-scroll-target="#el-traductor-corporativo-a-quién-le-cuento-qué">4.3.4 El “Traductor Corporativo”: ¿A quién le cuento qué?</a></li>
   </ul></li>
-  <li><a href="#el-wape-weighted-mape-el-puente-estratégico" id="toc-el-wape-weighted-mape-el-puente-estratégico" class="nav-link" data-scroll-target="#el-wape-weighted-mape-el-puente-estratégico">4.4 El WAPE (Weighted MAPE): El Puente Estratégico</a></li>
-  <li><a href="#el-concepto-de-forecastability-pronosticabilidad" id="toc-el-concepto-de-forecastability-pronosticabilidad" class="nav-link" data-scroll-target="#el-concepto-de-forecastability-pronosticabilidad">4.5 El Concepto de “Forecastability” (Pronosticabilidad)</a></li>
-  <li><a href="#el-tracking-signal-tu-sistema-de-alertas-automáticas" id="toc-el-tracking-signal-tu-sistema-de-alertas-automáticas" class="nav-link" data-scroll-target="#el-tracking-signal-tu-sistema-de-alertas-automáticas">4.6 El “Tracking Signal”: Tu sistema de alertas automáticas</a></li>
-  <li><a href="#visualización-y-cálculo-en-r" id="toc-visualización-y-cálculo-en-r" class="nav-link" data-scroll-target="#visualización-y-cálculo-en-r">4.7 Visualización y Cálculo en R</a></li>
-  <li><a href="#conclusión-del-diagnóstico-el-fin-de-la-parte-i" id="toc-conclusión-del-diagnóstico-el-fin-de-la-parte-i" class="nav-link" data-scroll-target="#conclusión-del-diagnóstico-el-fin-de-la-parte-i">4.8 Conclusión del Diagnóstico: El Fin de la Parte I</a></li>
+  <li><a href="#el-wape-weighted-mape-el-estándar-de-oro-para-gerencia" id="toc-el-wape-weighted-mape-el-estándar-de-oro-para-gerencia" class="nav-link" data-scroll-target="#el-wape-weighted-mape-el-estándar-de-oro-para-gerencia">4.4 El WAPE (Weighted MAPE): El Estándar de Oro para Gerencia</a>
+  <ul class="collapse">
+  <li><a href="#por-qué-es-el-puente-estratégico" id="toc-por-qué-es-el-puente-estratégico" class="nav-link" data-scroll-target="#por-qué-es-el-puente-estratégico">4.4.1 ¿Por qué es el puente estratégico?</a></li>
+  <li><a href="#ejemplo-el-wape-en-acción-portafolio-a-vs.-b" id="toc-ejemplo-el-wape-en-acción-portafolio-a-vs.-b" class="nav-link" data-scroll-target="#ejemplo-el-wape-en-acción-portafolio-a-vs.-b">4.4.2 Ejemplo: El WAPE en acción (Portafolio A vs.&nbsp;B)</a></li>
+  <li><a href="#fortalezas-y-debilidades-del-wape" id="toc-fortalezas-y-debilidades-del-wape" class="nav-link" data-scroll-target="#fortalezas-y-debilidades-del-wape">4.4.3 Fortalezas y Debilidades del WAPE</a></li>
+  <li><a href="#resumen-de-selección-qué-métrica-elijo" id="toc-resumen-de-selección-qué-métrica-elijo" class="nav-link" data-scroll-target="#resumen-de-selección-qué-métrica-elijo">4.4.4 Resumen de Selección: ¿Qué métrica elijo?</a></li>
+  </ul></li>
+  <li><a href="#forecastability-el-límite-de-lo-posible" id="toc-forecastability-el-límite-de-lo-posible" class="nav-link" data-scroll-target="#forecastability-el-límite-de-lo-posible">4.5 Forecastability: El Límite de lo Posible</a>
+  <ul class="collapse">
+  <li><a href="#el-coeficiente-de-variación-cv-tu-detector-de-ruido" id="toc-el-coeficiente-de-variación-cv-tu-detector-de-ruido" class="nav-link" data-scroll-target="#el-coeficiente-de-variación-cv-tu-detector-de-ruido">4.5.1 El Coeficiente de Variación (CV): Tu detector de ruido</a></li>
+  <li><a href="#la-matriz-de-predecibilidad" id="toc-la-matriz-de-predecibilidad" class="nav-link" data-scroll-target="#la-matriz-de-predecibilidad">4.5.2 La Matriz de Predecibilidad</a></li>
+  <li><a href="#por-qué-importa-esto-el-impacto-en-el-stock-de-seguridad" id="toc-por-qué-importa-esto-el-impacto-en-el-stock-de-seguridad" class="nav-link" data-scroll-target="#por-qué-importa-esto-el-impacto-en-el-stock-de-seguridad">4.5.3 ¿Por qué importa esto? El impacto en el Stock de Seguridad</a></li>
+  <li><a href="#el-escudo-del-planificador-concepto-de-forecast-goal" id="toc-el-escudo-del-planificador-concepto-de-forecast-goal" class="nav-link" data-scroll-target="#el-escudo-del-planificador-concepto-de-forecast-goal">4.5.4 El Escudo del Planificador (Concepto de “Forecast Goal”)</a></li>
+  </ul></li>
+  <li><a href="#tracking-signal-la-alarma-de-incendio-del-pronosticador" id="toc-tracking-signal-la-alarma-de-incendio-del-pronosticador" class="nav-link" data-scroll-target="#tracking-signal-la-alarma-de-incendio-del-pronosticador">4.6 Tracking Signal: La Alarma de Incendio del Pronosticador</a>
+  <ul class="collapse">
+  <li><a href="#cómo-se-calcula" id="toc-cómo-se-calcula" class="nav-link" data-scroll-target="#cómo-se-calcula">4.6.1 ¿Cómo se calcula?</a></li>
+  <li><a href="#interpretación-los-límites-de-control" id="toc-interpretación-los-límites-de-control" class="nav-link" data-scroll-target="#interpretación-los-límites-de-control">4.6.2 Interpretación: Los Límites de Control</a></li>
+  <li><a href="#el-tablero-de-control-visualizando-el-desvío" id="toc-el-tablero-de-control-visualizando-el-desvío" class="nav-link" data-scroll-target="#el-tablero-de-control-visualizando-el-desvío">4.6.3 El Tablero de Control: Visualizando el Desvío</a></li>
+  <li><a href="#qué-hacer-cuando-suena-la-alarma" id="toc-qué-hacer-cuando-suena-la-alarma" class="nav-link" data-scroll-target="#qué-hacer-cuando-suena-la-alarma">4.6.4 ¿Qué hacer cuando suena la alarma?</a></li>
+  </ul></li>
+  <li><a href="#el-laboratorio-de-diagnóstico-implementación-en-r" id="toc-el-laboratorio-de-diagnóstico-implementación-en-r" class="nav-link" data-scroll-target="#el-laboratorio-de-diagnóstico-implementación-en-r">4.7 El Laboratorio de Diagnóstico: Implementación en R</a>
+  <ul class="collapse">
+  <li><a href="#el-script-de-auditoría-de-pronósticos" id="toc-el-script-de-auditoría-de-pronósticos" class="nav-link" data-scroll-target="#el-script-de-auditoría-de-pronósticos">4.7.1 El Script de Auditoría de Pronósticos</a></li>
+  <li><a href="#gráfico-superior-auditoría-de-desempeño-el-qué" id="toc-gráfico-superior-auditoría-de-desempeño-el-qué" class="nav-link" data-scroll-target="#gráfico-superior-auditoría-de-desempeño-el-qué">1. Gráfico Superior: Auditoría de Desempeño (El “Qué”)</a></li>
+  <li><a href="#gráfico-inferior-tracking-signal-el-por-qué" id="toc-gráfico-inferior-tracking-signal-el-por-qué" class="nav-link" data-scroll-target="#gráfico-inferior-tracking-signal-el-por-qué">2. Gráfico Inferior: Tracking Signal (El “Por qué”)</a></li>
+  <li><a href="#diagnóstico-final-del-modelo-simulado" id="toc-diagnóstico-final-del-modelo-simulado" class="nav-link" data-scroll-target="#diagnóstico-final-del-modelo-simulado">3. Diagnóstico Final del Modelo Simulado</a></li>
+  <li><a href="#resumen-para-gerencia" id="toc-resumen-para-gerencia" class="nav-link" data-scroll-target="#resumen-para-gerencia">Resumen para Gerencia:</a></li>
+  </ul></li>
+  <li><a href="#conclusión-del-espejo-retrovisor-al-parabrisas" id="toc-conclusión-del-espejo-retrovisor-al-parabrisas" class="nav-link" data-scroll-target="#conclusión-del-espejo-retrovisor-al-parabrisas">4.8 Conclusión: Del Espejo Retrovisor al Parabrisas</a>
+  <ul class="collapse">
+  <li><a href="#el-recuento-de-los-daños-y-de-las-ganancias" id="toc-el-recuento-de-los-daños-y-de-las-ganancias" class="nav-link" data-scroll-target="#el-recuento-de-los-daños-y-de-las-ganancias">4.8.1 El Recuento de los Daños (y de las Ganancias)</a></li>
+  <li><a href="#la-transición-de-lo-descriptivo-a-lo-predictivo" id="toc-la-transición-de-lo-descriptivo-a-lo-predictivo" class="nav-link" data-scroll-target="#la-transición-de-lo-descriptivo-a-lo-predictivo">4.8.2 La Transición: De lo Descriptivo a lo Predictivo</a></li>
+  <li><a href="#hoja-de-ruta-lo-que-viene-en-la-parte-ii" id="toc-hoja-de-ruta-lo-que-viene-en-la-parte-ii" class="nav-link" data-scroll-target="#hoja-de-ruta-lo-que-viene-en-la-parte-ii">4.8.3 Hoja de Ruta: Lo que viene en la Parte II</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-4-metricas-error.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -619,37 +650,140 @@ window.Quarto = {
 </section>
 <section id="anatomía-del-error-magnitud-y-dirección" class="level2">
 <h2 class="anchored" data-anchor-id="anatomía-del-error-magnitud-y-dirección">4.2 Anatomía del Error: Magnitud y Dirección</h2>
-<p>Un error de 100 unidades no significa lo mismo en el balance contable si te sobraron que si te faltaron. Para un ingeniero de Supply Chain, el error tiene dos dimensiones críticas que deben analizarse de forma simultánea: la <strong>magnitud</strong> (¿qué tan lejos estuve?) y la <strong>dirección</strong> (¿hacia qué lado fallé?).</p>
-<section id="magnitud-mae-y-rmse-qué-tan-fuerte-fue-el-golpe" class="level3">
-<h3 class="anchored" data-anchor-id="magnitud-mae-y-rmse-qué-tan-fuerte-fue-el-golpe">4.2.1 Magnitud: MAE y RMSE (¿Qué tan fuerte fue el golpe?)</h3>
-<p>Estas métricas nos dicen qué tan grande fue la “distancia” entre nuestro plan y la realidad. No les importa el signo; solo miden el impacto del desvío total en unidades físicas.</p>
-<ol type="1">
-<li><p><strong>MAE (Mean Absolute Error):</strong> Es el promedio de los errores en valor absoluto. Es la métrica más “operativa” porque se expresa en unidades físicas. Si el MAE es 50, significa que, en promedio, tus pronósticos fallan por 50 unidades de espacio físico o capacidad de transporte. <span class="math display">\[
+<p>Un error de 100 unidades no impacta igual en el balance contable si sobraron (exceso) que si faltaron (quiebre). Para un profesional de Supply Chain, el error es un vector con dos dimensiones críticas: la <strong>magnitud</strong> (¿qué tan fuerte fue el golpe?) y la <strong>dirección</strong> (¿hacia qué lado nos caímos?).</p>
+<section id="magnitud-mae-vs.-rmse-lineal-o-exponencial" class="level3">
+<h3 class="anchored" data-anchor-id="magnitud-mae-vs.-rmse-lineal-o-exponencial">4.2.1 Magnitud: MAE vs.&nbsp;RMSE (¿Lineal o Exponencial?)</h3>
+<p>Estas métricas miden la distancia absoluta entre el plan y la realidad. No les importa el signo, sino el impacto físico del desvío.</p>
+<p><strong>A. MAE (Mean Absolute Error): La métrica de la bodega</strong></p>
+<p>Es el promedio simple de los errores.</p>
+<ul>
+<li><p><strong>Interpretación:</strong> Es la “distancia promedio” en unidades.</p></li>
+<li><p><strong>Sentido de negocio:</strong> Si el MAE es 50, significa que, en promedio, cada mes te equivocas por 50 cajas. Es ideal para dimensionar capacidad de almacenamiento o mano de obra. <span class="math display">\[
 \large MAE = \frac{1}{n} \sum_{i=1}^{n} |Actual_i - Forecast_i|
 \]</span></p></li>
-<li><p><strong>RMSE (Root Mean Square Error):</strong> Eleva el error al cuadrado antes de promediar. Esto tiene una implicación logística brutal: <strong>penaliza de forma desproporcionada los errores grandes</strong>. El RMSE es el “sensor” que detecta esos “bombazos” que quiebran financieramente la operación. <span class="math display">\[
+</ul>
+<p><strong>B. RMSE (Root Mean Square Error): El detector de crisis</strong></p>
+<p>Eleva los errores al cuadrado antes de promediar, lo que penaliza severamente los desvíos grandes.</p>
+<ul>
+<li><p><strong>Interpretación:</strong> Es una medida de variabilidad del error.</p></li>
+<li><p><strong>Sentido de negocio:</strong> Un RMSE alto comparado con el MAE indica que tienes “bombazos” (outliers) que están destruyendo tu operación esporádicamente. <span class="math display">\[
 \large RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (Actual_i - Forecast_i)^2}
 \]</span></p></li>
-</ol>
-<p><strong>Variables:</strong> * <span class="math inline">\(\large Actual_i\)</span>: Demanda real corregida del periodo <span class="math inline">\(i\)</span> (Cap. 2). * <span class="math inline">\(\large Forecast_i\)</span>: Tu apuesta para ese periodo (Naive o plan oficial). * <span class="math inline">\(\large n\)</span>: Número de periodos evaluados (ventana de error).</p>
+</ul>
+<p><strong>Variables:</strong> * <span class="math inline">\(Actual_i\)</span>: Demanda real corregida del periodo <span class="math inline">\(i\)</span> (Cap. 2). * <span class="math inline">\(Forecast_i\)</span>: Tu apuesta para ese periodo (Naive o plan oficial). * <span class="math inline">\(\large n\)</span>: Número de periodos evaluados (ventana de error).</p>
+<section id="ejemplo-el-efecto-de-los-errores-grandes" class="level4">
+<h4 class="anchored" data-anchor-id="ejemplo-el-efecto-de-los-errores-grandes">Ejemplo: El efecto de los errores grandes</h4>
+<p>Imagina dos productos con el mismo error total acumulado en 3 meses, pero diferente distribución:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 36%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Mes</th>
+<th style="text-align: center;">Producto A (Error Estable)</th>
+<th style="text-align: center;">Producto B (Con Outlier)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;"><strong>26</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Total Error Abs.</strong></td>
+<td style="text-align: center;"><strong>30</strong></td>
+<td style="text-align: center;"><strong>30</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>MAE</strong></td>
+<td style="text-align: center;"><strong>10</strong></td>
+<td style="text-align: center;"><strong>10</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>RMSE</strong></td>
+<td style="text-align: center;"><strong>10</strong></td>
+<td style="text-align: center;"><strong>15.1</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lección:</strong> El MAE dice que ambos son igual de “malos”. El RMSE del Producto B es un 50% más alto, alertándote de que el mes 3 fue una catástrofe logística (posible quiebre de stock o flete aéreo de emergencia).</p>
+</section>
 </section>
 <section id="dirección-el-bias-sesgo-o-la-inclinación-al-error" class="level3">
 <h3 class="anchored" data-anchor-id="dirección-el-bias-sesgo-o-la-inclinación-al-error">4.2.2 Dirección: El BIAS (Sesgo o la inclinación al error)</h3>
-<p>El sesgo es el cáncer silencioso de la planificación. Nos dice si existe una tendencia psicológica (comercial) o sistémica (parámetros de software) a equivocarnos hacia un lado específico.</p>
+<p>El sesgo es el “error sistémico”. Nos dice si el proceso de planificación está contaminado por optimismo o pesimismo.</p>
 <p><span class="math display">\[
 \large BIAS = \sum_{i=1}^{n} (Forecast_i - Actual_i)
 \]</span></p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<ul>
+<li><p><strong>BIAS Positivo (+):</strong> Estás pronosticando sistemáticamente por encima de la demanda. Resultado: Inventario muerto y capital atrapado.</p></li>
+<li><p><strong>BIAS Negativo (-):</strong> Estás pronosticando por debajo. Resultado: Ventas perdidas, clientes enojados y urgencias en producción.</p></li>
+</ul>
+</section>
+<section id="matriz-de-decisión-qué-métrica-usar-y-cuándo" class="level3">
+<h3 class="anchored" data-anchor-id="matriz-de-decisión-qué-métrica-usar-y-cuándo">4.2.3 Matriz de Decisión: ¿Qué métrica usar y cuándo?</h3>
+<p>Para pulir tu reporte, usa esta guía de fortalezas y debilidades:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Métrica</th>
+<th style="text-align: center;">Cuándo es FUERTE</th>
+<th style="text-align: center;">Cuándo es FLOJA</th>
+<th style="text-align: center;">Recomendación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>MAE</strong></td>
+<td style="text-align: center;">Cuando el costo del error es lineal (1 caja extra cuesta siempre lo mismo).</td>
+<td style="text-align: center;">Cuando necesitas detectar fallos críticos o muy grandes.</td>
+<td style="text-align: center;">Úsala para reportar a <strong>Operaciones</strong> (volumen).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>RMSE</strong></td>
+<td style="text-align: center;">Cuando un error grande es catastrófico (ej. productos perecederos o piezas críticas).</td>
+<td style="text-align: center;">Es difícil de explicar a alguien no técnico (¿qué es una “unidad al cuadrado”?).</td>
+<td style="text-align: center;">Úsala para <strong>Optimizar Modelos</strong> matemáticos.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>BIAS</strong></td>
+<td style="text-align: center;">Para detectar “vicios” en el equipo comercial o ajustes manuales excesivos.</td>
+<td style="text-align: center;">Puede ser engañoso: un BIAS de 0 puede esconder errores gigantes que se cancelan.</td>
+<td style="text-align: center;">Úsala para el <strong>S&amp;OP</strong> y corregir el comportamiento.</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>El Peligro de “Netear” Errores
+<span class="screen-reader-only">Tip</span>Regla de Oro
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Nunca presentes un error promedio simple en un reporte de desempeño sin valor absoluto. Si en enero fallaste por +100 (te sobró) y en febrero por -100 (te faltó), el error neto es 0. En el reporte financiero eres un genio, pero en la realidad física: 1) pagaste almacenamiento por lo que sobró y 2) perdiste clientes por lo que faltó. El <strong>BIAS</strong> sirve para diagnosticar si tu equipo comercial infla las cuotas por optimismo (sesgo positivo) o si producción es demasiado conservadora para no tener merma (sesgo negativo).</p>
+<p><strong>Nunca midas solo la magnitud.</strong> Un MAE bajo con un BIAS muy alto significa que estás “fallando poco” pero siempre hacia el mismo lado, lo cual es mucho más fácil de corregir que un error aleatorio. El BIAS es la métrica de la <strong>calidad del proceso</strong>.</p>
 </div>
 </div>
 <hr>
@@ -657,19 +791,19 @@ window.Quarto = {
 </section>
 <section id="la-batalla-de-las-métricas-mae-bias-vs.-mape" class="level2">
 <h2 class="anchored" data-anchor-id="la-batalla-de-las-métricas-mae-bias-vs.-mape">4.3 La Batalla de las Métricas: MAE + BIAS vs.&nbsp;MAPE</h2>
-<p>En los pasillos de las empresas, el <strong>MAPE (Mean Absolute Percentage Error)</strong> suele ser el rey indiscutido. ¿La razón? Es fácil de decir: <em>“Nuestro error es del 10%”</em>. Sin embargo, desde una perspectiva de ingeniería master, algunos expertos opinan que el MAPE es una de las métricas más peligrosas y sesgadas que existen.</p>
-<section id="por-qué-los-expertos-cuestionan-el-mape" class="level3">
-<h3 class="anchored" data-anchor-id="por-qué-los-expertos-cuestionan-el-mape">4.3.1 ¿Por qué los expertos cuestionan el MAPE?</h3>
-<p>El MAPE divide el error entre la demanda real para dar un porcentaje, lo que esconde trampas matemáticas:</p>
+<p>En los pasillos corporativos, el <strong>MAPE (Mean Absolute Percentage Error)</strong> es el rey. Es seductor porque es intuitivo: <em>“Tenemos un error del 10%”</em> suena mucho más claro que <em>“Fallamos por 452 unidades”</em>. Sin embargo, en el mundo de la alta ingeniería de Supply Chain, el MAPE es considerado un “espejismo peligroso”.</p>
+<section id="la-maldición-del-porcentaje-por-qué-el-mape-es-tramposo" class="level3">
+<h3 class="anchored" data-anchor-id="la-maldición-del-porcentaje-por-qué-el-mape-es-tramposo">4.3.1 La Maldición del Porcentaje: ¿Por qué el MAPE es tramposo?</h3>
+<p>El MAPE divide el error entre la demanda real para obtener un porcentaje. Esta operación matemática tan simple esconde tres trampas que pueden arruinar tu estrategia de inventarios:</p>
 <ol type="1">
-<li><strong>Sesgo de Subestimación:</strong> El MAPE castiga mucho más el hecho de que te sobre stock que el hecho de que te falte. Matemáticamente, es más “barato” fallar hacia abajo. Un modelo que optimiza el MAPE tenderá a dar pronósticos bajos, lo que provoca quiebres de stock sistemáticos.</li>
-<li><strong>El problema del cero:</strong> Si en un mes no hubo ventas (demanda = 0), la fórmula explota por división entre cero.</li>
-<li><strong>Indiferencia Económica:</strong> Trata igual un error del 10% en un producto Clase C que un 10% en un Clase A de alto costo.</li>
+<li><p><strong>El Sesgo de Subestimación (Asimetría):</strong> El MAPE castiga más el exceso de stock que el quiebre. Si pides de más, el error puede ser del 1000%. Si pides de menos, el error nunca superará el 100%. Un algoritmo que intente minimizar el MAPE aprenderá que es “mejor” dejarte sin producto que arriesgarse a que sobre.</p></li>
+<li><p><strong>La Explosión del Cero:</strong> Si un producto no tiene ventas en un mes (<span class="math inline">\(y_t=0\)</span>), la fórmula intenta dividir por cero y el sistema colapsa. Esto lo hace inútil para productos de baja rotación (Lumpy/Intermittent).</p></li>
+<li><p><strong>Indiferencia de Escala:</strong> El MAPE trata igual un error del 20% en un tornillo de 1 dólar que un 20% en un motor de 10,000 dólares. No tiene visión financiera.</p></li>
 </ol>
 </section>
-<section id="el-experimento-del-espejismo-cómo-nos-miente-el-mape" class="level3">
-<h3 class="anchored" data-anchor-id="el-experimento-del-espejismo-cómo-nos-miente-el-mape">4.3.2 El Experimento del Espejismo: ¿Cómo nos miente el MAPE?</h3>
-<p>Para entender por qué el MAPE es peligroso para tu inventario, mira esta tabla comparativa. Imagina dos escenarios donde fallamos por las mismas <strong>90 unidades</strong> de magnitud absoluta:</p>
+<section id="el-experimento-del-espejismo-cómo-el-mape-destruye-tus-ventas" class="level3">
+<h3 class="anchored" data-anchor-id="el-experimento-del-espejismo-cómo-el-mape-destruye-tus-ventas">4.3.2 El Experimento del Espejismo: Cómo el MAPE destruye tus ventas</h3>
+<p>Imagina que eres el responsable de inventarios y tienes que elegir entre dos escenarios de pronóstico para un producto cuya demanda real fue de <strong>100 unidades</strong>. El impacto en unidades es el mismo (fallaste por 90), pero mira lo que dice el MAPE:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
@@ -681,194 +815,589 @@ window.Quarto = {
 </colgroup>
 <thead>
 <tr class="header">
-<th>Escenario</th>
-<th>Demanda Real (<span class="math inline">\(\large y_t\)</span>)</th>
-<th>Pronóstico (<span class="math inline">\(\large \hat{y}_t\)</span>)</th>
-<th>Error Absoluto (<span class="math inline">\(\large MAE\)</span>)</th>
-<th><strong>MAPE (%)</strong></th>
-<th>Consecuencia Operativa</th>
+<th style="text-align: center;">Escenario</th>
+<th style="text-align: center;">Demanda Real (<span class="math inline">\(\large y_t\)</span>)</th>
+<th style="text-align: center;">Pronóstico (<span class="math inline">\(\large \hat{y}_t\)</span>)</th>
+<th style="text-align: center;">Error Absoluto (<span class="math inline">\(MAE\)</span>)</th>
+<th style="text-align: center;"><strong>MAPE (%)</strong></th>
+<th style="text-align: center;">Consecuencia Operativa</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>A: Optimista</strong></td>
-<td>10</td>
-<td>100</td>
-<td>90</td>
-<td><strong>900%</strong></td>
-<td>Te sobra muchísimo stock.</td>
+<td style="text-align: center;"><strong>A: Optimista</strong></td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">190</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: center;"><strong>90%</strong></td>
+<td style="text-align: center;">Te sobra stock.(Costo de almacenamiento)</td>
 </tr>
 <tr class="even">
-<td><strong>B: Pesimista</strong></td>
-<td>100</td>
-<td>10</td>
-<td>90</td>
-<td><strong>90%</strong></td>
-<td><strong>Quiebre de stock.</strong></td>
+<td style="text-align: center;"><strong>B: Pesimista</strong></td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: center;"><strong>90%</strong></td>
+<td style="text-align: center;"><strong>Quiebre de stock.</strong>(Venta perdida y cliente enojado).</td>
 </tr>
 </tbody>
 </table>
-<p><strong>La trampa:</strong> Si le pides a un sistema que “optimice el MAPE”, elegirá siempre el <strong>Escenario B</strong>, porque un error del 90% “se ve mejor” que uno de 900%. Sin embargo, en el Escenario B dejaste de vender. El MAPE prefiere el desabasto antes que el exceso.</p>
+<p><strong>Aquí viene la trampa:</strong> Si la demanda real hubiera sido de solo 10 unidades en el Escenario A, el MAPE saltaría a <strong>900%</strong>.</p>
+<p><strong>Conclusión:</strong> Para el MAPE, el Escenario B (quedarse sin nada) siempre se verá “menos peor” que el Escenario A. Si optimizas tu empresa basándote solo en MAPE, <strong>estarás diseñando una máquina de quiebres de stock.</strong></p>
 </section>
-<section id="tabla-comparativa-de-defensa-mae-vs-mape" class="level3">
-<h3 class="anchored" data-anchor-id="tabla-comparativa-de-defensa-mae-vs-mape">4.3.3 Tabla Comparativa de Defensa: MAE vs MAPE</h3>
+<section id="cuadro-comparativo-en-qué-bando-estás" class="level3">
+<h3 class="anchored" data-anchor-id="cuadro-comparativo-en-qué-bando-estás">4.3.3 Cuadro Comparativo: ¿En qué bando estás?</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 37%">
+<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Característica</th>
-<th>MAPE (%)</th>
-<th>MAE + BIAS (Unidades)</th>
-<th>Impacto para el Negocio</th>
+<th style="text-align: center;">Característica</th>
+<th style="text-align: center;">MAPE (%)</th>
+<th style="text-align: center;">MAE + BIAS (Unidades)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Interpretación</strong></td>
-<td>Abstracta y subjetiva</td>
-<td>Física y tangible</td>
-<td>El MAE se traduce en camiones y paletas.</td>
+<td style="text-align: center;"><strong>Fortaleza Principal</strong></td>
+<td style="text-align: center;">Excelente para comunicar a perfiles no técnicos.</td>
+<td style="text-align: center;">Refleja la realidad física de la bodega.</td>
 </tr>
 <tr class="even">
-<td><strong>Sesgo Matemático</strong></td>
-<td>Tiende a pedir de menos</td>
-<td>Neutral e imparcial</td>
-<td>El MAE protege el nivel de servicio.</td>
+<td style="text-align: center;"><strong>Punto Débil</strong></td>
+<td style="text-align: center;">Induce al desabasto sistemático.</td>
+<td style="text-align: center;">Difícil de comparar entre productos de distinta escala.</td>
 </tr>
 <tr class="odd">
-<td><strong>Manejo de Ceros</strong></td>
-<td>Fallo total (Div/0)</td>
-<td>Robusto y funcional</td>
-<td>El MAE sirve para todo el catálogo.</td>
+<td style="text-align: center;"><strong>Manejo de Ceros</strong></td>
+<td style="text-align: center;">Inservible (Div/0).</td>
+<td style="text-align: center;">Robusto y confiable.</td>
 </tr>
 <tr class="even">
-<td><strong>Sumabilidad</strong></td>
-<td>No se puede promediar</td>
-<td>Se suma por categorías</td>
-<td>Puedes ver el error total en unidades.</td>
-</tr>
-<tr class="odd">
-<td><strong>Finanzas</strong></td>
-<td>Oculto tras el %</td>
-<td>Cuantificable en USD</td>
-<td>$MAE Costo = $ Dinero en riesgo.</td>
+<td style="text-align: center;"><strong>Uso Ideal</strong></td>
+<td style="text-align: center;">Reportes ejecutivos de muy alto nivel.</td>
+<td style="text-align: center;">Operación diaria, compras y planificación.</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="la-psicología-del-interlocutor-quién-quiere-ver-qué" class="level3">
-<h3 class="anchored" data-anchor-id="la-psicología-del-interlocutor-quién-quiere-ver-qué">4.3.4 La Psicología del Interlocutor: ¿Quién quiere ver qué?</h3>
+<section id="el-traductor-corporativo-a-quién-le-cuento-qué" class="level3">
+<h3 class="anchored" data-anchor-id="el-traductor-corporativo-a-quién-le-cuento-qué">4.3.4 El “Traductor Corporativo”: ¿A quién le cuento qué?</h3>
+<p>No todas las métricas son para todos los oídos. Para ser un líder efectivo, debes adaptar el mensaje:</p>
 <ul>
-<li><strong>Gerencia General / CEO:</strong> Quieren sensación de escala. A ellos dales el <strong>WAPE</strong> (Cap. 4.4).</li>
-<li><strong>Finanzas:</strong> Quieren saber cuánto dinero hay “en riesgo”. Dales el <strong>MAE en USD</strong> (<span class="math inline">\(\large MAE \times Costo\)</span>).</li>
-<li><strong>Operaciones / Almacén:</strong> Quieren saber cuántas manos y camiones necesitan. El <strong>MAE en unidades</strong> es su lenguaje.</li>
-<li><strong>S&amp;OP / Planeación:</strong> Quieren corregir el comportamiento. El <strong>BIAS</strong> es su brújula.</li>
+<li><p><strong>Para el CEO / Gerente General:</strong> Usa el <strong>WAPE</strong> (ver sección 4.4). Es un porcentaje, pero sin las trampas del MAPE. Les da la sensación de escala que buscan.</p></li>
+<li><p><strong>Para el CFO / Finanzas:</strong> Traduce el <strong>MAE a Dinero</strong>. <em>“Nuestro error equivale a $50,000 USD de capital en riesgo mensualmente”</em>. Esto consigue presupuestos para mejores herramientas.</p></li>
+<li><p><strong>Para el Jefe de Almacén / Operaciones:</strong> Háblales en <strong>MAE de Unidades</strong>. <em>“Prepárate para mover 1,200 unidades extra de margen de error”</em>.</p></li>
+<li><p><strong>Para el Director de S&amp;OP:</strong> Usa el <strong>BIAS</strong>. Es la única métrica que les dirá si el equipo comercial está inflando las proyecciones para “asegurar bono” o si producción está siendo demasiado conservadora.</p></li>
 </ul>
-<hr>
-</section>
-</section>
-<section id="el-wape-weighted-mape-el-puente-estratégico" class="level2">
-<h2 class="anchored" data-anchor-id="el-wape-weighted-mape-el-puente-estratégico">4.4 El WAPE (Weighted MAPE): El Puente Estratégico</h2>
-<p>Para reportar a gerencia con un porcentaje sin caer en las trampas del MAPE, usamos el <strong>WAPE</strong>. Pondera el error por el volumen total del portafolio.</p>
-<p><span class="math display">\[
-\large WAPE = \frac{\sum |Actual_i - Forecast_i|}{\sum Actual_i}
-\]</span></p>
-<p><strong>¿Por qué es superior?</strong> Porque le da el peso correcto a lo que realmente mueve la aguja. Un error de 1,000 unidades en un producto Clase A tiene un impacto enorme, mientras que el mismo error en un Clase C se diluye.</p>
-</section>
-<section id="el-concepto-de-forecastability-pronosticabilidad" class="level2">
-<h2 class="anchored" data-anchor-id="el-concepto-de-forecastability-pronosticabilidad">4.5 El Concepto de “Forecastability” (Pronosticabilidad)</h2>
-<p>Te voy avisando: no todo error es culpa de un mal modelo. Aquí conectamos con la <strong>Matriz ABC-XYZ del Capítulo 3</strong>. * <strong>Productos Smooth (AX):</strong> El error aceptable es bajo (ej. WAPE &lt; 15%). Si es mayor, tu proceso está roto. * <strong>Productos Lumpy (CZ):</strong> Un WAPE del 60% puede ser un éxito rotundo. Esos productos son inherentemente impredecibles.</p>
-</section>
-<section id="el-tracking-signal-tu-sistema-de-alertas-automáticas" class="level2">
-<h2 class="anchored" data-anchor-id="el-tracking-signal-tu-sistema-de-alertas-automáticas">4.6 El “Tracking Signal”: Tu sistema de alertas automáticas</h2>
-<p>Mide cuántos MAEs de error acumulado tenemos para detectar cuándo el BIAS se volvió inaceptable.</p>
-<p><span class="math display">\[
-\large Tracking Signal = \frac{BIAS_{acumulado}}{MAE}
-\]</span></p>
-<p>Si supera +/- 4, dispara una alerta roja: el modelo está sesgado y requiere intervención manual.</p>
-<hr>
-</section>
-<section id="visualización-y-cálculo-en-r" class="level2">
-<h2 class="anchored" data-anchor-id="visualización-y-cálculo-en-r">4.7 Visualización y Cálculo en R</h2>
-<p>Vamos a comparar el desempeño del año pasado contra nuestro modelo Naive.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># --- SIMULACIÓN DE DATOS MAESTROS ---</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>evaluacion <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">mes =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Demanda Reconstruida del Cap 2 (Variables: y_t)</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">demanda_real =</span> <span class="fu">rnorm</span>(<span class="dv">12</span>, <span class="dv">100</span>, <span class="dv">15</span>),</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Pronóstico Comercial (y_hat - con sesgo optimista simulado)</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">forecast_comercial =</span> demanda_real <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">25</span>) </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Modelo Naive: El pronóstico hoy es lo que pasó ayer</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">forecast_naive =</span> <span class="fu">lag</span>(demanda_real, <span class="at">default =</span> <span class="dv">100</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># --- CÁLCULO DE MÉTRICAS PASO A PASO ---</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>metricas <span class="ot">&lt;-</span> evaluacion <span class="sc">%&gt;%</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Magnitud relativa (Ponderada por volumen)</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">WAPE_Comercial =</span> <span class="fu">sum</span>(<span class="fu">abs</span>(demanda_real <span class="sc">-</span> forecast_comercial)) <span class="sc">/</span> <span class="fu">sum</span>(demanda_real),</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">WAPE_Naive =</span> <span class="fu">sum</span>(<span class="fu">abs</span>(demanda_real <span class="sc">-</span> forecast_naive)) <span class="sc">/</span> <span class="fu">sum</span>(demanda_real),</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Dirección (BIAS acumulado)</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">BIAS_Total =</span> <span class="fu">sum</span>(forecast_comercial <span class="sc">-</span> demanda_real),</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Magnitud absoluta (Unidades reales)</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">MAE_Unidades =</span> <span class="fu">mean</span>(<span class="fu">abs</span>(demanda_real <span class="sc">-</span> forecast_comercial))</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(metricas)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Interpretación de Resultados
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Si el <code>WAPE_Naive</code> es menor que el <code>WAPE_Comercial</code>, significa que tu proceso manual está ensuciando la señal de demanda. Es el momento de dejar de intentar “adivinar” y dejar que los datos hablen.</p>
-</div>
-</div>
-</section>
-<section id="conclusión-del-diagnóstico-el-fin-de-la-parte-i" class="level2">
-<h2 class="anchored" data-anchor-id="conclusión-del-diagnóstico-el-fin-de-la-parte-i">4.8 Conclusión del Diagnóstico: El Fin de la Parte I</h2>
-<p>Hemos terminado la primera gran etapa de este manual. Si has seguido los pasos, ahora tienes una infraestructura de pensamiento robusta:</p>
-<ol type="1">
-<li><strong>Datos Auditados:</strong> Sabes de dónde vienen (Cap. 1).</li>
-<li><strong>Demanda Real:</strong> Limpiaste el historial (Cap. 2).</li>
-<li><strong>Segmentación Estratégica:</strong> Clasificaste tu mundo (Cap. 3).</li>
-<li><strong>Punto de Partida:</strong> Tienes un número (WAPE/BIAS) que representa tu realidad actual (Cap. 4).</li>
-</ol>
-<p>Te voy avisando: hasta ahora solo hemos hablado del pasado. A partir del próximo capítulo, entramos en la <strong>Parte II</strong>, donde tomaremos el bisturí de la estadística para predecir <strong>“qué va a pasar”</strong>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Resumen del Capítulo 4
+<span class="screen-reader-only">Tip</span>Recomendación Master
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>Si te obligan a usar MAPE, acompáñalo siempre del <strong>BIAS</strong>. Si el MAPE es del 15% pero el BIAS es de -12%, ya sabes que ese 15% de error se está convirtiendo casi totalmente en ventas perdidas.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="el-wape-weighted-mape-el-estándar-de-oro-para-gerencia" class="level2">
+<h2 class="anchored" data-anchor-id="el-wape-weighted-mape-el-estándar-de-oro-para-gerencia">4.4 El WAPE (Weighted MAPE): El Estándar de Oro para Gerencia</h2>
+<p>Si el MAE es para la bodega y el MAPE es un espejismo, el <strong>WAPE (Weighted Mean Absolute Percentage Error)</strong> es la métrica que pone a todos de acuerdo. Es el “Traductor Universal” de la Supply Chain.</p>
+<p>El WAPE resuelve el mayor pecado del MAPE: tratar a todos los productos por igual. En lugar de promediar porcentajes individuales, el WAPE suma todos los errores y los divide entre la demanda total del portafolio.</p>
+<p><span class="math display">\[
+\large WAPE = \frac{\sum |Actual_i - Forecast_i|}{\sum Actual_i}
+\]</span></p>
+<section id="por-qué-es-el-puente-estratégico" class="level3">
+<h3 class="anchored" data-anchor-id="por-qué-es-el-puente-estratégico">4.4.1 ¿Por qué es el puente estratégico?</h3>
 <ol type="1">
-<li><strong>Baseline:</strong> El modelo Naive es tu piso mínimo de calidad.</li>
-<li><strong>MAE + BIAS:</strong> La combinación necesaria para no engañarse con promedios.</li>
-<li><strong>WAPE:</strong> Tu traductor para gerencia ponderando por lo que importa.</li>
-<li><strong>Pronosticabilidad:</strong> El error es relativo a la variabilidad.</li>
+<li><p><strong>Ponderación Automática:</strong> Le da más peso a lo que más vende. Un error de 1,000 unidades en un producto Clase A impactará el WAPE mucho más que ese mismo error en un producto Clase C.</p></li>
+<li><p><strong>Inmunidad al Cero:</strong> Como la suma de la demanda total de la empresa casi nunca es cero, la fórmula es estable y no explota.</p></li>
+<li><p><strong>Visión de Portafolio:</strong> Permite decir “Nuestra operación tiene un 15% de error” con total rigor matemático, ya que ese 15% representa el volumen real que se desvió del plan.</p></li>
 </ol>
+</section>
+<section id="ejemplo-el-wape-en-acción-portafolio-a-vs.-b" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-el-wape-en-acción-portafolio-a-vs.-b">4.4.2 Ejemplo: El WAPE en acción (Portafolio A vs.&nbsp;B)</h3>
+<p>Imagina una empresa que vende dos productos. Uno es una estrella de ventas y el otro es un accesorio marginal.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 17%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Producto</th>
+<th style="text-align: center;">Demanda Real</th>
+<th style="text-align: center;">Pronóstico</th>
+<th style="text-align: center;">Error Abs.</th>
+<th style="text-align: center;">MAPE (Indiv.)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>A (Best Seller)</strong></td>
+<td style="text-align: center;">1,000</td>
+<td style="text-align: center;">900</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">10%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B (Accesorio)</strong></td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">90%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Totales</strong></td>
+<td style="text-align: center;"><strong>1,010</strong></td>
+<td style="text-align: center;"><strong>901</strong></td>
+<td style="text-align: center;"><strong>109</strong></td>
+<td style="text-align: center;"><strong>Promedio: 50%</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>El diagnóstico del MAPE (50%):</strong> ¡Alarma roja! El gerente pensará que la mitad de la empresa está mal planificada.</p></li>
+<li><p><strong>El diagnóstico del WAPE:</strong> <span class="math inline">\(\large\frac{109}{1,010} = \mathbf{10.8\%}\)</span>.</p></li>
+</ul>
+<p><strong>La realidad profesional:</strong> La operación está bastante sana (10.8% de error real sobre el volumen total). El MAPE nos estaba mintiendo al darle la misma importancia al accesorio que al best seller. El WAPE pone las cosas en su lugar.</p>
+</section>
+<section id="fortalezas-y-debilidades-del-wape" class="level3">
+<h3 class="anchored" data-anchor-id="fortalezas-y-debilidades-del-wape">4.4.3 Fortalezas y Debilidades del WAPE</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Característica</th>
+<th style="text-align: center;">WAPE (Weighted MAPE)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Cuándo es FUERTE</strong></td>
+<td style="text-align: center;">Para reportar desempeño mensual a la Dirección General. Para comparar la precisión entre diferentes regiones o categorías de productos.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Cuándo es FLOJO</strong></td>
+<td style="text-align: center;">Si el portafolio tiene precios muy disparatados (un error en una joya de oro pesa igual que un error en un clavo si solo miras unidades).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Recomendación</strong></td>
+<td style="text-align: center;">Si tus productos tienen precios muy distintos, usa el <strong>WAPE en Valor Dinero</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="resumen-de-selección-qué-métrica-elijo" class="level3">
+<h3 class="anchored" data-anchor-id="resumen-de-selección-qué-métrica-elijo">4.4.4 Resumen de Selección: ¿Qué métrica elijo?</h3>
+<p>Para cerrar tu reporte de métricas, sigue esta jerarquía:</p>
+<ol type="1">
+<li><p><strong>¿Quieres optimizar el modelo matemático?</strong> Usa <strong>RMSE</strong>.</p></li>
+<li><p><strong>¿Quieres planificar la capacidad de la bodega?</strong> Usa <strong>MAE</strong>.</p></li>
+<li><p><strong>¿Quieres saber si tu equipo está siendo muy optimista?</strong> Usa <strong>BIAS</strong>.</p></li>
+<li><p><strong>¿Quieres presentar resultados a la Junta Directiva?</strong> Usa <strong>WAPE</strong>.</p></li>
+<li><p><strong>¿Quieres vivir en un espejismo peligroso?</strong> Usa solo el <strong>MAPE</strong> (y prepárate para los quiebres de stock inesperados).</p></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>El WAPE no es el fin del camino
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>Aunque el WAPE es excelente para reportar, recuerda que “oculta” los errores individuales. Un WAPE del 10% puede esconder un producto crítico que está quebrado al 100%. Por eso, el analista senior mira el <strong>WAPE para el bosque</strong> y el <strong>MAE/BIAS para los árboles</strong>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="forecastability-el-límite-de-lo-posible" class="level2">
+<h2 class="anchored" data-anchor-id="forecastability-el-límite-de-lo-posible">4.5 Forecastability: El Límite de lo Posible</h2>
+<p>En Supply Chain, hay una verdad incómoda: <strong>No todo se puede predecir.</strong> Exigir un WAPE del 5% a un producto con demanda errática es como intentar predecir el resultado de un dado; no es un problema de falta de inteligencia, sino de la naturaleza del fenómeno. La <strong>Forecastability(Pronosticalidad)</strong> es la medida de qué tan “predecible” es un producto basándose en su estabilidad histórica.</p>
+<section id="el-coeficiente-de-variación-cv-tu-detector-de-ruido" class="level3">
+<h3 class="anchored" data-anchor-id="el-coeficiente-de-variación-cv-tu-detector-de-ruido">4.5.1 El Coeficiente de Variación (CV): Tu detector de ruido</h3>
+<p>Para medir la predecibilidad, usamos el <strong>Coeficiente de Variación (CV)</strong>. Es una métrica simple que compara la desviación estándar con el promedio.</p>
+<p><span class="math display">\[
+\large CV = \frac{\sigma}{\mu} = \frac{\text{Desviación Estándar}}{\text{Promedio}}
+\]</span></p>
+<ul>
+<li><p><strong>CV Bajo (&lt; 0.5):</strong> Demanda “suave” (Smooth). Es el sueño de cualquier planificador. Los errores aquí suelen ser responsabilidad del modelo o del proceso humano.</p></li>
+<li><p><strong>CV Alto (&gt; 1.0):</strong> Demanda “caótica” o “errática” (Lumpy). Aquí, el error es inherente al azar. No importa qué tan avanzado sea tu algoritmo, siempre habrá un margen de error alto.</p></li>
+</ul>
+</section>
+<section id="la-matriz-de-predecibilidad" class="level3">
+<h3 class="anchored" data-anchor-id="la-matriz-de-predecibilidad">4.5.2 La Matriz de Predecibilidad</h3>
+<p>No midas a todos con la misma vara. Clasifica tus productos en este cuadrante para gestionar las expectativas de la gerencia:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 38%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Tipo de Demanda</th>
+<th style="text-align: center;">Comportamiento</th>
+<th style="text-align: center;">Estrategia de Pronóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Estable (Smooth)</strong></td>
+<td style="text-align: center;">Ventas constantes, bajas fluctuaciones.</td>
+<td style="text-align: center;">Modelos estadísticos clásicos (Suavizamiento, ARIMA). El objetivo es <strong>Precisión Máxima</strong>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Intermitente</strong></td>
+<td style="text-align: center;">Muchos meses con venta cero y picos repentinos.</td>
+<td style="text-align: center;">Modelos de Croston o SBA. El objetivo es <strong>Nivel de Servicio</strong>, no precisión.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Errática (Lumpy)</strong></td>
+<td style="text-align: center;">Volumen alto pero con cambios violentos.</td>
+<td style="text-align: center;">Inteligencia de Mercado y Colaboración (S&amp;OP). El algoritmo solo dará una base.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="por-qué-importa-esto-el-impacto-en-el-stock-de-seguridad" class="level3">
+<h3 class="anchored" data-anchor-id="por-qué-importa-esto-el-impacto-en-el-stock-de-seguridad">4.5.3 ¿Por qué importa esto? El impacto en el Stock de Seguridad</h3>
+<p>La predecibilidad dicta tu costo financiero. Existe una relación directa entre el <strong>CV</strong> y el <strong>Stock de Seguridad</strong>:</p>
+<ul>
+<li><p>A mayor CV (más ruido), necesitas más inventario de protección para evitar el quiebre.</p></li>
+<li><p>Si intentas “forzar” un pronóstico preciso en un producto de CV alto, solo lograrás que el sistema de compras reaccione de forma histérica (efecto látigo), pidiendo demasiado hoy y nada mañana.</p></li>
+</ul>
+</section>
+<section id="el-escudo-del-planificador-concepto-de-forecast-goal" class="level3">
+<h3 class="anchored" data-anchor-id="el-escudo-del-planificador-concepto-de-forecast-goal">4.5.4 El Escudo del Planificador (Concepto de “Forecast Goal”)</h3>
+<p>Un error común en las empresas es poner una meta única de precisión (ej. “Queremos un 80% de Accuracy global”). Esto es un error estratégico. Un líder de Supply Chain maduro establece metas diferenciadas:</p>
+<ul>
+<li><p><strong>Productos Clase A / Estables:</strong> Meta 85% Accuracy.</p></li>
+<li><p><strong>Productos Clase B / Erráticos:</strong> Meta 60% Accuracy.</p></li>
+<li><p><strong>Nuevos lanzamientos:</strong> Meta 40% Accuracy.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Antes de aceptar un KPI de error, calcula el CV de tu portafolio. Si el 70% de tus SKU tienen un CV &gt; 1.0, un error (WAPE) del 30% no es un mal desempeño; es, probablemente, el límite de lo que la estadística puede alcanzar. <strong>Usa el CV para defender la integridad de tu trabajo.</strong></p>
+</div>
+</div>
+</section>
+</section>
+<section id="tracking-signal-la-alarma-de-incendio-del-pronosticador" class="level2">
+<h2 class="anchored" data-anchor-id="tracking-signal-la-alarma-de-incendio-del-pronosticador">4.6 Tracking Signal: La Alarma de Incendio del Pronosticador</h2>
+<p>Hasta ahora hemos medido fotos fijas: el error de este mes o el promedio del trimestre. Pero el error es dinámico. El <strong>Tracking Signal (TS)</strong> es una métrica de control de calidad que nos avisa, en tiempo real, si nuestro modelo de pronóstico ha dejado de ser válido porque la demanda cambió de patrón (cambio estructural).</p>
+<p>Es, en esencia, un termómetro que detecta si el <strong>BIAS</strong> (sesgo) se está acumulando de forma peligrosa hacia un lado.</p>
+<section id="cómo-se-calcula" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-se-calcula">4.6.1 ¿Cómo se calcula?</h3>
+<p>El Tracking Signal compara la suma acumulada de los errores con la magnitud promedio del error (MAD o MAE).</p>
+<p><span class="math display">\[
+\large TS = \frac{\sum (Actual_i - Forecast_i)}{MAD}
+\]</span></p>
+<p>Donde el <strong>MAD (Mean Absolute Deviation)</strong> es simplemente el MAE calculado de forma rodante.</p>
+</section>
+<section id="interpretación-los-límites-de-control" class="level3">
+<h3 class="anchored" data-anchor-id="interpretación-los-límites-de-control">4.6.2 Interpretación: Los Límites de Control</h3>
+<p>Imagina que estás conduciendo un auto. El Tracking Signal es el indicador que te dice si te estás saliendo del carril:</p>
+<ul>
+<li><p><strong>TS = 0:</strong> El modelo es perfecto. Los errores positivos se cancelan exactamente con los negativos.</p></li>
+<li><p><strong>Límites Ideales (</strong><span class="math inline">\(\pm4\)</span><strong>):</strong> En la industria, se considera que si el TS se mantiene entre <strong>-4 y 4</strong>, el error es puramente aleatorio (ruido blanco). Estás dentro del carril.</p></li>
+<li><p><strong>TS &gt; 4:</strong> Estás subestimando la demanda de forma sistemática. Te vas a quedar sin stock pronto. El modelo “se quedó corto”.</p></li>
+<li><p><strong>TS &lt; -4:</strong> Estás sobreestimando. Estás llenando la bodega de inventario que no se mueve. El modelo “se pasó de largo”.</p></li>
+</ul>
+</section>
+<section id="el-tablero-de-control-visualizando-el-desvío" class="level3">
+<h3 class="anchored" data-anchor-id="el-tablero-de-control-visualizando-el-desvío">4.6.3 El Tablero de Control: Visualizando el Desvío</h3>
+<p>No esperes a fin de mes para revisar el WAPE. Un analista Pro tiene un gráfico de control donde el TS se ve así:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 14%">
+<col style="width: 20%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Mes</th>
+<th style="text-align: center;">Error Real</th>
+<th style="text-align: center;">Suma Error Acum.</th>
+<th style="text-align: center;">MAD (MAE)</th>
+<th style="text-align: center;"><strong>Tracking Signal</strong></th>
+<th style="text-align: center;">Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">+10</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">OK</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">+15</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">12.5</td>
+<td style="text-align: center;">2.0</td>
+<td style="text-align: center;">OK</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">+20</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;"><strong>3.0</strong></td>
+<td style="text-align: center;">Alerta Amarilla</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">+25</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">17.5</td>
+<td style="text-align: center;"><strong>4.0</strong></td>
+<td style="text-align: center;"><strong>¡ALARMA!</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Diagnóstico:</strong> Aunque el error individual no parece gigante, el hecho de que sea <strong>siempre positivo</strong> hace que el TS trepe rápidamente. En el mes 4, el sistema te grita: <em>“¡Deja de usar este modelo, algo cambió en el mercado!”</em>.</p>
+</section>
+<section id="qué-hacer-cuando-suena-la-alarma" class="level3">
+<h3 class="anchored" data-anchor-id="qué-hacer-cuando-suena-la-alarma">4.6.4 ¿Qué hacer cuando suena la alarma?</h3>
+<p>Cuando un producto “dispara” el Tracking Signal, no sirve de nada ajustar el número a mano. Debes investigar la causa raíz:</p>
+<ol type="1">
+<li><p><strong>Cambio de Tendencia:</strong> ¿Entró un competidor nuevo? ¿Hubo una campaña de marketing no comunicada?</p></li>
+<li><p><strong>Obsolescencia del Modelo:</strong> ¿Estamos usando un promedio móvil para un producto que ahora tiene estacionalidad?</p></li>
+<li><p><strong>Promociones:</strong> ¿Hubo un “push” de ventas que rompió la historia?</p></li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Error del Principiante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Muchos analistas ven un error grande y corren a cambiar el pronóstico. El analista Senior mira el <strong>Tracking Signal</strong>. Si el error es grande pero el TS está cerca de cero, es un evento fortuito (ruido). <strong>No toques nada.</strong> Si el error es pequeño pero el TS es 4.5, tienes un problema sistémico. <strong>Actúa de inmediato.</strong></p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="el-laboratorio-de-diagnóstico-implementación-en-r" class="level2">
+<h2 class="anchored" data-anchor-id="el-laboratorio-de-diagnóstico-implementación-en-r">4.7 El Laboratorio de Diagnóstico: Implementación en R</h2>
+<p>De nada sirve la teoría si no puedes ejecutarla sobre tus datos. En esta sección, construiremos un script profesional que automatiza el cálculo de todas las métricas vistas y genera un tablero de control para detectar anomalías.</p>
+<section id="el-script-de-auditoría-de-pronósticos" class="level3">
+<h3 class="anchored" data-anchor-id="el-script-de-auditoría-de-pronósticos">4.7.1 El Script de Auditoría de Pronósticos</h3>
+<p>Este script utiliza el ecosistema <code>tidyverse</code> para procesar los datos y calcular el <strong>FVA (Forecast Value Added)</strong>, que nos dirá si nuestro proceso humano está mejorando o empeorando el pronóstico básico (Naive).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargamos las librerías silenciando los mensajes de inicio</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>({</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(scales)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(patchwork)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Creación del Modelo de Simulación (datos_auditoria)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulamos 12 meses con una tendencia alcista donde el forecast se queda atrás</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>datos_auditoria <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">mes =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">demanda_real =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">115</span>, <span class="dv">110</span>, <span class="dv">125</span>, <span class="dv">140</span>, <span class="dv">135</span>, <span class="dv">150</span>, <span class="dv">165</span>, <span class="dv">160</span>, <span class="dv">175</span>, <span class="dv">190</span>, <span class="dv">195</span>),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">forecast_comercial =</span> <span class="fu">c</span>(<span class="dv">95</span>, <span class="dv">100</span>, <span class="dv">105</span>, <span class="dv">110</span>, <span class="dv">120</span>, <span class="dv">125</span>, <span class="dv">130</span>, <span class="dv">140</span>, <span class="dv">150</span>, <span class="dv">155</span>, <span class="dv">165</span>, <span class="dv">175</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">error_abs_comercial =</span> <span class="fu">abs</span>(demanda_real <span class="sc">-</span> forecast_comercial),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">bias_comercial =</span> forecast_comercial <span class="sc">-</span> demanda_real,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">bias_acumulado =</span> <span class="fu">cumsum</span>(bias_comercial),</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">mad_rodante =</span> <span class="fu">cummean</span>(error_abs_comercial),</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">tracking_signal =</span> bias_acumulado <span class="sc">/</span> mad_rodante</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Gráfico 1: Comparativa Demanda vs. Pronóstico</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos_auditoria, <span class="fu">aes</span>(<span class="at">x =</span> mes)) <span class="sc">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> demanda_real, <span class="at">color =</span> <span class="st">"Demanda Real"</span>), <span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> forecast_comercial, <span class="at">color =</span> <span class="st">"Forecast Comercial"</span>), <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> demanda_real, <span class="at">color =</span> <span class="st">"Demanda Real"</span>), <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Auditoría de Desempeño: Demanda vs. Pronóstico"</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Análisis de precisión del plan comercial"</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Unidades"</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Mes"</span>,</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Referencia"</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Demanda Real"</span> <span class="ot">=</span> <span class="st">"#2c3e50"</span>, <span class="st">"Forecast Comercial"</span> <span class="ot">=</span> <span class="st">"#e74c3c"</span>)) <span class="sc">+</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Gráfico 2: Tracking Signal (Límites de Control)</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos_auditoria, <span class="fu">aes</span>(<span class="at">x =</span> mes, <span class="at">y =</span> tracking_signal)) <span class="sc">+</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">fill =</span> <span class="st">"#3498db"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#2980b9"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#2980b9"</span>) <span class="sc">+</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>), <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"#c0392b"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="fl">4.5</span>, <span class="at">label =</span> <span class="st">"Límite Superior (Sobre-pronóstico)"</span>, <span class="at">color =</span> <span class="st">"#c0392b"</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="sc">-</span><span class="fl">4.5</span>, <span class="at">label =</span> <span class="st">"Límite Inferior (Sub-pronóstico)"</span>, <span class="at">color =</span> <span class="st">"#c0392b"</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Monitoreo de Tracking Signal"</span>,</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Detección de sesgo sistemático (Límites ±4)"</span>,</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"TS (Ratio)"</span>,</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Mes"</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Usamos coord_cartesian para hacer zoom sin eliminar datos fuera de rango</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">7</span>, <span class="dv">7</span>)) <span class="sc">+</span> </span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Combinación de Gráficos (Patchwork)</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">/</span> p2 <span class="sc">+</span> <span class="fu">plot_annotation</span>(</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Panel de Diagnóstico de Supply Chain"</span>,</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">theme =</span> <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>, <span class="at">face =</span> <span class="st">"bold"</span>))</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cap-4-metricas-error_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>La interpretación de este panel se divide en dos niveles: el <strong>desempeño inmediato</strong> (arriba) y la <strong>salud del proceso</strong> (abajo).</p>
+<p>Aquí tienes la guía para leer lo que el script acaba de generar:</p>
+</section>
+<section id="gráfico-superior-auditoría-de-desempeño-el-qué" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-superior-auditoría-de-desempeño-el-qué">1. Gráfico Superior: Auditoría de Desempeño (El “Qué”)</h3>
+<p>Este gráfico muestra la “foto” mes a mes.</p>
+<ul>
+<li><p><strong>La Brecha (Gap):</strong> Observa que la línea roja (Forecast) está casi siempre por debajo de la azul (Demanda). Esto te dice de inmediato que el equipo comercial está siendo <strong>conservador o pesimista</strong>.</p></li>
+<li><p><strong>La Reacción:</strong> Nota cómo la línea roja intenta “perseguir” a la azul pero siempre llega tarde. Esto se conoce como un <strong>pronóstico rezagado</strong>, típico de cuando solo se mira el pasado reciente sin entender la tendencia alcista.</p></li>
+</ul>
+</section>
+<section id="gráfico-inferior-tracking-signal-el-por-qué" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-inferior-tracking-signal-el-por-qué">2. Gráfico Inferior: Tracking Signal (El “Por qué”)</h3>
+<p>Este es el gráfico más importante para un analista senior, porque mide el <strong>sesgo sistemático</strong>.</p>
+<ul>
+<li><p><strong>La Dirección (Pendiente):</strong> La línea azul cae de forma constante. En la fórmula del Tracking Signal, cuando el resultado es <strong>negativo</strong>, significa que la demanda real está superando al pronóstico.</p></li>
+<li><p><strong>Los Límites Críticos (</strong><span class="math inline">\(\pm 4\)</span>):</p>
+<ul>
+<li><p><strong>Zona Blanca (entre -4 y 4):</strong> El error se considera “ruido” aceptable o aleatorio. El modelo está “dentro del carril”.</p></li>
+<li><p><strong>Zona Roja (fuera de</strong> <span class="math inline">\(\pm 4\)</span>): En tu gráfica, la línea cruza el <strong>-4</strong> alrededor del mes 6 o 7. <strong>Aquí es donde suena la alarma.</strong> El modelo ya no es confiable; no es un error de un solo mes, es un error de diseño. El proceso está “roto”.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="diagnóstico-final-del-modelo-simulado" class="level3">
+<h3 class="anchored" data-anchor-id="diagnóstico-final-del-modelo-simulado">3. Diagnóstico Final del Modelo Simulado</h3>
+<p>Si este fuera tu negocio real, la conclusión sería:</p>
+<blockquote class="blockquote">
+<p><em>“Tenemos un <strong>sesgo de sub-pronóstico sistemático</strong>. El equipo comercial está ignorando el crecimiento del mercado. Esto no se arregla ‘ajustando un poquito’ el próximo mes; necesitamos cambiar el algoritmo por uno que capture mejor la tendencia, porque el Tracking Signal nos indica que estamos fuera de control estadístico desde hace 5 meses.”</em></p>
+</blockquote>
+</section>
+<section id="resumen-para-gerencia" class="level3">
+<h3 class="anchored" data-anchor-id="resumen-para-gerencia">Resumen para Gerencia:</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Si la línea del Tracking Signal…</strong></td>
+<td><strong>Significa que…</strong></td>
+<td><strong>Riesgo para el negocio</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Sube y cruza el +4</strong></td>
+<td>Pronosticamos de más (Optimismo).</td>
+<td>Exceso de inventario y capital atrapado.</td>
+</tr>
+<tr class="odd">
+<td><strong>Baja y cruza el -4</strong></td>
+<td>Pronosticamos de menos (Pesimismo).</td>
+<td><strong>Quiebres de stock y ventas perdidas.</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Zigzaguea cerca de 0</strong></td>
+<td>El error es aleatorio.</td>
+<td>Proceso sano y bajo control.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="conclusión-del-espejo-retrovisor-al-parabrisas" class="level2">
+<h2 class="anchored" data-anchor-id="conclusión-del-espejo-retrovisor-al-parabrisas">4.8 Conclusión: Del Espejo Retrovisor al Parabrisas</h2>
+<p>Hemos llegado al final de la <strong>Parte I: Los Cimientos</strong>. Si has seguido este recorrido, has pasado de la intuición al rigor técnico. Muchas empresas intentan saltar directamente a la Inteligencia Artificial sin haber pasado por estos cuatro pasos, y ese es el motivo por el cual el 80% de los proyectos de analítica en Supply Chain fracasan.</p>
+<section id="el-recuento-de-los-daños-y-de-las-ganancias" class="level3">
+<h3 class="anchored" data-anchor-id="el-recuento-de-los-daños-y-de-las-ganancias">4.8.1 El Recuento de los Daños (y de las Ganancias)</h3>
+<p>Hagamos un inventario de lo que ahora tienes en tu arsenal:</p>
+<ol type="1">
+<li><p><strong>Datos Auditados (Cap. 1):</strong> Ya no confías ciegamente en el ERP. Sabes dónde están las trampas de los datos.</p></li>
+<li><p><strong>Demanda Real (Cap. 2):</strong> Dejaste de planificar sobre “ventas” y empezaste a planificar sobre “necesidades del mercado”, limpiando el ruido de las promociones y los quiebres.</p></li>
+<li><p><strong>Segmentación Estratégica (Cap. 3):</strong> Sabes que no todos los SKU nacieron iguales. Tienes un mapa ABC-XYZ que dicta dónde poner tu tiempo y tu dinero.</p></li>
+<li><p><strong>Métricas de Verdad (Cap. 4):</strong> Tienes un <strong>Baseline</strong> (Naive) y un sistema de alarmas (Tracking Signal). Ya nadie puede engañarte con un “vamos bien” basado en un MAPE mentiroso.</p></li>
+</ol>
+</section>
+<section id="la-transición-de-lo-descriptivo-a-lo-predictivo" class="level3">
+<h3 class="anchored" data-anchor-id="la-transición-de-lo-descriptivo-a-lo-predictivo">4.8.2 La Transición: De lo Descriptivo a lo Predictivo</h3>
+<p>Hasta este momento, hemos estado mirando el <strong>espejo retrovisor</strong>. Hemos analizado el pasado para entender nuestra posición actual. Pero la Supply Chain no se conduce mirando hacia atrás.</p>
+<p>A partir del próximo capítulo, entramos en la <strong>Parte II: El Laboratorio de Pronósticos</strong>. Aquí es donde el bisturí se convierte en motor. Dejaremos de preguntar <em>“¿Qué pasó?”</em> para empezar a resolver la pregunta del millón: <strong>“¿Qué va a pasar mañana?”</strong>.</p>
+</section>
+<section id="hoja-de-ruta-lo-que-viene-en-la-parte-ii" class="level3">
+<h3 class="anchored" data-anchor-id="hoja-de-ruta-lo-que-viene-en-la-parte-ii">4.8.3 Hoja de Ruta: Lo que viene en la Parte II</h3>
+<p>En los siguientes capítulos, convertiremos todo este diagnóstico en planes de acción:</p>
+<ul>
+<li><p><strong>Modelos Estadísticos:</strong> Desde el suavizamiento exponencial hasta ARIMA.</p></li>
+<li><p><strong>Machine Learning:</strong> Cómo usar variables externas (clima, precios, festivos) para anticiparnos al mercado.</p></li>
+<li><p><strong>S&amp;OP Proactivo:</strong> Cómo usar tus nuevas métricas para liderar la reunión de ventas y operaciones con datos, no con opiniones.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Tu Próximo Paso
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Antes de pasar al Capítulo 5, asegúrate de tener calculado el <strong>WAPE y el BIAS de los últimos 6 meses</strong> de tu portafolio actual. Ese será el “muro” contra el que lanzaremos nuestros nuevos modelos para ver si realmente somos capaces de mejorar la realidad.</p>
+<p><strong>Si no puedes medir la mejora, la mejora no existe.</strong></p>
+</div>
+</div>
+<p><em>Hemos terminado la fase de preparación. La infraestructura está lista. Es hora de empezar a predecir.</em></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
