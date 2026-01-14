@@ -913,7 +913,7 @@
     "href": "cap-11-costos-inventario.html#el-inventario-como-pasivo-el-costo-de-mantenimiento-h",
     "title": "11. El Costo del Dinero y el Costo del Vacío",
     "section": "",
-    "text": "Disección de los Parámetros Financieros\nPara que tu modelo tenga impacto real en el P&L (Estado de Resultados), debes auditar estas fuentes con rigor:\n\n\\(v\\) (Valor del Producto): Es la base sobre la que se calcula todo el riesgo.\n\nOrigen: ERP / Contabilidad de Costos.\nImplicación: Debes utilizar siempre el Costo de Adquisición o Costo de Fabricación (COGS). Nunca uses el precio de venta.\n\n\\(i\\) (Tasa de Capital / Costo de Oportunidad): El valor del dinero en el tiempo.\n\nOrigen: Dirección de Finanzas (Tesorería).\nExplicación: Se utiliza el WACC (Weighted Average Cost of Capital). Si es del 15%, cada unidad te cuesta un 15% de su valor al año solo por existir.\n\n\\(w\\) (Tasa de Almacenaje y Operación): El costo del “techo” y las manos.\n\nOrigen: Control de Gestión Logística.\nDetalle: Renta, electricidad, personal y seguros. Se calcula como el gasto total logístico entre el valor promedio del inventario.\n\n\\(r\\) (Tasa de Riesgo, Merma y Obsolescencia): El costo de la entropía.\n\nOrigen: Auditoría de Inventarios.\nEscenarios: Crítico en moda o tecnología donde el producto caduca moralmente rápido.",
+    "text": "Disección de los Parámetros Financieros\nPara que tu modelo tenga impacto real en el P&L (Estado de Resultados), debes auditar estas fuentes con rigor:\n\n\\(v\\) (Valor del Producto): Es la base sobre la que se calcula todo el riesgo.\n\nRegla de Oro: Utiliza siempre el Costo de Adquisición o Costo de Fabricación (COGS).\n¿Por qué no el precio de venta? Porque el precio de venta incluye un margen que aún no has ganado. El capital real que tienes “atrapado” en el almacén es lo que te costó producirlo o comprarlo. Si usas el precio de venta, estarás sobreestimando el costo de mantener stock.\n\n\\(i\\) (Tasa de Capital / Costo de Oportunidad): El valor del dinero en el tiempo.\n\nConcepto: Representa lo que la empresa deja de ganar por tener ese dinero en cajas en lugar de invertirlo en nuevos proyectos, marketing o dejarlo en el banco.\nOrigen: El WACC (Weighted Average Cost of Capital). Es la tasa promedio que la empresa paga a sus accionistas y acreedores. Si el WACC es del 15%, cada unidad te cuesta un 15% de su valor al año solo por “existir” financieramente.\n\n\\(w\\) (Tasa de Almacenaje y Operación):\n\nDetalle: Incluye renta del almacén, electricidad, personal de seguridad, seguros contra incendios y manipulación (montacargas).\nPrecisión Técnica: Solo debemos incluir los costos variables o incrementales. Si el almacén es propio y está medio vacío, el costo de una caja extra es casi nulo. Pero si pagas por posición de pallet a un operador logístico (3PL), cada unidad cuenta.\n\n\\(r\\) (Tasa de Riesgo, Merma y Obsolescencia):\n\nEscenarios: Crítico en sectores como tecnología (un iPhone pierde valor cada mes), moda (el inventario de invierno no vale nada en verano) o alimentos (caducidad).\nLa Merma: También incluye el porcentaje histórico de robos, daños por manipulación o pérdida de inventario.\n\n\n\n\nReferencias Industriales para \\((h)\\)\nSi no tienes datos exactos de Finanzas, puedes usar estos promedios anuales como punto de partida:\n\n\n\nIndustria\nTasa \\(h\\) típica\nFactor dominante\n\n\n\n\nConsumo Masivo\n18% - 22%\nCapital y Almacenaje\n\n\nFarmacéutica\n25% - 30%\nSeguros y Caducidad\n\n\nModa / Retail\n35% - 50%\nObsolescencia rápida\n\n\nTecnología\n40% - 70%\nDepreciación de valor",
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Costo del Dinero y el Costo del Vacío</span>"
@@ -935,7 +935,7 @@
     "href": "cap-11-costos-inventario.html#la-gran-balanza-ecuación-del-costo-total",
     "title": "11. El Costo del Dinero y el Costo del Vacío",
     "section": "11.3 La Gran Balanza: Ecuación del Costo Total",
-    "text": "11.3 La Gran Balanza: Ecuación del Costo Total\nTu misión es minimizar el Costo Total (CT):\n\\[CT = (\\bar{I} \\times h) + (P(k) \\times s)\\]\n\nCosto de Posesión \\((\\bar{I} \\times h)\\): El costo de “estar seguro”.\nCosto de Riesgo \\((P(k) \\times s)\\): Donde \\(P(k)\\) es la probabilidad de quiebre derivada directamente del RMSE de tus modelos previos.",
+    "text": "11.3 La Gran Balanza: Ecuación del Costo Total\nTu misión es minimizar el Costo Total (CT), encontrando el punto exacto donde la suma de ambos “dolores” es mínima:\n\\[\nCT = (\\bar{I} \\times h) + (E[S] \\times s)\n\\]\n\nDonde:\n\n\\(\\bar{I}\\): Es el inventario promedio (ciclo + seguridad).\n\\(E[S]\\): Es la escasez esperada, la cual depende directamente del RMSE de tus modelos de pronóstico.\n\nAquí está el secreto: Si tu RMSE es alto, tu riesgo de escasez es gigante, y la única forma de mitigarlo es aumentando \\(\\bar{I}\\) (pagando más \\(h\\)). La mejor forma de ahorrar dinero en Supply Chain no es negociando fletes, es mejorando la precisión del pronóstico.",
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Costo del Dinero y el Costo del Vacío</span>"
@@ -957,7 +957,7 @@
     "href": "cap-11-costos-inventario.html#el-mito-del-100-de-nivel-de-servicio",
     "title": "11. El Costo del Dinero y el Costo del Vacío",
     "section": "11.5 El Mito del 100% de Nivel de Servicio",
-    "text": "11.5 El Mito del 100% de Nivel de Servicio\nComo ingeniero, debes demostrar que el 100% es financieramente suicida. Debido a la distribución normal del error, el inventario crece de forma exponencial al acercarse al 100%, mientras que el beneficio marginal es decreciente.\n\n\n\n\n\n\nImportantLa Visión del Arquitecto\n\n\n\nEn Supply Chain, es infinitamente mejor estar aproximadamente en lo correcto que exactamente en lo incorrecto. Usa una estimación del 20%-25% anual para \\(h\\) y comienza a optimizar.",
+    "text": "11.5 El Mito del 100% de Nivel de Servicio\nDebido a la naturaleza de la distribución normal, el costo de pasar del 95% al 99% de nivel de servicio suele duplicar el inventario de seguridad. Pasar del 99% al 100% requiere, teóricamente, inventario infinito.\n\n\n\n\n\n\nImportantLa Visión del Arquitecto\n\n\n\nEn Supply Chain, es infinitamente mejor estar aproximadamente en lo correcto que exactamente en lo incorrecto. No te paralices buscando el \\(\\large s\\) perfecto; usa una estimación sensata y deja que los datos hablen en el simulador.",
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Costo del Dinero y el Costo del Vacío</span>"
@@ -968,7 +968,7 @@
     "href": "cap-11-costos-inventario.html#checklist-de-cierre-del-capítulo",
     "title": "11. El Costo del Dinero y el Costo del Vacío",
     "section": "Checklist de Cierre del Capítulo",
-    "text": "Checklist de Cierre del Capítulo\n\n¿He calculado el margen contribuido real para mis productos Clase A?\n¿Tengo una cifra consensuada con Finanzas para el WACC?\n¿Entiendo que el RMSE es el que determina cuánto dinero estoy apostando en el riesgo \\(P(k)\\)?",
+    "text": "Checklist de Cierre del Capítulo\n\n¿He calculado el margen bruto real para mis productos críticos?\n¿Entiendo que el Ratio Crítico me da el límite económico del nivel de servicio?\n¿Soy consciente de que reducir el RMSE un 10% puede ahorrar más dinero que optimizar toda la flota de transporte?",
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Costo del Dinero y el Costo del Vacío</span>"
@@ -1943,6 +1943,39 @@
     "crumbs": [
       "I: El Diagnóstico",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>4. ¿Qué tan mal estamos? Estableciendo el Baseline y Métricas de Error</span>"
+    ]
+  },
+  {
+    "objectID": "cap-11-costos-inventario.html#la-tragedia-del-estante-vacío-el-costo-de-escasez-large-s",
+    "href": "cap-11-costos-inventario.html#la-tragedia-del-estante-vacío-el-costo-de-escasez-large-s",
+    "title": "11. El Costo del Dinero y el Costo del Vacío",
+    "section": "11.2 La Tragedia del Estante Vacío: El Costo de Escasez (\\(\\large s\\))",
+    "text": "11.2 La Tragedia del Estante Vacío: El Costo de Escasez (\\(\\large s\\))\nSi el costo de mantenimiento es un “goteo”, el costo de escasez (stockout cost) es una “hemorragia”. Es más difícil de medir porque ocurre sobre algo que no pasó (la venta perdida).\n\nTipos de Costos de Escasez\n\nCostos Directos (Hard Costs):\n\nMargen Perdido: El dinero inmediato que dejas de percibir. (\\(s = \\text{Precio} - \\text{Costo Variable}\\)).\nCostos de Recuperación: Fletes aéreos de emergencia o compras a la competencia para cumplir un contrato.\n\nCostos Indirectos (Soft Costs):\n\nPenalizaciones: Multas de grandes retailers por no cumplir el Fill Rate.\nPérdida de LTV (Life Time Value): Un cliente que no encuentra tu producto tres veces seguidas, cambia de marca para siempre.\n\n\nEstimación Pragmática para el Arquitecto: Si no tienes el dato, una regla conservadora es usar el Margen Bruto x 1.5 (para cubrir el costo de imagen y posible pérdida del cliente).",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Costo del Dinero y el Costo del Vacío</span>"
+    ]
+  },
+  {
+    "objectID": "cap-11-costos-inventario.html#el-ratio-crítico-cuál-es-mi-nivel-de-servicio-teórico",
+    "href": "cap-11-costos-inventario.html#el-ratio-crítico-cuál-es-mi-nivel-de-servicio-teórico",
+    "title": "11. El Costo del Dinero y el Costo del Vacío",
+    "section": "11.4 El Ratio Crítico: ¿Cuál es mi Nivel de Servicio Teórico?",
+    "text": "11.4 El Ratio Crítico: ¿Cuál es mi Nivel de Servicio Teórico?\nAntes de usar el simulador, hay una pregunta matemática que debemos responder: ¿Qué nivel de servicio (\\(SL\\)) maximiza mi rentabilidad? La respuesta es el Ratio Crítico (\\(CR\\)):\n\\[\nCR = \\frac{s}{s + h}\n\\]\n\nSi el costo de escasez (\\(\\large s\\)) es muy alto respecto al de mantener (\\(\\large h\\)), el ratio se acerca a 1 (buscamos un nivel de servicio alto, ej. 98%).\nSi el producto es barato de producir pero carísimo de almacenar (ej. helados en cámaras ultra-frías), el ratio baja y quizás el 80% sea lo más rentable.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Costo del Dinero y el Costo del Vacío</span>"
+    ]
+  },
+  {
+    "objectID": "cap-11-costos-inventario.html#simulador-de-la-gran-balanza",
+    "href": "cap-11-costos-inventario.html#simulador-de-la-gran-balanza",
+    "title": "11. El Costo del Dinero y el Costo del Vacío",
+    "section": "11.6 Simulador de La Gran Balanza",
+    "text": "11.6 Simulador de La Gran Balanza\nUsa este simulador interactivo para visualizar cómo el RMSE (tu error de predicción) actúa como un amplificador de los costos financieros.\n\n\njStat = require(\"jstat@1.9.6\")\nPlotly = require(\"plotly.js-dist-min@2.24.1\")\n\n// 2. IMPORTANTE: Usar 'viewof' para obtener el VALOR del slider\nviewof unitCost = Inputs.range([10, 1000], {value: 100, step: 10, label: \"Valor Producto (v):\"})\nviewof hRate = Inputs.range([0.05, 0.60], {value: 0.25, step: 0.01, label: \"Tasa Mantenimiento (h):\"})\nviewof sCost = Inputs.range([50, 2000], {value: 150, step: 50, label: \"Costo Escasez (s):\"})\nviewof rmse = Inputs.range([10, 200], {value: 50, step: 5, label: \"Error (RMSE / σ):\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndata = {\n  const points = [];\n  for (let sl = 0.5; sl &lt;= 0.995; sl += 0.005) {\n    // Usamos jStat\n    const k = jStat.normal.inv(sl, 0, 1);\n    \n    const holding = k * rmse * (unitCost * hRate);\n    const shortage = (1 - sl) * sCost * rmse * 2; \n    const total = holding + shortage;\n    \n    points.push({ sl: sl * 100, holding, shortage, total });\n  }\n  return points;\n}\n\n// 4. Encontrar el punto óptimo\noptimal = data.reduce((prev, curr) =&gt; (prev.total &lt; curr.total) ? prev : curr)\n\n// 5. Renderizado del gráfico consolidado para evitar \"undefined\"\nchartContainer = {\n  // Creamos el contenedor\n  const container = html`&lt;div style=\"width:100%; height:450px;\"&gt;&lt;/div&gt;`;\n  \n  // Definimos los trazos\n  const traces = [\n    {\n      x: data.map(d =&gt; d.sl),\n      y: data.map(d =&gt; d.holding),\n      name: 'Costo Posesión',\n      type: 'scatter',\n      mode: 'lines',\n      line: {color: '#ef4444', width: 2}\n    },\n    {\n      x: data.map(d =&gt; d.sl),\n      y: data.map(d =&gt; d.shortage),\n      name: 'Costo Escasez',\n      type: 'scatter',\n      mode: 'lines',\n      line: {color: '#f97316', width: 2}\n    },\n    {\n      x: data.map(d =&gt; d.sl),\n      y: data.map(d =&gt; d.total),\n      name: 'Costo Total',\n      type: 'scatter',\n      mode: 'lines',\n      line: {color: '#2563eb', width: 4}\n    }\n  ];\n\n  const layout = {\n    title: 'Optimización del Nivel de Servicio',\n    xaxis: { \n      title: 'Nivel de Servicio (%)', \n      gridcolor: '#f1f5f9',\n      range: [50, 100]\n    },\n    yaxis: { title: 'Costo ($)', gridcolor: '#f1f5f9' },\n    template: 'plotly_white',\n    hovermode: 'x unified',\n    margin: { t: 50, b: 50, l: 60, r: 30 },\n    annotations: [{\n      x: optimal.sl,\n      y: optimal.total,\n      text: `Óptimo: ${optimal.sl.toFixed(1)}%&lt;br&gt;$${Math.round(optimal.total)}`,\n      showarrow: true,\n      arrowhead: 2,\n      ax: 0,\n      ay: -40,\n      bgcolor: '#10b981',\n      bordercolor: '#10b981',\n      font: {color: 'white'}\n    }]\n  };\n\n  // Dibujamos el gráfico\n  Plotly.newPlot(container, traces, layout, {responsive: true, displayModeBar: false});\n  \n  // Retornamos el contenedor para que OJS lo muestre y no devuelva \"undefined\"\n  return container;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipResultado del Análisis\n\n\n\nBajo las condiciones actuales (RMSE de ), el nivel de servicio financieramente óptimo es del %.\nNota cómo al aumentar el RMSE, la curva de costo total no solo sube, sino que el “valle” del costo mínimo se vuelve más estrecho, dándote menos margen de error en tu política de inventarios.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Costo del Dinero y el Costo del Vacío</span>"
     ]
   }
 ]

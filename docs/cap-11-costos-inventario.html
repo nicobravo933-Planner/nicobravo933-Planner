@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -44,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-37f97b4dfc99813de07ac4a6dfc6e37d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-1d61feaf5942a89f67c517e5b1b3c91a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,6 +109,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -295,7 +332,7 @@ window.Quarto = {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Arquitectura de suministros</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/nicobravo933-Planner/Practicas_Supply" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -324,7 +361,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></a>
+  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. Auditoría de Datos y Arquitectura de Red</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -486,7 +523,9 @@ window.Quarto = {
 </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Creado con <a href="https://quarto.org/">Quarto</a>.</p>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -497,14 +536,19 @@ window.Quarto = {
   <li><a href="#el-inventario-como-pasivo-el-costo-de-mantenimiento-h" id="toc-el-inventario-como-pasivo-el-costo-de-mantenimiento-h" class="nav-link active" data-scroll-target="#el-inventario-como-pasivo-el-costo-de-mantenimiento-h">11.1 El Inventario como Pasivo: El Costo de Mantenimiento (<span class="math inline">\(h\)</span>)</a>
   <ul class="collapse">
   <li><a href="#disección-de-los-parámetros-financieros" id="toc-disección-de-los-parámetros-financieros" class="nav-link" data-scroll-target="#disección-de-los-parámetros-financieros">Disección de los Parámetros Financieros</a></li>
+  <li><a href="#referencias-industriales-para-h" id="toc-referencias-industriales-para-h" class="nav-link" data-scroll-target="#referencias-industriales-para-h">Referencias Industriales para <span class="math inline">\((h)\)</span></a></li>
   </ul></li>
-  <li><a href="#la-tragedia-del-estante-vacío-el-costo-de-escasez-s" id="toc-la-tragedia-del-estante-vacío-el-costo-de-escasez-s" class="nav-link" data-scroll-target="#la-tragedia-del-estante-vacío-el-costo-de-escasez-s">11.2 La Tragedia del Estante Vacío: El Costo de Escasez (<span class="math inline">\(s\)</span>)</a></li>
+  <li><a href="#la-tragedia-del-estante-vacío-el-costo-de-escasez-large-s" id="toc-la-tragedia-del-estante-vacío-el-costo-de-escasez-large-s" class="nav-link" data-scroll-target="#la-tragedia-del-estante-vacío-el-costo-de-escasez-large-s">11.2 La Tragedia del Estante Vacío: El Costo de Escasez (<span class="math inline">\(\large s\)</span>)</a>
+  <ul class="collapse">
+  <li><a href="#tipos-de-costos-de-escasez" id="toc-tipos-de-costos-de-escasez" class="nav-link" data-scroll-target="#tipos-de-costos-de-escasez">Tipos de Costos de Escasez</a></li>
+  </ul></li>
   <li><a href="#la-gran-balanza-ecuación-del-costo-total" id="toc-la-gran-balanza-ecuación-del-costo-total" class="nav-link" data-scroll-target="#la-gran-balanza-ecuación-del-costo-total">11.3 La Gran Balanza: Ecuación del Costo Total</a></li>
-  <li><a href="#implicaciones-estratégicas-y-segmentación" id="toc-implicaciones-estratégicas-y-segmentación" class="nav-link" data-scroll-target="#implicaciones-estratégicas-y-segmentación">11.4 Implicaciones Estratégicas y Segmentación</a></li>
+  <li><a href="#el-ratio-crítico-cuál-es-mi-nivel-de-servicio-teórico" id="toc-el-ratio-crítico-cuál-es-mi-nivel-de-servicio-teórico" class="nav-link" data-scroll-target="#el-ratio-crítico-cuál-es-mi-nivel-de-servicio-teórico">11.4 El Ratio Crítico: ¿Cuál es mi Nivel de Servicio Teórico?</a></li>
   <li><a href="#el-mito-del-100-de-nivel-de-servicio" id="toc-el-mito-del-100-de-nivel-de-servicio" class="nav-link" data-scroll-target="#el-mito-del-100-de-nivel-de-servicio">11.5 El Mito del 100% de Nivel de Servicio</a></li>
+  <li><a href="#simulador-de-la-gran-balanza" id="toc-simulador-de-la-gran-balanza" class="nav-link" data-scroll-target="#simulador-de-la-gran-balanza">11.6 Simulador de La Gran Balanza</a></li>
   <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-11-costos-inventario.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-11-costos-inventario.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
@@ -544,57 +588,111 @@ window.Quarto = {
 <ol type="1">
 <li><span class="math inline">\(v\)</span> (Valor del Producto): Es la base sobre la que se calcula todo el riesgo.
 <ul>
-<li><strong>Origen:</strong> ERP / Contabilidad de Costos.</li>
-<li><strong>Implicación:</strong> Debes utilizar siempre el <strong>Costo de Adquisición</strong> o <strong>Costo de Fabricación (COGS)</strong>. Nunca uses el precio de venta.</li>
+<li><p><strong>Regla de Oro:</strong> Utiliza siempre el <strong>Costo de Adquisición</strong> o <strong>Costo de Fabricación (COGS)</strong>.</p></li>
+<li><p><strong>¿Por qué no el precio de venta?</strong> Porque el precio de venta incluye un margen que aún no has ganado. El capital real que tienes “atrapado” en el almacén es lo que te costó producirlo o comprarlo. Si usas el precio de venta, estarás sobreestimando el costo de mantener stock.</p></li>
 </ul></li>
 <li><span class="math inline">\(i\)</span> (Tasa de Capital / Costo de Oportunidad): El valor del dinero en el tiempo.
 <ul>
-<li><strong>Origen:</strong> Dirección de Finanzas (Tesorería).</li>
-<li><strong>Explicación:</strong> Se utiliza el <strong>WACC</strong> (<em>Weighted Average Cost of Capital</em>). Si es del 15%, cada unidad te cuesta un 15% de su valor al año solo por existir.</li>
+<li><p><strong>Concepto:</strong> Representa lo que la empresa deja de ganar por tener ese dinero en cajas en lugar de invertirlo en nuevos proyectos, marketing o dejarlo en el banco.</p></li>
+<li><p><strong>Origen:</strong> El <strong>WACC</strong> (<em>Weighted Average Cost of Capital</em>). Es la tasa promedio que la empresa paga a sus accionistas y acreedores. Si el WACC es del 15%, cada unidad te cuesta un 15% de su valor al año solo por “existir” financieramente.</p></li>
 </ul></li>
-<li><span class="math inline">\(w\)</span> (Tasa de Almacenaje y Operación): El costo del “techo” y las manos.
+<li><span class="math inline">\(w\)</span> (Tasa de Almacenaje y Operación):
 <ul>
-<li><strong>Origen:</strong> Control de Gestión Logística.</li>
-<li><strong>Detalle:</strong> Renta, electricidad, personal y seguros. Se calcula como el gasto total logístico entre el valor promedio del inventario.</li>
+<li><p><strong>Detalle:</strong> Incluye renta del almacén, electricidad, personal de seguridad, seguros contra incendios y manipulación (montacargas).</p></li>
+<li><p><strong>Precisión Técnica:</strong> Solo debemos incluir los <strong>costos variables</strong> o incrementales. Si el almacén es propio y está medio vacío, el costo de una caja extra es casi nulo. Pero si pagas por posición de pallet a un operador logístico (3PL), cada unidad cuenta.</p></li>
 </ul></li>
-<li><span class="math inline">\(r\)</span> (Tasa de Riesgo, Merma y Obsolescencia): El costo de la entropía.
+<li><span class="math inline">\(r\)</span> (Tasa de Riesgo, Merma y Obsolescencia):
 <ul>
-<li><strong>Origen:</strong> Auditoría de Inventarios.</li>
-<li><strong>Escenarios:</strong> Crítico en moda o tecnología donde el producto caduca moralmente rápido.</li>
+<li><p><strong>Escenarios:</strong> Crítico en sectores como tecnología (un iPhone pierde valor cada mes), moda (el inventario de invierno no vale nada en verano) o alimentos (caducidad).</p></li>
+<li><p><strong>La Merma:</strong> También incluye el porcentaje histórico de robos, daños por manipulación o pérdida de inventario.</p></li>
 </ul></li>
 </ol>
 </section>
+<section id="referencias-industriales-para-h" class="level3">
+<h3 class="anchored" data-anchor-id="referencias-industriales-para-h">Referencias Industriales para <span class="math inline">\((h)\)</span></h3>
+<p>Si no tienes datos exactos de Finanzas, puedes usar estos promedios anuales como punto de partida:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Industria</th>
+<th style="text-align: center;">Tasa <span class="math inline">\(h\)</span> típica</th>
+<th style="text-align: center;">Factor dominante</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Consumo Masivo</strong></td>
+<td style="text-align: center;">18% - 22%</td>
+<td style="text-align: center;">Capital y Almacenaje</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Farmacéutica</strong></td>
+<td style="text-align: center;">25% - 30%</td>
+<td style="text-align: center;">Seguros y Caducidad</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Moda / Retail</strong></td>
+<td style="text-align: center;">35% - 50%</td>
+<td style="text-align: center;">Obsolescencia rápida</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Tecnología</strong></td>
+<td style="text-align: center;">40% - 70%</td>
+<td style="text-align: center;">Depreciación de valor</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="la-tragedia-del-estante-vacío-el-costo-de-escasez-s" class="level2">
-<h2 class="anchored" data-anchor-id="la-tragedia-del-estante-vacío-el-costo-de-escasez-s">11.2 La Tragedia del Estante Vacío: El Costo de Escasez (<span class="math inline">\(s\)</span>)</h2>
-<p>Si el costo de mantenimiento es un “goteo”, el costo de escasez (<em>stockout cost</em>) es una “hemorragia”. Se descompone en:</p>
+</section>
+<section id="la-tragedia-del-estante-vacío-el-costo-de-escasez-large-s" class="level2">
+<h2 class="anchored" data-anchor-id="la-tragedia-del-estante-vacío-el-costo-de-escasez-large-s">11.2 La Tragedia del Estante Vacío: El Costo de Escasez (<span class="math inline">\(\large s\)</span>)</h2>
+<p>Si el costo de mantenimiento es un “goteo”, el costo de escasez (<em>stockout cost</em>) es una “hemorragia”. Es más difícil de medir porque ocurre sobre algo que <strong>no pasó</strong> (la venta perdida).</p>
+<section id="tipos-de-costos-de-escasez" class="level3">
+<h3 class="anchored" data-anchor-id="tipos-de-costos-de-escasez">Tipos de Costos de Escasez</h3>
 <ol type="1">
-<li><strong>Margen Perdido Directo:</strong> El dinero que “vuela” en el quiebre. (<span class="math inline">\(s_{directo} = \text{Precio} - \text{Costo Variable}\)</span>).</li>
-<li><strong>Penalizaciones Contractuales:</strong> Multas por “Fill Rate” bajo.</li>
-<li><strong>Costos de Recuperación (Expedición):</strong> El costo de enviar pedidos por avión para mitigar el faltante.</li>
-<li><strong>Efecto Churn y Valor de Vida del Cliente (LTV):</strong> Perder el flujo de caja de los próximos años de ese cliente.</li>
+<li><p><strong>Costos Directos (Hard Costs):</strong></p>
+<ul>
+<li><p><strong>Margen Perdido:</strong> El dinero inmediato que dejas de percibir. (<span class="math inline">\(s = \text{Precio} - \text{Costo Variable}\)</span>).</p></li>
+<li><p><strong>Costos de Recuperación:</strong> Fletes aéreos de emergencia o compras a la competencia para cumplir un contrato.</p></li>
+</ul></li>
+<li><p><strong>Costos Indirectos (Soft Costs):</strong></p>
+<ul>
+<li><p><strong>Penalizaciones:</strong> Multas de grandes retailers por no cumplir el <em>Fill Rate</em>.</p></li>
+<li><p><strong>Pérdida de LTV (Life Time Value):</strong> Un cliente que no encuentra tu producto tres veces seguidas, cambia de marca para siempre.</p></li>
+</ul></li>
 </ol>
-<p><strong>Estimación Pragmática:</strong> <span class="math display">\[s = \text{Margen} + (\text{Probabilidad de Abandono} \times \text{LTV})\]</span></p>
+<p><strong>Estimación Pragmática para el Arquitecto:</strong> Si no tienes el dato, una regla conservadora es usar el <strong>Margen Bruto x 1.5</strong> (para cubrir el costo de imagen y posible pérdida del cliente).</p>
+</section>
 </section>
 <section id="la-gran-balanza-ecuación-del-costo-total" class="level2">
 <h2 class="anchored" data-anchor-id="la-gran-balanza-ecuación-del-costo-total">11.3 La Gran Balanza: Ecuación del Costo Total</h2>
-<p>Tu misión es <strong>minimizar el Costo Total (CT)</strong>:</p>
-<p><span class="math display">\[CT = (\bar{I} \times h) + (P(k) \times s)\]</span></p>
+<p>Tu misión es <strong>minimizar el Costo Total (CT)</strong>, encontrando el punto exacto donde la suma de ambos “dolores” es mínima:</p>
+<p><span class="math display">\[
+CT = (\bar{I} \times h) + (E[S] \times s)
+\]</span></p>
 <ul>
-<li><strong>Costo de Posesión</strong> <span class="math inline">\((\bar{I} \times h)\)</span>: El costo de “estar seguro”.</li>
-<li><strong>Costo de Riesgo</strong> <span class="math inline">\((P(k) \times s)\)</span>: Donde <span class="math inline">\(P(k)\)</span> es la probabilidad de quiebre derivada directamente del <strong>RMSE</strong> de tus modelos previos.</li>
+<li><p>Donde:</p>
+<ul>
+<li><p><span class="math inline">\(\bar{I}\)</span><strong>:</strong> Es el inventario promedio (ciclo + seguridad).</p></li>
+<li><p><span class="math inline">\(E[S]\)</span><strong>:</strong> Es la escasez esperada, la cual depende directamente del <strong>RMSE</strong> de tus modelos de pronóstico.</p></li>
+</ul>
+<p>Aquí está el secreto: <strong>Si tu RMSE es alto, tu riesgo de escasez es gigante</strong>, y la única forma de mitigarlo es aumentando <span class="math inline">\(\bar{I}\)</span> (pagando más <span class="math inline">\(h\)</span>). La mejor forma de ahorrar dinero en Supply Chain no es negociando fletes, es <strong>mejorando la precisión del pronóstico</strong>.</p></li>
 </ul>
 </section>
-<section id="implicaciones-estratégicas-y-segmentación" class="level2">
-<h2 class="anchored" data-anchor-id="implicaciones-estratégicas-y-segmentación">11.4 Implicaciones Estratégicas y Segmentación</h2>
+<section id="el-ratio-crítico-cuál-es-mi-nivel-de-servicio-teórico" class="level2">
+<h2 class="anchored" data-anchor-id="el-ratio-crítico-cuál-es-mi-nivel-de-servicio-teórico">11.4 El Ratio Crítico: ¿Cuál es mi Nivel de Servicio Teórico?</h2>
+<p>Antes de usar el simulador, hay una pregunta matemática que debemos responder: ¿Qué nivel de servicio (<span class="math inline">\(SL\)</span>) maximiza mi rentabilidad? La respuesta es el <strong>Ratio Crítico (</strong><span class="math inline">\(CR\)</span><strong>):</strong></p>
+<p><span class="math display">\[
+CR = \frac{s}{s + h}
+\]</span></p>
 <ul>
-<li><strong>Productos Clase A (Críticos):</strong> El costo <span class="math inline">\(s\)</span> es inmenso. Se acepta un <span class="math inline">\(h\)</span> elevado para proteger el margen.</li>
-<li><strong>Productos Clase C (Lentos):</strong> El costo <span class="math inline">\(h\)</span> domina. Es financieramente más inteligente dejar que el producto falte ocasionalmente.</li>
+<li><p>Si el costo de escasez (<span class="math inline">\(\large s\)</span>) es muy alto respecto al de mantener (<span class="math inline">\(\large h\)</span>), el ratio se acerca a 1 (buscamos un nivel de servicio alto, ej. 98%).</p></li>
+<li><p>Si el producto es barato de producir pero carísimo de almacenar (ej. helados en cámaras ultra-frías), el ratio baja y quizás el 80% sea lo más rentable.</p></li>
 </ul>
 </section>
 <section id="el-mito-del-100-de-nivel-de-servicio" class="level2">
 <h2 class="anchored" data-anchor-id="el-mito-del-100-de-nivel-de-servicio">11.5 El Mito del 100% de Nivel de Servicio</h2>
-<p>Como ingeniero, debes demostrar que el <strong>100% es financieramente suicida</strong>. Debido a la distribución normal del error, el inventario crece de forma <strong>exponencial</strong> al acercarse al 100%, mientras que el beneficio marginal es decreciente.</p>
+<p>Debido a la naturaleza de la distribución normal, el costo de pasar del 95% al 99% de nivel de servicio suele duplicar el inventario de seguridad. Pasar del 99% al 100% requiere, teóricamente, <strong>inventario infinito</strong>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -605,22 +703,219 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>En Supply Chain, es infinitamente mejor estar aproximadamente en lo correcto que exactamente en lo incorrecto. Usa una estimación del 20%-25% anual para <span class="math inline">\(h\)</span> y comienza a optimizar.</p>
+<p>En Supply Chain, es infinitamente mejor estar aproximadamente en lo correcto que exactamente en lo incorrecto. No te paralices buscando el <span class="math inline">\(\large s\)</span> perfecto; usa una estimación sensata y deja que los datos hablen en el simulador.</p>
+</div>
+</div>
+</section>
+<section id="simulador-de-la-gran-balanza" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-de-la-gran-balanza">11.6 Simulador de La Gran Balanza</h2>
+<p>Usa este simulador interactivo para visualizar cómo el <strong>RMSE</strong> (tu error de predicción) actúa como un amplificador de los costos financieros.</p>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="119" data-source-offset="-62"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 118;"><span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>jStat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="co">// 2. IMPORTANTE: Usar 'viewof' para obtener el VALOR del slider</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>viewof unitCost <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">10</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Valor Producto (v):"</span>})</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>viewof hRate <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.05</span><span class="op">,</span> <span class="fl">0.60</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.25</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Tasa Mantenimiento (h):"</span>})</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>viewof sCost <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">50</span><span class="op">,</span> <span class="dv">2000</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">150</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Costo Escasez (s):"</span>})</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>viewof rmse <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">10</span><span class="op">,</span> <span class="dv">200</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Error (RMSE / σ):"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="134" data-source-offset="-79"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 133;"><span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> points <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> sl <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> sl <span class="op">&lt;=</span> <span class="fl">0.995</span><span class="op">;</span> sl <span class="op">+=</span> <span class="fl">0.005</span>) {</span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Usamos jStat</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> k <span class="op">=</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">inv</span>(sl<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> holding <span class="op">=</span> k <span class="op">*</span> rmse <span class="op">*</span> (unitCost <span class="op">*</span> hRate)<span class="op">;</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> shortage <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> sl) <span class="op">*</span> sCost <span class="op">*</span> rmse <span class="op">*</span> <span class="dv">2</span><span class="op">;</span> </span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> total <span class="op">=</span> holding <span class="op">+</span> shortage<span class="op">;</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>    points<span class="op">.</span><span class="fu">push</span>({ <span class="dt">sl</span><span class="op">:</span> sl <span class="op">*</span> <span class="dv">100</span><span class="op">,</span> holding<span class="op">,</span> shortage<span class="op">,</span> total })<span class="op">;</span></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> points<span class="op">;</span></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a><span class="co">// 4. Encontrar el punto óptimo</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>optimal <span class="op">=</span> data<span class="op">.</span><span class="fu">reduce</span>((prev<span class="op">,</span> curr) <span class="kw">=&gt;</span> (prev<span class="op">.</span><span class="at">total</span> <span class="op">&lt;</span> curr<span class="op">.</span><span class="at">total</span>) <span class="op">?</span> prev <span class="op">:</span> curr)</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a><span class="co">// 5. Renderizado del gráfico consolidado para evitar "undefined"</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>chartContainer <span class="op">=</span> {</span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Creamos el contenedor</span></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:450px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Definimos los trazos</span></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">sl</span>)<span class="op">,</span></span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">holding</span>)<span class="op">,</span></span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Costo Posesión'</span><span class="op">,</span></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#ef4444'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">2</span>}</span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">sl</span>)<span class="op">,</span></span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">shortage</span>)<span class="op">,</span></span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Costo Escasez'</span><span class="op">,</span></span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span></span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#f97316'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">2</span>}</span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">sl</span>)<span class="op">,</span></span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">total</span>)<span class="op">,</span></span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Costo Total'</span><span class="op">,</span></span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span></span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#2563eb'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">4</span>}</span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layout <span class="op">=</span> {</span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'Optimización del Nivel de Servicio'</span><span class="op">,</span></span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a>    <span class="dt">xaxis</span><span class="op">:</span> { </span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a>      <span class="dt">title</span><span class="op">:</span> <span class="st">'Nivel de Servicio (%)'</span><span class="op">,</span> </span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a>      <span class="dt">gridcolor</span><span class="op">:</span> <span class="st">'#f1f5f9'</span><span class="op">,</span></span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a>      <span class="dt">range</span><span class="op">:</span> [<span class="dv">50</span><span class="op">,</span> <span class="dv">100</span>]</span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>    <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Costo ($)'</span><span class="op">,</span> <span class="dt">gridcolor</span><span class="op">:</span> <span class="st">'#f1f5f9'</span> }<span class="op">,</span></span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span></span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a>    <span class="dt">hovermode</span><span class="op">:</span> <span class="st">'x unified'</span><span class="op">,</span></span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a>    <span class="dt">margin</span><span class="op">:</span> { <span class="dt">t</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">l</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">30</span> }<span class="op">,</span></span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a>    <span class="dt">annotations</span><span class="op">:</span> [{</span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> optimal<span class="op">.</span><span class="at">sl</span><span class="op">,</span></span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> optimal<span class="op">.</span><span class="at">total</span><span class="op">,</span></span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> <span class="vs">`Óptimo: </span><span class="sc">${</span>optimal<span class="op">.</span><span class="at">sl</span><span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">%&lt;br&gt;$</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(optimal<span class="op">.</span><span class="at">total</span>)<span class="sc">}</span><span class="vs">`</span><span class="op">,</span></span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a>      <span class="dt">showarrow</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a>      <span class="dt">arrowhead</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a>      <span class="dt">ax</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a>      <span class="dt">ay</span><span class="op">:</span> <span class="op">-</span><span class="dv">40</span><span class="op">,</span></span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a>      <span class="dt">bgcolor</span><span class="op">:</span> <span class="st">'#10b981'</span><span class="op">,</span></span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a>      <span class="dt">bordercolor</span><span class="op">:</span> <span class="st">'#10b981'</span><span class="op">,</span></span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a>      <span class="dt">font</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'white'</span>}</span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a>    }]</span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Dibujamos el gráfico</span></span>
+<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> layout<span class="op">,</span> {<span class="dt">responsive</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">displayModeBar</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">;</span></span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Retornamos el contenedor para que OJS lo muestre y no devuelva "undefined"</span></span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Resultado del Análisis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bajo las condiciones actuales (RMSE de <strong><span><span id="ojs-element-id-1"></span></span></strong>), el nivel de servicio financieramente óptimo es del <strong><span><span id="ojs-element-id-2"></span>%</span></strong>.</p>
+<p>Nota cómo al aumentar el <strong>RMSE</strong>, la curva de costo total no solo sube, sino que el “valle” del costo mínimo se vuelve más estrecho, dándote menos margen de error en tu política de inventarios.</p>
 </div>
 </div>
 </section>
 <section id="checklist-de-cierre-del-capítulo" class="level2">
 <h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">¿He calculado el margen contribuido real para mis productos Clase A?</label></li>
-<li><label><input type="checkbox">¿Tengo una cifra consensuada con Finanzas para el WACC?</label></li>
-<li><label><input type="checkbox">¿Entiendo que el RMSE es el que determina cuánto dinero estoy apostando en el riesgo <span class="math inline">\(P(k)\)</span>?</label></li>
+<li><label><input type="checkbox">¿He calculado el margen bruto real para mis productos críticos?</label></li>
+<li><label><input type="checkbox">¿Entiendo que el Ratio Crítico me da el límite económico del nivel de servicio?</label></li>
+<li><label><input type="checkbox">¿Soy consciente de que reducir el RMSE un 10% puede ahorrar más dinero que optimizar toda la flota de transporte?</label></li>
 </ul>
 
 
+<div class="ojs-auto-generated hidden">
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7cm1zZX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTEifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke29wdGltYWwuc2wudG9GaXhlZCgxKX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIifV19
+</script>
+</div>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5cclxuLy8gQ2FyZ2Ftb3MgbGlicmVyw61hcyB2aWEgRVNNIHBhcmEgZXN0YWJpbGlkYWQgZW4gUXVhcnRvXHJcbmpTdGF0ID0gcmVxdWlyZShcImpzdGF0QDEuOS42XCIpXHJcblBsb3RseSA9IHJlcXVpcmUoXCJwbG90bHkuanMtZGlzdC1taW5AMi4yNC4xXCIpXHJcblxyXG4vLyAyLiBJTVBPUlRBTlRFOiBVc2FyICd2aWV3b2YnIHBhcmEgb2J0ZW5lciBlbCBWQUxPUiBkZWwgc2xpZGVyXHJcbnZpZXdvZiB1bml0Q29zdCA9IElucHV0cy5yYW5nZShbMTAsIDEwMDBdLCB7dmFsdWU6IDEwMCwgc3RlcDogMTAsIGxhYmVsOiBcIlZhbG9yIFByb2R1Y3RvICh2KTpcIn0pXHJcbnZpZXdvZiBoUmF0ZSA9IElucHV0cy5yYW5nZShbMC4wNSwgMC42MF0sIHt2YWx1ZTogMC4yNSwgc3RlcDogMC4wMSwgbGFiZWw6IFwiVGFzYSBNYW50ZW5pbWllbnRvIChoKTpcIn0pXHJcbnZpZXdvZiBzQ29zdCA9IElucHV0cy5yYW5nZShbNTAsIDIwMDBdLCB7dmFsdWU6IDE1MCwgc3RlcDogNTAsIGxhYmVsOiBcIkNvc3RvIEVzY2FzZXogKHMpOlwifSlcclxudmlld29mIHJtc2UgPSBJbnB1dHMucmFuZ2UoWzEwLCAyMDBdLCB7dmFsdWU6IDUwLCBzdGVwOiA1LCBsYWJlbDogXCJFcnJvciAoUk1TRSAvIM+DKTpcIn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG4vLyAzLiBMw7NnaWNhIGRlIGPDoWxjdWxvIChSZWFjdGl2YTogc2UgZWplY3V0YSBzb2xhIGN1YW5kbyBjYW1iaWEgdW4gdmlld29mKVxyXG5kYXRhID0ge1xyXG4gIGNvbnN0IHBvaW50cyA9IFtdO1xyXG4gIGZvciAobGV0IHNsID0gMC41OyBzbCA8PSAwLjk5NTsgc2wgKz0gMC4wMDUpIHtcclxuICAgIC8vIFVzYW1vcyBqU3RhdFxyXG4gICAgY29uc3QgayA9IGpTdGF0Lm5vcm1hbC5pbnYoc2wsIDAsIDEpO1xyXG4gICAgXHJcbiAgICBjb25zdCBob2xkaW5nID0gayAqIHJtc2UgKiAodW5pdENvc3QgKiBoUmF0ZSk7XHJcbiAgICBjb25zdCBzaG9ydGFnZSA9ICgxIC0gc2wpICogc0Nvc3QgKiBybXNlICogMjsgXHJcbiAgICBjb25zdCB0b3RhbCA9IGhvbGRpbmcgKyBzaG9ydGFnZTtcclxuICAgIFxyXG4gICAgcG9pbnRzLnB1c2goeyBzbDogc2wgKiAxMDAsIGhvbGRpbmcsIHNob3J0YWdlLCB0b3RhbCB9KTtcclxuICB9XHJcbiAgcmV0dXJuIHBvaW50cztcclxufVxyXG5cclxuLy8gNC4gRW5jb250cmFyIGVsIHB1bnRvIMOzcHRpbW9cclxub3B0aW1hbCA9IGRhdGEucmVkdWNlKChwcmV2LCBjdXJyKSA9PiAocHJldi50b3RhbCA8IGN1cnIudG90YWwpID8gcHJldiA6IGN1cnIpXHJcblxyXG4vLyA1LiBSZW5kZXJpemFkbyBkZWwgZ3LDoWZpY28gY29uc29saWRhZG8gcGFyYSBldml0YXIgXCJ1bmRlZmluZWRcIlxyXG5jaGFydENvbnRhaW5lciA9IHtcclxuICAvLyBDcmVhbW9zIGVsIGNvbnRlbmVkb3JcclxuICBjb25zdCBjb250YWluZXIgPSBodG1sYDxkaXYgc3R5bGU9XCJ3aWR0aDoxMDAlOyBoZWlnaHQ6NDUwcHg7XCI+PC9kaXY+YDtcclxuICBcclxuICAvLyBEZWZpbmltb3MgbG9zIHRyYXpvc1xyXG4gIGNvbnN0IHRyYWNlcyA9IFtcclxuICAgIHtcclxuICAgICAgeDogZGF0YS5tYXAoZCA9PiBkLnNsKSxcclxuICAgICAgeTogZGF0YS5tYXAoZCA9PiBkLmhvbGRpbmcpLFxyXG4gICAgICBuYW1lOiAnQ29zdG8gUG9zZXNpw7NuJyxcclxuICAgICAgdHlwZTogJ3NjYXR0ZXInLFxyXG4gICAgICBtb2RlOiAnbGluZXMnLFxyXG4gICAgICBsaW5lOiB7Y29sb3I6ICcjZWY0NDQ0Jywgd2lkdGg6IDJ9XHJcbiAgICB9LFxyXG4gICAge1xyXG4gICAgICB4OiBkYXRhLm1hcChkID0+IGQuc2wpLFxyXG4gICAgICB5OiBkYXRhLm1hcChkID0+IGQuc2hvcnRhZ2UpLFxyXG4gICAgICBuYW1lOiAnQ29zdG8gRXNjYXNleicsXHJcbiAgICAgIHR5cGU6ICdzY2F0dGVyJyxcclxuICAgICAgbW9kZTogJ2xpbmVzJyxcclxuICAgICAgbGluZToge2NvbG9yOiAnI2Y5NzMxNicsIHdpZHRoOiAyfVxyXG4gICAgfSxcclxuICAgIHtcclxuICAgICAgeDogZGF0YS5tYXAoZCA9PiBkLnNsKSxcclxuICAgICAgeTogZGF0YS5tYXAoZCA9PiBkLnRvdGFsKSxcclxuICAgICAgbmFtZTogJ0Nvc3RvIFRvdGFsJyxcclxuICAgICAgdHlwZTogJ3NjYXR0ZXInLFxyXG4gICAgICBtb2RlOiAnbGluZXMnLFxyXG4gICAgICBsaW5lOiB7Y29sb3I6ICcjMjU2M2ViJywgd2lkdGg6IDR9XHJcbiAgICB9XHJcbiAgXTtcclxuXHJcbiAgY29uc3QgbGF5b3V0ID0ge1xyXG4gICAgdGl0bGU6ICdPcHRpbWl6YWNpw7NuIGRlbCBOaXZlbCBkZSBTZXJ2aWNpbycsXHJcbiAgICB4YXhpczogeyBcclxuICAgICAgdGl0bGU6ICdOaXZlbCBkZSBTZXJ2aWNpbyAoJSknLCBcclxuICAgICAgZ3JpZGNvbG9yOiAnI2YxZjVmOScsXHJcbiAgICAgIHJhbmdlOiBbNTAsIDEwMF1cclxuICAgIH0sXHJcbiAgICB5YXhpczogeyB0aXRsZTogJ0Nvc3RvICgkKScsIGdyaWRjb2xvcjogJyNmMWY1ZjknIH0sXHJcbiAgICB0ZW1wbGF0ZTogJ3Bsb3RseV93aGl0ZScsXHJcbiAgICBob3Zlcm1vZGU6ICd4IHVuaWZpZWQnLFxyXG4gICAgbWFyZ2luOiB7IHQ6IDUwLCBiOiA1MCwgbDogNjAsIHI6IDMwIH0sXHJcbiAgICBhbm5vdGF0aW9uczogW3tcclxuICAgICAgeDogb3B0aW1hbC5zbCxcclxuICAgICAgeTogb3B0aW1hbC50b3RhbCxcclxuICAgICAgdGV4dDogYMOTcHRpbW86ICR7b3B0aW1hbC5zbC50b0ZpeGVkKDEpfSU8YnI+JCR7TWF0aC5yb3VuZChvcHRpbWFsLnRvdGFsKX1gLFxyXG4gICAgICBzaG93YXJyb3c6IHRydWUsXHJcbiAgICAgIGFycm93aGVhZDogMixcclxuICAgICAgYXg6IDAsXHJcbiAgICAgIGF5OiAtNDAsXHJcbiAgICAgIGJnY29sb3I6ICcjMTBiOTgxJyxcclxuICAgICAgYm9yZGVyY29sb3I6ICcjMTBiOTgxJyxcclxuICAgICAgZm9udDoge2NvbG9yOiAnd2hpdGUnfVxyXG4gICAgfV1cclxuICB9O1xyXG5cclxuICAvLyBEaWJ1amFtb3MgZWwgZ3LDoWZpY29cclxuICBQbG90bHkubmV3UGxvdChjb250YWluZXIsIHRyYWNlcywgbGF5b3V0LCB7cmVzcG9uc2l2ZTogdHJ1ZSwgZGlzcGxheU1vZGVCYXI6IGZhbHNlfSk7XHJcbiAgXHJcbiAgLy8gUmV0b3JuYW1vcyBlbCBjb250ZW5lZG9yIHBhcmEgcXVlIE9KUyBsbyBtdWVzdHJlIHkgbm8gZGV2dWVsdmEgXCJ1bmRlZmluZWRcIlxyXG4gIHJldHVybiBjb250YWluZXI7XHJcbn1cclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd1bml0Q29zdCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdoUmF0ZScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzQ29zdCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdybXNlJykifV19
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1047,8 +1342,21 @@ window.Quarto = {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Nicolás A. Bravo</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-11-costos-inventario.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Este libro fue creado con <a href="https://quarto.org/">Quarto</a>. Visita mi <a href="https://github.com/nicobravo933-Planner">repositorio GitHub</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-11-costos-inventario.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>
