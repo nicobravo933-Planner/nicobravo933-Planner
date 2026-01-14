@@ -545,7 +545,10 @@ window.Quarto = {
   <li><a href="#la-gran-balanza-ecuación-del-costo-total" id="toc-la-gran-balanza-ecuación-del-costo-total" class="nav-link" data-scroll-target="#la-gran-balanza-ecuación-del-costo-total">11.3 La Gran Balanza: Ecuación del Costo Total</a></li>
   <li><a href="#el-ratio-crítico-cuál-es-mi-nivel-de-servicio-teórico" id="toc-el-ratio-crítico-cuál-es-mi-nivel-de-servicio-teórico" class="nav-link" data-scroll-target="#el-ratio-crítico-cuál-es-mi-nivel-de-servicio-teórico">11.4 El Ratio Crítico: ¿Cuál es mi Nivel de Servicio Teórico?</a></li>
   <li><a href="#el-mito-del-100-de-nivel-de-servicio" id="toc-el-mito-del-100-de-nivel-de-servicio" class="nav-link" data-scroll-target="#el-mito-del-100-de-nivel-de-servicio">11.5 El Mito del 100% de Nivel de Servicio</a></li>
-  <li><a href="#simulador-de-la-gran-balanza" id="toc-simulador-de-la-gran-balanza" class="nav-link" data-scroll-target="#simulador-de-la-gran-balanza">11.6 Simulador de La Gran Balanza</a></li>
+  <li><a href="#simulador-de-la-gran-balanza" id="toc-simulador-de-la-gran-balanza" class="nav-link" data-scroll-target="#simulador-de-la-gran-balanza">11.6 Simulador de La Gran Balanza</a>
+  <ul class="collapse">
+  <li><a href="#es-esto-un-eoq" id="toc-es-esto-un-eoq" class="nav-link" data-scroll-target="#es-esto-un-eoq">¿Es esto un EOQ?</a></li>
+  </ul></li>
   <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-11-costos-inventario.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -900,6 +903,46 @@ CR = \frac{s}{s + h}
 <p>Este simulador utiliza el <strong>Cycle Service Level (CSL)</strong>. A diferencia del <em>Fill Rate</em> (que mide volumen), el CSL mide la <strong>probabilidad</strong> de satisfacer toda la demanda durante el Lead Time. En este modelo, el nivel óptimo es del <strong><span><span id="ojs-element-id-3"></span>%</span></strong>.</p>
 </div>
 </div>
+<section id="es-esto-un-eoq" class="level3">
+<h3 class="anchored" data-anchor-id="es-esto-un-eoq">¿Es esto un EOQ?</h3>
+<p>Es común ver esta gráfica y pensar inmediatamente en el <strong>EOQ (Economic Order Quantity)</strong>. Aunque la forma de la curva es idéntica (una optimización de costos contrapuestos), el <strong>objetivo es distinto</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 36%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Característica</th>
+<th style="text-align: center;">EOQ (Modelo de Lote Económico)</th>
+<th style="text-align: center;">El Modelo del Nivel de Servicio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Optimiza el…</strong></td>
+<td style="text-align: center;"><strong>Inventario de Ciclo</strong></td>
+<td style="text-align: center;"><strong>Inventario de Seguridad</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Conflicto A</strong></td>
+<td style="text-align: center;">Costo de Pedir/Set-up (Baja si pides mucho)</td>
+<td style="text-align: center;">Costo de Escasez (Baja si tienes mucho)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Conflicto B</strong></td>
+<td style="text-align: center;">Costo de Mantener (Sube si pides mucho)</td>
+<td style="text-align: center;">Costo de Mantener (Sube si tienes mucho)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Pregunta que responde</strong></td>
+<td style="text-align: center;">¿De cuánto deben ser mis órdenes de compra?</td>
+<td style="text-align: center;">¿Qué probabilidad de quiebre estoy dispuesto a tolerar?</td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="checklist-de-cierre-del-capítulo" class="level2">
 <h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
