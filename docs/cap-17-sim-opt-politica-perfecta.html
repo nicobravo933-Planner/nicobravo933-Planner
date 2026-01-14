@@ -109,36 +109,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -531,21 +504,12 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#la-anatomía-de-sim-opt-motor-y-cerebro" id="toc-la-anatomía-de-sim-opt-motor-y-cerebro" class="nav-link active" data-scroll-target="#la-anatomía-de-sim-opt-motor-y-cerebro">17.1 La Anatomía de Sim-Opt: Motor y Cerebro</a></li>
-  <li><a href="#el-paisaje-de-la-decisión-por-qué-fallan-los-métodos-simples" id="toc-el-paisaje-de-la-decisión-por-qué-fallan-los-métodos-simples" class="nav-link" data-scroll-target="#el-paisaje-de-la-decisión-por-qué-fallan-los-métodos-simples">17.2 El Paisaje de la Decisión: ¿Por qué fallan los métodos simples?</a></li>
-  <li><a href="#la-caja-de-herramientas-del-optimizador-metaheurísticas" id="toc-la-caja-de-herramientas-del-optimizador-metaheurísticas" class="nav-link" data-scroll-target="#la-caja-de-herramientas-del-optimizador-metaheurísticas">17.3 La Caja de Herramientas del Optimizador (Metaheurísticas)</a>
-  <ul class="collapse">
-  <li><a href="#algoritmos-genéticos-ga" id="toc-algoritmos-genéticos-ga" class="nav-link" data-scroll-target="#algoritmos-genéticos-ga">17.3.1 Algoritmos Genéticos (GA)</a></li>
-  <li><a href="#optimización-bayesiana" id="toc-optimización-bayesiana" class="nav-link" data-scroll-target="#optimización-bayesiana">17.3.2 Optimización Bayesiana</a></li>
-  <li><a href="#recocido-simulado-simulated-annealing" id="toc-recocido-simulado-simulated-annealing" class="nav-link" data-scroll-target="#recocido-simulado-simulated-annealing">17.3.3 Recocido Simulado (Simulated Annealing)</a></li>
-  </ul></li>
-  <li><a href="#la-función-objetivo-definiendo-el-éxito-financiero" id="toc-la-función-objetivo-definiendo-el-éxito-financiero" class="nav-link" data-scroll-target="#la-función-objetivo-definiendo-el-éxito-financiero">17.4 La Función Objetivo: Definiendo el Éxito Financiero</a></li>
-  <li><a href="#implementación-profesional-en-r" id="toc-implementación-profesional-en-r" class="nav-link" data-scroll-target="#implementación-profesional-en-r">17.5 Implementación Profesional en R</a></li>
-  <li><a href="#el-frente-de-pareto-equilibrando-lo-imposible" id="toc-el-frente-de-pareto-equilibrando-lo-imposible" class="nav-link" data-scroll-target="#el-frente-de-pareto-equilibrando-lo-imposible">17.6 El Frente de Pareto: Equilibrando lo Imposible</a></li>
-  <li><a href="#resiliencia-ante-la-incertidumbre" id="toc-resiliencia-ante-la-incertidumbre" class="nav-link" data-scroll-target="#resiliencia-ante-la-incertidumbre">17.7 Resiliencia ante la Incertidumbre</a>
-  <ul class="collapse">
+  <li><a href="#el-muro-de-las-restricciones-el-choque-con-la-realidad" id="toc-el-muro-de-las-restricciones-el-choque-con-la-realidad" class="nav-link active" data-scroll-target="#el-muro-de-las-restricciones-el-choque-con-la-realidad">17.1 El Muro de las Restricciones: El Choque con la Realidad</a></li>
+  <li><a href="#el-concepto-de-sim-opt-simulation-optimization" id="toc-el-concepto-de-sim-opt-simulation-optimization" class="nav-link" data-scroll-target="#el-concepto-de-sim-opt-simulation-optimization">17.2 El Concepto de Sim-Opt (Simulation-Optimization)</a></li>
+  <li><a href="#el-retorno-marginal-del-inventario-dónde-pongo-mi-próximo-dólar" id="toc-el-retorno-marginal-del-inventario-dónde-pongo-mi-próximo-dólar" class="nav-link" data-scroll-target="#el-retorno-marginal-del-inventario-dónde-pongo-mi-próximo-dólar">17.3 El Retorno Marginal del Inventario: ¿Dónde pongo mi próximo dólar?</a></li>
+  <li><a href="#simulador-el-desafío-del-presupuesto-limitado" id="toc-simulador-el-desafío-del-presupuesto-limitado" class="nav-link" data-scroll-target="#simulador-el-desafío-del-presupuesto-limitado">17.4 Simulador: El Desafío del Presupuesto Limitado</a></li>
+  <li><a href="#hacia-la-autogestión-de-inventarios-y-la-inteligencia-artificial" id="toc-hacia-la-autogestión-de-inventarios-y-la-inteligencia-artificial" class="nav-link" data-scroll-target="#hacia-la-autogestión-de-inventarios-y-la-inteligencia-artificial">17.5 Hacia la Autogestión de Inventarios y la Inteligencia Artificial</a></li>
   <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-17-sim-opt-politica-perfecta.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -572,153 +536,269 @@ window.Quarto = {
 </header>
 
 
-<p>En el Capítulo 15, construimos nuestro <strong>Laboratorio Virtual</strong> y aprendimos a “romper” nuestra cadena de suministro miles de veces para medir el riesgo de forma científica. Fue un hito: pasamos de la fe ciega en las fórmulas estáticas a la evidencia dinámica de la simulación de Monte Carlo. Sin embargo, nos quedó una brecha operativa. Si la simulación nos permite evaluar una política (un punto de reorden <span class="math inline">\(s\)</span> y una cantidad de pedido <span class="math inline">\(Q\)</span>), ¿cómo encontramos la combinación <em>perfecta</em> entre millones de posibilidades?</p>
-<p>Intentar encontrar el óptimo mediante “ensayo y error” manual es como intentar encontrar una aguja en un pajar que cambia de forma. Si tienes solo 2 variables (<span class="math inline">\(s\)</span> y <span class="math inline">\(Q\)</span>) y quieres probar 100 valores razonables para cada una, tienes 10,000 combinaciones. Si añades el tiempo de revisión (<span class="math inline">\(T\)</span>), el nivel máximo (<span class="math inline">\(S\)</span>) y las restricciones de transporte (MOQs), las combinaciones explotan exponencialmente. Aquí es donde entra la <strong>Simulación-Optimización (Sim-Opt)</strong>: el uso de algoritmos inteligentes que “navegan” por tu simulador para encontrar la máxima eficiencia financiera bajo presión.</p>
-<section id="la-anatomía-de-sim-opt-motor-y-cerebro" class="level2">
-<h2 class="anchored" data-anchor-id="la-anatomía-de-sim-opt-motor-y-cerebro">17.1 La Anatomía de Sim-Opt: Motor y Cerebro</h2>
-<p>La Simulación-Optimización es la sinergia de dos disciplinas que suelen trabajar por separado:</p>
+<p>En los capítulos anteriores, aprendimos a calcular el stock “ideal” y a simular cómo se comporta una red compleja en un entorno de recursos teóricamente ilimitados. Sin embargo, el Arquitecto de Suministros rara vez trabaja en un vacío o con una chequera abierta. En la práctica profesional, el diseño de políticas no es solo un ejercicio estadístico, sino un ejercicio de <strong>supervivencia bajo presión</strong>: presión por un presupuesto limitado de capital de trabajo, presión por un almacén que se queda pequeño o presión por camiones que deben ir siempre llenos para ser rentables.</p>
+<p>Cuando las restricciones reales entran en juego, las fórmulas individuales de cada SKU (como el EOQ o el Stock de Seguridad aislado) dejan de ser la verdad absoluta para convertirse en simples sugerencias. No puedes pedir el lote económico de 5,000 productos simultáneamente si no tienes el flujo de caja para pagarlos o los metros cuadrados para recibirlos. En este capítulo, aprenderemos a utilizar la <strong>Simulación-Optimización (Sim-Opt)</strong> para encontrar la política que maximiza la rentabilidad global del portafolio cuando los recursos son finitos.</p>
+<section id="el-muro-de-las-restricciones-el-choque-con-la-realidad" class="level2">
+<h2 class="anchored" data-anchor-id="el-muro-de-las-restricciones-el-choque-con-la-realidad">17.1 El Muro de las Restricciones: El Choque con la Realidad</h2>
+<p>En una hoja de cálculo, subir el nivel de servicio al 99% para todos los productos es un cambio de celda que toma un segundo. En la bodega física, ese mismo cambio se traduce en un muro infranqueable de restricciones operativas y financieras que debemos aprender a navegar:</p>
 <ol type="1">
-<li><strong>El Simulador (El Motor de Realidad):</strong> Es el entorno que creamos en los capítulos anteriores. Su función es recibir un conjunto de parámetros (una política) y simular meses de operación, devolviendo los resultados: ¿Cuántas ventas perdimos? ¿Cuánto inventario promedio acumulamos? ¿Cuántas órdenes emitimos? Considera la demanda Gamma, el Lead Time variable y las mermas.</li>
-<li><strong>El Optimizador (El Cerebro Estratégico):</strong> Es un algoritmo de búsqueda (metaheurística) que no sabe nada de logística, pero sabe mucho de matemáticas. Su función es proponer nuevas combinaciones de parámetros, observar los resultados del simulador y “aprender” hacia qué dirección debe moverse para mejorar los KPIs.</li>
+<li><p><strong>Restricción de Capital (Presupuesto de Compra):</strong> Es el conflicto eterno entre Supply Chain y el departamento de Finanzas. El Director Financiero (CFO) impone un límite máximo al capital inmovilizado. Esta restricción te obliga a elegir: ¿proteges el producto estrella o el producto con mayor margen? En este escenario, el “óptimo estadístico” de un producto Clase C puede estar robando el oxígeno (dinero) necesario para un producto Clase A.</p></li>
+<li><p><strong>Restricción de Espacio (Capacidad de Almacenaje):</strong> El volumen físico del stock no es etéreo. Cada unidad ocupa “posiciones de pallet” o metros cúbicos. Si tu política de stock de seguridad excede la capacidad de tu almacén, incurrirás en costos ocultos masivos: almacenaje externo en 3PL, movimientos dobles de mercancía o, peor aún, saturación de los pasillos que bloquea la productividad de picking.</p></li>
+<li><p><strong>Restricción Logística y de Proveedor (MOQs y LTL):</strong> Los proveedores suelen imponer Cantidades Mínimas de Pedido (MOQ) y los transportistas exigen camiones llenos (FTL) para mantener costos bajos. Estas restricciones “empujan” el inventario hacia arriba, obligándote a comprar más de lo que la fórmula de Wilson (EOQ) sugeriría originalmente.</p></li>
 </ol>
-<p><strong>La Filosofía:</strong> En Supply Chain, no buscamos el “Óptimo Matemático” de un libro de texto (que suele ser frágil). Buscamos la <strong>Política Robusta</strong>: aquella configuración que, en el promedio de mil futuros posibles, ofrece el menor costo total y la mayor resiliencia.</p>
+<p>La pregunta del arquitecto evoluciona de “¿Cuánto stock necesito?” a una mucho más estratégica: <strong>“Dado que solo tengo 100,000 dólares y 500 metros cuadrados, ¿cómo distribuyo este capital entre mis productos para obtener el mayor margen neto posible?”</strong>.</p>
 </section>
-<section id="el-paisaje-de-la-decisión-por-qué-fallan-los-métodos-simples" class="level2">
-<h2 class="anchored" data-anchor-id="el-paisaje-de-la-decisión-por-qué-fallan-los-métodos-simples">17.2 El Paisaje de la Decisión: ¿Por qué fallan los métodos simples?</h2>
-<p>Si graficáramos el Costo Total de una política de inventarios, no veríamos una línea suave. Veríamos un “paisaje” accidentado con valles (zonas de bajo costo) y picos (zonas de alto riesgo).</p>
+<section id="el-concepto-de-sim-opt-simulation-optimization" class="level2">
+<h2 class="anchored" data-anchor-id="el-concepto-de-sim-opt-simulation-optimization">17.2 El Concepto de Sim-Opt (Simulation-Optimization)</h2>
+<p>La Optimización Tradicional, como la programación lineal, suele ser estática y asume que el mundo es lineal. Sin embargo, la Supply Chain es una red de eventos no lineales (si te quedas sin stock hoy, la venta se pierde para siempre; no es una simple resta). Aquí es donde la <strong>Simulación-Optimización</strong> se vuelve indispensable:</p>
 <ul>
-<li><strong>No-Convexidad:</strong> A diferencia de los problemas de álgebra simple, en inventarios hay “múltiples valles”. Puedes encontrar una política que parece buena, pero a la vuelta de la esquina hay una mucho mejor que tu fórmula no detectó.</li>
-<li><strong>Ruido Estocástico:</strong> Debido a que simulamos con azar, una política puede parecer buena en una corrida y mala en otra. El optimizador debe ser capaz de ver “a través del ruido”.</li>
-<li><strong>Restricciones de la Vida Real (Constraints):</strong> Aquí es donde la presión se vuelve real. El optimizador debe trabajar dentro de límites físicos:
-<ul>
-<li><strong>Capacidad de Almacén:</strong> No puedes pedir más de lo que cabe.</li>
-<li><strong>Presupuesto de Capital:</strong> No puedes invertir más de $X en stock de seguridad.</li>
-<li><strong>Nivel de Servicio Garantizado:</strong> El Fill Rate debe ser estrictamente <span class="math inline">\(\ge 98\%\)</span>. Cualquier política que ahorre dinero pero baje del 98% es rechazada automáticamente.</li>
-</ul></li>
+<li><p><strong>El Simulador</strong> es nuestro “campo de pruebas”. Es un entorno dinámico que imita el caos diario: proveedores que llegan tarde, picos de demanda aleatorios y errores de conteo.</p></li>
+<li><p><strong>El Optimizador</strong> actúa como el “estratega inteligente”. Es un motor de búsqueda (a menudo basado en algoritmos genéticos o heurísticas) que va probando diferentes configuraciones de Puntos de Reorden (ROP) y Cantidades de Pedido (Q). Observa los resultados de rentabilidad en el simulador y ajusta la dirección en la siguiente iteración hasta encontrar la “frontera eficiente”.</p></li>
 </ul>
+<p>Es exactamente igual a entrenar a un piloto en un simulador de Fórmula 1: el coche (tu política de stock) mejora tras cada vuelta (cada iteración de la simulación), aprendiendo a tomar las curvas de la demanda sin salirse de la pista del presupuesto.</p>
 </section>
-<section id="la-caja-de-herramientas-del-optimizador-metaheurísticas" class="level1">
-<h1>17.3 La Caja de Herramientas del Optimizador (Metaheurísticas)</h1>
-<p>Como no podemos probar todas las combinaciones, usamos estrategias de búsqueda inspiradas en la naturaleza:</p>
-<section id="algoritmos-genéticos-ga" class="level3">
-<h3 class="anchored" data-anchor-id="algoritmos-genéticos-ga">17.3.1 Algoritmos Genéticos (GA)</h3>
-<p>Inspirados en la evolución de Darwin. Creamos una “población” de políticas. Las que tienen menores costos “sobreviven” y se “cruzan” entre sí (intercambiando sus valores de <span class="math inline">\(s\)</span> y <span class="math inline">\(Q\)</span>) para dar lugar a una nueva generación más eficiente. Las mutaciones aleatorias aseguran que el algoritmo no se quede atrapado en una solución mediocre.</p>
-</section>
-<section id="optimización-bayesiana" class="level3">
-<h3 class="anchored" data-anchor-id="optimización-bayesiana">17.3.2 Optimización Bayesiana</h3>
-<p>Es la técnica más avanzada para cuando el simulador es lento. El algoritmo crea un “modelo sustituto” (un <em>surrogate model</em>) que intenta adivinar cómo se ve el paisaje de costos. Solo corre la simulación real en los puntos donde cree que hay una alta probabilidad de encontrar un ahorro masivo.</p>
-</section>
-<section id="recocido-simulado-simulated-annealing" class="level3">
-<h3 class="anchored" data-anchor-id="recocido-simulado-simulated-annealing">17.3.3 Recocido Simulado (Simulated Annealing)</h3>
-<p>Inspirado en la metalurgia. El algoritmo comienza explorando de forma muy agresiva y aleatoria (alta temperatura) y, a medida que avanza, se vuelve más conservador, refinando la búsqueda en las zonas que demostraron ser rentables.</p>
-</section>
-</section>
-<section id="la-función-objetivo-definiendo-el-éxito-financiero" class="level1">
-<h1>17.4 La Función Objetivo: Definiendo el Éxito Financiero</h1>
-<p>Para que Sim-Opt funcione, debemos darle un objetivo claro. En un entorno profesional, este objetivo es el <strong>Valor Esperado del Costo Total (</strong><span class="math inline">\(E[CT]\)</span>):</p>
-<p><span class="math display">\[Minimizar \ Z = E[    ext{Costo de Posesión}] + E[    ext{Costo de Faltante}] + E[    ext{Costo de Pedido}]\]</span></p>
+<section id="el-retorno-marginal-del-inventario-dónde-pongo-mi-próximo-dólar" class="level2">
+<h2 class="anchored" data-anchor-id="el-retorno-marginal-del-inventario-dónde-pongo-mi-próximo-dólar">17.3 El Retorno Marginal del Inventario: ¿Dónde pongo mi próximo dólar?</h2>
+<p>Uno de los conceptos más potentes en la arquitectura de suministro es entender que <strong>no todos los dólares invertidos en inventario retornan el mismo valor</strong>. Existe una ley de rendimientos decrecientes:</p>
 <ul>
-<li><strong>Penalización por Incumplimiento:</strong> Si la política no cumple con el nivel de servicio exigido por la gerencia, le asignamos un “costo infinito”. Esto obliga al cerebro del optimizador a ignorar cualquier política que ponga en riesgo la promesa al cliente.</li>
+<li><p><strong>Inversión Crítica:</strong> Los primeros dólares invertidos en un producto Clase A con alto margen protegen el “corazón” del negocio. Invertir un dólar extra aquí puede evitar una pérdida de 20 dólares en ventas no realizadas.</p></li>
+<li><p><strong>Inversión de Lujo:</strong> Los últimos dólares invertidos para pasar de un 98% a un 99.9% de nivel de servicio en un producto Clase C son sumamente ineficientes. Estás inmovilizando capital por meses para cubrir un evento que quizás ocurra una vez cada tres años.</p></li>
 </ul>
+<p>El secreto de la <strong>Política Perfecta</strong> no es buscar el mismo nivel de servicio para todos, sino invertir el capital allí donde el <strong>Retorno Marginal</strong> sea mayor. El objetivo es igualar el valor de la “última unidad de stock” en todos los productos del portafolio.</p>
 </section>
-<section id="implementación-profesional-en-r" class="level1">
-<h1>17.5 Implementación Profesional en R</h1>
-<p>A continuación, presentamos cómo se estructura un motor de Sim-Opt utilizando el paquete <code>GA</code> para navegar por nuestro simulador de Monte Carlo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Motor de Simulación-Optimización (Sim-Opt)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GA)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. El Simulador (El Motor)</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>simular_politica <span class="ot">&lt;-</span> <span class="cf">function</span>(s, Q) {</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Simulamos 5,000 días de operación con demanda Gamma y LT Poisson</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  dias <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  inventario <span class="ot">&lt;-</span> s <span class="sc">+</span> Q</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  ventas_perdidas <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  costo_mantenimiento <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>dias) {</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    demanda <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1</span>, <span class="at">shape =</span> <span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">20</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    inventario <span class="ot">&lt;-</span> inventario <span class="sc">-</span> demanda</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(inventario <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      ventas_perdidas <span class="ot">&lt;-</span> ventas_perdidas <span class="sc">+</span> <span class="fu">abs</span>(inventario)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      inventario <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(inventario <span class="sc">&lt;=</span> s) {</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>      inventario <span class="ot">&lt;-</span> inventario <span class="sc">+</span> Q <span class="co"># Simplificado: Reabastecimiento</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    costo_mantenimiento <span class="ot">&lt;-</span> costo_mantenimiento <span class="sc">+</span> (inventario <span class="sc">*</span> <span class="fl">0.05</span>)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  fill_rate <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (ventas_perdidas <span class="sc">/</span> (dias <span class="sc">*</span> <span class="dv">40</span>))</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">costo =</span> costo_mantenimiento <span class="sc">+</span> (ventas_perdidas <span class="sc">*</span> <span class="dv">150</span>), <span class="at">fr =</span> fill_rate))</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. La Función de Evaluación (Lo que el Cerebro optimiza)</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>fitness_func <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  s_propuesto <span class="ot">&lt;-</span> x[<span class="dv">1</span>]</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  Q_propuesto <span class="ot">&lt;-</span> x[<span class="dv">2</span>]</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">simular_politica</span>(s_propuesto, Q_propuesto)</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Restricción dura: Si el FR es &lt; 95%, la política es "inútil"</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(res<span class="sc">$</span>fr <span class="sc">&lt;</span> <span class="fl">0.95</span>) <span class="fu">return</span>(<span class="sc">-</span><span class="dv">999999</span>) </span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span>res<span class="sc">$</span>costo) <span class="co"># Negativo porque el GA maximiza</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Ejecución de la Optimización</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>optimizacion <span class="ot">&lt;-</span> <span class="fu">ga</span>(<span class="at">type =</span> <span class="st">"real-valued"</span>, </span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>                   <span class="at">fitness =</span> fitness_func,</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>                   <span class="at">lower =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">200</span>), <span class="at">upper =</span> <span class="fu">c</span>(<span class="dv">1000</span>, <span class="dv">5000</span>), </span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>                   <span class="at">popSize =</span> <span class="dv">50</span>, <span class="at">maxiter =</span> <span class="dv">30</span>)</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(optimizacion)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="el-frente-de-pareto-equilibrando-lo-imposible" class="level1">
-<h1>17.6 El Frente de Pareto: Equilibrando lo Imposible</h1>
-<p>Bajo presión, a menudo descubres que no hay una única solución perfecta, sino un <strong>Frente de Pareto</strong>. Este es el conjunto de políticas donde es imposible mejorar un objetivo (ej. bajar costos) sin empeorar otro (ej. bajar el nivel de servicio).</p>
-<ul>
-<li><strong>Curva de Intercambio (Trade-off):</strong> Como Arquitecto de Suministros, tu labor es presentar a la gerencia el “Menú de Riesgos”:
-<ol type="1">
-<li><strong>Política de Eficiencia:</strong> Costo mínimo, pero con un 94% de servicio (Riesgo alto).</li>
-<li><strong>Política de Equilibrio:</strong> El punto dulce del costo total con 97% de servicio.</li>
-<li><strong>Política de Resiliencia:</strong> 99.5% de servicio, aceptando un sobrecosto en inventario (Seguro total).</li>
-</ol></li>
-</ul>
-</section>
-<section id="resiliencia-ante-la-incertidumbre" class="level1">
-<h1>17.7 Resiliencia ante la Incertidumbre</h1>
-<p>La mayor ventaja de Sim-Opt sobre las fórmulas de Excel es la <strong>robustez</strong>. Una política derivada de Sim-Opt ha sido “entrenada” para soportar variaciones. Mientras que el EOQ tradicional puede colapsar si el Lead Time sube un día, el óptimo de Sim-Opt suele incluir un margen de maniobra implícito que lo hace mucho más estable en la operación diaria.</p>
+<section id="simulador-el-desafío-del-presupuesto-limitado" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-el-desafío-del-presupuesto-limitado">17.4 Simulador: El Desafío del Presupuesto Limitado</h2>
+<p>Imagina que eres el responsable de inventarios de una distribuidora. Manejas 3 productos con perfiles de riesgo y rentabilidad totalmente distintos. Tienes un <strong>Presupuesto Máximo de Inversión</strong> que no puedes exceder bajo ninguna circunstancia.</p>
+<p>Observa cómo, al intentar subir el nivel de servicio de los productos más baratos pero menos rentables, agotas el presupuesto y pones en riesgo la rentabilidad de los productos estrella. Tu misión es encontrar la configuración que maximiza la <strong>Utilidad Estimada</strong> sin que la barra de inversión se ponga en rojo.</p>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="49" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 48;"><span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>jStat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>viewof budget_limit <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">10000</span><span class="op">,</span> <span class="dv">100000</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">50000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5000</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Presupuesto de Capital ($):"</span>})</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="co">// Parámetros de 3 productos con perfiles distintos</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>viewof sl_prod_a <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.7</span><span class="op">,</span> <span class="fl">0.999</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.95</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.005</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"SL Prod A (Alta Rentabilidad):"</span>})</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>viewof sl_prod_b <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.7</span><span class="op">,</span> <span class="fl">0.999</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.90</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.005</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"SL Prod B (Volumen Medio):"</span>})</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>viewof sl_prod_c <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.7</span><span class="op">,</span> <span class="fl">0.999</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.85</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.005</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"SL Prod C (Baja Rotación):"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="65" data-source-offset="-72"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 64;"><span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>prods <span class="op">=</span> [</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">name</span><span class="op">:</span> <span class="st">"Producto A (Estrella)"</span><span class="op">,</span> <span class="dt">v</span><span class="op">:</span> <span class="dv">250</span><span class="op">,</span> <span class="dt">m</span><span class="op">:</span> <span class="dv">180</span><span class="op">,</span> <span class="dt">rmse</span><span class="op">:</span> <span class="dv">80</span><span class="op">,</span>  <span class="dt">sl</span><span class="op">:</span> sl_prod_a<span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">'#3b82f6'</span>}<span class="op">,</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">name</span><span class="op">:</span> <span class="st">"Producto B (General)"</span><span class="op">,</span>  <span class="dt">v</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span> <span class="dt">m</span><span class="op">:</span> <span class="dv">35</span><span class="op">,</span>  <span class="dt">rmse</span><span class="op">:</span> <span class="dv">140</span><span class="op">,</span> <span class="dt">sl</span><span class="op">:</span> sl_prod_b<span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">'#6366f1'</span>}<span class="op">,</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">name</span><span class="op">:</span> <span class="st">"Producto C (Zombi)"</span><span class="op">,</span>   <span class="dt">v</span><span class="op">:</span> <span class="dv">45</span><span class="op">,</span>  <span class="dt">m</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span>   <span class="dt">rmse</span><span class="op">:</span> <span class="dv">220</span><span class="op">,</span> <span class="dt">sl</span><span class="op">:</span> sl_prod_c<span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">'#8b5cf6'</span>}</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> prods<span class="op">.</span><span class="fu">map</span>(p <span class="kw">=&gt;</span> {</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> k <span class="op">=</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">inv</span>(p<span class="op">.</span><span class="at">sl</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> ss <span class="op">=</span> k <span class="op">*</span> p<span class="op">.</span><span class="at">rmse</span><span class="op">;</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> investment <span class="op">=</span> ss <span class="op">*</span> p<span class="op">.</span><span class="at">v</span><span class="op">;</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Cálculo de penalización por pérdida de venta (No lineal)</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sales_loss <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> p<span class="op">.</span><span class="at">sl</span>) <span class="op">*</span> p<span class="op">.</span><span class="at">m</span> <span class="op">*</span> p<span class="op">.</span><span class="at">rmse</span> <span class="op">*</span> <span class="dv">4</span><span class="op">;</span> </span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Utilidad = Margen de ventas - Costo de posesión - Costo de ventas perdidas</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> profit <span class="op">=</span> (p<span class="op">.</span><span class="at">m</span> <span class="op">*</span> p<span class="op">.</span><span class="at">rmse</span> <span class="op">*</span> <span class="dv">10</span>) <span class="op">-</span> sales_loss <span class="op">-</span> (investment <span class="op">*</span> <span class="fl">0.25</span>)<span class="op">;</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> { <span class="op">...</span>p<span class="op">,</span> ss<span class="op">,</span> investment<span class="op">,</span> profit }<span class="op">;</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>total_inv <span class="op">=</span> results<span class="op">.</span><span class="fu">reduce</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> a <span class="op">+</span> b<span class="op">.</span><span class="at">investment</span><span class="op">,</span> <span class="dv">0</span>)</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>total_profit <span class="op">=</span> results<span class="op">.</span><span class="fu">reduce</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> a <span class="op">+</span> b<span class="op">.</span><span class="at">profit</span><span class="op">,</span> <span class="dv">0</span>)</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>is_over_budget <span class="op">=</span> total_inv <span class="op">&gt;</span> budget_limit</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:450px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> results<span class="op">.</span><span class="fu">map</span>(r <span class="kw">=&gt;</span> r<span class="op">.</span><span class="at">name</span>)<span class="op">,</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> results<span class="op">.</span><span class="fu">map</span>(r <span class="kw">=&gt;</span> r<span class="op">.</span><span class="at">investment</span>)<span class="op">,</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Inversión Necesaria ($)'</span><span class="op">,</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'bar'</span><span class="op">,</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>      <span class="dt">marker</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> is_over_budget <span class="op">?</span> <span class="st">'#ef4444'</span> <span class="op">:</span> results<span class="op">.</span><span class="fu">map</span>(r <span class="kw">=&gt;</span> r<span class="op">.</span><span class="at">color</span>)}</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> results<span class="op">.</span><span class="fu">map</span>(r <span class="kw">=&gt;</span> r<span class="op">.</span><span class="at">name</span>)<span class="op">,</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> results<span class="op">.</span><span class="fu">map</span>(r <span class="kw">=&gt;</span> r<span class="op">.</span><span class="at">profit</span>)<span class="op">,</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Utilidad Neta Esperada ($)'</span><span class="op">,</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines+markers'</span><span class="op">,</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#10b981'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">4</span>}<span class="op">,</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>      <span class="dt">yaxis</span><span class="op">:</span> <span class="st">'y2'</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layout <span class="op">=</span> {</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'Optimización de Portafolio: Capital vs Rentabilidad'</span><span class="op">,</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>    <span class="dt">xaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Segmento de Producto'</span> }<span class="op">,</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>    <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Inversión en Inventario ($)'</span><span class="op">,</span> <span class="dt">gridcolor</span><span class="op">:</span> <span class="st">'#f1f5f9'</span> }<span class="op">,</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>    <span class="dt">yaxis2</span><span class="op">:</span> { </span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>      <span class="dt">title</span><span class="op">:</span> <span class="st">'Utilidad ($)'</span><span class="op">,</span> </span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>      <span class="dt">overlaying</span><span class="op">:</span> <span class="st">'y'</span><span class="op">,</span> </span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>      <span class="dt">side</span><span class="op">:</span> <span class="st">'right'</span><span class="op">,</span> </span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>      <span class="dt">showgrid</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>      <span class="dt">titlefont</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#10b981'</span>}<span class="op">,</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>      <span class="dt">tickfont</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#10b981'</span>}</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> {<span class="dt">orientation</span><span class="op">:</span> <span class="st">'h'</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="op">-</span><span class="fl">0.2</span>}<span class="op">,</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>    <span class="dt">shapes</span><span class="op">:</span> [{</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'line'</span><span class="op">,</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y0</span><span class="op">:</span> budget_limit<span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> budget_limit<span class="op">,</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x0</span><span class="op">:</span> <span class="op">-</span><span class="fl">0.5</span><span class="op">,</span> <span class="dt">x1</span><span class="op">:</span> <span class="fl">2.5</span><span class="op">,</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#ef4444'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">dash</span><span class="op">:</span> <span class="st">'dash'</span>}</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>    }]</span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> layout<span class="op">,</span> {<span class="dt">responsive</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">displayModeBar</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">;</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-6" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>La Sabiduría del Arquitecto
+<span class="screen-reader-only">Important</span>Tablero de Control de la Red
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Optimizar no es encontrar el número más pequeño; es encontrar la decisión que te permita decir al CFO: <em>“Este inventario es el mínimo necesario para que nuestra promesa al cliente no se rompa bajo las condiciones actuales del mercado”</em>. Sim-Opt es tu escudo técnico ante la presión de resultados.</p>
+<ul>
+<li><p><strong>Inversión Total Requerida:</strong> <span>$<span id="ojs-element-id-1"></span></span></p></li>
+<li><p><strong>Presupuesto Autorizado:</strong> <span>$<span id="ojs-element-id-2"></span></span></p></li>
+<li><p><strong>Estado de Capital:</strong> <span><span id="ojs-element-id-3"></span></span></p></li>
+<li><p><strong>Rentabilidad Estimada del Portafolio:</strong> <span>$<span id="ojs-element-id-4"></span></span></p></li>
+</ul>
 </div>
 </div>
+</section>
+<section id="hacia-la-autogestión-de-inventarios-y-la-inteligencia-artificial" class="level2">
+<h2 class="anchored" data-anchor-id="hacia-la-autogestión-de-inventarios-y-la-inteligencia-artificial">17.5 Hacia la Autogestión de Inventarios y la Inteligencia Artificial</h2>
+<p>La política perfecta no es un número estático que se calcula una vez al año en un Excel. En un entorno de <strong>Arquitectura de Suministros</strong> moderna, la política es un <strong>algoritmo de búsqueda perpetuo</strong>.</p>
+<p>En sistemas avanzados (como los que utilizan gigantes del retail), el software corre miles de estas simulaciones cada noche para cada SKU. Si el sistema detecta que el capital de la empresa está “atrapado” en productos de baja rotación, ajusta automáticamente los ROPs hacia abajo y transfiere ese poder de compra a los productos que están experimentando una tendencia de crecimiento.</p>
+<p>Este enfoque de <strong>Optimización Dinámica</strong> permite que la cadena de suministro sea resiliente ante crisis (como una pandemia o un cierre de canal) porque el sistema no espera a que un humano analice el Excel; el sistema reasigna el capital basado en el retorno marginal en tiempo real.</p>
+<p>Este capítulo marca el final de la <strong>Parte V</strong>. Hemos recorrido un largo camino: desde las fórmulas básicas de Wilson hasta la optimización de sistemas complejos bajo restricciones. En la parte final del libro, nos enfocaremos en cómo ejecutar todo esto en el mundo real, transformando los algoritmos en acciones y lidiando con el factor más impredecible de todos: <strong>El Factor Humano</strong>.</p>
+</section>
 <section id="checklist-de-cierre-del-capítulo" class="level2">
 <h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">¿He definido funciones de costo que penalicen el quiebre de stock de forma realista?</label></li>
-<li><label><input type="checkbox">¿Mi optimizador está respetando las restricciones físicas (MOQ, Capacidad)?</label></li>
-<li><label><input type="checkbox">¿He analizado el Frente de Pareto para ofrecer alternativas estratégicas a la dirección?</label></li>
-<li><label><input type="checkbox">¿He validado la política “ganadora” con una simulación de 100,000 iteraciones para asegurar su estabilidad?</label></li>
-<li><label><input type="checkbox">¿He comparado el ahorro de Sim-Opt frente a mi política actual para reportar el FVA de la optimización?</label></li>
+<li><p><label><input type="checkbox">¿He identificado las restricciones físicas (espacio) y financieras (WACC) que limitan mi inventario?</label></p></li>
+<li><p><label><input type="checkbox">¿Entiendo que un nivel de servicio excesivo en productos Clase C es un “robo de capital” a mis productos estrella?</label></p></li>
+<li><p><label><input type="checkbox">¿Soy capaz de explicar a la dirección financiera por qué no podemos optimizar un producto sin mirar el resto del portafolio?</label></p></li>
+<li><p><label><input type="checkbox">¿He verificado si mis MOQ (Cantidades Mínimas) están forzando una inversión que rompe mi presupuesto?</label></p></li>
+<li><p><label><input type="checkbox">¿Estoy listo para la <strong>Parte VI</strong> para aprender a gestionar el sesgo humano y la ejecución táctica?</label></p></li>
 </ul>
 
 
-</section>
+<div class="ojs-auto-generated hidden">
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7TWF0aC5yb3VuZCh0b3RhbF9pbnYpLnRvTG9jYWxlU3RyaW5nKCl9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtidWRnZXRfbGltaXQudG9Mb2NhbGVTdHJpbmcoKX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2lzX292ZXJfYnVkZ2V0ID8gXCLimqDvuI8gRVhDRVNPIERFIFBSRVNVUFVFU1RPIChSZWR1Y2lyIG5pdmVsZXMgZGUgc2VydmljaW8pXCIgOiBcIuKchSBERU5UUk8gREVMIEzDjU1JVEVcIn08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTMifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke01hdGgucm91bmQodG90YWxfcHJvZml0KS50b0xvY2FsZVN0cmluZygpfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNCJ9XX0=
+</script>
+</div>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5qU3RhdCA9IHJlcXVpcmUoXCJqc3RhdEAxLjkuNlwiKVxyXG5QbG90bHkgPSByZXF1aXJlKFwicGxvdGx5LmpzLWRpc3QtbWluQDIuMjQuMVwiKVxyXG5cclxudmlld29mIGJ1ZGdldF9saW1pdCA9IElucHV0cy5yYW5nZShbMTAwMDAsIDEwMDAwMF0sIHt2YWx1ZTogNTAwMDAsIHN0ZXA6IDUwMDAsIGxhYmVsOiBcIlByZXN1cHVlc3RvIGRlIENhcGl0YWwgKCQpOlwifSlcclxuXHJcbi8vIFBhcsOhbWV0cm9zIGRlIDMgcHJvZHVjdG9zIGNvbiBwZXJmaWxlcyBkaXN0aW50b3Ncclxudmlld29mIHNsX3Byb2RfYSA9IElucHV0cy5yYW5nZShbMC43LCAwLjk5OV0sIHt2YWx1ZTogMC45NSwgc3RlcDogMC4wMDUsIGxhYmVsOiBcIlNMIFByb2QgQSAoQWx0YSBSZW50YWJpbGlkYWQpOlwifSlcclxudmlld29mIHNsX3Byb2RfYiA9IElucHV0cy5yYW5nZShbMC43LCAwLjk5OV0sIHt2YWx1ZTogMC45MCwgc3RlcDogMC4wMDUsIGxhYmVsOiBcIlNMIFByb2QgQiAoVm9sdW1lbiBNZWRpbyk6XCJ9KVxyXG52aWV3b2Ygc2xfcHJvZF9jID0gSW5wdXRzLnJhbmdlKFswLjcsIDAuOTk5XSwge3ZhbHVlOiAwLjg1LCBzdGVwOiAwLjAwNSwgbGFiZWw6IFwiU0wgUHJvZCBDIChCYWphIFJvdGFjacOzbik6XCJ9KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcclxuLy8gRGVmaW5pY2nDs24gZGUgcHJvZHVjdG9zOiBWYWxvciAodiksIE1hcmdlbiAobSksIEVycm9yIFJNU0UgKHJtc2UpXHJcbnByb2RzID0gW1xyXG4gIHtuYW1lOiBcIlByb2R1Y3RvIEEgKEVzdHJlbGxhKVwiLCB2OiAyNTAsIG06IDE4MCwgcm1zZTogODAsICBzbDogc2xfcHJvZF9hLCBjb2xvcjogJyMzYjgyZjYnfSxcclxuICB7bmFtZTogXCJQcm9kdWN0byBCIChHZW5lcmFsKVwiLCAgdjogMTIwLCBtOiAzNSwgIHJtc2U6IDE0MCwgc2w6IHNsX3Byb2RfYiwgY29sb3I6ICcjNjM2NmYxJ30sXHJcbiAge25hbWU6IFwiUHJvZHVjdG8gQyAoWm9tYmkpXCIsICAgdjogNDUsICBtOiA4LCAgIHJtc2U6IDIyMCwgc2w6IHNsX3Byb2RfYywgY29sb3I6ICcjOGI1Y2Y2J31cclxuXVxyXG5cclxucmVzdWx0cyA9IHByb2RzLm1hcChwID0+IHtcclxuICBjb25zdCBrID0galN0YXQubm9ybWFsLmludihwLnNsLCAwLCAxKTtcclxuICBjb25zdCBzcyA9IGsgKiBwLnJtc2U7XHJcbiAgY29uc3QgaW52ZXN0bWVudCA9IHNzICogcC52O1xyXG4gIFxyXG4gIC8vIEPDoWxjdWxvIGRlIHBlbmFsaXphY2nDs24gcG9yIHDDqXJkaWRhIGRlIHZlbnRhIChObyBsaW5lYWwpXHJcbiAgY29uc3Qgc2FsZXNfbG9zcyA9ICgxIC0gcC5zbCkgKiBwLm0gKiBwLnJtc2UgKiA0OyBcclxuICAvLyBVdGlsaWRhZCA9IE1hcmdlbiBkZSB2ZW50YXMgLSBDb3N0byBkZSBwb3Nlc2nDs24gLSBDb3N0byBkZSB2ZW50YXMgcGVyZGlkYXNcclxuICBjb25zdCBwcm9maXQgPSAocC5tICogcC5ybXNlICogMTApIC0gc2FsZXNfbG9zcyAtIChpbnZlc3RtZW50ICogMC4yNSk7XHJcbiAgXHJcbiAgcmV0dXJuIHsgLi4ucCwgc3MsIGludmVzdG1lbnQsIHByb2ZpdCB9O1xyXG59KVxyXG5cclxudG90YWxfaW52ID0gcmVzdWx0cy5yZWR1Y2UoKGEsIGIpID0+IGEgKyBiLmludmVzdG1lbnQsIDApXHJcbnRvdGFsX3Byb2ZpdCA9IHJlc3VsdHMucmVkdWNlKChhLCBiKSA9PiBhICsgYi5wcm9maXQsIDApXHJcbmlzX292ZXJfYnVkZ2V0ID0gdG90YWxfaW52ID4gYnVkZ2V0X2xpbWl0XHJcblxyXG57XHJcbiAgY29uc3QgY29udGFpbmVyID0gaHRtbGA8ZGl2IHN0eWxlPVwid2lkdGg6MTAwJTsgaGVpZ2h0OjQ1MHB4O1wiPjwvZGl2PmA7XHJcbiAgXHJcbiAgY29uc3QgdHJhY2VzID0gW1xyXG4gICAge1xyXG4gICAgICB4OiByZXN1bHRzLm1hcChyID0+IHIubmFtZSksXHJcbiAgICAgIHk6IHJlc3VsdHMubWFwKHIgPT4gci5pbnZlc3RtZW50KSxcclxuICAgICAgbmFtZTogJ0ludmVyc2nDs24gTmVjZXNhcmlhICgkKScsXHJcbiAgICAgIHR5cGU6ICdiYXInLFxyXG4gICAgICBtYXJrZXI6IHtjb2xvcjogaXNfb3Zlcl9idWRnZXQgPyAnI2VmNDQ0NCcgOiByZXN1bHRzLm1hcChyID0+IHIuY29sb3IpfVxyXG4gICAgfSxcclxuICAgIHtcclxuICAgICAgeDogcmVzdWx0cy5tYXAociA9PiByLm5hbWUpLFxyXG4gICAgICB5OiByZXN1bHRzLm1hcChyID0+IHIucHJvZml0KSxcclxuICAgICAgbmFtZTogJ1V0aWxpZGFkIE5ldGEgRXNwZXJhZGEgKCQpJyxcclxuICAgICAgdHlwZTogJ3NjYXR0ZXInLFxyXG4gICAgICBtb2RlOiAnbGluZXMrbWFya2VycycsXHJcbiAgICAgIGxpbmU6IHtjb2xvcjogJyMxMGI5ODEnLCB3aWR0aDogNH0sXHJcbiAgICAgIHlheGlzOiAneTInXHJcbiAgICB9XHJcbiAgXTtcclxuXHJcbiAgY29uc3QgbGF5b3V0ID0ge1xyXG4gICAgdGl0bGU6ICdPcHRpbWl6YWNpw7NuIGRlIFBvcnRhZm9saW86IENhcGl0YWwgdnMgUmVudGFiaWxpZGFkJyxcclxuICAgIHhheGlzOiB7IHRpdGxlOiAnU2VnbWVudG8gZGUgUHJvZHVjdG8nIH0sXHJcbiAgICB5YXhpczogeyB0aXRsZTogJ0ludmVyc2nDs24gZW4gSW52ZW50YXJpbyAoJCknLCBncmlkY29sb3I6ICcjZjFmNWY5JyB9LFxyXG4gICAgeWF4aXMyOiB7IFxyXG4gICAgICB0aXRsZTogJ1V0aWxpZGFkICgkKScsIFxyXG4gICAgICBvdmVybGF5aW5nOiAneScsIFxyXG4gICAgICBzaWRlOiAncmlnaHQnLCBcclxuICAgICAgc2hvd2dyaWQ6IGZhbHNlLFxyXG4gICAgICB0aXRsZWZvbnQ6IHtjb2xvcjogJyMxMGI5ODEnfSxcclxuICAgICAgdGlja2ZvbnQ6IHtjb2xvcjogJyMxMGI5ODEnfVxyXG4gICAgfSxcclxuICAgIHRlbXBsYXRlOiAncGxvdGx5X3doaXRlJyxcclxuICAgIGxlZ2VuZDoge29yaWVudGF0aW9uOiAnaCcsIHk6IC0wLjJ9LFxyXG4gICAgc2hhcGVzOiBbe1xyXG4gICAgICB0eXBlOiAnbGluZScsXHJcbiAgICAgIHkwOiBidWRnZXRfbGltaXQsIHkxOiBidWRnZXRfbGltaXQsXHJcbiAgICAgIHgwOiAtMC41LCB4MTogMi41LFxyXG4gICAgICBsaW5lOiB7Y29sb3I6ICcjZWY0NDQ0Jywgd2lkdGg6IDIsIGRhc2g6ICdkYXNoJ31cclxuICAgIH1dXHJcbiAgfTtcclxuXHJcbiAgUGxvdGx5Lm5ld1Bsb3QoY29udGFpbmVyLCB0cmFjZXMsIGxheW91dCwge3Jlc3BvbnNpdmU6IHRydWUsIGRpc3BsYXlNb2RlQmFyOiBmYWxzZX0pO1xyXG4gIHJldHVybiBjb250YWluZXI7XHJcbn1cclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdidWRnZXRfbGltaXQnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2xfcHJvZF9hJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3NsX3Byb2RfYicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzbF9wcm9kX2MnKSJ9XX0=
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
