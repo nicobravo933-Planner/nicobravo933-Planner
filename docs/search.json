@@ -979,7 +979,7 @@
     "href": "cap-12-eoq-punto-reorden.html",
     "title": "12. El Paso del Pronóstico a la Orden",
     "section": "",
-    "text": "12. El Paso del Pronóstico a la Orden\nEn las secciones anteriores de este libro, nos obsesionamos con la precisión. Aprendimos a diseccionar la demanda utilizando desde suavizamiento exponencial hasta algoritmos de Machine Learning. Sin embargo, en la trinchera de la Supply Chain, el pronóstico es simplemente una “declaración de intenciones”. La realidad financiera solo se materializa cuando el camión llega al muelle de descarga y el inventario se asienta en el balance como capital inmovilizado.\nMuchos planificadores operan bajo “reglas de dedo” heredadas: “Pedimos cada lunes” o “Mantenemos dos semanas de stock”. Estas heurísticas ignoran el equilibrio de costos que modelamos en el Capítulo 11. En este capítulo, estableceremos la física básica del inventario mediante la Fórmula de Wilson (EOQ) y el Punto de Reorden (ROP).",
+    "text": "12.1 El Escenario Determinista: Las Reglas del Juego\nEn las secciones anteriores de este libro, nos obsesionamos con la precisión. Aprendimos a diseccionar la demanda utilizando desde suavizamiento exponencial hasta algoritmos de Machine Learning. Sin embargo, en la trinchera de la Supply Chain, el pronóstico es simplemente una “declaración de intenciones”. La realidad financiera solo se materializa cuando el camión llega al muelle de descarga y el inventario se asienta en el balance como capital inmovilizado.\nMuchos planificadores operan bajo “reglas de dedo” heredadas: “Pedimos cada lunes” o “Mantenemos dos semanas de stock”. Estas heurísticas ignoran el equilibrio de costos que modelamos en el Capítulo 11. En este capítulo, estableceremos la física básica del inventario mediante la Fórmula de Wilson (EOQ) y el Punto de Reorden (ROP).\nPara entender la base de la optimización, primero trabajaremos en un “laboratorio determinista”. Aquí, el mundo es predecible, lo que nos permite aislar las fuerzas que mueven el costo total:",
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>12. El Paso del Pronóstico a la Orden</span>"
@@ -989,8 +989,8 @@
     "objectID": "cap-12-eoq-punto-reorden.html#el-escenario-determinista-las-reglas-del-juego",
     "href": "cap-12-eoq-punto-reorden.html#el-escenario-determinista-las-reglas-del-juego",
     "title": "12. El Paso del Pronóstico a la Orden",
-    "section": "12.1 El Escenario Determinista: Las Reglas del Juego",
-    "text": "12.1 El Escenario Determinista: Las Reglas del Juego\nPara entender la base de la optimización, primero trabajaremos en un “laboratorio determinista”. Aquí, el mundo es predecible, lo que nos permite aislar las fuerzas que mueven el costo total:\n\nDemanda Constante (\\(D\\)): Sabemos exactamente cuántas unidades se venderán y la tasa es uniforme.\nLead Time Invariante (\\(L\\)): El proveedor siempre tarda exactamente lo mismo.\nCosto de Pedido Fijo (\\(S\\)): Cada orden genera un gasto administrativo y logístico constante (flete, facturación, recepción).\nCosto de Mantenimiento (\\(h\\)): El costo calculado en el capítulo anterior.",
+    "section": "",
+    "text": "Demanda Constante (\\(D\\)): Sabemos exactamente cuántas unidades se venderán y la tasa es uniforme.\nLead Time Invariante (\\(L\\)): El proveedor siempre tarda exactamente lo mismo.\nCosto de Pedido Fijo (\\(S\\)): Cada orden genera un gasto administrativo y logístico constante (flete, facturación, recepción).\nCosto de Mantenimiento (\\(h\\)): El costo calculado en el capítulo anterior.",
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>12. El Paso del Pronóstico a la Orden</span>"
