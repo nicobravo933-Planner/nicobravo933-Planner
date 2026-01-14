@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7. Introducción: El Salto de la Suavización a la Correlación – Arquitectura de suministros</title>
+<title>7. Tendencia y Estacionalidad: El Modelo de Holt-Winters – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -44,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-37f97b4dfc99813de07ac4a6dfc6e37d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-1d61feaf5942a89f67c517e5b1b3c91a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,6 +109,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -278,7 +315,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-5-pronostico-ingenuo.html">II: Prediciendo el Futuro</a></li><li class="breadcrumb-item"><a href="./cap-7-arima-y-alternativas.html"><span class="chapter-title">7. Introducción: El Salto de la Suavización a la Correlación</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-5-pronostico-ingenuo.html">II: Prediciendo el Futuro</a></li><li class="breadcrumb-item"><a href="./cap-7-arima-y-alternativas.html"><span class="chapter-title">7. Tendencia y Estacionalidad: El Modelo de Holt-Winters</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -295,7 +332,7 @@ window.Quarto = {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Arquitectura de suministros</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/nicobravo933-Planner/Practicas_Supply" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -324,7 +361,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></a>
+  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. Auditoría de Datos y Arquitectura de Red</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -355,17 +392,17 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-5-pronostico-ingenuo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. El Pronóstico Ingenuo: Modelos Simples y Benchmarking</span></a>
+  <a href="./cap-5-pronostico-ingenuo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. El Pronóstico Ingenuo y el Benchmarking Sin Mentiras</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-6-suavizamiento-exponencial.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Suavizando la Curva - La Inteligencia Estadística</span></a>
+  <a href="./cap-6-suavizamiento-exponencial.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Suavizando la Curva: La Inteligencia Estadística</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-7-arima-y-alternativas.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">7. Introducción: El Salto de la Suavización a la Correlación</span></a>
+  <a href="./cap-7-arima-y-alternativas.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">7. Tendencia y Estacionalidad: El Modelo de Holt-Winters</span></a>
   </div>
 </li>
       </ul>
@@ -469,12 +506,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego</span></a>
+  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego: Gestión de Sesgos Humanos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20. El Plan Maestro</span></a>
+  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20. El Plan Maestro (S&amp;OP)</span></a>
   </div>
 </li>
       </ul>
@@ -486,7 +523,9 @@ window.Quarto = {
 </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Creado con <a href="https://quarto.org/">Quarto</a>.</p>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -494,41 +533,29 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#el-concepto-sagrado-estacionariedad-y-el-suelo-firme" id="toc-el-concepto-sagrado-estacionariedad-y-el-suelo-firme" class="nav-link active" data-scroll-target="#el-concepto-sagrado-estacionariedad-y-el-suelo-firme">El Concepto Sagrado: Estacionariedad y el Suelo Firme</a>
+  <li><a href="#el-modelo-de-holt-la-velocidad-de-la-demanda-beta" id="toc-el-modelo-de-holt-la-velocidad-de-la-demanda-beta" class="nav-link active" data-scroll-target="#el-modelo-de-holt-la-velocidad-de-la-demanda-beta">7.1 El Modelo de Holt: La Velocidad de la Demanda (<span class="math inline">\(\beta\)</span>)</a></li>
+  <li><a href="#el-modelo-de-holt-winters-la-triple-corona-gamma" id="toc-el-modelo-de-holt-winters-la-triple-corona-gamma" class="nav-link" data-scroll-target="#el-modelo-de-holt-winters-la-triple-corona-gamma">7.2 El Modelo de Holt-Winters: La Triple Corona (<span class="math inline">\(\gamma\)</span>)</a>
   <ul class="collapse">
-  <li><a href="#por-qué-la-no-estacionariedad-es-una-patología-logística" id="toc-por-qué-la-no-estacionariedad-es-una-patología-logística" class="nav-link" data-scroll-target="#por-qué-la-no-estacionariedad-es-una-patología-logística">¿Por qué la No-Estacionariedad es una Patología Logística?</a></li>
-  <li><a href="#la-herramienta-de-nivelación-el-diferenciamiento-d" id="toc-la-herramienta-de-nivelación-el-diferenciamiento-d" class="nav-link" data-scroll-target="#la-herramienta-de-nivelación-el-diferenciamiento-d">La Herramienta de Nivelación: El Diferenciamiento (<span class="math inline">\(d\)</span>)</a></li>
+  <li><a href="#el-riesgo-de-la-extrapolación-tendencia-amortiguada-damped-trend" id="toc-el-riesgo-de-la-extrapolación-tendencia-amortiguada-damped-trend" class="nav-link" data-scroll-target="#el-riesgo-de-la-extrapolación-tendencia-amortiguada-damped-trend">El Riesgo de la Extrapolación: Tendencia Amortiguada (Damped Trend)</a></li>
   </ul></li>
-  <li><a href="#los-tres-motores-de-arima-p-d-q" id="toc-los-tres-motores-de-arima-p-d-q" class="nav-link" data-scroll-target="#los-tres-motores-de-arima-p-d-q">Los Tres Motores de ARIMA (<span class="math inline">\(p, d, q\)</span>)</a>
+  <li><a href="#simulador-el-laboratorio-de-triple-suavizamiento" id="toc-simulador-el-laboratorio-de-triple-suavizamiento" class="nav-link" data-scroll-target="#simulador-el-laboratorio-de-triple-suavizamiento">7.3 Simulador: El Laboratorio de Triple Suavizamiento</a></li>
+  <li><a href="#implicaciones-operativas-aditivo-o-multiplicativo" id="toc-implicaciones-operativas-aditivo-o-multiplicativo" class="nav-link" data-scroll-target="#implicaciones-operativas-aditivo-o-multiplicativo">7.4 Implicaciones Operativas: ¿Aditivo o Multiplicativo?</a></li>
+  <li><a href="#la-matriz-de-decisión-qué-motor-elegir" id="toc-la-matriz-de-decisión-qué-motor-elegir" class="nav-link" data-scroll-target="#la-matriz-de-decisión-qué-motor-elegir">7.5 La Matriz de Decisión: ¿Qué motor elegir?</a>
   <ul class="collapse">
-  <li><a href="#el-motor-ar-auto-regresivo---p-el-impulso" id="toc-el-motor-ar-auto-regresivo---p-el-impulso" class="nav-link" data-scroll-target="#el-motor-ar-auto-regresivo---p-el-impulso">El Motor AR (Auto-Regresivo - <span class="math inline">\(p\)</span>): El Impulso</a></li>
-  <li><a href="#el-motor-i-integrado---d-el-nivelador" id="toc-el-motor-i-integrado---d-el-nivelador" class="nav-link" data-scroll-target="#el-motor-i-integrado---d-el-nivelador">El Motor I (Integrado - <span class="math inline">\(d\)</span>): El Nivelador</a></li>
-  <li><a href="#el-motor-ma-moving-average---q-la-auto-corrección" id="toc-el-motor-ma-moving-average---q-la-auto-corrección" class="nav-link" data-scroll-target="#el-motor-ma-moving-average---q-la-auto-corrección">El Motor MA (Moving Average - <span class="math inline">\(q\)</span>): La Auto-Corrección</a></li>
+  <li><a href="#el-veredicto-del-benchmark-la-regla-de-oro-del-arquitecto" id="toc-el-veredicto-del-benchmark-la-regla-de-oro-del-arquitecto" class="nav-link" data-scroll-target="#el-veredicto-del-benchmark-la-regla-de-oro-del-arquitecto">El Veredicto del Benchmark: La Regla de Oro del Arquitecto</a></li>
   </ul></li>
-  <li><a href="#sarima-capturando-los-ritmos-del-mercado" id="toc-sarima-capturando-los-ritmos-del-mercado" class="nav-link" data-scroll-target="#sarima-capturando-los-ritmos-del-mercado">SARIMA: Capturando los Ritmos del Mercado</a></li>
-  <li><a href="#más-allá-de-arima-el-arsenal-de-alternativas-robustas" id="toc-más-allá-de-arima-el-arsenal-de-alternativas-robustas" class="nav-link" data-scroll-target="#más-allá-de-arima-el-arsenal-de-alternativas-robustas">Más allá de ARIMA: El Arsenal de Alternativas Robustas</a>
-  <ul class="collapse">
-  <li><a href="#el-método-theta-el-matagigantes" id="toc-el-método-theta-el-matagigantes" class="nav-link" data-scroll-target="#el-método-theta-el-matagigantes">El Método Theta: El “Matagigantes”</a></li>
-  <li><a href="#prophet-meta-el-especialista-en-el-calendario" id="toc-prophet-meta-el-especialista-en-el-calendario" class="nav-link" data-scroll-target="#prophet-meta-el-especialista-en-el-calendario">Prophet (Meta): El Especialista en el Calendario</a></li>
-  </ul></li>
-  <li><a href="#tabla-comparativa-la-matriz-de-decisión-de-modelos" id="toc-tabla-comparativa-la-matriz-de-decisión-de-modelos" class="nav-link" data-scroll-target="#tabla-comparativa-la-matriz-de-decisión-de-modelos">Tabla Comparativa: La Matriz de Decisión de Modelos</a></li>
-  <li><a href="#implementación-industrial-r-o-python" id="toc-implementación-industrial-r-o-python" class="nav-link" data-scroll-target="#implementación-industrial-r-o-python">Implementación Industrial: ¿R o Python?</a>
-  <ul class="collapse">
-  <li><a href="#r-y-la-elegancia-de-fable" id="toc-r-y-la-elegancia-de-fable" class="nav-link" data-scroll-target="#r-y-la-elegancia-de-fable">R y la Elegancia de <code>fable</code></a></li>
-  <li><a href="#python-y-la-escala-de-statsforecast" id="toc-python-y-la-escala-de-statsforecast" class="nav-link" data-scroll-target="#python-y-la-escala-de-statsforecast">Python y la Escala de <code>StatsForecast</code></a></li>
-  </ul></li>
-  <li><a href="#el-veredicto-final-wape-rmse-y-bias" id="toc-el-veredicto-final-wape-rmse-y-bias" class="nav-link" data-scroll-target="#el-veredicto-final-wape-rmse-y-bias">El Veredicto Final: WAPE, RMSE y Bias</a></li>
+  <li><a href="#optimización-el-rol-de-la-búsqueda-de-parámetros" id="toc-optimización-el-rol-de-la-búsqueda-de-parámetros" class="nav-link" data-scroll-target="#optimización-el-rol-de-la-búsqueda-de-parámetros">7.6 Optimización: El Rol de la Búsqueda de Parámetros</a></li>
   <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-7-arima-y-alternativas.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-7-arima-y-alternativas.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-5-pronostico-ingenuo.html">II: Prediciendo el Futuro</a></li><li class="breadcrumb-item"><a href="./cap-7-arima-y-alternativas.html"><span class="chapter-title">7. Introducción: El Salto de la Suavización a la Correlación</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-5-pronostico-ingenuo.html">II: Prediciendo el Futuro</a></li><li class="breadcrumb-item"><a href="./cap-7-arima-y-alternativas.html"><span class="chapter-title">7. Tendencia y Estacionalidad: El Modelo de Holt-Winters</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">7. Introducción: El Salto de la Suavización a la Correlación</span></h1>
+<h1 class="title"><span class="chapter-title">7. Tendencia y Estacionalidad: El Modelo de Holt-Winters</span></h1>
 </div>
 
 
@@ -545,58 +572,263 @@ window.Quarto = {
 </header>
 
 
-<p>En el Capítulo 6, construimos una “memoria selectiva” con los modelos ETS. Aprendimos a filtrar el ruido para encontrar la señal de nivel y tendencia. Sin embargo, un ingeniero de Supply Chain de clase mundial sabe que a veces la demanda no solo “recuerda” el pasado, sino que está <strong>atada</strong> a él por leyes de correlación interna que el suavizamiento tradicional no alcanza a capturar.</p>
-<p>Mientras que ETS mira la serie de tiempo como una suma de componentes (nivel + tendencia + estacionalidad), el enfoque de este capítulo es diseccionar la <strong>arquitectura de la correlación</strong>. Vamos a aprender a usar modelos <strong>ARIMA (Auto-Regressive Integrated Moving Average)</strong> y sus alternativas modernas para entender si el dato de ayer tiene la fuerza cinética suficiente para empujar el dato de hoy.</p>
-<section id="el-concepto-sagrado-estacionariedad-y-el-suelo-firme" class="level2">
-<h2 class="anchored" data-anchor-id="el-concepto-sagrado-estacionariedad-y-el-suelo-firme">El Concepto Sagrado: Estacionariedad y el Suelo Firme</h2>
-<p>Antes de encender cualquier motor ARIMA, debemos hablar de la <strong>Estacionariedad</strong>. En términos de ingeniería de datos, una serie es estacionaria cuando sus propiedades estadísticas (media, varianza y estructura de autocorrelación) no cambian con el paso del tiempo.</p>
-<section id="por-qué-la-no-estacionariedad-es-una-patología-logística" class="level3">
-<h3 class="anchored" data-anchor-id="por-qué-la-no-estacionariedad-es-una-patología-logística">¿Por qué la No-Estacionariedad es una Patología Logística?</h3>
-<p>Imagina que intentas medir la altura de un objeto con una regla que se estira y encoge de forma impredecible. Si tu demanda tiene una tendencia explosiva o una variabilidad que crece junto con el volumen, ARIMA se confundirá catastróficamente.</p>
+<p>En el capítulo anterior, dominamos la técnica para filtrar el ruido mediante el Suavizamiento Exponencial Simple (SES). Aprendimos que el parámetro <span class="math inline">\(\alpha\)</span> actúa como un dial de sintonía fina entre la estabilidad y la reactividad. Sin embargo, como todo Arquitecto de Suministros descubre al enfrentarse a la realidad del mercado, el SES tiene un “punto ciego” estructural: asume que la demanda es estacionaria, es decir, que siempre intenta regresar a un promedio constante.</p>
+<p>En la vida real, los productos no son estáticos. Los lanzamientos generan rampas de crecimiento, los cambios en el mercado provocan declives, y la conducta humana impone ritmos cíclicos (estacionales). Para capturar estas fuerzas dinámicas sin que el modelo colapse ante el ruido, debemos añadir capas de inteligencia matemática. Bienvenidos a la visión tridimensional de la demanda: <strong>El Modelo de Holt-Winters</strong>.</p>
+<section id="el-modelo-de-holt-la-velocidad-de-la-demanda-beta" class="level2">
+<h2 class="anchored" data-anchor-id="el-modelo-de-holt-la-velocidad-de-la-demanda-beta">7.1 El Modelo de Holt: La Velocidad de la Demanda (<span class="math inline">\(\beta\)</span>)</h2>
+<p>Cuando un producto entra en fase de expansión (un lanzamiento exitoso o expansión a nuevas regiones) o de declive (obsolescencia), el nivel de la demanda cambia en cada periodo. El modelo de <strong>Holt</strong> aborda esto mediante un doble suavizamiento, introduciendo una segunda ecuación y un segundo parámetro crítico: <strong>Beta (</strong><span class="math inline">\(\beta\)</span><strong>)</strong>.</p>
 <ul>
-<li><strong>Consecuencia:</strong> Si modelas una serie no estacionaria sin corregirla, tu pronóstico será una “Caminata Aleatoria” (Random Walk). Esto hará que tus intervalos de confianza (y por ende, tu <strong>Stock de Seguridad</strong>) se expandan infinitamente, forzándote a comprar inventario de más para cubrir una incertidumbre que el modelo no sabe acotar.</li>
+<li><p><strong>Nivel (</strong><span class="math inline">\(\ell_t\)</span><strong>):</strong> Representa el valor actual de la serie una vez filtrado el ruido. Es la “posición” actual de la demanda.</p></li>
+<li><p><strong>Tendencia (</strong><span class="math inline">\(b_t\)</span><strong>):</strong> Representa la “velocidad” o pendiente del cambio. Nos dice cuántas unidades esperamos que la demanda aumente o disminuya en el siguiente paso.</p></li>
 </ul>
+<p>Imagina que estás conduciendo un vehículo: el Nivel es tu ubicación actual en el mapa, mientras que la Tendencia es el velocímetro. Si tus ventas suben 10 unidades de forma sostenida cada mes, un <span class="math inline">\(\beta\)</span> bien calibrado permitirá que el modelo proyecte esa rampa hacia el futuro. Sin esto, un modelo SES sufriría de un <strong>BIAS negativo constante</strong>, quedándose siempre “atrás” de la realidad y provocando quiebres de stock sistemáticos en productos con alto crecimiento.</p>
 </section>
-<section id="la-herramienta-de-nivelación-el-diferenciamiento-d" class="level3">
-<h3 class="anchored" data-anchor-id="la-herramienta-de-nivelación-el-diferenciamiento-d">La Herramienta de Nivelación: El Diferenciamiento (<span class="math inline">\(d\)</span>)</h3>
-<p>Para “aplanar” el suelo y hacer la serie estacionaria, restamos el dato de hoy menos el de ayer (<span class="math inline">\(y_t - y_{t-1}\)</span>). * <strong>Diferenciación de Primer Orden (</strong><span class="math inline">\(d=1\)</span>): Elimina tendencias lineales. El modelo deja de predecir “cuántas unidades venderé” y empieza a predecir “cuánto cambiará mi venta respecto a ayer”. * <strong>Diferenciación Estacional (</strong><span class="math inline">\(D=1\)</span>): Restamos el dato de hoy menos el del mismo periodo del año pasado para eliminar ciclos anuales.</p>
-</section>
-</section>
-<section id="los-tres-motores-de-arima-p-d-q" class="level2">
-<h2 class="anchored" data-anchor-id="los-tres-motores-de-arima-p-d-q">Los Tres Motores de ARIMA (<span class="math inline">\(p, d, q\)</span>)</h2>
-<p>Un modelo ARIMA es un sistema de tres motores interconectados que trabajan para estabilizar la predicción mediante el análisis de la correlación.</p>
-<section id="el-motor-ar-auto-regresivo---p-el-impulso" class="level3">
-<h3 class="anchored" data-anchor-id="el-motor-ar-auto-regresivo---p-el-impulso">El Motor AR (Auto-Regresivo - <span class="math inline">\(p\)</span>): El Impulso</h3>
-<p>Este motor asume que el presente es una función de sus propios retrasos. Dice: <em>“Lo que vendí ayer explica en gran medida lo que venderé hoy”</em>. * <strong>La Intuición:</strong> Es la inercia de la demanda. Si un producto viene rodando con fuerza, es muy probable que siga rodando un poco más antes de detenerse. * <strong>Uso:</strong> Fundamental en productos con alta fidelidad de compra o contratos recurrentes.</p>
-</section>
-<section id="el-motor-i-integrado---d-el-nivelador" class="level3">
-<h3 class="anchored" data-anchor-id="el-motor-i-integrado---d-el-nivelador">El Motor I (Integrado - <span class="math inline">\(d\)</span>): El Nivelador</h3>
-<p>Es el número de veces que tuvimos que diferenciar la serie para que fuera plana. En Supply Chain, un <span class="math inline">\(d=1\)</span> suele bastar. Un <span class="math inline">\(d=2\)</span> es extremadamente peligroso, ya que implica una aceleración parabólica que rara vez se sostiene en mercados físicos reales.</p>
-</section>
-<section id="el-motor-ma-moving-average---q-la-auto-corrección" class="level3">
-<h3 class="anchored" data-anchor-id="el-motor-ma-moving-average---q-la-auto-corrección">El Motor MA (Moving Average - <span class="math inline">\(q\)</span>): La Auto-Corrección</h3>
-<p><strong>Atención Crítica:</strong> No confundir con el promedio móvil del Capítulo 5. El motor MA de ARIMA promedia <strong>errores pasados</strong>. * <strong>La Intuición:</strong> Es un termostato inteligente. Si ayer el modelo predijo 100 pero se vendieron 120, el motor MA detecta ese error de <span class="math inline">\(+20\)</span> y ajusta el cálculo de hoy basándose en una fracción de esa equivocación. * <strong>Beneficio:</strong> Es ideal para series con mucha volatilidad de corto plazo, permitiendo que el modelo se auto-corrija rápidamente.</p>
+<section id="el-modelo-de-holt-winters-la-triple-corona-gamma" class="level2">
+<h2 class="anchored" data-anchor-id="el-modelo-de-holt-winters-la-triple-corona-gamma">7.2 El Modelo de Holt-Winters: La Triple Corona (<span class="math inline">\(\gamma\)</span>)</h2>
+<p>Para los productos cuyos patrones de consumo se repiten en intervalos fijos —como el pico de ventas de cerveza los fines de semana o la explosión de demanda de juguetes en diciembre—, el nivel y la tendencia no son suficientes. Necesitamos capturar el “ritmo” del mercado. Aquí es donde añadimos el tercer componente: <strong>Gamma (</strong><span class="math inline">\(\gamma\)</span><strong>)</strong>.</p>
+<p>Este parámetro gestiona los índices estacionales. La arquitectura de Holt-Winters combina tres fuerzas para construir una predicción robusta:</p>
+<ol type="1">
+<li><p><strong>Nivel (</strong><span class="math inline">\(\alpha\)</span><strong>):</strong> Estabiliza la serie frente a anomalías puntuales.</p></li>
+<li><p><strong>Tendencia (</strong><span class="math inline">\(\beta\)</span><strong>):</strong> Detecta si el negocio se está expandiendo o contrayendo.</p></li>
+<li><p><strong>Estacionalidad (</strong><span class="math inline">\(\gamma\)</span><strong>):</strong> Ajusta el pronóstico según el momento del ciclo (día de la semana, mes del año).</p></li>
+</ol>
+<section id="el-riesgo-de-la-extrapolación-tendencia-amortiguada-damped-trend" class="level3">
+<h3 class="anchored" data-anchor-id="el-riesgo-de-la-extrapolación-tendencia-amortiguada-damped-trend">El Riesgo de la Extrapolación: Tendencia Amortiguada (Damped Trend)</h3>
+<p>Uno de los errores más comunes y costosos en la planificación de suministros es la extrapolación lineal infinita. Los modelos de tendencia pura asumen que si un producto creció un 10% el mes pasado, lo hará para siempre. Esto genera lo que llamamos “Pronósticos de Palo de Hockey”, que terminan en compras masivas de inventario para un crecimiento que nunca llega debido a la saturación del mercado.</p>
+<p>Para mitigar este riesgo, el Arquitecto utiliza el factor de <strong>amortiguación (</strong><span class="math inline">\(\phi\)</span><strong>)</strong>. Este parámetro (generalmente entre 0.8 y 0.98) aplica un “freno” a la tendencia a medida que el horizonte de tiempo se aleja. El resultado es una curva que comienza con tendencia pero se inclina suavemente hacia la horizontal, protegiendo el flujo de caja de la empresa contra el optimismo estadístico desmedido.</p>
 </section>
 </section>
-<section id="sarima-capturando-los-ritmos-del-mercado" class="level2">
-<h2 class="anchored" data-anchor-id="sarima-capturando-los-ritmos-del-mercado">SARIMA: Capturando los Ritmos del Mercado</h2>
-<p>Como ingenieros, sabemos que el mundo es cíclico. Por eso usamos <strong>SARIMA</strong> (la “S” es de <em>Seasonal</em>). Añadimos parámetros estacionales (<span class="math inline">\(P, D, Q\)</span>) que hacen lo mismo que sus hermanos menores, pero en bloques de 12 meses. Esto permite que el modelo entienda que lo que pasa en este Black Friday está correlacionado con los últimos tres, no solo con lo que pasó ayer.</p>
+<section id="simulador-el-laboratorio-de-triple-suavizamiento" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-el-laboratorio-de-triple-suavizamiento">7.3 Simulador: El Laboratorio de Triple Suavizamiento</h2>
+<p>En este laboratorio, hemos generado una demanda sintética que combina una rampa de crecimiento (<strong>Tendencia</strong>) con un ciclo recurrente (<strong>Estacionalidad Semanal</strong>). Tu misión es ajustar los tres parámetros para que la línea azul “abrace” a la realidad.</p>
+<p>Observa cómo un <span class="math inline">\(\gamma\)</span> muy bajo ignora los picos del fin de semana, mientras que un <span class="math inline">\(\beta\)</span> mal ajustado hace que el modelo ignore el crecimiento del negocio. ¿Logras un <strong>FVA positivo</strong> contra el benchmark S-Naive?</p>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="45" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 44;"><span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>jStat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>viewof alpha <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.2</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.05</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Alpha (Nivel):"</span>})</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>viewof beta <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.05</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Beta (Tendencia):"</span>})</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>viewof gamma <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.3</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.05</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Gamma (Estacionalidad):"</span>})</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>viewof phi <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.8</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.98</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Phi (Amortiguación):"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="59" data-source-offset="-68"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 58;"><span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>ts_complex <span class="op">=</span> {</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> data <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> m <span class="op">=</span> <span class="dv">7</span><span class="op">;</span> <span class="co">// Ciclo semanal</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">90</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> level <span class="op">=</span> <span class="dv">100</span><span class="op">;</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> trend <span class="op">=</span> i <span class="op">*</span> <span class="fl">0.8</span><span class="op">;</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> season <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>((i <span class="op">/</span> m) <span class="op">*</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>) <span class="op">*</span> <span class="dv">35</span><span class="op">;</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> noise <span class="op">=</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">sample</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">12</span>)<span class="op">;</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    data<span class="op">.</span><span class="fu">push</span>({ <span class="dt">t</span><span class="op">:</span> i<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">0</span><span class="op">,</span> level <span class="op">+</span> trend <span class="op">+</span> season <span class="op">+</span> noise) })<span class="op">;</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data<span class="op">;</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="co">// 2. Implementación de Holt-Winters Aditivo</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>hw_forecast <span class="op">=</span> {</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> m <span class="op">=</span> <span class="dv">7</span><span class="op">;</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> history <span class="op">=</span> ts_complex<span class="op">;</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> L <span class="op">=</span> <span class="dv">100</span><span class="op">;</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> T <span class="op">=</span> <span class="fl">0.8</span><span class="op">;</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> S <span class="op">=</span> <span class="bu">Array</span>(m)<span class="op">.</span><span class="fu">fill</span>(<span class="dv">0</span>)<span class="op">;</span> </span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Inicialización de estacionales (primer ciclo)</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(<span class="kw">let</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>m<span class="op">;</span> i<span class="op">++</span>) S[i] <span class="op">=</span> history[i]<span class="op">.</span><span class="at">y</span> <span class="op">-</span> L<span class="op">;</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> result <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> history<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> prevL <span class="op">=</span> L<span class="op">;</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> s_idx <span class="op">=</span> i <span class="op">%</span> m<span class="op">;</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Ecuaciones recursivas</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>    L <span class="op">=</span> alpha <span class="op">*</span> (history[i]<span class="op">.</span><span class="at">y</span> <span class="op">-</span> S[s_idx]) <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> alpha) <span class="op">*</span> (prevL <span class="op">+</span> phi <span class="op">*</span> T)<span class="op">;</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>    T <span class="op">=</span> beta <span class="op">*</span> (L <span class="op">-</span> prevL) <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> beta) <span class="op">*</span> phi <span class="op">*</span> T<span class="op">;</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>    S[s_idx] <span class="op">=</span> gamma <span class="op">*</span> (history[i]<span class="op">.</span><span class="at">y</span> <span class="op">-</span> L) <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> gamma) <span class="op">*</span> S[s_idx]<span class="op">;</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Proyección para t+1</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> f <span class="op">=</span> L <span class="op">+</span> phi <span class="op">*</span> T <span class="op">+</span> S[(i <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> m]<span class="op">;</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>    result<span class="op">.</span><span class="fu">push</span>(f)<span class="op">;</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="co">// 3. Auditoría de Métricas Multidimensional</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>metrics_hw <span class="op">=</span> {</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> actuals <span class="op">=</span> ts_complex<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)<span class="op">;</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> total_demand <span class="op">=</span> jStat<span class="op">.</span><span class="fu">sum</span>(actuals)<span class="op">;</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> errors <span class="op">=</span> actuals<span class="op">.</span><span class="fu">map</span>((y<span class="op">,</span> i) <span class="kw">=&gt;</span> hw_forecast[i] <span class="op">-</span> y)<span class="op">;</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> abs_errors <span class="op">=</span> errors<span class="op">.</span><span class="fu">map</span>(e <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(e))<span class="op">;</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mae <span class="op">=</span> jStat<span class="op">.</span><span class="fu">mean</span>(abs_errors)<span class="op">;</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> bias <span class="op">=</span> jStat<span class="op">.</span><span class="fu">mean</span>(errors)<span class="op">;</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> rmse <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(jStat<span class="op">.</span><span class="fu">mean</span>(errors<span class="op">.</span><span class="fu">map</span>(e <span class="kw">=&gt;</span> e<span class="op">*</span>e)))<span class="op">;</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> wape <span class="op">=</span> (jStat<span class="op">.</span><span class="fu">sum</span>(abs_errors) <span class="op">/</span> total_demand) <span class="op">*</span> <span class="dv">100</span><span class="op">;</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Benchmark Naive Estacional (S-Naive)</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> snaive_err <span class="op">=</span> actuals<span class="op">.</span><span class="fu">slice</span>(<span class="dv">7</span>)<span class="op">.</span><span class="fu">map</span>((y<span class="op">,</span> i) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(y <span class="op">-</span> actuals[i<span class="op">-</span><span class="dv">7</span>]))<span class="op">;</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mae_snaive <span class="op">=</span> jStat<span class="op">.</span><span class="fu">mean</span>(snaive_err)<span class="op">;</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> fva <span class="op">=</span> mae_snaive <span class="op">-</span> mae<span class="op">;</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> { mae<span class="op">,</span> bias<span class="op">,</span> rmse<span class="op">,</span> wape<span class="op">,</span> fva }<span class="op">;</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a><span class="co">// 4. Gráfico interactivo con Plotly</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:450px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> ts_complex<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">t</span>)<span class="op">,</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> ts_complex<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)<span class="op">,</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Demanda Real'</span><span class="op">,</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines+markers'</span><span class="op">,</span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#94a3b8'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">1</span>}</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> ts_complex<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">t</span>)<span class="op">,</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> hw_forecast<span class="op">,</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Holt-Winters (Pronóstico)'</span><span class="op">,</span></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#2563eb'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">3</span>}</span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layout <span class="op">=</span> {</span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'Simulación de Triple Suavizamiento Dinámico'</span><span class="op">,</span></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>    <span class="dt">xaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Día'</span> }<span class="op">,</span></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>    <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Demanda (Unidades)'</span> }<span class="op">,</span></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>    <span class="dt">hovermode</span><span class="op">:</span> <span class="st">'x unified'</span><span class="op">,</span></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>    <span class="dt">margin</span><span class="op">:</span> { <span class="dt">t</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">l</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">30</span> }</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> layout<span class="op">,</span> {<span class="dt">responsive</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">displayModeBar</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">;</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Auditoría del Modelo de Holt-Winters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><strong>WAPE (Error Ponderado):</strong> <span><span id="ojs-element-id-1"></span>%</span> (Mide el error total respecto al volumen).</p></li>
+<li><p><strong>BIAS (Puntería):</strong> <span><span id="ojs-element-id-2"></span></span> <span>(<span id="ojs-element-id-3"></span>).</span></p></li>
+<li><p><strong>RMSE (Sensibilidad):</strong> <span><span id="ojs-element-id-4"></span></span> (Penaliza errores grandes que rompen la operación).</p></li>
+<li><p><strong>FVA (Valor Agregado):</strong> <span><span id="ojs-element-id-5"></span></span> pts sobre S-Naive.</p></li>
+</ul>
+<p><strong>Interpretación Crítica:</strong> El FVA (Forecast Value Added) es el único juez imparcial. Se calcula como:</p>
+<p><span class="math display">\[
+\large FVA = \text{Error}_{\text{Benchmark}} - \text{Error}_{\text{Modelo}}
+\]</span></p>
+<p>Si tu FVA es negativo, la complejidad del modelo está “viendo” patrones donde solo hay ruido aleatorio. En ese caso, la recomendación técnica es simplificar al modelo estacional base o auditar la calidad de los datos de entrada antes de escalar a Machine Learning.</p>
+</div>
+</div>
 </section>
-<section id="más-allá-de-arima-el-arsenal-de-alternativas-robustas" class="level2">
-<h2 class="anchored" data-anchor-id="más-allá-de-arima-el-arsenal-de-alternativas-robustas">Más allá de ARIMA: El Arsenal de Alternativas Robustas</h2>
-<p>ARIMA es quirúrgico pero frágil ante datos sucios. Por eso, un planificador senior debe conocer estas alternativas de alto impacto:</p>
-<section id="el-método-theta-el-matagigantes" class="level3">
-<h3 class="anchored" data-anchor-id="el-método-theta-el-matagigantes">El Método Theta: El “Matagigantes”</h3>
-<p>Famoso por derrotar a complejos algoritmos de IA en competencias internacionales de pronóstico. Descompone la serie en líneas que magnifican o reducen la curvatura de la demanda. * <strong>Fortaleza:</strong> Es extremadamente estable. Si tienes historias cortas (menos de 24 meses) o mucha volatilidad, Theta suele entregar un <strong>WAPE</strong> más bajo que ARIMA sin riesgo de explotar.</p>
+<section id="implicaciones-operativas-aditivo-o-multiplicativo" class="level2">
+<h2 class="anchored" data-anchor-id="implicaciones-operativas-aditivo-o-multiplicativo">7.4 Implicaciones Operativas: ¿Aditivo o Multiplicativo?</h2>
+<p>Como arquitecto, debes decidir la estructura matemática de la estacionalidad, una decisión que puede cambiar drásticamente la configuración de tu stock de seguridad y la salud de tu flujo de caja.</p>
+<ol type="1">
+<li><p><strong>Modelo Aditivo (</strong><span class="math inline">\(L + T + S\)</span><strong>):</strong> Se utiliza cuando las oscilaciones estacionales son constantes en términos absolutos, independientemente del volumen total.</p>
+<ul>
+<li><p><em>Ejemplo:</em> Una panadería que siempre vende 50 baguettes extra los sábados, ya sea que en la semana venda 100 o 1,000.</p></li>
+<li><p><em>Riesgo:</em> Si el negocio crece exponencialmente, el componente estacional se vuelve insignificante, subestimando los picos de demanda.</p></li>
+</ul></li>
+<li><p><strong>Modelo Multiplicativo (</strong><span class="math inline">\(L \times T \times S\)</span><strong>):</strong> Es el estándar para mercados dinámicos donde la estacionalidad es proporcional al volumen.</p>
+<ul>
+<li><p><em>Ejemplo:</em> Una marca de helados que vende un 300% más en verano. Si la marca duplica su tamaño, ese 300% representa muchísimas más unidades físicas que el año anterior.</p></li>
+<li><p><em>Riesgo:</em> En fases de declive acelerado, puede sobreestimar los picos, generando excesos de inventario peligrosos.</p></li>
+</ul></li>
+</ol>
+<p><strong>El peligro del error conceptual:</strong> Usar un modelo aditivo en un negocio con crecimiento acelerado es una receta para el desastre operativo. El pronóstico de los picos se quedará corto sistemáticamente, generando quiebres de stock justo en el momento de mayor oportunidad de venta.</p>
 </section>
-<section id="prophet-meta-el-especialista-en-el-calendario" class="level3">
-<h3 class="anchored" data-anchor-id="prophet-meta-el-especialista-en-el-calendario">Prophet (Meta): El Especialista en el Calendario</h3>
-<p>Prophet no es autorregresivo, es un modelo aditivo. Su gran ventaja es que maneja de forma nativa los <strong>feriados y promociones</strong>. * <strong>Fortaleza:</strong> Si tu demanda vive de eventos específicos (Día del Padre, Cyber Monday), Prophet permite inyectar ese conocimiento humano directamente en el modelo estadístico sin romper la matemática.</p>
-</section>
-</section>
-<section id="tabla-comparativa-la-matriz-de-decisión-de-modelos" class="level2">
-<h2 class="anchored" data-anchor-id="tabla-comparativa-la-matriz-de-decisión-de-modelos">Tabla Comparativa: La Matriz de Decisión de Modelos</h2>
-<p>Para elegir el “motor” adecuado según tu segmentación ABC/XYZ (Cap. 3), utiliza esta tabla como brújula estratégica:</p>
+<section id="la-matriz-de-decisión-qué-motor-elegir" class="level2">
+<h2 class="anchored" data-anchor-id="la-matriz-de-decisión-qué-motor-elegir">7.5 La Matriz de Decisión: ¿Qué motor elegir?</h2>
+<p>Aunque Holt-Winters es extremadamente versátil para la mayoría de las SKUs Clase A y B, el Arquitecto debe conocer los límites de sus herramientas. No todos los motores son adecuados para todas las pistas.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -607,102 +839,104 @@ window.Quarto = {
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Modelo</th>
-<th style="text-align: left;">Complejidad</th>
-<th style="text-align: left;">Datos Mínimos</th>
-<th style="text-align: left;">Fortaleza</th>
-<th style="text-align: left;">Métrica Crítica</th>
+<th style="text-align: center;">Modelo</th>
+<th style="text-align: center;">Complejidad</th>
+<th style="text-align: center;">Datos Mínimos</th>
+<th style="text-align: center;">Fortaleza Principal</th>
+<th style="text-align: center;">Debilidad Crítica</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>Naive (Cap. 5)</strong></td>
-<td style="text-align: left;">⭐</td>
-<td style="text-align: left;">1 mes</td>
-<td style="text-align: left;">El “suelo” de precisión. Cero costo.</td>
-<td style="text-align: left;"><strong>Benchmark</strong></td>
+<td style="text-align: center;"><strong>Naive (Cap. 5)</strong></td>
+<td style="text-align: center;">⭐</td>
+<td style="text-align: center;">1 mes</td>
+<td style="text-align: center;">Costo cero. Imbatible en series caóticas.</td>
+<td style="text-align: center;">No ve patrones.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>ETS (Cap. 6)</strong></td>
-<td style="text-align: left;">⭐⭐</td>
-<td style="text-align: left;">6-12 meses</td>
-<td style="text-align: left;">Filtrado de ruido en productos estables.</td>
-<td style="text-align: left;"><strong>WAPE / Bias</strong></td>
+<td style="text-align: center;"><strong>ETS (Cap. 6)</strong></td>
+<td style="text-align: center;">⭐⭐</td>
+<td style="text-align: center;">6-12 meses</td>
+<td style="text-align: center;">Filtrado de ruido superior en productos estables.</td>
+<td style="text-align: center;">Ciego ante tendencias fuertes.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>Holt-Winters (Cap. 6)</strong></td>
-<td style="text-align: left;">⭐⭐⭐</td>
-<td style="text-align: left;">24 meses</td>
-<td style="text-align: left;">Manejo de estacionalidad y tendencia.</td>
-<td style="text-align: left;"><strong>RMSE</strong></td>
+<td style="text-align: center;"><strong>Holt-Winters</strong></td>
+<td style="text-align: center;">⭐⭐⭐</td>
+<td style="text-align: center;">24 meses</td>
+<td style="text-align: center;">Captura estacionalidad y tendencia de forma intuitiva.</td>
+<td style="text-align: center;">Sensible a valores atípicos.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>ARIMA (Cap. 7)</strong></td>
-<td style="text-align: left;">⭐⭐⭐⭐</td>
-<td style="text-align: left;">24-36 meses</td>
-<td style="text-align: left;">Captura de correlaciones quirúrgicas.</td>
-<td style="text-align: left;"><strong>RMSE / AICc</strong></td>
+<td style="text-align: center;"><strong>ARIMA</strong></td>
+<td style="text-align: center;">⭐⭐⭐⭐</td>
+<td style="text-align: center;">36 meses</td>
+<td style="text-align: center;">Captura correlaciones quirúrgicas (ruido con memoria).</td>
+<td style="text-align: center;"><strong>Muy lento</strong> de procesar a escala.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>Theta (Cap. 7)</strong></td>
-<td style="text-align: left;">⭐⭐⭐</td>
-<td style="text-align: left;">12-18 meses</td>
-<td style="text-align: left;">Máxima robustez en series ruidosas.</td>
-<td style="text-align: left;"><strong>WAPE</strong></td>
+<td style="text-align: center;"><strong>Theta</strong></td>
+<td style="text-align: center;">⭐⭐⭐</td>
+<td style="text-align: center;">12 meses</td>
+<td style="text-align: center;">Máxima robustez en series con mucho ruido.</td>
+<td style="text-align: center;">Menos intuitivo de explicar.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Prophet (Cap. 7)</strong></td>
-<td style="text-align: left;">⭐⭐⭐</td>
-<td style="text-align: left;">12-24 meses</td>
-<td style="text-align: left;">Gestión nativa de feriados y eventos.</td>
-<td style="text-align: left;"><strong>Bias / WAPE</strong></td>
+<td style="text-align: center;"><strong>Prophet</strong></td>
+<td style="text-align: center;">⭐⭐⭐</td>
+<td style="text-align: center;">12-24 meses</td>
+<td style="text-align: center;">Manejo nativo de feriados y eventos especiales.</td>
+<td style="text-align: center;"><strong>Sesgo alto</strong> si no se calibra bien.</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="implementación-industrial-r-o-python" class="level2">
-<h2 class="anchored" data-anchor-id="implementación-industrial-r-o-python">Implementación Industrial: ¿R o Python?</h2>
-<p>Aquí abandonamos definitivamente las hojas de cálculo. Optimizar un modelo con 6 parámetros para 5,000 SKUs requiere automatización pura.</p>
-<section id="r-y-la-elegancia-de-fable" class="level3">
-<h3 class="anchored" data-anchor-id="r-y-la-elegancia-de-fable">R y la Elegancia de <code>fable</code></h3>
-<p>Es la herramienta con mayor rigor estadístico. El algoritmo de selección automática prueba miles de combinaciones y elige la mejor según el <strong>Criterio de Información (AICc)</strong>, penalizando modelos demasiado complejos para evitar el <strong>Overfitting</strong>.</p>
-</section>
-<section id="python-y-la-escala-de-statsforecast" class="level3">
-<h3 class="anchored" data-anchor-id="python-y-la-escala-de-statsforecast">Python y la Escala de <code>StatsForecast</code></h3>
-<p>Si necesitas procesar millones de SKUs en minutos para alimentar un sistema de reaprovisionamiento en tiempo real, Python y la librería <code>StatsForecast</code> son el estándar global de velocidad.</p>
+<section id="el-veredicto-del-benchmark-la-regla-de-oro-del-arquitecto" class="level3">
+<h3 class="anchored" data-anchor-id="el-veredicto-del-benchmark-la-regla-de-oro-del-arquitecto">El Veredicto del Benchmark: La Regla de Oro del Arquitecto</h3>
+<p>A menudo verás debates apasionados sobre si ARIMA es “mejor” que Prophet. La realidad es que <strong>ningún modelo es superior por decreto académico</strong>. En la Arquitectura de Suministros, seguimos la estrategia de la <strong>“Carrera de Caballos” (Tournament Selection)</strong>:</p>
+<ol type="1">
+<li><p><strong>ARIMA</strong> es quirúrgico pero computacionalmente costoso. Si tienes 100,000 SKUs, ejecutar ARIMA para cada uno puede llevar horas o días, retrasando la señal de compra. Úsalo solo cuando la autocorrelación sea la señal dominante.</p></li>
+<li><p><strong>Prophet (Facebook)</strong> es excelente para integrar el conocimiento de negocio (festivos móviles, promociones), pero tiene fama de ser “optimista” o tener un BIAS alto si los parámetros por defecto no se ajustan. No confíes en él a ciegas solo por su origen tecnológico.</p></li>
+<li><p><strong>El Ganador lo dictan los Datos:</strong> No elijas un modelo por su nombre. Implementa un sistema que ejecute 3 o 4 modelos en paralelo para cada producto y selecciona <strong>el que entregue el mejor MASE o WAPE</strong> en el set de validación.</p></li>
+</ol>
+<p><strong>Tu mantra debe ser:</strong> <em>“No me importa qué tan inteligente parezca el modelo; si no le gana al Naive en el FVA, no entra en mi bodega”.</em></p>
 </section>
 </section>
-<section id="el-veredicto-final-wape-rmse-y-bias" class="level2">
-<h2 class="anchored" data-anchor-id="el-veredicto-final-wape-rmse-y-bias">El Veredicto Final: WAPE, RMSE y Bias</h2>
-<p>Como ingenieros de Supply Chain, el éxito no es “correr el modelo”, sino reducir el impacto financiero. 1. <strong>WAPE:</strong> ¿El modelo redujo el error real ponderado por volumen respecto al Naive? 2. <strong>RMSE:</strong> ¿Estamos penalizando adecuadamente los errores grandes que causan quiebres de stock masivos? 3. <strong>Bias (Sesgo):</strong> Vigila si el modelo “se enamora” de una subida y tarda en reaccionar cuando el mercado cae, inflando tu inventario innecesariamente.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>La Trampa del Sobre-Ajuste (Overfitting)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>ARIMA y Prophet son tan potentes que pueden intentar explicar hasta el ruido más insignificante. Si tu modelo sugiere parámetros muy altos (ej. <span class="math inline">\(p=5\)</span>), activa tus alarmas. Estás creando un modelo que describe perfecto el pasado pero que será un desastre absoluto prediciendo el futuro. <strong>La parsimonia es rentabilidad.</strong></p>
-</div>
-</div>
+<section id="optimización-el-rol-de-la-búsqueda-de-parámetros" class="level2">
+<h2 class="anchored" data-anchor-id="optimización-el-rol-de-la-búsqueda-de-parámetros">7.6 Optimización: El Rol de la Búsqueda de Parámetros</h2>
+<p>¿Cómo encontramos los valores perfectos de <span class="math inline">\(\alpha, \beta, \gamma\)</span> ? En el mundo real no los ajustamos manualmente. El Arquitecto diseña procesos de <strong>Grid Search</strong> o utiliza optimizadores numéricos para minimizar el error histórico. Este proceso de “calibración” automática es lo que permite que una sola persona gestione el pronóstico de una red nacional con precisión científica, asegurando que cada parámetro esté alineado con la física del inventario.</p>
 </section>
 <section id="checklist-de-cierre-del-capítulo" class="level2">
 <h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">¿He verificado la estacionariedad de mis productos Clase A?</label></li>
-<li><label><input type="checkbox">¿Entiendo que el motor MA de ARIMA es una herramienta de corrección y no un promedio de ventas?</label></li>
-<li><label><input type="checkbox">¿He probado el Método Theta para mis productos con demanda errática (XYZ: Z)?</label></li>
-<li><label><input type="checkbox">¿El FVA obtenido justifica la complejidad técnica frente a un Holt-Winters?</label></li>
-<li><label><input type="checkbox">¿He revisado el BIAS acumulado para asegurar que no estoy comprando de más?</label></li>
+<li><p><label><input type="checkbox">¿He identificado los tres componentes (Nivel, Tendencia, Estacionalidad) en mis productos críticos?</label></p></li>
+<li><p><label><input type="checkbox">¿Calculo sistemáticamente el FVA para asegurar que la complejidad de Holt-Winters (o ARIMA/Prophet) justifica su costo?</label></p></li>
+<li><p><label><input type="checkbox">¿Utilizo la amortiguación (<span class="math inline">\(\phi\)</span>) para evitar que el optimismo de la tendencia infle mis pedidos de compra?</label></p></li>
+<li><p><label><input type="checkbox">¿He validado si la naturaleza de mi estacionalidad es Aditiva o Multiplicativa?</label></p></li>
+<li><p><label><input type="checkbox"><strong>¿He implementado una “Carrera de Caballos” para elegir el modelo con mejor desempeño real en lugar de elegir uno por moda?</strong></label></p></li>
+<li><p><label><input type="checkbox">¿Estoy listo para el <strong>Capítulo 8</strong>, donde entraremos en la era del <strong>Machine Learning</strong>?</label></p></li>
 </ul>
 
 
+<div class="ojs-auto-generated hidden">
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7bWV0cmljc19ody53YXBlLnRvRml4ZWQoMSl9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHttZXRyaWNzX2h3LmJpYXMudG9GaXhlZCgxKX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke21ldHJpY3NfaHcuYmlhcyA+IDAgPyBcIkV4Y2Vzb1wiIDogXCJGYWx0YW50ZVwifTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMyJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7bWV0cmljc19ody5ybXNlLnRvRml4ZWQoMSl9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC00In0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHttZXRyaWNzX2h3LmZ2YS50b0ZpeGVkKDIpfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNSJ9XX0=
+</script>
+</div>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5qU3RhdCA9IHJlcXVpcmUoXCJqc3RhdEAxLjkuNlwiKVxyXG5QbG90bHkgPSByZXF1aXJlKFwicGxvdGx5LmpzLWRpc3QtbWluQDIuMjQuMVwiKVxyXG5cclxudmlld29mIGFscGhhID0gSW5wdXRzLnJhbmdlKFswLCAxXSwge3ZhbHVlOiAwLjIsIHN0ZXA6IDAuMDUsIGxhYmVsOiBcIkFscGhhIChOaXZlbCk6XCJ9KVxyXG52aWV3b2YgYmV0YSA9IElucHV0cy5yYW5nZShbMCwgMV0sIHt2YWx1ZTogMC4xLCBzdGVwOiAwLjA1LCBsYWJlbDogXCJCZXRhIChUZW5kZW5jaWEpOlwifSlcclxudmlld29mIGdhbW1hID0gSW5wdXRzLnJhbmdlKFswLCAxXSwge3ZhbHVlOiAwLjMsIHN0ZXA6IDAuMDUsIGxhYmVsOiBcIkdhbW1hIChFc3RhY2lvbmFsaWRhZCk6XCJ9KVxyXG52aWV3b2YgcGhpID0gSW5wdXRzLnJhbmdlKFswLjgsIDFdLCB7dmFsdWU6IDAuOTgsIHN0ZXA6IDAuMDEsIGxhYmVsOiBcIlBoaSAoQW1vcnRpZ3VhY2nDs24pOlwifSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcbi8vIDEuIEdlbmVyYWNpw7NuIGRlIGRhdG9zIGNvbiBUZW5kZW5jaWEgKyBFc3RhY2lvbmFsaWRhZCArIFJ1aWRvXHJcbnRzX2NvbXBsZXggPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG4gIGNvbnN0IG0gPSA3OyAvLyBDaWNsbyBzZW1hbmFsXHJcbiAgZm9yIChsZXQgaSA9IDA7IGkgPCA5MDsgaSsrKSB7XHJcbiAgICBjb25zdCBsZXZlbCA9IDEwMDtcclxuICAgIGNvbnN0IHRyZW5kID0gaSAqIDAuODtcclxuICAgIGNvbnN0IHNlYXNvbiA9IE1hdGguc2luKChpIC8gbSkgKiAyICogTWF0aC5QSSkgKiAzNTtcclxuICAgIGNvbnN0IG5vaXNlID0galN0YXQubm9ybWFsLnNhbXBsZSgwLCAxMik7XHJcbiAgICBkYXRhLnB1c2goeyB0OiBpLCB5OiBNYXRoLm1heCgwLCBsZXZlbCArIHRyZW5kICsgc2Vhc29uICsgbm9pc2UpIH0pO1xyXG4gIH1cclxuICByZXR1cm4gZGF0YTtcclxufVxyXG5cclxuLy8gMi4gSW1wbGVtZW50YWNpw7NuIGRlIEhvbHQtV2ludGVycyBBZGl0aXZvXHJcbmh3X2ZvcmVjYXN0ID0ge1xyXG4gIGNvbnN0IG0gPSA3O1xyXG4gIGNvbnN0IGhpc3RvcnkgPSB0c19jb21wbGV4O1xyXG4gIGxldCBMID0gMTAwO1xyXG4gIGxldCBUID0gMC44O1xyXG4gIGxldCBTID0gQXJyYXkobSkuZmlsbCgwKTsgXHJcbiAgXHJcbiAgLy8gSW5pY2lhbGl6YWNpw7NuIGRlIGVzdGFjaW9uYWxlcyAocHJpbWVyIGNpY2xvKVxyXG4gIGZvcihsZXQgaT0wOyBpPG07IGkrKykgU1tpXSA9IGhpc3RvcnlbaV0ueSAtIEw7XHJcbiAgXHJcbiAgY29uc3QgcmVzdWx0ID0gW107XHJcbiAgZm9yIChsZXQgaSA9IDA7IGkgPCBoaXN0b3J5Lmxlbmd0aDsgaSsrKSB7XHJcbiAgICBjb25zdCBwcmV2TCA9IEw7XHJcbiAgICBjb25zdCBzX2lkeCA9IGkgJSBtO1xyXG4gICAgXHJcbiAgICAvLyBFY3VhY2lvbmVzIHJlY3Vyc2l2YXNcclxuICAgIEwgPSBhbHBoYSAqIChoaXN0b3J5W2ldLnkgLSBTW3NfaWR4XSkgKyAoMSAtIGFscGhhKSAqIChwcmV2TCArIHBoaSAqIFQpO1xyXG4gICAgVCA9IGJldGEgKiAoTCAtIHByZXZMKSArICgxIC0gYmV0YSkgKiBwaGkgKiBUO1xyXG4gICAgU1tzX2lkeF0gPSBnYW1tYSAqIChoaXN0b3J5W2ldLnkgLSBMKSArICgxIC0gZ2FtbWEpICogU1tzX2lkeF07XHJcbiAgICBcclxuICAgIC8vIFByb3llY2Npw7NuIHBhcmEgdCsxXHJcbiAgICBjb25zdCBmID0gTCArIHBoaSAqIFQgKyBTWyhpICsgMSkgJSBtXTtcclxuICAgIHJlc3VsdC5wdXNoKGYpO1xyXG4gIH1cclxuICByZXR1cm4gcmVzdWx0O1xyXG59XHJcblxyXG4vLyAzLiBBdWRpdG9yw61hIGRlIE3DqXRyaWNhcyBNdWx0aWRpbWVuc2lvbmFsXHJcbm1ldHJpY3NfaHcgPSB7XHJcbiAgY29uc3QgYWN0dWFscyA9IHRzX2NvbXBsZXgubWFwKGQgPT4gZC55KTtcclxuICBjb25zdCB0b3RhbF9kZW1hbmQgPSBqU3RhdC5zdW0oYWN0dWFscyk7XHJcbiAgY29uc3QgZXJyb3JzID0gYWN0dWFscy5tYXAoKHksIGkpID0+IGh3X2ZvcmVjYXN0W2ldIC0geSk7XHJcbiAgY29uc3QgYWJzX2Vycm9ycyA9IGVycm9ycy5tYXAoZSA9PiBNYXRoLmFicyhlKSk7XHJcbiAgXHJcbiAgY29uc3QgbWFlID0galN0YXQubWVhbihhYnNfZXJyb3JzKTtcclxuICBjb25zdCBiaWFzID0galN0YXQubWVhbihlcnJvcnMpO1xyXG4gIGNvbnN0IHJtc2UgPSBNYXRoLnNxcnQoalN0YXQubWVhbihlcnJvcnMubWFwKGUgPT4gZSplKSkpO1xyXG4gIGNvbnN0IHdhcGUgPSAoalN0YXQuc3VtKGFic19lcnJvcnMpIC8gdG90YWxfZGVtYW5kKSAqIDEwMDtcclxuICBcclxuICAvLyBCZW5jaG1hcmsgTmFpdmUgRXN0YWNpb25hbCAoUy1OYWl2ZSlcclxuICBjb25zdCBzbmFpdmVfZXJyID0gYWN0dWFscy5zbGljZSg3KS5tYXAoKHksIGkpID0+IE1hdGguYWJzKHkgLSBhY3R1YWxzW2ktN10pKTtcclxuICBjb25zdCBtYWVfc25haXZlID0galN0YXQubWVhbihzbmFpdmVfZXJyKTtcclxuICBjb25zdCBmdmEgPSBtYWVfc25haXZlIC0gbWFlO1xyXG5cclxuICByZXR1cm4geyBtYWUsIGJpYXMsIHJtc2UsIHdhcGUsIGZ2YSB9O1xyXG59XHJcblxyXG4vLyA0LiBHcsOhZmljbyBpbnRlcmFjdGl2byBjb24gUGxvdGx5XHJcbntcclxuICBjb25zdCBjb250YWluZXIgPSBodG1sYDxkaXYgc3R5bGU9XCJ3aWR0aDoxMDAlOyBoZWlnaHQ6NDUwcHg7XCI+PC9kaXY+YDtcclxuICBcclxuICBjb25zdCB0cmFjZXMgPSBbXHJcbiAgICB7XHJcbiAgICAgIHg6IHRzX2NvbXBsZXgubWFwKGQgPT4gZC50KSxcclxuICAgICAgeTogdHNfY29tcGxleC5tYXAoZCA9PiBkLnkpLFxyXG4gICAgICBuYW1lOiAnRGVtYW5kYSBSZWFsJyxcclxuICAgICAgdHlwZTogJ3NjYXR0ZXInLFxyXG4gICAgICBtb2RlOiAnbGluZXMrbWFya2VycycsXHJcbiAgICAgIGxpbmU6IHtjb2xvcjogJyM5NGEzYjgnLCB3aWR0aDogMX1cclxuICAgIH0sXHJcbiAgICB7XHJcbiAgICAgIHg6IHRzX2NvbXBsZXgubWFwKGQgPT4gZC50KSxcclxuICAgICAgeTogaHdfZm9yZWNhc3QsXHJcbiAgICAgIG5hbWU6ICdIb2x0LVdpbnRlcnMgKFByb27Ds3N0aWNvKScsXHJcbiAgICAgIHR5cGU6ICdzY2F0dGVyJyxcclxuICAgICAgbW9kZTogJ2xpbmVzJyxcclxuICAgICAgbGluZToge2NvbG9yOiAnIzI1NjNlYicsIHdpZHRoOiAzfVxyXG4gICAgfVxyXG4gIF07XHJcblxyXG4gIGNvbnN0IGxheW91dCA9IHtcclxuICAgIHRpdGxlOiAnU2ltdWxhY2nDs24gZGUgVHJpcGxlIFN1YXZpemFtaWVudG8gRGluw6FtaWNvJyxcclxuICAgIHhheGlzOiB7IHRpdGxlOiAnRMOtYScgfSxcclxuICAgIHlheGlzOiB7IHRpdGxlOiAnRGVtYW5kYSAoVW5pZGFkZXMpJyB9LFxyXG4gICAgdGVtcGxhdGU6ICdwbG90bHlfd2hpdGUnLFxyXG4gICAgaG92ZXJtb2RlOiAneCB1bmlmaWVkJyxcclxuICAgIG1hcmdpbjogeyB0OiA1MCwgYjogNTAsIGw6IDYwLCByOiAzMCB9XHJcbiAgfTtcclxuXHJcbiAgUGxvdGx5Lm5ld1Bsb3QoY29udGFpbmVyLCB0cmFjZXMsIGxheW91dCwge3Jlc3BvbnNpdmU6IHRydWUsIGRpc3BsYXlNb2RlQmFyOiBmYWxzZX0pO1xyXG4gIHJldHVybiBjb250YWluZXI7XHJcbn1cclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdhbHBoYScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdiZXRhJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2dhbW1hJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3BoaScpIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1118,8 +1352,8 @@ window.Quarto = {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./cap-6-suavizamiento-exponencial.html" class="pagination-link" aria-label="6. Suavizando la Curva - La Inteligencia Estadística">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">6. Suavizando la Curva - La Inteligencia Estadística</span></span>
+      <a href="./cap-6-suavizamiento-exponencial.html" class="pagination-link" aria-label="6. Suavizando la Curva: La Inteligencia Estadística">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">6. Suavizando la Curva: La Inteligencia Estadística</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1129,8 +1363,21 @@ window.Quarto = {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Nicolás A. Bravo</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-7-arima-y-alternativas.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Este libro fue creado con <a href="https://quarto.org/">Quarto</a>. Visita mi <a href="https://github.com/nicobravo933-Planner">repositorio GitHub</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-7-arima-y-alternativas.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5. El Pronóstico Ingenuo: Modelos Simples y Benchmarking – Arquitectura de suministros</title>
+<title>5. El Pronóstico Ingenuo y el Benchmarking Sin Mentiras – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-37f97b4dfc99813de07ac4a6dfc6e37d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-1d61feaf5942a89f67c517e5b1b3c91a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -109,34 +109,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
-
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-
-<script src="site_libs/plotly-binding-4.11.0/plotly.js"></script>
-
-<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
-
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-
-<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
-
-<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
-
-<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
-
-<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
-
-<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-
-<script src="site_libs/datatables-binding-0.34.0/datatables.js"></script>
-
-<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-
-<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
-
-<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
-
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -341,7 +315,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-5-pronostico-ingenuo.html">II: Prediciendo el Futuro</a></li><li class="breadcrumb-item"><a href="./cap-5-pronostico-ingenuo.html"><span class="chapter-title">5. El Pronóstico Ingenuo: Modelos Simples y Benchmarking</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-5-pronostico-ingenuo.html">II: Prediciendo el Futuro</a></li><li class="breadcrumb-item"><a href="./cap-5-pronostico-ingenuo.html"><span class="chapter-title">5. El Pronóstico Ingenuo y el Benchmarking Sin Mentiras</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -358,7 +332,7 @@ window.Quarto = {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Arquitectura de suministros</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/nicobravo933-Planner/Practicas_Supply" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -387,7 +361,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></a>
+  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. Auditoría de Datos y Arquitectura de Red</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -418,7 +392,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-5-pronostico-ingenuo.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">5. El Pronóstico Ingenuo: Modelos Simples y Benchmarking</span></a>
+  <a href="./cap-5-pronostico-ingenuo.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">5. El Pronóstico Ingenuo y el Benchmarking Sin Mentiras</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -532,12 +506,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego</span></a>
+  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego: Gestión de Sesgos Humanos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20. El Plan Maestro</span></a>
+  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20. El Plan Maestro (S&amp;OP)</span></a>
   </div>
 </li>
       </ul>
@@ -549,7 +523,9 @@ window.Quarto = {
 </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Creado con <a href="https://quarto.org/">Quarto</a>.</p>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -557,30 +533,37 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#qué-es-un-modelo-simple-en-supply-chain" id="toc-qué-es-un-modelo-simple-en-supply-chain" class="nav-link active" data-scroll-target="#qué-es-un-modelo-simple-en-supply-chain">5.1 ¿Qué es un Modelo Simple en Supply Chain?</a>
+  <li><a href="#por-qué-empezar-con-lo-simple-el-principio-de-la-parsimonia" id="toc-por-qué-empezar-con-lo-simple-el-principio-de-la-parsimonia" class="nav-link active" data-scroll-target="#por-qué-empezar-con-lo-simple-el-principio-de-la-parsimonia">5.1 ¿Por qué empezar con lo simple? El principio de la Parsimonia</a>
   <ul class="collapse">
-  <li><a href="#qué-es-el-benchmarking-y-para-qué-sirve" id="toc-qué-es-el-benchmarking-y-para-qué-sirve" class="nav-link" data-scroll-target="#qué-es-el-benchmarking-y-para-qué-sirve">5.1.1 ¿Qué es el Benchmarking y para qué sirve?</a></li>
-  <li><a href="#el-concepto-de-benchmarking-y-el-valor-añadido-fva" id="toc-el-concepto-de-benchmarking-y-el-valor-añadido-fva" class="nav-link" data-scroll-target="#el-concepto-de-benchmarking-y-el-valor-añadido-fva">5.1.2 El Concepto de Benchmarking y el Valor Añadido (FVA)</a></li>
+  <li><a href="#el-valor-del-fva-forecast-value-added" id="toc-el-valor-del-fva-forecast-value-added" class="nav-link" data-scroll-target="#el-valor-del-fva-forecast-value-added">El valor del FVA (Forecast Value Added)</a></li>
   </ul></li>
-  <li><a href="#el-menú-de-modelos-simples-anatomía-y-dinámica" id="toc-el-menú-de-modelos-simples-anatomía-y-dinámica" class="nav-link" data-scroll-target="#el-menú-de-modelos-simples-anatomía-y-dinámica">5.2 El Menú de Modelos Simples: Anatomía y Dinámica</a>
+  <li><a href="#el-arsenal-de-la-simplicidad-modelos-de-referencia" id="toc-el-arsenal-de-la-simplicidad-modelos-de-referencia" class="nav-link" data-scroll-target="#el-arsenal-de-la-simplicidad-modelos-de-referencia">5.2 El Arsenal de la Simplicidad: Modelos de Referencia</a></li>
+  <li><a href="#el-panel-de-control-las-métricas-de-auditoría-multidimensional" id="toc-el-panel-de-control-las-métricas-de-auditoría-multidimensional" class="nav-link" data-scroll-target="#el-panel-de-control-las-métricas-de-auditoría-multidimensional">5.3 El Panel de Control: Las Métricas de Auditoría Multidimensional</a>
   <ul class="collapse">
-  <li><a href="#el-modelo-naïve-1-el-espejo-inmediato" id="toc-el-modelo-naïve-1-el-espejo-inmediato" class="nav-link" data-scroll-target="#el-modelo-naïve-1-el-espejo-inmediato">5.2.1 El Modelo Naïve 1: El Espejo Inmediato</a></li>
-  <li><a href="#seasonal-naïve-s-naive-el-retrovisor-anual" id="toc-seasonal-naïve-s-naive-el-retrovisor-anual" class="nav-link" data-scroll-target="#seasonal-naïve-s-naive-el-retrovisor-anual">5.2.2 Seasonal Naïve (S-Naive): El Retrovisor Anual</a></li>
-  <li><a href="#promedio-móvil-simple-sma" id="toc-promedio-móvil-simple-sma" class="nav-link" data-scroll-target="#promedio-móvil-simple-sma">5.2.3 Promedio Móvil Simple (SMA)</a></li>
+  <li><a href="#a.-mae-magnitud-qué-tan-lejos-estamos" id="toc-a.-mae-magnitud-qué-tan-lejos-estamos" class="nav-link" data-scroll-target="#a.-mae-magnitud-qué-tan-lejos-estamos">A. MAE (Magnitud): ¿Qué tan lejos estamos?</a></li>
+  <li><a href="#b.-bias-puntería-hacia-dónde-nos-equivocamos" id="toc-b.-bias-puntería-hacia-dónde-nos-equivocamos" class="nav-link" data-scroll-target="#b.-bias-puntería-hacia-dónde-nos-equivocamos">B. BIAS (Puntería): ¿Hacia dónde nos equivocamos?</a></li>
+  <li><a href="#c.-rmse-sensibilidad-a-desvíos-extremos" id="toc-c.-rmse-sensibilidad-a-desvíos-extremos" class="nav-link" data-scroll-target="#c.-rmse-sensibilidad-a-desvíos-extremos">C. RMSE (Sensibilidad a Desvíos Extremos)</a></li>
+  <li><a href="#d.-wape-el-error-ponderado-el-juez-de-negocio" id="toc-d.-wape-el-error-ponderado-el-juez-de-negocio" class="nav-link" data-scroll-target="#d.-wape-el-error-ponderado-el-juez-de-negocio">D. WAPE (El Error Ponderado): El Juez de Negocio</a></li>
+  <li><a href="#e.-mase-el-juez-supremo-valor-añadido" id="toc-e.-mase-el-juez-supremo-valor-añadido" class="nav-link" data-scroll-target="#e.-mase-el-juez-supremo-valor-añadido">E. MASE (El Juez Supremo): Valor Añadido</a></li>
   </ul></li>
-  <li><a href="#análisis-de-benchmarking-la-tabla-de-resultados" id="toc-análisis-de-benchmarking-la-tabla-de-resultados" class="nav-link" data-scroll-target="#análisis-de-benchmarking-la-tabla-de-resultados">5.3 Análisis de Benchmarking: La Tabla de Resultados</a></li>
-  <li><a href="#implementación-en-r-ejecutando-el-benchmark" id="toc-implementación-en-r-ejecutando-el-benchmark" class="nav-link" data-scroll-target="#implementación-en-r-ejecutando-el-benchmark">5.6 Implementación en R: Ejecutando el Benchmark</a></li>
-  <li><a href="#la-navaja-de-ockham-y-el-roi-de-la-complejidad" id="toc-la-navaja-de-ockham-y-el-roi-de-la-complejidad" class="nav-link" data-scroll-target="#la-navaja-de-ockham-y-el-roi-de-la-complejidad">5.7 La Navaja de Ockham y el ROI de la Complejidad</a></li>
+  <li><a href="#simulador-laboratorio-de-benchmarking-dinámico-panel-de-control-total" id="toc-simulador-laboratorio-de-benchmarking-dinámico-panel-de-control-total" class="nav-link" data-scroll-target="#simulador-laboratorio-de-benchmarking-dinámico-panel-de-control-total">5.4 Simulador: Laboratorio de Benchmarking Dinámico (Panel de Control Total)</a></li>
+  <li><a href="#análisis-de-benchmarking-la-complejidad-justifica-la-inversión" id="toc-análisis-de-benchmarking-la-complejidad-justifica-la-inversión" class="nav-link" data-scroll-target="#análisis-de-benchmarking-la-complejidad-justifica-la-inversión">5.5 Análisis de Benchmarking: ¿La complejidad justifica la inversión?</a>
+  <ul class="collapse">
+  <li><a href="#el-valor-del-fva-verde-vs.-rojo" id="toc-el-valor-del-fva-verde-vs.-rojo" class="nav-link" data-scroll-target="#el-valor-del-fva-verde-vs.-rojo">El Valor del FVA (Verde vs.&nbsp;Rojo)</a></li>
+  <li><a href="#la-patología-del-lag" id="toc-la-patología-del-lag" class="nav-link" data-scroll-target="#la-patología-del-lag">La Patología del Lag</a></li>
+  <li><a href="#el-veredicto-de-ockham" id="toc-el-veredicto-de-ockham" class="nav-link" data-scroll-target="#el-veredicto-de-ockham">El Veredicto de Ockham</a></li>
+  </ul></li>
+  <li><a href="#checklist-de-cierre" id="toc-checklist-de-cierre" class="nav-link" data-scroll-target="#checklist-de-cierre">Checklist de Cierre</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-5-pronostico-ingenuo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-5-pronostico-ingenuo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-5-pronostico-ingenuo.html">II: Prediciendo el Futuro</a></li><li class="breadcrumb-item"><a href="./cap-5-pronostico-ingenuo.html"><span class="chapter-title">5. El Pronóstico Ingenuo: Modelos Simples y Benchmarking</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-5-pronostico-ingenuo.html">II: Prediciendo el Futuro</a></li><li class="breadcrumb-item"><a href="./cap-5-pronostico-ingenuo.html"><span class="chapter-title">5. El Pronóstico Ingenuo y el Benchmarking Sin Mentiras</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">5. El Pronóstico Ingenuo: Modelos Simples y Benchmarking</span></h1>
+<h1 class="title"><span class="chapter-title">5. El Pronóstico Ingenuo y el Benchmarking Sin Mentiras</span></h1>
 </div>
 
 
@@ -597,390 +580,340 @@ window.Quarto = {
 </header>
 
 
-<p>¡Bienvenido a la segunda etapa del viaje! Ya pasamos por el quirófano en la Parte I: limpiamos los datos, reconstruimos la demanda, segmentamos el portafolio y medimos el error actual. Ahora que sabemos exactamente qué tan mal (o bien) estamos, es hora de dejar de mirar el espejo retrovisor para empezar a proyectar el futuro con una base sólida y científica.</p>
-<p>En este capítulo vamos a explorar el mundo de los <strong>Modelos de Referencia (Benchmarks)</strong>. Te voy avisando: en la era actual de la “IA-manía”, existe una tentación casi irresistible de saltar directamente a modelos de Deep Learning para impresionar a la gerencia. Sin embargo, un buen ingeniero siempre empieza con la <strong>Navaja de Ockham</strong>: la solución más simple suele ser la correcta o, al menos, es la que te servirá de brújula para saber si la compleja realmente justifica su existencia.</p>
-<section id="qué-es-un-modelo-simple-en-supply-chain" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-un-modelo-simple-en-supply-chain">5.1 ¿Qué es un Modelo Simple en Supply Chain?</h2>
-<p>Un modelo simple (también llamado heurístico) es aquel que no requiere optimización de parámetros complejos ni entrenamiento intensivo. Se basa en reglas lógicas directas sobre el historial transaccional de la <strong>Demanda Reconstruida</strong> (Cap. 2). Su función no es solo “pronosticar”, sino establecer el <strong>piso de rendimiento (Baseline)</strong> que cualquier modelo avanzado deberá superar obligatoriamente para ser considerado una inversión rentable.</p>
-<section id="qué-es-el-benchmarking-y-para-qué-sirve" class="level3">
-<h3 class="anchored" data-anchor-id="qué-es-el-benchmarking-y-para-qué-sirve">5.1.1 ¿Qué es el Benchmarking y para qué sirve?</h3>
-<p>El <strong>Benchmarking</strong> es el proceso de comparar el desempeño de tu proceso actual (o de un nuevo algoritmo sofisticado) contra un estándar de referencia básico.</p>
-<p>En Supply Chain, nos sirve para:</p>
+<p>En los capítulos anteriores, aprendimos a limpiar nuestra base de datos y a entender la estructura de la demanda. Ahora, entramos en la <strong>Parte II: Prediciendo el Futuro</strong>. Este es el momento crítico donde el análisis retrospectivo deja de ser un ejercicio de archivo y se convierte en prospección estratégica.</p>
+<p>Antes de lanzar algoritmos de Machine Learning, redes neuronales o modelos econométricos de alta complejidad, todo Arquitecto de Suministros debe responder a una pregunta humilde pero letal: <strong>¿Puede tu modelo ganarle a la simplicidad absoluta?</strong> En este capítulo, aprenderemos a construir el “piso” de nuestra precisión: los Modelos Ingenuos y el arsenal de métricas que realmente dicen la verdad en el mundo de los negocios.</p>
+<section id="por-qué-empezar-con-lo-simple-el-principio-de-la-parsimonia" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-empezar-con-lo-simple-el-principio-de-la-parsimonia">5.1 ¿Por qué empezar con lo simple? El principio de la Parsimonia</h2>
+<p>En ciencia de datos, existe una tentación casi irresistible de usar un “cañón para matar una mosca”. El pronóstico ingenuo (<em>Naive Forecast</em>) no se llama así porque sea “tonto”, sino porque no asume ninguna estructura compleja en los datos más allá de la inercia inmediata. Sirve como el <strong>punto de referencia (Benchmark)</strong> fundamental.</p>
+<section id="el-valor-del-fva-forecast-value-added" class="level3">
+<h3 class="anchored" data-anchor-id="el-valor-del-fva-forecast-value-added">El valor del FVA (Forecast Value Added)</h3>
+<p>Si un modelo complejo de IA no logra mejorar la precisión de un modelo ingenuo, entonces el modelo complejo está <strong>destruyendo valor</strong>. En términos financieros, el costo de mantener esa infraestructura de datos, el tiempo de los analistas y el poder de cómputo supera el ahorro generado por la precisión extra. El Arquitecto utiliza la parsimonia como un filtro de eficiencia: si la simplicidad funciona, la complejidad es un desperdicio.</p>
+</section>
+</section>
+<section id="el-arsenal-de-la-simplicidad-modelos-de-referencia" class="level2">
+<h2 class="anchored" data-anchor-id="el-arsenal-de-la-simplicidad-modelos-de-referencia">5.2 El Arsenal de la Simplicidad: Modelos de Referencia</h2>
 <ol type="1">
-<li><p><strong>Justificar la Inversión:</strong> Si una licencia de software de 50,000 USD predice igual que un promedio móvil de Excel, el software no sirve.</p></li>
-<li><p><strong>Detectar Ruido:</strong> Si los modelos complejos fallan más que los simples, es señal de que tus datos tienen demasiado ruido o eventos únicos que la IA está tratando de “aprender” erróneamente.</p></li>
-<li><p><strong>Comunicar Resultados:</strong> Es mucho más fácil decir “Somos un 10% mejores que el promedio del año pasado” que hablar de “Gradientes Descendentes”.</p></li>
+<li><p><strong>Naive (</strong><span class="math inline">\(y_t\)</span><strong>):</strong> La predicción para mañana es lo que vendí hoy. Es el “rey” para productos de alta rotación sin tendencia clara o en mercados financieros donde el precio de hoy es la mejor estimación del precio de mañana. Representa el escenario de “continuidad absoluta”.</p></li>
+<li><p><strong>S-Naive (Seasonal Naive):</strong> La predicción para este periodo es igual al mismo periodo del ciclo anterior (ej. este lunes es igual al lunes pasado, o este diciembre es igual al diciembre anterior). Es vital para el retail, donde los patrones estacionales dominan la demanda por encima de cualquier tendencia.</p></li>
+<li><p><strong>Drift (Deriva):</strong> Es una línea recta que asume que el cambio promedio observado en el pasado continuará de forma constante en el futuro. Es la forma más pura de proyectar una tendencia sin necesidad de regresiones lineales complejas.</p></li>
 </ol>
 </section>
-<section id="el-concepto-de-benchmarking-y-el-valor-añadido-fva" class="level3">
-<h3 class="anchored" data-anchor-id="el-concepto-de-benchmarking-y-el-valor-añadido-fva">5.1.2 El Concepto de Benchmarking y el Valor Añadido (FVA)</h3>
-<p>En Supply Chain, el <strong>Benchmarking</strong> es el acto de comparar tu pronóstico contra un estándar mínimo de esfuerzo cero. Aquí introducimos el concepto de <strong>Forecast Value Added (FVA)</strong>, que será tu principal herramienta de auditoría:</p>
+<section id="el-panel-de-control-las-métricas-de-auditoría-multidimensional" class="level2">
+<h2 class="anchored" data-anchor-id="el-panel-de-control-las-métricas-de-auditoría-multidimensional">5.3 El Panel de Control: Las Métricas de Auditoría Multidimensional</h2>
+<p>Un error común en la planificación es reportar solo una métrica (como el MAPE). Como arquitectos, necesitamos una visión 360° del error para entender no solo cuánto nos equivocamos, sino por qué y qué impacto tiene en la operación.</p>
+<section id="a.-mae-magnitud-qué-tan-lejos-estamos" class="level3">
+<h3 class="anchored" data-anchor-id="a.-mae-magnitud-qué-tan-lejos-estamos">A. MAE (Magnitud): ¿Qué tan lejos estamos?</h3>
+<p>El <strong>Mean Absolute Error</strong> mide el tamaño promedio del error en unidades físicas. Es la métrica de comunicación por excelencia hacia el almacén: “En promedio, fallamos por 50 cajas”. Es lineal y fácil de digerir, permitiendo dimensionar el espacio físico necesario para el stock de maniobra.</p>
+</section>
+<section id="b.-bias-puntería-hacia-dónde-nos-equivocamos" class="level3">
+<h3 class="anchored" data-anchor-id="b.-bias-puntería-hacia-dónde-nos-equivocamos">B. BIAS (Puntería): ¿Hacia dónde nos equivocamos?</h3>
+<p>Indica si el modelo tiende a sobre-estimar o sub-estimar sistemáticamente. Es la métrica de la <strong>estrategia financiera</strong>.</p>
 <ul>
-<li><strong>FVA Positivo:</strong> Si tu modelo avanzado reduce el error respecto al modelo simple, estás creando valor real. Esa mejora se traduce directamente en ahorro de inventario o ventas ganadas.</li>
-<li><strong>FVA Negativo:</strong> Si tu modelo complejo rinde menos que una fórmula simple, estás “destruyendo valor”. Estás introduciendo ruido y costos de mantenimiento sin retorno.</li>
+<li><p><strong>BIAS (+):</strong> Estamos inflando el inventario. El dinero se queda atrapado en cajas que no se mueven, aumentando el riesgo de obsolescencia.</p></li>
+<li><p><strong>BIAS (-):</strong> Estamos provocando quiebres de stock. El cliente llega y el estante está vacío, destruyendo la lealtad de marca y el ingreso.</p></li>
 </ul>
-<p><span class="math display">\[
-\large FVA \% = \frac{Error_{Benchmark} - Error_{Modelo}}{Error_{Benchmark}} \times 100
-\]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>La Dimensión Política del FVA
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Presentar un FVA negativo es doloroso pero necesario. Indica que el proceso humano de planificación está agregando sesgos o que el modelo está “sobre-entrenado”. Un FVA positivo sólido es la única forma objetiva de justificar la inversión en tecnología ante un Director Financiero.</p>
-</div>
-</div>
+</section>
+<section id="c.-rmse-sensibilidad-a-desvíos-extremos" class="level3">
+<h3 class="anchored" data-anchor-id="c.-rmse-sensibilidad-a-desvíos-extremos">C. RMSE (Sensibilidad a Desvíos Extremos)</h3>
+<p>Al elevar los errores al cuadrado antes de promediarlos, el RMSE penaliza severamente los errores grandes.</p>
+<ul>
+<li><strong>Importancia:</strong> En logística, equivocarse diez veces por 1 unidad es manejable; equivocarse una vez por 10 unidades es un desastre que colapsa el transporte y la recepción. El RMSE te avisa si tu modelo es propenso a estos “colapsos”.</li>
+</ul>
+</section>
+<section id="d.-wape-el-error-ponderado-el-juez-de-negocio" class="level3">
+<h3 class="anchored" data-anchor-id="d.-wape-el-error-ponderado-el-juez-de-negocio">D. WAPE (El Error Ponderado): El Juez de Negocio</h3>
+<p>A diferencia del MAPE, el WAPE divide el error total acumulado entre la demanda total real. Es la métrica de “piso de venta”: nos dice cuánto error estamos cometiendo respecto al volumen total que mueve la compañía, evitando la distorsión de los productos con ventas cercanas a cero.</p>
+</section>
+<section id="e.-mase-el-juez-supremo-valor-añadido" class="level3">
+<h3 class="anchored" data-anchor-id="e.-mase-el-juez-supremo-valor-añadido">E. MASE (El Juez Supremo): Valor Añadido</h3>
+<p>El <strong>Mean Absolute Scaled Error</strong> compara el error de tu modelo actual contra el error que hubiera tenido un modelo Naive.</p>
+<ul>
+<li><p><strong>MASE &gt; 1.0:</strong> Tu modelo es puro ruido. Estás invirtiendo tiempo en algo que es peor que no hacer nada.</p></li>
+<li><p><strong>MASE &lt; 1.0:</strong> Tu modelo está añadiendo inteligencia y valor real a la red.</p></li>
+</ul>
 </section>
 </section>
-<section id="el-menú-de-modelos-simples-anatomía-y-dinámica" class="level2">
-<h2 class="anchored" data-anchor-id="el-menú-de-modelos-simples-anatomía-y-dinámica">5.2 El Menú de Modelos Simples: Anatomía y Dinámica</h2>
-<p>Vamos a desglosar las herramientas fundamentales y qué “foto” de la realidad captura cada una.</p>
-<section id="el-modelo-naïve-1-el-espejo-inmediato" class="level3">
-<h3 class="anchored" data-anchor-id="el-modelo-naïve-1-el-espejo-inmediato">5.2.1 El Modelo Naïve 1: El Espejo Inmediato</h3>
-<p><strong>El Concepto:</strong> Es el nivel más básico de predicción. Asume que el mundo no cambiará y que mañana será exactamente igual a hoy.</p>
-<p><span class="math display">\[
-\large \hat{y}_{t+1} = y_t
-\]</span></p>
+<section id="simulador-laboratorio-de-benchmarking-dinámico-panel-de-control-total" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-laboratorio-de-benchmarking-dinámico-panel-de-control-total">5.4 Simulador: Laboratorio de Benchmarking Dinámico (Panel de Control Total)</h2>
+<p>Ajusta los parámetros de <strong>Tendencia</strong>, <strong>Estacionalidad</strong> y <strong>Ruido</strong>. Observa la tabla inferior: es el tablero de mando que todo Demand Planner debería auditar antes de firmar un pronóstico y enviarlo a producción.</p>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="65" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 64;"><span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>jStat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>viewof n_days <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">30</span><span class="op">,</span> <span class="dv">200</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Días de Historia:"</span>})</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>viewof volatility <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">5</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Ruido (Variabilidad):"</span>})</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>viewof trend_slope <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.6</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Tendencia (Pendiente):"</span>})</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>viewof season_strength <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">80</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Fuerza Estacional:"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="79" data-source-offset="-61"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 78;"><span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>time_series <span class="op">=</span> {</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> data <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> n_days<span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> base <span class="op">=</span> <span class="dv">100</span> <span class="op">+</span> (i <span class="op">*</span> trend_slope)<span class="op">;</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> season <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>((i <span class="op">/</span> <span class="dv">7</span>) <span class="op">*</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>) <span class="op">*</span> season_strength<span class="op">;</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> noise <span class="op">=</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">sample</span>(<span class="dv">0</span><span class="op">,</span> volatility)<span class="op">;</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    data<span class="op">.</span><span class="fu">push</span>({ <span class="dt">t</span><span class="op">:</span> i<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">0</span><span class="op">,</span> base <span class="op">+</span> season <span class="op">+</span> noise) })<span class="op">;</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data<span class="op">;</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="co">// 2. Pronósticos y Auditoría de Errores Multidimensional</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> {</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> test_size <span class="op">=</span> <span class="dv">14</span><span class="op">;</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> history <span class="op">=</span> time_series<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="op">-</span>test_size)<span class="op">;</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> actuals <span class="op">=</span> time_series<span class="op">.</span><span class="fu">slice</span>(<span class="op">-</span>test_size)<span class="op">;</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> last_val <span class="op">=</span> history[history<span class="op">.</span><span class="at">length</span> <span class="op">-</span> <span class="dv">1</span>]<span class="op">.</span><span class="at">y</span><span class="op">;</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> total_demand <span class="op">=</span> jStat<span class="op">.</span><span class="fu">sum</span>(actuals<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>))<span class="op">;</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Cálculo de Baseline Naive para el MASE y FVA</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> naive_diffs <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(<span class="kw">let</span> i<span class="op">=</span><span class="dv">1</span><span class="op">;</span> i<span class="op">&lt;</span>history<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>    naive_diffs<span class="op">.</span><span class="fu">push</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(history[i]<span class="op">.</span><span class="at">y</span> <span class="op">-</span> history[i<span class="op">-</span><span class="dv">1</span>]<span class="op">.</span><span class="at">y</span>))<span class="op">;</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mean_naive_err <span class="op">=</span> jStat<span class="op">.</span><span class="fu">mean</span>(naive_diffs)<span class="op">;</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Error del Naive en el periodo de test para el FVA</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> naive_test_errors <span class="op">=</span> actuals<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(d<span class="op">.</span><span class="at">y</span> <span class="op">-</span> last_val))<span class="op">;</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> naive_wape <span class="op">=</span> (jStat<span class="op">.</span><span class="fu">sum</span>(naive_test_errors) <span class="op">/</span> total_demand) <span class="op">*</span> <span class="dv">100</span><span class="op">;</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> models <span class="op">=</span> [</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">name</span><span class="op">:</span> <span class="st">"Naive"</span><span class="op">,</span> <span class="dt">forecast</span><span class="op">:</span> actuals<span class="op">.</span><span class="fu">map</span>(() <span class="kw">=&gt;</span> last_val) }<span class="op">,</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">name</span><span class="op">:</span> <span class="st">"S-Naive"</span><span class="op">,</span> <span class="dt">forecast</span><span class="op">:</span> actuals<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i) <span class="kw">=&gt;</span> history[history<span class="op">.</span><span class="at">length</span> <span class="op">-</span> <span class="dv">7</span> <span class="op">+</span> (i <span class="op">%</span> <span class="dv">7</span>)]<span class="op">.</span><span class="at">y</span>) }<span class="op">,</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">name</span><span class="op">:</span> <span class="st">"Drift"</span><span class="op">,</span> <span class="dt">forecast</span><span class="op">:</span> actuals<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i) <span class="kw">=&gt;</span> last_val <span class="op">+</span> (i<span class="op">+</span><span class="dv">1</span>) <span class="op">*</span> (last_val <span class="op">-</span> history[<span class="dv">0</span>]<span class="op">.</span><span class="at">y</span>)<span class="op">/</span>(history<span class="op">.</span><span class="at">length</span><span class="op">-</span><span class="dv">1</span>)) }</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> processed <span class="op">=</span> models<span class="op">.</span><span class="fu">map</span>(m <span class="kw">=&gt;</span> {</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> raw_errors <span class="op">=</span> actuals<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i) <span class="kw">=&gt;</span> m<span class="op">.</span><span class="at">forecast</span>[i] <span class="op">-</span> d<span class="op">.</span><span class="at">y</span>)<span class="op">;</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> abs_errors <span class="op">=</span> raw_errors<span class="op">.</span><span class="fu">map</span>(e <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(e))<span class="op">;</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> squared_errors <span class="op">=</span> raw_errors<span class="op">.</span><span class="fu">map</span>(e <span class="kw">=&gt;</span> e <span class="op">*</span> e)<span class="op">;</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> mae <span class="op">=</span> jStat<span class="op">.</span><span class="fu">mean</span>(abs_errors)<span class="op">;</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> bias <span class="op">=</span> jStat<span class="op">.</span><span class="fu">mean</span>(raw_errors)<span class="op">;</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> rmse <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(jStat<span class="op">.</span><span class="fu">mean</span>(squared_errors))<span class="op">;</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> wape <span class="op">=</span> (jStat<span class="op">.</span><span class="fu">sum</span>(abs_errors) <span class="op">/</span> total_demand) <span class="op">*</span> <span class="dv">100</span><span class="op">;</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> mase <span class="op">=</span> mae <span class="op">/</span> mean_naive_err<span class="op">;</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>    <span class="co">// FVA en puntos porcentuales respecto al Naive</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> fva <span class="op">=</span> naive_wape <span class="op">-</span> wape<span class="op">;</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> { </span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Modelo"</span><span class="op">:</span> m<span class="op">.</span><span class="at">name</span><span class="op">,</span> </span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>      <span class="st">"MAE"</span><span class="op">:</span> mae<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="op">,</span> </span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>      <span class="st">"BIAS"</span><span class="op">:</span> bias<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="op">,</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>      <span class="st">"RMSE"</span><span class="op">:</span> rmse<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="op">,</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>      <span class="st">"WAPE (%)"</span><span class="op">:</span> wape<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>) <span class="op">+</span> <span class="st">"%"</span><span class="op">,</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>      <span class="st">"MASE"</span><span class="op">:</span> mase<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">3</span>)<span class="op">,</span></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>      <span class="st">"FVA (pts)"</span><span class="op">:</span> m<span class="op">.</span><span class="at">name</span> <span class="op">===</span> <span class="st">"Naive"</span> <span class="op">?</span> <span class="st">"0.0"</span> <span class="op">:</span> fva<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="op">,</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Impacto"</span><span class="op">:</span> bias <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">"⚠️ Sobre-stock"</span> <span class="op">:</span> <span class="st">"🔴 Quiebres"</span><span class="op">,</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>      <span class="dt">forecast</span><span class="op">:</span> m<span class="op">.</span><span class="at">forecast</span><span class="op">,</span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>      <span class="dt">score</span><span class="op">:</span> mae<span class="op">,</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fva_val</span><span class="op">:</span> fva</span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>    }<span class="op">;</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> best_mae <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="op">...</span>processed<span class="op">.</span><span class="fu">map</span>(p <span class="kw">=&gt;</span> p<span class="op">.</span><span class="at">score</span>))<span class="op">;</span></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> processed<span class="op">.</span><span class="fu">map</span>(p <span class="kw">=&gt;</span> ({</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>p<span class="op">,</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Estado"</span><span class="op">:</span> p<span class="op">.</span><span class="at">score</span> <span class="op">===</span> best_mae <span class="op">?</span> <span class="st">"🏆 GANADOR"</span> <span class="op">:</span> (p<span class="op">.</span><span class="at">fva_val</span> <span class="op">&lt;</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> p<span class="op">.</span><span class="at">Modelo</span> <span class="op">!==</span> <span class="st">"Naive"</span> <span class="op">?</span> <span class="st">"⛔ Destruye Valor"</span> <span class="op">:</span> <span class="st">"---"</span>)</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>  }))<span class="op">;</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a><span class="co">// 3. Visualización con Plotly</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>chartBench <span class="op">=</span> {</span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:420px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> actuals <span class="op">=</span> time_series<span class="op">.</span><span class="fu">slice</span>(<span class="op">-</span><span class="dv">14</span>)<span class="op">;</span></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">x</span><span class="op">:</span> time_series<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">t</span>)<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> time_series<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)<span class="op">,</span> <span class="dt">name</span><span class="op">:</span> <span class="st">'Realidad Histórica'</span><span class="op">,</span> <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#475569'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">3</span>} }<span class="op">,</span></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>results<span class="op">.</span><span class="fu">map</span>(r <span class="kw">=&gt;</span> ({</span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> actuals<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">t</span>)<span class="op">,</span></span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> r<span class="op">.</span><span class="at">forecast</span><span class="op">,</span></span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> r[<span class="st">"Modelo"</span>]<span class="op">,</span></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">dash</span><span class="op">:</span> <span class="st">'dash'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">2</span>}</span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>    }))</span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layout <span class="op">=</span> {</span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'Benchmarking de Modelos Ingenuos'</span><span class="op">,</span></span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span> </span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>    <span class="dt">margin</span><span class="op">:</span> {<span class="dt">t</span><span class="op">:</span><span class="dv">50</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span><span class="dv">50</span><span class="op">,</span> <span class="dt">l</span><span class="op">:</span><span class="dv">50</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span><span class="dv">30</span>}<span class="op">,</span></span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>    <span class="dt">hovermode</span><span class="op">:</span> <span class="st">'x unified'</span><span class="op">,</span></span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> {<span class="dt">orientation</span><span class="op">:</span> <span class="st">'h'</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="op">-</span><span class="fl">0.2</span>}<span class="op">,</span></span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>    <span class="dt">xaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Tiempo (Días)'</span> }<span class="op">,</span></span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>    <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Demanda (Unidades)'</span> }</span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> layout<span class="op">,</span> {<span class="dt">responsive</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">displayModeBar</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">;</span></span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a><span class="co">// 4. Tabla de Resultados Auditados con FVA</span></span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(results<span class="op">.</span><span class="fu">map</span>(({forecast<span class="op">,</span> score<span class="op">,</span> fva_val<span class="op">,</span> <span class="op">...</span>rest}) <span class="kw">=&gt;</span> rest))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Implicación para el Ingeniero
+<span class="screen-reader-only">Note</span>Guía de Supervivencia de Métricas
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Este modelo es el benchmark por excelencia. Si tu equipo de planificación manual no logra vencer al Naïve 1, significa que el juicio humano está “ensuciando” el pronóstico en lugar de mejorarlo.</p>
-</div>
-</div>
-</section>
-<section id="seasonal-naïve-s-naive-el-retrovisor-anual" class="level3">
-<h3 class="anchored" data-anchor-id="seasonal-naïve-s-naive-el-retrovisor-anual">5.2.2 Seasonal Naïve (S-Naive): El Retrovisor Anual</h3>
-<p><strong>El Concepto:</strong> Ideal para productos con estacionalidad clara. Asume que el comportamiento de “este diciembre” será igual al de “diciembre pasado”.</p>
-<p><span class="math display">\[
-\large \hat{y}_{t+1} = y_{t+1-s}
-\]</span></p>
-<p>Donde <span class="math inline">\(s\)</span> es el ciclo (ej. 12 meses).</p>
-</section>
-<section id="promedio-móvil-simple-sma" class="level3">
-<h3 class="anchored" data-anchor-id="promedio-móvil-simple-sma">5.2.3 Promedio Móvil Simple (SMA)</h3>
-<p><strong>El Concepto:</strong> El Naïve es muy reactivo. El <strong>SMA</strong> suaviza la serie para encontrar la tendencia real eliminando los picos fortuitos.</p>
-<p><span class="math display">\[
-\large SMA_n = \frac{1}{n} \sum_{i=1}^n y_{t-i+1}
-\]</span></p>
-</section>
-</section>
-<section id="análisis-de-benchmarking-la-tabla-de-resultados" class="level2">
-<h2 class="anchored" data-anchor-id="análisis-de-benchmarking-la-tabla-de-resultados">5.3 Análisis de Benchmarking: La Tabla de Resultados</h2>
-<p>Para que el Benchmarking sea útil, debemos presentar los resultados comparados. Aquí es donde introducimos el <strong>Forecast Value Added (FVA)</strong>.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Modelo</th>
-<th style="text-align: center;">Error (MAE)</th>
-<th style="text-align: center;">Error (RMSE)</th>
-<th style="text-align: center;">FVA (vs Naïve)</th>
-<th style="text-align: center;">¿Qué nos dice?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><strong>Naïve 1 (Baseline)</strong></td>
-<td style="text-align: center;">15.2</td>
-<td style="text-align: center;">20.1</td>
-<td style="text-align: center;">0.0%</td>
-<td style="text-align: center;">Es nuestro punto de partida.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>S-Naïve</strong></td>
-<td style="text-align: center;">12.1</td>
-<td style="text-align: center;">16.5</td>
-<td style="text-align: center;"><strong>+20.4%</strong></td>
-<td style="text-align: center;">Hay estacionalidad; este modelo aporta valor.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>Promedio Móvil (k=3)</strong></td>
-<td style="text-align: center;">14.8</td>
-<td style="text-align: center;">19.2</td>
-<td style="text-align: center;">+2.6%</td>
-<td style="text-align: center;">Aporta poco valor frente al Naïve.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>Juicio Humano (Actual)</strong></td>
-<td style="text-align: center;">18.5</td>
-<td style="text-align: center;">24.3</td>
-<td style="text-align: center;"><strong>-21.7%</strong></td>
-<td style="text-align: center;">El humano está empeorando el dato. <strong>Peligro.</strong></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="implementación-en-r-ejecutando-el-benchmark" class="level2">
-<h2 class="anchored" data-anchor-id="implementación-en-r-ejecutando-el-benchmark">5.6 Implementación en R: Ejecutando el Benchmark</h2>
-<p>En este bloque vamos a generar una demanda real, aplicar los modelos ingenuos y calcular automáticamente quién gana el “combate” de precisión.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(zoo)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. GENERACIÓN Y PREPARACIÓN DE DATOS (Basado en tu lógica)</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>n_meses <span class="ot">&lt;-</span> <span class="dv">36</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>patron_estacional <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">45</span>, <span class="dv">60</span>, <span class="dv">85</span>, <span class="dv">95</span>, <span class="dv">80</span>, <span class="dv">50</span>, <span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">20</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df_modelos <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">mes =</span> <span class="dv">1</span><span class="sc">:</span>n_meses,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">tendencia =</span> mes <span class="sc">*</span> <span class="fl">0.8</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">estacionalidad =</span> <span class="fu">rep</span>(patron_estacional, <span class="at">length.out =</span> n_meses),</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">ruido =</span> <span class="fu">rnorm</span>(n_meses, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">7</span>),</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">actual =</span> <span class="fu">round</span>(<span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">20</span> <span class="sc">+</span> tendencia <span class="sc">+</span> estacionalidad <span class="sc">+</span> ruido))</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo de modelos (Asegurando el desfase para que sean pronósticos t+1)</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>ventana_sma <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>df_modelos <span class="ot">&lt;-</span> df_modelos <span class="sc">%&gt;%</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">naive =</span> <span class="fu">lag</span>(actual, <span class="dv">1</span>),</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">snaive =</span> <span class="fu">lag</span>(actual, <span class="dv">12</span>),</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">sma =</span> <span class="fu">rollmean</span>(actual, <span class="at">k =</span> ventana_sma, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> <span class="st">"right"</span>) <span class="sc">%&gt;%</span> <span class="fu">lag</span>(<span class="dv">1</span>)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. CREACIÓN DEL GRÁFICO AVANZADO</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(df_modelos, <span class="at">x =</span> <span class="sc">~</span>mes) <span class="sc">%&gt;%</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Demanda Real (La referencia principal)</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_lines</span>(<span class="at">y =</span> <span class="sc">~</span>actual, <span class="at">name =</span> <span class="st">"Demanda Real"</span>, </span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">'#1e293b'</span>, <span class="at">width =</span> <span class="dv">4</span>),</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>            <span class="at">hovertemplate =</span> <span class="st">"Real: %{y} u."</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Naive Simple</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_lines</span>(<span class="at">y =</span> <span class="sc">~</span>naive, <span class="at">name =</span> <span class="st">"Naive (t-1)"</span>, </span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>            <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">'#f97316'</span>, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">dash =</span> <span class="st">'dot'</span>),</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>            <span class="at">hovertemplate =</span> <span class="st">"Naive: %{y} u."</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># S-Naive (Estacional)</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_lines</span>(<span class="at">y =</span> <span class="sc">~</span>snaive, <span class="at">name =</span> <span class="st">"S-Naive (t-12)"</span>, </span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>            <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">'#8b5cf6'</span>, <span class="at">width =</span> <span class="dv">2</span>),</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>            <span class="at">visible =</span> <span class="st">"legendonly"</span>, <span class="co"># Desactivado por defecto para no saturar</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>            <span class="at">hovertemplate =</span> <span class="st">"S-Naive: %{y} u."</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="co"># SMA</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_lines</span>(<span class="at">y =</span> <span class="sc">~</span>sma, <span class="at">name =</span> <span class="fu">paste0</span>(<span class="st">"SMA (n="</span>, ventana_sma, <span class="st">")"</span>), </span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>            <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">'#3b82f6'</span>, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">dash =</span> <span class="st">'dash'</span>),</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>            <span class="at">hovertemplate =</span> <span class="st">"SMA: %{y} u."</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="co"># CONFIGURACIÓN DEL LAYOUT</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">list</span>(</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">text =</span> <span class="st">"&lt;b&gt;Benchmarking de Pronósticos: Análisis de FVA&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:12px; color:#64748b'&gt;Reactividad vs Estabilidad de Modelos Simples&lt;/span&gt;"</span>,</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="dv">0</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">xaxis =</span> <span class="fu">list</span>(</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Meses de Operación"</span>,</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">gridcolor =</span> <span class="st">'#f1f5f9'</span>,</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Añadir botones de selección de rango</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>      <span class="at">rangeselector =</span> <span class="fu">list</span>(</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        <span class="at">buttons =</span> <span class="fu">list</span>(</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>          <span class="fu">list</span>(<span class="at">count =</span> <span class="dv">6</span>, <span class="at">label =</span> <span class="st">"6m"</span>, <span class="at">step =</span> <span class="st">"month"</span>, <span class="at">stepmode =</span> <span class="st">"backward"</span>),</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>          <span class="fu">list</span>(<span class="at">count =</span> <span class="dv">12</span>, <span class="at">label =</span> <span class="st">"12m"</span>, <span class="at">step =</span> <span class="st">"month"</span>, <span class="at">stepmode =</span> <span class="st">"backward"</span>),</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>          <span class="fu">list</span>(<span class="at">step =</span> <span class="st">"all"</span>, <span class="at">label =</span> <span class="st">"Todo"</span>)</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>        ),</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        <span class="at">bgcolor =</span> <span class="st">'#f8fafc'</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>      <span class="at">rangeslider =</span> <span class="fu">list</span>(<span class="at">visible =</span> <span class="cn">TRUE</span>, <span class="at">thickness =</span> <span class="fl">0.05</span>)</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">yaxis =</span> <span class="fu">list</span>(</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Demanda (Unidades)"</span>,</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>      <span class="at">gridcolor =</span> <span class="st">'#f1f5f9'</span>,</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>      <span class="at">zeroline =</span> <span class="cn">FALSE</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Tooltip unificado para comparar errores en el mismo punto x</span></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">hovermode =</span> <span class="st">"x unified"</span>,</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">template =</span> <span class="st">"plotly_white"</span>,</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend =</span> <span class="fu">list</span>(<span class="at">orientation =</span> <span class="st">'h'</span>, <span class="at">y =</span> <span class="sc">-</span><span class="fl">0.3</span>),</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">margin =</span> <span class="fu">list</span>(<span class="at">t =</span> <span class="dv">100</span>),</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ANOTACIONES PARA EXPLICAR FENÓMENOS (Ejemplo en Mes 25)</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    <span class="at">annotations =</span> <span class="fu">list</span>(</span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>      <span class="fu">list</span>(</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="dv">25</span>, <span class="at">y =</span> df_modelos<span class="sc">$</span>actual[<span class="dv">25</span>],</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="st">"Efecto Lag en SMA"</span>,</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>        <span class="at">showarrow =</span> <span class="cn">TRUE</span>, <span class="at">arrowhead =</span> <span class="dv">2</span>,</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>        <span class="at">ax =</span> <span class="sc">-</span><span class="dv">40</span>, <span class="at">ay =</span> <span class="sc">-</span><span class="dv">40</span>,</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">'#3b82f6'</span>, <span class="at">size =</span> <span class="dv">11</span>)</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>      <span class="fu">list</span>(</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="dv">13</span>, <span class="at">y =</span> df_modelos<span class="sc">$</span>snaive[<span class="dv">13</span>],</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="st">"Efecto Eco (S-Naive)"</span>,</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>        <span class="at">showarrow =</span> <span class="cn">TRUE</span>, <span class="at">arrowhead =</span> <span class="dv">2</span>,</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>        <span class="at">ax =</span> <span class="dv">40</span>, <span class="at">ay =</span> <span class="dv">40</span>,</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>        <span class="at">font =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">'#8b5cf6'</span>, <span class="at">size =</span> <span class="dv">11</span>)</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Añadir configuración de responsividad</span></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">config</span>(<span class="at">displayModeBar =</span> <span class="cn">TRUE</span>, <span class="at">responsive =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-ce28ae593bde0f735d05" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-ce28ae593bde0f735d05">{"x":{"visdat":{"289046351175":["function () ","plotlyVisDat"]},"cur_data":"289046351175","attrs":{"289046351175":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","name":"Demanda Real","line":{"color":"#1e293b","width":4},"hovertemplate":"Real: %{y} u.","inherit":true},"289046351175.1":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","name":"Naive (t-1)","line":{"color":"#f97316","width":2,"dash":"dot"},"hovertemplate":"Naive: %{y} u.","inherit":true},"289046351175.2":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","name":"S-Naive (t-12)","line":{"color":"#8b5cf6","width":2},"visible":"legendonly","hovertemplate":"S-Naive: %{y} u.","inherit":true},"289046351175.3":{"x":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","name":"SMA (n=3)","line":{"color":"#3b82f6","width":2,"dash":"dash"},"hovertemplate":"SMA: %{y} u.","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":100,"r":10},"title":{"text":"<b>Benchmarking de Pronósticos: Análisis de FVA<\/b><br><span style='font-size:12px; color:#64748b'>Reactividad vs Estabilidad de Modelos Simples<\/span>","x":0},"xaxis":{"domain":[0,1],"automargin":true,"title":"Meses de Operación","gridcolor":"#f1f5f9","rangeselector":{"buttons":[{"count":6,"label":"6m","step":"month","stepmode":"backward"},{"count":12,"label":"12m","step":"month","stepmode":"backward"},{"step":"all","label":"Todo"}],"bgcolor":"#f8fafc"},"rangeslider":{"visible":true,"thickness":0.050000000000000003}},"yaxis":{"domain":[0,1],"automargin":true,"title":"Demanda (Unidades)","gridcolor":"#f1f5f9","zeroline":false},"hovermode":"x unified","template":"plotly_white","legend":{"orientation":"h","y":-0.29999999999999999},"annotations":[{"x":25,"y":56,"text":"Efecto Lag en SMA","showarrow":true,"arrowhead":2,"ax":-40,"ay":-40,"font":{"color":"#3b82f6","size":11}},{"x":13,"y":37,"text":"Efecto Eco (S-Naive)","showarrow":true,"arrowhead":2,"ax":40,"ay":40,"font":{"color":"#8b5cf6","size":11}}],"showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":true,"responsive":true},"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36],"y":[37,45,63,69,85,122,124,98,72,60,62,52,53,57,58,90,97,106,135,113,79,71,56,54,56,54,77,88,95,138,143,124,103,88,79,74],"type":"scatter","mode":"lines","name":"Demanda Real","line":{"color":"#1e293b","width":4},"hovertemplate":["Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u.","Real: %{y} u."],"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36],"y":[37,45,63,69,85,122,124,98,72,60,62,52,53,57,58,90,97,106,135,113,79,71,56,54,56,54,77,88,95,138,143,124,103,88,79],"type":"scatter","mode":"lines","name":"Naive (t-1)","line":{"color":"#f97316","width":2,"dash":"dot"},"hovertemplate":["Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u.","Naive: %{y} u."],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36],"y":[37,45,63,69,85,122,124,98,72,60,62,52,53,57,58,90,97,106,135,113,79,71,56,54],"type":"scatter","mode":"lines","name":"S-Naive (t-12)","line":{"color":"#8b5cf6","width":2},"visible":"legendonly","hovertemplate":["S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u.","S-Naive: %{y} u."],"marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36],"y":[48.333333333333336,59,72.333333333333329,92,110.33333333333333,114.66666666666667,98,76.666666666666671,64.666666666666671,58,55.666666666666664,54,56,68.333333333333329,81.666666666666671,97.666666666666671,112.66666666666667,118,109,87.666666666666671,68.666666666666671,60.333333333333336,55.333333333333336,54.666666666666664,62.333333333333336,73,86.666666666666671,107,125.33333333333333,135,123.33333333333333,105,90],"type":"scatter","mode":"lines","name":"SMA (n=3)","line":{"color":"#3b82f6","width":2,"dash":"dash"},"hovertemplate":["SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u.","SMA: %{y} u."],"marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(zoo)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. GENERACIÓN DE DATOS (Consistencia con el modelo de suministro)</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>n_meses <span class="ot">&lt;-</span> <span class="dv">36</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>patron_estacional <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">45</span>, <span class="dv">60</span>, <span class="dv">85</span>, <span class="dv">95</span>, <span class="dv">80</span>, <span class="dv">50</span>, <span class="dv">35</span>, <span class="dv">25</span>, <span class="dv">20</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df_base <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">mes =</span> <span class="dv">1</span><span class="sc">:</span>n_meses,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">tendencia =</span> mes <span class="sc">*</span> <span class="fl">0.8</span>,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">estacionalidad =</span> <span class="fu">rep</span>(patron_estacional, <span class="at">length.out =</span> n_meses),</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">ruido =</span> <span class="fu">rnorm</span>(n_meses, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">7</span>),</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">actual =</span> <span class="fu">round</span>(<span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">20</span> <span class="sc">+</span> tendencia <span class="sc">+</span> estacionalidad <span class="sc">+</span> ruido))</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. CÁLCULO DE MODELOS Y MÉTRICAS DE ERROR</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>ventana_sma <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>df_audit <span class="ot">&lt;-</span> df_base <span class="sc">%&gt;%</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">naive =</span> <span class="fu">lag</span>(actual, <span class="dv">1</span>),</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">sma =</span> <span class="fu">rollmean</span>(actual, <span class="at">k =</span> ventana_sma, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> <span class="st">"right"</span>) <span class="sc">%&gt;%</span> <span class="fu">lag</span>(<span class="dv">1</span>)</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">APE_Naive =</span> <span class="fu">abs</span>(actual <span class="sc">-</span> naive) <span class="sc">/</span> actual,</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">APE_SMA =</span> <span class="fu">abs</span>(actual <span class="sc">-</span> sma) <span class="sc">/</span> actual,</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">FVA_Puntos =</span> (APE_Naive <span class="sc">-</span> APE_SMA) <span class="sc">*</span> <span class="dv">100</span> <span class="co"># En puntos porcentuales</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sma))</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. RENDERIZADO DE LA TABLA CON "MÁS ONDA"</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  df_audit <span class="sc">%&gt;%</span> <span class="fu">select</span>(mes, actual, naive, sma, APE_Naive, APE_SMA, FVA_Puntos),</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">colnames =</span> <span class="fu">c</span>(<span class="st">'Mes'</span>, <span class="st">'Demanda Real'</span>, <span class="st">'Naive (t-1)'</span>, <span class="st">'SMA (n=3)'</span>, <span class="st">'Error Naive'</span>, <span class="st">'Error SMA'</span>, <span class="st">'FVA (pts)'</span>),</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">'hover cell-border stripe'</span>,</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">pageLength =</span> <span class="dv">12</span>,</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">dom =</span> <span class="st">'tip'</span>, <span class="co"># Solo tabla, info y paginación (sin botones ni buscador para limpieza)</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">columnDefs =</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="at">className =</span> <span class="st">'dt-center'</span>, <span class="at">targets =</span> <span class="st">"_all"</span>))</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> htmltools<span class="sc">::</span>tags<span class="sc">$</span><span class="fu">caption</span>(</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="st">'caption-side: top; text-align: left; color: #1e293b; font-weight: bold; font-size: 1.2em; padding: 10px;'</span>,</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Análisis de Benchmarking: ¿La complejidad justifica la inversión?'</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ajuste de decimales: Unidades sin decimales</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatRound</span>(<span class="fu">c</span>(<span class="st">'actual'</span>, <span class="st">'naive'</span>, <span class="st">'sma'</span>), <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ajuste de decimales: Porcentajes con 1 decimal</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatPercentage</span>(<span class="fu">c</span>(<span class="st">'APE_Naive'</span>, <span class="st">'APE_SMA'</span>), <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatRound</span>(<span class="st">'FVA_Puntos'</span>, <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>  <span class="co"># "La Onda": Barras de color para el error (mientras más larga, más error)</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatStyle</span>(</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    <span class="st">'APE_SMA'</span>,</span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="fu">styleColorBar</span>(df_audit<span class="sc">$</span>APE_SMA, <span class="st">'#dbeafe'</span>),</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundSize =</span> <span class="st">'95% 70%'</span>,</span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundRepeat =</span> <span class="st">'no-repeat'</span>,</span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundPosition =</span> <span class="st">'center'</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Semáforo de FVA: Verde si el SMA añade valor, Rojo si el Naive es mejor</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatStyle</span>(</span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    <span class="st">'FVA_Puntos'</span>,</span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="fu">styleInterval</span>(<span class="dv">0</span>, <span class="fu">c</span>(<span class="st">'#e11d48'</span>, <span class="st">'#16a34a'</span>)), <span class="co"># Rojo vs Verde esmeralda</span></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">fontWeight =</span> <span class="st">'bold'</span>,</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundColor =</span> <span class="fu">styleInterval</span>(<span class="dv">0</span>, <span class="fu">c</span>(<span class="st">'#fff1f2'</span>, <span class="st">'#f0fdf4'</span>))</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Estilo para la Demanda Real</span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatStyle</span>(</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>    <span class="st">'actual'</span>,</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">fontWeight =</span> <span class="st">'bold'</span>,</span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">'#0f172a'</span>,</span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundColor =</span> <span class="st">'#f8fafc'</span></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-eac75555269eefd07531" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-eac75555269eefd07531">{"x":{"filter":"none","vertical":false,"caption":"<caption style=\"caption-side: top; text-align: left; color: #1e293b; font-weight: bold; font-size: 1.2em; padding: 10px;\">Análisis de Benchmarking: ¿La complejidad justifica la inversión?<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33"],[4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36],[69,85,122,124,98,72,60,62,52,53,57,58,90,97,106,135,113,79,71,56,54,56,54,77,88,95,138,143,124,103,88,79,74],[63,69,85,122,124,98,72,60,62,52,53,57,58,90,97,106,135,113,79,71,56,54,56,54,77,88,95,138,143,124,103,88,79],[48.33333333333334,59,72.33333333333333,92,110.3333333333333,114.6666666666667,98,76.66666666666667,64.66666666666667,58,55.66666666666666,54,56,68.33333333333333,81.66666666666667,97.66666666666667,112.6666666666667,118,109,87.66666666666667,68.66666666666667,60.33333333333334,55.33333333333334,54.66666666666666,62.33333333333334,73,86.66666666666667,107,125.3333333333333,135,123.3333333333333,105,90],[0.08695652173913043,0.1882352941176471,0.3032786885245902,0.01612903225806452,0.2653061224489796,0.3611111111111111,0.2,0.03225806451612903,0.1923076923076923,0.01886792452830189,0.07017543859649122,0.01724137931034483,0.3555555555555556,0.07216494845360824,0.08490566037735849,0.2148148148148148,0.1946902654867257,0.4303797468354431,0.1126760563380282,0.2678571428571428,0.03703703703703703,0.03571428571428571,0.03703703703703703,0.2987012987012987,0.125,0.07368421052631578,0.3115942028985507,0.03496503496503497,0.1532258064516129,0.2038834951456311,0.1704545454545454,0.1139240506329114,0.06756756756756757],[0.2995169082125603,0.3058823529411765,0.4071038251366121,0.2580645161290323,0.1258503401360544,0.5925925925925927,0.6333333333333333,0.2365591397849463,0.2435897435897437,0.09433962264150944,0.02339181286549712,0.06896551724137931,0.3777777777777778,0.29553264604811,0.2295597484276729,0.2765432098765432,0.002949852507374589,0.4936708860759494,0.5352112676056338,0.5654761904761906,0.271604938271605,0.07738095238095243,0.0246913580246914,0.29004329004329,0.2916666666666666,0.2315789473684211,0.3719806763285024,0.2517482517482518,0.01075268817204297,0.3106796116504854,0.4015151515151514,0.3291139240506329,0.2162162162162162],[-21.25603864734299,-11.76470588235294,-10.38251366120219,-24.19354838709678,13.94557823129252,-23.14814814814816,-43.33333333333333,-20.43010752688173,-5.128205128205135,-7.547169811320756,4.678362573099411,-5.172413793103448,-2.22222222222222,-22.33676975945018,-14.46540880503144,-6.172839506172837,19.17404129793511,-6.329113924050633,-42.25352112676056,-29.76190476190477,-23.4567901234568,-4.166666666666671,1.234567901234563,0.8658008658008642,-16.66666666666666,-15.78947368421053,-6.038647342995168,-21.67832167832168,14.24731182795699,-10.67961165048544,-23.1060606060606,-21.51898734177215,-14.86486486486486]],"container":"<table class=\"hover cell-border stripe\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Mes<\/th>\n      <th>Demanda Real<\/th>\n      <th>Naive (t-1)<\/th>\n      <th>SMA (n=3)<\/th>\n      <th>Error Naive<\/th>\n      <th>Error SMA<\/th>\n      <th>FVA (pts)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":12,"dom":"tip","columnDefs":[{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 1, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatPercentage(data, 1, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatPercentage(data, 1, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-center","targets":"_all"},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"mes","targets":1},{"name":"actual","targets":2},{"name":"naive","targets":3},{"name":"sma","targets":4},{"name":"APE_Naive","targets":5},{"name":"APE_SMA","targets":6},{"name":"FVA_Puntos","targets":7}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,12,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'background':isNaN(parseFloat(value)) || value <= 0.002950 ? '' : 'linear-gradient(90.000000deg, transparent ' + Math.max(0.633333 - value, 0)/0.630383 * 100 + '%, #dbeafe ' + Math.max(0.633333 - value, 0)/0.630383 * 100 + '%)','background-size':'95% 70%','background-repeat':'no-repeat','background-position':'center'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-weight':'bold','color':isNaN(parseFloat(value)) ? '' : value <= 0 ? \"#e11d48\" : \"#16a34a\",'background-color':isNaN(parseFloat(value)) ? '' : value <= 0 ? \"#fff1f2\" : \"#f0fdf4\"});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-weight':'bold','color':'#0f172a','background-color':'#f8fafc'});\n}"}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.rowCallback"],"jsHooks":[]}</script>
-</div>
-</div>
-<p><strong>Interpretación de la Tabla de Auditoría</strong></p>
-<p>La tabla anterior no es solo un resumen de errores; es el <strong>tablero de control del ROI de tu proceso de planeación</strong>. Al analizarla mes a mes, podemos extraer tres conclusiones críticas para la ingeniería de suministro:</p>
 <ol type="1">
-<li><p><strong>El Valor del FVA (Verde vs.&nbsp;Rojo):</strong> Cada celda verde en la columna <strong>FVA (pts)</strong> representa un acierto de la complejidad: el modelo SMA logró filtrar el ruido mejor que el Naive. Por el contrario, las celdas rojas indican “destrucción de valor”: pagaste el costo de un modelo más complejo para terminar con un error mayor al que habrías tenido simplemente repitiendo el dato del mes anterior.</p></li>
-<li><p><strong>La Patología del Lag:</strong> Observa los meses de tendencia alcista. Notarás que el <strong>Error SMA</strong> suele ser mayor y el FVA tiende a rojo. Esto confirma visualmente que los promedios móviles castigan la reactividad en favor de la estabilidad.</p></li>
-<li><p><strong>El Veredicto de Ockham:</strong> Si al final del ejercicio el FVA acumulado no supera el 5%, la recomendación técnica es <strong>desmantelar el SMA</strong>. Mantener un modelo que no bate al Naive de forma consistente solo añade “grasa” operativa y confusión a la cadena.</p></li>
+<li><p><strong>Si el RMSE es mucho más alto que el MAE:</strong> Tienes “outliers” o picos salvajes en la demanda que tus modelos simples no están capturando. Necesitas revisar si esos picos son promociones o errores de datos.</p></li>
+<li><p><strong>Si el WAPE es alto pero el MASE es bajo:</strong> Tu demanda es intrínsecamente difícil y ruidosa, pero tu modelo está haciendo el mejor trabajo posible. No te castigues por el error alto; celebra que le estás ganando al azar.</p></li>
+<li><p><strong>Si el BIAS es persistente:</strong> Tu proceso de planificación está viciado. Si es positivo, estás siendo muy optimista; si es negativo, estás subestimando el mercado sistemáticamente.</p></li>
 </ol>
+</div>
+</div>
+</section>
+<section id="análisis-de-benchmarking-la-complejidad-justifica-la-inversión" class="level2">
+<h2 class="anchored" data-anchor-id="análisis-de-benchmarking-la-complejidad-justifica-la-inversión">5.5 Análisis de Benchmarking: ¿La complejidad justifica la inversión?</h2>
+<p>La tabla anterior no es solo un resumen de errores; es el tablero de control del ROI de tu proceso de planeación. Al analizarla mes a mes, podemos extraer tres conclusiones críticas para la ingeniería de suministro:</p>
+<section id="el-valor-del-fva-verde-vs.-rojo" class="level3">
+<h3 class="anchored" data-anchor-id="el-valor-del-fva-verde-vs.-rojo">El Valor del FVA (Verde vs.&nbsp;Rojo)</h3>
+<p>El <strong>Forecast Value Added (FVA)</strong> es el indicador que audita si tu intervención (o la del modelo) está mejorando la situación. Se define mediante la fórmula:</p>
+<p><span class="math display">\[
+FVA = \text{Error}_{\text{Referencia (Naive)}} - \text{Error}_{\text{Proceso/Modelo}}
+\]</span></p>
+<p>O expresado en puntos porcentuales de WAPE:</p>
+<p><span class="math display">\[
+FVA_{\text{pp}} = WAPE_{\text{Naive}} - WAPE_{\text{Modelo}}
+\]</span></p>
+<ul>
+<li><p><strong>Celdas con FVA Positivo:</strong> Representan un acierto de la complejidad. El modelo logró filtrar el ruido mejor que el Naive, justificando el esfuerzo analítico.</p></li>
+<li><p><strong>Celdas con FVA Negativo:</strong> Indican <strong>“Destrucción de Valor”</strong>. Pagaste el costo de un modelo (o tiempo humano) para terminar con un error mayor al que habrías tenido simplemente repitiendo el dato del periodo anterior.</p></li>
+</ul>
+</section>
+<section id="la-patología-del-lag" class="level3">
+<h3 class="anchored" data-anchor-id="la-patología-del-lag">La Patología del Lag</h3>
+<p>Observa los periodos de tendencia alcista en el simulador. Notarás que el error de los modelos de promedios o Naive suele ser mayor y el FVA tiende a ser negativo si el modelo no es reactivo. Esto confirma visualmente que los modelos estáticos castigan la reactividad en favor de la estabilidad.</p>
+</section>
+<section id="el-veredicto-de-ockham" class="level3">
+<h3 class="anchored" data-anchor-id="el-veredicto-de-ockham">El Veredicto de Ockham</h3>
+<p>Si al final de un ejercicio de 6 meses el FVA acumulado no supera un umbral mínimo (ej. 5%), la recomendación técnica es <strong>desmantelar la complejidad</strong>. Mantener un modelo que no bate al Naive de forma consistente solo añade “grasa” operativa, costos de mantenimiento de software y confusión a la cadena.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Cómo leer esta auditoría de benchmarking
+<span class="screen-reader-only">Note</span>Guía de Supervivencia de Métricas
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Para interpretar correctamente los resultados de la Tabla 5.1, utiliza la siguiente guía rápida:</p>
-<ul>
-<li><p><strong>Columna Demanda Real:</strong> Es tu “norte”. Toda comparación nace de aquí.</p></li>
-<li><p><strong>Columna Naive (t-1):</strong> Es tu “piso” científico. Representa el esfuerzo cero.</p></li>
-<li><p><strong>Barras de Error SMA:</strong> Cuanto más larga es la barra azul, más “perdido” está el modelo respecto a la realidad. Si ves barras largas constantes, tu ventana $n$ es demasiado grande.</p></li>
-<li><p><strong>Semáforo de FVA:</strong> * <strong>[+ Verdes]:</strong> La complejidad está pagando dividendos. Estás en un mercado con patrones claros que el SMA logra capturar.</p>
-<ul>
-<li>[- Rojos]: Estás sobre-procesando ruido. Tu demanda es una “caminata aleatoria” y el Naive es tu mejor aliado.</li>
-</ul></li>
-</ul>
+<ol type="1">
+<li><p><strong>Si el RMSE es mucho más alto que el MAE:</strong> Tienes “outliers” o picos salvajes en la demanda que tus modelos simples no están capturando. Necesitas revisar si esos picos son promociones o errores de datos.</p></li>
+<li><p><strong>Si el WAPE es alto pero el MASE es bajo:</strong> Tu demanda es intrínsecamente difícil y ruidosa, pero tu modelo está haciendo el mejor trabajo posible. No te castigues por el error alto; celebra que le estás ganando al azar.</p></li>
+<li><p><strong>Si el BIAS es persistente:</strong> Tu proceso de planificación está viciado. Si es positivo, estás siendo muy optimista; si es negativo, estás subestimando el mercado sistemáticamente.</p></li>
+</ol>
 </div>
 </div>
 </section>
-<section id="la-navaja-de-ockham-y-el-roi-de-la-complejidad" class="level2">
-<h2 class="anchored" data-anchor-id="la-navaja-de-ockham-y-el-roi-de-la-complejidad">5.7 La Navaja de Ockham y el ROI de la Complejidad</h2>
-<p>Te voy avisando: vas a sentir la presión de usar redes neuronales para todo. Pero recuerda la <strong>Pirámide de Pronóstico</strong>:</p>
-<ol type="1">
-<li><p><strong>Base:</strong> Modelos Simples (Costo $0, Explicabilidad 100%).</p></li>
-<li><p><strong>Medio:</strong> Suavizamiento Exponencial / ARIMA (Costo $, Explicabilidad 70%).</p></li>
-<li><p><strong>Punta:</strong> Machine Learning / IA (Costo $$$, Explicabilidad 20%).</p></li>
-</ol>
-<p><strong>Regla de Oro:</strong> Solo sube un peldaño si el <strong>FVA</strong> es mayor al 5%. Si un modelo complejo solo mejora el error en un 0.2%, la <strong>Navaja de Ockham</strong> dicta que el modelo simple es la decisión de negocio correcta.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Resumen del Paso 5
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Hemos construido los cimientos de nuestra catedral de datos:</p>
-<ol type="1">
-<li><p>Establecimos el <strong>Naïve</strong> como el rival a vencer para justificar cualquier esfuerzo extra.</p></li>
-<li><p>Aprendimos a <strong>filtrar el ruido</strong> con promedios móviles para productos estables.</p></li>
-<li><p>Entendimos que en Supply Chain, <strong>explicar el número</strong> es tan importante como el número en sí.</p></li>
-</ol>
-<p>Pero los promedios tienen un problema: tratan al pasado con la misma importancia que al presente. Para solucionar esto, en el <strong>Capítulo 6</strong> entraremos en el mundo del <strong>Suavizamiento Exponencial (Holt-Winters)</strong>.</p>
-</div>
-</div>
+</section>
+<section id="checklist-de-cierre" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-de-cierre">Checklist de Cierre</h2>
+<ul class="task-list">
+<li><p><label><input type="checkbox">¿He analizado el <strong>RMSE</strong> para identificar si mi modelo sufre con los picos de demanda y colapsa la operación?</label></p></li>
+<li><p><label><input type="checkbox">¿Reporto el <strong>WAPE</strong> como la métrica de negocio para medir el error relativo respecto al volumen de ventas?</label></p></li>
+<li><p><label><input type="checkbox">¿Entiendo que el MASE es el único juez imparcial que valida si mi trabajo matemático añade valor sobre la inercia?</label></p></li>
+<li><p><label><input type="checkbox">¿Utilizo el <strong>FVA</strong> para alertar a la gerencia cuando la complejidad de un modelo (o un ajuste humano) está empeorando el resultado?</label></p></li>
+<li><p><label><input type="checkbox">¿He identificado los productos donde el modelo Naive es imbatible y, por ende, no requieren esfuerzo analítico adicional?</label></p></li>
+</ul>
 
 
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5qU3RhdCA9IHJlcXVpcmUoXCJqc3RhdEAxLjkuNlwiKVxyXG5QbG90bHkgPSByZXF1aXJlKFwicGxvdGx5LmpzLWRpc3QtbWluQDIuMjQuMVwiKVxyXG5cclxudmlld29mIG5fZGF5cyA9IElucHV0cy5yYW5nZShbMzAsIDIwMF0sIHt2YWx1ZTogMTIwLCBzdGVwOiAxMCwgbGFiZWw6IFwiRMOtYXMgZGUgSGlzdG9yaWE6XCJ9KVxyXG52aWV3b2Ygdm9sYXRpbGl0eSA9IElucHV0cy5yYW5nZShbNSwgMTAwXSwge3ZhbHVlOiAzMCwgc3RlcDogNSwgbGFiZWw6IFwiUnVpZG8gKFZhcmlhYmlsaWRhZCk6XCJ9KVxyXG52aWV3b2YgdHJlbmRfc2xvcGUgPSBJbnB1dHMucmFuZ2UoWy0yLCAyXSwge3ZhbHVlOiAwLjYsIHN0ZXA6IDAuMSwgbGFiZWw6IFwiVGVuZGVuY2lhIChQZW5kaWVudGUpOlwifSlcclxudmlld29mIHNlYXNvbl9zdHJlbmd0aCA9IElucHV0cy5yYW5nZShbMCwgODBdLCB7dmFsdWU6IDQwLCBzdGVwOiA1LCBsYWJlbDogXCJGdWVyemEgRXN0YWNpb25hbDpcIn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG4vLyAxLiBHZW5lcmFjacOzbiBkZSBkYXRvcyByZWFjdGl2YSBjb24gbMOzZ2ljYSBlc3RvY8Ohc3RpY2FcclxudGltZV9zZXJpZXMgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG4gIGZvciAobGV0IGkgPSAwOyBpIDwgbl9kYXlzOyBpKyspIHtcclxuICAgIGNvbnN0IGJhc2UgPSAxMDAgKyAoaSAqIHRyZW5kX3Nsb3BlKTtcclxuICAgIGNvbnN0IHNlYXNvbiA9IE1hdGguc2luKChpIC8gNykgKiAyICogTWF0aC5QSSkgKiBzZWFzb25fc3RyZW5ndGg7XHJcbiAgICBjb25zdCBub2lzZSA9IGpTdGF0Lm5vcm1hbC5zYW1wbGUoMCwgdm9sYXRpbGl0eSk7XHJcbiAgICBkYXRhLnB1c2goeyB0OiBpLCB5OiBNYXRoLm1heCgwLCBiYXNlICsgc2Vhc29uICsgbm9pc2UpIH0pO1xyXG4gIH1cclxuICByZXR1cm4gZGF0YTtcclxufVxyXG5cclxuLy8gMi4gUHJvbsOzc3RpY29zIHkgQXVkaXRvcsOtYSBkZSBFcnJvcmVzIE11bHRpZGltZW5zaW9uYWxcclxucmVzdWx0cyA9IHtcclxuICBjb25zdCB0ZXN0X3NpemUgPSAxNDtcclxuICBjb25zdCBoaXN0b3J5ID0gdGltZV9zZXJpZXMuc2xpY2UoMCwgLXRlc3Rfc2l6ZSk7XHJcbiAgY29uc3QgYWN0dWFscyA9IHRpbWVfc2VyaWVzLnNsaWNlKC10ZXN0X3NpemUpO1xyXG4gIGNvbnN0IGxhc3RfdmFsID0gaGlzdG9yeVtoaXN0b3J5Lmxlbmd0aCAtIDFdLnk7XHJcbiAgXHJcbiAgY29uc3QgdG90YWxfZGVtYW5kID0galN0YXQuc3VtKGFjdHVhbHMubWFwKGQgPT4gZC55KSk7XHJcbiAgXHJcbiAgLy8gQ8OhbGN1bG8gZGUgQmFzZWxpbmUgTmFpdmUgcGFyYSBlbCBNQVNFIHkgRlZBXHJcbiAgY29uc3QgbmFpdmVfZGlmZnMgPSBbXTtcclxuICBmb3IobGV0IGk9MTsgaTxoaXN0b3J5Lmxlbmd0aDsgaSsrKSB7XHJcbiAgICBuYWl2ZV9kaWZmcy5wdXNoKE1hdGguYWJzKGhpc3RvcnlbaV0ueSAtIGhpc3RvcnlbaS0xXS55KSk7XHJcbiAgfVxyXG4gIGNvbnN0IG1lYW5fbmFpdmVfZXJyID0galN0YXQubWVhbihuYWl2ZV9kaWZmcyk7XHJcbiAgXHJcbiAgLy8gRXJyb3IgZGVsIE5haXZlIGVuIGVsIHBlcmlvZG8gZGUgdGVzdCBwYXJhIGVsIEZWQVxyXG4gIGNvbnN0IG5haXZlX3Rlc3RfZXJyb3JzID0gYWN0dWFscy5tYXAoZCA9PiBNYXRoLmFicyhkLnkgLSBsYXN0X3ZhbCkpO1xyXG4gIGNvbnN0IG5haXZlX3dhcGUgPSAoalN0YXQuc3VtKG5haXZlX3Rlc3RfZXJyb3JzKSAvIHRvdGFsX2RlbWFuZCkgKiAxMDA7XHJcblxyXG4gIGNvbnN0IG1vZGVscyA9IFtcclxuICAgIHsgbmFtZTogXCJOYWl2ZVwiLCBmb3JlY2FzdDogYWN0dWFscy5tYXAoKCkgPT4gbGFzdF92YWwpIH0sXHJcbiAgICB7IG5hbWU6IFwiUy1OYWl2ZVwiLCBmb3JlY2FzdDogYWN0dWFscy5tYXAoKGQsIGkpID0+IGhpc3RvcnlbaGlzdG9yeS5sZW5ndGggLSA3ICsgKGkgJSA3KV0ueSkgfSxcclxuICAgIHsgbmFtZTogXCJEcmlmdFwiLCBmb3JlY2FzdDogYWN0dWFscy5tYXAoKGQsIGkpID0+IGxhc3RfdmFsICsgKGkrMSkgKiAobGFzdF92YWwgLSBoaXN0b3J5WzBdLnkpLyhoaXN0b3J5Lmxlbmd0aC0xKSkgfVxyXG4gIF07XHJcblxyXG4gIGNvbnN0IHByb2Nlc3NlZCA9IG1vZGVscy5tYXAobSA9PiB7XHJcbiAgICBjb25zdCByYXdfZXJyb3JzID0gYWN0dWFscy5tYXAoKGQsIGkpID0+IG0uZm9yZWNhc3RbaV0gLSBkLnkpO1xyXG4gICAgY29uc3QgYWJzX2Vycm9ycyA9IHJhd19lcnJvcnMubWFwKGUgPT4gTWF0aC5hYnMoZSkpO1xyXG4gICAgY29uc3Qgc3F1YXJlZF9lcnJvcnMgPSByYXdfZXJyb3JzLm1hcChlID0+IGUgKiBlKTtcclxuICAgIFxyXG4gICAgY29uc3QgbWFlID0galN0YXQubWVhbihhYnNfZXJyb3JzKTtcclxuICAgIGNvbnN0IGJpYXMgPSBqU3RhdC5tZWFuKHJhd19lcnJvcnMpO1xyXG4gICAgY29uc3Qgcm1zZSA9IE1hdGguc3FydChqU3RhdC5tZWFuKHNxdWFyZWRfZXJyb3JzKSk7XHJcbiAgICBjb25zdCB3YXBlID0gKGpTdGF0LnN1bShhYnNfZXJyb3JzKSAvIHRvdGFsX2RlbWFuZCkgKiAxMDA7XHJcbiAgICBjb25zdCBtYXNlID0gbWFlIC8gbWVhbl9uYWl2ZV9lcnI7XHJcbiAgICBcclxuICAgIC8vIEZWQSBlbiBwdW50b3MgcG9yY2VudHVhbGVzIHJlc3BlY3RvIGFsIE5haXZlXHJcbiAgICBjb25zdCBmdmEgPSBuYWl2ZV93YXBlIC0gd2FwZTtcclxuICAgIFxyXG4gICAgcmV0dXJuIHsgXHJcbiAgICAgIFwiTW9kZWxvXCI6IG0ubmFtZSwgXHJcbiAgICAgIFwiTUFFXCI6IG1hZS50b0ZpeGVkKDEpLCBcclxuICAgICAgXCJCSUFTXCI6IGJpYXMudG9GaXhlZCgxKSxcclxuICAgICAgXCJSTVNFXCI6IHJtc2UudG9GaXhlZCgxKSxcclxuICAgICAgXCJXQVBFICglKVwiOiB3YXBlLnRvRml4ZWQoMSkgKyBcIiVcIixcclxuICAgICAgXCJNQVNFXCI6IG1hc2UudG9GaXhlZCgzKSxcclxuICAgICAgXCJGVkEgKHB0cylcIjogbS5uYW1lID09PSBcIk5haXZlXCIgPyBcIjAuMFwiIDogZnZhLnRvRml4ZWQoMiksXHJcbiAgICAgIFwiSW1wYWN0b1wiOiBiaWFzID4gMCA/IFwi4pqg77iPIFNvYnJlLXN0b2NrXCIgOiBcIvCflLQgUXVpZWJyZXNcIixcclxuICAgICAgZm9yZWNhc3Q6IG0uZm9yZWNhc3QsXHJcbiAgICAgIHNjb3JlOiBtYWUsXHJcbiAgICAgIGZ2YV92YWw6IGZ2YVxyXG4gICAgfTtcclxuICB9KTtcclxuICBcclxuICBjb25zdCBiZXN0X21hZSA9IE1hdGgubWluKC4uLnByb2Nlc3NlZC5tYXAocCA9PiBwLnNjb3JlKSk7XHJcbiAgcmV0dXJuIHByb2Nlc3NlZC5tYXAocCA9PiAoe1xyXG4gICAgLi4ucCxcclxuICAgIFwiRXN0YWRvXCI6IHAuc2NvcmUgPT09IGJlc3RfbWFlID8gXCLwn4+GIEdBTkFET1JcIiA6IChwLmZ2YV92YWwgPCAwICYmIHAuTW9kZWxvICE9PSBcIk5haXZlXCIgPyBcIuKblCBEZXN0cnV5ZSBWYWxvclwiIDogXCItLS1cIilcclxuICB9KSk7XHJcbn1cclxuXHJcbi8vIDMuIFZpc3VhbGl6YWNpw7NuIGNvbiBQbG90bHlcclxuY2hhcnRCZW5jaCA9IHtcclxuICBjb25zdCBjb250YWluZXIgPSBodG1sYDxkaXYgc3R5bGU9XCJ3aWR0aDoxMDAlOyBoZWlnaHQ6NDIwcHg7XCI+PC9kaXY+YDtcclxuICBjb25zdCBhY3R1YWxzID0gdGltZV9zZXJpZXMuc2xpY2UoLTE0KTtcclxuICBcclxuICBjb25zdCB0cmFjZXMgPSBbXHJcbiAgICB7IHg6IHRpbWVfc2VyaWVzLm1hcChkID0+IGQudCksIHk6IHRpbWVfc2VyaWVzLm1hcChkID0+IGQueSksIG5hbWU6ICdSZWFsaWRhZCBIaXN0w7NyaWNhJywgbGluZToge2NvbG9yOiAnIzQ3NTU2OScsIHdpZHRoOiAzfSB9LFxyXG4gICAgLi4ucmVzdWx0cy5tYXAociA9PiAoe1xyXG4gICAgICB4OiBhY3R1YWxzLm1hcChkID0+IGQudCksXHJcbiAgICAgIHk6IHIuZm9yZWNhc3QsXHJcbiAgICAgIG5hbWU6IHJbXCJNb2RlbG9cIl0sXHJcbiAgICAgIGxpbmU6IHtkYXNoOiAnZGFzaCcsIHdpZHRoOiAyfVxyXG4gICAgfSkpXHJcbiAgXTtcclxuXHJcbiAgY29uc3QgbGF5b3V0ID0ge1xyXG4gICAgdGl0bGU6ICdCZW5jaG1hcmtpbmcgZGUgTW9kZWxvcyBJbmdlbnVvcycsXHJcbiAgICB0ZW1wbGF0ZTogJ3Bsb3RseV93aGl0ZScsIFxyXG4gICAgbWFyZ2luOiB7dDo1MCwgYjo1MCwgbDo1MCwgcjozMH0sXHJcbiAgICBob3Zlcm1vZGU6ICd4IHVuaWZpZWQnLFxyXG4gICAgbGVnZW5kOiB7b3JpZW50YXRpb246ICdoJywgeTogLTAuMn0sXHJcbiAgICB4YXhpczogeyB0aXRsZTogJ1RpZW1wbyAoRMOtYXMpJyB9LFxyXG4gICAgeWF4aXM6IHsgdGl0bGU6ICdEZW1hbmRhIChVbmlkYWRlcyknIH1cclxuICB9O1xyXG5cclxuICBQbG90bHkubmV3UGxvdChjb250YWluZXIsIHRyYWNlcywgbGF5b3V0LCB7cmVzcG9uc2l2ZTogdHJ1ZSwgZGlzcGxheU1vZGVCYXI6IGZhbHNlfSk7XHJcbiAgcmV0dXJuIGNvbnRhaW5lcjtcclxufVxyXG5cclxuLy8gNC4gVGFibGEgZGUgUmVzdWx0YWRvcyBBdWRpdGFkb3MgY29uIEZWQVxyXG5JbnB1dHMudGFibGUocmVzdWx0cy5tYXAoKHtmb3JlY2FzdCwgc2NvcmUsIGZ2YV92YWwsIC4uLnJlc3R9KSA9PiByZXN0KSlcclxuXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnbl9kYXlzJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3ZvbGF0aWxpdHknKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgndHJlbmRfc2xvcGUnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2Vhc29uX3N0cmVuZ3RoJykifV19
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1407,8 +1340,21 @@ window.Quarto = {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Nicolás A. Bravo</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-5-pronostico-ingenuo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Este libro fue creado con <a href="https://quarto.org/">Quarto</a>. Visita mi <a href="https://github.com/nicobravo933-Planner">repositorio GitHub</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-5-pronostico-ingenuo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>
