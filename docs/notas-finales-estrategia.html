@@ -74,35 +74,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -468,12 +439,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego</span></a>
+  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego: Gestión de Sesgos Humanos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20. El Plan Maestro</span></a>
+  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20. El Plan Maestro (S&amp;OP)</span></a>
   </div>
 </li>
       </ul>
@@ -495,20 +466,18 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#el-rigor-estadístico-como-base" id="toc-el-rigor-estadístico-como-base" class="nav-link active" data-scroll-target="#el-rigor-estadístico-como-base">1. El Rigor Estadístico como Base</a>
+  <li><a href="#el-manifiesto-del-arquitecto-de-operador-a-diseñador" id="toc-el-manifiesto-del-arquitecto-de-operador-a-diseñador" class="nav-link active" data-scroll-target="#el-manifiesto-del-arquitecto-de-operador-a-diseñador">1. El Manifiesto del Arquitecto: De Operador a Diseñador</a></li>
+  <li><a href="#pilares-de-implementación-táctica" id="toc-pilares-de-implementación-táctica" class="nav-link" data-scroll-target="#pilares-de-implementación-táctica">2. Pilares de Implementación Táctica</a>
   <ul class="collapse">
-  <li><a href="#la-auditoría-de-métricas-más-allá-del-mape" id="toc-la-auditoría-de-métricas-más-allá-del-mape" class="nav-link" data-scroll-target="#la-auditoría-de-métricas-más-allá-del-mape">1.1 La Auditoría de Métricas: Más allá del MAPE</a></li>
+  <li><a href="#a.-la-jerarquía-de-la-optimización" id="toc-a.-la-jerarquía-de-la-optimización" class="nav-link" data-scroll-target="#a.-la-jerarquía-de-la-optimización">A. La Jerarquía de la Optimización</a></li>
+  <li><a href="#b.-la-regla-de-la-simplicidad-y-la-parsimonia" id="toc-b.-la-regla-de-la-simplicidad-y-la-parsimonia" class="nav-link" data-scroll-target="#b.-la-regla-de-la-simplicidad-y-la-parsimonia">B. La Regla de la Simplicidad y la Parsimonia</a></li>
+  <li><a href="#c.-el-riesgo-de-la-optimización-local" id="toc-c.-el-riesgo-de-la-optimización-local" class="nav-link" data-scroll-target="#c.-el-riesgo-de-la-optimización-local">C. El Riesgo de la Optimización Local</a></li>
   </ul></li>
-  <li><a href="#quiénes-se-benefician-y-quiénes-no" id="toc-quiénes-se-benefician-y-quiénes-no" class="nav-link" data-scroll-target="#quiénes-se-benefician-y-quiénes-no">¿Quiénes se benefician y quiénes no?</a>
+  <li><a href="#verdades-incomodas-de-la-arquitectura-de-suministros" id="toc-verdades-incomodas-de-la-arquitectura-de-suministros" class="nav-link" data-scroll-target="#verdades-incomodas-de-la-arquitectura-de-suministros">3. Verdades “Incomodas” de la Arquitectura de Suministros</a></li>
+  <li><a href="#el-perfil-del-arquitecto-del-futuro" id="toc-el-perfil-del-arquitecto-del-futuro" class="nav-link" data-scroll-target="#el-perfil-del-arquitecto-del-futuro">4. El Perfil del Arquitecto del Futuro</a>
   <ul class="collapse">
-  <li><a href="#quienes-se-benefician-aparentemente" id="toc-quienes-se-benefician-aparentemente" class="nav-link" data-scroll-target="#quienes-se-benefician-aparentemente">Quienes se “benefician” (aparentemente):</a></li>
-  <li><a href="#quienes-no-se-benefician-los-perjudicados" id="toc-quienes-no-se-benefician-los-perjudicados" class="nav-link" data-scroll-target="#quienes-no-se-benefician-los-perjudicados">Quienes NO se benefician (los perjudicados):</a></li>
+  <li><a href="#reflexión-final-dominando-el-caos" id="toc-reflexión-final-dominando-el-caos" class="nav-link" data-scroll-target="#reflexión-final-dominando-el-caos">Reflexión Final: Dominando el Caos</a></li>
   </ul></li>
-  <li><a href="#modelado-probabilístico-vs.-distribución-normal" id="toc-modelado-probabilístico-vs.-distribución-normal" class="nav-link" data-scroll-target="#modelado-probabilístico-vs.-distribución-normal">2. Modelado Probabilístico vs.&nbsp;Distribución Normal</a></li>
-  <li><a href="#optimización-del-capital-el-tco-del-inventario" id="toc-optimización-del-capital-el-tco-del-inventario" class="nav-link" data-scroll-target="#optimización-del-capital-el-tco-del-inventario">3. Optimización del Capital: El TCO del Inventario</a></li>
-  <li><a href="#arquitectura-tecnológica-el-cerebro-y-el-músculo" id="toc-arquitectura-tecnológica-el-cerebro-y-el-músculo" class="nav-link" data-scroll-target="#arquitectura-tecnológica-el-cerebro-y-el-músculo">4. Arquitectura Tecnológica: El Cerebro y el Músculo</a></li>
-  <li><a href="#el-factor-humano-forecast-value-added-fva" id="toc-el-factor-humano-forecast-value-added-fva" class="nav-link" data-scroll-target="#el-factor-humano-forecast-value-added-fva">5. El Factor Humano: Forecast Value Added (FVA)</a></li>
-  <li><a href="#conclusión-estratégica" id="toc-conclusión-estratégica" class="nav-link" data-scroll-target="#conclusión-estratégica">6. Conclusión Estratégica</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/notas-finales-estrategia.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -535,75 +504,66 @@ window.Quarto = {
 </header>
 
 
-<p>La culminación de este manual no representa solo la entrega de un conjunto de algoritmos, sino la propuesta de un nuevo modelo para la cadena de suministro. La transición de una gestión basada en la intuición hacia una arquitectura basada en la evidencia requiere una comprensión profunda de las palancas financieras y los límites estadísticos.</p>
-<section id="el-rigor-estadístico-como-base" class="level2">
-<h2 class="anchored" data-anchor-id="el-rigor-estadístico-como-base">1. El Rigor Estadístico como Base</h2>
-<section id="la-auditoría-de-métricas-más-allá-del-mape" class="level3">
-<h3 class="anchored" data-anchor-id="la-auditoría-de-métricas-más-allá-del-mape">1.1 La Auditoría de Métricas: Más allá del MAPE</h3>
-<p>Aunque el MAPE (<em>Mean Absolute Percentage Error</em>) es un estándar reconocido por su simplicidad comunicativa, presenta defectos estructurales matemáticos que lo hacen inadecuado para la toma de decisiones estratégicas en Supply Chain. Un Arquitecto de Suministros debe entender que el MAPE no es neutral; tiene “opiniones” matemáticas que pueden inducir a errores graves:</p>
+<p>Has llegado al final de este manual, pero este es solo el comienzo de tu transformación como <strong>Arquitecto de Suministros</strong>. A lo largo de estos 20 capítulos, hemos desmantelado la idea de que la Supply Chain es un área puramente operativa de “mover cajas”. Hemos demostrado que es una disciplina de ingeniería financiera, estadística aplicada y gestión del comportamiento humano.</p>
+<p>En estas notas finales, consolidamos las lecciones aprendidas en un manifiesto estratégico diseñado para que dejes de apagar incendios y comiences a diseñar sistemas resilientes.</p>
+<section id="el-manifiesto-del-arquitecto-de-operador-a-diseñador" class="level2">
+<h2 class="anchored" data-anchor-id="el-manifiesto-del-arquitecto-de-operador-a-diseñador">1. El Manifiesto del Arquitecto: De Operador a Diseñador</h2>
+<p>La excelencia en la cadena de suministro no se logra con el software más caro, sino con la arquitectura más sólida. Como arquitecto, tus principios rectores deben ser:</p>
+<ul>
+<li><p><strong>Los datos son los cimientos (GIGO):</strong> <em>Garbage In, Garbage Out</em>. Un algoritmo de XGBoost o una red neuronal sobre datos sucios es simplemente una forma más rápida y costosa de equivocarse. La auditoría constante del Cap. 1 y el entendimiento de la demanda real vs.&nbsp;ventas del Cap. 2 son tu único seguro de vida contra el caos.</p></li>
+<li><p><strong>El inventario es dinero en espera:</strong> Nunca veas una unidad en el estante sin ver su costo de oportunidad ($h$). Cada caja es capital que no está rindiendo en marketing, en expansión o en el banco. El balance general es tu verdadero tablero de control, y el flujo de caja tu métrica de éxito.</p></li>
+<li><p><strong>El RMSE es tu moneda de cambio:</strong> En el mundo estocástico, la incertidumbre tiene un precio. Cada punto de error en tu pronóstico se traduce directamente en dólares de stock de seguridad. Tu misión técnica es bajar el RMSE para “comprar” libertad financiera para la empresa.</p></li>
+<li><p><strong>Acepta la incertidumbre, no la ignores:</strong> Deja de perseguir el “pronóstico perfecto”; no existe. En su lugar, construye una red que gestione el error mediante la agilidad operativa y la segmentación inteligente. Si un producto es intermitente (Cap. 14), trátalo como tal; no fuerces la campana de Gauss donde no cabe.</p></li>
+<li><p><strong>El algoritmo necesita un abogado, no un jefe:</strong> Defiende la objetividad de tus modelos frente al sesgo del ego. Pero recuerda: la estadística mira el pasado; el humano mira el futuro. Usa el <strong>FVA</strong> para saber cuándo el humano está aportando inteligencia y cuándo solo está añadiendo ruido político.</p></li>
+</ul>
+</section>
+<section id="pilares-de-implementación-táctica" class="level2">
+<h2 class="anchored" data-anchor-id="pilares-de-implementación-táctica">2. Pilares de Implementación Táctica</h2>
+<section id="a.-la-jerarquía-de-la-optimización" class="level3">
+<h3 class="anchored" data-anchor-id="a.-la-jerarquía-de-la-optimización">A. La Jerarquía de la Optimización</h3>
+<p>No intentes implementar optimización multi-echelon (MEIO) si aún no sabes dónde está tu inventario. Sigue este orden de madurez para evitar el colapso del proyecto:</p>
 <ol type="1">
-<li><p><strong>Sesgo hacia la subestimación:</strong> El MAPE penaliza más a los pronósticos que están por encima de la demanda real que a los que están por debajo. Matemáticamente, el error no puede superar el 100% si predices de menos (el mínimo es 0), pero no tiene límite si predices de más. Esto empuja a los planificadores a ser “conservadores”, lo que causa rupturas de stock (<em>out-of-stock</em>).</p></li>
-<li><p><strong>Problemas con el cero:</strong> Si la demanda real es 0, el MAPE no se puede calcular (división por cero). Si la demanda es muy baja, cualquier pequeño error absoluto se convierte en un error porcentual astronómico que arruina el promedio del KPI.</p></li>
-<li><p><strong>No prioriza el valor:</strong> El MAPE trata por igual un error del 10% en un producto que vende un millón de unidades que en uno que vende diez. Esto es un error de gestión, ya que el impacto financiero es totalmente distinto.</p></li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>La recomendación:</strong> Utilizar el <strong>MAE (Error Absoluto Medio)</strong> combinado con el <strong>Sesgo (Bias)</strong>, o preferiblemente el <strong>WMAPE (MAPE Ponderado)</strong>, el cual evita los problemas de los valores bajos al ponderar por el volumen total.</p>
-</blockquote>
-</section>
-</section>
-<section id="quiénes-se-benefician-y-quiénes-no" class="level2">
-<h2 class="anchored" data-anchor-id="quiénes-se-benefician-y-quiénes-no">¿Quiénes se benefician y quiénes no?</h2>
-<p>El uso del MAPE crea “ganadores” y “perdedores” dentro de la organización debido a su naturaleza matemática:</p>
-<section id="quienes-se-benefician-aparentemente" class="level3">
-<h3 class="anchored" data-anchor-id="quienes-se-benefician-aparentemente">Quienes se “benefician” (aparentemente):</h3>
-<ul>
-<li><p><strong>Planificadores que subestiman la demanda:</strong> Como el MAPE castiga menos el quedarse corto que el pasarse, alguien que siempre pronostica por debajo de lo real obtendrá “mejores” números de KPI (aunque deje a la empresa sin stock).</p></li>
-<li><p><strong>Vendedores de software básico:</strong> Muchas herramientas antiguas incluyen el MAPE porque es fácil de explicar a personas que no saben de estadística, aunque sea técnicamente deficiente.</p></li>
-<li><p><strong>Productos de alto volumen y baja variabilidad:</strong> En estos casos, el MAPE suele ser estable y no presenta tantas distorsiones.</p></li>
-</ul>
-</section>
-<section id="quienes-no-se-benefician-los-perjudicados" class="level3">
-<h3 class="anchored" data-anchor-id="quienes-no-se-benefician-los-perjudicados">Quienes NO se benefician (los perjudicados):</h3>
-<ul>
-<li><p><strong>El Departamento de Finanzas y Operaciones:</strong> El MAPE no refleja el costo real del error. Puedes tener un MAPE “bajo” pero estar perdiendo millones en los productos más importantes.</p></li>
-<li><p><strong>Productos de “cola larga” (Long Tail):</strong> Los productos con demanda intermitente o baja (repuestos, artículos de lujo, etc.) siempre tendrán un MAPE desastroso, haciendo que parezca que el modelo de predicción es inútil cuando quizás no lo es.</p></li>
-<li><p><strong>La Gerencia:</strong> Reciben informes de “80% de precisión” que no se traducen en una mejor disponibilidad de producto o menores costos de inventario.</p></li>
-</ul>
-</section>
-</section>
-<section id="modelado-probabilístico-vs.-distribución-normal" class="level2">
-<h2 class="anchored" data-anchor-id="modelado-probabilístico-vs.-distribución-normal">2. Modelado Probabilístico vs.&nbsp;Distribución Normal</h2>
-<p>La “falsa seguridad” de la campana de Gauss ignora los riesgos de cola (<em>Tail Risk</em>). En mercados volátiles, la demanda rara vez es simétrica.</p>
-<ul>
-<li><strong>Recomendación:</strong> Priorice el uso de la <strong>Distribución Gamma</strong> para el cálculo del stock de seguridad. Este enfoque permite modelar con precisión la asimetría de la demanda, asegurando que la inversión en inventario cubra las variaciones reales y no supuestos teóricos que suelen subestimar el riesgo de quiebre.</li>
-</ul>
-</section>
-<section id="optimización-del-capital-el-tco-del-inventario" class="level2">
-<h2 class="anchored" data-anchor-id="optimización-del-capital-el-tco-del-inventario">3. Optimización del Capital: El TCO del Inventario</h2>
-<p>El stock de seguridad es un síntoma de incertidumbre, no una solución operativa. Para optimizar el <strong>Costo Total de Propiedad (TCO)</strong>, actúe sobre tres palancas:</p>
-<ol type="1">
-<li><p><strong>Z (Nivel de Servicio):</strong> Segmente clientes y productos. No todo requiere el mismo nivel de protección; la sobre-protección en Clase C es destrucción de valor.</p></li>
-<li><p><span class="math inline">\(\sigma_d\)</span> <strong>(Variabilidad):</strong> Mejore la calidad del pronóstico mediante S&amp;OP disciplinado y el uso de señales reales de consumo (sell-out).</p></li>
-<li><p><strong>LT (Lead Time):</strong> Ataque la variabilidad de sus proveedores. Un <em>Lead Time</em> consistente es financieramente superior a uno rápido pero errático.</p></li>
+<li><p><strong>Visibilidad y Limpieza:</strong> ¿Mis datos reflejan la realidad? (Cap. 1 y 2).</p></li>
+<li><p><strong>Segmentación Estratégica:</strong> ¿Sé qué productos son el corazón del margen y cuáles son ruido? (ABC/XYZ Dinámico del Cap. 3).</p></li>
+<li><p><strong>Estabilización del Pronóstico:</strong> ¿He minimizado el sesgo y medido el error base? (Parte II y III).</p></li>
+<li><p><strong>Ingeniería de Stock:</strong> ¿He calculado el $h$ y el $s$ reales para equilibrar la balanza? (Cap. 11 y 12).</p></li>
+<li><p><strong>Optimización bajo Restricciones:</strong> ¿Cómo asigno mi capital limitado para maximizar el ROI? (Cap. 17).</p></li>
 </ol>
 </section>
-<section id="arquitectura-tecnológica-el-cerebro-y-el-músculo" class="level2">
-<h2 class="anchored" data-anchor-id="arquitectura-tecnológica-el-cerebro-y-el-músculo">4. Arquitectura Tecnológica: El Cerebro y el Músculo</h2>
-<p>Es imperativo definir las responsabilidades de la infraestructura:</p>
+<section id="b.-la-regla-de-la-simplicidad-y-la-parsimonia" class="level3">
+<h3 class="anchored" data-anchor-id="b.-la-regla-de-la-simplicidad-y-la-parsimonia">B. La Regla de la Simplicidad y la Parsimonia</h3>
+<p>Antes de implementar modelos de Deep Learning, asegúrate de que tu proceso actual está añadiendo valor real sobre un modelo <strong>Naive</strong> (Cap. 18). En Supply Chain, la complejidad innecesaria es una forma de desperdicio. Si un promedio móvil de 3 meses le gana a tu modelo complejo, simplifica. Solo escala la tecnología cuando la simplicidad ya no pueda extraer más valor.</p>
+</section>
+<section id="c.-el-riesgo-de-la-optimización-local" class="level3">
+<h3 class="anchored" data-anchor-id="c.-el-riesgo-de-la-optimización-local">C. El Riesgo de la Optimización Local</h3>
+<p>Optimizar un SKU o una bodega de forma aislada es un espejismo peligroso. El inventario en una red compleja se comporta como un fluido; si presionas en un lado, sube en otro (Efecto Látigo, Cap. 16). Tu éxito se mide por la salud de la red completa y el cumplimiento del nivel de servicio al cliente final, no por el ahorro local de una sucursal.</p>
+</section>
+</section>
+<section id="verdades-incomodas-de-la-arquitectura-de-suministros" class="level2">
+<h2 class="anchored" data-anchor-id="verdades-incomodas-de-la-arquitectura-de-suministros">3. Verdades “Incomodas” de la Arquitectura de Suministros</h2>
+<ol type="1">
+<li><p><strong>El 100% de Nivel de Servicio es un suicidio financiero:</strong> Debido a la naturaleza de las colas de distribución (Normal, Gamma o Poisson), protegerse contra el último 1% de incertidumbre puede requerir duplicar toda tu inversión en inventario. Aprende a decir “no” basándote en el Ratio Crítico ($CR = s / (s+h)$).</p></li>
+<li><p><strong>El proveedor es responsable de tu exceso de stock:</strong> Nos obsesionamos con el error de demanda, pero la variabilidad del Lead Time (Cap. 13) suele ser más destructiva. Es más barato negociar puntualidad con un proveedor que mejorar un algoritmo de Machine Learning.</p></li>
+<li><p><strong>El presupuesto no es un pronóstico:</strong> Nunca permitas que el objetivo comercial se convierta automáticamente en el plan de suministros. El presupuesto es lo que “queremos” que pase; el pronóstico es lo que “probablemente” pasará. Operar con el primero genera excesos masivos; operar con el segundo genera rentabilidad.</p></li>
+</ol>
+</section>
+<section id="el-perfil-del-arquitecto-del-futuro" class="level2">
+<h2 class="anchored" data-anchor-id="el-perfil-del-arquitecto-del-futuro">4. El Perfil del Arquitecto del Futuro</h2>
+<p>La arquitectura de suministro ya no es para el que sabe usar un ERP, sino para el que sabe interpretar sistemas complejos. Para liderar este campo, necesitas un perfil híbrido:</p>
 <ul>
-<li><p><strong>El ERP es el Músculo Transaccional:</strong> Su función es la robustez y el registro. No fuerce al ERP a realizar analítica avanzada para la que no fue diseñado.</p></li>
-<li><p><strong>El Motor Analítico es el Cerebro Predictivo:</strong> Utilice herramientas de código abierto (R/Python) para gestionar la inteligencia estocástica y la optimización de parámetros dinámicos.</p></li>
+<li><p><strong>Analista de Datos Proactivo:</strong> No necesitas ser un ingeniero de software, pero debes entender Python, R o SQL. No para programar el día a día, sino para poder auditar los “cajas negras” de los proveedores de software y crear tus propios laboratorios de simulación (Cap. 15).</p></li>
+<li><p><strong>Ingeniero Financiero:</strong> Habla con tu CFO. Aprende a leer un P&amp;L y un Balance. Tu capacidad para traducir “días de inventario” a “retorno sobre el capital empleado (ROCE)” es lo que te dará un asiento en la mesa directiva.</p></li>
+<li><p><strong>Gestor de Consenso (S&amp;OP/IBP):</strong> El S&amp;OP es 20% matemáticas y 80% psicología. Tu éxito dependerá de tu capacidad para gestionar el ego organizacional, eliminar los sesgos de recencia y optimismo (Cap. 19) y alinear a todos bajo un Plan Maestro único (Cap. 20).</p></li>
 </ul>
-</section>
-<section id="el-factor-humano-forecast-value-added-fva" class="level2">
-<h2 class="anchored" data-anchor-id="el-factor-humano-forecast-value-added-fva">5. El Factor Humano: Forecast Value Added (FVA)</h2>
-<p>El juicio humano debe ser auditado. El ajuste manual solo añade valor cuando inyecta información exógena que el algoritmo no posee (promociones, cambios de ley). Si la intervención humana incrementa el error de forma constante, el proceso debe favorecer la parsimonia estadística para proteger el flujo de caja.</p>
-</section>
-<section id="conclusión-estratégica" class="level2">
-<h2 class="anchored" data-anchor-id="conclusión-estratégica">6. Conclusión Estratégica</h2>
-<p>El inventario es capital en espera. Cada unidad reducida mediante la precisión analítica es flujo de caja liberado para la innovación y el crecimiento. Al adoptar estos principios, la organización deja de reaccionar ante la volatilidad para empezar a diseñarla.</p>
+<section id="reflexión-final-dominando-el-caos" class="level3">
+<h3 class="anchored" data-anchor-id="reflexión-final-dominando-el-caos">Reflexión Final: Dominando el Caos</h3>
+<p>El mercado siempre será caótico. Habrá pandemias, crisis logísticas globales, cambios súbitos en los gustos del consumidor y fallos tecnológicos. Pero el <strong>Arquitecto de Suministros</strong> no teme al caos; lo modela con el RMSE, lo mitiga con el Stock de Seguridad, lo visualiza con Monte Carlo y lo navega con el S&amp;OP.</p>
+<p>Has completado el manual de construcción. Ahora, la responsabilidad de diseñar una cadena de suministro que no solo sobreviva, sino que se convierta en la principal ventaja competitiva de tu empresa, es exclusivamente tuya.</p>
+<p>Ve y construye algo extraordinario.</p>
+<p><strong>Nicolás A. Bravo</strong> <em>Arquitectura de Suministros</em></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1022,8 +982,8 @@ window.Quarto = {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./cap-20-plan-maestro-sop.html" class="pagination-link" aria-label="20. El Plan Maestro">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">20. El Plan Maestro</span></span>
+      <a href="./cap-20-plan-maestro-sop.html" class="pagination-link" aria-label="20. El Plan Maestro (S&amp;OP)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">20. El Plan Maestro (S&amp;OP)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

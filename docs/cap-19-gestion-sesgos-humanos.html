@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>19. El Algoritmo vs.&nbsp;el Ego – Arquitectura de suministros</title>
+<title>19. El Algoritmo vs.&nbsp;el Ego: Gestión de Sesgos Humanos – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -74,36 +109,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -278,7 +286,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-18-fva-valor-pronostico.html">VI: El Factor Humano y la Ejecución</a></li><li class="breadcrumb-item"><a href="./cap-19-gestion-sesgos-humanos.html"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-18-fva-valor-pronostico.html">VI: El Factor Humano y la Ejecución</a></li><li class="breadcrumb-item"><a href="./cap-19-gestion-sesgos-humanos.html"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego: Gestión de Sesgos Humanos</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -469,7 +477,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego</span></a>
+  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego: Gestión de Sesgos Humanos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -496,19 +504,11 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ruido-vs.-sesgo-la-herencia-de-kahneman" id="toc-ruido-vs.-sesgo-la-herencia-de-kahneman" class="nav-link active" data-scroll-target="#ruido-vs.-sesgo-la-herencia-de-kahneman">19.1 Ruido vs.&nbsp;Sesgo: La Herencia de Kahneman</a></li>
-  <li><a href="#el-catálogo-de-sesgos-en-la-trinchera-de-sop" id="toc-el-catálogo-de-sesgos-en-la-trinchera-de-sop" class="nav-link" data-scroll-target="#el-catálogo-de-sesgos-en-la-trinchera-de-sop">19.2 El Catálogo de Sesgos en la Trinchera de S&amp;OP</a>
-  <ul class="collapse">
-  <li><a href="#sesgo-de-optimismo-y-exceso-de-confianza" id="toc-sesgo-de-optimismo-y-exceso-de-confianza" class="nav-link" data-scroll-target="#sesgo-de-optimismo-y-exceso-de-confianza">19.2.1 Sesgo de Optimismo y Exceso de Confianza</a></li>
-  <li><a href="#sesgo-de-anclaje-anchoring" id="toc-sesgo-de-anclaje-anchoring" class="nav-link" data-scroll-target="#sesgo-de-anclaje-anchoring">19.2.2 Sesgo de Anclaje (Anchoring)</a></li>
-  <li><a href="#el-efecto-hippo-highest-paid-persons-opinion" id="toc-el-efecto-hippo-highest-paid-persons-opinion" class="nav-link" data-scroll-target="#el-efecto-hippo-highest-paid-persons-opinion">19.2.3 El Efecto HiPPO (Highest Paid Person’s Opinion)</a></li>
-  <li><a href="#sesgo-de-recencia-y-confirmación" id="toc-sesgo-de-recencia-y-confirmación" class="nav-link" data-scroll-target="#sesgo-de-recencia-y-confirmación">19.2.4 Sesgo de Recencia y Confirmación</a></li>
-  </ul></li>
-  <li><a href="#la-sabiduría-de-las-multitudes-the-wisdom-of-crowds" id="toc-la-sabiduría-de-las-multitudes-the-wisdom-of-crowds" class="nav-link" data-scroll-target="#la-sabiduría-de-las-multitudes-the-wisdom-of-crowds">19.3 La Sabiduría de las Multitudes (The Wisdom of Crowds)</a></li>
-  <li><a href="#el-método-delphi-profesional-estructurando-el-juicio" id="toc-el-método-delphi-profesional-estructurando-el-juicio" class="nav-link" data-scroll-target="#el-método-delphi-profesional-estructurando-el-juicio">19.4 El Método Delphi Profesional: Estructurando el Juicio</a></li>
-  <li><a href="#la-gobernanza-del-ajuste-manual" id="toc-la-gobernanza-del-ajuste-manual" class="nav-link" data-scroll-target="#la-gobernanza-del-ajuste-manual">19.5 La Gobernanza del Ajuste Manual</a></li>
-  <li><a href="#midiendo-el-sesgo-el-tracking-signal-ts" id="toc-midiendo-el-sesgo-el-tracking-signal-ts" class="nav-link" data-scroll-target="#midiendo-el-sesgo-el-tracking-signal-ts">19.6 Midiendo el Sesgo: El Tracking Signal (TS)</a></li>
-  <li><a href="#sincronización-el-camino-hacia-el-ibp-integrated-business-planning" id="toc-sincronización-el-camino-hacia-el-ibp-integrated-business-planning" class="nav-link" data-scroll-target="#sincronización-el-camino-hacia-el-ibp-integrated-business-planning">19.7 Sincronización: El Camino hacia el IBP (Integrated Business Planning)</a></li>
+  <li><a href="#el-cerebro-no-es-estadístico" id="toc-el-cerebro-no-es-estadístico" class="nav-link active" data-scroll-target="#el-cerebro-no-es-estadístico">19.1 El Cerebro no es Estadístico</a></li>
+  <li><a href="#los-sesgos-más-peligrosos-en-supply-chain" id="toc-los-sesgos-más-peligrosos-en-supply-chain" class="nav-link" data-scroll-target="#los-sesgos-más-peligrosos-en-supply-chain">19.2 Los Sesgos más Peligrosos en Supply Chain</a></li>
+  <li><a href="#el-campo-de-batalla-la-reunión-de-sop" id="toc-el-campo-de-batalla-la-reunión-de-sop" class="nav-link" data-scroll-target="#el-campo-de-batalla-la-reunión-de-sop">19.3 El Campo de Batalla: La reunión de S&amp;OP</a></li>
+  <li><a href="#simulador-el-test-del-sesgo" id="toc-simulador-el-test-del-sesgo" class="nav-link" data-scroll-target="#simulador-el-test-del-sesgo">19.4 Simulador: El Test del Sesgo</a></li>
+  <li><a href="#estrategias-para-des-sesgar-de-biasing" id="toc-estrategias-para-des-sesgar-de-biasing" class="nav-link" data-scroll-target="#estrategias-para-des-sesgar-de-biasing">19.5 Estrategias para Des-sesgar (De-biasing)</a></li>
   <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-19-gestion-sesgos-humanos.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -517,9 +517,9 @@ window.Quarto = {
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-18-fva-valor-pronostico.html">VI: El Factor Humano y la Ejecución</a></li><li class="breadcrumb-item"><a href="./cap-19-gestion-sesgos-humanos.html"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-18-fva-valor-pronostico.html">VI: El Factor Humano y la Ejecución</a></li><li class="breadcrumb-item"><a href="./cap-19-gestion-sesgos-humanos.html"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego: Gestión de Sesgos Humanos</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego</span></h1>
+<h1 class="title"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego: Gestión de Sesgos Humanos</span></h1>
 </div>
 
 
@@ -536,105 +536,238 @@ window.Quarto = {
 </header>
 
 
-<p><em>“El problema no es que los humanos tengan intuición; el problema es que confían en ella más que en los datos, incluso cuando la evidencia demuestra sistemáticamente que están equivocados”</em>.</p>
-<p>En el Capítulo 18 introdujimos el marco <strong>FVA (Forecast Value Added)</strong> para auditar el valor de cada intervención. Pero medir el daño no es suficiente; un Arquitecto de Suministros debe ser capaz de prevenirlo. La mente humana, aunque brillante para identificar patrones complejos no estructurados, es un procesador de información imperfecto, plagado de atajos cognitivos que evolucionaron para la supervivencia en la sabana, no para la gestión de inventarios en una red global.</p>
-<p>En este capítulo, entraremos en la “física de los sesgos”. Aprenderemos por qué las reuniones de S&amp;OP suelen convertirse en campos de batalla políticos y cómo podemos rediseñar el proceso de toma de decisiones para que la inteligencia humana actúe como un amplificador del modelo, y no como un generador de entropía.</p>
-<section id="ruido-vs.-sesgo-la-herencia-de-kahneman" class="level2">
-<h2 class="anchored" data-anchor-id="ruido-vs.-sesgo-la-herencia-de-kahneman">19.1 Ruido vs.&nbsp;Sesgo: La Herencia de Kahneman</h2>
-<p>Antes de catalogar los errores, debemos distinguir entre dos fenómenos que destruyen la precisión, tal como define el Nobel Daniel Kahneman:</p>
+<p>En el capítulo anterior, aprendimos a utilizar el <strong>Forecast Value Added (FVA)</strong> para medir objetivamente si las intervenciones humanas mejoran o destruyen la precisión del sistema. Pero medir el daño no es lo mismo que prevenirlo. Para un Arquitecto de Suministros, entender la matemática de los modelos es solo la mitad del trabajo; la otra mitad es entender la <strong>psicología del planificador</strong>.</p>
+<p>A menudo, los ajustes manuales que destruyen valor no nacen de una mala intención, sino de fallos estructurales en la forma en que el cerebro humano procesa la incertidumbre. En este capítulo, exploraremos los sesgos cognitivos que sabotean el pronóstico y cómo diseñar un proceso que proteja al algoritmo del ego.</p>
+<section id="el-cerebro-no-es-estadístico" class="level2">
+<h2 class="anchored" data-anchor-id="el-cerebro-no-es-estadístico">19.1 El Cerebro no es Estadístico</h2>
+<p>Evolutivamente, nuestro cerebro está diseñado para detectar patrones rápidos para la supervivencia, no para calcular regresiones lineales o distribuciones Gamma en la cabeza. Esto nos hace propensos a “ver” tendencias donde solo hay ruido aleatorio.</p>
+<p>Cuando un gerente de ventas dice: <em>“Siento que la demanda va a explotar este mes”</em>, su cerebro está siendo víctima de una serie de atajos mentales o <strong>heurísticas</strong>. Como arquitectos, nuestra misión no es eliminar el juicio humano (que es valioso para eventos únicos), sino “higienizarlo”.</p>
+</section>
+<section id="los-sesgos-más-peligrosos-en-supply-chain" class="level2">
+<h2 class="anchored" data-anchor-id="los-sesgos-más-peligrosos-en-supply-chain">19.2 Los Sesgos más Peligrosos en Supply Chain</h2>
+<p>Existen cuatro sesgos que actúan como “virus” en el proceso de planificación:</p>
 <ol type="1">
-<li><strong>Sesgo (Bias):</strong> Es un error sistemático. Es cuando el equipo de ventas siempre, mes tras mes, pronostica un 10% por encima de la realidad. Es una desviación en una dirección específica que podemos medir y corregir.</li>
-<li><strong>Ruido (Noise):</strong> Es la variabilidad no deseada. Es cuando dos planificadores, ante los mismos datos, llegan a conclusiones diferentes, o cuando un mismo planificador da un número diferente el lunes por la mañana respecto al viernes por la tarde.</li>
+<li><p><strong>Sesgo de Recencia (Recency Bias):</strong> Es la tendencia a darle un peso excesivo a los eventos más recientes. Si ayer un cliente importante canceló un pedido, el planificador tiende a bajar el pronóstico de todo el mes, ignorando que los últimos dos años de datos muestran una tendencia alcista sólida.</p></li>
+<li><p><strong>Efecto de Anclaje (Anchoring):</strong> Ocurre cuando nos aferramos a un número inicial (como el presupuesto anual) y ajustamos el pronóstico basándonos en ese “ancla”, en lugar de mirar la realidad del mercado.</p></li>
+<li><p><strong>Sesgo de Confirmación:</strong> Buscamos información que respalde nuestra corazonada. Si creemos que un producto va a fallar, solo prestaremos atención a las noticias negativas, ignorando las señales positivas del modelo de Machine Learning.</p></li>
+<li><p><strong>Sesgo de Optimismo (Over-optimism):</strong> El más común en las áreas comerciales. Se confunde el <em>deseo</em> de vender con la <em>probabilidad</em> de vender. Esto genera el “ajuste al alza” sistemático que infla los inventarios de seguridad.</p></li>
 </ol>
-<p><strong>La Misión del Arquitecto:</strong> Los algoritmos eliminan el <strong>Ruido</strong> (siempre dan el mismo resultado ante los mismos datos). Tu trabajo con el factor humano es eliminar el <strong>Sesgo</strong> y estructurar el juicio para que no inyecte nuevo ruido en el sistema.</p>
 </section>
-<section id="el-catálogo-de-sesgos-en-la-trinchera-de-sop" class="level2">
-<h2 class="anchored" data-anchor-id="el-catálogo-de-sesgos-en-la-trinchera-de-sop">19.2 El Catálogo de Sesgos en la Trinchera de S&amp;OP</h2>
-<p>Para ganar esta guerra, primero debemos identificar a los enemigos invisibles que se sientan a la mesa de planificación:</p>
-<section id="sesgo-de-optimismo-y-exceso-de-confianza" class="level3">
-<h3 class="anchored" data-anchor-id="sesgo-de-optimismo-y-exceso-de-confianza">19.2.1 Sesgo de Optimismo y Exceso de Confianza</h3>
-<p>Es el más común. Los humanos sobreestimamos nuestra capacidad para influir en el futuro y subestimamos los riesgos. En Supply Chain, esto se traduce en creer que “esta promoción será masiva”, ignorando que las últimas tres fallaron. El exceso de confianza hace que los planificadores ignoren los intervalos de confianza del modelo, creyendo que su “punto de vista” es más preciso que la probabilidad estadística.</p>
-</section>
-<section id="sesgo-de-anclaje-anchoring" class="level3">
-<h3 class="anchored" data-anchor-id="sesgo-de-anclaje-anchoring">19.2.2 Sesgo de Anclaje (Anchoring)</h3>
-<p>Ocurre cuando la mente se “pega” a la primera cifra mencionada. Si el Director Financiero abre la reunión mencionando el presupuesto anual (un objetivo político, no un pronóstico), todos los ajustes posteriores gravitarán alrededor de ese número. El presupuesto actúa como un ancla que impide que el pronóstico se mueva hacia la realidad que dictan los datos de demanda real.</p>
-</section>
-<section id="el-efecto-hippo-highest-paid-persons-opinion" class="level3">
-<h3 class="anchored" data-anchor-id="el-efecto-hippo-highest-paid-persons-opinion">19.2.3 El Efecto HiPPO (Highest Paid Person’s Opinion)</h3>
-<p>En una reunión presencial, la jerarquía mata a la estadística. Si el Vicepresidente de Ventas dice que “el mercado está explotando”, los analistas subordinados tenderán a autocensurarse y ajustar sus modelos para coincidir con el jefe, incluso si los datos muestran una desaceleración. Esto destruye la diversidad de información y crea un eco-cámara peligroso.</p>
-</section>
-<section id="sesgo-de-recencia-y-confirmación" class="level3">
-<h3 class="anchored" data-anchor-id="sesgo-de-recencia-y-confirmación">19.2.4 Sesgo de Recencia y Confirmación</h3>
-<p>El planificador le da un peso desproporcionado a la queja que recibió ayer de un cliente importante. Si un cliente grande canceló un pedido, el humano tiende a bajar el pronóstico de toda la familia de productos (Recencia). Luego, buscará activamente cualquier dato menor que confirme su miedo e ignorará las señales de crecimiento de otros mil clientes (Confirmación).</p>
-</section>
-</section>
-<section id="la-sabiduría-de-las-multitudes-the-wisdom-of-crowds" class="level2">
-<h2 class="anchored" data-anchor-id="la-sabiduría-de-las-multitudes-the-wisdom-of-crowds">19.3 La Sabiduría de las Multitudes (The Wisdom of Crowds)</h2>
-<p>Francis Galton descubrió en 1906 que el promedio de las estimaciones de una multitud suele ser más preciso que la opinión del mayor experto individual. Pero para que esto funcione en tu empresa, se deben cumplir tres condiciones estrictas que la mayoría de las organizaciones violan:</p>
-<ol type="1">
-<li><strong>Independencia:</strong> Cada persona debe dar su pronóstico sin conocer el de los demás. La deliberación grupal contamina la señal.</li>
-<li><strong>Diversidad:</strong> Necesitas la opinión de Ventas (mercado), Finanzas (restricciones), Operaciones (capacidad) y Marketing (promociones).</li>
-<li><strong>Descentralización:</strong> Los informantes deben estar cerca del dato (ej. los vendedores de campo saben cosas que el gerente en la oficina central ignora).</li>
-</ol>
-<p><strong>La Táctica del Arquitecto:</strong> En lugar de una reunión donde todos discuten un número, implementa un sistema de votación ciega previa. Promedia esos números y preséntalos como el “Consenso Humano Inicial”. Te sorprenderá ver cómo este promedio bate constantemente a la opinión del “experto” de la sala.</p>
-</section>
-<section id="el-método-delphi-profesional-estructurando-el-juicio" class="level2">
-<h2 class="anchored" data-anchor-id="el-método-delphi-profesional-estructurando-el-juicio">19.4 El Método Delphi Profesional: Estructurando el Juicio</h2>
-<p>Cuando el riesgo es alto (ej. lanzamiento de un producto disruptivo), no usamos reuniones; usamos el <strong>Método Delphi</strong>. Es un proceso diseñado para extraer conocimiento experto eliminando la política:</p>
+<section id="el-campo-de-batalla-la-reunión-de-sop" class="level2">
+<h2 class="anchored" data-anchor-id="el-campo-de-batalla-la-reunión-de-sop">19.3 El Campo de Batalla: La reunión de S&amp;OP</h2>
+<p>La reunión de Consenso o S&amp;OP suele ser el lugar donde el ego derrota al algoritmo. Los factores sociales amplifican los sesgos individuales:</p>
 <ul>
-<li><strong>Ronda 1 (Anónima):</strong> Cada experto envía su estimación y, lo más importante, sus <strong>razones cualitativas</strong>.</li>
-<li><strong>Ronda 2 (Retroalimentación):</strong> El Arquitecto resume las razones (sin nombres) y las distribuye. Los expertos ven argumentos que quizás no habían considerado (ej. <em>“No creo que vendamos tanto porque hay un competidor nuevo en el sur”</em>).</li>
-<li><strong>Ronda 3 (Ajuste):</strong> Los expertos emiten un segundo voto. Generalmente, las estimaciones convergen hacia un número mucho más realista y fundamentado.</li>
+<li><p><strong>Groupthink (Pensamiento de Grupo):</strong> Nadie quiere contradecir al director general cuando dice que la nueva campaña será un éxito rotundo, incluso si los datos dicen lo contrario.</p></li>
+<li><p><strong>Jerarquía vs.&nbsp;Evidencia:</strong> En muchas culturas organizacionales, el “HiPPO” (<em>Highest Paid Person’s Opinion</em>) pesa más que el RMSE del modelo de Random Forest.</p></li>
 </ul>
+<p><strong>Estrategia del Arquitecto:</strong> Para combatir esto, el pronóstico estadístico debe presentarse como la <strong>“Hipótesis Nula”</strong>. Cualquier cambio humano debe estar justificado por una evidencia externa que el modelo no conozca (ej. un contrato firmado, una huelga portuaria). Si no hay evidencia, el modelo manda.</p>
 </section>
-<section id="la-gobernanza-del-ajuste-manual" class="level2">
-<h2 class="anchored" data-anchor-id="la-gobernanza-del-ajuste-manual">19.5 La Gobernanza del Ajuste Manual</h2>
-<p><strong>El ajuste humano es una excepción, no una rutina</strong>. Para proteger el modelo, implementamos una política de “Etiquetas de Razón”:</p>
-<ol type="1">
-<li><strong>Ajuste por Evento (Válido):</strong> Se basa en información que el modelo no tiene (ej. una huelga de puertos, un cambio de ley).</li>
-<li><strong>Ajuste por Promoción (Válido):</strong> Si el modelo de ML no incluye la variable “promo”, el humano debe inyectar el incremento esperado.</li>
-<li><strong>Ajuste por “Sentimiento” (Inválido):</strong> Estos ajustes deben estar prohibidos. Si no hay un dato externo concreto, el número de la máquina se queda.</li>
-</ol>
-<p><strong>Auditoría de Ética de Datos:</strong> Al final de cada mes, analizamos el <strong>FVA por Etiqueta</strong>. Si los ajustes por “Sentimiento” tienen un FVA negativo durante 3 meses, el responsable pierde el acceso a modificar el sistema.</p>
-</section>
-<section id="midiendo-el-sesgo-el-tracking-signal-ts" class="level2">
-<h2 class="anchored" data-anchor-id="midiendo-el-sesgo-el-tracking-signal-ts">19.6 Midiendo el Sesgo: El Tracking Signal (TS)</h2>
-<p>No basta con medir el error absoluto (WAPE). Un Arquitecto debe vigilar si la organización tiene una “tendencia a mentirse”. El <strong>Tracking Signal</strong> es nuestra alarma de incendio:</p>
-<p><span class="math display">\[TS_t = rac{\sum_{i=1}^t (Actual_i - Pronóstico_i)}{MAD_t}\]</span></p>
-<p>Donde <strong>MAD</strong> es la Desviación Media Absoluta. * <strong>Interpretación:</strong> El TS mide cuántas MADs nos hemos desviado de forma acumulada. * <strong>Límites de Control:</strong> Si el <span class="math inline">\(TS &gt; 4\)</span> o <span class="math inline">\(TS &lt; -4\)</span>, el proceso está <strong>fuera de control</strong>. * Un TS positivo alto indica que estamos subestimando sistemáticamente (perdiendo ventas). * Un TS negativo alto indica que el sesgo de optimismo ha secuestrado la cadena (inflamos inventario).</p>
-</section>
-<section id="sincronización-el-camino-hacia-el-ibp-integrated-business-planning" class="level2">
-<h2 class="anchored" data-anchor-id="sincronización-el-camino-hacia-el-ibp-integrated-business-planning">19.7 Sincronización: El Camino hacia el IBP (Integrated Business Planning)</h2>
-<p>La gestión de sesgos es la base del <strong>IBP</strong>. En este nivel de madurez, la empresa entiende que el pronóstico no es una meta de ventas, sino una <strong>proyección de la realidad</strong>. * Ventas pronostica lo que cree que pasará. * Finanzas calcula la brecha respecto al presupuesto. * La gerencia decide qué acciones comerciales tomar para cerrar esa brecha.</p>
-<p><strong>Nunca</strong> permitas que el pronóstico de demanda se convierta en el objetivo de ventas. Si lo haces, el sesgo de optimismo destruirá tu cadena de suministro para siempre.</p>
+<section id="simulador-el-test-del-sesgo" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-el-test-del-sesgo">19.4 Simulador: El Test del Sesgo</h2>
+<p>Ponte a prueba. Imagina que el modelo estadístico predice una demanda estable. De repente, ocurren eventos externos. Ajusta el pronóstico y observa si tu “intuición” está añadiendo valor o simplemente reaccionando al ruido.</p>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="43" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 42;"><span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>jStat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co">// Parámetros de la simulación</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>viewof event_type <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"Venta récord ayer"</span><span class="op">,</span> <span class="st">"Queja de cliente clave"</span><span class="op">,</span> <span class="st">"Presión de cierre de mes"</span><span class="op">,</span> <span class="st">"Noticia de huelga"</span>]<span class="op">,</span> </span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">label</span><span class="op">:</span> <span class="st">"Evento del día:"</span>}</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>viewof user_adjustment <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">40</span><span class="op">,</span> <span class="dv">40</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Tu ajuste manual (%):"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="59" data-source-offset="-37"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 58;"><span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>actual_effect <span class="op">=</span> {</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (event_type <span class="op">===</span> <span class="st">"Venta récord ayer"</span>) <span class="cf">return</span> <span class="dv">2</span><span class="op">;</span> <span class="co">// Efecto real mínimo (ruido)</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (event_type <span class="op">===</span> <span class="st">"Queja de cliente clave"</span>) <span class="cf">return</span> <span class="op">-</span><span class="dv">5</span><span class="op">;</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (event_type <span class="op">===</span> <span class="st">"Presión de cierre de mes"</span>) <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// Efecto nulo en demanda real</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (event_type <span class="op">===</span> <span class="st">"Noticia de huelga"</span>) <span class="cf">return</span> <span class="op">-</span><span class="dv">20</span><span class="op">;</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="co">// Cálculo de Valor Agregado</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>baseline <span class="op">=</span> <span class="dv">100</span><span class="op">;</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>human_guess <span class="op">=</span> baseline <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> user_adjustment<span class="op">/</span><span class="dv">100</span>)<span class="op">;</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>reality <span class="op">=</span> baseline <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> actual_effect<span class="op">/</span><span class="dv">100</span>)<span class="op">;</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>error_base <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(reality <span class="op">-</span> baseline)<span class="op">;</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>error_human <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(reality <span class="op">-</span> human_guess)<span class="op">;</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>fva <span class="op">=</span> error_base <span class="op">-</span> error_human<span class="op">;</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>chartSesgo <span class="op">=</span> {</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:450px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> [<span class="st">'Algoritmo'</span><span class="op">,</span> <span class="st">'Tu Decisión'</span><span class="op">,</span> <span class="st">'Realidad'</span>]<span class="op">,</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> [baseline<span class="op">,</span> human_guess<span class="op">,</span> reality]<span class="op">,</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'bar'</span><span class="op">,</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>      <span class="dt">marker</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> [<span class="st">'#94a3b8'</span><span class="op">,</span> fva <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">'#10b981'</span> <span class="op">:</span> <span class="st">'#ef4444'</span><span class="op">,</span> <span class="st">'#1e293b'</span>]}</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layout <span class="op">=</span> {</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="vs">`Impacto de tu ajuste ante: </span><span class="sc">${</span>event_type<span class="sc">}</span><span class="vs">`</span><span class="op">,</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>    <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Unidades'</span><span class="op">,</span> <span class="dt">gridcolor</span><span class="op">:</span> <span class="st">'#f1f5f9'</span> }<span class="op">,</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>    <span class="dt">annotations</span><span class="op">:</span> [{</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> human_guess<span class="op">,</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> fva <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">"¡Valor Agregado!"</span> <span class="op">:</span> <span class="st">"Sesgo Detectado"</span><span class="op">,</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>      <span class="dt">showarrow</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>      <span class="dt">arrowhead</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>      <span class="dt">ax</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">ay</span><span class="op">:</span> <span class="op">-</span><span class="dv">40</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>    }]</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> layout<span class="op">,</span> {<span class="dt">responsive</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">displayModeBar</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">;</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-8" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>El Rol del Moderador Científico
+<span class="screen-reader-only">Important</span>El Veredicto de la Simulación
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Como Arquitecto de Suministros, tu labor en la reunión de S&amp;OP no es dar un número, sino proteger la integridad del proceso. Tu éxito se mide en un <strong>Tracking Signal cercano a cero</strong> y un <strong>FVA humano positivo</strong>. Si logras esto, habrás transformado la cultura de tu empresa de una basada en opiniones a una basada en evidencias.</p>
+<p>En este caso, tu ajuste ha resultado en un FVA de <strong><span><span id="ojs-element-id-1"></span></span></strong> unidades. <span><span id="ojs-element-id-2"></span></span></p>
 </div>
 </div>
+</section>
+<section id="estrategias-para-des-sesgar-de-biasing" class="level2">
+<h2 class="anchored" data-anchor-id="estrategias-para-des-sesgar-de-biasing">19.5 Estrategias para Des-sesgar (De-biasing)</h2>
+<p>Para construir una organización resiliente, el Arquitecto debe implementar estas tres protecciones:</p>
+<ol type="1">
+<li><p><strong>Ajustes “Ciegos”:</strong> No permitas que el equipo comercial vea el número estadístico antes de dar su opinión. Esto evita el efecto de anclaje.</p></li>
+<li><p><strong>Responsabilidad del Ajuste:</strong> Cada cambio manual debe llevar una “etiqueta” (ej. <em>Promoción</em>, <em>Huelga</em>, <em>Intuición</em>). Al final del año, el FVA dirá qué etiquetas son rentables.</p></li>
+<li><p><strong>Rangos de Tolerancia:</strong> Si el ajuste humano es menor al 5%, el sistema lo ignora automáticamente. El ruido pequeño no merece el costo administrativo del cambio.</p></li>
+</ol>
+<p>El éxito de una arquitectura de suministros no se mide por la complejidad de sus ecuaciones, sino por su capacidad de <strong>mantener la disciplina</strong> frente a la presión emocional del negocio.</p>
 </section>
 <section id="checklist-de-cierre-del-capítulo" class="level2">
 <h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">¿He identificado a los “generadores de ruido” en mi proceso de consenso?</label></li>
-<li><label><input type="checkbox">¿He implementado un registro obligatorio de “Razones de Ajuste” para cada cambio manual?</label></li>
-<li><label><input type="checkbox">¿Tengo un reporte mensual de Tracking Signal para detectar sesgos sistémicos?</label></li>
-<li><label><input type="checkbox">¿He eliminado la deliberación abierta en favor de estimaciones independientes antes de las reuniones?</label></li>
-<li><label><input type="checkbox">¿He comunicado a la dirección el costo financiero (en inventario o ventas perdidas) derivado de los sesgos detectados?</label></li>
+<li><p><label><input type="checkbox">¿He identificado los sesgos de recencia en las reuniones de demanda?</label></p></li>
+<li><p><label><input type="checkbox">¿Utilizo el FVA para mostrar a los equipos comerciales el impacto de sus ajustes?</label></p></li>
+<li><p><label><input type="checkbox">¿He implementado “etiquetas” para auditar la razón de cada cambio manual?</label></p></li>
+<li><p><label><input type="checkbox">¿Entiendo que el algoritmo es la “defensa” contra el exceso de inventario causado por el optimismo?</label></p></li>
+<li><p><label><input type="checkbox">¿Estoy listo para el <strong>Capítulo 20</strong> para consolidar todo esto en un Plan Maestro (S&amp;OP)?</label></p></li>
 </ul>
 
 
+<div class="ojs-auto-generated hidden">
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7ZnZhLnRvRml4ZWQoMSl9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHt1c2VyX2FkanVzdG1lbnQgPiAwICYmIGFjdHVhbF9lZmZlY3QgPD0gMCA/IFwiSGFzIGNhw61kbyBlbiBlbCAqKioqIG8gZGUgKioqKi4gUmVhY2Npb25hc3RlIGEgdW5hIG5vdGljaWEgcnVpZG9zYSBpZ25vcmFuZG8gbGEgaW5lcmNpYSBkZWwgbW9kZWxvLlwiIDogXCJIYXMgbG9ncmFkbyBpZGVudGlmaWNhciB1bmEgc2XDsWFsIHJlYWwgZnVlcmEgZGVsIG1vZGVsby4gwqFCdWVuIHRyYWJham8hXCJ9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0yIn1dfQ==
+</script>
+</div>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5qU3RhdCA9IHJlcXVpcmUoXCJqc3RhdEAxLjkuNlwiKVxyXG5QbG90bHkgPSByZXF1aXJlKFwicGxvdGx5LmpzLWRpc3QtbWluQDIuMjQuMVwiKVxyXG5cclxuLy8gUGFyw6FtZXRyb3MgZGUgbGEgc2ltdWxhY2nDs25cclxudmlld29mIGV2ZW50X3R5cGUgPSBJbnB1dHMuc2VsZWN0KFxyXG4gIFtcIlZlbnRhIHLDqWNvcmQgYXllclwiLCBcIlF1ZWphIGRlIGNsaWVudGUgY2xhdmVcIiwgXCJQcmVzacOzbiBkZSBjaWVycmUgZGUgbWVzXCIsIFwiTm90aWNpYSBkZSBodWVsZ2FcIl0sIFxyXG4gIHtsYWJlbDogXCJFdmVudG8gZGVsIGTDrWE6XCJ9XHJcbilcclxudmlld29mIHVzZXJfYWRqdXN0bWVudCA9IElucHV0cy5yYW5nZShbLTQwLCA0MF0sIHt2YWx1ZTogMTUsIHN0ZXA6IDUsIGxhYmVsOiBcIlR1IGFqdXN0ZSBtYW51YWwgKCUpOlwifSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcbi8vIEzDs2dpY2EgZGUgXCJSZWFsaWRhZCB2cyBKdWljaW9cIlxyXG5hY3R1YWxfZWZmZWN0ID0ge1xyXG4gIGlmIChldmVudF90eXBlID09PSBcIlZlbnRhIHLDqWNvcmQgYXllclwiKSByZXR1cm4gMjsgLy8gRWZlY3RvIHJlYWwgbcOtbmltbyAocnVpZG8pXHJcbiAgaWYgKGV2ZW50X3R5cGUgPT09IFwiUXVlamEgZGUgY2xpZW50ZSBjbGF2ZVwiKSByZXR1cm4gLTU7XHJcbiAgaWYgKGV2ZW50X3R5cGUgPT09IFwiUHJlc2nDs24gZGUgY2llcnJlIGRlIG1lc1wiKSByZXR1cm4gMDsgLy8gRWZlY3RvIG51bG8gZW4gZGVtYW5kYSByZWFsXHJcbiAgaWYgKGV2ZW50X3R5cGUgPT09IFwiTm90aWNpYSBkZSBodWVsZ2FcIikgcmV0dXJuIC0yMDtcclxuICByZXR1cm4gMDtcclxufVxyXG5cclxuLy8gQ8OhbGN1bG8gZGUgVmFsb3IgQWdyZWdhZG9cclxuYmFzZWxpbmUgPSAxMDA7XHJcbmh1bWFuX2d1ZXNzID0gYmFzZWxpbmUgKiAoMSArIHVzZXJfYWRqdXN0bWVudC8xMDApO1xyXG5yZWFsaXR5ID0gYmFzZWxpbmUgKiAoMSArIGFjdHVhbF9lZmZlY3QvMTAwKTtcclxuXHJcbmVycm9yX2Jhc2UgPSBNYXRoLmFicyhyZWFsaXR5IC0gYmFzZWxpbmUpO1xyXG5lcnJvcl9odW1hbiA9IE1hdGguYWJzKHJlYWxpdHkgLSBodW1hbl9ndWVzcyk7XHJcbmZ2YSA9IGVycm9yX2Jhc2UgLSBlcnJvcl9odW1hbjtcclxuXHJcbmNoYXJ0U2VzZ28gPSB7XHJcbiAgY29uc3QgY29udGFpbmVyID0gaHRtbGA8ZGl2IHN0eWxlPVwid2lkdGg6MTAwJTsgaGVpZ2h0OjQ1MHB4O1wiPjwvZGl2PmA7XHJcbiAgXHJcbiAgY29uc3QgdHJhY2VzID0gW1xyXG4gICAge1xyXG4gICAgICB4OiBbJ0FsZ29yaXRtbycsICdUdSBEZWNpc2nDs24nLCAnUmVhbGlkYWQnXSxcclxuICAgICAgeTogW2Jhc2VsaW5lLCBodW1hbl9ndWVzcywgcmVhbGl0eV0sXHJcbiAgICAgIHR5cGU6ICdiYXInLFxyXG4gICAgICBtYXJrZXI6IHtjb2xvcjogWycjOTRhM2I4JywgZnZhID49IDAgPyAnIzEwYjk4MScgOiAnI2VmNDQ0NCcsICcjMWUyOTNiJ119XHJcbiAgICB9XHJcbiAgXTtcclxuXHJcbiAgY29uc3QgbGF5b3V0ID0ge1xyXG4gICAgdGl0bGU6IGBJbXBhY3RvIGRlIHR1IGFqdXN0ZSBhbnRlOiAke2V2ZW50X3R5cGV9YCxcclxuICAgIHlheGlzOiB7IHRpdGxlOiAnVW5pZGFkZXMnLCBncmlkY29sb3I6ICcjZjFmNWY5JyB9LFxyXG4gICAgdGVtcGxhdGU6ICdwbG90bHlfd2hpdGUnLFxyXG4gICAgYW5ub3RhdGlvbnM6IFt7XHJcbiAgICAgIHg6IDEsXHJcbiAgICAgIHk6IGh1bWFuX2d1ZXNzLFxyXG4gICAgICB0ZXh0OiBmdmEgPj0gMCA/IFwiwqFWYWxvciBBZ3JlZ2FkbyFcIiA6IFwiU2VzZ28gRGV0ZWN0YWRvXCIsXHJcbiAgICAgIHNob3dhcnJvdzogdHJ1ZSxcclxuICAgICAgYXJyb3doZWFkOiAyLFxyXG4gICAgICBheDogMCwgYXk6IC00MFxyXG4gICAgfV1cclxuICB9O1xyXG5cclxuICBQbG90bHkubmV3UGxvdChjb250YWluZXIsIHRyYWNlcywgbGF5b3V0LCB7cmVzcG9uc2l2ZTogdHJ1ZSwgZGlzcGxheU1vZGVCYXI6IGZhbHNlfSk7XHJcbiAgcmV0dXJuIGNvbnRhaW5lcjtcclxufVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2V2ZW50X3R5cGUnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgndXNlcl9hZGp1c3RtZW50JykifV19
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

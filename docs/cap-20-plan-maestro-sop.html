@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>20. El Plan Maestro – Arquitectura de suministros</title>
+<title>20. El Plan Maestro (S&amp;OP) – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -44,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-37f97b4dfc99813de07ac4a6dfc6e37d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-1d61feaf5942a89f67c517e5b1b3c91a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,7 +109,38 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -249,7 +315,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-18-fva-valor-pronostico.html">VI: El Factor Humano y la Ejecución</a></li><li class="breadcrumb-item"><a href="./cap-20-plan-maestro-sop.html"><span class="chapter-title">20. El Plan Maestro</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-18-fva-valor-pronostico.html">VI: El Factor Humano y la Ejecución</a></li><li class="breadcrumb-item"><a href="./cap-20-plan-maestro-sop.html"><span class="chapter-title">20. El Plan Maestro (S&amp;OP)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -266,7 +332,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Arquitectura de suministros</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/nicobravo933-Planner/Practicas_Supply" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -295,7 +361,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></a>
+  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. Auditoría de Datos y Arquitectura de Red</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -440,12 +506,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego</span></a>
+  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego: Gestión de Sesgos Humanos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">20. El Plan Maestro</span></a>
+  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">20. El Plan Maestro (S&amp;OP)</span></a>
   </div>
 </li>
       </ul>
@@ -457,7 +523,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Creado con <a href="https://quarto.org/">Quarto</a>.</p>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -465,28 +533,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#el-ciclo-sop-sincronizando-el-latido-del-negocio" id="toc-el-ciclo-sop-sincronizando-el-latido-del-negocio" class="nav-link active" data-scroll-target="#el-ciclo-sop-sincronizando-el-latido-del-negocio">20.1 El Ciclo S&amp;OP: Sincronizando el Latido del Negocio</a></li>
-  <li><a href="#la-torre-de-control-el-sistema-nervioso-central-control-tower" id="toc-la-torre-de-control-el-sistema-nervioso-central-control-tower" class="nav-link" data-scroll-target="#la-torre-de-control-el-sistema-nervioso-central-control-tower">20.2 La Torre de Control: El Sistema Nervioso Central (Control Tower)</a>
-  <ul class="collapse">
-  <li><a href="#visibilidad-e2e-rompiendo-las-paredes-del-almacén" id="toc-visibilidad-e2e-rompiendo-las-paredes-del-almacén" class="nav-link" data-scroll-target="#visibilidad-e2e-rompiendo-las-paredes-del-almacén">20.2.1 Visibilidad E2E: Rompiendo las Paredes del Almacén</a></li>
-  <li><a href="#gestión-por-excepciones-management-by-exception" id="toc-gestión-por-excepciones-management-by-exception" class="nav-link" data-scroll-target="#gestión-por-excepciones-management-by-exception">20.2.2 Gestión por Excepciones (Management by Exception)</a></li>
-  </ul></li>
-  <li><a href="#capacidades-de-la-torre-de-control-de-la-visibilidad-a-la-autonomía" id="toc-capacidades-de-la-torre-de-control-de-la-visibilidad-a-la-autonomía" class="nav-link" data-scroll-target="#capacidades-de-la-torre-de-control-de-la-visibilidad-a-la-autonomía">20.3 Capacidades de la Torre de Control: De la Visibilidad a la Autonomía</a></li>
-  <li><a href="#el-tablero-operativo-la-sala-de-máquinas-engine-room" id="toc-el-tablero-operativo-la-sala-de-máquinas-engine-room" class="nav-link" data-scroll-target="#el-tablero-operativo-la-sala-de-máquinas-engine-room">20.4 El Tablero Operativo: La Sala de Máquinas (Engine Room)</a></li>
-  <li><a href="#el-tablero-ejecutivo-el-puente-de-mando-the-bridge" id="toc-el-tablero-ejecutivo-el-puente-de-mando-the-bridge" class="nav-link" data-scroll-target="#el-tablero-ejecutivo-el-puente-de-mando-the-bridge">20.5 El Tablero Ejecutivo: El Puente de Mando (The Bridge)</a></li>
-  <li><a href="#el-arte-de-la-comunicación-ejecutiva-del-error-a-los-dólares" id="toc-el-arte-de-la-comunicación-ejecutiva-del-error-a-los-dólares" class="nav-link" data-scroll-target="#el-arte-de-la-comunicación-ejecutiva-del-error-a-los-dólares">20.6 El Arte de la Comunicación Ejecutiva: Del Error a los Dólares</a></li>
-  <li><a href="#de-sop-a-ibp-la-integración-total" id="toc-de-sop-a-ibp-la-integración-total" class="nav-link" data-scroll-target="#de-sop-a-ibp-la-integración-total">20.7 De S&amp;OP a IBP: La Integración Total</a></li>
-  <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
+  <li><a href="#el-sistema-nervioso-de-la-organización" id="toc-el-sistema-nervioso-de-la-organización" class="nav-link active" data-scroll-target="#el-sistema-nervioso-de-la-organización">20.1 El Sistema Nervioso de la Organización</a></li>
+  <li><a href="#las-cinco-fases-del-consenso" id="toc-las-cinco-fases-del-consenso" class="nav-link" data-scroll-target="#las-cinco-fases-del-consenso">20.2 Las Cinco Fases del Consenso</a></li>
+  <li><a href="#hacia-el-ibp-la-integración-financiera-total" id="toc-hacia-el-ibp-la-integración-financiera-total" class="nav-link" data-scroll-target="#hacia-el-ibp-la-integración-financiera-total">20.3 Hacia el IBP: La Integración Financiera Total</a></li>
+  <li><a href="#simulador-el-tablero-de-consenso-ejecutiva" id="toc-simulador-el-tablero-de-consenso-ejecutiva" class="nav-link" data-scroll-target="#simulador-el-tablero-de-consenso-ejecutiva">20.4 Simulador: El Tablero de Consenso Ejecutiva</a></li>
+  <li><a href="#el-rol-final-del-arquitecto-facilitador-del-cambio" id="toc-el-rol-final-del-arquitecto-facilitador-del-cambio" class="nav-link" data-scroll-target="#el-rol-final-del-arquitecto-facilitador-del-cambio">20.5 El Rol Final del Arquitecto: Facilitador del Cambio</a></li>
+  <li><a href="#checklist-de-cierre-del-libro" id="toc-checklist-de-cierre-del-libro" class="nav-link" data-scroll-target="#checklist-de-cierre-del-libro">Checklist de Cierre del Libro</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-20-plan-maestro-sop.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-20-plan-maestro-sop.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-18-fva-valor-pronostico.html">VI: El Factor Humano y la Ejecución</a></li><li class="breadcrumb-item"><a href="./cap-20-plan-maestro-sop.html"><span class="chapter-title">20. El Plan Maestro</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-18-fva-valor-pronostico.html">VI: El Factor Humano y la Ejecución</a></li><li class="breadcrumb-item"><a href="./cap-20-plan-maestro-sop.html"><span class="chapter-title">20. El Plan Maestro (S&amp;OP)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">20. El Plan Maestro</span></h1>
+<h1 class="title"><span class="chapter-title">20. El Plan Maestro (S&amp;OP)</span></h1>
 </div>
 
 
@@ -503,84 +565,214 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Llegamos a la última frontera de la arquitectura de suministros. Has dominado el arte de limpiar datos, has construido bosques de decisiones y has simulado la incertidumbre mediante modelos estocásticos. Tienes en tus manos un motor de precisión quirúrgica, pero ahora te enfrentas al reto definitivo: <strong>convencer a la organización de que deje de confiar en su “instinto” y empiece a confiar en el sistema</strong>.</p>
-<p>Como bien sabe cualquier profesional con cicatrices de batalla en logística, las empresas no quiebran por tener un WAPE un 3% más alto; quiebran por la falta de alineación y por la toma de decisiones basada en silos. El <strong>S&amp;OP (Sales and Operations Planning)</strong> no es una reunión para revisar hojas de cálculo; es el proceso maestro donde la empresa decide cómo va a ganar dinero y proteger su capital en los próximos 18 meses. En este capítulo final, aprenderemos a integrar tus modelos en el ciclo ejecutivo y a construir la <strong>Torre de Control</strong> que transformará la cultura de tu empresa de “reactiva” a “predictiva”.</p>
-<section id="el-ciclo-sop-sincronizando-el-latido-del-negocio" class="level2">
-<h2 class="anchored" data-anchor-id="el-ciclo-sop-sincronizando-el-latido-del-negocio">20.1 El Ciclo S&amp;OP: Sincronizando el Latido del Negocio</h2>
-<p>Un proceso de S&amp;OP profesional no es un evento aislado, es un latido mensual que sincroniza la demanda con el suministro. Tu rol como Arquitecto de Suministros es actuar como el “facilitador de la verdad” en estas cinco etapas:</p>
+<p>Has recorrido un camino largo y transformador. Desde la limpieza de datos ruidosos hasta la implementación de algoritmos de Machine Learning, pasando por la simulación de redes complejas y la auditoría del sesgo humano. Pero todas estas piezas —el RMSE, el EOQ, el Stock de Seguridad y el FVA— son solo instrumentos afinados. El <strong>Capítulo 20</strong> es el momento en el que el Arquitecto se convierte en el director de orquesta para ejecutar el <strong>Plan Maestro</strong>.</p>
+<p>En este cierre de la Parte VI y del libro, aprenderemos a consolidar la ciencia de datos y la ingeniería financiera en un proceso de <strong>Sales and Operations Planning (S&amp;OP)</strong> robusto, transformando la estrategia en ejecución impecable.</p>
+<section id="el-sistema-nervioso-de-la-organización" class="level2">
+<h2 class="anchored" data-anchor-id="el-sistema-nervioso-de-la-organización">20.1 El Sistema Nervioso de la Organización</h2>
+<p>El <strong>S&amp;OP (Sales and Operations Planning)</strong> no es una reunión mensual; es el sistema nervioso central de la empresa. Su propósito fundamental es alinear a toda la organización bajo un solo número, un solo plan y un solo objetivo. Sin S&amp;OP, cada departamento optimiza su propia parcela: Ventas persigue bonos, Finanzas persigue flujo de caja y Operaciones persigue eficiencia de planta. El resultado de esa falta de coordinación es siempre el mismo: el caos.</p>
+<p>El Arquitecto de Suministros diseña este proceso para que la empresa deje de reaccionar a las crisis y empiece a gestionarlas antes de que ocurran. Es el puente entre el plan estratégico de largo plazo (¿a dónde queremos ir?) y la ejecución táctica de corto plazo (¿qué vamos a fabricar hoy?).</p>
+</section>
+<section id="las-cinco-fases-del-consenso" class="level2">
+<h2 class="anchored" data-anchor-id="las-cinco-fases-del-consenso">20.2 Las Cinco Fases del Consenso</h2>
+<p>Un proceso de S&amp;OP de clase mundial se estructura en un ciclo de cinco pasos críticos, cada uno con una misión específica:</p>
 <ol type="1">
-<li><strong>Recolección y Preparación de Datos:</strong> Es la base de la pirámide (Parte I del libro). Sin datos limpios, el S&amp;OP es solo una discusión de opiniones.</li>
-<li><strong>Revisión de la Demanda (Demand Review):</strong> Aquí es donde el modelo de ML o estadística base se encuentra con el juicio humano. Es el momento de aplicar el <strong>FVA</strong> (Cap. 18) y filtrar los sesgos (Cap. 19). El objetivo es un <strong>Pronóstico de Consenso Insesgado</strong>.</li>
-<li><strong>Revisión de Suministro (Supply Review):</strong> Usamos el <strong>EOQ</strong> (Cap. 12) y el <strong>Stock de Seguridad</strong> (Cap. 13) para validar si la red es físicamente capaz de soportar la demanda. Se identifican restricciones de capacidad, cuellos de botella en proveedores y necesidades de flete extra.</li>
-<li><strong>Reconciliación (Pre-S&amp;OP):</strong> La fase más táctica. Se comparan las brechas: ¿Lo que ventas quiere vender cabe en el presupuesto de finanzas? Si hay una brecha, se simulan escenarios (Cap. 15) para decidir si invertimos en más stock o si hacemos promociones para limpiar excesos.</li>
-<li><strong>Reunión Ejecutiva de S&amp;OP (Executive Review):</strong> El foro del CEO. Aquí no se validan datos, se <strong>toman decisiones</strong>. Se presentan tres escenarios claros con sus respectivos impactos en el flujo de caja.</li>
+<li><p><strong>Revisión de Producto (Gestión del Portafolio):</strong> ¿Qué productos nuevos lanzaremos? ¿Cuáles debemos descontinuar (fase de salida)? Aquí es donde el análisis ABC/XYZ dinámico que vimos en el Capítulo 3 se vuelve operativo.</p></li>
+<li><p><strong>Revisión de la Demanda:</strong> El Demand Planner presenta el pronóstico estadístico “higienizado” (aplicando el FVA del Cap. 18). El equipo comercial añade inteligencia de mercado documentada. El resultado es el <strong>Plan de Demanda Consensuado</strong>.</p></li>
+<li><p><strong>Revisión de Suministros (Capacidad):</strong> ¿Podemos cumplir con ese plan? Operaciones y Logística evalúan restricciones de planta, bodega y transporte. Aquí es donde las simulaciones de Monte Carlo (Cap. 15) nos dicen qué tan probable es que logremos cumplir el plan sin romper la red.</p></li>
+<li><p><strong>Reconciliación Financiera (Pre-S&amp;OP):</strong> Es el paso donde los planes de demanda y suministro se valorizan en dólares. Si hay una brecha entre el plan y el presupuesto financiero, es aquí donde se analizan los escenarios de compromiso (<em>trade-offs</em>).</p></li>
+<li><p><strong>Reunión Ejecutiva (Executive S&amp;OP):</strong> El foro final donde la dirección general toma decisiones sobre los conflictos no resueltos en los pasos anteriores. Es el momento de la firma del <strong>Plan Maestro</strong>.</p></li>
 </ol>
 </section>
-<section id="la-torre-de-control-el-sistema-nervioso-central-control-tower" class="level2">
-<h2 class="anchored" data-anchor-id="la-torre-de-control-el-sistema-nervioso-central-control-tower">20.2 La Torre de Control: El Sistema Nervioso Central (Control Tower)</h2>
-<p>Si el S&amp;OP es el “cerebro” que planifica a medio plazo, la <strong>Torre de Control</strong> es el “sistema nervioso” que gestiona la ejecución en tiempo real. Una Torre de Control no es solo un conjunto de pantallas bonitas; es una infraestructura de <strong>personas, procesos y tecnología</strong> diseñada para proporcionar visibilidad de extremo a extremo (End-to-End o E2E).</p>
-<section id="visibilidad-e2e-rompiendo-las-paredes-del-almacén" class="level3">
-<h3 class="anchored" data-anchor-id="visibilidad-e2e-rompiendo-las-paredes-del-almacén">20.2.1 Visibilidad E2E: Rompiendo las Paredes del Almacén</h3>
-<p>Tradicionalmente, la visibilidad se limitaba a lo que ocurría dentro de las cuatro paredes de tu bodega. Una Torre de Control moderna extiende sus sensores hacia: * <strong>Aguas Arriba (Proveedores):</strong> Conocer el estado de la materia prima antes de que salga de la fábrica del proveedor. * <strong>En Tránsito:</strong> Monitorear buques, camiones y aviones mediante GPS e IoT para ajustar el ROP dinámicamente si hay retrasos. * <strong>Aguas Abajo (Clientes/Retail):</strong> Ver el inventario en el estante del cliente para detectar el “Efecto Látigo” (Cap. 16) antes de que llegue a tu almacén.</p>
+<section id="hacia-el-ibp-la-integración-financiera-total" class="level2">
+<h2 class="anchored" data-anchor-id="hacia-el-ibp-la-integración-financiera-total">20.3 Hacia el IBP: La Integración Financiera Total</h2>
+<p>La evolución natural del S&amp;OP es el <strong>IBP (Integrated Business Planning)</strong>. La diferencia es fundamental: mientras que el S&amp;OP tradicional se enfoca en unidades físicas, el IBP se enfoca en el <strong>margen y el valor</strong>.</p>
+<p>En el IBP, el Arquitecto de Suministros no solo informa cuántas unidades faltan, sino cuánto impacto tendrá ese faltante en el EBITDA de la compañía. Al integrar las finanzas en cada decisión de stock, la Supply Chain deja de ser un centro de costos para convertirse en un motor de rentabilidad.</p>
 </section>
-<section id="gestión-por-excepciones-management-by-exception" class="level3">
-<h3 class="anchored" data-anchor-id="gestión-por-excepciones-management-by-exception">20.2.2 Gestión por Excepciones (Management by Exception)</h3>
-<p>La Torre de Control libera al planificador de la tarea de mirar miles de SKUs que se comportan “normalmente”. El sistema utiliza los modelos de <strong>Machine Learning</strong> (Cap. 9) para establecer túneles de control. Solo cuando la demanda o el suministro se salen de ese túnel, la Torre dispara una alerta roja. &gt; <em>“No me digas que el 95% de la cadena está bien; dime qué contenedor está retrasado y qué cliente Clase A se verá afectado”</em>.</p>
-</section>
-</section>
-<section id="capacidades-de-la-torre-de-control-de-la-visibilidad-a-la-autonomía" class="level2">
-<h2 class="anchored" data-anchor-id="capacidades-de-la-torre-de-control-de-la-visibilidad-a-la-autonomía">20.3 Capacidades de la Torre de Control: De la Visibilidad a la Autonomía</h2>
-<p>La evolución de una Torre de Control sigue cuatro estadios de madurez que todo Arquitecto debe liderar:</p>
-<ol type="1">
-<li><strong>Visibilidad (¿Qué está pasando?):</strong> Rastreo de envíos y niveles de stock centralizados.</li>
-<li><strong>Análisis (¿Por qué está pasando?):</strong> Correlación de eventos. Si el puerto de Shanghái cierra, el sistema identifica automáticamente qué órdenes de compra están comprometidas.</li>
-<li><strong>Predicción (¿Qué va a pasar?):</strong> Uso de simulaciones de <strong>Monte Carlo</strong> (Cap. 15) para predecir la probabilidad de quiebre de stock en los próximos 15 días basándose en la variabilidad real del Lead Time.</li>
-<li><strong>Prescripción y Autonomía (¿Qué debemos hacer?):</strong> El sistema sugiere —o ejecuta automáticamente— el desvío de un pedido a otro almacén para cubrir un faltante inminente.</li>
-</ol>
-</section>
-<section id="el-tablero-operativo-la-sala-de-máquinas-engine-room" class="level2">
-<h2 class="anchored" data-anchor-id="el-tablero-operativo-la-sala-de-máquinas-engine-room">20.4 El Tablero Operativo: La Sala de Máquinas (Engine Room)</h2>
-<p>Para el equipo de planeación, la Torre de Control provee un tablero táctico: * <strong>Tracking Signal por SKU:</strong> Alerta sobre sesgos sistemáticos. * <strong>Alertas de FVA Negativo:</strong> Identificación de ajustes humanos que destruyen valor. * <strong>Detección de Outliers:</strong> Visualización de picos inusuales que requieren acción inmediata. * <strong>Monitor de Lead Time Real vs.&nbsp;Teórico:</strong> ¿El proveedor realmente está cumpliendo con los 10 días que dice el sistema?</p>
-</section>
-<section id="el-tablero-ejecutivo-el-puente-de-mando-the-bridge" class="level2">
-<h2 class="anchored" data-anchor-id="el-tablero-ejecutivo-el-puente-de-mando-the-bridge">20.5 El Tablero Ejecutivo: El Puente de Mando (The Bridge)</h2>
-<p>La gerencia necesita ver <strong>valor y riesgo</strong> en términos financieros. * <strong>Valor del Inventario en Riesgo:</strong> Dólares en riesgo por obsolescencia o por ventas perdidas. * <strong>Frente de Pareto (Servicio vs.&nbsp;Inversión):</strong> La herramienta para que el CEO decida el punto de rentabilidad óptima. * <strong>Proyección de Cash Flow:</strong> Cómo impactará el plan de suministro en la liquidez de la empresa en los próximos 3 meses.</p>
-</section>
-<section id="el-arte-de-la-comunicación-ejecutiva-del-error-a-los-dólares" class="level2">
-<h2 class="anchored" data-anchor-id="el-arte-de-la-comunicación-ejecutiva-del-error-a-los-dólares">20.6 El Arte de la Comunicación Ejecutiva: Del Error a los Dólares</h2>
-<p>Aprender a hablar el lenguaje del dinero es la habilidad final del Arquitecto: * <strong>Traducción de Precisión:</strong> “La mejora en el modelo redujo el stock de seguridad en $400k, liberando flujo de caja para la expansión de la planta”. * <strong>Traducción de Riesgo:</strong> “Gracias a la Torre de Control, detectamos el retraso del proveedor 12 días antes del quiebre, evitando una pérdida de margen de $150k mediante un desvío de inventario estratégico”.</p>
-</section>
-<section id="de-sop-a-ibp-la-integración-total" class="level2">
-<h2 class="anchored" data-anchor-id="de-sop-a-ibp-la-integración-total">20.7 De S&amp;OP a IBP: La Integración Total</h2>
-<p>El <strong>IBP (Integrated Business Planning)</strong> es el estado donde el pronóstico de demanda se funde con el Plan Financiero (P&amp;L), eliminando la “doble contabilidad” y asegurando que Ventas, Operaciones y Finanzas remen hacia el mismo número de rentabilidad.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<section id="simulador-el-tablero-de-consenso-ejecutiva" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-el-tablero-de-consenso-ejecutiva">20.4 Simulador: El Tablero de Consenso Ejecutiva</h2>
+<p>En este laboratorio final, te pones en los zapatos del Director General. Debes equilibrar las demandas contrapuestas de tres departamentos para maximizar el <strong>Valor del Negocio</strong>.</p>
+<ul>
+<li><p><strong>Ventas:</strong> Quiere niveles de servicio altísimos (99%+) para no perder ni una venta.</p></li>
+<li><p><strong>Finanzas:</strong> Quiere inventarios mínimos para maximizar el flujo de caja.</p></li>
+<li><p><strong>Operaciones:</strong> Quiere lotes grandes (EOQ) para maximizar la eficiencia de planta.</p></li>
+</ul>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="47" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 46;"><span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>jStat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>viewof v_priority <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.8</span><span class="op">,</span> <span class="fl">0.999</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.95</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.005</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Prioridad Ventas (Nivel de Servicio):"</span>})</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>viewof f_priority <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">10</span><span class="op">,</span> <span class="dv">60</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">25</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Prioridad Finanzas (Tasa h %):"</span>})</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>viewof o_priority <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">50</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">200</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Prioridad Operaciones (Lote Q):"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="60" data-source-offset="-40"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 59;"><span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>sim_master <span class="op">=</span> {</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mean_demand <span class="op">=</span> <span class="dv">1000</span><span class="op">;</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> rmse <span class="op">=</span> <span class="dv">200</span><span class="op">;</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> unit_margin <span class="op">=</span> <span class="dv">50</span><span class="op">;</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> unit_cost <span class="op">=</span> <span class="dv">150</span><span class="op">;</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  <span class="co">// 1. Stock de Seguridad (Ventas vs Finanzas)</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> k <span class="op">=</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">inv</span>(v_priority<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> ss <span class="op">=</span> k <span class="op">*</span> rmse<span class="op">;</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> holding_cost <span class="op">=</span> ss <span class="op">*</span> unit_cost <span class="op">*</span> (f_priority <span class="op">/</span> <span class="dv">100</span>)<span class="op">;</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  <span class="co">// 2. Eficiencia de Lote (Operaciones)</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> setup_cost <span class="op">=</span> (mean_demand <span class="op">/</span> o_priority) <span class="op">*</span> <span class="dv">500</span><span class="op">;</span> <span class="co">// Costo de cambio de línea</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>  <span class="co">// 3. Ventas Perdidas</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> lost_sales_cost <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> v_priority) <span class="op">*</span> mean_demand <span class="op">*</span> unit_margin <span class="op">*</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>  <span class="co">// 4. Utilidad Final</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> gross_profit <span class="op">=</span> mean_demand <span class="op">*</span> unit_margin<span class="op">;</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> net_profit <span class="op">=</span> gross_profit <span class="op">-</span> holding_cost <span class="op">-</span> lost_sales_cost <span class="op">-</span> setup_cost<span class="op">;</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    <span class="dt">ss</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(ss)<span class="op">,</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    <span class="dt">holding</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(holding_cost)<span class="op">,</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    <span class="dt">lost</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(lost_sales_cost)<span class="op">,</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    <span class="dt">setup</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(setup_cost)<span class="op">,</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    <span class="dt">profit</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(net_profit)<span class="op">,</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    <span class="dt">roi</span><span class="op">:</span> (net_profit <span class="op">/</span> (ss <span class="op">*</span> unit_cost)) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:450px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>      <span class="dt">values</span><span class="op">:</span> [sim_master<span class="op">.</span><span class="at">holding</span><span class="op">,</span> sim_master<span class="op">.</span><span class="at">lost</span><span class="op">,</span> sim_master<span class="op">.</span><span class="at">setup</span>]<span class="op">,</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>      <span class="dt">labels</span><span class="op">:</span> [<span class="st">'Costo Posesión'</span><span class="op">,</span> <span class="st">'Costo Ventas Perdidas'</span><span class="op">,</span> <span class="st">'Inestabilidad Operativa'</span>]<span class="op">,</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'pie'</span><span class="op">,</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>      <span class="dt">hole</span><span class="op">:</span> <span class="op">.</span><span class="dv">4</span><span class="op">,</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>      <span class="dt">marker</span><span class="op">:</span> {<span class="dt">colors</span><span class="op">:</span> [<span class="st">'#3b82f6'</span><span class="op">,</span> <span class="st">'#ef4444'</span><span class="op">,</span> <span class="st">'#f59e0b'</span>]}</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layout <span class="op">=</span> {</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'Composición del Gasto en el Plan Maestro'</span><span class="op">,</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>    <span class="dt">annotations</span><span class="op">:</span> [{</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> <span class="vs">`$</span><span class="sc">${</span>sim_master<span class="op">.</span><span class="at">profit</span><span class="op">.</span><span class="fu">toLocaleString</span>()<span class="sc">}</span><span class="vs">&lt;br&gt;Utilidad`</span><span class="op">,</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>      <span class="dt">showarrow</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>      <span class="dt">font</span><span class="op">:</span> {<span class="dt">size</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">weight</span><span class="op">:</span> <span class="st">'bold'</span>}</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>    }]</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> layout<span class="op">,</span> {<span class="dt">responsive</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">displayModeBar</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">;</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>La Sabiduría del Arquitecto
+<span class="screen-reader-only">Tip</span>Diagnóstico del Plan Maestro
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>El éxito de tus modelos no se mide en la pantalla, sino en la confianza de la junta directiva y en la agilidad de la operación. La Torre de Control es la que permite que el plan maestro de S&amp;OP sobreviva al contacto con la realidad diaria del mercado.</p>
+<ul>
+<li><p><strong>Inventario de Seguridad:</strong> <span><span id="ojs-element-id-1"></span></span> unidades.</p></li>
+<li><p><strong>Capital Atrapado:</strong> <span>$<span id="ojs-element-id-2"></span></span></p></li>
+<li><p><strong>Retorno sobre el Inventario:</strong> <span><span id="ojs-element-id-3"></span>%</span></p></li>
+<li><p><strong>Conclusión:</strong> <span><span id="ojs-element-id-4"></span></span></p></li>
+</ul>
 </div>
 </div>
 </section>
-<section id="checklist-de-cierre-del-capítulo" class="level2">
-<h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
+<section id="el-rol-final-del-arquitecto-facilitador-del-cambio" class="level2">
+<h2 class="anchored" data-anchor-id="el-rol-final-del-arquitecto-facilitador-del-cambio">20.5 El Rol Final del Arquitecto: Facilitador del Cambio</h2>
+<p>Al final de este libro, queda claro que la tecnología es el facilitador, pero la cultura es el ejecutor. Tu rol como Arquitecto de Suministros no es ser el dueño de la hoja de cálculo, sino ser el <strong>traductor de valor</strong>.</p>
+<p>Tu misión es transformar el lenguaje de las desviaciones estándar en lenguaje de dividendos. Cuando logras que el Director General entienda que bajar el RMSE un 5% financia la expansión de una nueva planta, habrás completado tu obra maestra.</p>
+</section>
+<section id="checklist-de-cierre-del-libro" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-de-cierre-del-libro">Checklist de Cierre del Libro</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">¿He definido los parámetros de “Excepción” para mi Torre de Control?</label></li>
-<li><label><input type="checkbox">¿Tengo visibilidad de los tránsitos internacionales integrada en mi sistema de reorden?</label></li>
-<li><label><input type="checkbox">¿Mi tablero ejecutivo traduce los quiebres de stock a pérdida de margen ($)?</label></li>
-<li><label><input type="checkbox">¿He sincronizado el plan de S&amp;OP con los objetivos financieros (IBP)?</label></li>
-<li><label><input type="checkbox">¿Utilizo simulaciones en tiempo real para evaluar el impacto de las disrupciones logísticas?</label></li>
+<li><p><label><input type="checkbox">¿Mi proceso de S&amp;OP tiene un calendario fijo y respetado por la alta dirección?</label></p></li>
+<li><p><label><input type="checkbox">¿Utilizo un “Único Número” de demanda para Finanzas, Ventas y Operaciones?</label></p></li>
+<li><p><label><input type="checkbox">¿El foco de mis reuniones es la toma de decisiones sobre brechas, no la discusión de datos pasados?</label></p></li>
+<li><p><label><input type="checkbox">¿He integrado los costos financieros (<span class="math inline">\(h\)</span> y <span class="math inline">\(s\)</span>) en la aprobación del plan final?</label></p></li>
+<li><p><label><input type="checkbox"><strong>¿Estoy listo para liderar la transformación de mi Supply Chain?</strong></label></p></li>
 </ul>
+<p><strong>¡Felicidades! Has completado la Arquitectura de Suministros. El mercado es caótico, pero ahora tienes el arsenal necesario para dominarlo.</strong></p>
 
 
+<div class="ojs-auto-generated hidden">
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c2ltX21hc3Rlci5zc308L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTEifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4keyhzaW1fbWFzdGVyLnNzICogMTUwKS50b0xvY2FsZVN0cmluZygpfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c2ltX21hc3Rlci5yb2kudG9GaXhlZCgxKX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTMifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3NpbV9tYXN0ZXIucHJvZml0ID4gMzAwMDAgPyBcIkhhcyBsb2dyYWRvIHVuIHBsYW4gZXF1aWxpYnJhZG8uIExhIHJlbnRhYmlsaWRhZCBlcyBzYWx1ZGFibGUuXCIgOiBcIkVsIHBsYW4gZXN0w6EgZGVzZXF1aWxpYnJhZG8uIEVzdMOhcyBwYWdhbmRvIGRlbWFzaWFkbyBlbiBjb3N0b3Mgb2N1bHRvcyAocG9zZXNpw7NuIG8gZmFsdGFudGVzKS5cIn08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTQifV19
+</script>
+</div>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5qU3RhdCA9IHJlcXVpcmUoXCJqc3RhdEAxLjkuNlwiKVxyXG5QbG90bHkgPSByZXF1aXJlKFwicGxvdGx5LmpzLWRpc3QtbWluQDIuMjQuMVwiKVxyXG5cclxudmlld29mIHZfcHJpb3JpdHkgPSBJbnB1dHMucmFuZ2UoWzAuOCwgMC45OTldLCB7dmFsdWU6IDAuOTUsIHN0ZXA6IDAuMDA1LCBsYWJlbDogXCJQcmlvcmlkYWQgVmVudGFzIChOaXZlbCBkZSBTZXJ2aWNpbyk6XCJ9KVxyXG52aWV3b2YgZl9wcmlvcml0eSA9IElucHV0cy5yYW5nZShbMTAsIDYwXSwge3ZhbHVlOiAyNSwgc3RlcDogMSwgbGFiZWw6IFwiUHJpb3JpZGFkIEZpbmFuemFzIChUYXNhIGggJSk6XCJ9KVxyXG52aWV3b2Ygb19wcmlvcml0eSA9IElucHV0cy5yYW5nZShbNTAsIDEwMDBdLCB7dmFsdWU6IDIwMCwgc3RlcDogNTAsIGxhYmVsOiBcIlByaW9yaWRhZCBPcGVyYWNpb25lcyAoTG90ZSBRKTpcIn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG4vLyBMw7NnaWNhIGRlIGNvbXByb21pc28gKFRyYWRlLW9mZnMpXHJcbnNpbV9tYXN0ZXIgPSB7XHJcbiAgY29uc3QgbWVhbl9kZW1hbmQgPSAxMDAwO1xyXG4gIGNvbnN0IHJtc2UgPSAyMDA7XHJcbiAgY29uc3QgdW5pdF9tYXJnaW4gPSA1MDtcclxuICBjb25zdCB1bml0X2Nvc3QgPSAxNTA7XHJcbiAgXHJcbiAgLy8gMS4gU3RvY2sgZGUgU2VndXJpZGFkIChWZW50YXMgdnMgRmluYW56YXMpXHJcbiAgY29uc3QgayA9IGpTdGF0Lm5vcm1hbC5pbnYodl9wcmlvcml0eSwgMCwgMSk7XHJcbiAgY29uc3Qgc3MgPSBrICogcm1zZTtcclxuICBjb25zdCBob2xkaW5nX2Nvc3QgPSBzcyAqIHVuaXRfY29zdCAqIChmX3ByaW9yaXR5IC8gMTAwKTtcclxuICBcclxuICAvLyAyLiBFZmljaWVuY2lhIGRlIExvdGUgKE9wZXJhY2lvbmVzKVxyXG4gIGNvbnN0IHNldHVwX2Nvc3QgPSAobWVhbl9kZW1hbmQgLyBvX3ByaW9yaXR5KSAqIDUwMDsgLy8gQ29zdG8gZGUgY2FtYmlvIGRlIGzDrW5lYVxyXG4gIFxyXG4gIC8vIDMuIFZlbnRhcyBQZXJkaWRhc1xyXG4gIGNvbnN0IGxvc3Rfc2FsZXNfY29zdCA9ICgxIC0gdl9wcmlvcml0eSkgKiBtZWFuX2RlbWFuZCAqIHVuaXRfbWFyZ2luICogMjtcclxuICBcclxuICAvLyA0LiBVdGlsaWRhZCBGaW5hbFxyXG4gIGNvbnN0IGdyb3NzX3Byb2ZpdCA9IG1lYW5fZGVtYW5kICogdW5pdF9tYXJnaW47XHJcbiAgY29uc3QgbmV0X3Byb2ZpdCA9IGdyb3NzX3Byb2ZpdCAtIGhvbGRpbmdfY29zdCAtIGxvc3Rfc2FsZXNfY29zdCAtIHNldHVwX2Nvc3Q7XHJcbiAgXHJcbiAgcmV0dXJuIHtcclxuICAgIHNzOiBNYXRoLnJvdW5kKHNzKSxcclxuICAgIGhvbGRpbmc6IE1hdGgucm91bmQoaG9sZGluZ19jb3N0KSxcclxuICAgIGxvc3Q6IE1hdGgucm91bmQobG9zdF9zYWxlc19jb3N0KSxcclxuICAgIHNldHVwOiBNYXRoLnJvdW5kKHNldHVwX2Nvc3QpLFxyXG4gICAgcHJvZml0OiBNYXRoLnJvdW5kKG5ldF9wcm9maXQpLFxyXG4gICAgcm9pOiAobmV0X3Byb2ZpdCAvIChzcyAqIHVuaXRfY29zdCkpICogMTAwXHJcbiAgfTtcclxufVxyXG5cclxue1xyXG4gIGNvbnN0IGNvbnRhaW5lciA9IGh0bWxgPGRpdiBzdHlsZT1cIndpZHRoOjEwMCU7IGhlaWdodDo0NTBweDtcIj48L2Rpdj5gO1xyXG4gIFxyXG4gIGNvbnN0IHRyYWNlcyA9IFtcclxuICAgIHtcclxuICAgICAgdmFsdWVzOiBbc2ltX21hc3Rlci5ob2xkaW5nLCBzaW1fbWFzdGVyLmxvc3QsIHNpbV9tYXN0ZXIuc2V0dXBdLFxyXG4gICAgICBsYWJlbHM6IFsnQ29zdG8gUG9zZXNpw7NuJywgJ0Nvc3RvIFZlbnRhcyBQZXJkaWRhcycsICdJbmVzdGFiaWxpZGFkIE9wZXJhdGl2YSddLFxyXG4gICAgICB0eXBlOiAncGllJyxcclxuICAgICAgaG9sZTogLjQsXHJcbiAgICAgIG1hcmtlcjoge2NvbG9yczogWycjM2I4MmY2JywgJyNlZjQ0NDQnLCAnI2Y1OWUwYiddfVxyXG4gICAgfVxyXG4gIF07XHJcblxyXG4gIGNvbnN0IGxheW91dCA9IHtcclxuICAgIHRpdGxlOiAnQ29tcG9zaWNpw7NuIGRlbCBHYXN0byBlbiBlbCBQbGFuIE1hZXN0cm8nLFxyXG4gICAgdGVtcGxhdGU6ICdwbG90bHlfd2hpdGUnLFxyXG4gICAgYW5ub3RhdGlvbnM6IFt7XHJcbiAgICAgIHRleHQ6IGAkJHtzaW1fbWFzdGVyLnByb2ZpdC50b0xvY2FsZVN0cmluZygpfTxicj5VdGlsaWRhZGAsXHJcbiAgICAgIHNob3dhcnJvdzogZmFsc2UsXHJcbiAgICAgIGZvbnQ6IHtzaXplOiAyMCwgd2VpZ2h0OiAnYm9sZCd9XHJcbiAgICB9XVxyXG4gIH07XHJcblxyXG4gIFBsb3RseS5uZXdQbG90KGNvbnRhaW5lciwgdHJhY2VzLCBsYXlvdXQsIHtyZXNwb25zaXZlOiB0cnVlLCBkaXNwbGF5TW9kZUJhcjogZmFsc2V9KTtcclxuICByZXR1cm4gY29udGFpbmVyO1xyXG59XHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgndl9wcmlvcml0eScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdmX3ByaW9yaXR5JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ29fcHJpb3JpdHknKSJ9XX0=
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -996,8 +1188,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./cap-19-gestion-sesgos-humanos.html" class="pagination-link" aria-label="19. El Algoritmo vs. el Ego">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego</span></span>
+      <a href="./cap-19-gestion-sesgos-humanos.html" class="pagination-link" aria-label="19. El Algoritmo vs. el Ego: Gestión de Sesgos Humanos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego: Gestión de Sesgos Humanos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1007,8 +1199,21 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Nicolás A. Bravo</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-20-plan-maestro-sop.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Este libro fue creado con <a href="https://quarto.org/">Quarto</a>. Visita mi <a href="https://github.com/nicobravo933-Planner">repositorio GitHub</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-20-plan-maestro-sop.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>
