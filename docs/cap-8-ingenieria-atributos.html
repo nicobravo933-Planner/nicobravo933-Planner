@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8. Introducción: El Cambio de Paradigma – Arquitectura de suministros</title>
+<title>8. Machine Learning: Más allá de la Autocorrelación – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -44,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-37f97b4dfc99813de07ac4a6dfc6e37d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-1d61feaf5942a89f67c517e5b1b3c91a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,36 +109,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -278,7 +286,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-8-ingenieria-atributos.html">III: El Arsenal del Científico de Datos</a></li><li class="breadcrumb-item"><a href="./cap-8-ingenieria-atributos.html"><span class="chapter-title">8. Introducción: El Cambio de Paradigma</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-8-ingenieria-atributos.html">III: El Arsenal del Científico de Datos</a></li><li class="breadcrumb-item"><a href="./cap-8-ingenieria-atributos.html"><span class="chapter-title">8. Machine Learning: Más allá de la Autocorrelación</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -295,7 +303,7 @@ window.Quarto = {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Arquitectura de suministros</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/nicobravo933-Planner/Practicas_Supply" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -324,7 +332,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></a>
+  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. Auditoría de Datos y Arquitectura de Red</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -355,17 +363,17 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-5-pronostico-ingenuo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. El Pronóstico Ingenuo: Modelos Simples y Benchmarking</span></a>
+  <a href="./cap-5-pronostico-ingenuo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. El Pronóstico Ingenuo y el Benchmarking Sin Mentiras</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-6-suavizamiento-exponencial.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Suavizando la Curva - La Inteligencia Estadística</span></a>
+  <a href="./cap-6-suavizamiento-exponencial.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Suavizando la Curva: La Inteligencia Estadística</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-7-arima-y-alternativas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Introducción: El Salto de la Suavización a la Correlación</span></a>
+  <a href="./cap-7-arima-y-alternativas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Tendencia y Estacionalidad: El Modelo de Holt-Winters</span></a>
   </div>
 </li>
       </ul>
@@ -381,7 +389,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-8-ingenieria-atributos.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">8. Introducción: El Cambio de Paradigma</span></a>
+  <a href="./cap-8-ingenieria-atributos.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">8. Machine Learning: Más allá de la Autocorrelación</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -469,12 +477,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego</span></a>
+  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego: Gestión de Sesgos Humanos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20. El Plan Maestro</span></a>
+  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20. El Plan Maestro (S&amp;OP)</span></a>
   </div>
 </li>
       </ul>
@@ -486,7 +494,9 @@ window.Quarto = {
 </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Creado con <a href="https://quarto.org/">Quarto</a>.</p>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -494,35 +504,28 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#de-series-de-tiempo-a-aprendizaje-supervisado" id="toc-de-series-de-tiempo-a-aprendizaje-supervisado" class="nav-link active" data-scroll-target="#de-series-de-tiempo-a-aprendizaje-supervisado">De Series de Tiempo a Aprendizaje Supervisado</a></li>
-  <li><a href="#atributos-históricos-capturando-la-inercia-y-el-contexto" id="toc-atributos-históricos-capturando-la-inercia-y-el-contexto" class="nav-link" data-scroll-target="#atributos-históricos-capturando-la-inercia-y-el-contexto">Atributos Históricos: Capturando la Inercia y el Contexto</a>
+  <li><a href="#el-gran-salto-univariante-vs.-multivariante" id="toc-el-gran-salto-univariante-vs.-multivariante" class="nav-link active" data-scroll-target="#el-gran-salto-univariante-vs.-multivariante">8.1 El Gran Salto: Univariante vs.&nbsp;Multivariante</a>
   <ul class="collapse">
-  <li><a href="#rezagos-lags-y-la-regla-del-lead-time" id="toc-rezagos-lags-y-la-regla-del-lead-time" class="nav-link" data-scroll-target="#rezagos-lags-y-la-regla-del-lead-time">Rezagos (Lags) y la Regla del Lead Time</a></li>
-  <li><a href="#estadísticas-de-ventana-rolling-windows" id="toc-estadísticas-de-ventana-rolling-windows" class="nav-link" data-scroll-target="#estadísticas-de-ventana-rolling-windows">Estadísticas de Ventana (Rolling Windows)</a></li>
+  <li><a href="#el-contexto-como-señal" id="toc-el-contexto-como-señal" class="nav-link" data-scroll-target="#el-contexto-como-señal">El Contexto como Señal</a></li>
   </ul></li>
-  <li><a href="#atributos-de-contexto-el-calendario-inteligente" id="toc-atributos-de-contexto-el-calendario-inteligente" class="nav-link" data-scroll-target="#atributos-de-contexto-el-calendario-inteligente">Atributos de Contexto: El Calendario Inteligente</a></li>
-  <li><a href="#atributos-exógenos-los-drivers-de-valor" id="toc-atributos-exógenos-los-drivers-de-valor" class="nav-link" data-scroll-target="#atributos-exógenos-los-drivers-de-valor">Atributos Exógenos: Los Drivers de Valor</a>
+  <li><a href="#ingeniería-de-atributos-el-verdadero-ingrediente-secreto" id="toc-ingeniería-de-atributos-el-verdadero-ingrediente-secreto" class="nav-link" data-scroll-target="#ingeniería-de-atributos-el-verdadero-ingrediente-secreto">8.2 Ingeniería de Atributos: El Verdadero Ingrediente Secreto</a>
   <ul class="collapse">
-  <li><a href="#el-precio-y-la-elasticidad-dinámica" id="toc-el-precio-y-la-elasticidad-dinámica" class="nav-link" data-scroll-target="#el-precio-y-la-elasticidad-dinámica">El Precio y la Elasticidad Dinámica</a></li>
-  <li><a href="#efectos-cruzados-canibalización-y-halo" id="toc-efectos-cruzados-canibalización-y-halo" class="nav-link" data-scroll-target="#efectos-cruzados-canibalización-y-halo">Efectos Cruzados: Canibalización y Halo</a></li>
+  <li><a href="#categorías-de-atributos-críticos-para-el-arquitecto" id="toc-categorías-de-atributos-críticos-para-el-arquitecto" class="nav-link" data-scroll-target="#categorías-de-atributos-críticos-para-el-arquitecto">Categorías de Atributos Críticos para el Arquitecto:</a></li>
   </ul></li>
-  <li><a href="#el-pecado-capital-fuga-de-datos-data-leakage" id="toc-el-pecado-capital-fuga-de-datos-data-leakage" class="nav-link" data-scroll-target="#el-pecado-capital-fuga-de-datos-data-leakage">El Pecado Capital: Fuga de Datos (Data Leakage)</a></li>
-  <li><a href="#implementación-técnica-de-la-intuición-al-dato" id="toc-implementación-técnica-de-la-intuición-al-dato" class="nav-link" data-scroll-target="#implementación-técnica-de-la-intuición-al-dato">Implementación Técnica: De la Intuición al Dato</a>
-  <ul class="collapse">
-  <li><a href="#codificación-de-categorías-target-encoding" id="toc-codificación-de-categorías-target-encoding" class="nav-link" data-scroll-target="#codificación-de-categorías-target-encoding">Codificación de Categorías (Target Encoding)</a></li>
-  <li><a href="#veredicto-del-fva-por-atributo" id="toc-veredicto-del-fva-por-atributo" class="nav-link" data-scroll-target="#veredicto-del-fva-por-atributo">Veredicto del FVA por Atributo</a></li>
-  </ul></li>
+  <li><a href="#el-fin-del-mito-de-la-caja-negra" id="toc-el-fin-del-mito-de-la-caja-negra" class="nav-link" data-scroll-target="#el-fin-del-mito-de-la-caja-negra">8.3 El Fin del Mito de la “Caja Negra”</a></li>
+  <li><a href="#simulador-el-poder-de-los-atributos-ml-vs.-estadística" id="toc-simulador-el-poder-de-los-atributos-ml-vs.-estadística" class="nav-link" data-scroll-target="#simulador-el-poder-de-los-atributos-ml-vs.-estadística">8.4 Simulador: El Poder de los Atributos (ML vs.&nbsp;Estadística)</a></li>
+  <li><a href="#implicaciones-estratégicas-cuándo-no-usar-ml" id="toc-implicaciones-estratégicas-cuándo-no-usar-ml" class="nav-link" data-scroll-target="#implicaciones-estratégicas-cuándo-no-usar-ml">8.5 Implicaciones Estratégicas: ¿Cuándo NO usar ML?</a></li>
   <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-8-ingenieria-atributos.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-8-ingenieria-atributos.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-8-ingenieria-atributos.html">III: El Arsenal del Científico de Datos</a></li><li class="breadcrumb-item"><a href="./cap-8-ingenieria-atributos.html"><span class="chapter-title">8. Introducción: El Cambio de Paradigma</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-8-ingenieria-atributos.html">III: El Arsenal del Científico de Datos</a></li><li class="breadcrumb-item"><a href="./cap-8-ingenieria-atributos.html"><span class="chapter-title">8. Machine Learning: Más allá de la Autocorrelación</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">8. Introducción: El Cambio de Paradigma</span></h1>
+<h1 class="title"><span class="chapter-title">8. Machine Learning: Más allá de la Autocorrelación</span></h1>
 </div>
 
 
@@ -539,94 +542,279 @@ window.Quarto = {
 </header>
 
 
-<p>Hasta este punto del libro, hemos tratado la demanda como un ente solitario, una señal que se mira al espejo para intentar adivinar su próximo movimiento. En los Capítulos 6 (ETS) y 7 (ARIMA), nos dedicamos a analizar la “auto-correlación”: la idea de que el pasado se repite de alguna forma. Sin embargo, un ingeniero de Supply Chain de vanguardia sabe que la demanda no es un fenómeno espontáneo; es el resultado de <strong>fuerzas externas e internas</strong> que colisionan en el mercado.</p>
-<p>Como bien dice la máxima de la disciplina: <em>“La inteligencia no está en el algoritmo, sino en la ingeniería de la señal”</em>. En este capítulo, transformaremos nuestra serie lineal en una <strong>matriz de datos inteligente</strong>. Pasaremos de preguntar “¿Qué pasó?” a preguntar “¿Qué causó que pasara?”. La <strong>Ingeniería de Atributos (Feature Engineering)</strong> es el 80% del éxito en Machine Learning aplicado a Suministros. Aquí es donde inyectamos el conocimiento del negocio en el silicio.</p>
-<section id="de-series-de-tiempo-a-aprendizaje-supervisado" class="level2">
-<h2 class="anchored" data-anchor-id="de-series-de-tiempo-a-aprendizaje-supervisado">De Series de Tiempo a Aprendizaje Supervisado</h2>
-<p>Los modelos estadísticos clásicos (univariantes) leen los datos en fila, buscando patrones en la secuencia cronológica. El Machine Learning (ML), por el contrario, entiende de <strong>relaciones</strong>. Para que un algoritmo aprenda, debemos convertir nuestro problema en una estructura tabular de <strong>Características (</strong><span class="math inline">\(X\)</span>) y un <strong>Objetivo (</strong><span class="math inline">\(y\)</span>).</p>
+<p>Felicidades. Has dominado los pilares de la estadística clásica. Sabes suavizar el ruido, capturar la tendencia y seguir el ritmo de la estacionalidad con modelos como Holt-Winters. Pero, como todo Arquitecto de Suministros, pronto notarás que la realidad de los mercados actuales tiene más dimensiones de las que una sola serie de tiempo puede contener.</p>
+<p>¿Qué pasa cuando la demanda no sube por “inercia”, sino porque hubo una promoción agresiva de la competencia? ¿Qué pasa cuando un festivo móvil (como Semana Santa o el Día de la Madre) cambia de fecha y arruina tus promedios históricos? Aquí es donde dejamos atrás la estadística puramente univariante para entrar en la nueva frontera: <strong>El Machine Learning aplicado a la Demanda</strong>.</p>
+<section id="el-gran-salto-univariante-vs.-multivariante" class="level2">
+<h2 class="anchored" data-anchor-id="el-gran-salto-univariante-vs.-multivariante">8.1 El Gran Salto: Univariante vs.&nbsp;Multivariante</h2>
+<p>Hasta ahora, nuestros modelos (ARIMA, SES, Holt-Winters) eran fundamentalmente <strong>univariantes</strong>. Esto significa que solo miraban el pasado de la propia demanda para predecir el futuro. Es una técnica poderosa, pero limitada: es como intentar conducir un camión en una carretera con curvas mirando exclusivamente por el espejo retrovisor. Si bien el pasado nos da una idea del camino, no nos avisa de los obstáculos que tenemos enfrente.</p>
+<p>El <strong>Machine Learning (ML)</strong> nos permite pasar al modelo <strong>multivariante</strong>. En lugar de preguntar solo “¿Qué vendí antes?”, el ML construye una visión panorámica integrando el contexto. El ML no busca solo la “autocorrelación” (el parecido de hoy con el ayer); busca <strong>patrones de relación</strong> entre múltiples variables que coexisten en el tiempo.</p>
+<section id="el-contexto-como-señal" class="level3">
+<h3 class="anchored" data-anchor-id="el-contexto-como-señal">El Contexto como Señal</h3>
+<p>En un modelo multivariante, la demanda es la variable dependiente, pero está “explicada” por un ejército de variables independientes:</p>
 <ul>
-<li><strong>El Objetivo (</strong><span class="math inline">\(y\)</span>): Es la demanda del próximo periodo que queremos predecir.</li>
-<li><strong>Las Características (</strong><span class="math inline">\(X\)</span>): Son los “porqués”. Las variables (atributos) que explican el comportamiento de <span class="math inline">\(y\)</span>.</li>
+<li><p><strong>Elasticidad de Precio:</strong> ¿A qué precio lo vendí y cómo afectó el volumen?</p></li>
+<li><p><strong>Eventos y Promociones:</strong> ¿Había un descuento activo o un banner en el sitio web?</p></li>
+<li><p><strong>Factores de Calendario:</strong> ¿Es un día de pago (quincena)? ¿Es víspera de un puente festivo?</p></li>
+<li><p><strong>Variables Exógenas:</strong> ¿Hubo una ola de calor que disparó la venta de bebidas? ¿Cómo está el tipo de cambio?</p></li>
 </ul>
 </section>
-<section id="atributos-históricos-capturando-la-inercia-y-el-contexto" class="level2">
-<h2 class="anchored" data-anchor-id="atributos-históricos-capturando-la-inercia-y-el-contexto">Atributos Históricos: Capturando la Inercia y el Contexto</h2>
-<p>Aunque el ML no lea secuencias de forma nativa, podemos “alimentarlo” con pedazos del pasado como columnas actuales. Esto permite que modelos como XGBoost capturen la autorregresión de forma mucho más potente que un ARIMA.</p>
-<section id="rezagos-lags-y-la-regla-del-lead-time" class="level3">
-<h3 class="anchored" data-anchor-id="rezagos-lags-y-la-regla-del-lead-time">Rezagos (Lags) y la Regla del Lead Time</h3>
-<p>Un rezago es el valor de la demanda en periodos anteriores. * <strong>Lag 1 (</strong><span class="math inline">\(y_{t-1}\)</span>): Captura la inercia inmediata. * <strong>Lag 7 (</strong><span class="math inline">\(y_{t-7}\)</span>): Vital para capturar el ciclo semanal en retail. * <strong>La Regla del Lead Time:</strong> Este es un aporte crítico. Si tu tiempo de reposición es de 4 semanas, predecir el día de mañana con el <span class="math inline">\(y_{t-1}\)</span> es un ejercicio académico. Para que el pronóstico sea útil en la compra de inventario, tus atributos más pesados deben ser aquellos que el planificador conoce en el momento de tomar la decisión (lags iguales o superiores al Lead Time).</p>
 </section>
-<section id="estadísticas-de-ventana-rolling-windows" class="level3">
-<h3 class="anchored" data-anchor-id="estadísticas-de-ventana-rolling-windows">Estadísticas de Ventana (Rolling Windows)</h3>
-<p>En lugar de mirar un punto exacto, miramos un bloque de tiempo para entender el “clima” de la demanda. * <strong>Media Móvil:</strong> Captura el nivel actual eliminando el ruido. * <strong>Volatilidad Móvil:</strong> Le dice al modelo si el mercado está estable o en caos. Un aumento en la desviación estándar suele preceder a un error de pronóstico mayor; el modelo debe saberlo para “desconfiar” de la media y ajustar los márgenes de seguridad.</p>
-</section>
-</section>
-<section id="atributos-de-contexto-el-calendario-inteligente" class="level2">
-<h2 class="anchored" data-anchor-id="atributos-de-contexto-el-calendario-inteligente">Atributos de Contexto: El Calendario Inteligente</h2>
-<p>El tiempo no es una línea uniforme; tiene “personalidad”. Un lunes 24 de diciembre no se comporta como un lunes 14 de mayo.</p>
+<section id="ingeniería-de-atributos-el-verdadero-ingrediente-secreto" class="level2">
+<h2 class="anchored" data-anchor-id="ingeniería-de-atributos-el-verdadero-ingrediente-secreto">8.2 Ingeniería de Atributos: El Verdadero Ingrediente Secreto</h2>
+<p>En Machine Learning, el algoritmo (sea XGBoost, Random Forest o una Red Neuronal) es solo el motor. El combustible, y lo que realmente determina la victoria, es la <strong>Ingeniería de Atributos (Feature Engineering)</strong>. Esta es la tarea creativa y técnica de transformar datos crudos en variables que el modelo pueda procesar para extraer conocimiento.</p>
+<section id="categorías-de-atributos-críticos-para-el-arquitecto" class="level3">
+<h3 class="anchored" data-anchor-id="categorías-de-atributos-críticos-para-el-arquitecto">Categorías de Atributos Críticos para el Arquitecto:</h3>
 <ol type="1">
-<li><strong>Codificación Cíclica:</strong> Los meses 12 (diciembre) y 1 (enero) están pegados en la realidad, pero lejos matemáticamente. Usamos funciones <strong>Seno y Coseno</strong> para que el modelo entienda la naturaleza circular del tiempo.</li>
-<li><strong>Proximidad a Eventos:</strong> No solo marques el día del “Black Friday”. Crea una variable que cuente los “Días restantes para el evento”. Esto permite capturar el “efecto espera” (caída de ventas previa) y la explosión posterior.</li>
+<li><p><strong>Lags (Retrasos Temporales):</strong> Son los valores de ventas de hace 1, 7, 14 o 30 días. Siguen siendo la señal más fuerte porque capturan el “momentum”. Un buen arquitecto también crea promedios móviles de estos lags (ej. el promedio de ventas de las últimas 3 semanas) para filtrar el ruido.</p></li>
+<li><p><strong>Atributos de Calendario (Dummies):</strong> Transformamos fechas en números. ¿Es lunes (1) o domingo (0)? ¿Es la semana 52 del año? Estas variables ayudan al modelo a entender que los lunes siempre se vende más que los martes, sin que tengamos que programar esa regla manualmente.</p></li>
+<li><p><strong>Variables de Interacción:</strong> A veces, el efecto de una promoción es mayor si ocurre en fin de semana. Multiplicar la variable <code>is_promo</code> por <code>is_weekend</code> crea un atributo de interacción que revela patrones complejos que un modelo lineal jamás vería.</p></li>
+<li><p><strong>Atributos de Producto y Ubicación:</strong> Incluir la categoría del producto o la zona geográfica permite que el modelo aprenda comportamientos grupales. Si un nuevo producto no tiene historia, el modelo puede “pedir prestado” el comportamiento de productos similares.</p></li>
 </ol>
 </section>
-<section id="atributos-exógenos-los-drivers-de-valor" class="level2">
-<h2 class="anchored" data-anchor-id="atributos-exógenos-los-drivers-de-valor">Atributos Exógenos: Los Drivers de Valor</h2>
-<p>Aquí es donde el ML supera a la estadística tradicional al integrar variables que mueven la aguja del negocio.</p>
-<section id="el-precio-y-la-elasticidad-dinámica" class="level3">
-<h3 class="anchored" data-anchor-id="el-precio-y-la-elasticidad-dinámica">El Precio y la Elasticidad Dinámica</h3>
-<p>No incluyas solo el precio nominal. Crea el <strong>Precio Relativo</strong> (Precio Actual / Precio Promedio del Trimestre). Esto captura si el producto está “de oferta” o “caro” respecto a la memoria del consumidor. Al incluir esto, el modelo aprenderá la elasticidad demanda-precio automáticamente.</p>
 </section>
-<section id="efectos-cruzados-canibalización-y-halo" class="level3">
-<h3 class="anchored" data-anchor-id="efectos-cruzados-canibalización-y-halo">Efectos Cruzados: Canibalización y Halo</h3>
-<p>Si pones el Producto A en oferta, la demanda del Producto B (su competidor interno) caerá. * <strong>Ingeniería de Canibalización:</strong> Crea atributos que indiquen si productos sustitutos están en promoción. Sin esto, el modelo malinterpretará las caídas de ventas de B como una pérdida de tendencia, cuando es un efecto provocado por A.</p>
+<section id="el-fin-del-mito-de-la-caja-negra" class="level2">
+<h2 class="anchored" data-anchor-id="el-fin-del-mito-de-la-caja-negra">8.3 El Fin del Mito de la “Caja Negra”</h2>
+<p>Un mito persistente entre los gerentes tradicionales es que el ML es una caja negra impredecible y peligrosa. En la arquitectura moderna, esto es totalmente falso. Gracias a técnicas de <strong>Interpretabilidad</strong> como los <strong>SHAP Values</strong> (Shapley Additive Explanations) o el <strong>Feature Importance</strong>, el ML es a menudo más transparente que los modelos estadísticos oscuros.</p>
+<p>Podemos realizar una autopsia del pronóstico y decir con precisión: <em>“Este pronóstico de 500 unidades se descompone así: 350 son la base histórica, 100 se deben a la promoción activa y 50 al efecto del clima cálido previsto”</em>. Esta capacidad de explicación transforma al planificador de demanda de un “creyente en el modelo” a un “auditor de drivers de demanda”, permitiendo tomar decisiones de negocio informadas y no solo basadas en la fe.</p>
 </section>
-</section>
-<section id="el-pecado-capital-fuga-de-datos-data-leakage" class="level2">
-<h2 class="anchored" data-anchor-id="el-pecado-capital-fuga-de-datos-data-leakage">El Pecado Capital: Fuga de Datos (Data Leakage)</h2>
-<p>Este es el error que destruye proyectos y carreras. La <strong>Fuga de Datos</strong> ocurre cuando incluyes en tu entrenamiento información que <strong>no tendrías disponible</strong> en el momento de hacer el pronóstico real.</p>
-<ul>
-<li><strong>El Error Típico:</strong> Incluir el promedio de ventas del mes actual para predecir la venta de hoy. Si estás a día 5, no conoces el promedio del mes completo.</li>
-<li><strong>La Consecuencia:</strong> Tu modelo tendrá un <strong>WAPE</strong> perfecto en el laboratorio (0.5%), pero fallará estrepitosamente en la vida real porque ese dato del “futuro” simplemente no existe.</li>
-</ul>
-</section>
-<section id="implementación-técnica-de-la-intuición-al-dato" class="level2">
-<h2 class="anchored" data-anchor-id="implementación-técnica-de-la-intuición-al-dato">Implementación Técnica: De la Intuición al Dato</h2>
-<section id="codificación-de-categorías-target-encoding" class="level3">
-<h3 class="anchored" data-anchor-id="codificación-de-categorías-target-encoding">Codificación de Categorías (Target Encoding)</h3>
-<p>Un algoritmo no sabe qué es “Coca-Cola”. Reemplazar el nombre de la categoría por su venta promedio histórica (<strong>Target Encoding</strong>) es la forma más inteligente de decirle al modelo el “peso” que tiene un producto sin saturarlo con cientos de columnas innecesarias.</p>
-</section>
-<section id="veredicto-del-fva-por-atributo" class="level3">
-<h3 class="anchored" data-anchor-id="veredicto-del-fva-por-atributo">Veredicto del FVA por Atributo</h3>
-<p>Cada atributo nuevo añade ruido y costo de mantenimiento. 1. <strong>Mide el FVA:</strong> ¿Agregar el “clima” realmente bajó el <strong>RMSE</strong> significativamente? 2. <strong>Importancia de Atributos:</strong> Deja que el modelo te diga qué columnas usa realmente. Si la “Fase Lunar” tiene importancia cero, bórrala sin piedad.</p>
+<section id="simulador-el-poder-de-los-atributos-ml-vs.-estadística" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-el-poder-de-los-atributos-ml-vs.-estadística">8.4 Simulador: El Poder de los Atributos (ML vs.&nbsp;Estadística)</h2>
+<p>En este laboratorio, comparamos un modelo estadístico simple (Promedio Móvil) contra un modelo de Machine Learning idealizado que posee el atributo de <strong>Promoción</strong>.</p>
+<p>Observa qué sucede cuando activas una <strong>Promoción</strong>: el modelo estadístico es reactivo; solo empieza a subir después de ver ventas altas, y lo que es peor, genera un <strong>exceso de stock (over-stock)</strong> al final de la promoción porque su promedio móvil tarda días en “olvidar” el pico de demanda. El ML, por el contrario, se anticipa y se apaga quirúrgicamente.</p>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="55" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 54;"><span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>jStat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>viewof promo_impact <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">10</span><span class="op">,</span> <span class="dv">150</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">70</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Impacto de Promoción (Unidades):"</span>})</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>viewof promo_day <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">10</span><span class="op">,</span> <span class="dv">45</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">25</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Día de Inicio de Promoción:"</span>})</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>viewof noise_ml <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">40</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">12</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Ruido del Mercado (Varianza):"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="68" data-source-offset="-51"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 67;"><span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>ml_series <span class="op">=</span> {</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> data <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> promo_duration <span class="op">=</span> <span class="dv">7</span><span class="op">;</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">60</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> base <span class="op">=</span> <span class="dv">100</span><span class="op">;</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> is_promo <span class="op">=</span> (i <span class="op">&gt;=</span> promo_day <span class="op">&amp;&amp;</span> i <span class="op">&lt;</span> promo_day <span class="op">+</span> promo_duration) <span class="op">?</span> <span class="dv">1</span> <span class="op">:</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> effect <span class="op">=</span> is_promo <span class="op">*</span> promo_impact<span class="op">;</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> noise <span class="op">=</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">sample</span>(<span class="dv">0</span><span class="op">,</span> noise_ml)<span class="op">;</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    data<span class="op">.</span><span class="fu">push</span>({ <span class="dt">t</span><span class="op">:</span> i<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">0</span><span class="op">,</span> base <span class="op">+</span> effect <span class="op">+</span> noise)<span class="op">,</span> <span class="dt">promo</span><span class="op">:</span> is_promo })<span class="op">;</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data<span class="op">;</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="co">// 2. Modelo Estadístico (Promedio Móvil 7 días)</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>stat_model <span class="op">=</span> {</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> forecast <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> window_size <span class="op">=</span> <span class="dv">7</span><span class="op">;</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> ml_series<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (i <span class="op">&lt;</span> window_size) {</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>      forecast<span class="op">.</span><span class="fu">push</span>(<span class="dv">100</span>)<span class="op">;</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> <span class="bu">window</span> <span class="op">=</span> ml_series<span class="op">.</span><span class="fu">slice</span>(i <span class="op">-</span> window_size<span class="op">,</span> i)<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)<span class="op">;</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>      forecast<span class="op">.</span><span class="fu">push</span>(jStat<span class="op">.</span><span class="fu">mean</span>(<span class="bu">window</span>))<span class="op">;</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> forecast<span class="op">;</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="co">// 3. Modelo ML (Conoce la causa: Variable Binaria de Promo)</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>ml_model <span class="op">=</span> {</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> ml_series<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>    <span class="co">// El modelo ML "entiende" la relación estructural</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">100</span> <span class="op">+</span> (d<span class="op">.</span><span class="at">promo</span> <span class="op">*</span> promo_impact)<span class="op">;</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="co">// 4. Auditoría de Errores con enfoque FVA</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>ml_metrics <span class="op">=</span> {</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> err_stat <span class="op">=</span> jStat<span class="op">.</span><span class="fu">mean</span>(ml_series<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(d<span class="op">.</span><span class="at">y</span> <span class="op">-</span> stat_model[i])))<span class="op">;</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> err_ml <span class="op">=</span> jStat<span class="op">.</span><span class="fu">mean</span>(ml_series<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(d<span class="op">.</span><span class="at">y</span> <span class="op">-</span> ml_model[i])))<span class="op">;</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> fva <span class="op">=</span> err_stat <span class="op">-</span> err_ml<span class="op">;</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> { err_stat<span class="op">,</span> err_ml<span class="op">,</span> fva }<span class="op">;</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="co">// 5. Visualización del duelo tecnológico</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:450px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> ml_series<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">t</span>)<span class="op">,</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> ml_series<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)<span class="op">,</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Demanda Real (Hechos)'</span><span class="op">,</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines+markers'</span><span class="op">,</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#64748b'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="fl">1.5</span>}</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> ml_series<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">t</span>)<span class="op">,</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> stat_model<span class="op">,</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Promedio Móvil (Ciego a la promo)'</span><span class="op">,</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#ef4444'</span><span class="op">,</span> <span class="dt">dash</span><span class="op">:</span> <span class="st">'dash'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">2</span>}</span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> ml_series<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">t</span>)<span class="op">,</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> ml_model<span class="op">,</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'ML (Consciente de la promo)'</span><span class="op">,</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#2563eb'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">3</span>}</span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layout <span class="op">=</span> {</span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'Diferencia entre Reaccionar y Prever'</span><span class="op">,</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>    <span class="dt">xaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Día'</span> }<span class="op">,</span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>    <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Unidades'</span><span class="op">,</span> <span class="dt">rangemode</span><span class="op">:</span> <span class="st">'tozero'</span> }<span class="op">,</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>    <span class="dt">hovermode</span><span class="op">:</span> <span class="st">'x unified'</span><span class="op">,</span></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>    <span class="dt">shapes</span><span class="op">:</span> [{</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'rect'</span><span class="op">,</span></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x0</span><span class="op">:</span> promo_day<span class="op">,</span> <span class="dt">x1</span><span class="op">:</span> promo_day <span class="op">+</span> <span class="dv">7</span><span class="op">,</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y0</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fillcolor</span><span class="op">:</span> <span class="st">'rgba(59, 130, 246, 0.1)'</span><span class="op">,</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">width</span><span class="op">:</span> <span class="dv">0</span>}</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>    }]</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> layout<span class="op">,</span> {<span class="dt">responsive</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">displayModeBar</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">;</span></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-5" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>El Rol del Arquitecto de Demanda
+<span class="screen-reader-only">Important</span>El Veredicto de la Inteligencia
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Tú no eres un consumidor de algoritmos; eres el curador de la verdad del negocio. Tu misión es convertir la intuición del mercado en una columna de datos que el algoritmo pueda procesar. La complejidad debe ser una inversión, no un gasto.</p>
+<ul>
+<li><p><strong>Error Modelo Estadístico (MAE):</strong> <span><span id="ojs-element-id-1"></span></span> unidades.</p></li>
+<li><p><strong>Error Modelo ML (MAE):</strong> <span><span id="ojs-element-id-2"></span></span> unidades.</p></li>
+<li><p><strong>FVA (Forecast Value Added):</strong> <span><span id="ojs-element-id-3"></span></span> unidades de mejora.</p></li>
+</ul>
+<p><strong>Lección para el Arquitecto:</strong> La estadística pura “persigue” el impacto de la promoción solo después de que ocurre, lo que genera quiebres de stock al inicio y excesos de inventario masivos cuando la promoción termina (el modelo sigue pidiendo porque el promedio móvil está inflado). El ML, al tener el atributo <code>is_promo</code>, entiende la temporalidad de la acción y ajusta el inventario de forma preventiva.</p>
 </div>
 </div>
 </section>
+<section id="implicaciones-estratégicas-cuándo-no-usar-ml" class="level2">
+<h2 class="anchored" data-anchor-id="implicaciones-estratégicas-cuándo-no-usar-ml">8.5 Implicaciones Estratégicas: ¿Cuándo NO usar ML?</h2>
+<p>A pesar de su potencia, el Machine Learning no es una solución mágica “instalar y olvidar”. El Arquitecto de Suministros debe evaluar los costos y riesgos operativos antes de la implementación:</p>
+<ol type="1">
+<li><p><strong>Hambre de Datos y Calidad Histórica:</strong> El ML necesita mucha historia para aprender. Pero más que cantidad, necesita <strong>calidad</strong>. Si no tienes un registro histórico limpio de cuándo fueron tus promociones pasadas o tus cambios de precio, el modelo no podrá establecer la relación causal. “Basura entra, basura sale”.</p></li>
+<li><p><strong>El Problema del “Cold Start”:</strong> Para productos nuevos sin historia, un modelo multivariante basado en lags no tiene nada que procesar. Aquí dependemos de la inteligencia de atributos categóricos (ej. “se parece a este otro producto”).</p></li>
+<li><p><strong>Costo de Mantenimiento:</strong> Entrenar y supervisar modelos para 100,000 SKUs requiere una infraestructura de datos (MLOps) y un equipo que sepa auditar los resultados. A veces, para productos Clase C (baja rotación), la estadística simple sigue siendo la decisión más rentable.</p></li>
+<li><p><strong>Riesgo de Overfitting:</strong> Si le das 500 atributos a un modelo para predecir una serie de 24 meses, el modelo memorizará el ruido y fallará estrepitosamente en el futuro. Menos es más: selecciona solo los atributos que tengan una lógica de negocio detrás.</p></li>
+</ol>
 </section>
 <section id="checklist-de-cierre-del-capítulo" class="level2">
 <h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">¿He transformado mi serie univariante en una matriz tabular (<span class="math inline">\(X, y\)</span>)?</label></li>
-<li><label><input type="checkbox">¿Mis Lags respetan el Lead Time de mi cadena de suministro?</label></li>
-<li><label><input type="checkbox">¿He incluido el Precio Relativo para capturar la elasticidad automáticamente?</label></li>
-<li><label><input type="checkbox">¿He verificado que no hay información del futuro en mis columnas (Data Leakage)?</label></li>
-<li><label><input type="checkbox">¿He medido el FVA de los nuevos atributos respecto a los modelos del Capítulo 7?</label></li>
+<li><p><label><input type="checkbox">¿He identificado las variables externas (promociones, clima, competidores) que realmente impactan mi negocio?</label></p></li>
+<li><p><label><input type="checkbox">¿Existe un registro confiable y digitalizado de estas variables para alimentar un modelo?</label></p></li>
+<li><p><label><input type="checkbox">¿Entiendo por qué un modelo multivariante reduce el exceso de stock tras una promoción?</label></p></li>
+<li><p><label><input type="checkbox">¿He evaluado si mis productos Clase A justifican la inversión en infraestructura de ML?</label></p></li>
+<li><p><label><input type="checkbox">¿Estoy listo para conocer al “rey” de la eficiencia en Supply Chain: <strong>XGBoost</strong>, en el Capítulo 9?</label></p></li>
 </ul>
 
 
+<div class="ojs-auto-generated hidden">
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7bWxfbWV0cmljcy5lcnJfc3RhdC50b0ZpeGVkKDEpfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMSJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7bWxfbWV0cmljcy5lcnJfbWwudG9GaXhlZCgxKX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke21sX21ldHJpY3MuZnZhLnRvRml4ZWQoMSl9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0zIn1dfQ==
+</script>
+</div>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5qU3RhdCA9IHJlcXVpcmUoXCJqc3RhdEAxLjkuNlwiKVxyXG5QbG90bHkgPSByZXF1aXJlKFwicGxvdGx5LmpzLWRpc3QtbWluQDIuMjQuMVwiKVxyXG5cclxudmlld29mIHByb21vX2ltcGFjdCA9IElucHV0cy5yYW5nZShbMTAsIDE1MF0sIHt2YWx1ZTogNzAsIHN0ZXA6IDUsIGxhYmVsOiBcIkltcGFjdG8gZGUgUHJvbW9jacOzbiAoVW5pZGFkZXMpOlwifSlcclxudmlld29mIHByb21vX2RheSA9IElucHV0cy5yYW5nZShbMTAsIDQ1XSwge3ZhbHVlOiAyNSwgc3RlcDogMSwgbGFiZWw6IFwiRMOtYSBkZSBJbmljaW8gZGUgUHJvbW9jacOzbjpcIn0pXHJcbnZpZXdvZiBub2lzZV9tbCA9IElucHV0cy5yYW5nZShbMCwgNDBdLCB7dmFsdWU6IDEyLCBzdGVwOiAyLCBsYWJlbDogXCJSdWlkbyBkZWwgTWVyY2FkbyAoVmFyaWFuemEpOlwifSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcbi8vIDEuIEdlbmVyYXIgRGVtYW5kYSBSZWFsIGNvbiBldmVudG9zIGV4w7NnZW5vc1xyXG5tbF9zZXJpZXMgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG4gIGNvbnN0IHByb21vX2R1cmF0aW9uID0gNztcclxuICBmb3IgKGxldCBpID0gMDsgaSA8IDYwOyBpKyspIHtcclxuICAgIGNvbnN0IGJhc2UgPSAxMDA7XHJcbiAgICBjb25zdCBpc19wcm9tbyA9IChpID49IHByb21vX2RheSAmJiBpIDwgcHJvbW9fZGF5ICsgcHJvbW9fZHVyYXRpb24pID8gMSA6IDA7XHJcbiAgICBjb25zdCBlZmZlY3QgPSBpc19wcm9tbyAqIHByb21vX2ltcGFjdDtcclxuICAgIGNvbnN0IG5vaXNlID0galN0YXQubm9ybWFsLnNhbXBsZSgwLCBub2lzZV9tbCk7XHJcbiAgICBkYXRhLnB1c2goeyB0OiBpLCB5OiBNYXRoLm1heCgwLCBiYXNlICsgZWZmZWN0ICsgbm9pc2UpLCBwcm9tbzogaXNfcHJvbW8gfSk7XHJcbiAgfVxyXG4gIHJldHVybiBkYXRhO1xyXG59XHJcblxyXG4vLyAyLiBNb2RlbG8gRXN0YWTDrXN0aWNvIChQcm9tZWRpbyBNw7N2aWwgNyBkw61hcylcclxuc3RhdF9tb2RlbCA9IHtcclxuICBjb25zdCBmb3JlY2FzdCA9IFtdO1xyXG4gIGNvbnN0IHdpbmRvd19zaXplID0gNztcclxuICBmb3IgKGxldCBpID0gMDsgaSA8IG1sX3Nlcmllcy5sZW5ndGg7IGkrKykge1xyXG4gICAgaWYgKGkgPCB3aW5kb3dfc2l6ZSkge1xyXG4gICAgICBmb3JlY2FzdC5wdXNoKDEwMCk7XHJcbiAgICB9IGVsc2Uge1xyXG4gICAgICBjb25zdCB3aW5kb3cgPSBtbF9zZXJpZXMuc2xpY2UoaSAtIHdpbmRvd19zaXplLCBpKS5tYXAoZCA9PiBkLnkpO1xyXG4gICAgICBmb3JlY2FzdC5wdXNoKGpTdGF0Lm1lYW4od2luZG93KSk7XHJcbiAgICB9XHJcbiAgfVxyXG4gIHJldHVybiBmb3JlY2FzdDtcclxufVxyXG5cclxuLy8gMy4gTW9kZWxvIE1MIChDb25vY2UgbGEgY2F1c2E6IFZhcmlhYmxlIEJpbmFyaWEgZGUgUHJvbW8pXHJcbm1sX21vZGVsID0ge1xyXG4gIHJldHVybiBtbF9zZXJpZXMubWFwKChkLCBpKSA9PiB7XHJcbiAgICAvLyBFbCBtb2RlbG8gTUwgXCJlbnRpZW5kZVwiIGxhIHJlbGFjacOzbiBlc3RydWN0dXJhbFxyXG4gICAgcmV0dXJuIDEwMCArIChkLnByb21vICogcHJvbW9faW1wYWN0KTtcclxuICB9KTtcclxufVxyXG5cclxuLy8gNC4gQXVkaXRvcsOtYSBkZSBFcnJvcmVzIGNvbiBlbmZvcXVlIEZWQVxyXG5tbF9tZXRyaWNzID0ge1xyXG4gIGNvbnN0IGVycl9zdGF0ID0galN0YXQubWVhbihtbF9zZXJpZXMubWFwKChkLCBpKSA9PiBNYXRoLmFicyhkLnkgLSBzdGF0X21vZGVsW2ldKSkpO1xyXG4gIGNvbnN0IGVycl9tbCA9IGpTdGF0Lm1lYW4obWxfc2VyaWVzLm1hcCgoZCwgaSkgPT4gTWF0aC5hYnMoZC55IC0gbWxfbW9kZWxbaV0pKSk7XHJcbiAgY29uc3QgZnZhID0gZXJyX3N0YXQgLSBlcnJfbWw7XHJcbiAgcmV0dXJuIHsgZXJyX3N0YXQsIGVycl9tbCwgZnZhIH07XHJcbn1cclxuXHJcbi8vIDUuIFZpc3VhbGl6YWNpw7NuIGRlbCBkdWVsbyB0ZWNub2zDs2dpY29cclxue1xyXG4gIGNvbnN0IGNvbnRhaW5lciA9IGh0bWxgPGRpdiBzdHlsZT1cIndpZHRoOjEwMCU7IGhlaWdodDo0NTBweDtcIj48L2Rpdj5gO1xyXG4gIFxyXG4gIGNvbnN0IHRyYWNlcyA9IFtcclxuICAgIHtcclxuICAgICAgeDogbWxfc2VyaWVzLm1hcChkID0+IGQudCksXHJcbiAgICAgIHk6IG1sX3Nlcmllcy5tYXAoZCA9PiBkLnkpLFxyXG4gICAgICBuYW1lOiAnRGVtYW5kYSBSZWFsIChIZWNob3MpJyxcclxuICAgICAgdHlwZTogJ3NjYXR0ZXInLFxyXG4gICAgICBtb2RlOiAnbGluZXMrbWFya2VycycsXHJcbiAgICAgIGxpbmU6IHtjb2xvcjogJyM2NDc0OGInLCB3aWR0aDogMS41fVxyXG4gICAgfSxcclxuICAgIHtcclxuICAgICAgeDogbWxfc2VyaWVzLm1hcChkID0+IGQudCksXHJcbiAgICAgIHk6IHN0YXRfbW9kZWwsXHJcbiAgICAgIG5hbWU6ICdQcm9tZWRpbyBNw7N2aWwgKENpZWdvIGEgbGEgcHJvbW8pJyxcclxuICAgICAgbGluZToge2NvbG9yOiAnI2VmNDQ0NCcsIGRhc2g6ICdkYXNoJywgd2lkdGg6IDJ9XHJcbiAgICB9LFxyXG4gICAge1xyXG4gICAgICB4OiBtbF9zZXJpZXMubWFwKGQgPT4gZC50KSxcclxuICAgICAgeTogbWxfbW9kZWwsXHJcbiAgICAgIG5hbWU6ICdNTCAoQ29uc2NpZW50ZSBkZSBsYSBwcm9tbyknLFxyXG4gICAgICBsaW5lOiB7Y29sb3I6ICcjMjU2M2ViJywgd2lkdGg6IDN9XHJcbiAgICB9XHJcbiAgXTtcclxuXHJcbiAgY29uc3QgbGF5b3V0ID0ge1xyXG4gICAgdGl0bGU6ICdEaWZlcmVuY2lhIGVudHJlIFJlYWNjaW9uYXIgeSBQcmV2ZXInLFxyXG4gICAgeGF4aXM6IHsgdGl0bGU6ICdEw61hJyB9LFxyXG4gICAgeWF4aXM6IHsgdGl0bGU6ICdVbmlkYWRlcycsIHJhbmdlbW9kZTogJ3RvemVybycgfSxcclxuICAgIHRlbXBsYXRlOiAncGxvdGx5X3doaXRlJyxcclxuICAgIGhvdmVybW9kZTogJ3ggdW5pZmllZCcsXHJcbiAgICBzaGFwZXM6IFt7XHJcbiAgICAgIHR5cGU6ICdyZWN0JyxcclxuICAgICAgeDA6IHByb21vX2RheSwgeDE6IHByb21vX2RheSArIDcsXHJcbiAgICAgIHkwOiAwLCB5MTogMzAwLFxyXG4gICAgICBmaWxsY29sb3I6ICdyZ2JhKDU5LCAxMzAsIDI0NiwgMC4xKScsXHJcbiAgICAgIGxpbmU6IHt3aWR0aDogMH1cclxuICAgIH1dXHJcbiAgfTtcclxuXHJcbiAgUGxvdGx5Lm5ld1Bsb3QoY29udGFpbmVyLCB0cmFjZXMsIGxheW91dCwge3Jlc3BvbnNpdmU6IHRydWUsIGRpc3BsYXlNb2RlQmFyOiBmYWxzZX0pO1xyXG4gIHJldHVybiBjb250YWluZXI7XHJcbn1cclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdwcm9tb19pbXBhY3QnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncHJvbW9fZGF5JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ25vaXNlX21sJykifV19
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1042,8 +1230,8 @@ window.Quarto = {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./cap-7-arima-y-alternativas.html" class="pagination-link" aria-label="7. Introducción: El Salto de la Suavización a la Correlación">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">7. Introducción: El Salto de la Suavización a la Correlación</span></span>
+      <a href="./cap-7-arima-y-alternativas.html" class="pagination-link" aria-label="7. Tendencia y Estacionalidad: El Modelo de Holt-Winters">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">7. Tendencia y Estacionalidad: El Modelo de Holt-Winters</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1053,8 +1241,21 @@ window.Quarto = {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Nicolás A. Bravo</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-8-ingenieria-atributos.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Este libro fue creado con <a href="https://quarto.org/">Quarto</a>. Visita mi <a href="https://github.com/nicobravo933-Planner">repositorio GitHub</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-8-ingenieria-atributos.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>

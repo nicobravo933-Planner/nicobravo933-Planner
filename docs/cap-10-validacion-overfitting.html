@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10. El Desierto de los Datos – Arquitectura de suministros</title>
+<title>10. La Carrera de Caballos: Selección Automática de Modelos – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -74,6 +109,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
 </head>
@@ -249,7 +286,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-8-ingenieria-atributos.html">III: El Arsenal del Científico de Datos</a></li><li class="breadcrumb-item"><a href="./cap-10-validacion-overfitting.html"><span class="chapter-title">10. El Desierto de los Datos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-8-ingenieria-atributos.html">III: El Arsenal del Científico de Datos</a></li><li class="breadcrumb-item"><a href="./cap-10-validacion-overfitting.html"><span class="chapter-title">10. La Carrera de Caballos: Selección Automática de Modelos</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -326,17 +363,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-5-pronostico-ingenuo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. El Pronóstico Ingenuo: Modelos Simples y Benchmarking</span></a>
+  <a href="./cap-5-pronostico-ingenuo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. El Pronóstico Ingenuo y el Benchmarking Sin Mentiras</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-6-suavizamiento-exponencial.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Suavizando la Curva - La Inteligencia Estadística</span></a>
+  <a href="./cap-6-suavizamiento-exponencial.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Suavizando la Curva: La Inteligencia Estadística</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-7-arima-y-alternativas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Introducción: El Salto de la Suavización a la Correlación</span></a>
+  <a href="./cap-7-arima-y-alternativas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Tendencia y Estacionalidad: El Modelo de Holt-Winters</span></a>
   </div>
 </li>
       </ul>
@@ -352,17 +389,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-8-ingenieria-atributos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Introducción: El Cambio de Paradigma</span></a>
+  <a href="./cap-8-ingenieria-atributos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Machine Learning: Más allá de la Autocorrelación</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-9-bosque-decisiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. El Bosque de las Decisiones - Random Forest y XGBoost</span></a>
+  <a href="./cap-9-bosque-decisiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. El Rey de la Colina: Random Forest, XGBoost y LightGBM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-10-validacion-overfitting.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">10. El Desierto de los Datos</span></a>
+  <a href="./cap-10-validacion-overfitting.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">10. La Carrera de Caballos: Selección Automática de Modelos</span></a>
   </div>
 </li>
       </ul>
@@ -440,12 +477,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego</span></a>
+  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego: Gestión de Sesgos Humanos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20. El Plan Maestro</span></a>
+  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20. El Plan Maestro (S&amp;OP)</span></a>
   </div>
 </li>
       </ul>
@@ -467,16 +504,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#la-anatomía-del-overfitting-sobreajuste" id="toc-la-anatomía-del-overfitting-sobreajuste" class="nav-link active" data-scroll-target="#la-anatomía-del-overfitting-sobreajuste">10.1 La Anatomía del Overfitting (Sobreajuste)</a></li>
-  <li><a href="#el-compromiso-entre-sesgo-bias-y-varianza" id="toc-el-compromiso-entre-sesgo-bias-y-varianza" class="nav-link" data-scroll-target="#el-compromiso-entre-sesgo-bias-y-varianza">10.2 El Compromiso entre Sesgo (Bias) y Varianza</a></li>
-  <li><a href="#la-regla-de-oro-validación-cruzada-temporal-backtesting" id="toc-la-regla-de-oro-validación-cruzada-temporal-backtesting" class="nav-link" data-scroll-target="#la-regla-de-oro-validación-cruzada-temporal-backtesting">10.3 La Regla de Oro: Validación Cruzada Temporal (Backtesting)</a>
-  <ul class="collapse">
-  <li><a href="#estrategias-de-backtesting-deslizante-vs.-expansiva" id="toc-estrategias-de-backtesting-deslizante-vs.-expansiva" class="nav-link" data-scroll-target="#estrategias-de-backtesting-deslizante-vs.-expansiva">10.3.1 Estrategias de Backtesting: Deslizante vs.&nbsp;Expansiva</a></li>
-  </ul></li>
-  <li><a href="#división-de-datos-el-método-de-las-tres-cajas" id="toc-división-de-datos-el-método-de-las-tres-cajas" class="nav-link" data-scroll-target="#división-de-datos-el-método-de-las-tres-cajas">10.4 División de Datos: El Método de las Tres Cajas</a></li>
-  <li><a href="#detectando-la-fuga-de-información-data-leakage" id="toc-detectando-la-fuga-de-información-data-leakage" class="nav-link" data-scroll-target="#detectando-la-fuga-de-información-data-leakage">10.5 Detectando la Fuga de Información (Data Leakage)</a></li>
-  <li><a href="#el-veredicto-final-del-fva-y-la-deuda-técnica" id="toc-el-veredicto-final-del-fva-y-la-deuda-técnica" class="nav-link" data-scroll-target="#el-veredicto-final-del-fva-y-la-deuda-técnica">10.6 El Veredicto Final del FVA y la Deuda Técnica</a></li>
-  <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
+  <li><a href="#la-ilusión-de-la-talla-única" id="toc-la-ilusión-de-la-talla-única" class="nav-link active" data-scroll-target="#la-ilusión-de-la-talla-única">10.1 La Ilusión de la “Talla Única”</a></li>
+  <li><a href="#anatomía-de-un-torneo-tournament-selection" id="toc-anatomía-de-un-torneo-tournament-selection" class="nav-link" data-scroll-target="#anatomía-de-un-torneo-tournament-selection">10.2 Anatomía de un Torneo (Tournament Selection)</a></li>
+  <li><a href="#cómo-elegir-al-juez-las-métricas-de-selección" id="toc-cómo-elegir-al-juez-las-métricas-de-selección" class="nav-link" data-scroll-target="#cómo-elegir-al-juez-las-métricas-de-selección">10.3 ¿Cómo elegir al Juez? Las Métricas de Selección</a></li>
+  <li><a href="#simulador-el-torneo-de-algoritmos" id="toc-simulador-el-torneo-de-algoritmos" class="nav-link" data-scroll-target="#simulador-el-torneo-de-algoritmos">10.4 Simulador: El Torneo de Algoritmos</a></li>
+  <li><a href="#estrategia-de-selección-por-segmentación" id="toc-estrategia-de-selección-por-segmentación" class="nav-link" data-scroll-target="#estrategia-de-selección-por-segmentación">10.5 Estrategia de Selección por Segmentación</a></li>
+  <li><a href="#implementación-el-model-picker-automático" id="toc-implementación-el-model-picker-automático" class="nav-link" data-scroll-target="#implementación-el-model-picker-automático">10.6 Implementación: El “Model Picker” Automático</a></li>
+  <li><a href="#checklist-de-cierre-de-la-parte-iii" id="toc-checklist-de-cierre-de-la-parte-iii" class="nav-link" data-scroll-target="#checklist-de-cierre-de-la-parte-iii">Checklist de Cierre de la Parte III</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-10-validacion-overfitting.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -484,9 +518,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-8-ingenieria-atributos.html">III: El Arsenal del Científico de Datos</a></li><li class="breadcrumb-item"><a href="./cap-10-validacion-overfitting.html"><span class="chapter-title">10. El Desierto de los Datos</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-8-ingenieria-atributos.html">III: El Arsenal del Científico de Datos</a></li><li class="breadcrumb-item"><a href="./cap-10-validacion-overfitting.html"><span class="chapter-title">10. La Carrera de Caballos: Selección Automática de Modelos</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">10. El Desierto de los Datos</span></h1>
+<h1 class="title"><span class="chapter-title">10. La Carrera de Caballos: Selección Automática de Modelos</span></h1>
 </div>
 
 
@@ -503,90 +537,245 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Llegamos a la frontera crítica que separa a los aficionados de los ingenieros de Supply Chain de élite. En los Capítulos 8 y 9, aprendimos a construir una infraestructura de atributos potentes y a encender motores de Machine Learning de alto rendimiento como XGBoost y LightGBM. Sin embargo, en el desierto de los datos, el espejismo es el error más caro. Existe una trampa mortal esperándote: la asombrosa capacidad de estos modelos para <strong>memorizar el pasado</strong> en lugar de <strong>aprender del pasado</strong>.</p>
-<p>Como diría la máxima de esta disciplina: <em>“Si torturas los datos lo suficiente, confesarán lo que quieras”</em>. El problema es que esa “confesión” no te servirá de nada cuando el camión llegue al almacén y la demanda real sea distinta. En este capítulo, aprenderemos a no ser torturadores, sino auditores científicos. Vamos a construir un marco de validación robusto para asegurar que la precisión que vemos en nuestra pantalla sea una representación fiel de la realidad que sentiremos en el flujo de caja.</p>
-<section id="la-anatomía-del-overfitting-sobreajuste" class="level2">
-<h2 class="anchored" data-anchor-id="la-anatomía-del-overfitting-sobreajuste">10.1 La Anatomía del Overfitting (Sobreajuste)</h2>
-<p>El <strong>Overfitting</strong> ocurre cuando un modelo es tan complejo o tiene tantos grados de libertad que empieza a explicar el <strong>ruido estadístico</strong> como si fuera una <strong>señal de mercado</strong>.</p>
-<ul>
-<li><strong>La Patología:</strong> El modelo se vuelve “narcisista”: se enamora de tus datos históricos. Ajusta sus parámetros de tal forma que su curva pasa exactamente por cada punto de venta, incluyendo aquel pedido errático de un cliente o aquella caída de ventas provocada por un fallo puntual en el servidor del ERP. El modelo no está aprendiendo la “regla”, está memorizando el “ruido”.</li>
-<li><strong>El Síntoma del Espejismo:</strong> Es el momento en que el analista celebra un WAPE del 2% en sus datos de entrenamiento. Pero, al aplicar ese mismo modelo al mes siguiente (datos no vistos), el error explota hasta el 40%. Esta brecha entre el rendimiento interno y el externo es la firma del sobreajuste.</li>
-<li><strong>La Consecuencia Operativa:</strong> En el mundo físico, el overfitting se traduce en un inventario histérico. Tu sistema de planificación reaccionará violentamente a fluctuaciones irrelevantes, disparando órdenes de compra innecesarias o cancelando suministros críticos basándose en “patrones” que solo existieron una vez.</li>
-</ul>
+<p>Has construido un arsenal formidable. Tienes desde la humilde simplicidad del modelo Naive hasta la potencia quirúrgica de XGBoost y la robustez democrática del Random Forest. Pero ahora te enfrentas al dilema del general: <strong>¿A quién envío a la batalla?</strong></p>
+<p>En una operación real con 50,000 SKUs, no puedes elegir un modelo manualmente para cada uno. Intentar usar XGBoost para un producto con demanda errática es un desperdicio de recursos, y usar un Promedio Móvil para tu producto estrella es un suicidio financiero. En este capítulo, aprenderemos a diseñar la <strong>Arquitectura de Selección por Torneo</strong>.</p>
+<section id="la-ilusión-de-la-talla-única" class="level2">
+<h2 class="anchored" data-anchor-id="la-ilusión-de-la-talla-única">10.1 La Ilusión de la “Talla Única”</h2>
+<p>El error más común en la implementación de sistemas de demanda es buscar el “Mejor Algoritmo”. No existe. La demanda es un camaleón que cambia según la categoría, la región y el ciclo de vida del producto.</p>
+<p>La solución no es elegir un modelo, sino construir un <strong>Proceso de Competencia</strong>. En la arquitectura de suministros moderna, cada SKU corre su propio torneo interno cada vez que se actualizan los datos.</p>
 </section>
-<section id="el-compromiso-entre-sesgo-bias-y-varianza" class="level2">
-<h2 class="anchored" data-anchor-id="el-compromiso-entre-sesgo-bias-y-varianza">10.2 El Compromiso entre Sesgo (Bias) y Varianza</h2>
-<p>Para domar al modelo, debemos entender la “física del error”. Cualquier error de pronóstico se puede descomponer en dos fuerzas opuestas que debemos equilibrar:</p>
+<section id="anatomía-de-un-torneo-tournament-selection" class="level2">
+<h2 class="anchored" data-anchor-id="anatomía-de-un-torneo-tournament-selection">10.2 Anatomía de un Torneo (Tournament Selection)</h2>
+<p>El proceso de selección por torneo (o <em>Champion-Challenger</em>) sigue tres pasos rigurosos:</p>
 <ol type="1">
-<li><strong>Sesgo (Bias - Underfitting):</strong> Representa la incapacidad del modelo para capturar la señal real por ser demasiado simple. Un modelo con mucho sesgo es como intentar medir una curva compleja con una regla rígida. Se equivoca sistemáticamente, ignorando tendencias o estacionalidades obvias.</li>
-<li><strong>Varianza (Overfitting):</strong> Representa la sensibilidad extrema del modelo a pequeñas fluctuaciones en los datos de entrenamiento. Un modelo con mucha varianza es “demasiado nervioso”. Si cambias un solo dato en el pasado, la predicción para el futuro cambia radicalmente.</li>
-</ol>
-<p><strong>El Objetivo del Ingeniero:</strong> Maximizar el valor del negocio encontrando el punto óptimo donde la suma del Sesgo y la Varianza es mínima. Aquí es donde entra la <strong>Regularización</strong>, que actúa como un “freno de mano” matemático, penalizando al modelo si intenta volverse demasiado complejo.</p>
-</section>
-<section id="la-regla-de-oro-validación-cruzada-temporal-backtesting" class="level2">
-<h2 class="anchored" data-anchor-id="la-regla-de-oro-validación-cruzada-temporal-backtesting">10.3 La Regla de Oro: Validación Cruzada Temporal (Backtesting)</h2>
-<p>En la ciencia de datos tradicional se usa la validación cruzada aleatoria. <strong>En Supply Chain, esto es una negligencia técnica.</strong> El tiempo es una flecha unidireccional. No puedes usar las ventas de diciembre para predecir las de enero y, simultáneamente, usar las de marzo para “explicar” las de febrero.</p>
-<section id="estrategias-de-backtesting-deslizante-vs.-expansiva" class="level3">
-<h3 class="anchored" data-anchor-id="estrategias-de-backtesting-deslizante-vs.-expansiva">10.3.1 Estrategias de Backtesting: Deslizante vs.&nbsp;Expansiva</h3>
-<p>Para validar un modelo de demanda de forma profesional, simulamos que estamos en el pasado y corremos el pronóstico mes a mes (<em>Walk-Forward Validation</em>):</p>
-<ul>
-<li><strong>Ventana Expansiva:</strong> El modelo siempre entrena con todo lo que sabe desde el inicio hasta hoy.</li>
-<li><strong>Ventana Deslizante (Sliding Window):</strong> El modelo solo mira, por ejemplo, los últimos 24 meses. A medida que avanzamos un mes, “olvidamos” el mes más antiguo. Esto es útil si tu mercado cambia tan rápido que los datos antiguos ya no son informativos, sino ruido.</li>
-</ul>
-</section>
-</section>
-<section id="división-de-datos-el-método-de-las-tres-cajas" class="level2">
-<h2 class="anchored" data-anchor-id="división-de-datos-el-método-de-las-tres-cajas">10.4 División de Datos: El Método de las Tres Cajas</h2>
-<p>Para evitar el auto-engaño, dividimos nuestro historial en tres cajas sagradas:</p>
-<ol type="1">
-<li><strong>Entrenamiento (Train):</strong> Donde el modelo “estudia” y ajusta sus pesos iniciales (aprox. 70-80% de la historia).</li>
-<li><strong>Prueba (Test/Validation):</strong> Donde el ingeniero ajusta los hiperparámetros. El modelo no entrena aquí, pero sirve para tomar decisiones de diseño.</li>
-<li><strong>Validación Final (Hold-out):</strong> La prueba de fuego. Esta caja <strong>nunca</strong> debe ser vista por el modelo hasta el final del proyecto. Si el rendimiento aquí cae significativamente, el modelo ha fallado.</li>
+<li><p><strong>Entrenamiento en Paralelo:</strong> El sistema entrena simultáneamente 3 o 4 arquitecturas distintas (ej. Holt-Winters, Random Forest y LightGBM) utilizando los datos históricos.</p></li>
+<li><p><strong>Backtesting (La Prueba de Fuego):</strong> No medimos el error en los datos que el modelo ya vio. El sistema “esconde” los últimos meses de historia (Set de Validación) y le pide a los modelos que los predigan.</p></li>
+<li><p><strong>Declaración del Ganador:</strong> El modelo que entregue el menor error en el set de validación es el que se gana el derecho de generar el pronóstico para el futuro real.</p></li>
 </ol>
 </section>
-<section id="detectando-la-fuga-de-información-data-leakage" class="level2">
-<h2 class="anchored" data-anchor-id="detectando-la-fuga-de-información-data-leakage">10.5 Detectando la Fuga de Información (Data Leakage)</h2>
-<p>La fuga de datos es la razón por la cual muchos proyectos de IA mueren al llegar a producción. Ocurre cuando, por error, le damos al modelo “las respuestas del examen” durante el entrenamiento.</p>
+<section id="cómo-elegir-al-juez-las-métricas-de-selección" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-elegir-al-juez-las-métricas-de-selección">10.3 ¿Cómo elegir al Juez? Las Métricas de Selección</h2>
+<p>Aquí es donde retomamos nuestra auditoría del Capítulo 5. Para decidir quién gana el torneo, no usamos el MAPE. Usamos el <strong>MASE (Mean Absolute Scaled Error)</strong>:</p>
 <ul>
-<li><strong>Ejemplo Crítico:</strong> Incluir el inventario final de hoy para predecir la demanda de hoy.</li>
-<li><strong>La Señal de Alarma:</strong> Si ves un FVA (Forecast Value Added) superior al 30% respecto a un modelo estadístico, desconfía. El éxito real suele ser incremental (5-10%). Un resultado milagroso suele ser evidencia de fuga de información.</li>
+<li><p><strong>Si MASE &lt; 1:</strong> El modelo es mejor que la estadística simple.</p></li>
+<li><p><strong>Si MASE &gt; 1:</strong> El modelo está “alucinando”. El sistema debe descartarlo y volver a lo básico.</p></li>
 </ul>
 </section>
-<section id="el-veredicto-final-del-fva-y-la-deuda-técnica" class="level2">
-<h2 class="anchored" data-anchor-id="el-veredicto-final-del-fva-y-la-deuda-técnica">10.6 El Veredicto Final del FVA y la Deuda Técnica</h2>
-<p>El <strong>FVA</strong> es la única métrica que importa. Sin embargo, debe ser auditado bajo la lente de la <strong>Parsimonia</strong>.</p>
+<section id="simulador-el-torneo-de-algoritmos" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-el-torneo-de-algoritmos">10.4 Simulador: El Torneo de Algoritmos</h2>
+<p>En este laboratorio, puedes ver una “Carrera de Caballos” en tiempo real. Hemos puesto a competir tres filosofías: <strong>Estadística (Holt-Winters)</strong>, <strong>Bagging (Random Forest)</strong> y <strong>Boosting (XGBoost)</strong>.</p>
+<p>Ajusta el <strong>Ruido</strong> y la <strong>Complejidad</strong> de la demanda. Observa cómo el “Ganador” cambia: en escenarios ruidosos suele ganar la robustez del Forest, mientras que en escenarios con patrones claros, el Boosting es imbatible.</p>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="41" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 40;"><span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>jStat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>viewof noise_tournament <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">5</span><span class="op">,</span> <span class="dv">80</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Ruido del Mercado (Varianza):"</span>})</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>viewof pattern_complexity <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Complejidad del Patrón:"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="53" data-source-offset="-68"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 52;"><span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>data_tournament <span class="op">=</span> {</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> data <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> total_days <span class="op">=</span> <span class="dv">100</span><span class="op">;</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> total_days<span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> trend <span class="op">=</span> i <span class="op">*</span> <span class="fl">0.5</span><span class="op">;</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> season <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>((i <span class="op">/</span> <span class="dv">7</span>) <span class="op">*</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>) <span class="op">*</span> <span class="dv">40</span> <span class="op">*</span> (pattern_complexity<span class="op">/</span><span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> noise <span class="op">=</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">sample</span>(<span class="dv">0</span><span class="op">,</span> noise_tournament)<span class="op">;</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    data<span class="op">.</span><span class="fu">push</span>({ <span class="dt">t</span><span class="op">:</span> i<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">100</span> <span class="op">+</span> trend <span class="op">+</span> season <span class="op">+</span> noise)<span class="op">,</span> <span class="dt">type</span><span class="op">:</span> i <span class="op">&lt;</span> <span class="dv">86</span> <span class="op">?</span> <span class="st">'train'</span> <span class="op">:</span> <span class="st">'test'</span> })<span class="op">;</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data<span class="op">;</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="co">// 2. Ejecutar Motores en Paralelo (Simulación de lógicas)</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>tournament_results <span class="op">=</span> {</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> train <span class="op">=</span> data_tournament<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">'train'</span>)<span class="op">;</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> test <span class="op">=</span> data_tournament<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">'test'</span>)<span class="op">;</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> last_train_y <span class="op">=</span> train[train<span class="op">.</span><span class="at">length</span> <span class="op">-</span> <span class="dv">1</span>]<span class="op">.</span><span class="at">y</span><span class="op">;</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Baseline Naive para MASE</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> naive_mae <span class="op">=</span> jStat<span class="op">.</span><span class="fu">mean</span>(train<span class="op">.</span><span class="fu">slice</span>(<span class="dv">1</span>)<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(d<span class="op">.</span><span class="at">y</span> <span class="op">-</span> train[i]<span class="op">.</span><span class="at">y</span>)))<span class="op">;</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> models <span class="op">=</span> [</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    { </span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">"Estadística (H-W)"</span><span class="op">,</span> </span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>      <span class="dt">forecast</span><span class="op">:</span> test<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i) <span class="kw">=&gt;</span> last_train_y <span class="op">+</span> (i<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span><span class="fl">0.5</span> <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>((d<span class="op">.</span><span class="at">t</span><span class="op">/</span><span class="dv">7</span>)<span class="op">*</span><span class="dv">2</span><span class="op">*</span><span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>)<span class="op">*</span><span class="dv">20</span>)<span class="op">,</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>      <span class="dt">color</span><span class="op">:</span> <span class="st">'#94a3b8'</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>    { </span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">"Random Forest"</span><span class="op">,</span> </span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>      <span class="dt">forecast</span><span class="op">:</span> test<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i) <span class="kw">=&gt;</span> jStat<span class="op">.</span><span class="fu">mean</span>(train<span class="op">.</span><span class="fu">slice</span>(<span class="op">-</span><span class="dv">10</span>)<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt;</span> x<span class="op">.</span><span class="at">y</span>)))<span class="op">,</span> <span class="co">// Suavizado</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>      <span class="dt">color</span><span class="op">:</span> <span class="st">'#2563eb'</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    { </span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">"XGBoost"</span><span class="op">,</span> </span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>      <span class="dt">forecast</span><span class="op">:</span> test<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i) <span class="kw">=&gt;</span> last_train_y <span class="op">+</span> (i<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span><span class="fl">0.5</span> <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>((d<span class="op">.</span><span class="at">t</span><span class="op">/</span><span class="dv">7</span>)<span class="op">*</span><span class="dv">2</span><span class="op">*</span><span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>)<span class="op">*</span><span class="dv">40</span> <span class="op">+</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">sample</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">5</span>))<span class="op">,</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>      <span class="dt">color</span><span class="op">:</span> <span class="st">'#ef4444'</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> processed <span class="op">=</span> models<span class="op">.</span><span class="fu">map</span>(m <span class="kw">=&gt;</span> {</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> errors <span class="op">=</span> test<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(d<span class="op">.</span><span class="at">y</span> <span class="op">-</span> m<span class="op">.</span><span class="at">forecast</span>[i]))<span class="op">;</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> mae <span class="op">=</span> jStat<span class="op">.</span><span class="fu">mean</span>(errors)<span class="op">;</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> mase <span class="op">=</span> mae <span class="op">/</span> naive_mae<span class="op">;</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> { <span class="op">...</span>m<span class="op">,</span> mae<span class="op">,</span> mase }<span class="op">;</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> best_mase <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="op">...</span>processed<span class="op">.</span><span class="fu">map</span>(p <span class="kw">=&gt;</span> p<span class="op">.</span><span class="at">mase</span>))<span class="op">;</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> processed<span class="op">.</span><span class="fu">map</span>(p <span class="kw">=&gt;</span> ({</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>p<span class="op">,</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>    <span class="dt">winner</span><span class="op">:</span> p<span class="op">.</span><span class="at">mase</span> <span class="op">===</span> best_mase</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>  }))<span class="op">;</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="co">// 3. Gráfico del Torneo</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:450px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> train <span class="op">=</span> data_tournament<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">'train'</span>)<span class="op">;</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> test <span class="op">=</span> data_tournament<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">'test'</span>)<span class="op">;</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">x</span><span class="op">:</span> train<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">t</span>)<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> train<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)<span class="op">,</span> <span class="dt">name</span><span class="op">:</span> <span class="st">'Entrenamiento'</span><span class="op">,</span> <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#cbd5e1'</span>} }<span class="op">,</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">x</span><span class="op">:</span> test<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">t</span>)<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> test<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)<span class="op">,</span> <span class="dt">name</span><span class="op">:</span> <span class="st">'Validación (Real)'</span><span class="op">,</span> <span class="dt">mode</span><span class="op">:</span> <span class="st">'markers'</span><span class="op">,</span> <span class="dt">marker</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#1e293b'</span><span class="op">,</span> <span class="dt">size</span><span class="op">:</span> <span class="dv">8</span>} }<span class="op">,</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>tournament_results<span class="op">.</span><span class="fu">map</span>(r <span class="kw">=&gt;</span> ({</span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> test<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">t</span>)<span class="op">,</span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> r<span class="op">.</span><span class="at">forecast</span><span class="op">,</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> r<span class="op">.</span><span class="at">name</span> <span class="op">+</span> (r<span class="op">.</span><span class="at">winner</span> <span class="op">?</span> <span class="st">' 🏆'</span> <span class="op">:</span> <span class="st">''</span>)<span class="op">,</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> r<span class="op">.</span><span class="at">color</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> r<span class="op">.</span><span class="at">winner</span> <span class="op">?</span> <span class="dv">4</span> <span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">dash</span><span class="op">:</span> r<span class="op">.</span><span class="at">winner</span> <span class="op">?</span> <span class="st">'solid'</span> <span class="op">:</span> <span class="st">'dot'</span>}</span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>    }))</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> {</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'Duelo de Modelos en el Set de Validación'</span><span class="op">,</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>    <span class="dt">hovermode</span><span class="op">:</span> <span class="st">'x unified'</span><span class="op">,</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>    <span class="dt">margin</span><span class="op">:</span> {<span class="dt">t</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">l</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">30</span>}</span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="133" data-source-offset="-2802"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 132;"><span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(tournament_results<span class="op">.</span><span class="fu">map</span>(r <span class="kw">=&gt;</span> ({</span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Modelo"</span><span class="op">:</span> r<span class="op">.</span><span class="at">name</span><span class="op">,</span></span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>  <span class="st">"MAE (Unidades)"</span><span class="op">:</span> r<span class="op">.</span><span class="at">mae</span><span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="op">,</span></span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a>  <span class="st">"MASE (Benchmark)"</span><span class="op">:</span> r<span class="op">.</span><span class="at">mase</span><span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">3</span>)<span class="op">,</span></span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Resultado"</span><span class="op">:</span> r<span class="op">.</span><span class="at">winner</span> <span class="op">?</span> <span class="st">"🏆 GANADOR"</span> <span class="op">:</span> <span class="st">"Rechazado"</span></span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a>})))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="estrategia-de-selección-por-segmentación" class="level2">
+<h2 class="anchored" data-anchor-id="estrategia-de-selección-por-segmentación">10.5 Estrategia de Selección por Segmentación</h2>
+<p>Como Arquitecto, puedes pre-configurar el torneo basándote en tu segmentación ABC/XYZ:</p>
 <ul>
-<li><strong>La Trampa de la Complejidad:</strong> Si un modelo estadístico simple tiene un WAPE del 18% y tu XGBoost hiper-optimizado tiene un 17.5%, <strong>has fracasado como ingeniero</strong>. Estás comprando un 0.5% de precisión a cambio de una enorme deuda técnica: un modelo más difícil de explicar, más costoso de mantener y propenso a romperse.</li>
-<li><strong>Estabilidad sobre Precisión:</strong> Preferimos un modelo con un 20% de error constante a uno que fluctúe entre el 10% y el 40%. La estabilidad permite dimensionar el stock de seguridad con confianza.</li>
+<li><p><strong>Productos AX (Alta Importancia / Predecibles):</strong> El torneo debe ser riguroso. Incluye ARIMA, Holt-Winters y XGBoost. El costo de fallar aquí es enorme.</p></li>
+<li><p><strong>Productos CZ (Baja Importancia / Erráticos):</strong> No pierdas tiempo computacional. El torneo solo debe incluir Naive y un Promedio Móvil simple. Si la matemática compleja no le gana al Naive por más de un 5%, quédate con lo simple.</p></li>
 </ul>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>La Navaja de Ockham en Supply Chain
+<span class="screen-reader-only">Tip</span>La Regla del 5%
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>En igualdad de condiciones, la explicación más sencilla suele ser la correcta. El modelo más simple que entregue un FVA aceptable es siempre la elección profesional superior.</p>
+<p>En muchos centros de excelencia de Supply Chain, un modelo “Challenger” (el nuevo) solo reemplaza al “Champion” (el actual) si logra reducir el error en al menos un <strong>5%</strong>. Esto evita cambios nerviosos en la cadena de suministro por mejoras marginales que podrían ser puro ruido.</p>
 </div>
 </div>
 </section>
-<section id="checklist-de-cierre-del-capítulo" class="level2">
-<h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
+<section id="implementación-el-model-picker-automático" class="level2">
+<h2 class="anchored" data-anchor-id="implementación-el-model-picker-automático">10.6 Implementación: El “Model Picker” Automático</h2>
+<p>El paso final de la arquitectura de ML es automatizar este Model Picker. El software debe:</p>
+<ol type="1">
+<li><p>Correr el torneo mensualmente.</p></li>
+<li><p>Almacenar el historial de quién ganó cada vez (Auditoría de Modelos).</p></li>
+<li><p>Si un modelo gana consistentemente durante 6 meses, fijarlo como el estándar para esa categoría.</p></li>
+</ol>
+</section>
+<section id="checklist-de-cierre-de-la-parte-iii" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-de-cierre-de-la-parte-iii">Checklist de Cierre de la Parte III</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">¿He implementado una validación cruzada temporal (<em>Walk-Forward</em>)?</label></li>
-<li><label><input type="checkbox">¿He verificado que el error en mi set de Hold-out es consistente con el de Entrenamiento?</label></li>
-<li><label><input type="checkbox">¿He auditado mis atributos para asegurar que ninguno contiene información “del futuro” (<em>Data Leakage</em>)?</label></li>
-<li><label><input type="checkbox">¿He aplicado técnicas de Regularización para evitar que el modelo persiga el ruido?</label></li>
-<li><label><input type="checkbox">¿He calculado el FVA final y evaluado si la mejora justifica la complejidad?</label></li>
+<li><p><label><input type="checkbox">¿He implementado un set de validación (Backtesting) separado de los datos de entrenamiento?</label></p></li>
+<li><p><label><input type="checkbox">¿Utilizo el MASE para decidir si un modelo complejo es realmente útil?</label></p></li>
+<li><p><label><input type="checkbox">¿He configurado una “Carrera de Caballos” automática para mis productos Clase A?</label></p></li>
+<li><p><label><input type="checkbox">¿Entiendo que el mejor modelo para hoy puede no ser el mejor para mañana?</label></p></li>
+<li><p><label><input type="checkbox"><strong>¿Estoy listo para pasar a la Parte IV y aprender qué hacer con estos números en el almacén?</strong></label></p></li>
 </ul>
 
 
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5qU3RhdCA9IHJlcXVpcmUoXCJqc3RhdEAxLjkuNlwiKVxyXG5QbG90bHkgPSByZXF1aXJlKFwicGxvdGx5LmpzLWRpc3QtbWluQDIuMjQuMVwiKVxyXG5cclxudmlld29mIG5vaXNlX3RvdXJuYW1lbnQgPSBJbnB1dHMucmFuZ2UoWzUsIDgwXSwge3ZhbHVlOiAzMCwgc3RlcDogNSwgbGFiZWw6IFwiUnVpZG8gZGVsIE1lcmNhZG8gKFZhcmlhbnphKTpcIn0pXHJcbnZpZXdvZiBwYXR0ZXJuX2NvbXBsZXhpdHkgPSBJbnB1dHMucmFuZ2UoWzEsIDVdLCB7dmFsdWU6IDIsIHN0ZXA6IDEsIGxhYmVsOiBcIkNvbXBsZWppZGFkIGRlbCBQYXRyw7NuOlwifSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcbi8vIDEuIEdlbmVyYXIgRGVtYW5kYSBSZWFsIGNvbiBTZXQgZGUgRW50cmVuYW1pZW50byB5IFZhbGlkYWNpw7NuXHJcbmRhdGFfdG91cm5hbWVudCA9IHtcclxuICBjb25zdCBkYXRhID0gW107XHJcbiAgY29uc3QgdG90YWxfZGF5cyA9IDEwMDtcclxuICBmb3IgKGxldCBpID0gMDsgaSA8IHRvdGFsX2RheXM7IGkrKykge1xyXG4gICAgY29uc3QgdHJlbmQgPSBpICogMC41O1xyXG4gICAgY29uc3Qgc2Vhc29uID0gTWF0aC5zaW4oKGkgLyA3KSAqIDIgKiBNYXRoLlBJKSAqIDQwICogKHBhdHRlcm5fY29tcGxleGl0eS8yKTtcclxuICAgIGNvbnN0IG5vaXNlID0galN0YXQubm9ybWFsLnNhbXBsZSgwLCBub2lzZV90b3VybmFtZW50KTtcclxuICAgIGRhdGEucHVzaCh7IHQ6IGksIHk6IE1hdGgubWF4KDAsIDEwMCArIHRyZW5kICsgc2Vhc29uICsgbm9pc2UpLCB0eXBlOiBpIDwgODYgPyAndHJhaW4nIDogJ3Rlc3QnIH0pO1xyXG4gIH1cclxuICByZXR1cm4gZGF0YTtcclxufVxyXG5cclxuLy8gMi4gRWplY3V0YXIgTW90b3JlcyBlbiBQYXJhbGVsbyAoU2ltdWxhY2nDs24gZGUgbMOzZ2ljYXMpXHJcbnRvdXJuYW1lbnRfcmVzdWx0cyA9IHtcclxuICBjb25zdCB0cmFpbiA9IGRhdGFfdG91cm5hbWVudC5maWx0ZXIoZCA9PiBkLnR5cGUgPT09ICd0cmFpbicpO1xyXG4gIGNvbnN0IHRlc3QgPSBkYXRhX3RvdXJuYW1lbnQuZmlsdGVyKGQgPT4gZC50eXBlID09PSAndGVzdCcpO1xyXG4gIGNvbnN0IGxhc3RfdHJhaW5feSA9IHRyYWluW3RyYWluLmxlbmd0aCAtIDFdLnk7XHJcbiAgXHJcbiAgLy8gQmFzZWxpbmUgTmFpdmUgcGFyYSBNQVNFXHJcbiAgY29uc3QgbmFpdmVfbWFlID0galN0YXQubWVhbih0cmFpbi5zbGljZSgxKS5tYXAoKGQsIGkpID0+IE1hdGguYWJzKGQueSAtIHRyYWluW2ldLnkpKSk7XHJcblxyXG4gIGNvbnN0IG1vZGVscyA9IFtcclxuICAgIHsgXHJcbiAgICAgIG5hbWU6IFwiRXN0YWTDrXN0aWNhIChILVcpXCIsIFxyXG4gICAgICBmb3JlY2FzdDogdGVzdC5tYXAoKGQsIGkpID0+IGxhc3RfdHJhaW5feSArIChpKzEpKjAuNSArIE1hdGguc2luKChkLnQvNykqMipNYXRoLlBJKSoyMCksXHJcbiAgICAgIGNvbG9yOiAnIzk0YTNiOCdcclxuICAgIH0sXHJcbiAgICB7IFxyXG4gICAgICBuYW1lOiBcIlJhbmRvbSBGb3Jlc3RcIiwgXHJcbiAgICAgIGZvcmVjYXN0OiB0ZXN0Lm1hcCgoZCwgaSkgPT4galN0YXQubWVhbih0cmFpbi5zbGljZSgtMTApLm1hcCh4ID0+IHgueSkpKSwgLy8gU3Vhdml6YWRvXHJcbiAgICAgIGNvbG9yOiAnIzI1NjNlYidcclxuICAgIH0sXHJcbiAgICB7IFxyXG4gICAgICBuYW1lOiBcIlhHQm9vc3RcIiwgXHJcbiAgICAgIGZvcmVjYXN0OiB0ZXN0Lm1hcCgoZCwgaSkgPT4gbGFzdF90cmFpbl95ICsgKGkrMSkqMC41ICsgTWF0aC5zaW4oKGQudC83KSoyKk1hdGguUEkpKjQwICsgalN0YXQubm9ybWFsLnNhbXBsZSgwLCA1KSksXHJcbiAgICAgIGNvbG9yOiAnI2VmNDQ0NCdcclxuICAgIH1cclxuICBdO1xyXG5cclxuICBjb25zdCBwcm9jZXNzZWQgPSBtb2RlbHMubWFwKG0gPT4ge1xyXG4gICAgY29uc3QgZXJyb3JzID0gdGVzdC5tYXAoKGQsIGkpID0+IE1hdGguYWJzKGQueSAtIG0uZm9yZWNhc3RbaV0pKTtcclxuICAgIGNvbnN0IG1hZSA9IGpTdGF0Lm1lYW4oZXJyb3JzKTtcclxuICAgIGNvbnN0IG1hc2UgPSBtYWUgLyBuYWl2ZV9tYWU7XHJcbiAgICByZXR1cm4geyAuLi5tLCBtYWUsIG1hc2UgfTtcclxuICB9KTtcclxuXHJcbiAgY29uc3QgYmVzdF9tYXNlID0gTWF0aC5taW4oLi4ucHJvY2Vzc2VkLm1hcChwID0+IHAubWFzZSkpO1xyXG4gIHJldHVybiBwcm9jZXNzZWQubWFwKHAgPT4gKHtcclxuICAgIC4uLnAsXHJcbiAgICB3aW5uZXI6IHAubWFzZSA9PT0gYmVzdF9tYXNlXHJcbiAgfSkpO1xyXG59XHJcblxyXG4vLyAzLiBHcsOhZmljbyBkZWwgVG9ybmVvXHJcbntcclxuICBjb25zdCBjb250YWluZXIgPSBodG1sYDxkaXYgc3R5bGU9XCJ3aWR0aDoxMDAlOyBoZWlnaHQ6NDUwcHg7XCI+PC9kaXY+YDtcclxuICBjb25zdCB0cmFpbiA9IGRhdGFfdG91cm5hbWVudC5maWx0ZXIoZCA9PiBkLnR5cGUgPT09ICd0cmFpbicpO1xyXG4gIGNvbnN0IHRlc3QgPSBkYXRhX3RvdXJuYW1lbnQuZmlsdGVyKGQgPT4gZC50eXBlID09PSAndGVzdCcpO1xyXG4gIFxyXG4gIGNvbnN0IHRyYWNlcyA9IFtcclxuICAgIHsgeDogdHJhaW4ubWFwKGQgPT4gZC50KSwgeTogdHJhaW4ubWFwKGQgPT4gZC55KSwgbmFtZTogJ0VudHJlbmFtaWVudG8nLCBsaW5lOiB7Y29sb3I6ICcjY2JkNWUxJ30gfSxcclxuICAgIHsgeDogdGVzdC5tYXAoZCA9PiBkLnQpLCB5OiB0ZXN0Lm1hcChkID0+IGQueSksIG5hbWU6ICdWYWxpZGFjacOzbiAoUmVhbCknLCBtb2RlOiAnbWFya2VycycsIG1hcmtlcjoge2NvbG9yOiAnIzFlMjkzYicsIHNpemU6IDh9IH0sXHJcbiAgICAuLi50b3VybmFtZW50X3Jlc3VsdHMubWFwKHIgPT4gKHtcclxuICAgICAgeDogdGVzdC5tYXAoZCA9PiBkLnQpLFxyXG4gICAgICB5OiByLmZvcmVjYXN0LFxyXG4gICAgICBuYW1lOiByLm5hbWUgKyAoci53aW5uZXIgPyAnIPCfj4YnIDogJycpLFxyXG4gICAgICBsaW5lOiB7Y29sb3I6IHIuY29sb3IsIHdpZHRoOiByLndpbm5lciA/IDQgOiAyLCBkYXNoOiByLndpbm5lciA/ICdzb2xpZCcgOiAnZG90J31cclxuICAgIH0pKVxyXG4gIF07XHJcblxyXG4gIFBsb3RseS5uZXdQbG90KGNvbnRhaW5lciwgdHJhY2VzLCB7XHJcbiAgICB0aXRsZTogJ0R1ZWxvIGRlIE1vZGVsb3MgZW4gZWwgU2V0IGRlIFZhbGlkYWNpw7NuJyxcclxuICAgIHRlbXBsYXRlOiAncGxvdGx5X3doaXRlJyxcclxuICAgIGhvdmVybW9kZTogJ3ggdW5pZmllZCcsXHJcbiAgICBtYXJnaW46IHt0OiA1MCwgYjogNTAsIGw6IDUwLCByOiAzMH1cclxuICB9KTtcclxuICByZXR1cm4gY29udGFpbmVyO1xyXG59XHJcblxyXG4vLyA0LiBUYWJsYSBkZSBQb3NpY2lvbmVzXHJcbklucHV0cy50YWJsZSh0b3VybmFtZW50X3Jlc3VsdHMubWFwKHIgPT4gKHtcclxuICBcIk1vZGVsb1wiOiByLm5hbWUsXHJcbiAgXCJNQUUgKFVuaWRhZGVzKVwiOiByLm1hZS50b0ZpeGVkKDIpLFxyXG4gIFwiTUFTRSAoQmVuY2htYXJrKVwiOiByLm1hc2UudG9GaXhlZCgzKSxcclxuICBcIlJlc3VsdGFkb1wiOiByLndpbm5lciA/IFwi8J+PhiBHQU5BRE9SXCIgOiBcIlJlY2hhemFkb1wiXHJcbn0pKSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdub2lzZV90b3VybmFtZW50JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3BhdHRlcm5fY29tcGxleGl0eScpIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1002,8 +1191,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./cap-9-bosque-decisiones.html" class="pagination-link" aria-label="9. El Bosque de las Decisiones - Random Forest y XGBoost">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">9. El Bosque de las Decisiones - Random Forest y XGBoost</span></span>
+      <a href="./cap-9-bosque-decisiones.html" class="pagination-link" aria-label="9. El Rey de la Colina: Random Forest, XGBoost y LightGBM">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">9. El Rey de la Colina: Random Forest, XGBoost y LightGBM</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
