@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -74,36 +109,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -496,14 +504,11 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#la-cascada-de-valor-quién-se-equivoca-menos" id="toc-la-cascada-de-valor-quién-se-equivoca-menos" class="nav-link active" data-scroll-target="#la-cascada-de-valor-quién-se-equivoca-menos">18.1 La Cascada de Valor: ¿Quién se equivoca menos?</a>
-  <ul class="collapse">
-  <li><a href="#la-ecuación-del-fva" id="toc-la-ecuación-del-fva" class="nav-link" data-scroll-target="#la-ecuación-del-fva">La Ecuación del FVA</a></li>
-  </ul></li>
-  <li><a href="#la-psicología-del-ajuste-por-qué-el-humano-suele-fallar" id="toc-la-psicología-del-ajuste-por-qué-el-humano-suele-fallar" class="nav-link" data-scroll-target="#la-psicología-del-ajuste-por-qué-el-humano-suele-fallar">18.2 La Psicología del Ajuste: ¿Por qué el Humano suele fallar?</a></li>
-  <li><a href="#implementación-del-fva-como-sistema-de-gobernanza" id="toc-implementación-del-fva-como-sistema-de-gobernanza" class="nav-link" data-scroll-target="#implementación-del-fva-como-sistema-de-gobernanza">18.3 Implementación del FVA como Sistema de Gobernanza</a></li>
-  <li><a href="#caso-de-estudio-el-roi-de-la-inteligencia" id="toc-caso-de-estudio-el-roi-de-la-inteligencia" class="nav-link" data-scroll-target="#caso-de-estudio-el-roi-de-la-inteligencia">18.4 Caso de Estudio: El ROI de la Inteligencia</a></li>
-  <li><a href="#hacia-la-excepción-de-valor" id="toc-hacia-la-excepción-de-valor" class="nav-link" data-scroll-target="#hacia-la-excepción-de-valor">18.5 Hacia la “Excepción de Valor”</a></li>
+  <li><a href="#la-auditoría-del-proceso-de-planificación" id="toc-la-auditoría-del-proceso-de-planificación" class="nav-link active" data-scroll-target="#la-auditoría-del-proceso-de-planificación">18.1 La Auditoría del Proceso de Planificación</a></li>
+  <li><a href="#el-juez-supremo-el-pronóstico-ingenuo-naive" id="toc-el-juez-supremo-el-pronóstico-ingenuo-naive" class="nav-link" data-scroll-target="#el-juez-supremo-el-pronóstico-ingenuo-naive">18.2 El Juez Supremo: El Pronóstico Ingenuo (Naive)</a></li>
+  <li><a href="#el-costo-del-toqueteo-overfitting-humano" id="toc-el-costo-del-toqueteo-overfitting-humano" class="nav-link" data-scroll-target="#el-costo-del-toqueteo-overfitting-humano">18.3 El Costo del “Toqueteo” (Overfitting Humano)</a></li>
+  <li><a href="#simulador-analizador-de-fva" id="toc-simulador-analizador-de-fva" class="nav-link" data-scroll-target="#simulador-analizador-de-fva">18.4 Simulador: Analizador de FVA</a></li>
+  <li><a href="#implementando-el-fva-en-tu-organización" id="toc-implementando-el-fva-en-tu-organización" class="nav-link" data-scroll-target="#implementando-el-fva-en-tu-organización">18.5 Implementando el FVA en tu Organización</a></li>
   <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-18-fva-valor-pronostico.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -531,86 +536,226 @@ window.Quarto = {
 </header>
 
 
-<p>Felicidades. Has construido modelos ARIMA quirúrgicos, has entrenado bosques de XGBoost y has simulado redes complejas mediante Monte Carlo. Tienes en tus manos el motor de decisión más potente que tu empresa haya visto jamás. Pero ahora te enfrentas al reto definitivo: <strong>hacer que la organización lo use de forma rentable</strong>.</p>
-<p>En la Supply Chain real, los modelos no operan en un vacío aséptico. Operan en reuniones de <strong>S&amp;OP (Sales and Operations Planning)</strong> donde el aire está cargado de política, incentivos contrapuestos y egos. El gerente de ventas quiere inflar el número para asegurar disponibilidad y presupuesto de marketing; el gerente de finanzas quiere “ser conservador” para cuidar el flujo de caja, y el planificador veterano confía más en su “olfato” que en un algoritmo de gradiente.</p>
-<p>En esta <strong>Parte VI</strong>, aprenderemos a gestionar el factor humano. Ya no optimizaremos hiperparámetros; optimizaremos <strong>procesos de decisión y gobernanza</strong>.</p>
-<p>El marco <strong>FVA (Forecast Value Added)</strong> es la vara de medir definitiva del Arquitecto de Suministros. Su premisa es brutalmente honesta: <em>“Cada paso, cada reunión y cada ajuste manual en el proceso de planificación debe justificar su existencia demostrando que reduce el error de pronóstico frente a no hacer nada”</em>.</p>
-<p>Si un paso del proceso no mejora la precisión (o reduce el sesgo), es un desperdicio operativo —una “grasa” burocrática— que debe ser eliminada. El FVA es el ROI de tu tiempo y del tiempo de tu equipo.</p>
-<section id="la-cascada-de-valor-quién-se-equivoca-menos" class="level2">
-<h2 class="anchored" data-anchor-id="la-cascada-de-valor-quién-se-equivoca-menos">18.1 La Cascada de Valor: ¿Quién se equivoca menos?</h2>
-<p>Para aplicar FVA, debemos visualizar el pronóstico como un proceso de manufactura de información por etapas. Cada etapa toma el resultado de la anterior y lo intenta “pulir”. Registramos el error en cada punto:</p>
+<p>Felicidades. Has construido modelos de Machine Learning, has simulado redes complejas y has optimizado inventarios bajo restricciones. Pero ahora te enfrentas al componente más difícil de gestionar en la Supply Chain: <strong>el ser humano</strong>.</p>
+<p>En la mayoría de las empresas, el número que sale del algoritmo no es el que se usa para comprar. Ese número viaja por salas de juntas, es ajustado por gerentes comerciales “que conocen al cliente” y modificado por directores de finanzas que necesitan “llegar al presupuesto”. En este capítulo, aprenderemos a medir si todos esos toques humanos realmente aportan valor o si son simplemente ruido costoso mediante el <strong>Forecast Value Added (FVA)</strong>.</p>
+<section id="la-auditoría-del-proceso-de-planificación" class="level2">
+<h2 class="anchored" data-anchor-id="la-auditoría-del-proceso-de-planificación">18.1 La Auditoría del Proceso de Planificación</h2>
+<p>El <strong>Forecast Value Added (FVA)</strong> no es una métrica de error; es una métrica de <strong>proceso</strong>. Su objetivo es identificar qué pasos del proceso de planificación mejoran la precisión y cuáles la empeoran.</p>
+<p>En un proceso típico de S&amp;OP (Sales and Operations Planning), el número evoluciona así:</p>
 <ol type="1">
-<li><strong>Nivel 0 (Benchmark Naive):</strong> ¿Qué pasaría si simplemente repetimos la venta del mes pasado o la del año pasado? Esfuerzo: Cero. Costo: Cero. Este es nuestro grupo de control.</li>
-<li><strong>Nivel 1 (Estadística Base):</strong> El resultado de tu modelo automático (ETS/ARIMA). Es la “opinión” de la matemática pura.</li>
-<li><strong>Nivel 2 (Machine Learning + Inteligencia):</strong> El modelo tras integrar variables exógenas (Precios, Promociones, Clima).</li>
-<li><strong>Nivel 3 (Consenso Humano):</strong> El ajuste final tras la reunión de S&amp;OP, donde se inyecta el “conocimiento del mercado”.</li>
+<li><p><strong>Pronóstico Estadístico (Baseline):</strong> Lo que dice la matemática (ARIMA, XGBoost).</p></li>
+<li><p><strong>Ajuste del Demand Planner:</strong> El técnico que limpia promociones o eventos conocidos.</p></li>
+<li><p><strong>Ajuste Comercial/Ventas:</strong> “Siento que este mes venderemos más por el mundial”.</p></li>
+<li><p><strong>Consenso Final:</strong> El número que se firma en la reunión directiva.</p></li>
 </ol>
-<section id="la-ecuación-del-fva" class="level3">
-<h3 class="anchored" data-anchor-id="la-ecuación-del-fva">La Ecuación del FVA</h3>
-<p>El valor añadido de un paso específico <span class="math inline">\(i\)</span> se calcula comparando su error contra el paso anterior <span class="math inline">\(i-1\)</span>:</p>
-<p><span class="math display">\[FVA_{paso} = Error_{paso \ anterior} - Error_{paso \ actual}\]</span></p>
+<p>El FVA calcula la diferencia de error entre cada uno de estos pasos. Si el ajuste comercial aumenta el error en un 5% respecto al modelo estadístico, ese ajuste ha <strong>destruido valor</strong>.</p>
+</section>
+<section id="el-juez-supremo-el-pronóstico-ingenuo-naive" class="level2">
+<h2 class="anchored" data-anchor-id="el-juez-supremo-el-pronóstico-ingenuo-naive">18.2 El Juez Supremo: El Pronóstico Ingenuo (Naive)</h2>
+<p>Para que el FVA tenga sentido, necesitamos un punto de comparación absoluto. Michael Gilliland, el padre del FVA, sugiere usar el <strong>Pronóstico Ingenuo</strong> (lo que vendí el mes pasado es lo que venderé este mes) como el primer eslabón.</p>
+<p>Si tu sofisticado modelo de Deep Learning no es capaz de ganarle a un promedio móvil simple o al dato del mes pasado, entonces tu arquitectura tecnológica está destruyendo valor. El FVA nos obliga a ser humildes: <strong>si no puedes mejorar la simplicidad, no compliques el sistema.</strong></p>
+</section>
+<section id="el-costo-del-toqueteo-overfitting-humano" class="level2">
+<h2 class="anchored" data-anchor-id="el-costo-del-toqueteo-overfitting-humano">18.3 El Costo del “Toqueteo” (Overfitting Humano)</h2>
+<p>¿Por qué los humanos suelen destruir valor en el pronóstico?</p>
 <ul>
-<li><strong>FVA Positivo (+):</strong> El paso mejoró la precisión. Has ganado dinero para la empresa.</li>
-<li><strong>FVA Negativo (-):</strong> El paso inyectó ruido. El esfuerzo humano o técnico destruyó valor y aumentó el riesgo de inventario.</li>
+<li><p><strong>Sesgo de Optimismo:</strong> Los vendedores tienden a sobreestimar las ventas para asegurar que haya inventario “por si acaso”.</p></li>
+<li><p><strong>Presión Presupuestaria:</strong> Finanzas ajusta el pronóstico hacia arriba para alinearlo con los objetivos de crecimiento, confundiendo un <em>objetivo</em> con una <em>predicción</em>.</p></li>
+<li><p><strong>Efecto Reciente:</strong> Un planificador ajusta todo el mes porque ayer un cliente canceló un pedido, ignorando la tendencia a largo plazo.</p></li>
 </ul>
+<p>El FVA expone estos comportamientos. Al final del trimestre, el reporte de FVA muestra: <em>“Ventas ajustó 200 productos; en 180 de ellos el error aumentó”</em>. Esa es una conversación poderosa que cambia la cultura organizacional de una basada en opiniones a una basada en evidencia.</p>
 </section>
-</section>
-<section id="la-psicología-del-ajuste-por-qué-el-humano-suele-fallar" class="level2">
-<h2 class="anchored" data-anchor-id="la-psicología-del-ajuste-por-qué-el-humano-suele-fallar">18.2 La Psicología del Ajuste: ¿Por qué el Humano suele fallar?</h2>
-<p>Expertos indican que en más del <strong>50% de los casos</strong>, los ajustes manuales empeoran el pronóstico. Como ingenieros, debemos entender los sesgos cognitivos que provocan este desastre:</p>
-<ul>
-<li><strong>Sesgo de Optimismo (Ilusión de Ventas):</strong> El equipo comercial tiende a proyectar sus deseos de cuota en el pronóstico. Un pronóstico inflado genera un exceso de inventario que destruye el flujo de caja.</li>
-<li><strong>Anclaje y Ajuste:</strong> El humano tiende a quedarse cerca del número inicial y hacer cambios pequeños, incluso cuando hay evidencia de un cambio radical en el mercado.</li>
-<li><strong>Sesgo de Recencia:</strong> Darle demasiada importancia a lo que pasó ayer (una queja de un cliente, un pedido grande inusual) y olvidar la tendencia de largo plazo que la máquina sí ve.</li>
-<li><strong>Ajustes de “Ruido”:</strong> Intentar explicar fluctuaciones aleatorias que no tienen causa. El humano busca patrones donde solo hay azar; la máquina tiene la disciplina de ignorar el ruido.</li>
-</ul>
-</section>
-<section id="implementación-del-fva-como-sistema-de-gobernanza" class="level2">
-<h2 class="anchored" data-anchor-id="implementación-del-fva-como-sistema-de-gobernanza">18.3 Implementación del FVA como Sistema de Gobernanza</h2>
-<p>Para que el FVA no sea solo un reporte, sino una herramienta de cambio cultural, debemos implementarlo con rigor:</p>
-<ol type="1">
-<li><strong>Registro de Versiones (Versioning):</strong> Tu base de datos debe almacenar cada “capa” del pronóstico. El sistema debe saber qué dijo la máquina y qué dijo el humano antes de la venta real.</li>
-<li><strong>Dashboard de Responsabilidad:</strong> Crea un tablero donde se vea el FVA por planificador, por familia de productos y por región. Si un gerente de ventas tiene un FVA negativo persistente, sus ajustes deben ser bloqueados por el sistema.</li>
-<li><strong>Incentivos Basados en FVA:</strong> Deja de premiar a la gente por “vencer al pronóstico” (lo cual incentiva pronósticos bajos/fáciles). Prémialos por un <strong>FVA positivo</strong>. El objetivo es la <strong>verdad</strong>, no el optimismo.</li>
-</ol>
-</section>
-<section id="caso-de-estudio-el-roi-de-la-inteligencia" class="level2">
-<h2 class="anchored" data-anchor-id="caso-de-estudio-el-roi-de-la-inteligencia">18.4 Caso de Estudio: El ROI de la Inteligencia</h2>
-<p>Imagina que gestionas una categoría de repuestos industriales: * <strong>Error Naive (Piso):</strong> 40%. * <strong>Modelo Machine Learning (Cap. 9):</strong> Logra un 32%. (<strong>FVA Máquina = +8%</strong>). * <strong>Ajuste del Planificador:</strong> Sube el número por “instinto” y el error real termina en 37%. (<strong>FVA Humano = -5%</strong>).</p>
-<p><strong>El Veredicto:</strong> El toque humano ha “borrado” más de la mitad de la mejora lograda por el algoritmo. En este escenario, el Arquitecto de Suministros tiene la evidencia para automatizar la categoría y pedirle al planificador que mueva su atención a otra parte donde realmente aporte valor.</p>
-</section>
-<section id="hacia-la-excepción-de-valor" class="level2">
-<h2 class="anchored" data-anchor-id="hacia-la-excepción-de-valor">18.5 Hacia la “Excepción de Valor”</h2>
-<p>El objetivo del FVA no es eliminar al humano, sino <strong>enfocarlo</strong>. El humano solo debe intervenir cuando tiene <strong>Información Exógena</strong> que la máquina no tiene: * Un cambio en la legislación que afectará las ventas. * El cierre de una planta de un cliente principal. * Una huelga de transporte inminente.</p>
-<p>Si no puedes documentar una razón externa clara para un ajuste, <strong>no toques el número</strong>. Deja que la parsimonia estadística haga su trabajo.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<section id="simulador-analizador-de-fva" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-analizador-de-fva">18.4 Simulador: Analizador de FVA</h2>
+<p>En este laboratorio, comparamos tres etapas: la <strong>Matemática</strong>, el <strong>Ajuste Humano</strong> y la <strong>Realidad</strong>. Ajusta qué tan “optimista” o “pesimista” es el humano y observa si está añadiendo valor o destruyendo la precisión del sistema.</p>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="49" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 48;"><span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>jStat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>viewof actual_demand <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">50</span><span class="op">,</span> <span class="dv">200</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Demanda Real (La Verdad):"</span>})</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>viewof stat_forecast <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">50</span><span class="op">,</span> <span class="dv">200</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">110</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Modelo Estadístico:"</span>})</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>viewof human_adjustment <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">50</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Ajuste Humano (±):"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="62" data-source-offset="-24"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 61;"><span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>final_forecast <span class="op">=</span> stat_forecast <span class="op">+</span> human_adjustment</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>err_stat <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(actual_demand <span class="op">-</span> stat_forecast)</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>err_final <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(actual_demand <span class="op">-</span> final_forecast)</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="co">// FVA: Si el error final es menor al estadístico, el valor es positivo</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>fva_value <span class="op">=</span> err_stat <span class="op">-</span> err_final </span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>fva_pct <span class="op">=</span> (fva_value <span class="op">/</span> actual_demand) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>chartFVA <span class="op">=</span> {</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:450px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> [<span class="st">'Estadístico'</span><span class="op">,</span> <span class="st">'Consenso (Humano)'</span>]<span class="op">,</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> [err_stat<span class="op">,</span> err_final]<span class="op">,</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Error Absoluto'</span><span class="op">,</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'bar'</span><span class="op">,</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>      <span class="dt">marker</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> [ <span class="st">'#94a3b8'</span><span class="op">,</span> fva_value <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">'#10b981'</span> <span class="op">:</span> <span class="st">'#ef4444'</span>]}</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layout <span class="op">=</span> {</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'Análisis de Valor Agregado (FVA)'</span><span class="op">,</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Error (Unidades)'</span><span class="op">,</span> <span class="dt">gridcolor</span><span class="op">:</span> <span class="st">'#f1f5f9'</span> }<span class="op">,</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    <span class="dt">annotations</span><span class="op">:</span> [{</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> err_final<span class="op">,</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> fva_value <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> <span class="vs">`Valor Agregado: +</span><span class="sc">${</span>fva_value<span class="sc">}</span><span class="vs">`</span> <span class="op">:</span> <span class="vs">`Valor Destruido: </span><span class="sc">${</span>fva_value<span class="sc">}</span><span class="vs">`</span><span class="op">,</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>      <span class="dt">showarrow</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>      <span class="dt">arrowhead</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>      <span class="dt">ax</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">ay</span><span class="op">:</span> <span class="op">-</span><span class="dv">40</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>    }]</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> layout<span class="op">,</span> {<span class="dt">responsive</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">displayModeBar</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">;</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>La Disciplina del FVA
+<span class="screen-reader-only">Tip</span>Interpretación del Resultado
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>En Supply Chain Inteligente, la complejidad que no genera FVA es <strong>vanidad técnica</strong>. Si tu modelo de Deep Learning no bate al Naive por un margen que justifique su costo, la decisión más valiente y rentable es apagar el servidor y volver a lo simple.</p>
+<p>En este escenario, el equipo humano ha <strong><span><span id="ojs-element-id-1"></span></span></strong> el pronóstico en <strong><span><span id="ojs-element-id-2"></span></span></strong> unidades respecto a la matemática pura.</p>
+<ul>
+<li>Si el FVA es negativo de forma sistemática, la recomendación estratégica es <strong>dejar de ajustar el modelo</strong> y confiar en el algoritmo.</li>
+</ul>
 </div>
 </div>
+</section>
+<section id="implementando-el-fva-en-tu-organización" class="level2">
+<h2 class="anchored" data-anchor-id="implementando-el-fva-en-tu-organización">18.5 Implementando el FVA en tu Organización</h2>
+<p>Para que el FVA funcione como herramienta de cambio, debe seguir estas reglas:</p>
+<ol type="1">
+<li><p><strong>No es para castigar:</strong> El objetivo es aprender dónde el juicio humano es valioso (ej. lanzamientos, promociones) y dónde es perjudicial (ej. productos estables).</p></li>
+<li><p><strong>Métrica de Ganancia:</strong> Mide el FVA en dinero. <em>“El ajuste de Ventas nos costó $50,000 extra en inventario este mes”</em>. Esa cifra se entiende en cualquier nivel directivo.</p></li>
+<li><p><strong>Eliminación de Pasos:</strong> Si un paso del proceso (ej. la revisión regional) destruye valor consistentemente durante 6 meses, ese paso debe ser eliminado del flujo de trabajo.</p></li>
+</ol>
+<p>El FVA es el filtro que permite que la <strong>Arquitectura de Suministros</strong> se mantenga limpia, eficiente y libre de sesgos políticos.</p>
 </section>
 <section id="checklist-de-cierre-del-capítulo" class="level2">
 <h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">¿Mi sistema de datos guarda el histórico de versiones del pronóstico (Máquina vs.&nbsp;Consenso)?</label></li>
-<li><label><input type="checkbox">¿He calculado el FVA acumulado de mi equipo de planificación en los últimos 6 meses?</label></li>
-<li><label><input type="checkbox">¿He identificado los “SKUs Intocables”: aquellos donde el FVA humano es consistentemente negativo?</label></li>
-<li><label><input type="checkbox">¿He comunicado a la dirección financiera el ahorro en inventario derivado del FVA positivo de mis modelos?</label></li>
-<li><label><input type="checkbox">¿He establecido un protocolo donde solo se permiten ajustes manuales si se registra una “causa raíz” externa?</label></li>
+<li><p><label><input type="checkbox">¿He establecido el “Pronóstico Ingenuo” como baseline en mis reportes?</label></p></li>
+<li><p><label><input type="checkbox">¿Mido el error antes y después de los ajustes manuales?</label></p></li>
+<li><p><label><input type="checkbox">¿He identificado quiénes son los principales “ajustadores” de mi proceso de demanda?</label></p></li>
+<li><p><label><input type="checkbox">¿Soy capaz de presentar el FVA en términos de impacto financiero (costo de inventario o venta perdida)?</label></p></li>
+<li><p><label><input type="checkbox">¿Estoy listo para profundizar en la psicología de estos errores en el <strong>Capítulo 19</strong>?</label></p></li>
 </ul>
 
 
+<div class="ojs-auto-generated hidden">
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7ZnZhX3ZhbHVlID49IDAgPyBcIm1lam9yYWRvXCIgOiBcImVtcGVvcmFkb1wifTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMSJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7TWF0aC5hYnMoZnZhX3ZhbHVlKX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIifV19
+</script>
+</div>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5qU3RhdCA9IHJlcXVpcmUoXCJqc3RhdEAxLjkuNlwiKVxyXG5QbG90bHkgPSByZXF1aXJlKFwicGxvdGx5LmpzLWRpc3QtbWluQDIuMjQuMVwiKVxyXG5cclxudmlld29mIGFjdHVhbF9kZW1hbmQgPSBJbnB1dHMucmFuZ2UoWzUwLCAyMDBdLCB7dmFsdWU6IDEyMCwgc3RlcDogNSwgbGFiZWw6IFwiRGVtYW5kYSBSZWFsIChMYSBWZXJkYWQpOlwifSlcclxudmlld29mIHN0YXRfZm9yZWNhc3QgPSBJbnB1dHMucmFuZ2UoWzUwLCAyMDBdLCB7dmFsdWU6IDExMCwgc3RlcDogNSwgbGFiZWw6IFwiTW9kZWxvIEVzdGFkw61zdGljbzpcIn0pXHJcbnZpZXdvZiBodW1hbl9hZGp1c3RtZW50ID0gSW5wdXRzLnJhbmdlKFstNTAsIDUwXSwge3ZhbHVlOiAzMCwgc3RlcDogNSwgbGFiZWw6IFwiQWp1c3RlIEh1bWFubyAowrEpOlwifSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcbi8vIEPDoWxjdWxvcyBkZSBFcnJvclxyXG5maW5hbF9mb3JlY2FzdCA9IHN0YXRfZm9yZWNhc3QgKyBodW1hbl9hZGp1c3RtZW50XHJcbmVycl9zdGF0ID0gTWF0aC5hYnMoYWN0dWFsX2RlbWFuZCAtIHN0YXRfZm9yZWNhc3QpXHJcbmVycl9maW5hbCA9IE1hdGguYWJzKGFjdHVhbF9kZW1hbmQgLSBmaW5hbF9mb3JlY2FzdClcclxuXHJcbi8vIEZWQTogU2kgZWwgZXJyb3IgZmluYWwgZXMgbWVub3IgYWwgZXN0YWTDrXN0aWNvLCBlbCB2YWxvciBlcyBwb3NpdGl2b1xyXG5mdmFfdmFsdWUgPSBlcnJfc3RhdCAtIGVycl9maW5hbCBcclxuZnZhX3BjdCA9IChmdmFfdmFsdWUgLyBhY3R1YWxfZGVtYW5kKSAqIDEwMFxyXG5cclxuY2hhcnRGVkEgPSB7XHJcbiAgY29uc3QgY29udGFpbmVyID0gaHRtbGA8ZGl2IHN0eWxlPVwid2lkdGg6MTAwJTsgaGVpZ2h0OjQ1MHB4O1wiPjwvZGl2PmA7XHJcbiAgXHJcbiAgY29uc3QgdHJhY2VzID0gW1xyXG4gICAge1xyXG4gICAgICB4OiBbJ0VzdGFkw61zdGljbycsICdDb25zZW5zbyAoSHVtYW5vKSddLFxyXG4gICAgICB5OiBbZXJyX3N0YXQsIGVycl9maW5hbF0sXHJcbiAgICAgIG5hbWU6ICdFcnJvciBBYnNvbHV0bycsXHJcbiAgICAgIHR5cGU6ICdiYXInLFxyXG4gICAgICBtYXJrZXI6IHtjb2xvcjogWyAnIzk0YTNiOCcsIGZ2YV92YWx1ZSA+PSAwID8gJyMxMGI5ODEnIDogJyNlZjQ0NDQnXX1cclxuICAgIH1cclxuICBdO1xyXG5cclxuICBjb25zdCBsYXlvdXQgPSB7XHJcbiAgICB0aXRsZTogJ0Fuw6FsaXNpcyBkZSBWYWxvciBBZ3JlZ2FkbyAoRlZBKScsXHJcbiAgICB5YXhpczogeyB0aXRsZTogJ0Vycm9yIChVbmlkYWRlcyknLCBncmlkY29sb3I6ICcjZjFmNWY5JyB9LFxyXG4gICAgdGVtcGxhdGU6ICdwbG90bHlfd2hpdGUnLFxyXG4gICAgYW5ub3RhdGlvbnM6IFt7XHJcbiAgICAgIHg6IDEsXHJcbiAgICAgIHk6IGVycl9maW5hbCxcclxuICAgICAgdGV4dDogZnZhX3ZhbHVlID49IDAgPyBgVmFsb3IgQWdyZWdhZG86ICske2Z2YV92YWx1ZX1gIDogYFZhbG9yIERlc3RydWlkbzogJHtmdmFfdmFsdWV9YCxcclxuICAgICAgc2hvd2Fycm93OiB0cnVlLFxyXG4gICAgICBhcnJvd2hlYWQ6IDIsXHJcbiAgICAgIGF4OiAwLCBheTogLTQwXHJcbiAgICB9XVxyXG4gIH07XHJcblxyXG4gIFBsb3RseS5uZXdQbG90KGNvbnRhaW5lciwgdHJhY2VzLCBsYXlvdXQsIHtyZXNwb25zaXZlOiB0cnVlLCBkaXNwbGF5TW9kZUJhcjogZmFsc2V9KTtcclxuICByZXR1cm4gY29udGFpbmVyO1xyXG59XHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnYWN0dWFsX2RlbWFuZCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzdGF0X2ZvcmVjYXN0JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2h1bWFuX2FkanVzdG1lbnQnKSJ9XX0=
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

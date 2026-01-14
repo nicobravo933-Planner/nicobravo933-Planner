@@ -1441,7 +1441,7 @@
     "href": "cap-18-fva-valor-pronostico.html",
     "title": "18. ¿Aportamos Valor? (Forecast Value Added)",
     "section": "",
-    "text": "18.1 La Cascada de Valor: ¿Quién se equivoca menos?\nFelicidades. Has construido modelos ARIMA quirúrgicos, has entrenado bosques de XGBoost y has simulado redes complejas mediante Monte Carlo. Tienes en tus manos el motor de decisión más potente que tu empresa haya visto jamás. Pero ahora te enfrentas al reto definitivo: hacer que la organización lo use de forma rentable.\nEn la Supply Chain real, los modelos no operan en un vacío aséptico. Operan en reuniones de S&OP (Sales and Operations Planning) donde el aire está cargado de política, incentivos contrapuestos y egos. El gerente de ventas quiere inflar el número para asegurar disponibilidad y presupuesto de marketing; el gerente de finanzas quiere “ser conservador” para cuidar el flujo de caja, y el planificador veterano confía más en su “olfato” que en un algoritmo de gradiente.\nEn esta Parte VI, aprenderemos a gestionar el factor humano. Ya no optimizaremos hiperparámetros; optimizaremos procesos de decisión y gobernanza.\nEl marco FVA (Forecast Value Added) es la vara de medir definitiva del Arquitecto de Suministros. Su premisa es brutalmente honesta: “Cada paso, cada reunión y cada ajuste manual en el proceso de planificación debe justificar su existencia demostrando que reduce el error de pronóstico frente a no hacer nada”.\nSi un paso del proceso no mejora la precisión (o reduce el sesgo), es un desperdicio operativo —una “grasa” burocrática— que debe ser eliminada. El FVA es el ROI de tu tiempo y del tiempo de tu equipo.\nPara aplicar FVA, debemos visualizar el pronóstico como un proceso de manufactura de información por etapas. Cada etapa toma el resultado de la anterior y lo intenta “pulir”. Registramos el error en cada punto:",
+    "text": "18.1 La Auditoría del Proceso de Planificación\nFelicidades. Has construido modelos de Machine Learning, has simulado redes complejas y has optimizado inventarios bajo restricciones. Pero ahora te enfrentas al componente más difícil de gestionar en la Supply Chain: el ser humano.\nEn la mayoría de las empresas, el número que sale del algoritmo no es el que se usa para comprar. Ese número viaja por salas de juntas, es ajustado por gerentes comerciales “que conocen al cliente” y modificado por directores de finanzas que necesitan “llegar al presupuesto”. En este capítulo, aprenderemos a medir si todos esos toques humanos realmente aportan valor o si son simplemente ruido costoso mediante el Forecast Value Added (FVA).\nEl Forecast Value Added (FVA) no es una métrica de error; es una métrica de proceso. Su objetivo es identificar qué pasos del proceso de planificación mejoran la precisión y cuáles la empeoran.\nEn un proceso típico de S&OP (Sales and Operations Planning), el número evoluciona así:\nEl FVA calcula la diferencia de error entre cada uno de estos pasos. Si el ajuste comercial aumenta el error en un 5% respecto al modelo estadístico, ese ajuste ha destruido valor.",
     "crumbs": [
       "VI: El Factor Humano y la Ejecución",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>18. ¿Aportamos Valor? (Forecast Value Added)</span>"
@@ -1507,7 +1507,7 @@
     "href": "cap-18-fva-valor-pronostico.html#checklist-de-cierre-del-capítulo",
     "title": "18. ¿Aportamos Valor? (Forecast Value Added)",
     "section": "Checklist de Cierre del Capítulo",
-    "text": "Checklist de Cierre del Capítulo\n\n¿Mi sistema de datos guarda el histórico de versiones del pronóstico (Máquina vs. Consenso)?\n¿He calculado el FVA acumulado de mi equipo de planificación en los últimos 6 meses?\n¿He identificado los “SKUs Intocables”: aquellos donde el FVA humano es consistentemente negativo?\n¿He comunicado a la dirección financiera el ahorro en inventario derivado del FVA positivo de mis modelos?\n¿He establecido un protocolo donde solo se permiten ajustes manuales si se registra una “causa raíz” externa?",
+    "text": "Checklist de Cierre del Capítulo\n\n¿He establecido el “Pronóstico Ingenuo” como baseline en mis reportes?\n¿Mido el error antes y después de los ajustes manuales?\n¿He identificado quiénes son los principales “ajustadores” de mi proceso de demanda?\n¿Soy capaz de presentar el FVA en términos de impacto financiero (costo de inventario o venta perdida)?\n¿Estoy listo para profundizar en la psicología de estos errores en el Capítulo 19?",
     "crumbs": [
       "VI: El Factor Humano y la Ejecución",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>18. ¿Aportamos Valor? (Forecast Value Added)</span>"
@@ -2339,6 +2339,61 @@
     "crumbs": [
       "V: Simulaciones y Redes Complejas",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>17. Optimizando bajo Presión</span>"
+    ]
+  },
+  {
+    "objectID": "cap-18-fva-valor-pronostico.html#la-auditoría-del-proceso-de-planificación",
+    "href": "cap-18-fva-valor-pronostico.html#la-auditoría-del-proceso-de-planificación",
+    "title": "18. ¿Aportamos Valor? (Forecast Value Added)",
+    "section": "",
+    "text": "Pronóstico Estadístico (Baseline): Lo que dice la matemática (ARIMA, XGBoost).\nAjuste del Demand Planner: El técnico que limpia promociones o eventos conocidos.\nAjuste Comercial/Ventas: “Siento que este mes venderemos más por el mundial”.\nConsenso Final: El número que se firma en la reunión directiva.",
+    "crumbs": [
+      "VI: El Factor Humano y la Ejecución",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>18. ¿Aportamos Valor? (Forecast Value Added)</span>"
+    ]
+  },
+  {
+    "objectID": "cap-18-fva-valor-pronostico.html#el-juez-supremo-el-pronóstico-ingenuo-naive",
+    "href": "cap-18-fva-valor-pronostico.html#el-juez-supremo-el-pronóstico-ingenuo-naive",
+    "title": "18. ¿Aportamos Valor? (Forecast Value Added)",
+    "section": "18.2 El Juez Supremo: El Pronóstico Ingenuo (Naive)",
+    "text": "18.2 El Juez Supremo: El Pronóstico Ingenuo (Naive)\nPara que el FVA tenga sentido, necesitamos un punto de comparación absoluto. Michael Gilliland, el padre del FVA, sugiere usar el Pronóstico Ingenuo (lo que vendí el mes pasado es lo que venderé este mes) como el primer eslabón.\nSi tu sofisticado modelo de Deep Learning no es capaz de ganarle a un promedio móvil simple o al dato del mes pasado, entonces tu arquitectura tecnológica está destruyendo valor. El FVA nos obliga a ser humildes: si no puedes mejorar la simplicidad, no compliques el sistema.",
+    "crumbs": [
+      "VI: El Factor Humano y la Ejecución",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>18. ¿Aportamos Valor? (Forecast Value Added)</span>"
+    ]
+  },
+  {
+    "objectID": "cap-18-fva-valor-pronostico.html#el-costo-del-toqueteo-overfitting-humano",
+    "href": "cap-18-fva-valor-pronostico.html#el-costo-del-toqueteo-overfitting-humano",
+    "title": "18. ¿Aportamos Valor? (Forecast Value Added)",
+    "section": "18.3 El Costo del “Toqueteo” (Overfitting Humano)",
+    "text": "18.3 El Costo del “Toqueteo” (Overfitting Humano)\n¿Por qué los humanos suelen destruir valor en el pronóstico?\n\nSesgo de Optimismo: Los vendedores tienden a sobreestimar las ventas para asegurar que haya inventario “por si acaso”.\nPresión Presupuestaria: Finanzas ajusta el pronóstico hacia arriba para alinearlo con los objetivos de crecimiento, confundiendo un objetivo con una predicción.\nEfecto Reciente: Un planificador ajusta todo el mes porque ayer un cliente canceló un pedido, ignorando la tendencia a largo plazo.\n\nEl FVA expone estos comportamientos. Al final del trimestre, el reporte de FVA muestra: “Ventas ajustó 200 productos; en 180 de ellos el error aumentó”. Esa es una conversación poderosa que cambia la cultura organizacional de una basada en opiniones a una basada en evidencia.",
+    "crumbs": [
+      "VI: El Factor Humano y la Ejecución",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>18. ¿Aportamos Valor? (Forecast Value Added)</span>"
+    ]
+  },
+  {
+    "objectID": "cap-18-fva-valor-pronostico.html#simulador-analizador-de-fva",
+    "href": "cap-18-fva-valor-pronostico.html#simulador-analizador-de-fva",
+    "title": "18. ¿Aportamos Valor? (Forecast Value Added)",
+    "section": "18.4 Simulador: Analizador de FVA",
+    "text": "18.4 Simulador: Analizador de FVA\nEn este laboratorio, comparamos tres etapas: la Matemática, el Ajuste Humano y la Realidad. Ajusta qué tan “optimista” o “pesimista” es el humano y observa si está añadiendo valor o destruyendo la precisión del sistema.\n\n\njStat = require(\"jstat@1.9.6\")\nPlotly = require(\"plotly.js-dist-min@2.24.1\")\n\nviewof actual_demand = Inputs.range([50, 200], {value: 120, step: 5, label: \"Demanda Real (La Verdad):\"})\nviewof stat_forecast = Inputs.range([50, 200], {value: 110, step: 5, label: \"Modelo Estadístico:\"})\nviewof human_adjustment = Inputs.range([-50, 50], {value: 30, step: 5, label: \"Ajuste Humano (±):\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfinal_forecast = stat_forecast + human_adjustment\nerr_stat = Math.abs(actual_demand - stat_forecast)\nerr_final = Math.abs(actual_demand - final_forecast)\n\n// FVA: Si el error final es menor al estadístico, el valor es positivo\nfva_value = err_stat - err_final \nfva_pct = (fva_value / actual_demand) * 100\n\nchartFVA = {\n  const container = html`&lt;div style=\"width:100%; height:450px;\"&gt;&lt;/div&gt;`;\n  \n  const traces = [\n    {\n      x: ['Estadístico', 'Consenso (Humano)'],\n      y: [err_stat, err_final],\n      name: 'Error Absoluto',\n      type: 'bar',\n      marker: {color: [ '#94a3b8', fva_value &gt;= 0 ? '#10b981' : '#ef4444']}\n    }\n  ];\n\n  const layout = {\n    title: 'Análisis de Valor Agregado (FVA)',\n    yaxis: { title: 'Error (Unidades)', gridcolor: '#f1f5f9' },\n    template: 'plotly_white',\n    annotations: [{\n      x: 1,\n      y: err_final,\n      text: fva_value &gt;= 0 ? `Valor Agregado: +${fva_value}` : `Valor Destruido: ${fva_value}`,\n      showarrow: true,\n      arrowhead: 2,\n      ax: 0, ay: -40\n    }]\n  };\n\n  Plotly.newPlot(container, traces, layout, {responsive: true, displayModeBar: false});\n  return container;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipInterpretación del Resultado\n\n\n\nEn este escenario, el equipo humano ha  el pronóstico en  unidades respecto a la matemática pura.\n\nSi el FVA es negativo de forma sistemática, la recomendación estratégica es dejar de ajustar el modelo y confiar en el algoritmo.",
+    "crumbs": [
+      "VI: El Factor Humano y la Ejecución",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>18. ¿Aportamos Valor? (Forecast Value Added)</span>"
+    ]
+  },
+  {
+    "objectID": "cap-18-fva-valor-pronostico.html#implementando-el-fva-en-tu-organización",
+    "href": "cap-18-fva-valor-pronostico.html#implementando-el-fva-en-tu-organización",
+    "title": "18. ¿Aportamos Valor? (Forecast Value Added)",
+    "section": "18.5 Implementando el FVA en tu Organización",
+    "text": "18.5 Implementando el FVA en tu Organización\nPara que el FVA funcione como herramienta de cambio, debe seguir estas reglas:\n\nNo es para castigar: El objetivo es aprender dónde el juicio humano es valioso (ej. lanzamientos, promociones) y dónde es perjudicial (ej. productos estables).\nMétrica de Ganancia: Mide el FVA en dinero. “El ajuste de Ventas nos costó $50,000 extra en inventario este mes”. Esa cifra se entiende en cualquier nivel directivo.\nEliminación de Pasos: Si un paso del proceso (ej. la revisión regional) destruye valor consistentemente durante 6 meses, ese paso debe ser eliminado del flujo de trabajo.\n\nEl FVA es el filtro que permite que la Arquitectura de Suministros se mantenga limpia, eficiente y libre de sesgos políticos.",
+    "crumbs": [
+      "VI: El Factor Humano y la Ejecución",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>18. ¿Aportamos Valor? (Forecast Value Added)</span>"
     ]
   }
 ]
