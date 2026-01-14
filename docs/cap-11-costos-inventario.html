@@ -548,6 +548,7 @@ window.Quarto = {
   <li><a href="#simulador-de-la-gran-balanza" id="toc-simulador-de-la-gran-balanza" class="nav-link" data-scroll-target="#simulador-de-la-gran-balanza">11.6 Simulador de La Gran Balanza</a>
   <ul class="collapse">
   <li><a href="#es-esto-un-eoq" id="toc-es-esto-un-eoq" class="nav-link" data-scroll-target="#es-esto-un-eoq">¿Es esto un EOQ?</a></li>
+  <li><a href="#el-puente-el-rmse-como-moneda-de-cambio" id="toc-el-puente-el-rmse-como-moneda-de-cambio" class="nav-link" data-scroll-target="#el-puente-el-rmse-como-moneda-de-cambio">El Puente: El RMSE como “Moneda de Cambio”</a></li>
   </ul></li>
   <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
@@ -942,6 +943,18 @@ CR = \frac{s}{s + h}
 </tr>
 </tbody>
 </table>
+</section>
+<section id="el-puente-el-rmse-como-moneda-de-cambio" class="level3">
+<h3 class="anchored" data-anchor-id="el-puente-el-rmse-como-moneda-de-cambio">El Puente: El RMSE como “Moneda de Cambio”</h3>
+<p>Aquí es donde conectamos la <strong>Parte III (Modelos de ML)</strong> con esta <strong>Parte IV (Ciencia de Stock)</strong>. En el mundo de los inventarios, el RMSE que calculaste antes no es solo una métrica de error, es tu estimación de la <strong>desviación estándar del error (</strong><span class="math inline">\(\sigma\)</span><strong>)</strong>.</p>
+<p><span class="math display">\[
+RMSE = \sqrt{\frac{\sum_{t=1}^{n} (y_t - \hat{y}_t)^2}{n}}
+\]</span></p>
+<p>Por qué es vital: el Inventario de Seguridad (<span class="math inline">\(SS\)</span>) es proporcional al error.</p>
+<p><span class="math display">\[
+SS = k \times RMSE \times \sqrt{L}
+\]</span></p>
+<p>Cada punto porcentual que logres reducir en tu RMSE mediante un mejor algoritmo es dinero que “liberas” directamente del almacén para ponerlo a rendir en el banco.</p>
 </section>
 </section>
 <section id="checklist-de-cierre-del-capítulo" class="level2">
