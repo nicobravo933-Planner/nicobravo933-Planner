@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-37f97b4dfc99813de07ac4a6dfc6e37d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-1d61feaf5942a89f67c517e5b1b3c91a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -109,6 +109,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -330,7 +332,7 @@ window.Quarto = {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Arquitectura de suministros</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/nicobravo933-Planner/Practicas_Supply" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -359,7 +361,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></a>
+  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. Auditoría de Datos y Arquitectura de Red</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -521,7 +523,9 @@ window.Quarto = {
 </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Creado con <a href="https://quarto.org/">Quarto</a>.</p>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -529,21 +533,17 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#la-física-de-la-distorsión-el-efecto-látigo-bullwhip-effect" id="toc-la-física-de-la-distorsión-el-efecto-látigo-bullwhip-effect" class="nav-link active" data-scroll-target="#la-física-de-la-distorsión-el-efecto-látigo-bullwhip-effect">16.1 La Física de la Distorsión: El Efecto Látigo (Bullwhip Effect)</a>
+  <li><a href="#el-efecto-látigo-bullwhip-effect" id="toc-el-efecto-látigo-bullwhip-effect" class="nav-link active" data-scroll-target="#el-efecto-látigo-bullwhip-effect">16.1 El Efecto Látigo (Bullwhip Effect)</a>
   <ul class="collapse">
-  <li><a href="#los-cuatro-jinetes-del-caos-sistémico" id="toc-los-cuatro-jinetes-del-caos-sistémico" class="nav-link" data-scroll-target="#los-cuatro-jinetes-del-caos-sistémico">16.1.1 Los Cuatro Jinetes del Caos Sistémico</a></li>
+  <li><a href="#por-qué-ocurre-la-anatomía-de-la-distorsión" id="toc-por-qué-ocurre-la-anatomía-de-la-distorsión" class="nav-link" data-scroll-target="#por-qué-ocurre-la-anatomía-de-la-distorsión">¿Por qué ocurre? La anatomía de la distorsión</a></li>
   </ul></li>
-  <li><a href="#la-filosofía-meio-el-posicionamiento-del-capital" id="toc-la-filosofía-meio-el-posicionamiento-del-capital" class="nav-link" data-scroll-target="#la-filosofía-meio-el-posicionamiento-del-capital">16.2 La Filosofía MEIO: El Posicionamiento del Capital</a>
-  <ul class="collapse">
-  <li><a href="#el-poder-del-inventario-consolidado-inventory-pooling" id="toc-el-poder-del-inventario-consolidado-inventory-pooling" class="nav-link" data-scroll-target="#el-poder-del-inventario-consolidado-inventory-pooling">16.2.1 El Poder del Inventario Consolidado (Inventory Pooling)</a></li>
-  <li><a href="#estrategia-de-postergación-postponement" id="toc-estrategia-de-postergación-postponement" class="nav-link" data-scroll-target="#estrategia-de-postergación-postponement">16.2.2 Estrategia de Postergación (Postponement)</a></li>
-  </ul></li>
-  <li><a href="#estrategias-para-mitigar-el-efecto-dominó" id="toc-estrategias-para-mitigar-el-efecto-dominó" class="nav-link" data-scroll-target="#estrategias-para-mitigar-el-efecto-dominó">16.3 Estrategias para Mitigar el Efecto Dominó</a></li>
-  <li><a href="#modelado-de-redes-complejas-en-la-simulación" id="toc-modelado-de-redes-complejas-en-la-simulación" class="nav-link" data-scroll-target="#modelado-de-redes-complejas-en-la-simulación">16.4 Modelado de Redes Complejas en la Simulación</a></li>
-  <li><a href="#el-conflicto-de-incentivos-los-silos-organizacionales" id="toc-el-conflicto-de-incentivos-los-silos-organizacionales" class="nav-link" data-scroll-target="#el-conflicto-de-incentivos-los-silos-organizacionales">16.5 El Conflicto de Incentivos: Los Silos Organizacionales</a></li>
+  <li><a href="#optimización-local-vs.-global-meio" id="toc-optimización-local-vs.-global-meio" class="nav-link" data-scroll-target="#optimización-local-vs.-global-meio">16.2 Optimización Local vs.&nbsp;Global (MEIO)</a></li>
+  <li><a href="#el-poder-del-risk-pooling" id="toc-el-poder-del-risk-pooling" class="nav-link" data-scroll-target="#el-poder-del-risk-pooling">16.3 El Poder del “Risk Pooling”</a></li>
+  <li><a href="#simulador-propagación-del-efecto-látigo" id="toc-simulador-propagación-del-efecto-látigo" class="nav-link" data-scroll-target="#simulador-propagación-del-efecto-látigo">16.4 Simulador: Propagación del Efecto Látigo</a></li>
+  <li><a href="#estrategias-para-mitigar-el-dominó" id="toc-estrategias-para-mitigar-el-dominó" class="nav-link" data-scroll-target="#estrategias-para-mitigar-el-dominó">16.5 Estrategias para Mitigar el Dominó</a></li>
   <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-16-efecto-domino-meio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-16-efecto-domino-meio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
@@ -568,113 +568,243 @@ window.Quarto = {
 </header>
 
 
-<p>En los capítulos anteriores, nos convertimos en maestros de la optimización local. Aprendimos a calcular el stock de seguridad perfecto para un nodo y el lote económico para un proveedor. Sin embargo, en la Supply Chain moderna, ningún almacén es una isla independiente. Tu Centro de Distribución (CD) alimenta a diez bodegas regionales, que a su vez surten a cientos de tiendas o clientes finales.</p>
-<p>Si optimizas cada punto de forma aislada, estás cometiendo un error sistémico grave: la <strong>Sub-optimización Local</strong>. Lo que parece una decisión brillante para el jefe de la Bodega A (como pedir lotes gigantes para ahorrar un 5% en flete) puede ser una catástrofe financiera para la Fábrica, al generar picos de producción artificiales que saturan las máquinas y destruyen la planificación. En este capítulo, aprenderemos a ver la red como un organismo vivo y a implementar la <strong>Optimización de Inventarios Multi-escalón (MEIO)</strong>.</p>
-<section id="la-física-de-la-distorsión-el-efecto-látigo-bullwhip-effect" class="level2">
-<h2 class="anchored" data-anchor-id="la-física-de-la-distorsión-el-efecto-látigo-bullwhip-effect">16.1 La Física de la Distorsión: El Efecto Látigo (Bullwhip Effect)</h2>
-<p>El <strong>Efecto Látigo</strong> es el fenómeno donde pequeñas fluctuaciones en la demanda del consumidor final se transforman en oscilaciones violentas y erráticas a medida que la señal viaja hacia atrás en la cadena (aguas arriba). Una variación del 5% en la venta semanal de una tienda puede llegar a la fábrica de materia prima convertida en una orden del 100% de aumento.</p>
-<section id="los-cuatro-jinetes-del-caos-sistémico" class="level3">
-<h3 class="anchored" data-anchor-id="los-cuatro-jinetes-del-caos-sistémico">16.1.1 Los Cuatro Jinetes del Caos Sistémico</h3>
-<p>Como arquitectos, debemos identificar las causas raíz para poder diseñar las defensas:</p>
+<p>En el capítulo anterior, construimos un laboratorio para un solo producto en una sola ubicación. Pero en la realidad, el inventario no vive en islas aisladas. Una decisión de compra en tu Centro de Distribución (CD) afecta la disponibilidad de tus tiendas, y un retraso en la fábrica genera ondas de choque que terminan en estantes vacíos a miles de kilómetros de distancia.</p>
+<p>Imagina que mueves ligeramente una cuerda en un extremo: el movimiento es casi imperceptible al inicio, pero se amplifica violentamente al llegar al otro extremo. Bienvenidos a la gestión de <strong>Redes Complejas</strong>. En este capítulo, exploraremos cómo la variabilidad se propaga por la red y cómo el Arquitecto de Suministros utiliza la <strong>Optimización Multi-Echelon (MEIO)</strong> para poner el stock donde realmente aporta valor.</p>
+<section id="el-efecto-látigo-bullwhip-effect" class="level2">
+<h2 class="anchored" data-anchor-id="el-efecto-látigo-bullwhip-effect">16.1 El Efecto Látigo (Bullwhip Effect)</h2>
+<p>El Efecto Látigo es, probablemente, el fenómeno más destructivo y costoso en la Supply Chain moderna. Describe cómo pequeñas y naturales fluctuaciones en la demanda del cliente final se transforman en oscilaciones masivas, caóticas e impredecibles para el fabricante.</p>
+<section id="por-qué-ocurre-la-anatomía-de-la-distorsión" class="level3">
+<h3 class="anchored" data-anchor-id="por-qué-ocurre-la-anatomía-de-la-distorsión">¿Por qué ocurre? La anatomía de la distorsión</h3>
+<p>Este fenómeno no es un error de sistema, sino una consecuencia sistémica de cuatro comportamientos profundamente humanos y operativos:</p>
 <ol type="1">
-<li><strong>Actualización de Pronósticos en Cascada:</strong> Cada eslabón utiliza los pedidos de su cliente inmediato como su “demanda real”. Si la tienda añade un pequeño margen de seguridad, el CD añade otro sobre ese, y la fábrica recibe una señal totalmente desconectada de lo que el cliente final está comprando.</li>
-<li><strong>Agrupamiento de Lotes (Batching):</strong> Por querer optimizar el transporte (EOQ), acumulamos pedidos para llenar camiones. Esto crea periodos de “silencio” seguidos de pedidos masivos que el proveedor interpreta como un crecimiento del mercado, cuando es solo una acumulación logística.</li>
-<li><strong>Fluctuaciones de Precio y Promociones:</strong> El <em>Forward Buying</em> (comprar para aprovechar un descuento hoy) destruye la señal de demanda real. El inventario se mueve por incentivos de precio, no por consumo, lo que genera una resaca de demanda nula en los periodos siguientes.</li>
-<li><strong>Juego de Escasez y Racionamiento:</strong> Cuando el mercado sospecha que habrá escasez, todos piden el doble de lo que necesitan esperando recibir al menos la mitad. Esto infla artificialmente las carteras de pedidos y lleva a inversiones masivas en capacidad que luego quedan ociosas.</li>
+<li><p><strong>Actualización de Pronósticos en Cascada:</strong> Cada eslabón de la cadena (Tienda -&gt; Mayorista -&gt; CD -&gt; Fábrica) realiza su propio pronóstico basado en los pedidos que recibe de su cliente inmediato, no en la venta real al consumidor final. Si la tienda sube su pedido un 5%, el CD entra en pánico y lo sube un 10%, y la fábrica termina duplicando su capacidad. La señal original se pierde en el “ruido” de los intermediarios.</p></li>
+<li><p><strong>Loteo de Pedidos (Batching):</strong> Por razones de eficiencia económica (el EOQ que vimos en el Cap. 12), las empresas no piden unidades individuales cada vez que venden una. Esperan a llenar un camión o un pallet. Esto genera “pulsos” de demanda: periodos de calma total seguidos de explosiones de pedidos que saturan la capacidad de producción.</p></li>
+<li><p><strong>Fluctuación de Precios y Promociones:</strong> Las ofertas de “comprar por adelantado” o descuentos por volumen incitan a los clientes a realizar compras especulativas. Esto crea picos de demanda artificiales que no reflejan el consumo real, engañando a los modelos estadísticos de la fábrica.</p></li>
+<li><p><strong>El Juego de la Escasez (Shortage Gaming):</strong> Cuando un producto escasea, los compradores tienden a inflar sus pedidos con la esperanza de que, tras el prorrateo, les llegue lo que realmente necesitan. Esto crea una demanda ficticia que desaparece súbitamente cuando el stock se normaliza, dejando a la fábrica con un exceso masivo de inventario.</p></li>
 </ol>
+<p><strong>Consecuencias:</strong> El Efecto Látigo drena la rentabilidad al exigir mayor capacidad de almacenamiento, fletes urgentes costosos y una utilización de planta ineficiente.</p>
 </section>
 </section>
-<section id="la-filosofía-meio-el-posicionamiento-del-capital" class="level2">
-<h2 class="anchored" data-anchor-id="la-filosofía-meio-el-posicionamiento-del-capital">16.2 La Filosofía MEIO: El Posicionamiento del Capital</h2>
-<p>La <strong>Optimización Multi-escalón (MEIO)</strong> rompe con la tradición de “stock en todos lados”. Su objetivo no es preguntar cuánto stock tener en cada nodo, sino <strong>en qué eslabón de la red es más eficiente financieramente posicionar el inventario</strong>.</p>
-<section id="el-poder-del-inventario-consolidado-inventory-pooling" class="level3">
-<h3 class="anchored" data-anchor-id="el-poder-del-inventario-consolidado-inventory-pooling">16.2.1 El Poder del Inventario Consolidado (Inventory Pooling)</h3>
-<p>Aquí aplicamos una de las leyes más potentes de la estadística, la <strong>Ley de la Raíz Cuadrada</strong>: El stock de seguridad total de una red se reduce si consolidamos los puntos de inventario. * <strong>Matemática:</strong> <span class="math inline">\(SS_{centralizado} \approx \frac{SS_{descentralizado}}{\sqrt{n}}\)</span>, donde <span class="math inline">\(n\)</span> es el número de almacenes. * <strong>Implicación:</strong> Si tienes 10 tiendas con stock de seguridad independiente, tu inventario total será mucho mayor que si tienes un almacén central que reabastece rápidamente a las 10. Los errores de demanda tienden a cancelarse entre sí.</p>
+<section id="optimización-local-vs.-global-meio" class="level2">
+<h2 class="anchored" data-anchor-id="optimización-local-vs.-global-meio">16.2 Optimización Local vs.&nbsp;Global (MEIO)</h2>
+<p>La mayoría de las empresas operan bajo un modelo de <strong>Optimización Descentralizada</strong>. En este esquema, el gerente de la tienda y el gerente del CD tienen sus propios KPI de nivel de servicio y stock de seguridad. El problema es que esta “seguridad” se duplica innecesariamente.</p>
+<ul>
+<li><strong>El Problema:</strong> Si la tienda mantiene stock para cubrirse del CD, y el CD mantiene stock para cubrirse de la Fábrica, la red termina con una acumulación de inventario redundante. Es una “suma de miedos” que el balance general debe pagar.</li>
+</ul>
+<p>La <strong>Optimización Multi-Echelon (MEIO)</strong> rompe esta inercia al mirar la red como un solo organismo. Su objetivo no es optimizar cada bodega, sino responder: <em>¿Cuál es la combinación mínima de inventario en TODA la red que garantiza el nivel de servicio al cliente final?</em> A veces, la respuesta es quitar stock de las tiendas y centralizarlo en un “hub” regional, o viceversa.</p>
 </section>
-<section id="estrategia-de-postergación-postponement" class="level3">
-<h3 class="anchored" data-anchor-id="estrategia-de-postergación-postponement">16.2.2 Estrategia de Postergación (Postponement)</h3>
-<p>El MEIO favorece mantener el stock en su forma más genérica y centralizada el mayor tiempo posible. * <strong>Aguas Arriba (CD):</strong> El inventario es más barato de mantener y es versátil. * <strong>Aguas Abajo (Tienda):</strong> El inventario es más caro y está “atrapado”.</p>
+<section id="el-poder-del-risk-pooling" class="level2">
+<h2 class="anchored" data-anchor-id="el-poder-del-risk-pooling">16.3 El Poder del “Risk Pooling”</h2>
+<p>El <em>Risk Pooling</em> es la magia estadística de la agregación y es la base de la centralización logística. La demanda de un cliente individual es salvaje e impredecible; pero la demanda de un grupo de 100 clientes es estable.</p>
+<p><strong>La Regla de la Raíz Cuadrada:</strong> Matemáticamente, si tienes <span class="math inline">\(n\)</span> bodegas independientes y decides centralizar todo su inventario en una sola ubicación centralizada, el Stock de Seguridad (<span class="math inline">\(SS\)</span>) necesario se reduce teóricamente por un factor de <span class="math inline">\(\sqrt{n}\)</span>.</p>
+<ul>
+<li><strong>Ejemplo Numérico:</strong> Si tienes 9 tiendas regionales y cada una requiere 100 unidades de seguridad para un 95% de nivel de servicio (Total: 900 unidades), al centralizar la red en un solo CD nacional solo necesitarías <span class="math inline">\(\frac{900}{\sqrt{9}} = 300\)</span> unidades para garantizar el mismo nivel de protección. ¡Una reducción del 66% del capital inmovilizado!</li>
+</ul>
 </section>
-</section>
-<section id="estrategias-para-mitigar-el-efecto-dominó" class="level2">
-<h2 class="anchored" data-anchor-id="estrategias-para-mitigar-el-efecto-dominó">16.3 Estrategias para Mitigar el Efecto Dominó</h2>
-<p>La clave para estabilizar una red compleja es sustituir el <strong>Inventario</strong> por <strong>Información</strong>.</p>
-<ol type="1">
-<li><strong>Visibilidad de Datos de Punto de Venta (POS):</strong> La fábrica debe mirar lo que la cajera escanea en la tienda. Esta es la “señal de demanda pura”.</li>
-<li><strong>Reducción del Lead Time:</strong> El efecto látigo es directamente proporcional al tiempo de espera.</li>
-<li><strong>VMI (Vendor Managed Inventory):</strong> El proveedor decide cuándo reponer basándose en los niveles de stock del cliente.</li>
-<li><strong>Sincronización de Promociones:</strong> El S&amp;OP es el pegamento que evita que el látigo golpee a la producción.</li>
-</ol>
-</section>
-<section id="modelado-de-redes-complejas-en-la-simulación" class="level2">
-<h2 class="anchored" data-anchor-id="modelado-de-redes-complejas-en-la-simulación">16.4 Modelado de Redes Complejas en la Simulación</h2>
-<p>En nuestro <strong>Laboratorio Virtual</strong>, simulamos el flujo entre nodos. En R, modelamos la salida de un nodo como el activador del pedido al nodo superior.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Motor de Simulación Multi-escalón Profesional</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>simular_red_meio <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">dias =</span> <span class="dv">365</span>) {</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  stock_tiendas <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">100</span>, <span class="dv">5</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  stock_cd <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  backlog_total <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(d <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>dias) {</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Demanda del Cliente Final</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    demandas_dia <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">5</span>, <span class="at">shape=</span><span class="dv">2</span>, <span class="at">scale=</span><span class="dv">15</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Descuento en Tiendas</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    stock_tiendas <span class="ot">&lt;-</span> stock_tiendas <span class="sc">-</span> demandas_dia</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Identificar Quiebres Locales</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    backlog_total <span class="ot">&lt;-</span> backlog_total <span class="sc">+</span> <span class="fu">sum</span>(<span class="fu">abs</span>(<span class="fu">pmin</span>(<span class="dv">0</span>, stock_tiendas)))</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    stock_tiendas <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, stock_tiendas)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 4. Señal de Reabastecimiento al CD (MEIO)</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(stock_tiendas[i] <span class="sc">&lt;</span> <span class="dv">50</span>) { </span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        pedido <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">-</span> stock_tiendas[i] </span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        surtido <span class="ot">&lt;-</span> <span class="fu">min</span>(stock_cd, pedido)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        stock_cd <span class="ot">&lt;-</span> stock_cd <span class="sc">-</span> surtido</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        stock_tiendas[i] <span class="ot">&lt;-</span> stock_tiendas[i] <span class="sc">+</span> surtido</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 5. Reabastecimiento del CD desde Fábrica</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(stock_cd <span class="sc">&lt;</span> <span class="dv">400</span>) { stock_cd <span class="ot">&lt;-</span> stock_cd <span class="sc">+</span> <span class="dv">800</span> }</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(backlog_total)</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="el-conflicto-de-incentivos-los-silos-organizacionales" class="level2">
-<h2 class="anchored" data-anchor-id="el-conflicto-de-incentivos-los-silos-organizacionales">16.5 El Conflicto de Incentivos: Los Silos Organizacionales</h2>
-<p>El mayor obstáculo para el MEIO no es la matemática, es la estructura de la empresa. Los incentivos contrapuestos (ahorro en flete vs.&nbsp;nivel de servicio) suelen destruir la salud de la red.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<section id="simulador-propagación-del-efecto-látigo" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-propagación-del-efecto-látigo">16.4 Simulador: Propagación del Efecto Látigo</h2>
+<p>En esta simulación, puedes observar en tiempo real cómo la variabilidad que siente la <strong>Fábrica</strong> es exponencialmente mayor que la que siente la <strong>Tienda</strong>. Ajusta la incertidumbre del cliente y mira cómo el “latigazo” se vuelve incontrolable.</p>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="49" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 48;"><span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>jStat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>viewof retail_sigma <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">20</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Incertidumbre Cliente (σ):"</span>})</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>viewof batch_size <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Tamaño de Lote (Tienda):"</span>})</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>viewof lead_time_net <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Lead Time entre eslabones:"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="62" data-source-offset="-68"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 61;"><span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>network_sim <span class="op">=</span> {</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> days <span class="op">=</span> <span class="dv">60</span><span class="op">;</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mean_demand <span class="op">=</span> <span class="dv">50</span><span class="op">;</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> store_stock <span class="op">=</span> <span class="dv">200</span><span class="op">;</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> cd_stock <span class="op">=</span> <span class="dv">500</span><span class="op">;</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> history <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> pending_to_store <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> pending_to_cd <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> t <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> t <span class="op">&lt;</span> days<span class="op">;</span> t<span class="op">++</span>) {</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 1. Demanda Real del Cliente</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> actual_demand <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">0</span><span class="op">,</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">sample</span>(mean_demand<span class="op">,</span> retail_sigma))<span class="op">;</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 2. Operación de Tienda</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>    store_stock <span class="op">-=</span> actual_demand<span class="op">;</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> store_order <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (store_stock <span class="op">&lt;</span> <span class="dv">100</span>) { </span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>      store_order <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">ceil</span>((<span class="dv">150</span> <span class="op">-</span> store_stock) <span class="op">/</span> batch_size) <span class="op">*</span> batch_size<span class="op">;</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>      pending_to_store<span class="op">.</span><span class="fu">push</span>({<span class="dt">arrival</span><span class="op">:</span> t <span class="op">+</span> lead_time_net<span class="op">,</span> <span class="dt">qty</span><span class="op">:</span> store_order})<span class="op">;</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 3. El CD recibe el pedido de la Tienda (Señal amplificada)</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> cd_order <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (store_order <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>      cd_stock <span class="op">-=</span> store_order<span class="op">;</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (cd_stock <span class="op">&lt;</span> <span class="dv">300</span>) {</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>        cd_order <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">ceil</span>((<span class="dv">500</span> <span class="op">-</span> cd_stock) <span class="op">/</span> (batch_size <span class="op">*</span> <span class="dv">2</span>)) <span class="op">*</span> (batch_size <span class="op">*</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>        pending_to_cd<span class="op">.</span><span class="fu">push</span>({<span class="dt">arrival</span><span class="op">:</span> t <span class="op">+</span> lead_time_net<span class="op">,</span> <span class="dt">qty</span><span class="op">:</span> cd_order})<span class="op">;</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Procesar llegadas</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>    pending_to_store <span class="op">=</span> pending_to_store<span class="op">.</span><span class="fu">filter</span>(o <span class="kw">=&gt;</span> {</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (o<span class="op">.</span><span class="at">arrival</span> <span class="op">&lt;=</span> t) { store_stock <span class="op">+=</span> o<span class="op">.</span><span class="at">qty</span><span class="op">;</span> <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span> }</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>    history<span class="op">.</span><span class="fu">push</span>({</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>      <span class="dt">day</span><span class="op">:</span> t<span class="op">,</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>      <span class="dt">client</span><span class="op">:</span> actual_demand<span class="op">,</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>      <span class="dt">store_order</span><span class="op">:</span> store_order<span class="op">,</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>      <span class="dt">cd_order</span><span class="op">:</span> cd_order</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> history<span class="op">;</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:450px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> network_sim<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">day</span>)<span class="op">,</span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> network_sim<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">client</span>)<span class="op">,</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Venta Real (Cliente)'</span><span class="op">,</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#94a3b8'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">2</span>}</span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> network_sim<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">day</span>)<span class="op">,</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> network_sim<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">store_order</span>)<span class="op">,</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Pedido de Tienda'</span><span class="op">,</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'bar'</span><span class="op">,</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>      <span class="dt">marker</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'rgba(37, 99, 235, 0.5)'</span>}</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> network_sim<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">day</span>)<span class="op">,</span></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> network_sim<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">cd_order</span>)<span class="op">,</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Pedido a Fábrica'</span><span class="op">,</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'bar'</span><span class="op">,</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>      <span class="dt">marker</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'rgba(239, 68, 68, 0.8)'</span>}</span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layout <span class="op">=</span> {</span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'Visualización del Efecto Látigo en 3 Niveles'</span><span class="op">,</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>    <span class="dt">xaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Días de Operación'</span> }<span class="op">,</span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>    <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Unidades'</span><span class="op">,</span> <span class="dt">gridcolor</span><span class="op">:</span> <span class="st">'#f1f5f9'</span> }<span class="op">,</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>    <span class="dt">barmode</span><span class="op">:</span> <span class="st">'group'</span><span class="op">,</span></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>    <span class="dt">margin</span><span class="op">:</span> { <span class="dt">t</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">l</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">30</span> }</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> layout<span class="op">,</span> {<span class="dt">responsive</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">displayModeBar</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">;</span></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>La Visión Sistémica
+<span class="screen-reader-only">Warning</span>Observación Estratégica
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Tu competencia real no es el producto de la otra empresa; es la agilidad de la red de suministro de la otra empresa. Una cadena que colabora y centraliza su stock de seguridad siempre derrotará a una red de actores individuales.</p>
+<p>Nota cómo la demanda del cliente (línea gris) es relativamente estable, pero las órdenes que llegan a la fábrica (barras rojas) son violentas y esporádicas. Esto es lo que destruye la eficiencia de producción y dispara los costos de transporte de emergencia.</p>
 </div>
 </div>
+</section>
+<section id="estrategias-para-mitigar-el-dominó" class="level2">
+<h2 class="anchored" data-anchor-id="estrategias-para-mitigar-el-dominó">16.5 Estrategias para Mitigar el Dominó</h2>
+<p>Como Arquitecto de Suministros, tienes tres herramientas fundamentales para “domar” el látigo y devolver la cordura a la cadena:</p>
+<ol type="1">
+<li><p><strong>Visibilidad de la Demanda (VMI / CPFR):</strong> Compartir el dato de venta real (POS) con toda la cadena. Si la fábrica sabe exactamente lo que vendió la tienda hoy, puede planificar su producción sin esperar a que el CD le envíe un pedido inflado. La información reemplaza al inventario.</p></li>
+<li><p><strong>Reducción radical de Lead Times:</strong> Cuanto más corto es el tiempo de respuesta, menos stock de seguridad se necesita en cada eslabón. Si un proveedor tarda 1 día en lugar de 30, la incertidumbre desaparece casi por completo.</p></li>
+<li><p><strong>Sincronización de Lotes y “Everyday Low Price” (EDLP):</strong> Eliminar las promociones agresivas que causan compras especulativas y trabajar en reducir el costo de pedido para que los lotes sean más pequeños y frecuentes, suavizando el flujo de mercancía.</p></li>
+</ol>
 </section>
 <section id="checklist-de-cierre-del-capítulo" class="level2">
 <h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">¿He identificado los puntos de “batching” en mi cadena?</label></li>
-<li><label><input type="checkbox">¿Tengo acceso a la demanda del cliente final (POS)?</label></li>
-<li><label><input type="checkbox">¿He aplicado la ley de la raíz cuadrada para evaluar la consolidación en CD?</label></li>
-<li><label><input type="checkbox">¿He simulado el impacto de un retraso de transporte en la última milla?</label></li>
-<li><label><input type="checkbox">¿Existen incentivos contrapuestos entre gerentes de diferentes nodos?</label></li>
+<li><p><label><input type="checkbox">¿Entiendo por qué optimizar el inventario de una bodega aislada puede dañar la rentabilidad global de la red?</label></p></li>
+<li><p><label><input type="checkbox">¿He identificado en mi red dónde el loteo de pedidos está amplificando artificialmente la variabilidad?</label></p></li>
+<li><p><label><input type="checkbox">¿Soy capaz de justificar financieramente el cierre o apertura de un CD usando la Regla de la Raíz Cuadrada?</label></p></li>
+<li><p><label><input type="checkbox">¿Estoy listo para pasar de la simulación teórica a la <strong>Optimización Bajo Presión</strong> en el Capítulo 17?</label></p></li>
 </ul>
 
 
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5qU3RhdCA9IHJlcXVpcmUoXCJqc3RhdEAxLjkuNlwiKVxyXG5QbG90bHkgPSByZXF1aXJlKFwicGxvdGx5LmpzLWRpc3QtbWluQDIuMjQuMVwiKVxyXG5cclxudmlld29mIHJldGFpbF9zaWdtYSA9IElucHV0cy5yYW5nZShbMSwgMjBdLCB7dmFsdWU6IDUsIHN0ZXA6IDEsIGxhYmVsOiBcIkluY2VydGlkdW1icmUgQ2xpZW50ZSAoz4MpOlwifSlcclxudmlld29mIGJhdGNoX3NpemUgPSBJbnB1dHMucmFuZ2UoWzEsIDEwMF0sIHt2YWx1ZTogMjAsIHN0ZXA6IDUsIGxhYmVsOiBcIlRhbWHDsW8gZGUgTG90ZSAoVGllbmRhKTpcIn0pXHJcbnZpZXdvZiBsZWFkX3RpbWVfbmV0ID0gSW5wdXRzLnJhbmdlKFsxLCAxMF0sIHt2YWx1ZTogMywgc3RlcDogMSwgbGFiZWw6IFwiTGVhZCBUaW1lIGVudHJlIGVzbGFib25lczpcIn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG4vLyBTaW11bGFjacOzbiBkZSAzIGVzbGFib25lczogQ2xpZW50ZSAtPiBUaWVuZGEgLT4gQ0QgLT4gRsOhYnJpY2FcclxubmV0d29ya19zaW0gPSB7XHJcbiAgY29uc3QgZGF5cyA9IDYwO1xyXG4gIGNvbnN0IG1lYW5fZGVtYW5kID0gNTA7XHJcbiAgXHJcbiAgbGV0IHN0b3JlX3N0b2NrID0gMjAwO1xyXG4gIGxldCBjZF9zdG9jayA9IDUwMDtcclxuICBcclxuICBjb25zdCBoaXN0b3J5ID0gW107XHJcbiAgbGV0IHBlbmRpbmdfdG9fc3RvcmUgPSBbXTtcclxuICBsZXQgcGVuZGluZ190b19jZCA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB0ID0gMDsgdCA8IGRheXM7IHQrKykge1xyXG4gICAgLy8gMS4gRGVtYW5kYSBSZWFsIGRlbCBDbGllbnRlXHJcbiAgICBjb25zdCBhY3R1YWxfZGVtYW5kID0gTWF0aC5tYXgoMCwgalN0YXQubm9ybWFsLnNhbXBsZShtZWFuX2RlbWFuZCwgcmV0YWlsX3NpZ21hKSk7XHJcbiAgICBcclxuICAgIC8vIDIuIE9wZXJhY2nDs24gZGUgVGllbmRhXHJcbiAgICBzdG9yZV9zdG9jayAtPSBhY3R1YWxfZGVtYW5kO1xyXG4gICAgbGV0IHN0b3JlX29yZGVyID0gMDtcclxuICAgIGlmIChzdG9yZV9zdG9jayA8IDEwMCkgeyBcclxuICAgICAgc3RvcmVfb3JkZXIgPSBNYXRoLmNlaWwoKDE1MCAtIHN0b3JlX3N0b2NrKSAvIGJhdGNoX3NpemUpICogYmF0Y2hfc2l6ZTtcclxuICAgICAgcGVuZGluZ190b19zdG9yZS5wdXNoKHthcnJpdmFsOiB0ICsgbGVhZF90aW1lX25ldCwgcXR5OiBzdG9yZV9vcmRlcn0pO1xyXG4gICAgfVxyXG4gICAgXHJcbiAgICAvLyAzLiBFbCBDRCByZWNpYmUgZWwgcGVkaWRvIGRlIGxhIFRpZW5kYSAoU2XDsWFsIGFtcGxpZmljYWRhKVxyXG4gICAgbGV0IGNkX29yZGVyID0gMDtcclxuICAgIGlmIChzdG9yZV9vcmRlciA+IDApIHtcclxuICAgICAgY2Rfc3RvY2sgLT0gc3RvcmVfb3JkZXI7XHJcbiAgICAgIGlmIChjZF9zdG9jayA8IDMwMCkge1xyXG4gICAgICAgIGNkX29yZGVyID0gTWF0aC5jZWlsKCg1MDAgLSBjZF9zdG9jaykgLyAoYmF0Y2hfc2l6ZSAqIDIpKSAqIChiYXRjaF9zaXplICogMik7XHJcbiAgICAgICAgcGVuZGluZ190b19jZC5wdXNoKHthcnJpdmFsOiB0ICsgbGVhZF90aW1lX25ldCwgcXR5OiBjZF9vcmRlcn0pO1xyXG4gICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLy8gUHJvY2VzYXIgbGxlZ2FkYXNcclxuICAgIHBlbmRpbmdfdG9fc3RvcmUgPSBwZW5kaW5nX3RvX3N0b3JlLmZpbHRlcihvID0+IHtcclxuICAgICAgaWYgKG8uYXJyaXZhbCA8PSB0KSB7IHN0b3JlX3N0b2NrICs9IG8ucXR5OyByZXR1cm4gZmFsc2U7IH1cclxuICAgICAgcmV0dXJuIHRydWU7XHJcbiAgICB9KTtcclxuXHJcbiAgICBoaXN0b3J5LnB1c2goe1xyXG4gICAgICBkYXk6IHQsXHJcbiAgICAgIGNsaWVudDogYWN0dWFsX2RlbWFuZCxcclxuICAgICAgc3RvcmVfb3JkZXI6IHN0b3JlX29yZGVyLFxyXG4gICAgICBjZF9vcmRlcjogY2Rfb3JkZXJcclxuICAgIH0pO1xyXG4gIH1cclxuICByZXR1cm4gaGlzdG9yeTtcclxufVxyXG5cclxue1xyXG4gIGNvbnN0IGNvbnRhaW5lciA9IGh0bWxgPGRpdiBzdHlsZT1cIndpZHRoOjEwMCU7IGhlaWdodDo0NTBweDtcIj48L2Rpdj5gO1xyXG4gIFxyXG4gIGNvbnN0IHRyYWNlcyA9IFtcclxuICAgIHtcclxuICAgICAgeDogbmV0d29ya19zaW0ubWFwKGQgPT4gZC5kYXkpLFxyXG4gICAgICB5OiBuZXR3b3JrX3NpbS5tYXAoZCA9PiBkLmNsaWVudCksXHJcbiAgICAgIG5hbWU6ICdWZW50YSBSZWFsIChDbGllbnRlKScsXHJcbiAgICAgIHR5cGU6ICdzY2F0dGVyJyxcclxuICAgICAgbW9kZTogJ2xpbmVzJyxcclxuICAgICAgbGluZToge2NvbG9yOiAnIzk0YTNiOCcsIHdpZHRoOiAyfVxyXG4gICAgfSxcclxuICAgIHtcclxuICAgICAgeDogbmV0d29ya19zaW0ubWFwKGQgPT4gZC5kYXkpLFxyXG4gICAgICB5OiBuZXR3b3JrX3NpbS5tYXAoZCA9PiBkLnN0b3JlX29yZGVyKSxcclxuICAgICAgbmFtZTogJ1BlZGlkbyBkZSBUaWVuZGEnLFxyXG4gICAgICB0eXBlOiAnYmFyJyxcclxuICAgICAgbWFya2VyOiB7Y29sb3I6ICdyZ2JhKDM3LCA5OSwgMjM1LCAwLjUpJ31cclxuICAgIH0sXHJcbiAgICB7XHJcbiAgICAgIHg6IG5ldHdvcmtfc2ltLm1hcChkID0+IGQuZGF5KSxcclxuICAgICAgeTogbmV0d29ya19zaW0ubWFwKGQgPT4gZC5jZF9vcmRlciksXHJcbiAgICAgIG5hbWU6ICdQZWRpZG8gYSBGw6FicmljYScsXHJcbiAgICAgIHR5cGU6ICdiYXInLFxyXG4gICAgICBtYXJrZXI6IHtjb2xvcjogJ3JnYmEoMjM5LCA2OCwgNjgsIDAuOCknfVxyXG4gICAgfVxyXG4gIF07XHJcblxyXG4gIGNvbnN0IGxheW91dCA9IHtcclxuICAgIHRpdGxlOiAnVmlzdWFsaXphY2nDs24gZGVsIEVmZWN0byBMw6F0aWdvIGVuIDMgTml2ZWxlcycsXHJcbiAgICB4YXhpczogeyB0aXRsZTogJ0TDrWFzIGRlIE9wZXJhY2nDs24nIH0sXHJcbiAgICB5YXhpczogeyB0aXRsZTogJ1VuaWRhZGVzJywgZ3JpZGNvbG9yOiAnI2YxZjVmOScgfSxcclxuICAgIHRlbXBsYXRlOiAncGxvdGx5X3doaXRlJyxcclxuICAgIGJhcm1vZGU6ICdncm91cCcsXHJcbiAgICBtYXJnaW46IHsgdDogNTAsIGI6IDUwLCBsOiA2MCwgcjogMzAgfVxyXG4gIH07XHJcblxyXG4gIFBsb3RseS5uZXdQbG90KGNvbnRhaW5lciwgdHJhY2VzLCBsYXlvdXQsIHtyZXNwb25zaXZlOiB0cnVlLCBkaXNwbGF5TW9kZUJhcjogZmFsc2V9KTtcclxuICByZXR1cm4gY29udGFpbmVyO1xyXG59XHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncmV0YWlsX3NpZ21hJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2JhdGNoX3NpemUnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnbGVhZF90aW1lX25ldCcpIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1101,8 +1231,21 @@ window.Quarto = {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Nicolás A. Bravo</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-16-efecto-domino-meio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Este libro fue creado con <a href="https://quarto.org/">Quarto</a>. Visita mi <a href="https://github.com/nicobravo933-Planner">repositorio GitHub</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-16-efecto-domino-meio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>

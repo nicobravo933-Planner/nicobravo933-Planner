@@ -1232,7 +1232,7 @@
     "href": "cap-15-monte-carlo.html",
     "title": "15. El Laboratorio Virtual",
     "section": "",
-    "text": "15.1 El Fracaso de las Fórmulas Cerradas y la Tiranía de los Promedios\nHasta ahora, hemos tratado la Supply Chain como una serie de piezas de relojería que se pueden ajustar con fórmulas aisladas: un modelo para la demanda, una raíz cuadrada para el lote económico y un factor \\(k\\) para el stock de seguridad. Sin embargo, en la práctica profesional, estas piezas no operan de forma estática. Están conectadas por hilos invisibles de dependencia, retroalimentación y, sobre todo, por una entropía que las fórmulas deterministas no pueden capturar.\nEn esta Parte V, dejamos de ver la cadena de suministro como una serie de ecuaciones y empezamos a verla como un Sistema Complejo. Ya no buscaremos la “fórmula perfecta”, sino la política más robusta. El mundo real no es un examen de matemáticas; es un laboratorio de caos donde lo que importa es la resiliencia del flujo de caja ante lo inesperado. Aquí es donde la simulación toma el relevo de la estadística pura.\nSi el Capítulo 13 era la “receta” del stock de seguridad, este capítulo es la “cocina de pruebas”. La Simulación de Monte Carlo es la herramienta definitiva del Arquitecto de Suministros para responder a la pregunta más difícil de la gerencia: “¿Qué pasa si…?”.\nEn Supply Chain, la incertidumbre no se suma, se multiplica. ¿Qué pasa si el puerto entra en huelga? ¿Qué pasa si el proveedor asiático se retrasa dos semanas pero la demanda nacional explota por una ola de calor? En lugar de adivinar o confiar en la “intuición” (que suele ser el nombre que le damos a nuestros sesgos), vamos a construir un laboratorio virtual para estresar nuestras políticas de inventario antes de arriesgar un solo dólar en el mundo físico.\nLas fórmulas de inventario tradicionales (vistas en la Parte IV) asumen un mundo de “comportamiento ideal”. El problema es que los promedios engañan de forma sistemática. Como bien dice la metáfora: “Un río que tiene una profundidad promedio de 1 metro puede tener una fosa de 5 metros en el medio; si intentas cruzarlo confiando en el promedio, te ahogarás”.\nLas fórmulas analíticas fallan en la práctica por tres razones sistémicas:\nLa Realidad: Cuando intentas optimizar un portafolio masivo con interacciones complejas, las fórmulas matemáticas “explotan”. La simulación de Monte Carlo no intenta resolver una ecuación compleja; simplemente imita la realidad miles de veces y observa qué sucede.",
+    "text": "15.1 De la Fórmula al Experimento\nFelicidades. Has completado la Parte IV, donde dominaste las leyes de la física del inventario. Aprendiste sobre el EOQ, el Stock de Seguridad y las distribuciones de probabilidad. Pero, como todo Arquitecto de Suministros sabe, hay un momento en que las fórmulas se quedan cortas.\n¿Qué pasa si tu Lead Time no es constante ni sigue una curva normal? ¿Qué pasa si tienes restricciones de presupuesto que afectan a 500 productos a la vez? ¿Qué pasa si el costo de transporte cambia según el volumen del camión? Cuando las ecuaciones fallan, recurrimos a la herramienta definitiva: La Simulación de Monte Carlo.\nHasta ahora, hemos usado fórmulas como \\(SS = k \\times \\sigma \\times \\sqrt{L}\\). Estas fórmulas son útiles, pero asumen un mundo “promedio”. La simulación, en cambio, no intenta predecir un resultado; intenta recrear el proceso.\nEn lugar de preguntar “¿Cuál es mi stock de seguridad?”, en este capítulo preguntamos: “Si opero con este stock durante los próximos 365 días bajo estas condiciones de caos, ¿cuántas veces me voy a quedar vacío?”.",
     "crumbs": [
       "V: Simulaciones y Redes Complejas",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>15. El Laboratorio Virtual</span>"
@@ -1309,7 +1309,7 @@
     "href": "cap-15-monte-carlo.html#checklist-de-cierre-del-capítulo",
     "title": "15. El Laboratorio Virtual",
     "section": "Checklist de Cierre del Capítulo",
-    "text": "Checklist de Cierre del Capítulo\n\n¿He definido distribuciones de probabilidad (Gamma/Poisson) basadas en mis datos de los Capítulos 7 y 14?\n¿He modelado el Lead Time como una distribución y no como un número fijo?\n¿He corrido al menos 10,000 iteraciones para asegurar que los resultados sean estadísticamente significativos?\n¿He calculado el Valor en Riesgo (VaR) de mi política actual?\n¿He comparado los resultados de la simulación contra el cálculo estático para medir el FVA de la simulación?",
+    "text": "Checklist de Cierre del Capítulo\n\n¿Entiendo la diferencia entre una fórmula estática y un experimento dinámico?\n¿He observado cómo la variabilidad del Lead Time afecta el inventario más que la demanda?\n¿Soy capaz de identificar un “quiebre de stock” en la simulación incluso si el ROP fue correcto?\n¿Estoy listo para escalar este laboratorio a una Red de Suministros Completa en el Capítulo 16?",
     "crumbs": [
       "V: Simulaciones y Redes Complejas",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>15. El Laboratorio Virtual</span>"
@@ -1320,7 +1320,7 @@
     "href": "cap-16-efecto-domino-meio.html",
     "title": "16. El Efecto Dominó",
     "section": "",
-    "text": "16.1 La Física de la Distorsión: El Efecto Látigo (Bullwhip Effect)\nEn los capítulos anteriores, nos convertimos en maestros de la optimización local. Aprendimos a calcular el stock de seguridad perfecto para un nodo y el lote económico para un proveedor. Sin embargo, en la Supply Chain moderna, ningún almacén es una isla independiente. Tu Centro de Distribución (CD) alimenta a diez bodegas regionales, que a su vez surten a cientos de tiendas o clientes finales.\nSi optimizas cada punto de forma aislada, estás cometiendo un error sistémico grave: la Sub-optimización Local. Lo que parece una decisión brillante para el jefe de la Bodega A (como pedir lotes gigantes para ahorrar un 5% en flete) puede ser una catástrofe financiera para la Fábrica, al generar picos de producción artificiales que saturan las máquinas y destruyen la planificación. En este capítulo, aprenderemos a ver la red como un organismo vivo y a implementar la Optimización de Inventarios Multi-escalón (MEIO).\nEl Efecto Látigo es el fenómeno donde pequeñas fluctuaciones en la demanda del consumidor final se transforman en oscilaciones violentas y erráticas a medida que la señal viaja hacia atrás en la cadena (aguas arriba). Una variación del 5% en la venta semanal de una tienda puede llegar a la fábrica de materia prima convertida en una orden del 100% de aumento.",
+    "text": "16.1 El Efecto Látigo (Bullwhip Effect)\nEn el capítulo anterior, construimos un laboratorio para un solo producto en una sola ubicación. Pero en la realidad, el inventario no vive en islas aisladas. Una decisión de compra en tu Centro de Distribución (CD) afecta la disponibilidad de tus tiendas, y un retraso en la fábrica genera ondas de choque que terminan en estantes vacíos a miles de kilómetros de distancia.\nImagina que mueves ligeramente una cuerda en un extremo: el movimiento es casi imperceptible al inicio, pero se amplifica violentamente al llegar al otro extremo. Bienvenidos a la gestión de Redes Complejas. En este capítulo, exploraremos cómo la variabilidad se propaga por la red y cómo el Arquitecto de Suministros utiliza la Optimización Multi-Echelon (MEIO) para poner el stock donde realmente aporta valor.\nEl Efecto Látigo es, probablemente, el fenómeno más destructivo y costoso en la Supply Chain moderna. Describe cómo pequeñas y naturales fluctuaciones en la demanda del cliente final se transforman en oscilaciones masivas, caóticas e impredecibles para el fabricante.",
     "crumbs": [
       "V: Simulaciones y Redes Complejas",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>16. El Efecto Dominó</span>"
@@ -1386,7 +1386,7 @@
     "href": "cap-16-efecto-domino-meio.html#checklist-de-cierre-del-capítulo",
     "title": "16. El Efecto Dominó",
     "section": "Checklist de Cierre del Capítulo",
-    "text": "Checklist de Cierre del Capítulo\n\n¿He identificado los puntos de “batching” en mi cadena?\n¿Tengo acceso a la demanda del cliente final (POS)?\n¿He aplicado la ley de la raíz cuadrada para evaluar la consolidación en CD?\n¿He simulado el impacto de un retraso de transporte en la última milla?\n¿Existen incentivos contrapuestos entre gerentes de diferentes nodos?",
+    "text": "Checklist de Cierre del Capítulo\n\n¿Entiendo por qué optimizar el inventario de una bodega aislada puede dañar la rentabilidad global de la red?\n¿He identificado en mi red dónde el loteo de pedidos está amplificando artificialmente la variabilidad?\n¿Soy capaz de justificar financieramente el cierre o apertura de un CD usando la Regla de la Raíz Cuadrada?\n¿Estoy listo para pasar de la simulación teórica a la Optimización Bajo Presión en el Capítulo 17?",
     "crumbs": [
       "V: Simulaciones y Redes Complejas",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>16. El Efecto Dominó</span>"
@@ -2185,6 +2185,105 @@
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
+    ]
+  },
+  {
+    "objectID": "cap-15-monte-carlo.html#qué-es-la-simulación-de-monte-carlo",
+    "href": "cap-15-monte-carlo.html#qué-es-la-simulación-de-monte-carlo",
+    "title": "15. El Laboratorio Virtual",
+    "section": "15.2 ¿Qué es la Simulación de Monte Carlo?",
+    "text": "15.2 ¿Qué es la Simulación de Monte Carlo?\nEl nombre proviene del famoso casino de Mónaco. La lógica es simple: si no puedes calcular la probabilidad de un evento complejo matemáticamente, genera miles de escenarios aleatorios y observa qué sucede con mayor frecuencia.\nEn Supply Chain, simulamos:\n\nDemanda Diaria: Generada aleatoriamente siguiendo el patrón que identificamos en la Parte II (Normal, Gamma o Poisson).\nLead Time: El tiempo de llegada de cada pedido, que también varía aleatoriamente.\nEventos Disruptivos: Cierres de puertos, huelgas o picos virales.",
+    "crumbs": [
+      "V: Simulaciones y Redes Complejas",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>15. El Laboratorio Virtual</span>"
+    ]
+  },
+  {
+    "objectID": "cap-15-monte-carlo.html#por-qué-el-arquitecto-prefiere-simular",
+    "href": "cap-15-monte-carlo.html#por-qué-el-arquitecto-prefiere-simular",
+    "title": "15. El Laboratorio Virtual",
+    "section": "15.3 Por qué el Arquitecto prefiere simular",
+    "text": "15.3 Por qué el Arquitecto prefiere simular\nLa simulación tiene tres ventajas críticas sobre las fórmulas:\n\nCaptura la Correlación: En la vida real, si el Lead Time es largo, la probabilidad de que la demanda suba durante ese tiempo es distinta. Las fórmulas ignoran esto; la simulación lo vive.\nManeja Restricciones: Puedes programar que un camión solo sale si está al 80% de capacidad. Intenta poner eso en una raíz cuadrada.\nVisualiza el Riesgo de Cola: Te permite ver el “peor escenario posible”, no solo el promedio.",
+    "crumbs": [
+      "V: Simulaciones y Redes Complejas",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>15. El Laboratorio Virtual</span>"
+    ]
+  },
+  {
+    "objectID": "cap-15-monte-carlo.html#simulador-tu-primer-experimento-de-monte-carlo",
+    "href": "cap-15-monte-carlo.html#simulador-tu-primer-experimento-de-monte-carlo",
+    "title": "15. El Laboratorio Virtual",
+    "section": "15.4 Simulador: Tu Primer Experimento de Monte Carlo",
+    "text": "15.4 Simulador: Tu Primer Experimento de Monte Carlo\nEn este laboratorio, vamos a simular 100 días de operación. A diferencia de las gráficas de “dientes de sierra” perfectos del Capítulo 12, aquí cada día es una moneda al aire.\nAjusta la incertidumbre y observa cómo la línea de inventario se comporta de forma errática. ¿Cuántas veces toca el cero?\n\n\njStat = require(\"jstat@1.9.6\")\nPlotly = require(\"plotly.js-dist-min@2.24.1\")\n\nviewof avg_demand = Inputs.range([5, 50], {value: 20, step: 1, label: \"Demanda Promedio Diaria:\"})\nviewof sigma_demand = Inputs.range([0, 30], {value: 10, step: 1, label: \"Variabilidad Demanda (σ):\"})\nviewof lt_mean = Inputs.range([1, 15], {value: 5, step: 1, label: \"Lead Time Promedio (días):\"})\nviewof lt_sigma = Inputs.range([0, 5], {value: 2, step: 0.5, label: \"Variabilidad Lead Time (σ):\"})\nviewof initial_stock = Inputs.range([50, 500], {value: 150, step: 10, label: \"Stock Inicial:\"})\nviewof reorder_point = Inputs.range([50, 400], {value: 120, step: 10, label: \"Punto de Reorden (ROP):\"})\nviewof order_qty = Inputs.range([100, 1000], {value: 300, step: 50, label: \"Cantidad de Pedido (Q):\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsim_results = {\n  const days = 100;\n  let stock = initial_stock;\n  let pending_orders = []; // [{arrival_day, qty}]\n  const history = [];\n\n  for (let d = 0; d &lt; days; d++) {\n    // 1. Llegada de pedidos pendientes\n    let arrivals = 0;\n    pending_orders = pending_orders.filter(o =&gt; {\n      if (o.arrival_day &lt;= d) {\n        arrivals += o.qty;\n        return false;\n      }\n      return true;\n    });\n    stock += arrivals;\n\n    // 2. Generar demanda aleatoria (Truncada a 0)\n    const demand = Math.max(0, jStat.normal.sample(avg_demand, sigma_demand));\n    const sold = Math.min(stock, demand);\n    const stockout = demand &gt; stock ? demand - stock : 0;\n    \n    stock -= sold;\n\n    // 3. Revisión de política (ROP)\n    if (stock &lt;= reorder_point && pending_orders.length === 0) {\n      const actual_lt = Math.max(1, Math.round(jStat.normal.sample(lt_mean, lt_sigma)));\n      pending_orders.push({\n        arrival_day: d + actual_lt,\n        qty: order_qty\n      });\n    }\n\n    history.push({ day: d, stock: stock, stockout: stockout, demand: demand });\n  }\n  return history;\n}\n\n// Visualización\nrenderPlot = {\n  const container = html`&lt;div style=\"width:100%; height:450px;\"&gt;&lt;/div&gt;`;\n  \n  const traces = [\n    {\n      x: sim_results.map(d =&gt; d.day),\n      y: sim_results.map(d =&gt; d.stock),\n      name: 'Nivel de Inventario',\n      type: 'scatter',\n      mode: 'lines+markers',\n      fill: 'tozeroy',\n      line: {color: '#2563eb', shape: 'hv'}\n    },\n    {\n      x: sim_results.map(d =&gt; d.day),\n      y: sim_results.map(d =&gt; d.stockout),\n      name: 'Faltante (Stockout)',\n      type: 'bar',\n      marker: {color: '#ef4444'}\n    },\n    {\n      x: [0, 100],\n      y: [reorder_point, reorder_point],\n      name: 'ROP',\n      mode: 'lines',\n      line: {color: '#94a3b8', dash: 'dash'}\n    }\n  ];\n\n  const layout = {\n    title: 'Simulación de Operación Real (100 días)',\n    xaxis: { title: 'Día' },\n    yaxis: { title: 'Unidades', rangemode: 'tozero' },\n    template: 'plotly_white',\n    hovermode: 'x unified'\n  };\n\n  Plotly.newPlot(container, traces, layout, {responsive: true, displayModeBar: false});\n  return container;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipMétricas del Experimento\n\n\n\n\nNivel de Servicio Real: % (Días sin quiebre).\nUnidades Faltantes Totales:  unidades.\nInventario Promedio:  unidades.",
+    "crumbs": [
+      "V: Simulaciones y Redes Complejas",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>15. El Laboratorio Virtual</span>"
+    ]
+  },
+  {
+    "objectID": "cap-15-monte-carlo.html#interpretando-el-caos-el-intervalo-de-confianza",
+    "href": "cap-15-monte-carlo.html#interpretando-el-caos-el-intervalo-de-confianza",
+    "title": "15. El Laboratorio Virtual",
+    "section": "15.5 Interpretando el Caos: El Intervalo de Confianza",
+    "text": "15.5 Interpretando el Caos: El Intervalo de Confianza\nCuando corres una simulación de Monte Carlo, no obtienes un número, obtienes una distribución de resultados. Si repitieras esta simulación 1,000 veces:\n\nVerías que algunas veces el stock nunca toca el cero.\nOtras veces, por una mala racha de demanda alta y proveedor lento, quedarías vacío por semanas.\n\nTu trabajo como Arquitecto no es evitar el quiebre a toda costa, sino dimensionar el riesgo. Si la simulación te dice que el “peor escenario” (el percentil 95) es perder $10,000 en ventas, y prevenirlo te cuesta $15,000 en inventario, ya sabes qué decisión tomar.",
+    "crumbs": [
+      "V: Simulaciones y Redes Complejas",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>15. El Laboratorio Virtual</span>"
+    ]
+  },
+  {
+    "objectID": "cap-16-efecto-domino-meio.html#el-efecto-látigo-bullwhip-effect",
+    "href": "cap-16-efecto-domino-meio.html#el-efecto-látigo-bullwhip-effect",
+    "title": "16. El Efecto Dominó",
+    "section": "",
+    "text": "¿Por qué ocurre? La anatomía de la distorsión\nEste fenómeno no es un error de sistema, sino una consecuencia sistémica de cuatro comportamientos profundamente humanos y operativos:\n\nActualización de Pronósticos en Cascada: Cada eslabón de la cadena (Tienda -&gt; Mayorista -&gt; CD -&gt; Fábrica) realiza su propio pronóstico basado en los pedidos que recibe de su cliente inmediato, no en la venta real al consumidor final. Si la tienda sube su pedido un 5%, el CD entra en pánico y lo sube un 10%, y la fábrica termina duplicando su capacidad. La señal original se pierde en el “ruido” de los intermediarios.\nLoteo de Pedidos (Batching): Por razones de eficiencia económica (el EOQ que vimos en el Cap. 12), las empresas no piden unidades individuales cada vez que venden una. Esperan a llenar un camión o un pallet. Esto genera “pulsos” de demanda: periodos de calma total seguidos de explosiones de pedidos que saturan la capacidad de producción.\nFluctuación de Precios y Promociones: Las ofertas de “comprar por adelantado” o descuentos por volumen incitan a los clientes a realizar compras especulativas. Esto crea picos de demanda artificiales que no reflejan el consumo real, engañando a los modelos estadísticos de la fábrica.\nEl Juego de la Escasez (Shortage Gaming): Cuando un producto escasea, los compradores tienden a inflar sus pedidos con la esperanza de que, tras el prorrateo, les llegue lo que realmente necesitan. Esto crea una demanda ficticia que desaparece súbitamente cuando el stock se normaliza, dejando a la fábrica con un exceso masivo de inventario.\n\nConsecuencias: El Efecto Látigo drena la rentabilidad al exigir mayor capacidad de almacenamiento, fletes urgentes costosos y una utilización de planta ineficiente.",
+    "crumbs": [
+      "V: Simulaciones y Redes Complejas",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>16. El Efecto Dominó</span>"
+    ]
+  },
+  {
+    "objectID": "cap-16-efecto-domino-meio.html#optimización-local-vs.-global-meio",
+    "href": "cap-16-efecto-domino-meio.html#optimización-local-vs.-global-meio",
+    "title": "16. El Efecto Dominó",
+    "section": "16.2 Optimización Local vs. Global (MEIO)",
+    "text": "16.2 Optimización Local vs. Global (MEIO)\nLa mayoría de las empresas operan bajo un modelo de Optimización Descentralizada. En este esquema, el gerente de la tienda y el gerente del CD tienen sus propios KPI de nivel de servicio y stock de seguridad. El problema es que esta “seguridad” se duplica innecesariamente.\n\nEl Problema: Si la tienda mantiene stock para cubrirse del CD, y el CD mantiene stock para cubrirse de la Fábrica, la red termina con una acumulación de inventario redundante. Es una “suma de miedos” que el balance general debe pagar.\n\nLa Optimización Multi-Echelon (MEIO) rompe esta inercia al mirar la red como un solo organismo. Su objetivo no es optimizar cada bodega, sino responder: ¿Cuál es la combinación mínima de inventario en TODA la red que garantiza el nivel de servicio al cliente final? A veces, la respuesta es quitar stock de las tiendas y centralizarlo en un “hub” regional, o viceversa.",
+    "crumbs": [
+      "V: Simulaciones y Redes Complejas",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>16. El Efecto Dominó</span>"
+    ]
+  },
+  {
+    "objectID": "cap-16-efecto-domino-meio.html#el-poder-del-risk-pooling",
+    "href": "cap-16-efecto-domino-meio.html#el-poder-del-risk-pooling",
+    "title": "16. El Efecto Dominó",
+    "section": "16.3 El Poder del “Risk Pooling”",
+    "text": "16.3 El Poder del “Risk Pooling”\nEl Risk Pooling es la magia estadística de la agregación y es la base de la centralización logística. La demanda de un cliente individual es salvaje e impredecible; pero la demanda de un grupo de 100 clientes es estable.\nLa Regla de la Raíz Cuadrada: Matemáticamente, si tienes \\(n\\) bodegas independientes y decides centralizar todo su inventario en una sola ubicación centralizada, el Stock de Seguridad (\\(SS\\)) necesario se reduce teóricamente por un factor de \\(\\sqrt{n}\\).\n\nEjemplo Numérico: Si tienes 9 tiendas regionales y cada una requiere 100 unidades de seguridad para un 95% de nivel de servicio (Total: 900 unidades), al centralizar la red en un solo CD nacional solo necesitarías \\(\\frac{900}{\\sqrt{9}} = 300\\) unidades para garantizar el mismo nivel de protección. ¡Una reducción del 66% del capital inmovilizado!",
+    "crumbs": [
+      "V: Simulaciones y Redes Complejas",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>16. El Efecto Dominó</span>"
+    ]
+  },
+  {
+    "objectID": "cap-16-efecto-domino-meio.html#simulador-propagación-del-efecto-látigo",
+    "href": "cap-16-efecto-domino-meio.html#simulador-propagación-del-efecto-látigo",
+    "title": "16. El Efecto Dominó",
+    "section": "16.4 Simulador: Propagación del Efecto Látigo",
+    "text": "16.4 Simulador: Propagación del Efecto Látigo\nEn esta simulación, puedes observar en tiempo real cómo la variabilidad que siente la Fábrica es exponencialmente mayor que la que siente la Tienda. Ajusta la incertidumbre del cliente y mira cómo el “latigazo” se vuelve incontrolable.\n\n\njStat = require(\"jstat@1.9.6\")\nPlotly = require(\"plotly.js-dist-min@2.24.1\")\n\nviewof retail_sigma = Inputs.range([1, 20], {value: 5, step: 1, label: \"Incertidumbre Cliente (σ):\"})\nviewof batch_size = Inputs.range([1, 100], {value: 20, step: 5, label: \"Tamaño de Lote (Tienda):\"})\nviewof lead_time_net = Inputs.range([1, 10], {value: 3, step: 1, label: \"Lead Time entre eslabones:\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetwork_sim = {\n  const days = 60;\n  const mean_demand = 50;\n  \n  let store_stock = 200;\n  let cd_stock = 500;\n  \n  const history = [];\n  let pending_to_store = [];\n  let pending_to_cd = [];\n\n  for (let t = 0; t &lt; days; t++) {\n    // 1. Demanda Real del Cliente\n    const actual_demand = Math.max(0, jStat.normal.sample(mean_demand, retail_sigma));\n    \n    // 2. Operación de Tienda\n    store_stock -= actual_demand;\n    let store_order = 0;\n    if (store_stock &lt; 100) { \n      store_order = Math.ceil((150 - store_stock) / batch_size) * batch_size;\n      pending_to_store.push({arrival: t + lead_time_net, qty: store_order});\n    }\n    \n    // 3. El CD recibe el pedido de la Tienda (Señal amplificada)\n    let cd_order = 0;\n    if (store_order &gt; 0) {\n      cd_stock -= store_order;\n      if (cd_stock &lt; 300) {\n        cd_order = Math.ceil((500 - cd_stock) / (batch_size * 2)) * (batch_size * 2);\n        pending_to_cd.push({arrival: t + lead_time_net, qty: cd_order});\n      }\n    }\n\n    // Procesar llegadas\n    pending_to_store = pending_to_store.filter(o =&gt; {\n      if (o.arrival &lt;= t) { store_stock += o.qty; return false; }\n      return true;\n    });\n\n    history.push({\n      day: t,\n      client: actual_demand,\n      store_order: store_order,\n      cd_order: cd_order\n    });\n  }\n  return history;\n}\n\n{\n  const container = html`&lt;div style=\"width:100%; height:450px;\"&gt;&lt;/div&gt;`;\n  \n  const traces = [\n    {\n      x: network_sim.map(d =&gt; d.day),\n      y: network_sim.map(d =&gt; d.client),\n      name: 'Venta Real (Cliente)',\n      type: 'scatter',\n      mode: 'lines',\n      line: {color: '#94a3b8', width: 2}\n    },\n    {\n      x: network_sim.map(d =&gt; d.day),\n      y: network_sim.map(d =&gt; d.store_order),\n      name: 'Pedido de Tienda',\n      type: 'bar',\n      marker: {color: 'rgba(37, 99, 235, 0.5)'}\n    },\n    {\n      x: network_sim.map(d =&gt; d.day),\n      y: network_sim.map(d =&gt; d.cd_order),\n      name: 'Pedido a Fábrica',\n      type: 'bar',\n      marker: {color: 'rgba(239, 68, 68, 0.8)'}\n    }\n  ];\n\n  const layout = {\n    title: 'Visualización del Efecto Látigo en 3 Niveles',\n    xaxis: { title: 'Días de Operación' },\n    yaxis: { title: 'Unidades', gridcolor: '#f1f5f9' },\n    template: 'plotly_white',\n    barmode: 'group',\n    margin: { t: 50, b: 50, l: 60, r: 30 }\n  };\n\n  Plotly.newPlot(container, traces, layout, {responsive: true, displayModeBar: false});\n  return container;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarningObservación Estratégica\n\n\n\nNota cómo la demanda del cliente (línea gris) es relativamente estable, pero las órdenes que llegan a la fábrica (barras rojas) son violentas y esporádicas. Esto es lo que destruye la eficiencia de producción y dispara los costos de transporte de emergencia.",
+    "crumbs": [
+      "V: Simulaciones y Redes Complejas",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>16. El Efecto Dominó</span>"
+    ]
+  },
+  {
+    "objectID": "cap-16-efecto-domino-meio.html#estrategias-para-mitigar-el-dominó",
+    "href": "cap-16-efecto-domino-meio.html#estrategias-para-mitigar-el-dominó",
+    "title": "16. El Efecto Dominó",
+    "section": "16.5 Estrategias para Mitigar el Dominó",
+    "text": "16.5 Estrategias para Mitigar el Dominó\nComo Arquitecto de Suministros, tienes tres herramientas fundamentales para “domar” el látigo y devolver la cordura a la cadena:\n\nVisibilidad de la Demanda (VMI / CPFR): Compartir el dato de venta real (POS) con toda la cadena. Si la fábrica sabe exactamente lo que vendió la tienda hoy, puede planificar su producción sin esperar a que el CD le envíe un pedido inflado. La información reemplaza al inventario.\nReducción radical de Lead Times: Cuanto más corto es el tiempo de respuesta, menos stock de seguridad se necesita en cada eslabón. Si un proveedor tarda 1 día en lugar de 30, la incertidumbre desaparece casi por completo.\nSincronización de Lotes y “Everyday Low Price” (EDLP): Eliminar las promociones agresivas que causan compras especulativas y trabajar en reducir el costo de pedido para que los lotes sean más pequeños y frecuentes, suavizando el flujo de mercancía.",
+    "crumbs": [
+      "V: Simulaciones y Redes Complejas",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>16. El Efecto Dominó</span>"
     ]
   }
 ]

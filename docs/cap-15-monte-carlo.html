@@ -109,6 +109,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -531,15 +533,11 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#el-fracaso-de-las-fórmulas-cerradas-y-la-tiranía-de-los-promedios" id="toc-el-fracaso-de-las-fórmulas-cerradas-y-la-tiranía-de-los-promedios" class="nav-link active" data-scroll-target="#el-fracaso-de-las-fórmulas-cerradas-y-la-tiranía-de-los-promedios">15.1 El Fracaso de las Fórmulas Cerradas y la Tiranía de los Promedios</a></li>
-  <li><a href="#la-mecánica-de-monte-carlo-el-azar-bajo-control" id="toc-la-mecánica-de-monte-carlo-el-azar-bajo-control" class="nav-link" data-scroll-target="#la-mecánica-de-monte-carlo-el-azar-bajo-control">15.2 La Mecánica de Monte Carlo: El Azar Bajo Control</a>
-  <ul class="collapse">
-  <li><a href="#el-algoritmo-del-arquitecto" id="toc-el-algoritmo-del-arquitecto" class="nav-link" data-scroll-target="#el-algoritmo-del-arquitecto">15.2.1 El Algoritmo del Arquitecto</a></li>
-  </ul></li>
-  <li><a href="#el-verdadero-villano-la-variabilidad-del-lead-time" id="toc-el-verdadero-villano-la-variabilidad-del-lead-time" class="nav-link" data-scroll-target="#el-verdadero-villano-la-variabilidad-del-lead-time">15.3 El Verdadero Villano: La Variabilidad del Lead Time</a></li>
-  <li><a href="#probando-políticas-de-inventario-el-duelo-s-q-vs-s-s" id="toc-probando-políticas-de-inventario-el-duelo-s-q-vs-s-s" class="nav-link" data-scroll-target="#probando-políticas-de-inventario-el-duelo-s-q-vs-s-s">15.4 Probando Políticas de Inventario: El Duelo (<span class="math inline">\(s, Q\)</span>) vs (<span class="math inline">\(s, S\)</span>)</a></li>
-  <li><a href="#kpis-estratégicos-más-allá-del-wape" id="toc-kpis-estratégicos-más-allá-del-wape" class="nav-link" data-scroll-target="#kpis-estratégicos-más-allá-del-wape">15.5 KPIs Estratégicos: Más allá del WAPE</a></li>
-  <li><a href="#implementación-en-r-el-motor-de-simulación" id="toc-implementación-en-r-el-motor-de-simulación" class="nav-link" data-scroll-target="#implementación-en-r-el-motor-de-simulación">15.6 Implementación en R: El Motor de Simulación</a></li>
+  <li><a href="#de-la-fórmula-al-experimento" id="toc-de-la-fórmula-al-experimento" class="nav-link active" data-scroll-target="#de-la-fórmula-al-experimento">15.1 De la Fórmula al Experimento</a></li>
+  <li><a href="#qué-es-la-simulación-de-monte-carlo" id="toc-qué-es-la-simulación-de-monte-carlo" class="nav-link" data-scroll-target="#qué-es-la-simulación-de-monte-carlo">15.2 ¿Qué es la Simulación de Monte Carlo?</a></li>
+  <li><a href="#por-qué-el-arquitecto-prefiere-simular" id="toc-por-qué-el-arquitecto-prefiere-simular" class="nav-link" data-scroll-target="#por-qué-el-arquitecto-prefiere-simular">15.3 Por qué el Arquitecto prefiere simular</a></li>
+  <li><a href="#simulador-tu-primer-experimento-de-monte-carlo" id="toc-simulador-tu-primer-experimento-de-monte-carlo" class="nav-link" data-scroll-target="#simulador-tu-primer-experimento-de-monte-carlo">15.4 Simulador: Tu Primer Experimento de Monte Carlo</a></li>
+  <li><a href="#interpretando-el-caos-el-intervalo-de-confianza" id="toc-interpretando-el-caos-el-intervalo-de-confianza" class="nav-link" data-scroll-target="#interpretando-el-caos-el-intervalo-de-confianza">15.5 Interpretando el Caos: El Intervalo de Confianza</a></li>
   <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-15-monte-carlo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -567,125 +565,269 @@ window.Quarto = {
 </header>
 
 
-<p>Hasta ahora, hemos tratado la Supply Chain como una serie de piezas de relojería que se pueden ajustar con fórmulas aisladas: un modelo para la demanda, una raíz cuadrada para el lote económico y un factor <span class="math inline">\(k\)</span> para el stock de seguridad. Sin embargo, en la práctica profesional, estas piezas no operan de forma estática. Están conectadas por hilos invisibles de dependencia, retroalimentación y, sobre todo, por una entropía que las fórmulas deterministas no pueden capturar.</p>
-<p>En esta <strong>Parte V</strong>, dejamos de ver la cadena de suministro como una serie de ecuaciones y empezamos a verla como un <strong>Sistema Complejo</strong>. Ya no buscaremos la “fórmula perfecta”, sino la <strong>política más robusta</strong>. El mundo real no es un examen de matemáticas; es un laboratorio de caos donde lo que importa es la resiliencia del flujo de caja ante lo inesperado. Aquí es donde la simulación toma el relevo de la estadística pura.</p>
-<p>Si el Capítulo 13 era la “receta” del stock de seguridad, este capítulo es la “cocina de pruebas”. La <strong>Simulación de Monte Carlo</strong> es la herramienta definitiva del Arquitecto de Suministros para responder a la pregunta más difícil de la gerencia: <em>“¿Qué pasa si…?”</em>.</p>
-<p>En Supply Chain, la incertidumbre no se suma, se multiplica. ¿Qué pasa si el puerto entra en huelga? ¿Qué pasa si el proveedor asiático se retrasa dos semanas pero la demanda nacional explota por una ola de calor? En lugar de adivinar o confiar en la “intuición” (que suele ser el nombre que le damos a nuestros sesgos), vamos a construir un laboratorio virtual para estresar nuestras políticas de inventario antes de arriesgar un solo dólar en el mundo físico.</p>
-<section id="el-fracaso-de-las-fórmulas-cerradas-y-la-tiranía-de-los-promedios" class="level2">
-<h2 class="anchored" data-anchor-id="el-fracaso-de-las-fórmulas-cerradas-y-la-tiranía-de-los-promedios">15.1 El Fracaso de las Fórmulas Cerradas y la Tiranía de los Promedios</h2>
-<p>Las fórmulas de inventario tradicionales (vistas en la Parte IV) asumen un mundo de “comportamiento ideal”. El problema es que los promedios engañan de forma sistemática. Como bien dice la metáfora: <em>“Un río que tiene una profundidad promedio de 1 metro puede tener una fosa de 5 metros en el medio; si intentas cruzarlo confiando en el promedio, te ahogarás”</em>.</p>
-<p>Las fórmulas analíticas fallan en la práctica por tres razones sistémicas:</p>
-<ol type="1">
-<li><strong>La Dictadura de la Normalidad:</strong> Creen que la demanda es una campana simétrica, ignorando los picos extremos de la “Larga Cola” y los periodos de venta cero que caracterizan a los productos Clase C.</li>
-<li><strong>La Maldición de la Independencia:</strong> Suponen que la demanda y el Lead Time no tienen relación. En la realidad, existe una <strong>correlación positiva</strong>: cuando la demanda sube en toda la industria, los transportistas se saturan, los puertos se congestionan y el Lead Time también aumenta. Las fórmulas de la Parte IV no ven esta tormenta perfecta; la simulación sí.</li>
-<li><strong>Restricciones de la Vida Real:</strong> Las fórmulas no saben qué hacer con los pedidos mínimos (MOQ), las capacidades limitadas de los camiones o los límites de espacio en bodega. Un modelo matemático puede sugerir pedir 412 unidades, pero si el proveedor solo vende pallets de 500, la fórmula “teórica” deja de tener sentido financiero.</li>
-</ol>
-<p><strong>La Realidad:</strong> Cuando intentas optimizar un portafolio masivo con interacciones complejas, las fórmulas matemáticas “explotan”. La simulación de Monte Carlo no intenta resolver una ecuación compleja; simplemente <strong>imita la realidad</strong> miles de veces y observa qué sucede.</p>
+<p>Felicidades. Has completado la Parte IV, donde dominaste las leyes de la física del inventario. Aprendiste sobre el EOQ, el Stock de Seguridad y las distribuciones de probabilidad. Pero, como todo Arquitecto de Suministros sabe, hay un momento en que las fórmulas se quedan cortas.</p>
+<p>¿Qué pasa si tu Lead Time no es constante ni sigue una curva normal? ¿Qué pasa si tienes restricciones de presupuesto que afectan a 500 productos a la vez? ¿Qué pasa si el costo de transporte cambia según el volumen del camión? Cuando las ecuaciones fallan, recurrimos a la herramienta definitiva: <strong>La Simulación de Monte Carlo</strong>.</p>
+<section id="de-la-fórmula-al-experimento" class="level2">
+<h2 class="anchored" data-anchor-id="de-la-fórmula-al-experimento">15.1 De la Fórmula al Experimento</h2>
+<p>Hasta ahora, hemos usado fórmulas como <span class="math inline">\(SS = k \times \sigma \times \sqrt{L}\)</span>. Estas fórmulas son útiles, pero asumen un mundo “promedio”. La simulación, en cambio, no intenta predecir un resultado; intenta recrear el proceso.</p>
+<p>En lugar de preguntar “¿Cuál es mi stock de seguridad?”, en este capítulo preguntamos: <strong>“Si opero con este stock durante los próximos 365 días bajo estas condiciones de caos, ¿cuántas veces me voy a quedar vacío?”</strong>.</p>
 </section>
-<section id="la-mecánica-de-monte-carlo-el-azar-bajo-control" class="level2">
-<h2 class="anchored" data-anchor-id="la-mecánica-de-monte-carlo-el-azar-bajo-control">15.2 La Mecánica de Monte Carlo: El Azar Bajo Control</h2>
-<p>La simulación se basa en la <strong>Ley de los Grandes Números</strong>. Si repetimos un experimento de inventario suficientes veces, la distribución de los resultados finales convergerá hacia el riesgo real que enfrentará la empresa en el mercado.</p>
-<section id="el-algoritmo-del-arquitecto" class="level3">
-<h3 class="anchored" data-anchor-id="el-algoritmo-del-arquitecto">15.2.1 El Algoritmo del Arquitecto</h3>
-<p>Para construir este laboratorio, seguimos un proceso de cuatro pasos:</p>
+<section id="qué-es-la-simulación-de-monte-carlo" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-la-simulación-de-monte-carlo">15.2 ¿Qué es la Simulación de Monte Carlo?</h2>
+<p>El nombre proviene del famoso casino de Mónaco. La lógica es simple: si no puedes calcular la probabilidad de un evento complejo matemáticamente, genera miles de escenarios aleatorios y observa qué sucede con mayor frecuencia.</p>
+<p>En Supply Chain, simulamos:</p>
 <ol type="1">
-<li><strong>Modelado de Insumos Estocásticos:</strong> En lugar de usar un promedio de demanda, definimos una distribución (Gamma para demanda lumpy, Poisson para intermitente). El Lead Time tampoco es un número; es un histograma de frecuencias basado en los últimos 2 años de desempeño real del proveedor.</li>
-<li><strong>Muestreo Aleatorio (Lanzamiento de Dados):</strong> En cada iteración de la simulación, el motor lanza “dados virtuales”. En un escenario, el azar dicta una demanda altísima y un transporte lentísimo (el peor caso). En otro, la demanda es baja y la entrega es inmediata.</li>
-<li><strong>Ejecución de la Política Logística:</strong> Para cada escenario generado, el código aplica las reglas de negocio estrictas: <em>“Si el inventario neto &lt; ROP, emitir orden de compra por tamaño Q”</em>.</li>
-<li><strong>Agregación Estadística:</strong> Al final de 10,000 “vidas” simuladas, recolectamos los KPIs. Esto nos permite ver no solo el promedio, sino el <strong>Riesgo de Cola (P95)</strong>: <em>“En el 5% de los peores casos, perderemos más de $50,000 en margen por falta de producto”</em>.</li>
+<li><p><strong>Demanda Diaria:</strong> Generada aleatoriamente siguiendo el patrón que identificamos en la Parte II (Normal, Gamma o Poisson).</p></li>
+<li><p><strong>Lead Time:</strong> El tiempo de llegada de cada pedido, que también varía aleatoriamente.</p></li>
+<li><p><strong>Eventos Disruptivos:</strong> Cierres de puertos, huelgas o picos virales.</p></li>
 </ol>
 </section>
-</section>
-<section id="el-verdadero-villano-la-variabilidad-del-lead-time" class="level2">
-<h2 class="anchored" data-anchor-id="el-verdadero-villano-la-variabilidad-del-lead-time">15.3 El Verdadero Villano: La Variabilidad del Lead Time</h2>
-<p>Uno de los mayores aportes de la simulación es desenmascarar al verdadero asesino del nivel de servicio: la variabilidad de la entrega. En las fórmulas tradicionales, el Lead Time es una constante lineal. En el laboratorio virtual, vemos que <strong>el retraso del proveedor es financieramente mucho más destructivo que una mala predicción de demanda</strong>.</p>
+<section id="por-qué-el-arquitecto-prefiere-simular" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-el-arquitecto-prefiere-simular">15.3 Por qué el Arquitecto prefiere simular</h2>
+<p>La simulación tiene tres ventajas críticas sobre las fórmulas:</p>
 <ul>
-<li><strong>El Efecto Látigo en la Simulación:</strong> Podemos observar cómo una desviación de 2 días en la materia prima se amplifica a través del sistema hasta convertirse en un quiebre total de 15 días en el producto terminado.</li>
-<li><strong>Modelado de “Cisnes Negros”:</strong> Monte Carlo permite inyectar disrupciones de baja frecuencia pero alto impacto. Podemos programar que, con una probabilidad del 0.1% (una vez cada 1000 días), el Lead Time sea de 90 días debido a una crisis global. Esto permite calcular la <strong>Resiliencia de la Red</strong>, algo que ninguna hoja de cálculo puede hacer.</li>
+<li><p><strong>Captura la Correlación:</strong> En la vida real, si el Lead Time es largo, la probabilidad de que la demanda suba durante ese tiempo es distinta. Las fórmulas ignoran esto; la simulación lo vive.</p></li>
+<li><p><strong>Maneja Restricciones:</strong> Puedes programar que un camión solo sale si está al 80% de capacidad. Intenta poner eso en una raíz cuadrada.</p></li>
+<li><p><strong>Visualiza el Riesgo de Cola:</strong> Te permite ver el “peor escenario posible”, no solo el promedio.</p></li>
 </ul>
 </section>
-<section id="probando-políticas-de-inventario-el-duelo-s-q-vs-s-s" class="level2">
-<h2 class="anchored" data-anchor-id="probando-políticas-de-inventario-el-duelo-s-q-vs-s-s">15.4 Probando Políticas de Inventario: El Duelo (<span class="math inline">\(s, Q\)</span>) vs (<span class="math inline">\(s, S\)</span>)</h2>
-<p>En el laboratorio virtual, podemos enfrentar diferentes estrategias de reaprovisionamiento para ver cuál protege mejor el flujo de caja:</p>
-<ul>
-<li><strong>Política de Cantidad Fija (</strong><span class="math inline">\(s, Q\)</span>): Basada en el EOQ. Es rígida. Pedimos lo mismo sin importar qué tan bajo esté el stock. La simulación suele mostrar que esta política es ineficiente si la demanda es muy errática porque genera “ecos” de inventario innecesarios.</li>
-<li><strong>Política de Nivel Máximo (</strong><span class="math inline">\(s, S\)</span>): Es adaptativa (Order-to-Up-To). Pedimos lo necesario para llegar a un nivel máximo <span class="math inline">\(S\)</span>. La simulación revela que, aunque requiere más gestión administrativa, esta política reduce significativamente el inventario promedio manteniendo el mismo nivel de servicio.</li>
-</ul>
-<p><strong>La Ventaja del Arquitecto:</strong> No tienes que “creerle” a la teoría de los libros. El simulador te muestra los dólares ahorrados y el impacto en el capital de trabajo de cada política bajo miles de futuros posibles.</p>
-</section>
-<section id="kpis-estratégicos-más-allá-del-wape" class="level2">
-<h2 class="anchored" data-anchor-id="kpis-estratégicos-más-allá-del-wape">15.5 KPIs Estratégicos: Más allá del WAPE</h2>
-<p>A diferencia de un modelo estadístico que te da una estimación de error, el simulador te entrega métricas operativas directas y auditables por la dirección financiera:</p>
-<ol type="1">
-<li><strong>Fill Rate Observado:</strong> El porcentaje real de las unidades pedidas por el cliente que pudimos satisfacer.</li>
-<li><strong>Costo de Mantenimiento Real:</strong> Basado en el inventario promedio segundo a segundo, incluyendo picos de saturación.</li>
-<li><strong>Días de Inventario (DOI):</strong> Velocidad real de rotación del capital en el almacén.</li>
-<li><strong>Valor en Riesgo (VaR) Logístico:</strong> La pérdida máxima esperada en un horizonte de tiempo con un nivel de confianza dado (ej. 95%). Es el lenguaje que entiende el CFO.</li>
-</ol>
-</section>
-<section id="implementación-en-r-el-motor-de-simulación" class="level2">
-<h2 class="anchored" data-anchor-id="implementación-en-r-el-motor-de-simulación">15.6 Implementación en R: El Motor de Simulación</h2>
-<p>R es el lenguaje ideal para este laboratorio debido a su manejo nativo de distribuciones de probabilidad y su sintaxis orientada a datos vectorizados. Aquí el esquema de cómo estructuramos el motor profesional:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Motor de Simulación de Monte Carlo en R</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>simular_politica_inventario <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">iteraciones =</span> <span class="dv">10000</span>, <span class="at">ROP =</span> <span class="dv">200</span>, <span class="at">Q =</span> <span class="dv">500</span>) {</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  resultados <span class="ot">&lt;-</span> <span class="fu">map_df</span>(<span class="dv">1</span><span class="sc">:</span>iteraciones, <span class="cf">function</span>(id) {</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Escenario Estocástico: Demanda Gamma (Cap 14) y Lead Time Poisson</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    demanda_realizada <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1</span>, <span class="at">shape =</span> <span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">40</span>) </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    lt_realizado <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>, <span class="at">lambda =</span> <span class="dv">8</span>) </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Estado del Sistema</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    inv_inicial <span class="ot">&lt;-</span> <span class="dv">250</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    inv_final <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="dv">0</span>, inv_inicial <span class="sc">-</span> demanda_realizada)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. KPIs del Ciclo</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    quiebre <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(demanda_realizada <span class="sc">&gt;</span> inv_inicial, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    unidades_perdidas <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="dv">0</span>, demanda_realizada <span class="sc">-</span> inv_inicial)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">tibble</span>(</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">escenario =</span> id,</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">quiebre_stock =</span> quiebre,</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">venta_perdida =</span> unidades_perdidas,</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">inv_promedio =</span> (inv_inicial <span class="sc">+</span> inv_final) <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    ))</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(resultados)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecución del Laboratorio</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>data_simulada <span class="ot">&lt;-</span> <span class="fu">simular_politica_inventario</span>()</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Análisis de Riesgo de Cola (P95 de ventas perdidas)</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(data_simulada<span class="sc">$</span>venta_perdida, <span class="fl">0.95</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-important callout-titled">
+<section id="simulador-tu-primer-experimento-de-monte-carlo" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-tu-primer-experimento-de-monte-carlo">15.4 Simulador: Tu Primer Experimento de Monte Carlo</h2>
+<p>En este laboratorio, vamos a simular <strong>100 días</strong> de operación. A diferencia de las gráficas de “dientes de sierra” perfectos del Capítulo 12, aquí cada día es una moneda al aire.</p>
+<p>Ajusta la incertidumbre y observa cómo la línea de inventario se comporta de forma errática. ¿Cuántas veces toca el cero?</p>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="45" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 44;"><span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>jStat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>viewof avg_demand <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">5</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Demanda Promedio Diaria:"</span>})</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>viewof sigma_demand <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">30</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Variabilidad Demanda (σ):"</span>})</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>viewof lt_mean <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">15</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Lead Time Promedio (días):"</span>})</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>viewof lt_sigma <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Variabilidad Lead Time (σ):"</span>})</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>viewof initial_stock <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">50</span><span class="op">,</span> <span class="dv">500</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">150</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Stock Inicial:"</span>})</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>viewof reorder_point <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">50</span><span class="op">,</span> <span class="dv">400</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Punto de Reorden (ROP):"</span>})</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>viewof order_qty <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">100</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Cantidad de Pedido (Q):"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-8" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-9" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="62" data-source-offset="-37"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 61;"><span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>sim_results <span class="op">=</span> {</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> days <span class="op">=</span> <span class="dv">100</span><span class="op">;</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> stock <span class="op">=</span> initial_stock<span class="op">;</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> pending_orders <span class="op">=</span> []<span class="op">;</span> <span class="co">// [{arrival_day, qty}]</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> history <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> d <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> d <span class="op">&lt;</span> days<span class="op">;</span> d<span class="op">++</span>) {</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 1. Llegada de pedidos pendientes</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> arrivals <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>    pending_orders <span class="op">=</span> pending_orders<span class="op">.</span><span class="fu">filter</span>(o <span class="kw">=&gt;</span> {</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (o<span class="op">.</span><span class="at">arrival_day</span> <span class="op">&lt;=</span> d) {</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>        arrivals <span class="op">+=</span> o<span class="op">.</span><span class="at">qty</span><span class="op">;</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>    stock <span class="op">+=</span> arrivals<span class="op">;</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 2. Generar demanda aleatoria (Truncada a 0)</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> demand <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">0</span><span class="op">,</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">sample</span>(avg_demand<span class="op">,</span> sigma_demand))<span class="op">;</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> sold <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(stock<span class="op">,</span> demand)<span class="op">;</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> stockout <span class="op">=</span> demand <span class="op">&gt;</span> stock <span class="op">?</span> demand <span class="op">-</span> stock <span class="op">:</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    stock <span class="op">-=</span> sold<span class="op">;</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 3. Revisión de política (ROP)</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (stock <span class="op">&lt;=</span> reorder_point <span class="op">&amp;&amp;</span> pending_orders<span class="op">.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">0</span>) {</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> actual_lt <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">sample</span>(lt_mean<span class="op">,</span> lt_sigma)))<span class="op">;</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>      pending_orders<span class="op">.</span><span class="fu">push</span>({</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>        <span class="dt">arrival_day</span><span class="op">:</span> d <span class="op">+</span> actual_lt<span class="op">,</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>        <span class="dt">qty</span><span class="op">:</span> order_qty</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>    history<span class="op">.</span><span class="fu">push</span>({ <span class="dt">day</span><span class="op">:</span> d<span class="op">,</span> <span class="dt">stock</span><span class="op">:</span> stock<span class="op">,</span> <span class="dt">stockout</span><span class="op">:</span> stockout<span class="op">,</span> <span class="dt">demand</span><span class="op">:</span> demand })<span class="op">;</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> history<span class="op">;</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="co">// Visualización</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>renderPlot <span class="op">=</span> {</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:450px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> sim_results<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">day</span>)<span class="op">,</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> sim_results<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">stock</span>)<span class="op">,</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Nivel de Inventario'</span><span class="op">,</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines+markers'</span><span class="op">,</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">'tozeroy'</span><span class="op">,</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#2563eb'</span><span class="op">,</span> <span class="dt">shape</span><span class="op">:</span> <span class="st">'hv'</span>}</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> sim_results<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">day</span>)<span class="op">,</span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> sim_results<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">stockout</span>)<span class="op">,</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Faltante (Stockout)'</span><span class="op">,</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'bar'</span><span class="op">,</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>      <span class="dt">marker</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#ef4444'</span>}</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> [reorder_point<span class="op">,</span> reorder_point]<span class="op">,</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'ROP'</span><span class="op">,</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#94a3b8'</span><span class="op">,</span> <span class="dt">dash</span><span class="op">:</span> <span class="st">'dash'</span>}</span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layout <span class="op">=</span> {</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'Simulación de Operación Real (100 días)'</span><span class="op">,</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>    <span class="dt">xaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Día'</span> }<span class="op">,</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>    <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Unidades'</span><span class="op">,</span> <span class="dt">rangemode</span><span class="op">:</span> <span class="st">'tozero'</span> }<span class="op">,</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>    <span class="dt">hovermode</span><span class="op">:</span> <span class="st">'x unified'</span></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> layout<span class="op">,</span> {<span class="dt">responsive</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">displayModeBar</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">;</span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>La Sabiduría de Monte Carlo
+<span class="screen-reader-only">Tip</span>Métricas del Experimento
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La simulación no es para encontrar “el número mágico”, es para entender el <strong>rango de posibilidades</strong>. Como arquitectos de suministros, no diseñamos para el “día promedio”; diseñamos para que la cadena de suministro soporte la variabilidad sin colapsar financieramente. Si tu política de inventarios no ha sido probada en un simulador, es solo una teoría esperando a ser refutada por la realidad del mercado.</p>
+<ul>
+<li><p><strong>Nivel de Servicio Real:</strong> <span><span id="ojs-element-id-1"></span>%</span> (Días sin quiebre).</p></li>
+<li><p><strong>Unidades Faltantes Totales:</strong> <span><span id="ojs-element-id-2"></span></span> unidades.</p></li>
+<li><p><strong>Inventario Promedio:</strong> <span><span id="ojs-element-id-3"></span></span> unidades.</p></li>
+</ul>
 </div>
 </div>
+</section>
+<section id="interpretando-el-caos-el-intervalo-de-confianza" class="level2">
+<h2 class="anchored" data-anchor-id="interpretando-el-caos-el-intervalo-de-confianza">15.5 Interpretando el Caos: El Intervalo de Confianza</h2>
+<p>Cuando corres una simulación de Monte Carlo, no obtienes un número, obtienes una <strong>distribución de resultados</strong>. Si repitieras esta simulación 1,000 veces:</p>
+<ol type="1">
+<li><p>Verías que algunas veces el stock nunca toca el cero.</p></li>
+<li><p>Otras veces, por una mala racha de demanda alta y proveedor lento, quedarías vacío por semanas.</p></li>
+</ol>
+<p>Tu trabajo como Arquitecto no es evitar el quiebre a toda costa, sino <strong>dimensionar el riesgo</strong>. Si la simulación te dice que el “peor escenario” (el percentil 95) es perder $10,000 en ventas, y prevenirlo te cuesta $15,000 en inventario, ya sabes qué decisión tomar.</p>
 </section>
 <section id="checklist-de-cierre-del-capítulo" class="level2">
 <h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">¿He definido distribuciones de probabilidad (Gamma/Poisson) basadas en mis datos de los Capítulos 7 y 14?</label></li>
-<li><label><input type="checkbox">¿He modelado el Lead Time como una distribución y no como un número fijo?</label></li>
-<li><label><input type="checkbox">¿He corrido al menos 10,000 iteraciones para asegurar que los resultados sean estadísticamente significativos?</label></li>
-<li><label><input type="checkbox">¿He calculado el <strong>Valor en Riesgo (VaR)</strong> de mi política actual?</label></li>
-<li><label><input type="checkbox">¿He comparado los resultados de la simulación contra el cálculo estático para medir el FVA de la simulación?</label></li>
+<li><p><label><input type="checkbox">¿Entiendo la diferencia entre una fórmula estática y un experimento dinámico?</label></p></li>
+<li><p><label><input type="checkbox">¿He observado cómo la variabilidad del Lead Time afecta el inventario más que la demanda?</label></p></li>
+<li><p><label><input type="checkbox">¿Soy capaz de identificar un “quiebre de stock” en la simulación incluso si el ROP fue correcto?</label></p></li>
+<li><p><label><input type="checkbox">¿Estoy listo para escalar este laboratorio a una <strong>Red de Suministros Completa</strong> en el Capítulo 16?</label></p></li>
 </ul>
 
 
+<div class="ojs-auto-generated hidden">
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7KCgxIC0gKHNpbV9yZXN1bHRzLmZpbHRlcihkID0+IGQuc3RvY2tvdXQgPiAwKS5sZW5ndGggLyAxMDApKSAqIDEwMCkudG9GaXhlZCgxKX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTEifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke01hdGgucm91bmQoc2ltX3Jlc3VsdHMucmVkdWNlKChhLCBiKSA9PiBhICsgYi5zdG9ja291dCwgMCkpfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7TWF0aC5yb3VuZChzaW1fcmVzdWx0cy5yZWR1Y2UoKGEsIGIpID0+IGEgKyBiLnN0b2NrLCAwKSAvIDEwMCl9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0zIn1dfQ==
+</script>
+</div>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5qU3RhdCA9IHJlcXVpcmUoXCJqc3RhdEAxLjkuNlwiKVxyXG5QbG90bHkgPSByZXF1aXJlKFwicGxvdGx5LmpzLWRpc3QtbWluQDIuMjQuMVwiKVxyXG5cclxudmlld29mIGF2Z19kZW1hbmQgPSBJbnB1dHMucmFuZ2UoWzUsIDUwXSwge3ZhbHVlOiAyMCwgc3RlcDogMSwgbGFiZWw6IFwiRGVtYW5kYSBQcm9tZWRpbyBEaWFyaWE6XCJ9KVxyXG52aWV3b2Ygc2lnbWFfZGVtYW5kID0gSW5wdXRzLnJhbmdlKFswLCAzMF0sIHt2YWx1ZTogMTAsIHN0ZXA6IDEsIGxhYmVsOiBcIlZhcmlhYmlsaWRhZCBEZW1hbmRhICjPgyk6XCJ9KVxyXG52aWV3b2YgbHRfbWVhbiA9IElucHV0cy5yYW5nZShbMSwgMTVdLCB7dmFsdWU6IDUsIHN0ZXA6IDEsIGxhYmVsOiBcIkxlYWQgVGltZSBQcm9tZWRpbyAoZMOtYXMpOlwifSlcclxudmlld29mIGx0X3NpZ21hID0gSW5wdXRzLnJhbmdlKFswLCA1XSwge3ZhbHVlOiAyLCBzdGVwOiAwLjUsIGxhYmVsOiBcIlZhcmlhYmlsaWRhZCBMZWFkIFRpbWUgKM+DKTpcIn0pXHJcbnZpZXdvZiBpbml0aWFsX3N0b2NrID0gSW5wdXRzLnJhbmdlKFs1MCwgNTAwXSwge3ZhbHVlOiAxNTAsIHN0ZXA6IDEwLCBsYWJlbDogXCJTdG9jayBJbmljaWFsOlwifSlcclxudmlld29mIHJlb3JkZXJfcG9pbnQgPSBJbnB1dHMucmFuZ2UoWzUwLCA0MDBdLCB7dmFsdWU6IDEyMCwgc3RlcDogMTAsIGxhYmVsOiBcIlB1bnRvIGRlIFJlb3JkZW4gKFJPUCk6XCJ9KVxyXG52aWV3b2Ygb3JkZXJfcXR5ID0gSW5wdXRzLnJhbmdlKFsxMDAsIDEwMDBdLCB7dmFsdWU6IDMwMCwgc3RlcDogNTAsIGxhYmVsOiBcIkNhbnRpZGFkIGRlIFBlZGlkbyAoUSk6XCJ9KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcclxuLy8gTMOzZ2ljYSBkZSBTaW11bGFjacOzbiBkw61hIGEgZMOtYVxyXG5zaW1fcmVzdWx0cyA9IHtcclxuICBjb25zdCBkYXlzID0gMTAwO1xyXG4gIGxldCBzdG9jayA9IGluaXRpYWxfc3RvY2s7XHJcbiAgbGV0IHBlbmRpbmdfb3JkZXJzID0gW107IC8vIFt7YXJyaXZhbF9kYXksIHF0eX1dXHJcbiAgY29uc3QgaGlzdG9yeSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCBkID0gMDsgZCA8IGRheXM7IGQrKykge1xyXG4gICAgLy8gMS4gTGxlZ2FkYSBkZSBwZWRpZG9zIHBlbmRpZW50ZXNcclxuICAgIGxldCBhcnJpdmFscyA9IDA7XHJcbiAgICBwZW5kaW5nX29yZGVycyA9IHBlbmRpbmdfb3JkZXJzLmZpbHRlcihvID0+IHtcclxuICAgICAgaWYgKG8uYXJyaXZhbF9kYXkgPD0gZCkge1xyXG4gICAgICAgIGFycml2YWxzICs9IG8ucXR5O1xyXG4gICAgICAgIHJldHVybiBmYWxzZTtcclxuICAgICAgfVxyXG4gICAgICByZXR1cm4gdHJ1ZTtcclxuICAgIH0pO1xyXG4gICAgc3RvY2sgKz0gYXJyaXZhbHM7XHJcblxyXG4gICAgLy8gMi4gR2VuZXJhciBkZW1hbmRhIGFsZWF0b3JpYSAoVHJ1bmNhZGEgYSAwKVxyXG4gICAgY29uc3QgZGVtYW5kID0gTWF0aC5tYXgoMCwgalN0YXQubm9ybWFsLnNhbXBsZShhdmdfZGVtYW5kLCBzaWdtYV9kZW1hbmQpKTtcclxuICAgIGNvbnN0IHNvbGQgPSBNYXRoLm1pbihzdG9jaywgZGVtYW5kKTtcclxuICAgIGNvbnN0IHN0b2Nrb3V0ID0gZGVtYW5kID4gc3RvY2sgPyBkZW1hbmQgLSBzdG9jayA6IDA7XHJcbiAgICBcclxuICAgIHN0b2NrIC09IHNvbGQ7XHJcblxyXG4gICAgLy8gMy4gUmV2aXNpw7NuIGRlIHBvbMOtdGljYSAoUk9QKVxyXG4gICAgaWYgKHN0b2NrIDw9IHJlb3JkZXJfcG9pbnQgJiYgcGVuZGluZ19vcmRlcnMubGVuZ3RoID09PSAwKSB7XHJcbiAgICAgIGNvbnN0IGFjdHVhbF9sdCA9IE1hdGgubWF4KDEsIE1hdGgucm91bmQoalN0YXQubm9ybWFsLnNhbXBsZShsdF9tZWFuLCBsdF9zaWdtYSkpKTtcclxuICAgICAgcGVuZGluZ19vcmRlcnMucHVzaCh7XHJcbiAgICAgICAgYXJyaXZhbF9kYXk6IGQgKyBhY3R1YWxfbHQsXHJcbiAgICAgICAgcXR5OiBvcmRlcl9xdHlcclxuICAgICAgfSk7XHJcbiAgICB9XHJcblxyXG4gICAgaGlzdG9yeS5wdXNoKHsgZGF5OiBkLCBzdG9jazogc3RvY2ssIHN0b2Nrb3V0OiBzdG9ja291dCwgZGVtYW5kOiBkZW1hbmQgfSk7XHJcbiAgfVxyXG4gIHJldHVybiBoaXN0b3J5O1xyXG59XHJcblxyXG4vLyBWaXN1YWxpemFjacOzblxyXG5yZW5kZXJQbG90ID0ge1xyXG4gIGNvbnN0IGNvbnRhaW5lciA9IGh0bWxgPGRpdiBzdHlsZT1cIndpZHRoOjEwMCU7IGhlaWdodDo0NTBweDtcIj48L2Rpdj5gO1xyXG4gIFxyXG4gIGNvbnN0IHRyYWNlcyA9IFtcclxuICAgIHtcclxuICAgICAgeDogc2ltX3Jlc3VsdHMubWFwKGQgPT4gZC5kYXkpLFxyXG4gICAgICB5OiBzaW1fcmVzdWx0cy5tYXAoZCA9PiBkLnN0b2NrKSxcclxuICAgICAgbmFtZTogJ05pdmVsIGRlIEludmVudGFyaW8nLFxyXG4gICAgICB0eXBlOiAnc2NhdHRlcicsXHJcbiAgICAgIG1vZGU6ICdsaW5lcyttYXJrZXJzJyxcclxuICAgICAgZmlsbDogJ3RvemVyb3knLFxyXG4gICAgICBsaW5lOiB7Y29sb3I6ICcjMjU2M2ViJywgc2hhcGU6ICdodid9XHJcbiAgICB9LFxyXG4gICAge1xyXG4gICAgICB4OiBzaW1fcmVzdWx0cy5tYXAoZCA9PiBkLmRheSksXHJcbiAgICAgIHk6IHNpbV9yZXN1bHRzLm1hcChkID0+IGQuc3RvY2tvdXQpLFxyXG4gICAgICBuYW1lOiAnRmFsdGFudGUgKFN0b2Nrb3V0KScsXHJcbiAgICAgIHR5cGU6ICdiYXInLFxyXG4gICAgICBtYXJrZXI6IHtjb2xvcjogJyNlZjQ0NDQnfVxyXG4gICAgfSxcclxuICAgIHtcclxuICAgICAgeDogWzAsIDEwMF0sXHJcbiAgICAgIHk6IFtyZW9yZGVyX3BvaW50LCByZW9yZGVyX3BvaW50XSxcclxuICAgICAgbmFtZTogJ1JPUCcsXHJcbiAgICAgIG1vZGU6ICdsaW5lcycsXHJcbiAgICAgIGxpbmU6IHtjb2xvcjogJyM5NGEzYjgnLCBkYXNoOiAnZGFzaCd9XHJcbiAgICB9XHJcbiAgXTtcclxuXHJcbiAgY29uc3QgbGF5b3V0ID0ge1xyXG4gICAgdGl0bGU6ICdTaW11bGFjacOzbiBkZSBPcGVyYWNpw7NuIFJlYWwgKDEwMCBkw61hcyknLFxyXG4gICAgeGF4aXM6IHsgdGl0bGU6ICdEw61hJyB9LFxyXG4gICAgeWF4aXM6IHsgdGl0bGU6ICdVbmlkYWRlcycsIHJhbmdlbW9kZTogJ3RvemVybycgfSxcclxuICAgIHRlbXBsYXRlOiAncGxvdGx5X3doaXRlJyxcclxuICAgIGhvdmVybW9kZTogJ3ggdW5pZmllZCdcclxuICB9O1xyXG5cclxuICBQbG90bHkubmV3UGxvdChjb250YWluZXIsIHRyYWNlcywgbGF5b3V0LCB7cmVzcG9uc2l2ZTogdHJ1ZSwgZGlzcGxheU1vZGVCYXI6IGZhbHNlfSk7XHJcbiAgcmV0dXJuIGNvbnRhaW5lcjtcclxufVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2F2Z19kZW1hbmQnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2lnbWFfZGVtYW5kJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2x0X21lYW4nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnbHRfc2lnbWEnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnaW5pdGlhbF9zdG9jaycpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdyZW9yZGVyX3BvaW50JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ29yZGVyX3F0eScpIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
