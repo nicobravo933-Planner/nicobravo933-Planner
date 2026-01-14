@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -44,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-37f97b4dfc99813de07ac4a6dfc6e37d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-1d61feaf5942a89f67c517e5b1b3c91a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,6 +109,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -295,7 +332,7 @@ window.Quarto = {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Arquitectura de suministros</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/nicobravo933-Planner/Practicas_Supply" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -324,7 +361,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. ¿Dónde estoy parado? ¿Como empiezo?</span></a>
+  <a href="./cap-1-auditoria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. Auditoría de Datos y Arquitectura de Red</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -486,7 +523,9 @@ window.Quarto = {
 </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Creado con <a href="https://quarto.org/">Quarto</a>.</p>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -494,22 +533,24 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#el-escenario-determinista-las-reglas-del-juego" id="toc-el-escenario-determinista-las-reglas-del-juego" class="nav-link active" data-scroll-target="#el-escenario-determinista-las-reglas-del-juego">12.1 El Escenario Determinista: Las Reglas del Juego</a></li>
+  <li><a href="#el-paso-del-pronóstico-a-la-orden" id="toc-el-paso-del-pronóstico-a-la-orden" class="nav-link active" data-scroll-target="#el-paso-del-pronóstico-a-la-orden">12. El Paso del Pronóstico a la Orden</a>
+  <ul class="collapse">
+  <li><a href="#el-escenario-determinista-las-reglas-del-juego" id="toc-el-escenario-determinista-las-reglas-del-juego" class="nav-link" data-scroll-target="#el-escenario-determinista-las-reglas-del-juego">12.1 El Escenario Determinista: Las Reglas del Juego</a></li>
   <li><a href="#el-tamaño-de-lote-económico-eoq" id="toc-el-tamaño-de-lote-económico-eoq" class="nav-link" data-scroll-target="#el-tamaño-de-lote-económico-eoq">12.2 El Tamaño de Lote Económico (EOQ)</a>
   <ul class="collapse">
   <li><a href="#el-conflicto-de-costos-la-gran-balanza" id="toc-el-conflicto-de-costos-la-gran-balanza" class="nav-link" data-scroll-target="#el-conflicto-de-costos-la-gran-balanza">12.2.1 El Conflicto de Costos: La Gran Balanza</a></li>
-  <li><a href="#la-fórmula-maestra-y-el-stock-de-ciclo" id="toc-la-fórmula-maestra-y-el-stock-de-ciclo" class="nav-link" data-scroll-target="#la-fórmula-maestra-y-el-stock-de-ciclo">12.2.2 La Fórmula Maestra y el Stock de Ciclo</a></li>
+  <li><a href="#la-fórmula-maestra" id="toc-la-fórmula-maestra" class="nav-link" data-scroll-target="#la-fórmula-maestra">La Fórmula Maestra</a></li>
   </ul></li>
-  <li><a href="#el-punto-de-reorden-rop-la-gestión-del-tiempo" id="toc-el-punto-de-reorden-rop-la-gestión-del-tiempo" class="nav-link" data-scroll-target="#el-punto-de-reorden-rop-la-gestión-del-tiempo">12.3 El Punto de Reorden (ROP): La Gestión del Tiempo</a>
+  <li><a href="#el-punto-de-reorden-rop-cuándo-pedir" id="toc-el-punto-de-reorden-rop-cuándo-pedir" class="nav-link" data-scroll-target="#el-punto-de-reorden-rop-cuándo-pedir">12.3 El Punto de Reorden (ROP): ¿Cuándo pedir?</a>
   <ul class="collapse">
-  <li><a href="#posición-de-inventario-vs.-inventario-físico" id="toc-posición-de-inventario-vs.-inventario-físico" class="nav-link" data-scroll-target="#posición-de-inventario-vs.-inventario-físico">12.3.1 Posición de Inventario vs.&nbsp;Inventario Físico</a></li>
+  <li><a href="#la-posición-de-inventario-el-error-más-común" id="toc-la-posición-de-inventario-el-error-más-común" class="nav-link" data-scroll-target="#la-posición-de-inventario-el-error-más-común">La Posición de Inventario: El error más común</a></li>
   </ul></li>
-  <li><a href="#la-magia-de-la-raíz-cuadrada-la-robustez-del-eoq" id="toc-la-magia-de-la-raíz-cuadrada-la-robustez-del-eoq" class="nav-link" data-scroll-target="#la-magia-de-la-raíz-cuadrada-la-robustez-del-eoq">12.4 La “Magia” de la Raíz Cuadrada: La Robustez del EOQ</a></li>
-  <li><a href="#limitaciones-donde-el-modelo-choca-con-la-realidad" id="toc-limitaciones-donde-el-modelo-choca-con-la-realidad" class="nav-link" data-scroll-target="#limitaciones-donde-el-modelo-choca-con-la-realidad">12.5 Limitaciones: Donde el Modelo Choca con la Realidad</a></li>
-  <li><a href="#aplicación-estratégica-según-segmentación" id="toc-aplicación-estratégica-según-segmentación" class="nav-link" data-scroll-target="#aplicación-estratégica-según-segmentación">12.6 Aplicación Estratégica según Segmentación</a></li>
-  <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
+  <li><a href="#simulador-el-modelo-de-dientes-de-sierra" id="toc-simulador-el-modelo-de-dientes-de-sierra" class="nav-link" data-scroll-target="#simulador-el-modelo-de-dientes-de-sierra">12.4 Simulador: El Modelo de Dientes de Sierra</a></li>
+  <li><a href="#la-robustez-del-eoq-qué-pasa-si-me-equivoco" id="toc-la-robustez-del-eoq-qué-pasa-si-me-equivoco" class="nav-link" data-scroll-target="#la-robustez-del-eoq-qué-pasa-si-me-equivoco">12.5 La Robustez del EOQ: ¿Qué pasa si me equivoco?</a></li>
+  <li><a href="#checklist-de-cierre" id="toc-checklist-de-cierre" class="nav-link" data-scroll-target="#checklist-de-cierre">Checklist de Cierre</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-12-eoq-punto-reorden.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-12-eoq-punto-reorden.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
@@ -534,95 +575,361 @@ window.Quarto = {
 </header>
 
 
-<p>En las secciones anteriores de este libro, nos obsesionamos con la precisión. Aprendimos a diseccionar la demanda para encontrar niveles, tendencias y estacionalidades utilizando desde suavizamiento exponencial hasta algoritmos de gradiente. Sin embargo, en la trinchera de la Supply Chain, el pronóstico es simplemente una “declaración de intenciones”. La realidad financiera y el impacto operativo solo se materializan cuando el camión llega al muelle de descarga, se firma la factura y el inventario se asienta en el balance general como capital inmovilizado.</p>
-<p>Muchos planificadores operan bajo “reglas de dedo” heredadas: <em>“Pedimos cada lunes”</em>, <em>“Mantenemos dos semanas de stock”</em> o <em>“Pedimos cuando el estante se vea vacío”</em>. Estas heurísticas son peligrosas porque ignoran el equilibrio de costos que modelamos en el Capítulo 11. En este capítulo, estableceremos la <strong>física básica</strong> del inventario mediante la <strong>Fórmula de Wilson</strong> (EOQ). Aunque tiene más de un siglo de antigüedad, sigue siendo la brújula fundamental para dimensionar lotes de forma racional, asegurando que cada dólar invertido en logística esté justificado por un ahorro en costos operativos.</p>
+<p>En las secciones anteriores de este libro, nos obsesionamos con la precisión. Aprendimos a diseccionar la demanda utilizando desde suavizamiento exponencial hasta algoritmos de Machine Learning. Sin embargo, en la trinchera de la Supply Chain, el pronóstico es simplemente una “declaración de intenciones”. La realidad financiera solo se materializa cuando el camión llega al muelle de descarga y el inventario se asienta en el balance como capital inmovilizado.</p>
+<p>Muchos planificadores operan bajo “reglas de dedo” heredadas: <em>“Pedimos cada lunes”</em> o <em>“Mantenemos dos semanas de stock”</em>. Estas heurísticas ignoran el equilibrio de costos que modelamos en el <a href="https://www.google.com/search?q=./cap-11-costos-inventario.html" title="null">Capítulo 11</a>. En este capítulo, estableceremos la <strong>física básica</strong> del inventario mediante la <strong>Fórmula de Wilson (EOQ)</strong> y el <strong>Punto de Reorden (ROP)</strong>.</p>
+<section id="el-paso-del-pronóstico-a-la-orden" class="level1">
+<h1>12. El Paso del Pronóstico a la Orden</h1>
 <section id="el-escenario-determinista-las-reglas-del-juego" class="level2">
 <h2 class="anchored" data-anchor-id="el-escenario-determinista-las-reglas-del-juego">12.1 El Escenario Determinista: Las Reglas del Juego</h2>
-<p>Para entender la base de la optimización, primero debemos simplificar el caos. En este capítulo, trabajaremos en un “laboratorio determinista”. Aquí, el mundo es predecible, lo que nos permite aislar las fuerzas que mueven el costo total. Las reglas son:</p>
+<p>Para entender la base de la optimización, primero trabajaremos en un “laboratorio determinista”. Aquí, el mundo es predecible, lo que nos permite aislar las fuerzas que mueven el costo total:</p>
 <ol type="1">
-<li><strong>Demanda Constante y Conocida (</strong><span class="math inline">\(D\)</span>): No hay sorpresas. Sabemos exactamente cuántas unidades se venderán por año y la tasa de consumo es uniforme cada día.</li>
-<li><strong>Lead Time Invariante (</strong><span class="math inline">\(L\)</span>): El proveedor es una máquina de precisión. Si dice que tarda 5 días, tarda exactamente 5 días.</li>
-<li><strong>Costo de Pedido Fijo (</strong><span class="math inline">\(S\)</span>): Cada orden emitida genera un gasto administrativo y logístico constante.</li>
-<li><strong>Costo de Mantenimiento Lineal (</strong><span class="math inline">\(h\)</span>): El “impuesto” por tener stock visto en el capítulo anterior.</li>
-<li><strong>Sin Quiebres de Stock:</strong> El objetivo es que el inventario llegue a cero justo cuando el camión del proveedor llega.</li>
+<li><p><strong>Demanda Constante (</strong><span class="math inline">\(D\)</span><strong>):</strong> Sabemos exactamente cuántas unidades se venderán y la tasa es uniforme.</p></li>
+<li><p><strong>Lead Time Invariante (</strong><span class="math inline">\(L\)</span><strong>):</strong> El proveedor siempre tarda exactamente lo mismo.</p></li>
+<li><p><strong>Costo de Pedido Fijo (</strong><span class="math inline">\(S\)</span><strong>):</strong> Cada orden genera un gasto administrativo y logístico constante (flete, facturación, recepción).</p></li>
+<li><p><strong>Costo de Mantenimiento (</strong><span class="math inline">\(h\)</span><strong>):</strong> El costo calculado en el capítulo anterior.</p></li>
 </ol>
 </section>
 <section id="el-tamaño-de-lote-económico-eoq" class="level2">
 <h2 class="anchored" data-anchor-id="el-tamaño-de-lote-económico-eoq">12.2 El Tamaño de Lote Económico (EOQ)</h2>
-<p>El <strong>EOQ</strong> (<em>Economic Order Quantity</em>) responde a la pregunta arquitectónica: <strong>¿Cuál es el tamaño óptimo de cada pedido?</strong>. No se trata de comprar “mucho” o “poco”, sino de encontrar el punto de equilibrio donde la eficiencia administrativa se encuentra con la eficiencia financiera.</p>
+<p>El <strong>EOQ</strong> (<em>Economic Order Quantity</em>) responde a la pregunta: <strong>¿Cuánto pedir?</strong>. Es el punto de equilibrio donde la eficiencia administrativa (pedir poco frecuente) se encuentra con la eficiencia financiera (no tener exceso de stock).</p>
 <section id="el-conflicto-de-costos-la-gran-balanza" class="level3">
 <h3 class="anchored" data-anchor-id="el-conflicto-de-costos-la-gran-balanza">12.2.1 El Conflicto de Costos: La Gran Balanza</h3>
+<p>En la gestión de inventarios, enfrentamos un conflicto de intereses financieros:</p>
 <ul>
-<li><strong>Si pides mucho (Lotes gigantes):</strong> Realizas pocos pedidos al año (<span class="math inline">\(S\)</span> mínimo). Sin embargo, tu inventario promedio será enorme, lo que disparará el costo de mantenimiento (<span class="math inline">\(h\)</span>), ocupará todo tu almacén y asfixiará tu flujo de caja.</li>
-<li><strong>Si pides poco (Lotes minúsculos):</strong> Tu inventario promedio será bajo, pero vivirás en un estado de “hiperactividad administrativa”. Tendrás que procesar cientos de órdenes, pagar fletes diarios y saturar al equipo de recepción, elevando el costo total de pedidos.</li>
+<li><p><strong>Costo de Pedir (Curva Descendente):</strong> A medida que el tamaño del lote (<span class="math inline">\(Q\)</span>) aumenta, pedimos menos veces al año, por lo que el costo total de pedidos cae.</p></li>
+<li><p><strong>Costo de Mantener (Curva Ascendente):</strong> A medida que <span class="math inline">\(Q\)</span> aumenta, el inventario promedio en bodega crece, elevando los costos de capital y almacenaje.</p></li>
 </ul>
+<p>El <strong>EOQ</strong> es precisamente el punto donde estas dos curvas se cruzan.</p>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="39" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 38;"><span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>viewof d_annual <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1000</span><span class="op">,</span> <span class="dv">20000</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">5000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Demanda Anual (D):"</span>})</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>viewof s_cost <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">10</span><span class="op">,</span> <span class="dv">500</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Costo de Pedido (S):"</span>})</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>viewof unit_v <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">200</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Valor Unitario (v):"</span>})</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>viewof h_rate <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.05</span><span class="op">,</span> <span class="fl">0.50</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.25</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Tasa h (%):"</span>})</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>viewof lead_time <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">30</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Lead Time (días):"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="52" data-source-offset="-24"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 51;"><span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>h_annual <span class="op">=</span> unit_v <span class="op">*</span> h_rate</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>eoq <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>((<span class="dv">2</span> <span class="op">*</span> d_annual <span class="op">*</span> s_cost) <span class="op">/</span> h_annual)</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>d_daily <span class="op">=</span> d_annual <span class="op">/</span> <span class="dv">365</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>rop <span class="op">=</span> d_daily <span class="op">*</span> lead_time</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>cycle_days <span class="op">=</span> (eoq <span class="op">/</span> d_daily)</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="co">// Datos para la gráfica de cruce de curvas</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>cost_curves_data <span class="op">=</span> {</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> points <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> startQ <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">10</span><span class="op">,</span> eoq <span class="op">*</span> <span class="fl">0.2</span>)<span class="op">;</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> endQ <span class="op">=</span> eoq <span class="op">*</span> <span class="fl">2.5</span><span class="op">;</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> q <span class="op">=</span> startQ<span class="op">;</span> q <span class="op">&lt;=</span> endQ<span class="op">;</span> q <span class="op">+=</span> (endQ <span class="op">-</span> startQ) <span class="op">/</span> <span class="dv">50</span>) {</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> c_order <span class="op">=</span> (d_annual <span class="op">/</span> q) <span class="op">*</span> s_cost<span class="op">;</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> c_hold <span class="op">=</span> (q <span class="op">/</span> <span class="dv">2</span>) <span class="op">*</span> h_annual<span class="op">;</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    points<span class="op">.</span><span class="fu">push</span>({ q<span class="op">,</span> c_order<span class="op">,</span> c_hold<span class="op">,</span> <span class="dt">c_total</span><span class="op">:</span> c_order <span class="op">+</span> c_hold })<span class="op">;</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> points<span class="op">;</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>chartCurves <span class="op">=</span> {</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:400px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> cost_curves_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">q</span>)<span class="op">,</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> cost_curves_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">c_order</span>)<span class="op">,</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Costo de Pedir'</span><span class="op">,</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#f97316'</span><span class="op">,</span> <span class="dt">dash</span><span class="op">:</span> <span class="st">'dash'</span>}</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> cost_curves_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">q</span>)<span class="op">,</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> cost_curves_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">c_hold</span>)<span class="op">,</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Costo de Mantener'</span><span class="op">,</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#ef4444'</span><span class="op">,</span> <span class="dt">dash</span><span class="op">:</span> <span class="st">'dash'</span>}</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> cost_curves_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">q</span>)<span class="op">,</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> cost_curves_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">c_total</span>)<span class="op">,</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Costo Total'</span><span class="op">,</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#2563eb'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">4</span>}</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layout <span class="op">=</span> {</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'Optimización del Tamaño de Lote (EOQ)'</span><span class="op">,</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>    <span class="dt">xaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Tamaño de Lote (Q)'</span> }<span class="op">,</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>    <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Costo Anual ($)'</span> }<span class="op">,</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>    <span class="dt">margin</span><span class="op">:</span> { <span class="dt">t</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">l</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">20</span> }<span class="op">,</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>    <span class="dt">annotations</span><span class="op">:</span> [{</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> eoq<span class="op">,</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> (eoq<span class="op">/</span><span class="dv">2</span> <span class="op">*</span> h_annual) <span class="op">*</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> <span class="vs">`EOQ: </span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(eoq)<span class="sc">}</span><span class="vs">`</span><span class="op">,</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>      <span class="dt">showarrow</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>      <span class="dt">arrowhead</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>      <span class="dt">ax</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">ay</span><span class="op">:</span> <span class="op">-</span><span class="dv">40</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>    }]</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> layout<span class="op">,</span> {<span class="dt">responsive</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">displayModeBar</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">;</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="la-fórmula-maestra-y-el-stock-de-ciclo" class="level3">
-<h3 class="anchored" data-anchor-id="la-fórmula-maestra-y-el-stock-de-ciclo">12.2.2 La Fórmula Maestra y el Stock de Ciclo</h3>
-<p>La intersección de estas dos curvas de costo nos entrega la <strong>Raíz Cuadrada de Wilson</strong>:</p>
-<p><span class="math display">\[EOQ = \sqrt{rac{2    imes D  imes S}{h}}\]</span></p>
-<p>Donde: * <span class="math inline">\(D\)</span>: Demanda anual (unidades/año). * <span class="math inline">\(S\)</span>: Costo fijo de realizar un pedido ($ / pedido). * <span class="math inline">\(h\)</span>: Costo de mantenimiento anual por unidad ($/unidad/año).</p>
-<p><strong>El Concepto de Stock de Ciclo:</strong> En este modelo, tu inventario sigue un patrón de “dientes de sierra”. Comienzas con un lote completo (<span class="math inline">\(EOQ\)</span>) y lo consumes linealmente. Por lo tanto, tu <strong>Inventario Promedio</strong> es exactamente <span class="math inline">\(EOQ / 2\)</span>.</p>
-</section>
-</section>
-<section id="el-punto-de-reorden-rop-la-gestión-del-tiempo" class="level2">
-<h2 class="anchored" data-anchor-id="el-punto-de-reorden-rop-la-gestión-del-tiempo">12.3 El Punto de Reorden (ROP): La Gestión del Tiempo</h2>
-<p>Ya definimos <em>cuánto</em> pedir (<span class="math inline">\(EOQ\)</span>). Ahora debemos determinar el <em>cuándo</em>. El Punto de Reorden es el nivel de inventario que activa la señal de compra. Debe cubrir exactamente la demanda que ocurrirá durante el tiempo que el proveedor tarda en entregar (<em>Lead Time</em>).</p>
-<p><span class="math display">\[ROP = d   imes L\]</span></p>
-<p>Donde: * <span class="math inline">\(d\)</span>: Tasa de demanda diaria (Demanda anual / 365). * <span class="math inline">\(L\)</span>: Lead Time del proveedor en días.</p>
-<section id="posición-de-inventario-vs.-inventario-físico" class="level3">
-<h3 class="anchored" data-anchor-id="posición-de-inventario-vs.-inventario-físico">12.3.1 Posición de Inventario vs.&nbsp;Inventario Físico</h3>
-<p>Un error común es mirar solo el inventario que está en el estante. El Arquitecto de Suministros mira la <strong>Posición de Inventario</strong>:</p>
-<p><span class="math display">\[  ext{Posición} =     ext{Stock Físico} +     ext{Stock en Tránsito} -    ext{Backorders}\]</span></p>
-<p>El ROP debe compararse siempre contra la Posición de Inventario. Ignorar el tránsito es la receta perfecta para el exceso de inventario y la duplicidad de pedidos.</p>
-</section>
-</section>
-<section id="la-magia-de-la-raíz-cuadrada-la-robustez-del-eoq" class="level2">
-<h2 class="anchored" data-anchor-id="la-magia-de-la-raíz-cuadrada-la-robustez-del-eoq">12.4 La “Magia” de la Raíz Cuadrada: La Robustez del EOQ</h2>
-<p>Vandeput defiende con fervor la generosidad matemática del EOQ. Debido a que la fórmula utiliza una raíz cuadrada, si te equivocas al estimar el costo de pedido (<span class="math inline">\(S\)</span>) o el costo de mantenimiento (<span class="math inline">\(h\)</span>), el impacto financiero es menor de lo que parece.</p>
+<section id="la-fórmula-maestra" class="level3">
+<h3 class="anchored" data-anchor-id="la-fórmula-maestra">La Fórmula Maestra</h3>
+<p>La intersección de estas dos curvas nos entrega la <strong>Raíz Cuadrada de Wilson</strong>:</p>
+<p>$$EOQ = \sqrt{\frac{2 \times D \times S}{h}}$$</p>
+<p>Donde:</p>
 <ul>
-<li><strong>La Curva Plana:</strong> El fondo de la curva de costo total es muy plano. Pedir un poco más o un poco menos del EOQ exacto apenas castiga el balance.</li>
-<li><strong>El Efecto Mitigador:</strong> Si sobreestimas el costo de orden en un 100%, tu <span class="math inline">\(EOQ\)</span> solo se desviará un 41% (<span class="math inline">\(\sqrt{2} pprox 1.41\)</span>).</li>
+<li><p><span class="math inline">\(D\)</span>: Demanda anual.</p></li>
+<li><p><span class="math inline">\(S\)</span>: Costo fijo de realizar un pedido.</p></li>
+<li><p><span class="math inline">\(h\)</span>: Costo de mantenimiento anual por unidad (<span class="math inline">\(v \times \text{tasa } h\)</span>).</p></li>
 </ul>
+<p><strong>El Stock de Ciclo:</strong> En este modelo, tu inventario sigue un patrón de “dientes de sierra”. Tu <strong>Inventario Promedio</strong> es exactamente <span class="math inline">\(EOQ / 2\)</span>.</p>
 </section>
-<section id="limitaciones-donde-el-modelo-choca-con-la-realidad" class="level2">
-<h2 class="anchored" data-anchor-id="limitaciones-donde-el-modelo-choca-con-la-realidad">12.5 Limitaciones: Donde el Modelo Choca con la Realidad</h2>
-<p>El EOQ es la “física” del inventario, pero la realidad es caótica: 1. <strong>Variabilidad:</strong> La demanda nunca es constante. Necesitaremos un Stock de Seguridad (Capítulo 13). 2. <strong>Restricciones Logísticas:</strong> Redondear el EOQ a múltiplos de pallets o cajas. 3. <strong>Descuentos por Cantidad:</strong> El precio unitario baja al comprar más, alterando la balanza de <span class="math inline">\(h\)</span> y <span class="math inline">\(S\)</span>.</p>
 </section>
-<section id="aplicación-estratégica-según-segmentación" class="level2">
-<h2 class="anchored" data-anchor-id="aplicación-estratégica-según-segmentación">12.6 Aplicación Estratégica según Segmentación</h2>
+<section id="el-punto-de-reorden-rop-cuándo-pedir" class="level2">
+<h2 class="anchored" data-anchor-id="el-punto-de-reorden-rop-cuándo-pedir">12.3 El Punto de Reorden (ROP): ¿Cuándo pedir?</h2>
+<p>El ROP es el nivel de inventario que activa la señal de compra. Debe cubrir la demanda durante el Lead Time.</p>
+<p>$$ROP = d \times L$$</p>
+<p>Donde:</p>
 <ul>
-<li><strong>Productos Clase A:</strong> Calcule el EOQ mensualmente. La precisión aquí libera millones en capital de trabajo.</li>
-<li><strong>Productos Clase C:</strong> No pierda tiempo analítico. Use el EOQ para justificar compras de largo plazo (ej. pedir una vez cada 6 meses) y libere capacidad operativa.</li>
+<li><p><span class="math inline">\(d\)</span>: Tasa de demanda diaria.</p></li>
+<li><p><span class="math inline">\(L\)</span>: Lead Time del proveedor en días.</p></li>
 </ul>
-<div class="callout callout-style-default callout-important callout-titled">
+<section id="la-posición-de-inventario-el-error-más-común" class="level3">
+<h3 class="anchored" data-anchor-id="la-posición-de-inventario-el-error-más-común">La Posición de Inventario: El error más común</h3>
+<p>El Arquitecto de Suministros nunca mira solo el inventario físico. Mira la <strong>Posición de Inventario</strong>:</p>
+<p>$$\text{Posición} = \text{Físico} + \text{En Tránsito} - \text{Backorders}$$</p>
+<p><strong>Regla de Oro:</strong> El ROP debe compararse siempre contra la <strong>Posición de Inventario</strong>. Si solo miras el estante y olvidas lo que ya viene en el camión, duplicarás pedidos innecesariamente.</p>
+</section>
+</section>
+<section id="simulador-el-modelo-de-dientes-de-sierra" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-el-modelo-de-dientes-de-sierra">12.4 Simulador: El Modelo de Dientes de Sierra</h2>
+<p>Mientras que la gráfica anterior nos muestra el <strong>costo</strong>, esta simulación nos muestra el <strong>flujo físico</strong> del inventario en el tiempo. Observa cómo el inventario cae linealmente hasta tocar el ROP, disparando la orden que llega justo antes del quiebre.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="166" data-source-offset="-45"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 165;"><span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a>sim_data <span class="op">=</span> {</span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> points <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> current_stock <span class="op">=</span> eoq<span class="op">;</span></span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> arrival_day <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> t <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> t <span class="op">&lt;=</span> <span class="dv">120</span><span class="op">;</span> t<span class="op">++</span>) {</span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (t <span class="op">===</span> arrival_day) {</span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a>      current_stock <span class="op">+=</span> eoq<span class="op">;</span></span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a>      arrival_day <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a>    points<span class="op">.</span><span class="fu">push</span>({ <span class="dt">day</span><span class="op">:</span> t<span class="op">,</span> <span class="dt">stock</span><span class="op">:</span> current_stock<span class="op">,</span> <span class="dt">rop</span><span class="op">:</span> rop })<span class="op">;</span></span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a>    current_stock <span class="op">-=</span> d_daily<span class="op">;</span></span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (current_stock <span class="op">&lt;</span> <span class="dv">0</span>) current_stock <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (current_stock <span class="op">&lt;=</span> rop <span class="op">&amp;&amp;</span> arrival_day <span class="op">===</span> <span class="op">-</span><span class="dv">1</span>) {</span>
+<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a>      arrival_day <span class="op">=</span> t <span class="op">+</span> lead_time<span class="op">;</span></span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> points<span class="op">;</span></span>
+<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a>chartSawtooth <span class="op">=</span> {</span>
+<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:400px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> sim_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">day</span>)<span class="op">,</span></span>
+<span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> sim_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">stock</span>)<span class="op">,</span></span>
+<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Inventario Físico'</span><span class="op">,</span></span>
+<span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span></span>
+<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">'tozeroy'</span><span class="op">,</span></span>
+<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#2563eb'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">2</span>}</span>
+<span id="cb3-198"><a href="#cb3-198" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">120</span>]<span class="op">,</span></span>
+<span id="cb3-201"><a href="#cb3-201" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> [rop<span class="op">,</span> rop]<span class="op">,</span></span>
+<span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Punto de Reorden (ROP)'</span><span class="op">,</span></span>
+<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span></span>
+<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#ef4444'</span><span class="op">,</span> <span class="dt">dash</span><span class="op">:</span> <span class="st">'dash'</span>}</span>
+<span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layout <span class="op">=</span> {</span>
+<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'Flujo de Inventario en el Tiempo'</span><span class="op">,</span></span>
+<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a>    <span class="dt">xaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Días'</span> }<span class="op">,</span></span>
+<span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a>    <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Unidades'</span><span class="op">,</span> <span class="dt">rangemode</span><span class="op">:</span> <span class="st">'tozero'</span> }<span class="op">,</span></span>
+<span id="cb3-213"><a href="#cb3-213" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span></span>
+<span id="cb3-214"><a href="#cb3-214" aria-hidden="true" tabindex="-1"></a>    <span class="dt">margin</span><span class="op">:</span> { <span class="dt">t</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">l</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">20</span> }</span>
+<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> layout<span class="op">,</span> {<span class="dt">responsive</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">displayModeBar</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">;</span></span>
+<span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>La Parsimonia en el Lote
+<span class="screen-reader-only">Note</span>Resultados con los parámetros actuales
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>El mayor valor estratégico del EOQ no es el número exacto, sino demostrar que <strong>pedir más seguido no siempre es mejor</strong>. Si tus costos de transporte son altos, la eficiencia exige lotes más grandes.</p>
+<ul>
+<li><p><strong>Lote Económico (EOQ):</strong> <span><span id="ojs-element-id-1"></span></span> unidades.</p></li>
+<li><p><strong>Punto de Reorden (ROP):</strong> <span><span id="ojs-element-id-2"></span></span> unidades.</p></li>
+<li><p><strong>Frecuencia de Pedido:</strong> Cada <span><span id="ojs-element-id-3"></span></span> días.</p></li>
+</ul>
 </div>
 </div>
 </section>
-<section id="checklist-de-cierre-del-capítulo" class="level2">
-<h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
+<section id="la-robustez-del-eoq-qué-pasa-si-me-equivoco" class="level2">
+<h2 class="anchored" data-anchor-id="la-robustez-del-eoq-qué-pasa-si-me-equivoco">12.5 La Robustez del EOQ: ¿Qué pasa si me equivoco?</h2>
+<p>Una de las bellezas del EOQ es su <strong>insensibilidad al error</strong>. Debido a la raíz cuadrada, si sobreestimas el costo de pedido en un 100%, tu lote solo se desviará un 41%.</p>
+<p>Esta “curva plana” (que puedes observar en la gráfica de Costo Total arriba) significa que es mejor tener un EOQ aproximado basado en lógica financiera que seguir usando reglas de dedo arbitrarias.</p>
+</section>
+<section id="checklist-de-cierre" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-de-cierre">Checklist de Cierre</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">¿He auditado cuánto cuesta realmente procesar un pedido (<span class="math inline">\(S\)</span>)?</label></li>
-<li><label><input type="checkbox">¿He calculado el EOQ para mis 20 productos con mayor impacto en capital?</label></li>
-<li><label><input type="checkbox">¿He verificado que mi ROP considera el stock en tránsito?</label></li>
-<li><label><input type="checkbox">¿Entiendo que en este modelo el stock promedio es <span class="math inline">\(EOQ/2\)</span>?</label></li>
-<li><label><input type="checkbox">¿Estoy listo para introducir el error de pronóstico (RMSE) en el próximo capítulo?</label></li>
+<li><p><label><input type="checkbox">¿He calculado el EOQ para mis productos Clase A?</label></p></li>
+<li><p><label><input type="checkbox">¿Mi ROP considera la demanda durante el Lead Time completo?</label></p></li>
+<li><p><label><input type="checkbox">¿Mi sistema ERP resta los <em>Backorders</em> y suma el <em>Tránsito</em> para calcular la posición de inventario?</label></p></li>
+<li><p><label><input type="checkbox">¿Entiendo que el inventario promedio de ciclo es <span class="math inline">\(EOQ/2\)</span>?</label></p></li>
 </ul>
 
 
+<div class="ojs-auto-generated hidden">
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7TWF0aC5yb3VuZChlb3EpfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMSJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7TWF0aC5yb3VuZChyb3ApfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7TWF0aC5yb3VuZChjeWNsZV9kYXlzKX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTMifV19
+</script>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5QbG90bHkgPSByZXF1aXJlKFwicGxvdGx5LmpzLWRpc3QtbWluQDIuMjQuMVwiKVxyXG5cclxudmlld29mIGRfYW5udWFsID0gSW5wdXRzLnJhbmdlKFsxMDAwLCAyMDAwMF0sIHt2YWx1ZTogNTAwMCwgc3RlcDogMTAwLCBsYWJlbDogXCJEZW1hbmRhIEFudWFsIChEKTpcIn0pXHJcbnZpZXdvZiBzX2Nvc3QgPSBJbnB1dHMucmFuZ2UoWzEwLCA1MDBdLCB7dmFsdWU6IDEwMCwgc3RlcDogMTAsIGxhYmVsOiBcIkNvc3RvIGRlIFBlZGlkbyAoUyk6XCJ9KVxyXG52aWV3b2YgdW5pdF92ID0gSW5wdXRzLnJhbmdlKFsxLCAyMDBdLCB7dmFsdWU6IDUwLCBzdGVwOiAxLCBsYWJlbDogXCJWYWxvciBVbml0YXJpbyAodik6XCJ9KVxyXG52aWV3b2YgaF9yYXRlID0gSW5wdXRzLnJhbmdlKFswLjA1LCAwLjUwXSwge3ZhbHVlOiAwLjI1LCBzdGVwOiAwLjAxLCBsYWJlbDogXCJUYXNhIGggKCUpOlwifSlcclxudmlld29mIGxlYWRfdGltZSA9IElucHV0cy5yYW5nZShbMSwgMzBdLCB7dmFsdWU6IDEwLCBzdGVwOiAxLCBsYWJlbDogXCJMZWFkIFRpbWUgKGTDrWFzKTpcIn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG4vLyBDw6FsY3Vsb3MgR2xvYmFsZXNcclxuaF9hbm51YWwgPSB1bml0X3YgKiBoX3JhdGVcclxuZW9xID0gTWF0aC5zcXJ0KCgyICogZF9hbm51YWwgKiBzX2Nvc3QpIC8gaF9hbm51YWwpXHJcbmRfZGFpbHkgPSBkX2FubnVhbCAvIDM2NVxyXG5yb3AgPSBkX2RhaWx5ICogbGVhZF90aW1lXHJcbmN5Y2xlX2RheXMgPSAoZW9xIC8gZF9kYWlseSlcclxuXHJcbi8vIERhdG9zIHBhcmEgbGEgZ3LDoWZpY2EgZGUgY3J1Y2UgZGUgY3VydmFzXHJcbmNvc3RfY3VydmVzX2RhdGEgPSB7XHJcbiAgY29uc3QgcG9pbnRzID0gW107XHJcbiAgY29uc3Qgc3RhcnRRID0gTWF0aC5tYXgoMTAsIGVvcSAqIDAuMik7XHJcbiAgY29uc3QgZW5kUSA9IGVvcSAqIDIuNTtcclxuICBmb3IgKGxldCBxID0gc3RhcnRROyBxIDw9IGVuZFE7IHEgKz0gKGVuZFEgLSBzdGFydFEpIC8gNTApIHtcclxuICAgIGNvbnN0IGNfb3JkZXIgPSAoZF9hbm51YWwgLyBxKSAqIHNfY29zdDtcclxuICAgIGNvbnN0IGNfaG9sZCA9IChxIC8gMikgKiBoX2FubnVhbDtcclxuICAgIHBvaW50cy5wdXNoKHsgcSwgY19vcmRlciwgY19ob2xkLCBjX3RvdGFsOiBjX29yZGVyICsgY19ob2xkIH0pO1xyXG4gIH1cclxuICByZXR1cm4gcG9pbnRzO1xyXG59XHJcblxyXG5jaGFydEN1cnZlcyA9IHtcclxuICBjb25zdCBjb250YWluZXIgPSBodG1sYDxkaXYgc3R5bGU9XCJ3aWR0aDoxMDAlOyBoZWlnaHQ6NDAwcHg7XCI+PC9kaXY+YDtcclxuICBcclxuICBjb25zdCB0cmFjZXMgPSBbXHJcbiAgICB7XHJcbiAgICAgIHg6IGNvc3RfY3VydmVzX2RhdGEubWFwKGQgPT4gZC5xKSxcclxuICAgICAgeTogY29zdF9jdXJ2ZXNfZGF0YS5tYXAoZCA9PiBkLmNfb3JkZXIpLFxyXG4gICAgICBuYW1lOiAnQ29zdG8gZGUgUGVkaXInLFxyXG4gICAgICB0eXBlOiAnc2NhdHRlcicsXHJcbiAgICAgIG1vZGU6ICdsaW5lcycsXHJcbiAgICAgIGxpbmU6IHtjb2xvcjogJyNmOTczMTYnLCBkYXNoOiAnZGFzaCd9XHJcbiAgICB9LFxyXG4gICAge1xyXG4gICAgICB4OiBjb3N0X2N1cnZlc19kYXRhLm1hcChkID0+IGQucSksXHJcbiAgICAgIHk6IGNvc3RfY3VydmVzX2RhdGEubWFwKGQgPT4gZC5jX2hvbGQpLFxyXG4gICAgICBuYW1lOiAnQ29zdG8gZGUgTWFudGVuZXInLFxyXG4gICAgICB0eXBlOiAnc2NhdHRlcicsXHJcbiAgICAgIG1vZGU6ICdsaW5lcycsXHJcbiAgICAgIGxpbmU6IHtjb2xvcjogJyNlZjQ0NDQnLCBkYXNoOiAnZGFzaCd9XHJcbiAgICB9LFxyXG4gICAge1xyXG4gICAgICB4OiBjb3N0X2N1cnZlc19kYXRhLm1hcChkID0+IGQucSksXHJcbiAgICAgIHk6IGNvc3RfY3VydmVzX2RhdGEubWFwKGQgPT4gZC5jX3RvdGFsKSxcclxuICAgICAgbmFtZTogJ0Nvc3RvIFRvdGFsJyxcclxuICAgICAgdHlwZTogJ3NjYXR0ZXInLFxyXG4gICAgICBtb2RlOiAnbGluZXMnLFxyXG4gICAgICBsaW5lOiB7Y29sb3I6ICcjMjU2M2ViJywgd2lkdGg6IDR9XHJcbiAgICB9XHJcbiAgXTtcclxuXHJcbiAgY29uc3QgbGF5b3V0ID0ge1xyXG4gICAgdGl0bGU6ICdPcHRpbWl6YWNpw7NuIGRlbCBUYW1hw7FvIGRlIExvdGUgKEVPUSknLFxyXG4gICAgeGF4aXM6IHsgdGl0bGU6ICdUYW1hw7FvIGRlIExvdGUgKFEpJyB9LFxyXG4gICAgeWF4aXM6IHsgdGl0bGU6ICdDb3N0byBBbnVhbCAoJCknIH0sXHJcbiAgICB0ZW1wbGF0ZTogJ3Bsb3RseV93aGl0ZScsXHJcbiAgICBtYXJnaW46IHsgdDogNDAsIGI6IDQwLCBsOiA2MCwgcjogMjAgfSxcclxuICAgIGFubm90YXRpb25zOiBbe1xyXG4gICAgICB4OiBlb3EsXHJcbiAgICAgIHk6IChlb3EvMiAqIGhfYW5udWFsKSAqIDIsXHJcbiAgICAgIHRleHQ6IGBFT1E6ICR7TWF0aC5yb3VuZChlb3EpfWAsXHJcbiAgICAgIHNob3dhcnJvdzogdHJ1ZSxcclxuICAgICAgYXJyb3doZWFkOiAyLFxyXG4gICAgICBheDogMCwgYXk6IC00MFxyXG4gICAgfV1cclxuICB9O1xyXG5cclxuICBQbG90bHkubmV3UGxvdChjb250YWluZXIsIHRyYWNlcywgbGF5b3V0LCB7cmVzcG9uc2l2ZTogdHJ1ZSwgZGlzcGxheU1vZGVCYXI6IGZhbHNlfSk7XHJcbiAgcmV0dXJuIGNvbnRhaW5lcjtcclxufVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcclxuLy8gR2VuZXJhciBkYXRvcyBwYXJhIHNpbXVsYWNpw7NuIHRlbXBvcmFsXHJcbnNpbV9kYXRhID0ge1xyXG4gIGNvbnN0IHBvaW50cyA9IFtdO1xyXG4gIGxldCBjdXJyZW50X3N0b2NrID0gZW9xO1xyXG4gIGxldCBhcnJpdmFsX2RheSA9IC0xO1xyXG5cclxuICBmb3IgKGxldCB0ID0gMDsgdCA8PSAxMjA7IHQrKykge1xyXG4gICAgaWYgKHQgPT09IGFycml2YWxfZGF5KSB7XHJcbiAgICAgIGN1cnJlbnRfc3RvY2sgKz0gZW9xO1xyXG4gICAgICBhcnJpdmFsX2RheSA9IC0xO1xyXG4gICAgfVxyXG4gICAgcG9pbnRzLnB1c2goeyBkYXk6IHQsIHN0b2NrOiBjdXJyZW50X3N0b2NrLCByb3A6IHJvcCB9KTtcclxuICAgIGN1cnJlbnRfc3RvY2sgLT0gZF9kYWlseTtcclxuICAgIGlmIChjdXJyZW50X3N0b2NrIDwgMCkgY3VycmVudF9zdG9jayA9IDA7XHJcbiAgICBpZiAoY3VycmVudF9zdG9jayA8PSByb3AgJiYgYXJyaXZhbF9kYXkgPT09IC0xKSB7XHJcbiAgICAgIGFycml2YWxfZGF5ID0gdCArIGxlYWRfdGltZTtcclxuICAgIH1cclxuICB9XHJcbiAgcmV0dXJuIHBvaW50cztcclxufVxyXG5cclxuY2hhcnRTYXd0b290aCA9IHtcclxuICBjb25zdCBjb250YWluZXIgPSBodG1sYDxkaXYgc3R5bGU9XCJ3aWR0aDoxMDAlOyBoZWlnaHQ6NDAwcHg7XCI+PC9kaXY+YDtcclxuICBcclxuICBjb25zdCB0cmFjZXMgPSBbXHJcbiAgICB7XHJcbiAgICAgIHg6IHNpbV9kYXRhLm1hcChkID0+IGQuZGF5KSxcclxuICAgICAgeTogc2ltX2RhdGEubWFwKGQgPT4gZC5zdG9jayksXHJcbiAgICAgIG5hbWU6ICdJbnZlbnRhcmlvIEbDrXNpY28nLFxyXG4gICAgICB0eXBlOiAnc2NhdHRlcicsXHJcbiAgICAgIG1vZGU6ICdsaW5lcycsXHJcbiAgICAgIGZpbGw6ICd0b3plcm95JyxcclxuICAgICAgbGluZToge2NvbG9yOiAnIzI1NjNlYicsIHdpZHRoOiAyfVxyXG4gICAgfSxcclxuICAgIHtcclxuICAgICAgeDogWzAsIDEyMF0sXHJcbiAgICAgIHk6IFtyb3AsIHJvcF0sXHJcbiAgICAgIG5hbWU6ICdQdW50byBkZSBSZW9yZGVuIChST1ApJyxcclxuICAgICAgdHlwZTogJ3NjYXR0ZXInLFxyXG4gICAgICBtb2RlOiAnbGluZXMnLFxyXG4gICAgICBsaW5lOiB7Y29sb3I6ICcjZWY0NDQ0JywgZGFzaDogJ2Rhc2gnfVxyXG4gICAgfVxyXG4gIF07XHJcblxyXG4gIGNvbnN0IGxheW91dCA9IHtcclxuICAgIHRpdGxlOiAnRmx1am8gZGUgSW52ZW50YXJpbyBlbiBlbCBUaWVtcG8nLFxyXG4gICAgeGF4aXM6IHsgdGl0bGU6ICdEw61hcycgfSxcclxuICAgIHlheGlzOiB7IHRpdGxlOiAnVW5pZGFkZXMnLCByYW5nZW1vZGU6ICd0b3plcm8nIH0sXHJcbiAgICB0ZW1wbGF0ZTogJ3Bsb3RseV93aGl0ZScsXHJcbiAgICBtYXJnaW46IHsgdDogNDAsIGI6IDQwLCBsOiA1MCwgcjogMjAgfVxyXG4gIH07XHJcblxyXG4gIFBsb3RseS5uZXdQbG90KGNvbnRhaW5lciwgdHJhY2VzLCBsYXlvdXQsIHtyZXNwb25zaXZlOiB0cnVlLCBkaXNwbGF5TW9kZUJhcjogZmFsc2V9KTtcclxuICByZXR1cm4gY29udGFpbmVyO1xyXG59XHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnZF9hbm51YWwnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc19jb3N0JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3VuaXRfdicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdoX3JhdGUnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnbGVhZF90aW1lJykifV19
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1049,8 +1356,21 @@ window.Quarto = {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Nicolás A. Bravo</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-12-eoq-punto-reorden.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Este libro fue creado con <a href="https://quarto.org/">Quarto</a>. Visita mi <a href="https://github.com/nicobravo933-Planner">repositorio GitHub</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-12-eoq-punto-reorden.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>
