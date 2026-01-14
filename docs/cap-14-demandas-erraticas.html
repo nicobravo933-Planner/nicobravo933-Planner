@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -74,6 +109,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -496,19 +533,27 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#la-anatomía-del-caos-clasificación-de-demanda" id="toc-la-anatomía-del-caos-clasificación-de-demanda" class="nav-link active" data-scroll-target="#la-anatomía-del-caos-clasificación-de-demanda">14.1 La Anatomía del Caos: Clasificación de Demanda</a>
+  <li><a href="#más-allá-de-la-curva-normal" id="toc-más-allá-de-la-curva-normal" class="nav-link active" data-scroll-target="#más-allá-de-la-curva-normal">14. Más allá de la Curva Normal</a>
   <ul class="collapse">
-  <li><a href="#la-matriz-de-syntetos-boylan-mapa-de-navegación" id="toc-la-matriz-de-syntetos-boylan-mapa-de-navegación" class="nav-link" data-scroll-target="#la-matriz-de-syntetos-boylan-mapa-de-navegación">14.1.1 La Matriz de Syntetos-Boylan: Mapa de Navegación</a></li>
-  </ul></li>
-  <li><a href="#el-duelo-normal-vs.-gamma" id="toc-el-duelo-normal-vs.-gamma" class="nav-link" data-scroll-target="#el-duelo-normal-vs.-gamma">14.2 El Duelo: Normal vs.&nbsp;Gamma</a>
+  <li><a href="#la-falacia-de-la-campana-en-la-logística-real" id="toc-la-falacia-de-la-campana-en-la-logística-real" class="nav-link" data-scroll-target="#la-falacia-de-la-campana-en-la-logística-real">14.1 La Falacia de la Campana en la Logística Real</a></li>
+  <li><a href="#el-mapa-del-tesoro-matriz-syntetos-boylan" id="toc-el-mapa-del-tesoro-matriz-syntetos-boylan" class="nav-link" data-scroll-target="#el-mapa-del-tesoro-matriz-syntetos-boylan">14.2 El Mapa del Tesoro: Matriz Syntetos-Boylan</a>
   <ul class="collapse">
-  <li><a href="#el-lado-oscuro-de-gauss-en-supply-chain" id="toc-el-lado-oscuro-de-gauss-en-supply-chain" class="nav-link" data-scroll-target="#el-lado-oscuro-de-gauss-en-supply-chain">14.2.1 El Lado Oscuro de Gauss en Supply Chain</a></li>
-  <li><a href="#por-qué-la-distribución-gamma-es-la-liga-adaptativa" id="toc-por-qué-la-distribución-gamma-es-la-liga-adaptativa" class="nav-link" data-scroll-target="#por-qué-la-distribución-gamma-es-la-liga-adaptativa">14.2.2 Por qué la Distribución Gamma es la “Liga Adaptativa”</a></li>
+  <li><a href="#las-cuatro-dimensiones-del-inventario" id="toc-las-cuatro-dimensiones-del-inventario" class="nav-link" data-scroll-target="#las-cuatro-dimensiones-del-inventario">Las Cuatro Dimensiones del Inventario</a></li>
   </ul></li>
-  <li><a href="#el-método-de-croston-y-la-mejora-sba" id="toc-el-método-de-croston-y-la-mejora-sba" class="nav-link" data-scroll-target="#el-método-de-croston-y-la-mejora-sba">14.3 El Método de Croston y la Mejora SBA</a></li>
-  <li><a href="#el-camino-hacia-el-pronóstico-probabilístico" id="toc-el-camino-hacia-el-pronóstico-probabilístico" class="nav-link" data-scroll-target="#el-camino-hacia-el-pronóstico-probabilístico">14.4 El Camino hacia el Pronóstico Probabilístico</a></li>
-  <li><a href="#implicaciones-en-la-gestión-de-inventarios" id="toc-implicaciones-en-la-gestión-de-inventarios" class="nav-link" data-scroll-target="#implicaciones-en-la-gestión-de-inventarios">14.5 Implicaciones en la Gestión de Inventarios</a></li>
+  <li><a href="#la-distribución-gamma-la-reina-de-la-asimetría" id="toc-la-distribución-gamma-la-reina-de-la-asimetría" class="nav-link" data-scroll-target="#la-distribución-gamma-la-reina-de-la-asimetría">14.3 La Distribución Gamma: La Reina de la Asimetría</a>
+  <ul class="collapse">
+  <li><a href="#por-qué-la-gamma-es-superior-en-variabilidad-alta" id="toc-por-qué-la-gamma-es-superior-en-variabilidad-alta" class="nav-link" data-scroll-target="#por-qué-la-gamma-es-superior-en-variabilidad-alta">¿Por qué la Gamma es superior en variabilidad alta?</a></li>
+  <li><a href="#la-distribución-de-poisson-el-estándar-para-lo-lento" id="toc-la-distribución-de-poisson-el-estándar-para-lo-lento" class="nav-link" data-scroll-target="#la-distribución-de-poisson-el-estándar-para-lo-lento">La Distribución de Poisson: El Estándar para lo “Lento”</a></li>
+  </ul></li>
+  <li><a href="#simulador-de-comportamiento-normal-vs.-gamma" id="toc-simulador-de-comportamiento-normal-vs.-gamma" class="nav-link" data-scroll-target="#simulador-de-comportamiento-normal-vs.-gamma">14.4 Simulador de Comportamiento: Normal vs.&nbsp;Gamma</a></li>
+  <li><a href="#colas-pesadas-curtosis-y-el-método-croston" id="toc-colas-pesadas-curtosis-y-el-método-croston" class="nav-link" data-scroll-target="#colas-pesadas-curtosis-y-el-método-croston">14.5 Colas Pesadas, Curtosis y el Método Croston</a>
+  <ul class="collapse">
+  <li><a href="#el-método-croston-para-intermitencia" id="toc-el-método-croston-para-intermitencia" class="nav-link" data-scroll-target="#el-método-croston-para-intermitencia">El Método Croston para Intermitencia</a></li>
+  <li><a href="#cuándo-usar-bootstrapping" id="toc-cuándo-usar-bootstrapping" class="nav-link" data-scroll-target="#cuándo-usar-bootstrapping">¿Cuándo usar Bootstrapping?</a></li>
+  </ul></li>
+  <li><a href="#implicaciones-en-el-pl-y-la-estrategia" id="toc-implicaciones-en-el-pl-y-la-estrategia" class="nav-link" data-scroll-target="#implicaciones-en-el-pl-y-la-estrategia">14.6 Implicaciones en el P&amp;L y la Estrategia</a></li>
   <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-14-demandas-erraticas.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -535,95 +580,320 @@ window.Quarto = {
 </header>
 
 
-<p>En el Capítulo 13, aprendimos a calcular el Stock de Seguridad utilizando el factor <span class="math inline">\(k\)</span> y la desviación estándar del error. Sin embargo, esa fórmula descansa sobre una suposición cómoda pero frecuentemente falsa: que los errores de demanda siguen una <strong>Distribución Normal</strong> (la famosa campana de Gauss). Esta suposición es el “pecado original” de muchos softwares de ERP y sistemas de planificación tradicionales, y es la razón por la cual muchas empresas tienen estanterías llenas de productos que no rotan y quiebres constantes en los que sí.</p>
-<p>Para un producto de alta rotación y volumen masivo (<strong>Clase A</strong>), como la leche en un supermercado o los consumibles de oficina estándar, la distribución normal funciona aceptablemente bien. Esto sucede gracias al <strong>Teorema del Límite Central</strong>: cuando sumas muchos eventos independientes, el resultado tiende a parecerse a una campana. Pero, ¿qué pasa con ese repuesto industrial que se vende una vez cada tres meses? ¿O con ese artículo de lujo que tiene pedidos erráticos de gran volumen? Si intentas aplicar la “campana de Gauss” a estos productos, estarás navegando con una brújula rota.</p>
-<p>En este capítulo, romperemos el mito de la normalidad y entenderemos por qué la <strong>Distribución Gamma</strong> es el verdadero salvador del capital de trabajo en la “Larga Cola” de productos intermitentes.</p>
-<section id="la-anatomía-del-caos-clasificación-de-demanda" class="level2">
-<h2 class="anchored" data-anchor-id="la-anatomía-del-caos-clasificación-de-demanda">14.1 La Anatomía del Caos: Clasificación de Demanda</h2>
-<p>Antes de elegir un algoritmo, debemos diagnosticar la “física” de nuestra serie de tiempo. No todos los errores son iguales, y tratarlos como tales es una receta para el desastre financiero. Para ello, utilizamos dos métricas que consideramos fundamentales para separar la señal del ruido:</p>
+<p>En el capítulo anterior, calculamos el Stock de Seguridad utilizando la Distribución Normal. Es el estándar de la industria y funciona razonablemente bien para productos de alta rotación (Clase A) con demanda estable. Pero hay un secreto sucio en la ciencia de datos aplicada a suministros: <strong>la mayoría de los productos no son “normales”</strong>.</p>
+<p>Si intentas aplicar las fórmulas del Capítulo 13 a un producto que se vende una vez cada tres semanas, o a uno que tiene picos explosivos, terminarás con un almacén lleno de “obsoletos” o estantes vacíos. En este capítulo, aprenderemos a identificar cuándo abandonar la campana de Gauss y qué herramientas usar en su lugar para dominar la incertidumbre de los productos erráticos.</p>
+<section id="más-allá-de-la-curva-normal" class="level1">
+<h1>14. Más allá de la Curva Normal</h1>
+<section id="la-falacia-de-la-campana-en-la-logística-real" class="level2">
+<h2 class="anchored" data-anchor-id="la-falacia-de-la-campana-en-la-logística-real">14.1 La Falacia de la Campana en la Logística Real</h2>
+<p>La distribución normal es una abstracción matemática hermosa pero peligrosa. En el almacén, asume dos axiomas que chocan frontalmente con la realidad operativa:</p>
 <ol type="1">
-<li><strong>ADI (Average Demand Interval):</strong> Mide la frecuencia temporal. Es el número promedio de periodos entre dos eventos de demanda.
-<ul>
-<li><strong>Cálculo:</strong> $ ext{ADI} = rac{ ext{Total de periodos}}{ ext{Número de periodos con demanda}}$.</li>
-<li><em>Ejemplo:</em> Si en 10 semanas vendes en las semanas 2, 5 y 8, has tenido 3 ventas en 10 semanas. Tu ADI es <span class="math inline">\(10 / 3 = 3.33\)</span>. Un ADI superior a 1.32 suele indicar que la demanda está empezando a ser intermitente y la campana de Gauss empieza a “romperse”.</li>
-</ul></li>
-<li><span class="math inline">\(CV^2\)</span> (Coefficient of Variation Squared): Mide la variabilidad del tamaño del pedido. Nos dice si, cuando el cliente compra, el volumen es predecible o una sorpresa total.
-<ul>
-<li><strong>Cálculo:</strong> <span class="math inline">\(CV^2 = \left( rac{\sigma}{\mu}
-ight)^2\)</span>.</li>
-<li>Un <span class="math inline">\(CV^2\)</span> superior a 0.49 indica que la demanda es altamente errática en volumen, lo que significa que incluso si sabes <em>cuándo</em> vendrá el cliente, no tienes idea de <em>cuánto</em> pedirá.</li>
-</ul></li>
+<li><p><strong>Simetría Imposible:</strong> La Normal asume que es igual de probable vender 50 unidades de más que 50 unidades de menos. Sin embargo, la demanda tiene un suelo duro en <strong>cero</strong>. Si tu demanda promedio es 10 y tu desviación estándar es 12, la Normal predecirá que el 20% del tiempo venderás cantidades negativas. Esto no solo es un error matemático; es un error financiero que distorsiona el cálculo del capital de trabajo.</p></li>
+<li><p><strong>Continuidad vs.&nbsp;Discreción:</strong> La campana de Gauss es una función continua (fluye como el agua). Pero en Supply Chain, vendemos objetos discretos (cajas, unidades, pallets). Cuando la rotación es baja, el error de “redondeo” de la Normal puede representar el 30% de tu inventario de seguridad.</p></li>
 </ol>
-<section id="la-matriz-de-syntetos-boylan-mapa-de-navegación" class="level3">
-<h3 class="anchored" data-anchor-id="la-matriz-de-syntetos-boylan-mapa-de-navegación">14.1.1 La Matriz de Syntetos-Boylan: Mapa de Navegación</h3>
-<p>Dependiendo de estos valores, clasificamos los productos en cuatro cuadrantes críticos, cada uno con una estrategia de inventario distinta:</p>
+<p>Para productos con baja rotación o alta variabilidad, la curva normal subestima drásticamente el riesgo de quiebre en las “colas” de la distribución. Es decir, falla precisamente cuando más la necesitamos: en los eventos extremos.</p>
+</section>
+<section id="el-mapa-del-tesoro-matriz-syntetos-boylan" class="level2">
+<h2 class="anchored" data-anchor-id="el-mapa-del-tesoro-matriz-syntetos-boylan">14.2 El Mapa del Tesoro: Matriz Syntetos-Boylan</h2>
+<p>Para no perdernos en el caos, el Arquitecto de Suministros utiliza la clasificación de <strong>Syntetos-Boylan</strong>. Esta matriz nos permite segmentar el portafolio no por su valor (como el ABC), sino por su <strong>comportamiento estadístico</strong>. Se basa en dos métricas:</p>
 <ul>
-<li><strong>Smooth (Suave):</strong> ADI &lt; 1.32, <span class="math inline">\(CV^2\)</span> &lt; 0.49. La demanda ocurre casi siempre y en cantidades similares.</li>
-<li><strong>Erratic (Errática):</strong> ADI &lt; 1.32, <span class="math inline">\(CV^2\)</span> &gt; 0.49. El cliente siempre está ahí, pero el volumen es una montaña rusa.</li>
-<li><strong>Intermittent (Intermitente):</strong> ADI &gt; 1.32, <span class="math inline">\(CV^2\)</span> &lt; 0.49. Sabes cuánto pedirán, pero no cuándo aparecerán.</li>
-<li><strong>Lumpy (A bultos):</strong> ADI &gt; 1.32, <span class="math inline">\(CV^2\)</span> &gt; 0.49. El peor escenario. No sabes cuándo vendrá el cliente, ni cuánto pedirá. Es el territorio donde el capital de trabajo muere sin la <strong>Distribución Gamma</strong>.</li>
+<li><p><span class="math inline">\(ADI\)</span> <strong>(Average Demand Interval):</strong> El intervalo promedio entre pedidos. (<span class="math inline">\(ADI = \text{Periodos totales} / \text{Periodos con demanda}\)</span>).</p></li>
+<li><p><span class="math inline">\(CV^2\)</span> <strong>(Coeficiente de Variación al Cuadrado):</strong> Mide la estabilidad del tamaño de los pedidos.</p></li>
+</ul>
+<section id="las-cuatro-dimensiones-del-inventario" class="level3">
+<h3 class="anchored" data-anchor-id="las-cuatro-dimensiones-del-inventario">Las Cuatro Dimensiones del Inventario</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 24%">
+<col style="width: 27%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Categoría</th>
+<th style="text-align: center;">Umbrales Técnicos</th>
+<th style="text-align: center;">Comportamiento</th>
+<th style="text-align: center;">Estrategia de Stock</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Smooth (Suave)</strong></td>
+<td style="text-align: center;"><span class="math inline">\(ADI &lt; 1.32\)</span> y <span class="math inline">\(CV^2 &lt; 0.49\)</span></td>
+<td style="text-align: center;">Pedidos seguidos y de tamaño similar.</td>
+<td style="text-align: center;"><strong>Normal / EOQ Tradicional</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Erratic (Errática)</strong></td>
+<td style="text-align: center;"><span class="math inline">\(ADI &lt; 1.32\)</span> y <span class="math inline">\(CV^2 &gt; 0.49\)</span></td>
+<td style="text-align: center;">Pedidos frecuentes, pero con tamaños impredecibles.</td>
+<td style="text-align: center;"><strong>Gamma / Bootstrapping</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Intermittent</strong></td>
+<td style="text-align: center;"><span class="math inline">\(ADI &gt; 1.32\)</span> y <span class="math inline">\(CV^2 &lt; 0.49\)</span></td>
+<td style="text-align: center;">Cantidades constantes, pero pasa mucho tiempo entre ventas.</td>
+<td style="text-align: center;"><strong>Poisson / Croston</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Lumpy (Espasmódica)</strong></td>
+<td style="text-align: center;"><span class="math inline">\(ADI &gt; 1.32\)</span> y <span class="math inline">\(CV^2 &gt; 0.49\)</span></td>
+<td style="text-align: center;">El caos absoluto: poco frecuente y cantidades salvajes.</td>
+<td style="text-align: center;"><strong>Simulación Monte Carlo</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="la-distribución-gamma-la-reina-de-la-asimetría" class="level2">
+<h2 class="anchored" data-anchor-id="la-distribución-gamma-la-reina-de-la-asimetría">14.3 La Distribución Gamma: La Reina de la Asimetría</h2>
+<p>Cuando la demanda es <strong>Errática</strong> (frecuente pero con picos explosivos), la Distribución Gamma es tu mejor herramienta. A diferencia de la Normal, la Gamma es asimétrica hacia la derecha: entiende que la demanda no puede bajar de cero, pero reconoce que los picos de demanda “pesan” más que los valles.</p>
+<section id="por-qué-la-gamma-es-superior-en-variabilidad-alta" class="level3">
+<h3 class="anchored" data-anchor-id="por-qué-la-gamma-es-superior-en-variabilidad-alta">¿Por qué la Gamma es superior en variabilidad alta?</h3>
+<p>La Gamma se define por dos parámetros: <strong>Shape</strong> (<span class="math inline">\(\alpha\)</span>) y <strong>Scale</strong> (<span class="math inline">\(\theta\)</span>).</p>
+<ul>
+<li><p>Cuando la variabilidad es baja, la Gamma se parece a la Normal.</p></li>
+<li><p>Cuando la variabilidad sube (CV &gt; 0.5), la Gamma se “estira” hacia la derecha. Esto significa que el inventario de seguridad resultante será <strong>mayor</strong> que el de la Normal, protegiéndote contra esos picos que la Normal simplemente ignora.</p></li>
 </ul>
 </section>
-</section>
-<section id="el-duelo-normal-vs.-gamma" class="level2">
-<h2 class="anchored" data-anchor-id="el-duelo-normal-vs.-gamma">14.2 El Duelo: Normal vs.&nbsp;Gamma</h2>
-<p>Elegir la distribución de probabilidad correcta no es un detalle técnico; es una decisión de inversión de capital que afecta directamente tu ROIC (Retorno sobre el Capital Invertido).</p>
-<section id="el-lado-oscuro-de-gauss-en-supply-chain" class="level3">
-<h3 class="anchored" data-anchor-id="el-lado-oscuro-de-gauss-en-supply-chain">14.2.1 El Lado Oscuro de Gauss en Supply Chain</h3>
-<p>La campana de Gauss es simétrica. Esto implica que la probabilidad de que la demanda sea 10 unidades por encima de la media es idéntica a la probabilidad de que sea 10 unidades por debajo. Esto genera dos errores fatales:</p>
-<ol type="1">
-<li><strong>La Aberración Negativa:</strong> En productos lentos (media de 1 unidad), la curva normal asigna probabilidad a valores negativos. Como en el almacén no podemos tener “-2 cajas”, el sistema simplemente ignora esa parte de la curva, resultando en un stock de seguridad que subestima el riesgo real.</li>
-<li><strong>Colas Delgadas (Thin Tails):</strong> La Normal asume que los pedidos gigantes son imposibles. En la realidad de la Clase C, los pedidos masivos ocurren más a menudo de lo que Gauss predice. Confiar en la Normal es como construir un dique ignorando que el río puede desbordarse.</li>
-</ol>
-</section>
-<section id="por-qué-la-distribución-gamma-es-la-liga-adaptativa" class="level3">
-<h3 class="anchored" data-anchor-id="por-qué-la-distribución-gamma-es-la-liga-adaptativa">14.2.2 Por qué la Distribución Gamma es la “Liga Adaptativa”</h3>
-<p>La Gamma es una distribución asimétrica que solo existe para valores positivos (de 0 a infinito). * <strong>Se adapta a la forma:</strong> Si el producto es rápido, la Gamma se comporta como una Normal. Si el producto es lento o intermitente, la Gamma se “encoge” hacia el cero y extiende una <strong>cola larga hacia la derecha</strong> (capturando el riesgo de pedidos grandes). * <strong>Consecuencia Financiera:</strong> Al usar Gamma para calcular el stock de seguridad en productos Clase B y C, logras la misma disponibilidad que con la Normal pero invirtiendo entre un <strong>15% y un 25% menos de capital</strong>.</p>
+<section id="la-distribución-de-poisson-el-estándar-para-lo-lento" class="level3">
+<h3 class="anchored" data-anchor-id="la-distribución-de-poisson-el-estándar-para-lo-lento">La Distribución de Poisson: El Estándar para lo “Lento”</h3>
+<p>Para productos <strong>Intermitentes</strong> (Clase C o repuestos), usamos Poisson. Esta distribución es discreta (solo números enteros) y solo necesita un parámetro: la media (<span class="math inline">\(\lambda\)</span>). Es ideal cuando esperas vender 0, 1 o 2 unidades. Mientras que la Normal sugeriría un SS de 0.5 unidades (imposible de comprar), la Poisson te dirá exactamente cuántas unidades enteras necesitas para cubrir el riesgo.</p>
 </section>
 </section>
-<section id="el-método-de-croston-y-la-mejora-sba" class="level2">
-<h2 class="anchored" data-anchor-id="el-método-de-croston-y-la-mejora-sba">14.3 El Método de Croston y la Mejora SBA</h2>
-<p>Cuando el historial tiene muchos ceros, los modelos tradicionales (como el Suavizamiento Exponencial Simple) “colapsan”.</p>
-<p>El modelo de Croston (1972) solucionó esto al <strong>desacoplar la demanda</strong> en dos canales de información que se actualizan solo cuando hay una venta: 1. <strong>Nivel de Demanda (</strong><span class="math inline">\(z_t\)</span>): ¿Cuánto piden cuando deciden comprar? 2. <strong>Intervalo entre Pedidos (</strong><span class="math inline">\(p_t\)</span>): ¿Cuál es la frecuencia de compra?</p>
-<p>El pronóstico final es <span class="math inline">\(\hat{y} = z_t / p_t\)</span>. La <strong>aproximación SBA</strong> (Syntetos-Boylan) corrige un ligero sesgo positivo de Croston, siendo hoy el estándar para gestionar la “Larga Cola” de materiales de mantenimiento, repuestos y artículos de lujo.</p>
-</section>
-<section id="el-camino-hacia-el-pronóstico-probabilístico" class="level2">
-<h2 class="anchored" data-anchor-id="el-camino-hacia-el-pronóstico-probabilístico">14.4 El Camino hacia el Pronóstico Probabilístico</h2>
-<p>Aquí es donde el Arquitecto de Suministros abandona el “número único” (Single Point Forecast). En demandas erráticas, predecir “venderemos 5 unidades” es una mentira estadística que nadie cree. Lo que necesitamos es un <strong>mapa de densidades de probabilidad</strong>.</p>
-<p>En lugar de la media, empezamos a hablar de <strong>Cuantiles</strong>: * <strong>P50 (Mediana):</strong> El valor central del riesgo. * <strong>P95 (Objetivo):</strong> El nivel que protege contra el 95% de la incertidumbre.</p>
-<p>Al usar modelos de Machine Learning que entregan cuantiles, estamos aplicando la lógica de la distribución Gamma de forma automática. Esto nos permite optimizar el inventario basándonos en el <strong>Costo de Oportunidad</strong>.</p>
-</section>
-<section id="implicaciones-en-la-gestión-de-inventarios" class="level2">
-<h2 class="anchored" data-anchor-id="implicaciones-en-la-gestión-de-inventarios">14.5 Implicaciones en la Gestión de Inventarios</h2>
-<p>Este capítulo cambia las reglas del juego para lo que viene: * <strong>En el Capítulo 15:</strong> Veremos cómo la incertidumbre del Lead Time se suma a esta demanda no-normal. * <strong>En el Capítulo 16:</strong> Aprenderemos que si la demanda es Gamma, tu política de reaprovisionamiento debe basarse en la probabilidad de faltante.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<section id="simulador-de-comportamiento-normal-vs.-gamma" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-de-comportamiento-normal-vs.-gamma">14.4 Simulador de Comportamiento: Normal vs.&nbsp;Gamma</h2>
+<p>Ajusta la <strong>Desviación Estándar (</strong><span class="math inline">\(\sigma\)</span><strong>)</strong>. Observa cómo, a medida que aumenta la incertidumbre (CV alto), la curva Normal (roja) se desplaza hacia la zona negativa (error conceptual), mientras que la Gamma (azul) mantiene su ancla en el cero y ensancha su cola derecha para proteger tu nivel de servicio ante eventos extremos.</p>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="60" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 59;"><span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>jStat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>viewof mean_val <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">5</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Demanda Promedio (μ):"</span>})</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>viewof std_val <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">40</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Desviación Estándar (σ):"</span>})</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>viewof sl_target <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.8</span><span class="op">,</span> <span class="fl">0.999</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.95</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Nivel de Servicio:"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="73" data-source-offset="-37"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 72;"><span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>cv <span class="op">=</span> std_val <span class="op">/</span> mean_val</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>ss_norm <span class="op">=</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">inv</span>(sl_target<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>) <span class="op">*</span> std_val</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="co">// Parámetros Gamma (Shape y Scale)</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> (mean_val <span class="op">/</span> std_val) <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> (std_val <span class="op">**</span> <span class="dv">2</span>) <span class="op">/</span> mean_val</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>ss_gamma <span class="op">=</span> jStat<span class="op">.</span><span class="at">gamma</span><span class="op">.</span><span class="fu">inv</span>(sl_target<span class="op">,</span> alpha<span class="op">,</span> theta) <span class="op">-</span> mean_val</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>dataPlot <span class="op">=</span> {</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y_norm <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y_gamma <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> max_x <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">120</span><span class="op">,</span> mean_val <span class="op">+</span> <span class="dv">5</span> <span class="op">*</span> std_val)<span class="op">;</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;=</span> max_x<span class="op">;</span> i <span class="op">+=</span> max_x<span class="op">/</span><span class="dv">120</span>) {</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>    x<span class="op">.</span><span class="fu">push</span>(i)<span class="op">;</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>    y_norm<span class="op">.</span><span class="fu">push</span>(jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">pdf</span>(i<span class="op">,</span> mean_val<span class="op">,</span> std_val))<span class="op">;</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>    y_gamma<span class="op">.</span><span class="fu">push</span>(jStat<span class="op">.</span><span class="at">gamma</span><span class="op">.</span><span class="fu">pdf</span>(i<span class="op">,</span> alpha<span class="op">,</span> theta))<span class="op">;</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {x<span class="op">,</span> y_norm<span class="op">,</span> y_gamma}<span class="op">;</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:420px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> dataPlot<span class="op">.</span><span class="at">x</span><span class="op">,</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> dataPlot<span class="op">.</span><span class="at">y_norm</span><span class="op">,</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Normal (Peligro: predice negativos)'</span><span class="op">,</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#ef4444'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">dash</span><span class="op">:</span> <span class="st">'dot'</span>}</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> dataPlot<span class="op">.</span><span class="at">x</span><span class="op">,</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> dataPlot<span class="op">.</span><span class="at">y_gamma</span><span class="op">,</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Gamma (Segura: asimétrica)'</span><span class="op">,</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">'tozeroy'</span><span class="op">,</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fillcolor</span><span class="op">:</span> <span class="st">'rgba(37, 99, 235, 0.15)'</span><span class="op">,</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>      <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#2563eb'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">3</span>}</span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layout <span class="op">=</span> {</span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="vs">`Análisis de Cobertura (CV = </span><span class="sc">${</span>cv<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">)`</span><span class="op">,</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>    <span class="dt">xaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Demanda Probable (Unidades)'</span><span class="op">,</span> <span class="dt">range</span><span class="op">:</span> [<span class="op">-</span><span class="dv">15</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">100</span><span class="op">,</span> mean_val <span class="op">+</span> <span class="dv">4</span><span class="op">*</span>std_val)] }<span class="op">,</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>    <span class="dt">yaxis</span><span class="op">:</span> { <span class="dt">title</span><span class="op">:</span> <span class="st">'Probabilidad'</span><span class="op">,</span> <span class="dt">showticklabels</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">gridcolor</span><span class="op">:</span> <span class="st">'#f1f5f9'</span> }<span class="op">,</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> { <span class="dt">orientation</span><span class="op">:</span> <span class="st">'h'</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="op">-</span><span class="fl">0.2</span> }</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> layout<span class="op">,</span> {<span class="dt">responsive</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">displayModeBar</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">;</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-7" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>¿Gamma para todo? El Criterio del Arquitecto
+<span class="screen-reader-only">Tip</span>Veredicto del Arquitecto
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>No, la complejidad debe ser una inversión, no un pasatiempo. 1. <strong>Clase A / Smooth:</strong> Usa la <strong>Normal</strong>. 2. <strong>Clase B / Errática:</strong> Evalúa el <span class="math inline">\(CV^2\)</span>. Si es alto, la <strong>Gamma</strong> te ahorrará miles en capital de trabajo. 3. <strong>Clase C / Lumpy / Intermittent:</strong> Usa <strong>Gamma o Poisson</strong> sin dudarlo.</p>
+<p>Con un Coeficiente de Variación de <strong><span><span id="ojs-element-id-1"></span></span></strong>, la distribución Normal sugiere un SS de <strong><span><span id="ojs-element-id-2"></span></span></strong> unidades. Sin embargo, la Gamma (que reconoce la posibilidad de picos extremos) sugiere <strong><span><span id="ojs-element-id-3"></span></span></strong> unidades.</p>
+<p><strong>Regla de Oro:</strong> Si tu <span class="math inline">\(CV &gt; 0.5\)</span> o tu demanda promedio es baja (<span class="math inline">\(&lt; 10\)</span>), deja de usar la Normal. Estás calculando mal tu riesgo financiero.</p>
 </div>
 </div>
+</section>
+<section id="colas-pesadas-curtosis-y-el-método-croston" class="level2">
+<h2 class="anchored" data-anchor-id="colas-pesadas-curtosis-y-el-método-croston">14.5 Colas Pesadas, Curtosis y el Método Croston</h2>
+<p>Cuando nos alejamos de la “normalidad”, entramos en el territorio de las <strong>Colas Pesadas</strong> (Fat Tails). Esto sucede especialmente en la categoría <strong>Lumpy</strong>. Aquí, los modelos estadísticos tradicionales (incluso la Gamma) pueden quedarse cortos porque la realidad presenta una <strong>Curtosis</strong> elevada: eventos extremos que ocurren con mucha más frecuencia de lo previsto.</p>
+<section id="el-método-croston-para-intermitencia" class="level3">
+<h3 class="anchored" data-anchor-id="el-método-croston-para-intermitencia">El Método Croston para Intermitencia</h3>
+<p>Para productos intermitentes, el pronóstico simple (SMA o Suavizado Exponencial) falla porque tiende a “aplanar” la demanda después de un periodo de venta cero. El <strong>Método Croston</strong> resuelve esto pronosticando por separado:</p>
+<ol type="1">
+<li><p>El tamaño del pedido cuando este ocurre.</p></li>
+<li><p>El tiempo que pasará hasta el próximo pedido.</p></li>
+</ol>
+<p>Esto evita que el sistema “olvide” que el producto es importante aunque no se haya vendido en las últimas dos semanas.</p>
+</section>
+<section id="cuándo-usar-bootstrapping" class="level3">
+<h3 class="anchored" data-anchor-id="cuándo-usar-bootstrapping">¿Cuándo usar Bootstrapping?</h3>
+<p>Si nada de lo anterior funciona (demanda errática extrema), recurrimos al <strong>Bootstrapping</strong>. En lugar de asumir una distribución matemática, tomamos tus datos históricos y hacemos que la computadora simule miles de “futuros posibles” mezclando los días de venta pasados. Es la técnica definitiva antes de entrar a la simulación pura de Monte Carlo.</p>
+</section>
+</section>
+<section id="implicaciones-en-el-pl-y-la-estrategia" class="level2">
+<h2 class="anchored" data-anchor-id="implicaciones-en-el-pl-y-la-estrategia">14.6 Implicaciones en el P&amp;L y la Estrategia</h2>
+<p>Usar la distribución incorrecta tiene consecuencias reales en el Estado de Resultados (P&amp;L):</p>
+<ul>
+<li><p><strong>Sobre-stock en Clase C:</strong> Aplicar la Normal a productos intermitentes suele inflar el inventario innecesariamente.</p></li>
+<li><p><strong>Quiebres en Clase B Erráticos:</strong> La Normal subestima los picos, causando faltantes justo cuando el cliente más te necesita.</p></li>
+</ul>
+<p>La arquitectura de suministros moderna exige una <strong>segmentación estadística</strong>. No trates a todos tus productos con la misma vara matemática.</p>
 </section>
 <section id="checklist-de-cierre-del-capítulo" class="level2">
 <h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">¿He clasificado mi catálogo usando ADI y <span class="math inline">\(CV^2\)</span>?</label></li>
-<li><label><input type="checkbox">¿He identificado los productos donde la Distribución Normal sugiere niveles de stock absurdos?</label></li>
-<li><label><input type="checkbox">¿He implementado Croston o SBA para mis repuestos de baja rotación?</label></li>
-<li><label><input type="checkbox">¿He comparado la inversión en SS usando Gamma vs Normal en mi Clase B y C?</label></li>
-<li><label><input type="checkbox">¿He empezado a hablar de cuantiles de riesgo (P90, P95) con los stakeholders?</label></li>
+<li><p><label><input type="checkbox">¿He calculado el <span class="math inline">\(ADI\)</span> y el <span class="math inline">\(CV^2\)</span> para segmentar mi portafolio según Syntetos-Boylan?</label></p></li>
+<li><p><label><input type="checkbox">¿He identificado los productos donde el <span class="math inline">\(CV &gt; 0.5\)</span> para migrar a modelos Gamma?</label></p></li>
+<li><p><label><input type="checkbox">¿Uso la distribución de Poisson para mis repuestos o productos de muy baja rotación?</label></p></li>
+<li><p><label><input type="checkbox">¿Soy consciente de que la distribución Normal es peligrosa cuando la demanda promedio es baja?</label></p></li>
+<li><p><label><input type="checkbox">¿He considerado el Método Croston para evitar el “aplanamiento” del pronóstico en productos intermitentes?</label></p></li>
 </ul>
 
 
+<div class="ojs-auto-generated hidden">
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7Y3YudG9GaXhlZCgyKX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTEifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke01hdGgucm91bmQoc3Nfbm9ybSl9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0yIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtNYXRoLnJvdW5kKHNzX2dhbW1hKX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTMifV19
+</script>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5qU3RhdCA9IHJlcXVpcmUoXCJqc3RhdEAxLjkuNlwiKVxyXG5QbG90bHkgPSByZXF1aXJlKFwicGxvdGx5LmpzLWRpc3QtbWluQDIuMjQuMVwiKVxyXG5cclxudmlld29mIG1lYW5fdmFsID0gSW5wdXRzLnJhbmdlKFs1LCA1MF0sIHt2YWx1ZTogMjAsIHN0ZXA6IDEsIGxhYmVsOiBcIkRlbWFuZGEgUHJvbWVkaW8gKM68KTpcIn0pXHJcbnZpZXdvZiBzdGRfdmFsID0gSW5wdXRzLnJhbmdlKFsxLCA0MF0sIHt2YWx1ZTogMTUsIHN0ZXA6IDEsIGxhYmVsOiBcIkRlc3ZpYWNpw7NuIEVzdMOhbmRhciAoz4MpOlwifSlcclxudmlld29mIHNsX3RhcmdldCA9IElucHV0cy5yYW5nZShbMC44LCAwLjk5OV0sIHt2YWx1ZTogMC45NSwgc3RlcDogMC4wMDEsIGxhYmVsOiBcIk5pdmVsIGRlIFNlcnZpY2lvOlwifSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcbi8vIEPDoWxjdWxvcyBkZSBTdG9jayBkZSBTZWd1cmlkYWRcclxuY3YgPSBzdGRfdmFsIC8gbWVhbl92YWxcclxuc3Nfbm9ybSA9IGpTdGF0Lm5vcm1hbC5pbnYoc2xfdGFyZ2V0LCAwLCAxKSAqIHN0ZF92YWxcclxuXHJcbi8vIFBhcsOhbWV0cm9zIEdhbW1hIChTaGFwZSB5IFNjYWxlKVxyXG5hbHBoYSA9IChtZWFuX3ZhbCAvIHN0ZF92YWwpICoqIDJcclxudGhldGEgPSAoc3RkX3ZhbCAqKiAyKSAvIG1lYW5fdmFsXHJcbnNzX2dhbW1hID0galN0YXQuZ2FtbWEuaW52KHNsX3RhcmdldCwgYWxwaGEsIHRoZXRhKSAtIG1lYW5fdmFsXHJcblxyXG5kYXRhUGxvdCA9IHtcclxuICBjb25zdCB4ID0gW107XHJcbiAgY29uc3QgeV9ub3JtID0gW107XHJcbiAgY29uc3QgeV9nYW1tYSA9IFtdO1xyXG4gIGNvbnN0IG1heF94ID0gTWF0aC5tYXgoMTIwLCBtZWFuX3ZhbCArIDUgKiBzdGRfdmFsKTtcclxuICBcclxuICBmb3IgKGxldCBpID0gMDsgaSA8PSBtYXhfeDsgaSArPSBtYXhfeC8xMjApIHtcclxuICAgIHgucHVzaChpKTtcclxuICAgIHlfbm9ybS5wdXNoKGpTdGF0Lm5vcm1hbC5wZGYoaSwgbWVhbl92YWwsIHN0ZF92YWwpKTtcclxuICAgIHlfZ2FtbWEucHVzaChqU3RhdC5nYW1tYS5wZGYoaSwgYWxwaGEsIHRoZXRhKSk7XHJcbiAgfVxyXG4gIHJldHVybiB7eCwgeV9ub3JtLCB5X2dhbW1hfTtcclxufVxyXG5cclxue1xyXG4gIGNvbnN0IGNvbnRhaW5lciA9IGh0bWxgPGRpdiBzdHlsZT1cIndpZHRoOjEwMCU7IGhlaWdodDo0MjBweDtcIj48L2Rpdj5gO1xyXG4gIFxyXG4gIGNvbnN0IHRyYWNlcyA9IFtcclxuICAgIHtcclxuICAgICAgeDogZGF0YVBsb3QueCxcclxuICAgICAgeTogZGF0YVBsb3QueV9ub3JtLFxyXG4gICAgICBuYW1lOiAnTm9ybWFsIChQZWxpZ3JvOiBwcmVkaWNlIG5lZ2F0aXZvcyknLFxyXG4gICAgICB0eXBlOiAnc2NhdHRlcicsXHJcbiAgICAgIG1vZGU6ICdsaW5lcycsXHJcbiAgICAgIGxpbmU6IHtjb2xvcjogJyNlZjQ0NDQnLCB3aWR0aDogMiwgZGFzaDogJ2RvdCd9XHJcbiAgICB9LFxyXG4gICAge1xyXG4gICAgICB4OiBkYXRhUGxvdC54LFxyXG4gICAgICB5OiBkYXRhUGxvdC55X2dhbW1hLFxyXG4gICAgICBuYW1lOiAnR2FtbWEgKFNlZ3VyYTogYXNpbcOpdHJpY2EpJyxcclxuICAgICAgdHlwZTogJ3NjYXR0ZXInLFxyXG4gICAgICBtb2RlOiAnbGluZXMnLFxyXG4gICAgICBmaWxsOiAndG96ZXJveScsXHJcbiAgICAgIGZpbGxjb2xvcjogJ3JnYmEoMzcsIDk5LCAyMzUsIDAuMTUpJyxcclxuICAgICAgbGluZToge2NvbG9yOiAnIzI1NjNlYicsIHdpZHRoOiAzfVxyXG4gICAgfVxyXG4gIF07XHJcblxyXG4gIGNvbnN0IGxheW91dCA9IHtcclxuICAgIHRpdGxlOiBgQW7DoWxpc2lzIGRlIENvYmVydHVyYSAoQ1YgPSAke2N2LnRvRml4ZWQoMil9KWAsXHJcbiAgICB4YXhpczogeyB0aXRsZTogJ0RlbWFuZGEgUHJvYmFibGUgKFVuaWRhZGVzKScsIHJhbmdlOiBbLTE1LCBNYXRoLm1heCgxMDAsIG1lYW5fdmFsICsgNCpzdGRfdmFsKV0gfSxcclxuICAgIHlheGlzOiB7IHRpdGxlOiAnUHJvYmFiaWxpZGFkJywgc2hvd3RpY2tsYWJlbHM6IGZhbHNlLCBncmlkY29sb3I6ICcjZjFmNWY5JyB9LFxyXG4gICAgdGVtcGxhdGU6ICdwbG90bHlfd2hpdGUnLFxyXG4gICAgbGVnZW5kOiB7IG9yaWVudGF0aW9uOiAnaCcsIHk6IC0wLjIgfVxyXG4gIH07XHJcblxyXG4gIFBsb3RseS5uZXdQbG90KGNvbnRhaW5lciwgdHJhY2VzLCBsYXlvdXQsIHtyZXNwb25zaXZlOiB0cnVlLCBkaXNwbGF5TW9kZUJhcjogZmFsc2V9KTtcclxuICByZXR1cm4gY29udGFpbmVyO1xyXG59XHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnbWVhbl92YWwnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc3RkX3ZhbCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzbF90YXJnZXQnKSJ9XX0=
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

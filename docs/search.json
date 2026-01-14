@@ -1067,7 +1067,7 @@
     "href": "cap-13-stock-seguridad.html",
     "title": "13. Bienvenidos al Mundo Estocástico",
     "section": "",
-    "text": "13.1 ¿Qué es realmente el Stock de Seguridad?\nEn el Capítulo 12, exploramos el “mundo determinista”, un laboratorio donde la demanda es una línea recta y el proveedor nunca falla. En ese escenario, el inventario es sencillo: pides exactamente lo que vas a vender y llega justo a tiempo. Sin embargo, si has trabajado más de un día en una cadena de suministro real, sabes que ese mundo es una utopía.\nLa realidad es Estocástica (aleatoria y probabilística). La demanda real rara vez coincide con tu pronóstico de punto, y el Lead Time de tu proveedor suele ser una sugerencia optimista más que una promesa inquebrantable. Aquí es donde entra el Stock de Seguridad (SS): el colchón diseñado no para cubrir lo que sabemos que va a pasar, sino para protegernos de lo que no podemos prever. En este capítulo, aprenderemos a calcular este escudo usando la ciencia de la probabilidad y conectándolo con el error de los modelos que construimos en la Parte III.\nEl Stock de Seguridad no debe verse como “inventario extra” o “por si acaso”. En la mente de un Arquitecto de Suministros, el SS es una inversión de capital destinada a comprar una póliza de seguro contra dos variabilidades críticas:\nLa Regla de Oro: El Stock de Seguridad no debe calcularse sobre el volumen total de la demanda, sino sobre el Error del Pronóstico. Este es un cambio de paradigma vital. Si tu pronóstico es perfecto (Error = 0), no necesitas stock de seguridad. El SS es el castigo económico por la imperfección de tus modelos.",
+    "text": "13. Bienvenidos al Mundo Estocástico\nEn el Capítulo 12, exploramos el “mundo determinista”, un laboratorio donde la demanda es una línea recta y el proveedor nunca falla. Sin embargo, si has trabajado más de un día en una cadena de suministro real, sabes que ese mundo es una utopía.\nLa realidad es Estocástica (aleatoria y probabilística). La demanda real rara vez coincide con tu pronóstico, y el Lead Time suele ser una sugerencia optimista. Aquí es donde entra el Stock de Seguridad (SS): el colchón diseñado no para cubrir lo que sabemos que va a pasar, sino para protegernos de lo que no podemos prever.",
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>13. Bienvenidos al Mundo Estocástico</span>"
@@ -1077,8 +1077,8 @@
     "objectID": "cap-13-stock-seguridad.html#qué-es-realmente-el-stock-de-seguridad",
     "href": "cap-13-stock-seguridad.html#qué-es-realmente-el-stock-de-seguridad",
     "title": "13. Bienvenidos al Mundo Estocástico",
-    "section": "",
-    "text": "Variabilidad de la Demanda: La diferencia entre lo que el modelo predijo y lo que el mercado realmente pidió.\nVariabilidad del Lead Time: La incertidumbre sobre si el camión llegará en 5 días o en 12 debido a factores logísticos.",
+    "section": "13.1 ¿Qué es realmente el Stock de Seguridad?",
+    "text": "13.1 ¿Qué es realmente el Stock de Seguridad?\nEl Stock de Seguridad no es “inventario extra”. Es una póliza de seguro financiera. En la mente de un Arquitecto de Suministros, el SS es el castigo económico por la imperfección de tus modelos.\nLa Regla de Oro: Si tu pronóstico fuera perfecto (RMSE = 0), no necesitarías Stock de Seguridad. Por lo tanto, el SS debe calcularse sobre el Error del Pronóstico, no sobre la demanda total.",
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>13. Bienvenidos al Mundo Estocástico</span>"
@@ -1089,7 +1089,7 @@
     "href": "cap-13-stock-seguridad.html#los-ingredientes-de-la-receta-estocástica",
     "title": "13. Bienvenidos al Mundo Estocástico",
     "section": "13.2 Los Ingredientes de la Receta Estocástica",
-    "text": "13.2 Los Ingredientes de la Receta Estocástica\nPara dimensionar este colchón sin asfixiar el flujo de caja, necesitamos tres palancas de riesgo:\n\n13.2.1 La Incertidumbre (\\(\\sigma\\)): El rol del RMSE\nEn la ciencia del stock, el RMSE (Root Mean Squared Error) calculado en capítulos anteriores es nuestra medida de la desviación estándar del error (\\(\\sigma_{error}\\)). * Implicación: Si tu modelo de XGBoost redujo el RMSE en un 20%, tu inversión en inventario de seguridad puede reducirse en una proporción similar.\n\n\n13.2.2 El Tiempo de Exposición (\\(L\\)): La Raíz Cuadrada del Tiempo\nLa incertidumbre crece con el tiempo, pero no de forma lineal. Matemáticamente, el riesgo crece con la raíz cuadrada del Lead Time (\\(\\sqrt{L}\\)). Esto se debe a que los errores diarios tienden a cancelarse parcialmente entre sí.\n\n\n13.2.3 El Factor de Servicio (\\(k\\)): Tu Apetito al Riesgo\nEl factor \\(k\\) representa cuántas desviaciones estándar quieres cubrir. Este valor sale de la Distribución Normal y define tu Nivel de Servicio (Cycle Service Level).",
+    "text": "13.2 Los Ingredientes de la Receta Estocástica\nPara dimensionar este colchón sin asfixiar el flujo de caja, necesitamos tres palancas:\n\n13.2.1 La Incertidumbre (\\(\\sigma\\)): El rol del RMSE\nEn este libro, el RMSE calculado en la Parte III es nuestra medida de la desviación estándar del error (\\(\\sigma_{error}\\)).\n\nImpacto Directo: Si tu modelo de Machine Learning reduce el RMSE en un 15%, liberas automáticamente un 15% de capital atrapado en stock de seguridad.\n\n\n\n13.2.2 El Tiempo de Exposición ($L$): La Raíz Cuadrada del Tiempo\nLa incertidumbre crece con el tiempo, pero no de forma lineal. Si el Lead Time se duplica, el riesgo no se duplica; crece según la \\(\\sqrt{L}\\). Esto se debe a que los errores diarios tienden a compensarse (un día vendes de más, otro de menos).\n\n\n13.2.3 El Factor de Servicio (\\(k\\)): Tu Apetito al Riesgo\nEl factor \\(k\\) define cuántas desviaciones estándar de error estamos dispuestos a cubrir. Es la traducción matemática de tu Nivel de Servicio (CSL).",
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>13. Bienvenidos al Mundo Estocástico</span>"
@@ -1100,7 +1100,7 @@
     "href": "cap-13-stock-seguridad.html#la-ecuación-maestra-del-stock-de-seguridad",
     "title": "13. Bienvenidos al Mundo Estocástico",
     "section": "13.3 La Ecuación Maestra del Stock de Seguridad",
-    "text": "13.3 La Ecuación Maestra del Stock de Seguridad\nCombinando estos factores, llegamos a la fórmula fundamental:\n\\[SS = k    imes \\sigma_{error}     imes \\sqrt{L}\\]\nDonde: * \\(k\\): Factor de servicio (ej. 1.65 para un 95% de nivel de servicio). * \\(\\sigma_{error}\\): Desviación estándar del error (RMSE del modelo). * \\(L\\): Lead Time expresado en las mismas unidades que el error.\n\n13.3.1 Análisis de Sensibilidad Financiera\nPara un producto con RMSE mensual de 500 unidades y Lead Time de 1 mes: * 90% SL (\\(k=1.28\\)): \\(SS = 640  ext{ unidades}\\). * 99.9% SL (\\(k=3.09\\)): \\(SS = 1,545  ext{ unidades}\\). Implicación: La perfección financiera es costosa; proteger ese último 10% requiere casi triplicar el inventario.",
+    "text": "13.3 La Ecuación Maestra del Stock de Seguridad\n\\[\nSS = k \\times RMSE \\times \\sqrt{L}\n\\]\nDonde:\n\n\\(k\\): Factor derivado del Nivel de Servicio deseado.\n\\(RMSE\\): Error de tu mejor modelo (en unidades).\n\\(L\\): Lead Time del proveedor (en las mismas unidades de tiempo que el RMSE).",
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>13. Bienvenidos al Mundo Estocástico</span>"
@@ -1132,8 +1132,8 @@
     "objectID": "cap-13-stock-seguridad.html#la-variabilidad-del-lead-time-el-enemigo-oculto",
     "href": "cap-13-stock-seguridad.html#la-variabilidad-del-lead-time-el-enemigo-oculto",
     "title": "13. Bienvenidos al Mundo Estocástico",
-    "section": "13.6 La Variabilidad del Lead Time: El Enemigo Oculto",
-    "text": "13.6 La Variabilidad del Lead Time: El Enemigo Oculto\nSi tu proveedor es inestable (\\(\\sigma_L\\)), la incertidumbre se expande. A menudo es más rentable negociar un Lead Time estable con el proveedor que intentar mejorar el algoritmo de pronóstico.\n\n\n\n\n\n\nImportantLa Trampa de la Normalidad\n\n\n\nLa mayoría de los softwares asumen una Distribución Normal. Si tu demanda tiene “colas pesadas” (picos extremos frecuentes), el SS calculado será insuficiente. En esos casos, recurrimos al Pronóstico Probabilístico (Capítulo 14).",
+    "section": "13.5 La Variabilidad del Lead Time: El Enemigo Oculto",
+    "text": "13.5 La Variabilidad del Lead Time: El Enemigo Oculto\nHasta ahora asumimos que el proveedor es perfecto. Pero, ¿qué pasa si el Lead Time también varía? La incertidumbre total se convierte en una suma de varianzas:\n\\[\n\\sigma_{total} = \\sqrt{(L \\times \\sigma_d^2) + (d^2 \\times \\sigma_L^2)}\n\\]\nA menudo es más rentable negociar una entrega estable con tu proveedor que invertir meses en mejorar un algoritmo de pronóstico. Reducir la varianza del Lead Time es la forma más barata de bajar el inventario.",
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>13. Bienvenidos al Mundo Estocástico</span>"
@@ -1155,7 +1155,7 @@
     "href": "cap-14-demandas-erraticas.html",
     "title": "14. Más allá de la Curva Normal",
     "section": "",
-    "text": "14.1 La Anatomía del Caos: Clasificación de Demanda\nEn el Capítulo 13, aprendimos a calcular el Stock de Seguridad utilizando el factor \\(k\\) y la desviación estándar del error. Sin embargo, esa fórmula descansa sobre una suposición cómoda pero frecuentemente falsa: que los errores de demanda siguen una Distribución Normal (la famosa campana de Gauss). Esta suposición es el “pecado original” de muchos softwares de ERP y sistemas de planificación tradicionales, y es la razón por la cual muchas empresas tienen estanterías llenas de productos que no rotan y quiebres constantes en los que sí.\nPara un producto de alta rotación y volumen masivo (Clase A), como la leche en un supermercado o los consumibles de oficina estándar, la distribución normal funciona aceptablemente bien. Esto sucede gracias al Teorema del Límite Central: cuando sumas muchos eventos independientes, el resultado tiende a parecerse a una campana. Pero, ¿qué pasa con ese repuesto industrial que se vende una vez cada tres meses? ¿O con ese artículo de lujo que tiene pedidos erráticos de gran volumen? Si intentas aplicar la “campana de Gauss” a estos productos, estarás navegando con una brújula rota.\nEn este capítulo, romperemos el mito de la normalidad y entenderemos por qué la Distribución Gamma es el verdadero salvador del capital de trabajo en la “Larga Cola” de productos intermitentes.\nAntes de elegir un algoritmo, debemos diagnosticar la “física” de nuestra serie de tiempo. No todos los errores son iguales, y tratarlos como tales es una receta para el desastre financiero. Para ello, utilizamos dos métricas que consideramos fundamentales para separar la señal del ruido:",
+    "text": "14. Más allá de la Curva Normal\nEn el capítulo anterior, calculamos el Stock de Seguridad utilizando la Distribución Normal. Es el estándar de la industria y funciona razonablemente bien para productos de alta rotación (Clase A) con demanda estable. Pero hay un secreto sucio en la ciencia de datos aplicada a suministros: la mayoría de los productos no son “normales”.\nSi intentas aplicar las fórmulas del Capítulo 13 a un producto que se vende una vez cada tres semanas, o a uno que tiene picos explosivos, terminarás con un almacén lleno de “obsoletos” o estantes vacíos. En este capítulo, aprenderemos a identificar cuándo abandonar la campana de Gauss y qué herramientas usar en su lugar para dominar la incertidumbre de los productos erráticos.",
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
@@ -1221,7 +1221,7 @@
     "href": "cap-14-demandas-erraticas.html#checklist-de-cierre-del-capítulo",
     "title": "14. Más allá de la Curva Normal",
     "section": "Checklist de Cierre del Capítulo",
-    "text": "Checklist de Cierre del Capítulo\n\n¿He clasificado mi catálogo usando ADI y \\(CV^2\\)?\n¿He identificado los productos donde la Distribución Normal sugiere niveles de stock absurdos?\n¿He implementado Croston o SBA para mis repuestos de baja rotación?\n¿He comparado la inversión en SS usando Gamma vs Normal en mi Clase B y C?\n¿He empezado a hablar de cuantiles de riesgo (P90, P95) con los stakeholders?",
+    "text": "Checklist de Cierre del Capítulo\n\n¿He calculado el \\(ADI\\) y el \\(CV^2\\) para segmentar mi portafolio según Syntetos-Boylan?\n¿He identificado los productos donde el \\(CV &gt; 0.5\\) para migrar a modelos Gamma?\n¿Uso la distribución de Poisson para mis repuestos o productos de muy baja rotación?\n¿Soy consciente de que la distribución Normal es peligrosa cuando la demanda promedio es baja?\n¿He considerado el Método Croston para evitar el “aplanamiento” del pronóstico en productos intermitentes?",
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
@@ -2020,6 +2020,171 @@
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>12. El Paso del Pronóstico a la Orden</span>"
+    ]
+  },
+  {
+    "objectID": "cap-13-stock-seguridad.html#simulador-visualizando-el-escudo-de-seguridad",
+    "href": "cap-13-stock-seguridad.html#simulador-visualizando-el-escudo-de-seguridad",
+    "title": "13. Bienvenidos al Mundo Estocástico",
+    "section": "13.4 Simulador: Visualizando el Escudo de Seguridad",
+    "text": "13.4 Simulador: Visualizando el Escudo de Seguridad\nAjusta el Nivel de Servicio y observa cómo el área sombreada (el stock que te protege) debe crecer para cubrir los eventos extremos de la demanda.\n\n\njStat = require(\"jstat@1.9.6\")\nPlotly = require(\"plotly.js-dist-min@2.24.1\")\n\nviewof service_level = Inputs.range([0.5, 0.999], {value: 0.95, step: 0.001, label: \"Nivel de Servicio (CSL):\"})\nviewof current_rmse = Inputs.range([10, 500], {value: 100, step: 10, label: \"Error (RMSE):\"})\nviewof lt_days = Inputs.range([1, 60], {value: 14, step: 1, label: \"Lead Time (días):\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nk_factor = jStat.normal.inv(service_level, 0, 1)\nss_units = k_factor * current_rmse * Math.sqrt(lt_days / 30) // Asumiendo RMSE mensual\n\n// Generar curva normal para visualización\nchartData = {\n  const x = [];\n  const y = [];\n  const fill_x = [];\n  const fill_y = [];\n  const mean = 0;\n  const std = current_rmse;\n  \n  for (let i = -4 * std; i &lt;= 4 * std; i += std/10) {\n    const p = jStat.normal.pdf(i, mean, std);\n    x.push(i);\n    y.push(p);\n    if (i &lt;= (k_factor * std)) {\n      fill_x.push(i);\n      fill_y.push(p);\n    }\n  }\n  return {x, y, fill_x, fill_y};\n}\n\nvisualPlot = {\n  const container = html`&lt;div style=\"width:100%; height:400px;\"&gt;&lt;/div&gt;`;\n  \n  const traces = [\n    {\n      x: chartData.x,\n      y: chartData.y,\n      name: 'Distribución del Error',\n      type: 'scatter',\n      mode: 'lines',\n      line: {color: '#64748b', width: 2}\n    },\n    {\n      x: chartData.fill_x,\n      y: chartData.fill_y,\n      name: 'Zona Protegida',\n      fill: 'tozeroy',\n      type: 'scatter',\n      mode: 'none',\n      fillcolor: 'rgba(37, 99, 235, 0.4)'\n    }\n  ];\n\n  const layout = {\n    title: 'Incertidumbre vs Cobertura de Stock',\n    xaxis: { title: 'Desviación del Pronóstico (Unidades)', gridcolor: '#f1f5f9' },\n    yaxis: { showticklabels: false, gridcolor: '#f1f5f9' },\n    template: 'plotly_white',\n    annotations: [{\n      x: k_factor * current_rmse,\n      y: 0,\n      text: `Límite SS: +${Math.round(ss_units)} u.`,\n      showarrow: true,\n      arrowhead: 2,\n      ax: 40, ay: -30\n    }]\n  };\n\n  Plotly.newPlot(container, traces, layout, {responsive: true, displayModeBar: false});\n  return container;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportantEl Costo de la Perfección\n\n\n\nObserva que para pasar de un 95% a un 99.9% de nivel de servicio, el Stock de Seguridad casi se duplica ($k$ pasa de 1.64 a 3.09). ¿Vale la pena ese incremento de capital inmovilizado para evitar un quiebre cada mil días?",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>13. Bienvenidos al Mundo Estocástico</span>"
+    ]
+  },
+  {
+    "objectID": "cap-13-stock-seguridad.html#integración-final-el-rop-estocástico",
+    "href": "cap-13-stock-seguridad.html#integración-final-el-rop-estocástico",
+    "title": "13. Bienvenidos al Mundo Estocástico",
+    "section": "13.6 Integración Final: El ROP Estocástico",
+    "text": "13.6 Integración Final: El ROP Estocástico\nFinalmente, el Punto de Reorden que aprendimos en el Capítulo 12 se actualiza para el mundo real:\n\\[\nROP = (\\text{Demanda Promedio} \\times L) + SS\n\\]\nEl ROP ya no es solo “lo que espero vender”, sino “lo que espero vender más mi escudo contra lo inesperado”.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>13. Bienvenidos al Mundo Estocástico</span>"
+    ]
+  },
+  {
+    "objectID": "cap-13-stock-seguridad.html#checklist-de-cierre",
+    "href": "cap-13-stock-seguridad.html#checklist-de-cierre",
+    "title": "13. Bienvenidos al Mundo Estocástico",
+    "section": "Checklist de Cierre",
+    "text": "Checklist de Cierre\n\n¿He mapeado el RMSE de mis modelos Clase A a la fórmula del SS?\n¿He diferenciado el factor \\(k\\) según la segmentación ABC (ej. 98% para A, 85% para C)?\n¿He calculado el costo financiero de mantener este seguro (\\(SS \\times h\\))?\n¿Entiendo que el SS es mayor cuanto más largo es el Lead Time?",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>13. Bienvenidos al Mundo Estocástico</span>"
+    ]
+  },
+  {
+    "objectID": "cap-14-demandas-erraticas.html#la-mentira-de-la-campana-de-gauss",
+    "href": "cap-14-demandas-erraticas.html#la-mentira-de-la-campana-de-gauss",
+    "title": "14. Más allá de la Curva Normal",
+    "section": "14.1 La Mentira de la Campana de Gauss",
+    "text": "14.1 La Mentira de la Campana de Gauss\nLa distribución normal asume dos cosas que a menudo son falsas en el almacén:\n\nSimetría: Asume que es igual de probable vender mucho más de lo previsto que mucho menos.\nContinuidad: Asume que la demanda fluye como el agua. Pero la demanda real son cajas, unidades o pallets. No puedes vender 0.4 televisores.\n\nPara productos con baja rotación, la curva normal predice “ventas negativas” (lo cual es imposible) y subestima drásticamente el riesgo de quiebre en las colas de la distribución.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
+    ]
+  },
+  {
+    "objectID": "cap-14-demandas-erraticas.html#clasificando-el-caos-matriz-syntetos-boylan",
+    "href": "cap-14-demandas-erraticas.html#clasificando-el-caos-matriz-syntetos-boylan",
+    "title": "14. Más allá de la Curva Normal",
+    "section": "14.2 Clasificando el Caos: Matriz Syntetos-Boylan",
+    "text": "14.2 Clasificando el Caos: Matriz Syntetos-Boylan\nNo todas las demandas erráticas son iguales. Para saber qué modelo usar, el Arquitecto de Suministros utiliza dos métricas:\n\n\\(p\\) (Intervalo entre pedidos): ¿Cada cuánto tiempo llega un pedido?\n\\(CV^2\\) (Variabilidad del tamaño): ¿Qué tan diferentes son los tamaños de los pedidos entre sí?\n\n\n\n\n\n\n\n\n\nCategoría\nCaracterísticas\nEstrategia\n\n\n\n\nSmooth (Suave)\nLlega seguido y en cantidades similares.\nNormal / EOQ Tradicional\n\n\nErratic (Errática)\nLlega seguido, pero las cantidades son impredecibles.\nBootstrapping / Gamma\n\n\nIntermittent (Intermitente)\nCantidades constantes, pero pasa mucho tiempo entre pedidos.\nPoisson / Croston\n\n\nLumpy (Espasmódica)\nEl peor escenario: poco frecuente y cantidades salvajes.\nSimulación Monte Carlo",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
+    ]
+  },
+  {
+    "objectID": "cap-14-demandas-erraticas.html#la-distribución-de-poisson-el-estándar-para-lo-lento",
+    "href": "cap-14-demandas-erraticas.html#la-distribución-de-poisson-el-estándar-para-lo-lento",
+    "title": "14. Más allá de la Curva Normal",
+    "section": "14.3 La Distribución de Poisson: El estándar para lo lento",
+    "text": "14.3 La Distribución de Poisson: El estándar para lo lento\nCuando un producto se vende poco, la probabilidad se modela mejor con la Distribución de Poisson. A diferencia de la normal, la Poisson:\n\nNo admite valores negativos.\nEs discreta (solo números enteros).\nSe define con un solo parámetro: la media (\\(\\lambda\\)).",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
+    ]
+  },
+  {
+    "objectID": "cap-14-demandas-erraticas.html#simulador-normal-vs.-poisson-en-baja-rotación",
+    "href": "cap-14-demandas-erraticas.html#simulador-normal-vs.-poisson-en-baja-rotación",
+    "title": "14. Más allá de la Curva Normal",
+    "section": "14.4 Simulador: Normal vs. Poisson en Baja Rotación",
+    "text": "14.4 Simulador: Normal vs. Poisson en Baja Rotación\nObserva qué sucede cuando la demanda promedio es baja (por ejemplo, 2 unidades). La curva roja (Normal) intenta “dibujar” una campana que se sale hacia la izquierda de cero, mientras que la azul (Poisson) entiende la realidad del inventario.\n\n\njStat = require(\"jstat@1.9.6\")\nPlotly = require(\"plotly.js-dist-min@2.24.1\")\n\nviewof lambda = Inputs.range([0.5, 20], {value: 2, step: 0.5, label: \"Demanda Promedio (λ):\"})\nviewof target_sl = Inputs.range([0.8, 0.99], {value: 0.95, step: 0.01, label: \"Nivel de Servicio Deseado:\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nss_normal = {\n  const k = jStat.normal.inv(target_sl, 0, 1);\n  return k * Math.sqrt(lambda); // En Poisson la varianza es igual a la media\n}\n\nss_poisson = {\n  return jStat.poisson.inv(target_sl, lambda) - lambda;\n}\n\n// Generar datos de las distribuciones\ndist_data = {\n  const x = [];\n  const y_normal = [];\n  const y_poisson = [];\n  \n  for (let i = 0; i &lt;= Math.max(25, lambda * 3); i++) {\n    x.push(i);\n    y_normal.push(jStat.normal.pdf(i, lambda, Math.sqrt(lambda)));\n    y_poisson.push(jStat.poisson.pdf(i, lambda));\n  }\n  return {x, y_normal, y_poisson};\n}\n\nplotComp = {\n  const container = html`&lt;div style=\"width:100%; height:400px;\"&gt;&lt;/div&gt;`;\n  \n  const traces = [\n    {\n      x: dist_data.x,\n      y: dist_data.y_normal,\n      name: 'Normal (Error común)',\n      type: 'scatter',\n      mode: 'lines',\n      line: {color: '#ef4444', shape: 'spline'}\n    },\n    {\n      x: dist_data.x,\n      y: dist_data.y_poisson,\n      name: 'Poisson (Realidad lenta)',\n      type: 'bar',\n      marker: {color: 'rgba(37, 99, 235, 0.6)'}\n    }\n  ];\n\n  const layout = {\n    title: `Distribución de Probabilidad (Media = ${lambda})`,\n    xaxis: { title: 'Demanda (Unidades)', range: [-2, Math.max(20, lambda*2)] },\n    yaxis: { title: 'Probabilidad' },\n    template: 'plotly_white',\n    legend: { orientation: 'h', y: -0.2 }\n  };\n\n  Plotly.newPlot(container, traces, layout, {responsive: true, displayModeBar: false});\n  return container;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarningEl sesgo de la Normalidad\n\n\n\nCon una demanda de  unidades, la distribución normal sugeriría un Stock de Seguridad de , mientras que Poisson (más ajustada a la realidad discreta) sugiere . En volúmenes bajos, esta diferencia es la que causa quiebres sistemáticos o excesos inexplicables.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
+    ]
+  },
+  {
+    "objectID": "cap-14-demandas-erraticas.html#las-colas-pesadas-y-los-cisnes-negros",
+    "href": "cap-14-demandas-erraticas.html#las-colas-pesadas-y-los-cisnes-negros",
+    "title": "14. Más allá de la Curva Normal",
+    "section": "14.5 Las “Colas Pesadas” y los Cisnes Negros",
+    "text": "14.5 Las “Colas Pesadas” y los Cisnes Negros\nEn productos con demanda lumpy (espasmódica), nos enfrentamos al fenómeno de la Curtosis. Esto significa que los eventos extremos (pedidos gigantes inesperados) ocurren con más frecuencia de lo que cualquier fórmula estándar predice.\nCuando detectes Curtosis alta:\n\nNo confíes en \\(k\\): Los factores de servicio tradicionales fallarán.\nUsa Bootstrapping: En lugar de una fórmula, haz que tu computadora “juegue” con los datos históricos para simular miles de escenarios posibles.\nAcepta el riesgo: A veces, protegerse contra un pedido espasmódico es tan caro que es mejor financieramente aceptar el quiebre.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
+    ]
+  },
+  {
+    "objectID": "cap-14-demandas-erraticas.html#checklist-de-cierre",
+    "href": "cap-14-demandas-erraticas.html#checklist-de-cierre",
+    "title": "14. Más allá de la Curva Normal",
+    "section": "Checklist de Cierre",
+    "text": "Checklist de Cierre\n\n¿He calculado el intervalo promedio entre pedidos (\\(p\\)) para mis SKUs?\n¿He identificado productos con demanda intermitente para cambiar de Normal a Poisson?\n¿Entiendo que en productos “Lumpy”, ninguna fórmula estática reemplaza a una buena simulación?\n¿Estoy listo para pasar a la Parte V y empezar a construir mi propio laboratorio de simulaciones?",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
+    ]
+  },
+  {
+    "objectID": "cap-14-demandas-erraticas.html#la-falacia-de-la-campana-en-la-logística-real",
+    "href": "cap-14-demandas-erraticas.html#la-falacia-de-la-campana-en-la-logística-real",
+    "title": "14. Más allá de la Curva Normal",
+    "section": "14.1 La Falacia de la Campana en la Logística Real",
+    "text": "14.1 La Falacia de la Campana en la Logística Real\nLa distribución normal es una abstracción matemática hermosa pero peligrosa. En el almacén, asume dos axiomas que chocan frontalmente con la realidad operativa:\n\nSimetría Imposible: La Normal asume que es igual de probable vender 50 unidades de más que 50 unidades de menos. Sin embargo, la demanda tiene un suelo duro en cero. Si tu demanda promedio es 10 y tu desviación estándar es 12, la Normal predecirá que el 20% del tiempo venderás cantidades negativas. Esto no solo es un error matemático; es un error financiero que distorsiona el cálculo del capital de trabajo.\nContinuidad vs. Discreción: La campana de Gauss es una función continua (fluye como el agua). Pero en Supply Chain, vendemos objetos discretos (cajas, unidades, pallets). Cuando la rotación es baja, el error de “redondeo” de la Normal puede representar el 30% de tu inventario de seguridad.\n\nPara productos con baja rotación o alta variabilidad, la curva normal subestima drásticamente el riesgo de quiebre en las “colas” de la distribución. Es decir, falla precisamente cuando más la necesitamos: en los eventos extremos.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
+    ]
+  },
+  {
+    "objectID": "cap-14-demandas-erraticas.html#el-mapa-del-tesoro-matriz-syntetos-boylan",
+    "href": "cap-14-demandas-erraticas.html#el-mapa-del-tesoro-matriz-syntetos-boylan",
+    "title": "14. Más allá de la Curva Normal",
+    "section": "14.2 El Mapa del Tesoro: Matriz Syntetos-Boylan",
+    "text": "14.2 El Mapa del Tesoro: Matriz Syntetos-Boylan\nPara no perdernos en el caos, el Arquitecto de Suministros utiliza la clasificación de Syntetos-Boylan. Esta matriz nos permite segmentar el portafolio no por su valor (como el ABC), sino por su comportamiento estadístico. Se basa en dos métricas:\n\n\\(ADI\\) (Average Demand Interval): El intervalo promedio entre pedidos. (\\(ADI = \\text{Periodos totales} / \\text{Periodos con demanda}\\)).\n\\(CV^2\\) (Coeficiente de Variación al Cuadrado): Mide la estabilidad del tamaño de los pedidos.\n\n\nLas Cuatro Dimensiones del Inventario\n\n\n\n\n\n\n\n\n\nCategoría\nUmbrales Técnicos\nComportamiento\nEstrategia de Stock\n\n\n\n\nSmooth (Suave)\n\\(ADI &lt; 1.32\\) y \\(CV^2 &lt; 0.49\\)\nPedidos seguidos y de tamaño similar.\nNormal / EOQ Tradicional\n\n\nErratic (Errática)\n\\(ADI &lt; 1.32\\) y \\(CV^2 &gt; 0.49\\)\nPedidos frecuentes, pero con tamaños impredecibles.\nGamma / Bootstrapping\n\n\nIntermittent\n\\(ADI &gt; 1.32\\) y \\(CV^2 &lt; 0.49\\)\nCantidades constantes, pero pasa mucho tiempo entre ventas.\nPoisson / Croston\n\n\nLumpy (Espasmódica)\n\\(ADI &gt; 1.32\\) y \\(CV^2 &gt; 0.49\\)\nEl caos absoluto: poco frecuente y cantidades salvajes.\nSimulación Monte Carlo",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
+    ]
+  },
+  {
+    "objectID": "cap-14-demandas-erraticas.html#la-distribución-gamma-la-reina-de-la-asimetría",
+    "href": "cap-14-demandas-erraticas.html#la-distribución-gamma-la-reina-de-la-asimetría",
+    "title": "14. Más allá de la Curva Normal",
+    "section": "14.3 La Distribución Gamma: La Reina de la Asimetría",
+    "text": "14.3 La Distribución Gamma: La Reina de la Asimetría\nCuando la demanda es Errática (frecuente pero con picos explosivos), la Distribución Gamma es tu mejor herramienta. A diferencia de la Normal, la Gamma es asimétrica hacia la derecha: entiende que la demanda no puede bajar de cero, pero reconoce que los picos de demanda “pesan” más que los valles.\n\n¿Por qué la Gamma es superior en variabilidad alta?\nLa Gamma se define por dos parámetros: Shape (\\(\\alpha\\)) y Scale (\\(\\theta\\)).\n\nCuando la variabilidad es baja, la Gamma se parece a la Normal.\nCuando la variabilidad sube (CV &gt; 0.5), la Gamma se “estira” hacia la derecha. Esto significa que el inventario de seguridad resultante será mayor que el de la Normal, protegiéndote contra esos picos que la Normal simplemente ignora.\n\n\n\nLa Distribución de Poisson: El Estándar para lo “Lento”\nPara productos Intermitentes (Clase C o repuestos), usamos Poisson. Esta distribución es discreta (solo números enteros) y solo necesita un parámetro: la media (\\(\\lambda\\)). Es ideal cuando esperas vender 0, 1 o 2 unidades. Mientras que la Normal sugeriría un SS de 0.5 unidades (imposible de comprar), la Poisson te dirá exactamente cuántas unidades enteras necesitas para cubrir el riesgo.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
+    ]
+  },
+  {
+    "objectID": "cap-14-demandas-erraticas.html#simulador-de-comportamiento-normal-vs.-gamma",
+    "href": "cap-14-demandas-erraticas.html#simulador-de-comportamiento-normal-vs.-gamma",
+    "title": "14. Más allá de la Curva Normal",
+    "section": "14.4 Simulador de Comportamiento: Normal vs. Gamma",
+    "text": "14.4 Simulador de Comportamiento: Normal vs. Gamma\nAjusta la Desviación Estándar (\\(\\sigma\\)). Observa cómo, a medida que aumenta la incertidumbre (CV alto), la curva Normal (roja) se desplaza hacia la zona negativa (error conceptual), mientras que la Gamma (azul) mantiene su ancla en el cero y ensancha su cola derecha para proteger tu nivel de servicio ante eventos extremos.\n\n\njStat = require(\"jstat@1.9.6\")\nPlotly = require(\"plotly.js-dist-min@2.24.1\")\n\nviewof mean_val = Inputs.range([5, 50], {value: 20, step: 1, label: \"Demanda Promedio (μ):\"})\nviewof std_val = Inputs.range([1, 40], {value: 15, step: 1, label: \"Desviación Estándar (σ):\"})\nviewof sl_target = Inputs.range([0.8, 0.999], {value: 0.95, step: 0.001, label: \"Nivel de Servicio:\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncv = std_val / mean_val\nss_norm = jStat.normal.inv(sl_target, 0, 1) * std_val\n\n// Parámetros Gamma (Shape y Scale)\nalpha = (mean_val / std_val) ** 2\ntheta = (std_val ** 2) / mean_val\nss_gamma = jStat.gamma.inv(sl_target, alpha, theta) - mean_val\n\ndataPlot = {\n  const x = [];\n  const y_norm = [];\n  const y_gamma = [];\n  const max_x = Math.max(120, mean_val + 5 * std_val);\n  \n  for (let i = 0; i &lt;= max_x; i += max_x/120) {\n    x.push(i);\n    y_norm.push(jStat.normal.pdf(i, mean_val, std_val));\n    y_gamma.push(jStat.gamma.pdf(i, alpha, theta));\n  }\n  return {x, y_norm, y_gamma};\n}\n\n{\n  const container = html`&lt;div style=\"width:100%; height:420px;\"&gt;&lt;/div&gt;`;\n  \n  const traces = [\n    {\n      x: dataPlot.x,\n      y: dataPlot.y_norm,\n      name: 'Normal (Peligro: predice negativos)',\n      type: 'scatter',\n      mode: 'lines',\n      line: {color: '#ef4444', width: 2, dash: 'dot'}\n    },\n    {\n      x: dataPlot.x,\n      y: dataPlot.y_gamma,\n      name: 'Gamma (Segura: asimétrica)',\n      type: 'scatter',\n      mode: 'lines',\n      fill: 'tozeroy',\n      fillcolor: 'rgba(37, 99, 235, 0.15)',\n      line: {color: '#2563eb', width: 3}\n    }\n  ];\n\n  const layout = {\n    title: `Análisis de Cobertura (CV = ${cv.toFixed(2)})`,\n    xaxis: { title: 'Demanda Probable (Unidades)', range: [-15, Math.max(100, mean_val + 4*std_val)] },\n    yaxis: { title: 'Probabilidad', showticklabels: false, gridcolor: '#f1f5f9' },\n    template: 'plotly_white',\n    legend: { orientation: 'h', y: -0.2 }\n  };\n\n  Plotly.newPlot(container, traces, layout, {responsive: true, displayModeBar: false});\n  return container;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipVeredicto del Arquitecto\n\n\n\nCon un Coeficiente de Variación de , la distribución Normal sugiere un SS de  unidades. Sin embargo, la Gamma (que reconoce la posibilidad de picos extremos) sugiere  unidades.\nRegla de Oro: Si tu \\(CV &gt; 0.5\\) o tu demanda promedio es baja (\\(&lt; 10\\)), deja de usar la Normal. Estás calculando mal tu riesgo financiero.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
+    ]
+  },
+  {
+    "objectID": "cap-14-demandas-erraticas.html#colas-pesadas-curtosis-y-el-método-croston",
+    "href": "cap-14-demandas-erraticas.html#colas-pesadas-curtosis-y-el-método-croston",
+    "title": "14. Más allá de la Curva Normal",
+    "section": "14.5 Colas Pesadas, Curtosis y el Método Croston",
+    "text": "14.5 Colas Pesadas, Curtosis y el Método Croston\nCuando nos alejamos de la “normalidad”, entramos en el territorio de las Colas Pesadas (Fat Tails). Esto sucede especialmente en la categoría Lumpy. Aquí, los modelos estadísticos tradicionales (incluso la Gamma) pueden quedarse cortos porque la realidad presenta una Curtosis elevada: eventos extremos que ocurren con mucha más frecuencia de lo previsto.\n\nEl Método Croston para Intermitencia\nPara productos intermitentes, el pronóstico simple (SMA o Suavizado Exponencial) falla porque tiende a “aplanar” la demanda después de un periodo de venta cero. El Método Croston resuelve esto pronosticando por separado:\n\nEl tamaño del pedido cuando este ocurre.\nEl tiempo que pasará hasta el próximo pedido.\n\nEsto evita que el sistema “olvide” que el producto es importante aunque no se haya vendido en las últimas dos semanas.\n\n\n¿Cuándo usar Bootstrapping?\nSi nada de lo anterior funciona (demanda errática extrema), recurrimos al Bootstrapping. En lugar de asumir una distribución matemática, tomamos tus datos históricos y hacemos que la computadora simule miles de “futuros posibles” mezclando los días de venta pasados. Es la técnica definitiva antes de entrar a la simulación pura de Monte Carlo.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
+    ]
+  },
+  {
+    "objectID": "cap-14-demandas-erraticas.html#implicaciones-en-el-pl-y-la-estrategia",
+    "href": "cap-14-demandas-erraticas.html#implicaciones-en-el-pl-y-la-estrategia",
+    "title": "14. Más allá de la Curva Normal",
+    "section": "14.6 Implicaciones en el P&L y la Estrategia",
+    "text": "14.6 Implicaciones en el P&L y la Estrategia\nUsar la distribución incorrecta tiene consecuencias reales en el Estado de Resultados (P&L):\n\nSobre-stock en Clase C: Aplicar la Normal a productos intermitentes suele inflar el inventario innecesariamente.\nQuiebres en Clase B Erráticos: La Normal subestima los picos, causando faltantes justo cuando el cliente más te necesita.\n\nLa arquitectura de suministros moderna exige una segmentación estadística. No trates a todos tus productos con la misma vara matemática.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Más allá de la Curva Normal</span>"
     ]
   }
 ]
