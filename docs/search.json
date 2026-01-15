@@ -900,12 +900,12 @@
   {
     "objectID": "cap-11-costos-inventario.html",
     "href": "cap-11-costos-inventario.html",
-    "title": "11. El Costo del Dinero y el Costo del Vacío",
+    "title": "11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre",
     "section": "",
-    "text": "11.1 El Inventario como Pasivo: El Costo de Mantenimiento (\\(h\\))\nFelicidades. Has sobrevivido a la maratón estadística de las primeras tres partes de este libro. Ya sabes cómo limpiar datos, detectar patrones estructurales con ARIMA y entrenar modelos de Machine Learning para capturar la complejidad del mercado. Pero aquí es donde la ingeniería de datos se encuentra con la Ingeniería Financiera.\nMuchos planificadores cometen el error garrafal de pensar que su trabajo termina cuando entregan un número de demanda. La realidad es que el pronóstico es solo un insumo; un “puro deseo” estadístico. La verdadera decisión de Supply Chain —la que afecta el flujo de caja y la supervivencia de la empresa— ocurre cuando decides cuánta mercancía física poner en la estantería.\nEn esta Parte IV, daremos respuesta a la pregunta definitiva del arquitecto: Ya sé qué es probable que pase, ahora… ¿cuánto capital debo arriesgar en inventario?\nEn la gestión de inventarios, no buscamos “precisión”, buscamos rentabilidad. Cada caja en tu almacén es dinero que no está en el banco rindiendo intereses, y cada estante vacío es una invitación para que tu cliente descubra lo buena que es tu competencia. En este capítulo, aprenderemos a modelar el conflicto eterno entre el costo de tener demasiado y el costo de no tener nada.\nEn la contabilidad tradicional, el inventario se registra en el balance como un activo. Sin embargo, para un optimizador de suministros, el inventario es un pasivo operativo: una promesa de venta que genera gastos operativos y financieros cada segundo que pasa sin moverse.\nEl costo de mantenimiento, denotado como \\(h\\) (holding cost), representa el “impuesto” anual que pagas por el privilegio de tener una unidad almacenada. Se define mediante la ecuación fundamental:\n\\[h = v \\times (i + w + r)\\]",
+    "text": "11.1 Las Métricas Reinas de la Eficiencia: Velocidad y Tiempo\nFelicidades. Has sobrevivido a la maratón técnica de las primeras tres partes de este libro. Ya sabes cómo limpiar datos, detectar patrones con modelos estadísticos y entrenar algoritmos de Machine Learning para capturar la complejidad del mercado. Pero aquí es donde la ingeniería de datos se encuentra con la realidad cruda y pragmática del negocio: la Gestión del Capital de Trabajo (Working Capital Management).\nMuchos planificadores cometen el error garrafal de pensar que su trabajo termina cuando entregan un número de demanda en una hoja de cálculo. En el mundo corporativo, un pronóstico no es un fin en sí mismo, sino una brújula financiera. La verdadera decisión de Supply Chain —la que afecta la solvencia, el precio de la acción y el flujo de caja de la empresa— ocurre cuando decides cuánta mercancía física poner en el balance. El inventario es, fundamentalmente, dinero que ha dejado de ser líquido y fungible para convertirse en objetos que ocupan espacio, pagan impuestos, se degradan y corren el riesgo de morir en un estante.\nEn finanzas, el inventario es un “mal necesario”. Es un activo que, a diferencia de una máquina o una patente, no genera valor por sí solo mientras está quieto; solo genera valor en el momento en que desaparece (se vende). Por ello, su salud se mide por su velocidad.",
     "crumbs": [
       "IV: La Ciencia del Stock",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Costo del Dinero y el Costo del Vacío</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre</span>"
     ]
   },
   {
@@ -966,12 +966,12 @@
   {
     "objectID": "cap-11-costos-inventario.html#checklist-de-cierre-del-capítulo",
     "href": "cap-11-costos-inventario.html#checklist-de-cierre-del-capítulo",
-    "title": "11. El Costo del Dinero y el Costo del Vacío",
+    "title": "11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre",
     "section": "Checklist de Cierre del Capítulo",
-    "text": "Checklist de Cierre del Capítulo\n\n¿He calculado el margen bruto real para mis productos críticos?\n¿Entiendo que el Ratio Crítico me da el límite económico del nivel de servicio?\n¿Soy consciente de que reducir el RMSE un 10% puede ahorrar más dinero que optimizar toda la flota de transporte?",
+    "text": "Checklist de Cierre del Capítulo\n\nValidación de Tasas Financieras: ¿He validado con el CFO si las tasas de costo de capital (\\(i\\)) y almacenamiento (\\(w\\)) reflejan el costo real de oportunidad y los contratos vigentes de bodega?\nConciliación de Datos Maestros: ¿He conciliado mis datos de COGS y ventas con el cierre contable oficial para que la Rotación y el DOI reportados sean incuestionables?\nAuditoría de E&O: ¿Tengo un reporte mensual de Exceso y Obsoleto con un plan de acción claro para su liquidación?\nNarrativa de Valor: ¿Soy capaz de explicar al CFO cómo mi mejora en el pronóstico libera Capital de Trabajo?\nExactitud del Registro (ERI): ¿He verificado que mi inventario físico coincida con el sistema?\nSegmentación de Servicio: ¿He aplicado el Ratio Crítico para diferenciar mis niveles de servicio entre productos Clase A y Clase C?",
     "crumbs": [
       "IV: La Ciencia del Stock",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Costo del Dinero y el Costo del Vacío</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre</span>"
     ]
   },
   {
@@ -2951,6 +2951,94 @@
     "crumbs": [
       "III: El Arsenal del Científico de Datos",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>10. La Carrera de Caballos: Selección Automática de Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "cap-11-costos-inventario.html#las-métricas-reinas-de-la-eficiencia-velocidad-y-tiempo",
+    "href": "cap-11-costos-inventario.html#las-métricas-reinas-de-la-eficiencia-velocidad-y-tiempo",
+    "title": "11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre",
+    "section": "",
+    "text": "A. Índice de Rotación (Inventory Turnover)\nEs la métrica de frecuencia. Mide cuántas veces el flujo de mercancía “limpia” el valor total del inventario promedio en un periodo determinado (usualmente un año).\n\nFórmula: \\[\\text{Rotación} = \\frac{\\text{Costo de Ventas (COGS)}}{\\text{Inventario Promedio}}\\]\nUnidades: “Veces” al año (adimensional).\nImplicaciones Estratégicas: Una rotación alta indica que el capital fluye rápido, lo que mejora el Retorno sobre la Inversión (ROI). Sin embargo, como Arquitectos de Suministros, debemos advertir que una rotación demasiado alta puede ser un síntoma de “anemia de stock”: la empresa está perdiendo ventas por no tener suficiente profundidad de inventario para cubrir la variabilidad.\nOrigen de los datos: El COGS se extrae del Estado de Resultados (P&L), representando lo que costó fabricar o comprar lo vendido. El Inventario Promedio debe tomarse del Balance General, promediando preferiblemente los cierres mensuales para evitar las distorsiones de la estacionalidad.\n\n\n\nB. Días de Inventario (DOH / DOI / DIO)\nEs la métrica de tiempo y el espejo de la rotación. Traduce la eficiencia a una unidad que cualquier gerente entiende: días de cobertura.\n\nFórmula: \\[\nDOH = \\frac{365}{\\text{Rotación}}\n\\]\nUnidades: Días.\nAnálisis de Liquidez: El DOH es una pieza central del Ciclo de Conversión de Efectivo (CCC). Si tu DOH es de 90 días, significa que tu dinero está “atrapado” en cajas durante tres meses antes de tener la oportunidad de convertirse en efectivo nuevamente. Reducir el DOH libera flujo de caja operativo de forma inmediata.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre</span>"
+    ]
+  },
+  {
+    "objectID": "cap-11-costos-inventario.html#el-costo-de-mantenimiento-h-la-penalización-por-esperar",
+    "href": "cap-11-costos-inventario.html#el-costo-de-mantenimiento-h-la-penalización-por-esperar",
+    "title": "11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre",
+    "section": "11.2 El Costo de Mantenimiento (\\(h\\)): La Penalización por Esperar",
+    "text": "11.2 El Costo de Mantenimiento (\\(h\\)): La Penalización por Esperar\nTener inventario tiene un costo de oportunidad y un costo físico. El parámetro $h$ representa cuánto “gotea” tu capital cada año por el privilegio de custodiar una unidad.\n\nFórmula: \\[h = v \\times (i + w + r)\\]\nUnidades: Moneda por unidad al año (ej. $/unidad/año) o un porcentaje (%) del valor del producto.\nDesglose Profundo de Datos:\n\n\\(v\\) (Valor Unitario): Del Maestro de Materiales. Debe ser el costo puesto en bodega (landed cost).\n\\(i\\) (Costo de Capital): Representa el WACC. Es lo que la empresa deja de ganar por no tener ese dinero invertido en su actividad principal.\n\\(w\\) (Gastos de Almacenaje): Incluye renta de bodega, seguros, personal de seguridad y mantenimiento de sistemas WMS.\n\\(r\\) (Riesgo y Degradación): Es la tasa de merma, robo y, lo más importante, la obsolescencia.\n\n\n\n\n\n\n\n\nNoteEl E&O: El Cementerio de Stock (Excess & Obsolete)\n\n\n\nEl exceso y la obsolescencia son el recordatorio físico de los errores de pronóstico del pasado. Un producto “obsoleto” es aquel que ha perdido su valor de mercado pero sigue generando costos de almacenaje (\\(w\\)) y de capital (\\(i\\)). Gestionar el E&O no es solo limpiar la bodega; es sanear el balance general mediante write-offs necesarios.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre</span>"
+    ]
+  },
+  {
+    "objectID": "cap-11-costos-inventario.html#el-ratio-crítico-cr-el-equilibrio-del-vendedor-de-periódicos",
+    "href": "cap-11-costos-inventario.html#el-ratio-crítico-cr-el-equilibrio-del-vendedor-de-periódicos",
+    "title": "11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre",
+    "section": "11.3 El Ratio Crítico (CR): El Equilibrio del “Vendedor de Periódicos”",
+    "text": "11.3 El Ratio Crítico (CR): El Equilibrio del “Vendedor de Periódicos”\n¿Cuál es el nivel de servicio óptimo? El Ratio Crítico nos da la respuesta matemática basada en el trade-off entre dos miedos: el miedo a sobrar y el miedo a faltar.\n\nFórmula: \\[\nCR = \\frac{s}{s + h}\n\\]\nComponentes:\n\n\\(s\\) (Costo de Escasez): Margen de contribución perdido por no vender, más el costo de pérdida de lealtad del cliente.\n\\(h\\) (Costo de Posesión): Calculado en la sección anterior.\n\nInterpretación Financiera: Si el costo de faltar (\\(s\\)) es muy alto respecto al de sobrar (\\(h\\)), el Ratio Crítico se acercará a 1 (ej. 98%), justificando niveles de stock altos.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre</span>"
+    ]
+  },
+  {
+    "objectID": "cap-11-costos-inventario.html#el-puente-lógico-de-la-estadística-al-flujo-de-caja-rmse-to-cash",
+    "href": "cap-11-costos-inventario.html#el-puente-lógico-de-la-estadística-al-flujo-de-caja-rmse-to-cash",
+    "title": "11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre",
+    "section": "11.4 El Puente Lógico: De la Estadística al Flujo de Caja (RMSE \\(\\to\\) Cash)",
+    "text": "11.4 El Puente Lógico: De la Estadística al Flujo de Caja (RMSE \\(\\to\\) Cash)\nEste es el “momento Eureka” para el Arquitecto de Suministros. El inventario de seguridad (Safety Stock) existe únicamente para protegernos del error de pronóstico.\n\\[\n\\text{SS} = k \\times RMSE\n\\]\nPor lo tanto, la inversión financiera en ese “colchón” es:\n\\[\n\\text{Inversión SS (\\$)} = k \\times RMSE \\times v\n\\]\nLa Conclusión es Poderosa: Si tu modelo de Machine Learning reduce el RMSE en un 20%, estás reduciendo la necesidad de capital inmovilizado en un 20%. Estás “encogiendo” el balance general y liberando efectivo real.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre</span>"
+    ]
+  },
+  {
+    "objectID": "cap-11-costos-inventario.html#simulador-de-la-gran-balanza-optimización-del-csl",
+    "href": "cap-11-costos-inventario.html#simulador-de-la-gran-balanza-optimización-del-csl",
+    "title": "11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre",
+    "section": "11.5 Simulador de La Gran Balanza: Optimización del CSL",
+    "text": "11.5 Simulador de La Gran Balanza: Optimización del CSL\nUsa este simulador para encontrar el punto de equilibrio donde el costo total (Posesión + Escasez) se minimiza.\n\n\njStat = require(\"jstat@1.9.6\")\nPlotly = require(\"plotly.js-dist-min@2.24.1\")\n\nviewof v_unit = Inputs.range([10, 2000], {value: 200, step: 10, label: \"Valor Producto (v):\"})\nviewof h_rate = Inputs.range([0.05, 0.70], {value: 0.25, step: 0.01, label: \"Tasa h (Anual):\"})\nviewof s_cost = Inputs.range([50, 5000], {value: 400, step: 50, label: \"Costo de Escasez (s):\"})\nviewof sigma_err = Inputs.range([5, 500], {value: 100, step: 5, label: \"Incertidumbre (RMSE):\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndata_balanza = {\n  const points = [];\n  for (let sl = 0.5; sl &lt;= 0.999; sl += 0.001) {\n    const k = jStat.normal.inv(sl, 0, 1);\n    const holding = k * sigma_err * (v_unit * h_rate);\n    const shortage = (1 - sl) * s_cost * sigma_err * 2.2; \n    points.push({ sl: sl * 100, holding, shortage, total: holding + shortage });\n  }\n  return points;\n}\n\noptimal_pt = data_balanza.reduce((prev, curr) =&gt; (prev.total &lt; curr.total) ? prev : curr)\n\n{\n  const container = html`&lt;div style=\"width:100%; height:550px;\"&gt;&lt;/div&gt;`;\n  const traces = [\n    { x: data_balanza.map(d =&gt; d.sl), y: data_balanza.map(d =&gt; d.holding), name: 'Costo Posesión (SS)', line: {color: '#ef4444', width: 2} },\n    { x: data_balanza.map(d =&gt; d.sl), y: data_balanza.map(d =&gt; d.shortage), name: 'Costo Escasez Esperado', line: {color: '#f97316', width: 2} },\n    { x: data_balanza.map(d =&gt; d.sl), y: data_balanza.map(d =&gt; d.total), name: 'Costo Total de Incertidumbre', line: {color: '#2563eb', width: 4} }\n  ];\n\n  const layout = {\n    template: 'plotly_white',\n    title: 'Optimización Financiera del Nivel de Servicio',\n    xaxis: {title: 'Nivel de Servicio Ciclo (CSL %)', range: [60, 100], gridcolor: '#f1f5f9'},\n    yaxis: {title: 'Costo Total Anualizado ($)', gridcolor: '#f1f5f9'},\n    hovermode: 'x unified',\n    margin: { t: 60, b: 60, l: 80, r: 40 },\n    annotations: [{ \n      x: optimal_pt.sl, \n      y: optimal_pt.total, \n      text: `Punto Óptimo: ${optimal_pt.sl.toFixed(1)}%`, \n      showarrow: true, \n      arrowhead: 2, \n      bgcolor: '#10b981', \n      font: {color:'white', size: 12},\n      ax: 0, ay: -50\n    }]\n  };\n\n  Plotly.newPlot(container, traces, layout, {responsive: true, displayModeBar: false});\n  return container;\n}",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre</span>"
+    ]
+  },
+  {
+    "objectID": "cap-11-costos-inventario.html#el-impacto-en-el-roa-return-on-assets",
+    "href": "cap-11-costos-inventario.html#el-impacto-en-el-roa-return-on-assets",
+    "title": "11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre",
+    "section": "11.6 El Impacto en el ROA (Return on Assets)",
+    "text": "11.6 El Impacto en el ROA (Return on Assets)\nEl inventario no solo es un componente del capital de trabajo; es una de las palancas más poderosas para mover el ROA (Return on Assets). El ROA se define como la Utilidad Neta dividida por los Activos Totales. Dado que en las empresas de comercialización y manufactura el inventario suele representar entre el 20% y el 50% de los activos totales, cualquier optimización aquí tiene un efecto multiplicador en la rentabilidad percibida por los accionistas.\nReducir el inventario mediante la mejora sistemática del RMSE impacta el desempeño financiero de dos maneras fundamentales:\n\nOptimización del Denominador (Eficiencia de Activos): Al reducir el inventario necesario para mantener el mismo nivel de servicio, disminuimos la base de activos totales. Esto significa que la empresa necesita “menos motor” (activos) para generar la misma velocidad de negocio, elevando instantáneamente el ratio de ROA. Es la diferencia entre un atleta que corre con pesas y uno que corre libre.\nFortalecimiento del Numerador (Utilidad Neta): Menos inventario inmovilizado significa menos gastos de mantenimiento (\\(h\\)). Al reducir las mermas, los costos operativos de bodega y, crucialmente, las provisiones por E&O, incrementamos la utilidad neta de forma directa. Cada dólar que no gastamos en mantener stock innecesario es un dólar que va directo a la última línea del P&L.\n\nComo Arquitectos de Suministros, debemos ser capaces de traducir un “ahorro de unidades” a un “incremento de puntos básicos en el ROA”. Esa es la conversación que nos da un asiento en la mesa directiva.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre</span>"
+    ]
+  },
+  {
+    "objectID": "cap-11-costos-inventario.html#el-cuadro-de-mando-del-capital-de-trabajo",
+    "href": "cap-11-costos-inventario.html#el-cuadro-de-mando-del-capital-de-trabajo",
+    "title": "11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre",
+    "section": "11.7 El Cuadro de Mando del Capital de Trabajo",
+    "text": "11.7 El Cuadro de Mando del Capital de Trabajo\nPara diagnosticar la salud de tu operación, no basta con mirar una sola cifra. Debes entender la interacción entre la velocidad (Rotación), el tiempo (DOI) y la rentabilidad del inventario (GMROI). El GMROI (Gross Margin Return on Investment) es vital porque nos dice cuántos dólares de margen bruto ganamos por cada dólar invertido en inventario.\nUsa este tablero de diagnóstico para evaluar tu situación actual. Introduce tus datos de ventas y costos para ver tus indicadores de salud y recibir alertas estratégicas.\n\n\nviewof cogs_val = Inputs.number({value: 5000000, label: \"COGS Anual ($):\", step: 10000})\nviewof sales_val = Inputs.number({value: 7500000, label: \"Ventas Anuales ($):\", step: 10000})\nviewof avg_inv_val = Inputs.number({value: 850000, label: \"Inventario Promedio ($):\", step: 5000})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nrotation_diag = cogs_val / avg_inv_val\ndoi_diag = 365 / rotation_diag\ngross_margin = sales_val - cogs_val\ngmroi = (gross_margin / avg_inv_val) * 100\n\n// Lógica de Alertas\nalert_msg = {\n  if (doi_diag &gt; 120) return {text: \"⚠️ RIESGO DE OBSOLESCENCIA: Tu inventario está sentado demasiado tiempo. El capital está atrapado y el riesgo de E&O es crítico.\", color: \"#ef4444\"};\n  if (rotation_diag &gt; 25) return {text: \"🚨 RIESGO DE QUIEBRE: Tu rotación es extremadamente alta. Probablemente estés perdiendo ventas por falta de profundidad.\", color: \"#f59e0b\"};\n  if (gmroi &lt; 150) return {text: \"📉 BAJA RENTABILIDAD: Estás ganando poco margen por cada dólar invertido. Revisa tu estrategia de precios o el costo de adquisición.\", color: \"#3b82f6\"};\n  return {text: \"✅ OPERACIÓN BALANCEADA: Tus indicadores muestran un equilibrio saludable entre liquidez y disponibilidad.\", color: \"#10b981\"};\n}\n\n// Visualización de KPI cards usando HTML\nhtml`\n&lt;div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-family: sans-serif;\"&gt;\n  &lt;div style=\"padding: 1.5rem; background: #f8fafc; border-radius: 12px; border-left: 6px solid #2563eb;\"&gt;\n    &lt;div style=\"font-size: 0.75rem; color: #64748b; font-weight: bold; text-transform: uppercase;\"&gt;Índice de Rotación&lt;/div&gt;\n    &lt;div style=\"font-size: 1.8rem; font-weight: 800; color: #1e293b;\"&gt;${rotation_diag.toFixed(1)} &lt;span style=\"font-size: 1rem;\"&gt;veces&lt;/span&gt;&lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div style=\"padding: 1.5rem; background: #f8fafc; border-radius: 12px; border-left: 6px solid #6366f1;\"&gt;\n    &lt;div style=\"font-size: 0.75rem; color: #64748b; font-weight: bold; text-transform: uppercase;\"&gt;DOI (Días de Inventario)&lt;/div&gt;\n    &lt;div style=\"font-size: 1.8rem; font-weight: 800; color: #1e293b;\"&gt;${doi_diag.toFixed(0)} &lt;span style=\"font-size: 1rem;\"&gt;días&lt;/span&gt;&lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div style=\"padding: 1.5rem; background: #f8fafc; border-radius: 12px; border-left: 6px solid #10b981;\"&gt;\n    &lt;div style=\"font-size: 0.75rem; color: #64748b; font-weight: bold; text-transform: uppercase;\"&gt;GMROI (Rentabilidad)&lt;/div&gt;\n    &lt;div style=\"font-size: 1.8rem; font-weight: 800; color: #1e293b;\"&gt;${gmroi.toFixed(0)}%&lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\n&lt;div style=\"margin-top: 1.5rem; padding: 1.25rem; background: ${alert_msg.color}20; border: 2px solid ${alert_msg.color}; border-radius: 12px; color: ${alert_msg.color}; font-weight: 600; font-family: sans-serif; display: flex; align-items: center; gap: 10px;\"&gt;\n  &lt;span&gt;${alert_msg.text}&lt;/span&gt;\n&lt;/div&gt;\n`",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre</span>"
+    ]
+  },
+  {
+    "objectID": "cap-11-costos-inventario.html#conclusión-de-la-teoría-del-costo-a-la-física-del-pedido",
+    "href": "cap-11-costos-inventario.html#conclusión-de-la-teoría-del-costo-a-la-física-del-pedido",
+    "title": "11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre",
+    "section": "11.8 Conclusión: De la Teoría del Costo a la Física del Pedido",
+    "text": "11.8 Conclusión: De la Teoría del Costo a la Física del Pedido\nEn este capítulo hemos establecido la “pizarra financiera” de la arquitectura de suministros. Hemos transformado la incertidumbre estadística (RMSE) en un valor monetario real y hemos aprendido a equilibrar los miedos operativos mediante el Ratio Crítico. Ahora comprendes que cada unidad en tu estante no es solo un objeto, sino una decisión de capital.\nLa ciencia de datos nos ha dicho cuánto nos cuesta equivocarnos y la ingeniería financiera nos ha revelado cuánto capital tenemos inmovilizado. Sin embargo, saber “cuánto nos duele el stock” es solo la mitad del trabajo. La pregunta que surge naturalmente es: ¿Cómo transformamos esta sabiduría en una orden de compra concreta?\nEn el siguiente capítulo, pasaremos de la auditoría de costos a la física de la reposición. Dejaremos de hablar de “miedos” para hablar de “reglas”: aprenderemos a calcular exactamente cuánto pedir mediante el Lote Económico (EOQ) y cuándo pedir mediante el Punto de Reorden (ROP). Prepárate para entrar en el corazón del motor operativo de la Supply Chain.",
+    "crumbs": [
+      "IV: La Ciencia del Stock",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre</span>"
     ]
   }
 ]
