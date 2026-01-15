@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda – Arquitectura de suministros</title>
+<title>2. La Verdad Oculta: Ventas vs.&nbsp;Demanda – Arquitectura de suministros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -44,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-37f97b4dfc99813de07ac4a6dfc6e37d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-c19b869bb4a227e112ccb989b6032731.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-1d61feaf5942a89f67c517e5b1b3c91a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6d7b16145a975a9b09f17f801b1fce15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,6 +109,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -278,7 +315,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-1-auditoria.html">I: El Diagnóstico</a></li><li class="breadcrumb-item"><a href="./cap-2-espejo-realidad.html"><span class="chapter-title">2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-1-auditoria.html">I: El Diagnóstico</a></li><li class="breadcrumb-item"><a href="./cap-2-espejo-realidad.html"><span class="chapter-title">2. La Verdad Oculta: Ventas vs.&nbsp;Demanda</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -295,7 +332,7 @@ window.Quarto = {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Arquitectura de suministros</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/nicobravo933-Planner/Practicas_Supply" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -329,7 +366,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-2-espejo-realidad.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda</span></a>
+  <a href="./cap-2-espejo-realidad.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">2. La Verdad Oculta: Ventas vs.&nbsp;Demanda</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -355,17 +392,17 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-5-pronostico-ingenuo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. El Pronóstico Ingenuo: Modelos Simples y Benchmarking</span></a>
+  <a href="./cap-5-pronostico-ingenuo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. El Pronóstico Ingenuo y el Benchmarking Sin Mentiras</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-6-suavizamiento-exponencial.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Suavizando la Curva - La Inteligencia Estadística</span></a>
+  <a href="./cap-6-suavizamiento-exponencial.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Suavizando la Curva: La Inteligencia Estadística</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-7-arima-y-alternativas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Introducción: El Salto de la Suavización a la Correlación</span></a>
+  <a href="./cap-7-arima-y-alternativas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Tendencia y Estacionalidad: El Modelo de Holt-Winters</span></a>
   </div>
 </li>
       </ul>
@@ -381,17 +418,17 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-8-ingenieria-atributos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Introducción: El Cambio de Paradigma</span></a>
+  <a href="./cap-8-ingenieria-atributos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Machine Learning: Más allá de la Autocorrelación</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-9-bosque-decisiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. El Bosque de las Decisiones - Random Forest y XGBoost</span></a>
+  <a href="./cap-9-bosque-decisiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. El Rey de la Colina: Random Forest, XGBoost y LightGBM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-10-validacion-overfitting.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10. El Desierto de los Datos</span></a>
+  <a href="./cap-10-validacion-overfitting.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10. La Carrera de Caballos: Selección Automática de Modelos</span></a>
   </div>
 </li>
       </ul>
@@ -407,7 +444,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-11-costos-inventario.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11. El Costo del Dinero y el Costo del Vacío</span></a>
+  <a href="./cap-11-costos-inventario.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -469,12 +506,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego</span></a>
+  <a href="./cap-19-gestion-sesgos-humanos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. El Algoritmo vs.&nbsp;el Ego: Gestión de Sesgos Humanos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20. El Plan Maestro</span></a>
+  <a href="./cap-20-plan-maestro-sop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20. El Plan Maestro (S&amp;OP)</span></a>
   </div>
 </li>
       </ul>
@@ -486,7 +523,9 @@ window.Quarto = {
 </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Creado con <a href="https://quarto.org/">Quarto</a>.</p>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -494,44 +533,34 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#i.-fundamentos-la-diferencia-entre-vender-y-necesitar" id="toc-i.-fundamentos-la-diferencia-entre-vender-y-necesitar" class="nav-link active" data-scroll-target="#i.-fundamentos-la-diferencia-entre-vender-y-necesitar">I. Fundamentos: La Diferencia entre “Vender” y “Necesitar”</a>
+  <li><a href="#la-trampa-del-espejo-por-qué-las-ventas-no-son-demanda" id="toc-la-trampa-del-espejo-por-qué-las-ventas-no-son-demanda" class="nav-link active" data-scroll-target="#la-trampa-del-espejo-por-qué-las-ventas-no-son-demanda">2.1 La Trampa del Espejo: Por qué las Ventas no son Demanda</a>
   <ul class="collapse">
-  <li><a href="#lo-que-el-sistema-dice-vs.-lo-que-el-cliente-quería" id="toc-lo-que-el-sistema-dice-vs.-lo-que-el-cliente-quería" class="nav-link" data-scroll-target="#lo-que-el-sistema-dice-vs.-lo-que-el-cliente-quería">2.1 Lo que el sistema dice vs.&nbsp;Lo que el cliente quería</a></li>
-  <li><a href="#el-peligro-de-enseñar-errores-a-tus-algoritmos-sesgo-de-ia" id="toc-el-peligro-de-enseñar-errores-a-tus-algoritmos-sesgo-de-ia" class="nav-link" data-scroll-target="#el-peligro-de-enseñar-errores-a-tus-algoritmos-sesgo-de-ia">2.2 El peligro de enseñar errores a tus algoritmos (Sesgo de IA)</a></li>
-  <li><a href="#el-objetivo-la-demanda-no-restringida" id="toc-el-objetivo-la-demanda-no-restringida" class="nav-link" data-scroll-target="#el-objetivo-la-demanda-no-restringida">2.3 El Objetivo: La Demanda No Restringida</a></li>
+  <li><a href="#el-círculo-vicioso-de-la-ineficiencia-sesgo-de-supervivencia" id="toc-el-círculo-vicioso-de-la-ineficiencia-sesgo-de-supervivencia" class="nav-link" data-scroll-target="#el-círculo-vicioso-de-la-ineficiencia-sesgo-de-supervivencia">El Círculo Vicioso de la Ineficiencia (Sesgo de Supervivencia)</a></li>
   </ul></li>
-  <li><a href="#ii.-diagnóstico-dónde-se-esconde-la-verdad" id="toc-ii.-diagnóstico-dónde-se-esconde-la-verdad" class="nav-link" data-scroll-target="#ii.-diagnóstico-dónde-se-esconde-la-verdad">II. Diagnóstico: ¿Dónde se esconde la verdad?</a>
+  <li><a href="#la-anatomía-de-la-venta-perdida-lost-sales" id="toc-la-anatomía-de-la-venta-perdida-lost-sales" class="nav-link" data-scroll-target="#la-anatomía-de-la-venta-perdida-lost-sales">2.2 La Anatomía de la Venta Perdida (Lost Sales)</a>
   <ul class="collapse">
-  <li><a href="#el-día-cero-stock-out" id="toc-el-día-cero-stock-out" class="nav-link" data-scroll-target="#el-día-cero-stock-out">2.3 El “Día Cero” (Stock Out)</a></li>
-  <li><a href="#la-trampa-del-mes-cuidado-con-la-granularidad" id="toc-la-trampa-del-mes-cuidado-con-la-granularidad" class="nav-link" data-scroll-target="#la-trampa-del-mes-cuidado-con-la-granularidad">2.4 La Trampa del Mes: Cuidado con la Granularidad</a></li>
+  <li><a href="#fórmulas-de-reconstrucción-del-arquitecto" id="toc-fórmulas-de-reconstrucción-del-arquitecto" class="nav-link" data-scroll-target="#fórmulas-de-reconstrucción-del-arquitecto">Fórmulas de Reconstrucción del Arquitecto</a></li>
   </ul></li>
+  <li><a href="#simulador-el-efecto-mutilación-del-stockout" id="toc-simulador-el-efecto-mutilación-del-stockout" class="nav-link" data-scroll-target="#simulador-el-efecto-mutilación-del-stockout">2.3 Simulador: El Efecto “Mutilación” del Stockout</a></li>
+  <li><a href="#limpieza-de-la-señal-el-ruido-de-las-promociones-y-eventos" id="toc-limpieza-de-la-señal-el-ruido-de-las-promociones-y-eventos" class="nav-link" data-scroll-target="#limpieza-de-la-señal-el-ruido-de-las-promociones-y-eventos">2.4 Limpieza de la Señal: El Ruido de las Promociones y Eventos</a></li>
   <li><a href="#iii.-el-mundo-industrial-proyectos-y-clientes-internos" id="toc-iii.-el-mundo-industrial-proyectos-y-clientes-internos" class="nav-link" data-scroll-target="#iii.-el-mundo-industrial-proyectos-y-clientes-internos">III. El Mundo Industrial: Proyectos y Clientes Internos</a>
   <ul class="collapse">
   <li><a href="#el-concepto-pep-inventario-con-dueño" id="toc-el-concepto-pep-inventario-con-dueño" class="nav-link" data-scroll-target="#el-concepto-pep-inventario-con-dueño">2.5 El concepto PEP: Inventario con Dueño</a></li>
-  <li><a href="#fecha-de-necesidad-vs.-fecha-de-entrega" id="toc-fecha-de-necesidad-vs.-fecha-de-entrega" class="nav-link" data-scroll-target="#fecha-de-necesidad-vs.-fecha-de-entrega">2.6 Fecha de Necesidad vs.&nbsp;Fecha de Entrega</a></li>
+  <li><a href="#fecha-de-necesidad-vs.-fecha-de-entrega-la-verdadera-señal" id="toc-fecha-de-necesidad-vs.-fecha-de-entrega-la-verdadera-señal" class="nav-link" data-scroll-target="#fecha-de-necesidad-vs.-fecha-de-entrega-la-verdadera-señal">2.6 Fecha de Necesidad vs.&nbsp;Fecha de Entrega: La Verdadera Señal</a></li>
   </ul></li>
-  <li><a href="#iv.-ingeniería-de-conceptos-la-caja-de-herramientas-del-planner" id="toc-iv.-ingeniería-de-conceptos-la-caja-de-herramientas-del-planner" class="nav-link" data-scroll-target="#iv.-ingeniería-de-conceptos-la-caja-de-herramientas-del-planner">IV. Ingeniería de Conceptos: La Caja de Herramientas del Planner</a>
-  <ul class="collapse">
-  <li><a href="#definiciones-críticas-los-cuatro-pilares" id="toc-definiciones-críticas-los-cuatro-pilares" class="nav-link" data-scroll-target="#definiciones-críticas-los-cuatro-pilares">2.7 Definiciones Críticas: Los Cuatro Pilares</a></li>
-  <li><a href="#la-fórmula-de-la-posición-de-inventario-ip" id="toc-la-fórmula-de-la-posición-de-inventario-ip" class="nav-link" data-scroll-target="#la-fórmula-de-la-posición-de-inventario-ip">2.8 La Fórmula de la Posición de Inventario (<span class="math inline">\(IP\)</span>)</a></li>
-  </ul></li>
-  <li><a href="#v.-el-ruido-del-éxito-promociones-y-eventos" id="toc-v.-el-ruido-del-éxito-promociones-y-eventos" class="nav-link" data-scroll-target="#v.-el-ruido-del-éxito-promociones-y-eventos">V. El Ruido del Éxito: Promociones y Eventos</a></li>
-  <li><a href="#vi.-reconstrucción-curando-la-serie-de-tiempo" id="toc-vi.-reconstrucción-curando-la-serie-de-tiempo" class="nav-link" data-scroll-target="#vi.-reconstrucción-curando-la-serie-de-tiempo">VI. Reconstrucción: Curando la Serie de Tiempo</a>
-  <ul class="collapse">
-  <li><a href="#el-efecto-rebote-y-la-redistribución-de-backlog" id="toc-el-efecto-rebote-y-la-redistribución-de-backlog" class="nav-link" data-scroll-target="#el-efecto-rebote-y-la-redistribución-de-backlog">2.9 El Efecto Rebote y la Redistribución de Backlog</a></li>
-  <li><a href="#técnicas-de-imputación-estadística" id="toc-técnicas-de-imputación-estadística" class="nav-link" data-scroll-target="#técnicas-de-imputación-estadística">2.10 Técnicas de Imputación Estadística</a></li>
-  </ul></li>
+  <li><a href="#el-costo-financiero-de-la-ignorancia-del-dato-al-pl" id="toc-el-costo-financiero-de-la-ignorancia-del-dato-al-pl" class="nav-link" data-scroll-target="#el-costo-financiero-de-la-ignorancia-del-dato-al-pl">2.7 El Costo Financiero de la Ignorancia: Del Dato al P&amp;L</a></li>
+  <li><a href="#important-plan-de-acción-sincronización-operativa" id="toc-important-plan-de-acción-sincronización-operativa" class="nav-link" data-scroll-target="#important-plan-de-acción-sincronización-operativa">Important Plan de Acción: Sincronización Operativa</a></li>
   <li><a href="#checklist-de-cierre-del-capítulo" id="toc-checklist-de-cierre-del-capítulo" class="nav-link" data-scroll-target="#checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-2-espejo-realidad.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-2-espejo-realidad.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-1-auditoria.html">I: El Diagnóstico</a></li><li class="breadcrumb-item"><a href="./cap-2-espejo-realidad.html"><span class="chapter-title">2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap-1-auditoria.html">I: El Diagnóstico</a></li><li class="breadcrumb-item"><a href="./cap-2-espejo-realidad.html"><span class="chapter-title">2. La Verdad Oculta: Ventas vs.&nbsp;Demanda</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">2. El Espejo de la Realidad: Ventas vs.&nbsp;Demanda</span></h1>
+<h1 class="title"><span class="chapter-title">2. La Verdad Oculta: Ventas vs.&nbsp;Demanda</span></h1>
 </div>
 
 
@@ -548,215 +577,239 @@ window.Quarto = {
 </header>
 
 
-<p>Ya pasamos la escoba en el Capítulo 1. Tenemos datos limpios, sin duplicados y con las jerarquías de productos y ubicaciones perfectamente claras. En este punto, es probable que te sientas confiado. Miras tu base de datos, ves una columna que dice “Venta Histórica” o “Consumos de Almacén”, calculas un promedio de 100 unidades mensuales y piensas: <em>“Listo, mi demanda promedio es 100 y mi desviación es 15; ya puedo calcular mi stock de seguridad”</em>.</p>
-<p>Te voy avisando desde ahora: <strong>No siempre es tan fácil.</strong></p>
-<p>Lo que ves en tu pantalla no es la realidad del mercado ni la necesidad real de tu planta de producción; es un reflejo de tus propias limitaciones operativas. En Supply Chain, es facil confundir lo que el sistema registró como una transacción exitosa (Salida) con lo que el cliente realmente requería (Necesidad).</p>
-<section id="i.-fundamentos-la-diferencia-entre-vender-y-necesitar" class="level2">
-<h2 class="anchored" data-anchor-id="i.-fundamentos-la-diferencia-entre-vender-y-necesitar">I. Fundamentos: La Diferencia entre “Vender” y “Necesitar”</h2>
-<p>Muchas personas cometen el error de pensar que sus reportes de ventas muestran lo que el mercado quiere. En realidad, esos reportes solo muestran lo que <strong>pudiste entregar</strong>. Para ser un buen planificador, debes aprender a ver más allá de la factura.</p>
-<section id="lo-que-el-sistema-dice-vs.-lo-que-el-cliente-quería" class="level3">
-<h3 class="anchored" data-anchor-id="lo-que-el-sistema-dice-vs.-lo-que-el-cliente-quería">2.1 Lo que el sistema dice vs.&nbsp;Lo que el cliente quería</h3>
-<p>Imagina que tienes una frutería. Hoy vinieron 10 personas queriendo comprar una manzana cada una, pero tú solo tenías 3 en el mostrador. Al final del día, tu registro dirá: <em>“Ventas: 3 unidades”</em>.</p>
-<p>Si te basas solo en ese número para el futuro, pensarás que tu demanda es de 3, cuando en realidad el mercado te pedía 10. Esta es la <strong>Ecuación Universal</strong> simplificada:</p>
+<p>En el Capítulo 1, limpiamos el “maestro de materiales” y aseguramos que los cimientos de nuestros datos fueran sólidos. Ahora, debemos enfrentar la pregunta más crítica y, a menudo, la más ignorada de la planificación: <strong>¿Qué estamos intentando predecir realmente?</strong></p>
+<p>Muchos profesionales de la cadena de suministro cometen el error fundamental de intentar predecir las <strong>Ventas</strong>. A primera vista, parece la métrica más lógica; después de todo, es lo que genera ingresos y lo que el departamento de contabilidad audita. Sin embargo, en la arquitectura de suministros, predecir las ventas es como intentar conducir un vehículo a alta velocidad mirando únicamente por el espejo retrovisor mientras este está completamente empañado. Las ventas nos dicen qué pudimos hacer dadas nuestras limitaciones; la demanda nos dice qué pudimos haber hecho si hubiéramos sido perfectos. En este capítulo, aprenderemos a ver a través de la neblina para encontrar la <strong>Demanda Real</strong> o <strong>Demanda No Restringida</strong>.</p>
+<section id="la-trampa-del-espejo-por-qué-las-ventas-no-son-demanda" class="level2">
+<h2 class="anchored" data-anchor-id="la-trampa-del-espejo-por-qué-las-ventas-no-son-demanda">2.1 La Trampa del Espejo: Por qué las Ventas no son Demanda</h2>
+<p>La diferencia entre Ventas y Demanda es la distancia abismal que separa la <strong>realidad observada</strong> del <strong>potencial teórico del mercado</strong>. Confundirlas no es un error semántico; es un error de diseño que cuesta millones en márgenes perdidos.</p>
+<ul>
+<li><p><strong>Venta:</strong> Es un evento transaccional condicionado. Es una coincidencia afortunada entre el deseo del cliente y la disponibilidad física del producto. Solo vendes lo que tienes el privilegio de tener en el estante en el momento preciso. La venta es “demanda restringida” por tus propias ineficiencias.</p></li>
+<li><p><strong>Demanda No Restringida (Real):</strong> Es el flujo incesante del deseo de compra del cliente. Es independiente de tu capacidad de respuesta. La demanda no se detiene porque tú te hayas quedado sin existencias; simplemente se vuelve invisible para tus sistemas, o peor aún, se traslada silenciosamente a tu competencia.</p></li>
+</ul>
 <p><span class="math display">\[
-\large Salida_t = \min(Necesidad_t, Disponibilidad_t)
+\text{Venta} = \min(\text{Demanda No Restringida}, \text{Inventario Disponible})
 \]</span></p>
-<p>En términos simples: <strong>Tus ventas tienen un “techo” que es tu propio inventario.</strong> Si no tienes producto, tu venta será cero, aunque el cliente esté afuera gritando que quiere comprar. El sistema registrará un “cero”, ocultando la verdadera necesidad.</p>
+<section id="el-círculo-vicioso-de-la-ineficiencia-sesgo-de-supervivencia" class="level3">
+<h3 class="anchored" data-anchor-id="el-círculo-vicioso-de-la-ineficiencia-sesgo-de-supervivencia">El Círculo Vicioso de la Ineficiencia (Sesgo de Supervivencia)</h3>
+<p>Imagina que un cliente entra a tu tienda buscando comprar 10 unidades de un producto específico, pero tú solo tienes 2 en stock. El cliente compra esas 2 unidades porque las necesita con urgencia. Tu reporte de ventas dirá “2”. Si alimentas tu modelo con ese “2”, el modelo “aprenderá” que el mercado solo tiene apetito por 2 unidades. En el próximo ciclo, el sistema sugerirá comprar solo 2 unidades (o menos, si aplicas un factor de seguridad conservador), garantizando que vuelvas a quebrar el stock ante el próximo cliente que necesite 10.</p>
+<p>Este fenómeno se conoce como <strong>Sesgo de Supervivencia de Datos</strong>. Estamos optimizando la cadena para repetir nuestros fracasos pasados en lugar de capturar nuestro potencial futuro. El Arquitecto de la Demanda debe ser capaz de “descapar” este techo de cristal.</p>
 </section>
-<section id="el-peligro-de-enseñar-errores-a-tus-algoritmos-sesgo-de-ia" class="level3">
-<h3 class="anchored" data-anchor-id="el-peligro-de-enseñar-errores-a-tus-algoritmos-sesgo-de-ia">2.2 El peligro de enseñar errores a tus algoritmos (Sesgo de IA)</h3>
-<p>Hoy en día usamos programas o Inteligencia Artificial (IA) para que nos digan cuánto comprar. Estos programas aprenden del pasado, pero no tienen sentido común. Si les das datos “mentirosos” (ventas bajas porque no tenías stock), crearás un círculo vicioso de escasez:</p>
+</section>
+<section id="la-anatomía-de-la-venta-perdida-lost-sales" class="level2">
+<h2 class="anchored" data-anchor-id="la-anatomía-de-la-venta-perdida-lost-sales">2.2 La Anatomía de la Venta Perdida (Lost Sales)</h2>
+<p>Como Arquitectos de la Demanda, nuestra misión es <strong>reconstruir la señal</strong> a partir de los fragmentos de las ventas. Para ello, debemos identificar y cuantificar la <strong>Venta Perdida</strong>. Este concepto es la “materia oscura” de la logística: no se ve, pero ejerce una presión enorme sobre el resultado final.</p>
+<p>La venta perdida se produce principalmente por tres fallos sistémicos:</p>
 <ol type="1">
-<li><p><strong>El pasado:</strong> No tenías stock, vendiste poco.</p></li>
-<li><p><strong>El aprendizaje:</strong> El algoritmo ve esa venta baja y piensa: <em>“A nadie le gusta este producto, no se vende”</em>.</p></li>
-<li><p><strong>El futuro:</strong> El algoritmo te recomienda comprar muy poco.</p></li>
-<li><p><strong>El resultado:</strong> Vuelves a quedarte sin nada, el cliente se va frustrado y el sistema cree que “acertó” porque se vendió lo poquito que compraste.</p></li>
+<li><p><strong>Quiebres de Stock (Stockouts):</strong> El inventario físico llegó a cero absoluto en el sistema y en la realidad. Es el fallo más evidente pero el más difícil de recuperar si no se marca el evento en la serie de tiempo.</p></li>
+<li><p><strong>Exhibición Deficiente e Inventario Fantasma (Ghost Inventory):</strong> Este es un problema de integridad de datos. Tu sistema dice que tienes 5 unidades, pero estas están en el fondo de una caja mal ubicada en la bodega, o rotas, o quizás fueron robadas. Para el cliente, el producto no existe. El sistema no genera una orden de compra porque “cree” que hay stock, pero no vendes porque no hay disponibilidad física. Es un quiebre silencioso.</p></li>
+<li><p><strong>Incapacidad Logística y Promesa de Entrega:</strong> En el mundo del e-commerce, una promesa de entrega de 7 días cuando la competencia entrega en 2 es una venta perdida garantizada. El cliente “demanda” el producto, pero lo adquiere en otro lugar debido a la restricción de tu servicio.</p></li>
 </ol>
-<p>Estamos <strong>institucionalizando la escasez</strong>. En lugar de usar la tecnología para crecer, la estamos usando para limitar nuestro propio negocio basándonos en errores del pasado.</p>
-</section>
-<section id="el-objetivo-la-demanda-no-restringida" class="level3">
-<h3 class="anchored" data-anchor-id="el-objetivo-la-demanda-no-restringida">2.3 El Objetivo: La Demanda No Restringida</h3>
-<p>Para romper este círculo, el planificador debe buscar la <strong>Demanda No Restringida</strong>. Este es el número mágico que representa lo que habrías vendido si hubieras tenido stock infinito.</p>
+<section id="fórmulas-de-reconstrucción-del-arquitecto" class="level3">
+<h3 class="anchored" data-anchor-id="fórmulas-de-reconstrucción-del-arquitecto">Fórmulas de Reconstrucción del Arquitecto</h3>
+<p>Existen métodos matemáticos para limpiar la señal de venta y estimar la demanda no restringida. Un Arquitecto no usa solo un método; los combina según la categoría.</p>
+<section id="a.-método-de-sustitución-temporal-flat-line-correction" class="level4">
+<h4 class="anchored" data-anchor-id="a.-método-de-sustitución-temporal-flat-line-correction">A. Método de Sustitución Temporal (Flat-line Correction)</h4>
+<p>Este es el método estándar para productos de alta rotación. Si un producto tuvo stock cero durante $n$ días de un mes, no podemos promediar el mes completo incluyendo ceros. Debemos proyectar la tasa de venta de los días “saludables” sobre los días “enfermos”.</p>
 <p><span class="math display">\[
-\large \text{Demanda No Restringida} = \text{Venta Real} + \text{Venta Perdida}
+\hat{D}_{\text{total}} = \left( \frac{\sum \text{Ventas en días con stock}}{\text{Días con stock}} \right) \times \text{Días totales del periodo}
 \]</span></p>
-<p>Si no calculas la “Venta Perdida”, tu pronóstico siempre será una sombra pequeña de lo que tu empresa podría llegar a ser.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p><em>Ejemplo:</em> Si vendiste 100 unidades en los 20 días que tuviste stock, tu tasa de venta es 5 unidades/día. Si el mes tiene 30 días, tu Demanda No Restringida estimada es 150, no 100.</p>
+</section>
+<section id="b.-modelo-de-tasa-de-captura-y-tráfico" class="level4">
+<h4 class="anchored" data-anchor-id="b.-modelo-de-tasa-de-captura-y-tráfico">B. Modelo de Tasa de Captura y Tráfico</h4>
+<p>Utilizado en tiendas físicas donde conocemos el flujo de clientes (tráfico) gracias a sensores, pero el producto falló:</p>
+<p>$$\hat{D} = \text{Tráfico Total} \times \text{Tasa de Conversión Histórica del SKU}$$</p>
+<p>Este método es más preciso que la sustitución temporal porque detecta si el día del quiebre hubo un tráfico inusual (por ejemplo, un feriado) que habría disparado las ventas mucho más allá del promedio.</p>
+</section>
+</section>
+</section>
+<section id="simulador-el-efecto-mutilación-del-stockout" class="level2">
+<h2 class="anchored" data-anchor-id="simulador-el-efecto-mutilación-del-stockout">2.3 Simulador: El Efecto “Mutilación” del Stockout</h2>
+<p>Usa este simulador para visualizar cómo un quiebre de stock deforma la realidad. Observa cómo la señal azul (ventas) se vuelve “plana” cuando choca contra el techo del inventario, ocultando la verdadera forma de la demanda (línea gris).</p>
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="67" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 66;"><span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>jStat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Plotly <span class="op">=</span> <span class="pp">require</span>(<span class="st">"plotly.js-dist-min@2.24.1"</span>)</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>viewof inventory_cap <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">10</span><span class="op">,</span> <span class="dv">150</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">80</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Capacidad de Inventario (Techo):"</span>})</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>viewof demand_volatility <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">5</span><span class="op">,</span> <span class="dv">40</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Volatilidad de la Demanda:"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Plan de Acción: Empezar a ver la realidad
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p><strong>Busca la intención, no solo el resultado:</strong> No mires solo las facturas. Busca en tu sistema la tabla de “Pedidos” o “Reservas”. Ahí es donde el cliente dejó escrita su verdadera intención antes de que tú le dijeras que no tenías stock.</p></li>
-<li><p><strong>Marca los datos “mentirosos”:</strong> Crea una marca o etiqueta en tu base de datos para los días en los que no tuviste suficiente mercancía. Dile a tu sistema: <em>“Este dato de venta es bajo porque yo fallé, no porque el cliente no quisiera el producto”</em>.</p></li>
-<li><p><strong>Calcula tu tasa de servicio (Fill Rate):</strong> Empieza a medir qué porcentaje de los pedidos completas a tiempo. Si solo entregas el 80% de lo que te piden, tu demanda real es mucho mayor de lo que dicen tus ventas.</p></li>
-</ul>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
 </div>
 </div>
-</section>
-</section>
-<section id="ii.-diagnóstico-dónde-se-esconde-la-verdad" class="level2">
-<h2 class="anchored" data-anchor-id="ii.-diagnóstico-dónde-se-esconde-la-verdad">II. Diagnóstico: ¿Dónde se esconde la verdad?</h2>
-<section id="el-día-cero-stock-out" class="level3">
-<h3 class="anchored" data-anchor-id="el-día-cero-stock-out">2.3 El “Día Cero” (Stock Out)</h3>
-<p>No basta con ver que no hubo ventas; hay que saber <strong>por qué</strong>.</p>
-<ul>
-<li><p><strong>Escenario A:</strong> No hubo ventas porque nadie quiso comprar (Demanda baja).</p></li>
-<li><p><strong>Escenario B:</strong> No hubo ventas porque el estante estaba vacío (Quiebre de stock).</p></li>
-</ul>
-<p>Para el planificador, el Escenario B es una emergencia que debe marcarse. Si el inventario llegó a cero y las ventas cayeron, ese dato de “cero ventas” debe ser descartado o corregido.</p>
-</section>
-<section id="la-trampa-del-mes-cuidado-con-la-granularidad" class="level3">
-<h3 class="anchored" data-anchor-id="la-trampa-del-mes-cuidado-con-la-granularidad">2.4 La Trampa del Mes: Cuidado con la Granularidad</h3>
-<p>Si miras tus ventas de forma mensual, podrías ver que vendiste 100 teniendo 100 en stock. Parece un éxito total. Pero si miras el <strong>día a día</strong>, quizás descubres que las 100 unidades se agotaron el día 10. Durante los otros 20 días estuviste vacío. Tu demanda real no era 100, ¡era probablemente 300! <strong>El análisis mensual es el escondite favorito de los errores.</strong></p>
-</section>
-</section>
-<section id="iii.-el-mundo-industrial-proyectos-y-clientes-internos" class="level2">
-<h2 class="anchored" data-anchor-id="iii.-el-mundo-industrial-proyectos-y-clientes-internos">III. El Mundo Industrial: Proyectos y Clientes Internos</h2>
-<p>En la industria pesada, tu cliente no es un extraño en la calle, sino un Ingeniero de Mantenimiento o de Proyectos. Aquí, la demanda tiene “nombre y apellido”.</p>
-<section id="el-concepto-pep-inventario-con-dueño" class="level3">
-<h3 class="anchored" data-anchor-id="el-concepto-pep-inventario-con-dueño">2.5 El concepto PEP: Inventario con Dueño</h3>
-<p>Imagina que tienes 10 motores en el patio, pero 8 ya están “prometidos” para la construcción de una nueva planta (Proyecto PEP<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>). Aunque los veas ahí, <strong>no están disponibles</strong> para el mantenimiento diario. Ignorar estas reservas contables es la forma más rápida de causar un accidente operativo.</p>
-</section>
-<section id="fecha-de-necesidad-vs.-fecha-de-entrega" class="level3">
-<h3 class="anchored" data-anchor-id="fecha-de-necesidad-vs.-fecha-de-entrega">2.6 Fecha de Necesidad vs.&nbsp;Fecha de Entrega</h3>
-<p>Este es el mayor error en la planificación:</p>
-<ul>
-<li><p><strong>Fecha de Necesidad:</strong> Cuándo el ingeniero pidió el repuesto para que la máquina no se detenga.</p></li>
-<li><p><strong>Fecha de Entrega:</strong> Cuándo finalmente pudiste dárselo (quizás semanas después).</p></li>
-</ul>
-<p>Si analizas tu historia con la fecha de entrega, estarás planificando basándote en tus propios retrasos. <strong>La demanda real siempre se mide en la fecha en que el cliente levantó la mano.</strong></p>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="78" data-source-offset="-2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 77;"><span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>sim_demand_data <span class="op">=</span> {</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> data <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">60</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> pattern <span class="op">=</span> <span class="dv">100</span> <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(i<span class="op">/</span><span class="dv">5</span>) <span class="op">*</span> <span class="dv">45</span><span class="op">;</span> </span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> noise <span class="op">=</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">sample</span>(<span class="dv">0</span><span class="op">,</span> demand_volatility)<span class="op">;</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> real_demand <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">0</span><span class="op">,</span> pattern <span class="op">+</span> noise)<span class="op">;</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> sales <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(real_demand<span class="op">,</span> inventory_cap)<span class="op">;</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    data<span class="op">.</span><span class="fu">push</span>({ <span class="dt">t</span><span class="op">:</span> i<span class="op">,</span> <span class="dt">demand</span><span class="op">:</span> real_demand<span class="op">,</span> <span class="dt">sales</span><span class="op">:</span> sales })<span class="op">;</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data<span class="op">;</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="width:100%; height:450px;"&gt;&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> traces <span class="op">=</span> [</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> sim_demand_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">t</span>)<span class="op">,</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> sim_demand_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">demand</span>)<span class="op">,</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Demanda No Restringida'</span><span class="op">,</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span> <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span> <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#cbd5e1'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">dash</span><span class="op">:</span> <span class="st">'dot'</span>}</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> sim_demand_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">t</span>)<span class="op">,</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> sim_demand_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">sales</span>)<span class="op">,</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>      <span class="dt">name</span><span class="op">:</span> <span class="st">'Venta Registrada (Mutilada)'</span><span class="op">,</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">'scatter'</span><span class="op">,</span> <span class="dt">mode</span><span class="op">:</span> <span class="st">'lines'</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">'tozeroy'</span><span class="op">,</span> <span class="dt">line</span><span class="op">:</span> {<span class="dt">color</span><span class="op">:</span> <span class="st">'#2563eb'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">3</span>}</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">;</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>  Plotly<span class="op">.</span><span class="fu">newPlot</span>(container<span class="op">,</span> traces<span class="op">,</span> {</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">'Impacto del Inventario en la Señal de Datos'</span><span class="op">,</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>    <span class="dt">template</span><span class="op">:</span> <span class="st">'plotly_white'</span><span class="op">,</span> </span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>    <span class="dt">margin</span><span class="op">:</span> {<span class="dt">t</span><span class="op">:</span><span class="dv">50</span>}<span class="op">,</span> </span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>    <span class="dt">hovermode</span><span class="op">:</span> <span class="st">'x unified'</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> container<span class="op">;</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Plan de Acción: Sincronización Operativa
+<span class="screen-reader-only">Important</span>La Mentira de los Datos Planos
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li><p><strong>Auditoría de Reservas:</strong> Compara sistemáticamente la fecha de solicitud original con la fecha de salida física. El diferencial es tu Lead Time Interno de ineficiencia.</p></li>
-<li><p><strong>Limpieza de Hoarding:</strong> Identifica reservas cargadas con excesiva antelación por “miedo” al desabasto. Ajusta esas señales para que coincidan con el cronograma real del proyecto.</p></li>
-</ul>
+<p>Cuando la línea azul se vuelve plana, has alcanzado tu capacidad logística, no la del mercado. Si dejas que el algoritmo use esos datos, el modelo de pronóstico calculará una desviación estándar muy baja (porque el dato es plano y “predecible”). Esto te llevará a reducir el stock de seguridad, provocando aún más quiebres en el futuro. Es una espiral de muerte operativa.</p>
 </div>
 </div>
 </section>
-</section>
-<section id="iv.-ingeniería-de-conceptos-la-caja-de-herramientas-del-planner" class="level2">
-<h2 class="anchored" data-anchor-id="iv.-ingeniería-de-conceptos-la-caja-de-herramientas-del-planner">IV. Ingeniería de Conceptos: La Caja de Herramientas del Planner</h2>
-<p>Para reconstruir la realidad, trabajamos con la <strong>Posición de Inventario (</strong><span class="math inline">\(IP\)</span><strong>)</strong>.</p>
-<section id="definiciones-críticas-los-cuatro-pilares" class="level3">
-<h3 class="anchored" data-anchor-id="definiciones-críticas-los-cuatro-pilares">2.7 Definiciones Críticas: Los Cuatro Pilares</h3>
-<section id="a.-stock-comprometido-committed" class="level4">
-<h4 class="anchored" data-anchor-id="a.-stock-comprometido-committed">A. Stock Comprometido (Committed)</h4>
-<p>Inventario físicamente presente pero que <strong>ya tiene dueño</strong> (reservas de proyectos o pedidos confirmados). No restarlo te llevará a prometer material que ya no te pertenece.</p>
-</section>
-<section id="b.-backlog-pendientes-por-entregar" class="level4">
-<h4 class="anchored" data-anchor-id="b.-backlog-pendientes-por-entregar">B. Backlog (Pendientes por Entregar)</h4>
-<p>Es la <strong>deuda de tiempo</strong> con tus clientes. Pedidos cuya fecha de necesidad ya pasó. El Backlog es “demanda reprimida” que explotará en forma de picos masivos apenas llegue el suministro.</p>
-</section>
-<section id="c.-stock-en-tránsito-in-transit" class="level4">
-<h4 class="anchored" data-anchor-id="c.-stock-en-tránsito-in-transit">C. Stock en Tránsito (In-Transit)</h4>
-<p>Material que ya salió del proveedor pero no ha ingresado. Es fundamental para el cálculo del punto de reorden y evitar compras duplicadas.</p>
-</section>
-<section id="d.-fill-rate-tasa-de-surtido" class="level4">
-<h4 class="anchored" data-anchor-id="d.-fill-rate-tasa-de-surtido">D. Fill Rate (Tasa de Surtido)</h4>
-<p>Mide el porcentaje de la necesidad que pudiste satisfacer inmediatamente. Es el factor matemático que nos permite “de-censurar” la historia:</p>
-<p><span class="math display">\[
-\large Demanda_{Estimada} = \frac{Salida_{Registrada}}{Fill Rate}
-\]</span></p>
-</section>
-</section>
-<section id="la-fórmula-de-la-posición-de-inventario-ip" class="level3">
-<h3 class="anchored" data-anchor-id="la-fórmula-de-la-posición-de-inventario-ip">2.8 La Fórmula de la Posición de Inventario (<span class="math inline">\(IP\)</span>)</h3>
-<p><span class="math display">\[
-\large \text{IP} = \text{Stock Físico} + \text{En Tránsito} - \text{Backlog} - \text{Comprometido}
-\]</span></p>
-</section>
-</section>
-<section id="v.-el-ruido-del-éxito-promociones-y-eventos" class="level2">
-<h2 class="anchored" data-anchor-id="v.-el-ruido-del-éxito-promociones-y-eventos">V. El Ruido del Éxito: Promociones y Eventos</h2>
-<p>No todo el ruido en el espejo son valles (quiebres); también hay picos que pueden engañarnos.</p>
+<section id="limpieza-de-la-señal-el-ruido-de-las-promociones-y-eventos" class="level2">
+<h2 class="anchored" data-anchor-id="limpieza-de-la-señal-el-ruido-de-las-promociones-y-eventos">2.4 Limpieza de la Señal: El Ruido de las Promociones y Eventos</h2>
+<p>Las promociones inyectan un ruido que puede ser tan peligroso como un quiebre de stock si no se trata quirúrgicamente:</p>
 <ul>
-<li><p><strong>Uplift (Incremento Promocional):</strong> Si vendiste 1,000 unidades en una semana de oferta, tu demanda base quizás sigue siendo 100. Pronosticar 1,000 para una semana normal es una receta para el sobrestock masivo.</p></li>
-<li><p><strong>Canibalización:</strong> Si el Producto A subió por una promoción, revisa si el Producto B (su sustituto) cayó. Esa caída no es falta de demanda, es desplazamiento.</p></li>
+<li><p><strong>Efecto Canibalización:</strong> La oferta del Producto A destruye la venta del Producto B. Si no limpias la caída del B, el sistema creerá que el interés por el líder está muriendo y dejará de comprarlo.</p></li>
+<li><p><strong>Efecto Forward Buying:</strong> El cliente aprovecha el descuento de hoy para comprar el suministro de los próximos 3 meses. Verás un pico masivo hoy seguido de un “valle de la muerte” en los meses siguientes.</p></li>
+<li><p><strong>Efecto Halo:</strong> La promoción de pañales arrastra la venta de toallitas húmedas aunque estas no tengan descuento.</p></li>
 </ul>
 </section>
-<section id="vi.-reconstrucción-curando-la-serie-de-tiempo" class="level2">
-<h2 class="anchored" data-anchor-id="vi.-reconstrucción-curando-la-serie-de-tiempo">VI. Reconstrucción: Curando la Serie de Tiempo</h2>
-<section id="el-efecto-rebote-y-la-redistribución-de-backlog" class="level3">
-<h3 class="anchored" data-anchor-id="el-efecto-rebote-y-la-redistribución-de-backlog">2.9 El Efecto Rebote y la Redistribución de Backlog</h3>
-<p>Cuando el stock llega tras un quiebre, el Backlog se libera y verás una salida gigante en un solo día.</p>
+<section id="iii.-el-mundo-industrial-proyectos-y-clientes-internos" class="level2">
+<h2 class="anchored" data-anchor-id="iii.-el-mundo-industrial-proyectos-y-clientes-internos">III. El Mundo Industrial: Proyectos y Clientes Internos</h2>
+<p>En la industria pesada, la manufactura compleja o la minería, el paradigma de la demanda cambia radicalmente. Tu cliente no es un extraño anónimo en la calle, sino un <strong>Ingeniero de Mantenimiento</strong>, un <strong>Líder de Proyectos</strong> o un <strong>Jefe de Planta</strong>. Aquí, la demanda no es una probabilidad estadística, sino una señal con “nombre y apellido”.</p>
+<section id="el-concepto-pep-inventario-con-dueño" class="level3">
+<h3 class="anchored" data-anchor-id="el-concepto-pep-inventario-con-dueño">2.5 El concepto PEP: Inventario con Dueño</h3>
+<p>En proyectos industriales (como la construcción de una planta o una reparación mayor), se utiliza a menudo el concepto de <strong>PEP (Proyecto / WBS - Work Breakdown Structure)</strong>. Esto significa que el inventario está “etiquetado” contablemente para un destino específico.</p>
+<p>Imagina que tienes 10 motores en el patio. Contablemente, el sistema dice “Stock = 10”. Sin embargo, 8 de esos motores ya están “prometidos” y reservados para el Proyecto PEP-2024 (una expansión crítica). Aunque físicamente los veas allí, <strong>no están disponibles</strong> para el mantenimiento diario de la operación actual.</p>
+<p><strong>La Trampa Arquitectónica:</strong> Si ignoras estas reservas contables al calcular tu “Demanda No Restringida”, cometerás errores fatales:</p>
+<ol type="1">
+<li><p>Creerás que tienes stock suficiente cuando en realidad estás en un quiebre operativo para el área de mantenimiento.</p></li>
+<li><p>Causarás un accidente operativo o una detención de planta porque alguien “tomó prestado” el inventario del proyecto para una emergencia, asumiendo que el repuesto llegaría a tiempo después. El inventario PEP debe ser tratado como una demanda firme e independiente en tu arquitectura.</p></li>
+</ol>
+</section>
+<section id="fecha-de-necesidad-vs.-fecha-de-entrega-la-verdadera-señal" class="level3">
+<h3 class="anchored" data-anchor-id="fecha-de-necesidad-vs.-fecha-de-entrega-la-verdadera-señal">2.6 Fecha de Necesidad vs.&nbsp;Fecha de Entrega: La Verdadera Señal</h3>
+<p>Este es, quizás, el mayor error en la planificación industrial y de proyectos. La mayoría de los sistemas ERP registran la historia basándose en la <strong>Fecha de Salida de Almacén</strong> (cuándo se entregó el repuesto).</p>
 <ul>
-<li><strong>La Solución:</strong> Debes “aplanar” ese pico. Esas unidades deben ser redistribuidas hacia atrás en la serie de tiempo, asignándolas a las <strong>Fechas de Necesidad</strong> originales. Solo así la IA entenderá el ritmo real del consumo.</li>
+<li><p><strong>Fecha de Necesidad:</strong> Cuándo el ingeniero levantó la mano y pidió el repuesto para que la máquina no se detuviera.</p></li>
+<li><p><strong>Fecha de Entrega:</strong> Cuándo finalmente pudiste dárselo (quizás semanas después, tras un quiebre de stock o un retraso logístico).</p></li>
+</ul>
+<p><strong>Consecuencia:</strong> Si analizas tu historia basándote en la fecha de entrega, estarás planificando basándote en tus propios retrasos. Estarás “desplazando” la demanda hacia el futuro de forma artificial. La demanda real (la voluntad del cliente interno) siempre se mide en la <strong>fecha de solicitud original</strong>. El diferencial entre ambas fechas no es demanda, es tu <strong>Lead Time Interno de ineficiencia</strong>.</p>
+</section>
+</section>
+<section id="el-costo-financiero-de-la-ignorancia-del-dato-al-pl" class="level2">
+<h2 class="anchored" data-anchor-id="el-costo-financiero-de-la-ignorancia-del-dato-al-pl">2.7 El Costo Financiero de la Ignorancia: Del Dato al P&amp;L</h2>
+<p>Ignorar la diferencia entre ventas y demanda, o entre reservas y disponibilidad, conecta directamente con la salud financiera de la compañía. No es un problema de IT; es un problema de EBITDA.</p>
+<ul>
+<li><p><strong>E&amp;O (Excess &amp; Obsolete):</strong> Picos promocionales o pedidos de proyectos mal cancelados generan compras excesivas. Ese inventario se pudre en la bodega, consumiendo el flujo de caja que la empresa necesita para operar.</p></li>
+<li><p><strong>DOH (Days on Hand):</strong> Una demanda real subestimada hace que tu cobertura de días parezca mayor de lo que es. Crees que tienes stock para 30 días, pero la demanda real te lo consumirá en 10.</p></li>
+<li><p><strong>Costo de Adquisición de Cliente (CAC) o Costo de Detención:</strong> En retail, pierdes al cliente. En industria, una venta perdida (un repuesto que no llegó en la Fecha de Necesidad) puede costar miles de dólares por hora en lucro cesante por planta detenida.</p></li>
 </ul>
 </section>
-<section id="técnicas-de-imputación-estadística" class="level3">
-<h3 class="anchored" data-anchor-id="técnicas-de-imputación-estadística">2.10 Técnicas de Imputación Estadística</h3>
-<p>Para los días de quiebre donde la demanda se perdió (Lost Sales), usamos:</p>
-<ul>
-<li><p><strong>Media Móvil Local:</strong> Promedio de los días vecinos sanos.</p></li>
-<li><p><strong>Sustitución Estacional:</strong> ¿Qué pasó el mismo lunes del año pasado?</p></li>
-</ul>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Plan de Acción: Algoritmos de Curación
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p><strong>Script de Redistribución:</strong> Implementa una lógica que detecte picos post-quiebre y los reparta proporcionalmente en el periodo de stockout.</p></li>
-<li><p><strong>Validación de Datos Curados:</strong> Si tu demanda reconstruida es 3 veces más alta que tu presupuesto comercial, revisa tus cálculos de Fill Rate.</p></li>
-</ul>
-</div>
-</div>
-</section>
+<section id="important-plan-de-acción-sincronización-operativa" class="level2">
+<h2 class="anchored" data-anchor-id="important-plan-de-acción-sincronización-operativa">Important Plan de Acción: Sincronización Operativa</h2>
+<p>Como Arquitecto de Suministros, tu primera intervención debe ser “higienizar” la señal de entrada:</p>
+<ol type="1">
+<li><p><strong>Auditoría de Reservas:</strong> Compara sistemáticamente la fecha de solicitud original con la fecha de salida física. Identifica la brecha de servicio.</p></li>
+<li><p><strong>Limpieza de Hoarding (Acaparamiento):</strong> Identifica reservas cargadas en el sistema con excesiva antelación por “miedo” al desabasto por parte de los ingenieros. El miedo genera ruido; ajusta esas señales para que coincidan con el cronograma real del proyecto (<em>Gantt</em>).</p></li>
+<li><p><strong>Algoritmo de Relleno:</strong> Implementa la fórmula de Sustitución Temporal para los días de stockout antes de que el motor de pronóstico vea los datos.</p></li>
+</ol>
 </section>
 <section id="checklist-de-cierre-del-capítulo" class="level2">
 <h2 class="anchored" data-anchor-id="checklist-de-cierre-del-capítulo">Checklist de Cierre del Capítulo</h2>
-<p>Antes de pasar al siguiente nivel, asegúrate de haber respondido:</p>
 <ul class="task-list">
-<li><p><label><input type="checkbox">¿He identificado los días donde mi inventario limitó mi capacidad de venta/despacho?</label></p></li>
-<li><p><label><input type="checkbox">¿He separado el stock asignado a proyectos (PEP) de mi disponibilidad general?</label></p></li>
-<li><p><label><input type="checkbox">¿He recalculado mi historia basándome en la Fecha de Necesidad y no en la de Despacho?</label></p></li>
-<li><p><label><input type="checkbox">¿He limpiado los picos de promociones y redistribuido el backlog?</label></p></li>
+<li><p><label><input type="checkbox"><strong>Auditoría de Ceros:</strong> ¿Sé qué días tuve stock menor al punto de reorden?</label></p></li>
+<li><p><label><input type="checkbox"><strong>Diferencial de Fechas:</strong> ¿Mi reporte de demanda usa la “Fecha de Necesidad” o la de entrega?</label></p></li>
+<li><p><label><input type="checkbox"><strong>Visibilidad de Reservas:</strong> ¿Puedo ver qué parte de mi stock físico está comprometida a un PEP/Proyecto?</label></p></li>
+<li><p><label><input type="checkbox"><strong>Flagging de Promos:</strong> ¿Tengo un repositorio de promociones pasadas para cruzar datos?</label></p></li>
+<li><p><label><input type="checkbox"><strong>Efecto Látigo:</strong> ¿Soy consciente de que un error en el dato de la tienda/planta se multiplica por 10 al llegar a la fábrica?</label></p></li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Resumen y Próximos Pasos
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Hemos transformado datos contables en <strong>Señales de Demanda Real</strong>. Ya no tenemos simplemente una lista de facturas; tenemos el registro de lo que el mundo nos pidió.</p>
-<p>Ahora la pregunta es: ¿Debo aplicar este nivel de rigor analítico a los 10,000 tornillos de mi inventario? No.&nbsp;En el <strong>Capítulo 3</strong>, aprenderemos a usar la segmentación <strong>ABC/XYZ dinámica</strong> para enfocar nuestro esfuerzo donde realmente está el valor.</p>
-</div>
-</div>
+<p>En el próximo capítulo, aprenderemos a segmentar esta demanda reconstruida. No todos los productos merecen el mismo esfuerzo arquitectónico; aprenderemos a poner el capital donde el retorno es máximo.</p>
 
 
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>En el ecosistema de SAP (específicamente en el módulo de <strong>PS - Project System</strong>), un <strong>Elemento PEP</strong> (Plan de Estructura de Proyecto) es la unidad organizativa fundamental para planificar, gestionar y controlar los costes y fechas de un proyecto.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5qU3RhdCA9IHJlcXVpcmUoXCJqc3RhdEAxLjkuNlwiKVxyXG5QbG90bHkgPSByZXF1aXJlKFwicGxvdGx5LmpzLWRpc3QtbWluQDIuMjQuMVwiKVxyXG5cclxudmlld29mIGludmVudG9yeV9jYXAgPSBJbnB1dHMucmFuZ2UoWzEwLCAxNTBdLCB7dmFsdWU6IDgwLCBzdGVwOiA1LCBsYWJlbDogXCJDYXBhY2lkYWQgZGUgSW52ZW50YXJpbyAoVGVjaG8pOlwifSlcclxudmlld29mIGRlbWFuZF92b2xhdGlsaXR5ID0gSW5wdXRzLnJhbmdlKFs1LCA0MF0sIHt2YWx1ZTogMjAsIHN0ZXA6IDUsIGxhYmVsOiBcIlZvbGF0aWxpZGFkIGRlIGxhIERlbWFuZGE6XCJ9KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcclxuc2ltX2RlbWFuZF9kYXRhID0ge1xyXG4gIGNvbnN0IGRhdGEgPSBbXTtcclxuICBmb3IgKGxldCBpID0gMDsgaSA8IDYwOyBpKyspIHtcclxuICAgIGNvbnN0IHBhdHRlcm4gPSAxMDAgKyBNYXRoLnNpbihpLzUpICogNDU7IFxyXG4gICAgY29uc3Qgbm9pc2UgPSBqU3RhdC5ub3JtYWwuc2FtcGxlKDAsIGRlbWFuZF92b2xhdGlsaXR5KTtcclxuICAgIGNvbnN0IHJlYWxfZGVtYW5kID0gTWF0aC5tYXgoMCwgcGF0dGVybiArIG5vaXNlKTtcclxuICAgIFxyXG4gICAgY29uc3Qgc2FsZXMgPSBNYXRoLm1pbihyZWFsX2RlbWFuZCwgaW52ZW50b3J5X2NhcCk7XHJcbiAgICBkYXRhLnB1c2goeyB0OiBpLCBkZW1hbmQ6IHJlYWxfZGVtYW5kLCBzYWxlczogc2FsZXMgfSk7XHJcbiAgfVxyXG4gIHJldHVybiBkYXRhO1xyXG59XHJcblxyXG57XHJcbiAgY29uc3QgY29udGFpbmVyID0gaHRtbGA8ZGl2IHN0eWxlPVwid2lkdGg6MTAwJTsgaGVpZ2h0OjQ1MHB4O1wiPjwvZGl2PmA7XHJcbiAgY29uc3QgdHJhY2VzID0gW1xyXG4gICAge1xyXG4gICAgICB4OiBzaW1fZGVtYW5kX2RhdGEubWFwKGQgPT4gZC50KSxcclxuICAgICAgeTogc2ltX2RlbWFuZF9kYXRhLm1hcChkID0+IGQuZGVtYW5kKSxcclxuICAgICAgbmFtZTogJ0RlbWFuZGEgTm8gUmVzdHJpbmdpZGEnLFxyXG4gICAgICB0eXBlOiAnc2NhdHRlcicsIG1vZGU6ICdsaW5lcycsIGxpbmU6IHtjb2xvcjogJyNjYmQ1ZTEnLCB3aWR0aDogMiwgZGFzaDogJ2RvdCd9XHJcbiAgICB9LFxyXG4gICAge1xyXG4gICAgICB4OiBzaW1fZGVtYW5kX2RhdGEubWFwKGQgPT4gZC50KSxcclxuICAgICAgeTogc2ltX2RlbWFuZF9kYXRhLm1hcChkID0+IGQuc2FsZXMpLFxyXG4gICAgICBuYW1lOiAnVmVudGEgUmVnaXN0cmFkYSAoTXV0aWxhZGEpJyxcclxuICAgICAgdHlwZTogJ3NjYXR0ZXInLCBtb2RlOiAnbGluZXMnLCBmaWxsOiAndG96ZXJveScsIGxpbmU6IHtjb2xvcjogJyMyNTYzZWInLCB3aWR0aDogM31cclxuICAgIH1cclxuICBdO1xyXG4gIFBsb3RseS5uZXdQbG90KGNvbnRhaW5lciwgdHJhY2VzLCB7XHJcbiAgICB0aXRsZTogJ0ltcGFjdG8gZGVsIEludmVudGFyaW8gZW4gbGEgU2XDsWFsIGRlIERhdG9zJyxcclxuICAgIHRlbXBsYXRlOiAncGxvdGx5X3doaXRlJywgXHJcbiAgICBtYXJnaW46IHt0OjUwfSwgXHJcbiAgICBob3Zlcm1vZGU6ICd4IHVuaWZpZWQnXHJcbiAgfSk7XHJcbiAgcmV0dXJuIGNvbnRhaW5lcjtcclxufVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2ludmVudG9yeV9jYXAnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnZGVtYW5kX3ZvbGF0aWxpdHknKSJ9XX0=
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1183,8 +1236,21 @@ window.Quarto = {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Nicolás A. Bravo</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/edit/main/cap-2-espejo-realidad.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/nicobravo933-Planner/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Este libro fue creado con <a href="https://quarto.org/">Quarto</a>. Visita mi <a href="https://github.com/nicobravo933-Planner">repositorio GitHub</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/edit/main/cap-2-espejo-realidad.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nicobravo933-Planner/Practicas_Supply/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>

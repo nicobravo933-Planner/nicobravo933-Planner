@@ -141,12 +141,12 @@
   {
     "objectID": "cap-2-espejo-realidad.html",
     "href": "cap-2-espejo-realidad.html",
-    "title": "2. El Espejo de la Realidad: Ventas vs. Demanda",
+    "title": "2. La Verdad Oculta: Ventas vs. Demanda",
     "section": "",
-    "text": "I. Fundamentos: La Diferencia entre “Vender” y “Necesitar”\nYa pasamos la escoba en el Capítulo 1. Tenemos datos limpios, sin duplicados y con las jerarquías de productos y ubicaciones perfectamente claras. En este punto, es probable que te sientas confiado. Miras tu base de datos, ves una columna que dice “Venta Histórica” o “Consumos de Almacén”, calculas un promedio de 100 unidades mensuales y piensas: “Listo, mi demanda promedio es 100 y mi desviación es 15; ya puedo calcular mi stock de seguridad”.\nTe voy avisando desde ahora: No siempre es tan fácil.\nLo que ves en tu pantalla no es la realidad del mercado ni la necesidad real de tu planta de producción; es un reflejo de tus propias limitaciones operativas. En Supply Chain, es facil confundir lo que el sistema registró como una transacción exitosa (Salida) con lo que el cliente realmente requería (Necesidad).\nMuchas personas cometen el error de pensar que sus reportes de ventas muestran lo que el mercado quiere. En realidad, esos reportes solo muestran lo que pudiste entregar. Para ser un buen planificador, debes aprender a ver más allá de la factura.",
+    "text": "2.1 La Trampa del Espejo: Por qué las Ventas no son Demanda\nEn el Capítulo 1, limpiamos el “maestro de materiales” y aseguramos que los cimientos de nuestros datos fueran sólidos. Ahora, debemos enfrentar la pregunta más crítica y, a menudo, la más ignorada de la planificación: ¿Qué estamos intentando predecir realmente?\nMuchos profesionales de la cadena de suministro cometen el error fundamental de intentar predecir las Ventas. A primera vista, parece la métrica más lógica; después de todo, es lo que genera ingresos y lo que el departamento de contabilidad audita. Sin embargo, en la arquitectura de suministros, predecir las ventas es como intentar conducir un vehículo a alta velocidad mirando únicamente por el espejo retrovisor mientras este está completamente empañado. Las ventas nos dicen qué pudimos hacer dadas nuestras limitaciones; la demanda nos dice qué pudimos haber hecho si hubiéramos sido perfectos. En este capítulo, aprenderemos a ver a través de la neblina para encontrar la Demanda Real o Demanda No Restringida.\nLa diferencia entre Ventas y Demanda es la distancia abismal que separa la realidad observada del potencial teórico del mercado. Confundirlas no es un error semántico; es un error de diseño que cuesta millones en márgenes perdidos.\n\\[\n\\text{Venta} = \\min(\\text{Demanda No Restringida}, \\text{Inventario Disponible})\n\\]",
     "crumbs": [
       "I: El Diagnóstico",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. El Espejo de la Realidad: Ventas vs. Demanda</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. La Verdad Oculta: Ventas vs. Demanda</span>"
     ]
   },
   {
@@ -218,12 +218,12 @@
   {
     "objectID": "cap-2-espejo-realidad.html#checklist-de-cierre-del-capítulo",
     "href": "cap-2-espejo-realidad.html#checklist-de-cierre-del-capítulo",
-    "title": "2. El Espejo de la Realidad: Ventas vs. Demanda",
+    "title": "2. La Verdad Oculta: Ventas vs. Demanda",
     "section": "Checklist de Cierre del Capítulo",
-    "text": "Checklist de Cierre del Capítulo\nAntes de pasar al siguiente nivel, asegúrate de haber respondido:\n\n¿He identificado los días donde mi inventario limitó mi capacidad de venta/despacho?\n¿He separado el stock asignado a proyectos (PEP) de mi disponibilidad general?\n¿He recalculado mi historia basándome en la Fecha de Necesidad y no en la de Despacho?\n¿He limpiado los picos de promociones y redistribuido el backlog?\n\n\n\n\n\n\n\nTipResumen y Próximos Pasos\n\n\n\nHemos transformado datos contables en Señales de Demanda Real. Ya no tenemos simplemente una lista de facturas; tenemos el registro de lo que el mundo nos pidió.\nAhora la pregunta es: ¿Debo aplicar este nivel de rigor analítico a los 10,000 tornillos de mi inventario? No. En el Capítulo 3, aprenderemos a usar la segmentación ABC/XYZ dinámica para enfocar nuestro esfuerzo donde realmente está el valor.",
+    "text": "Checklist de Cierre del Capítulo\n\nAuditoría de Ceros: ¿Sé qué días tuve stock menor al punto de reorden?\nDiferencial de Fechas: ¿Mi reporte de demanda usa la “Fecha de Necesidad” o la de entrega?\nVisibilidad de Reservas: ¿Puedo ver qué parte de mi stock físico está comprometida a un PEP/Proyecto?\nFlagging de Promos: ¿Tengo un repositorio de promociones pasadas para cruzar datos?\nEfecto Látigo: ¿Soy consciente de que un error en el dato de la tienda/planta se multiplica por 10 al llegar a la fábrica?\n\nEn el próximo capítulo, aprenderemos a segmentar esta demanda reconstruida. No todos los productos merecen el mismo esfuerzo arquitectónico; aprenderemos a poner el capital donde el retorno es máximo.",
     "crumbs": [
       "I: El Diagnóstico",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. El Espejo de la Realidad: Ventas vs. Demanda</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. La Verdad Oculta: Ventas vs. Demanda</span>"
     ]
   },
   {
@@ -1827,12 +1827,12 @@
   {
     "objectID": "cap-2-espejo-realidad.html#iii.-el-mundo-industrial-proyectos-y-clientes-internos",
     "href": "cap-2-espejo-realidad.html#iii.-el-mundo-industrial-proyectos-y-clientes-internos",
-    "title": "2. El Espejo de la Realidad: Ventas vs. Demanda",
+    "title": "2. La Verdad Oculta: Ventas vs. Demanda",
     "section": "III. El Mundo Industrial: Proyectos y Clientes Internos",
-    "text": "III. El Mundo Industrial: Proyectos y Clientes Internos\nEn la industria pesada, tu cliente no es un extraño en la calle, sino un Ingeniero de Mantenimiento o de Proyectos. Aquí, la demanda tiene “nombre y apellido”.\n\n2.5 El concepto PEP: Inventario con Dueño\nImagina que tienes 10 motores en el patio, pero 8 ya están “prometidos” para la construcción de una nueva planta (Proyecto PEP1). Aunque los veas ahí, no están disponibles para el mantenimiento diario. Ignorar estas reservas contables es la forma más rápida de causar un accidente operativo.\n\n\n2.6 Fecha de Necesidad vs. Fecha de Entrega\nEste es el mayor error en la planificación:\n\nFecha de Necesidad: Cuándo el ingeniero pidió el repuesto para que la máquina no se detenga.\nFecha de Entrega: Cuándo finalmente pudiste dárselo (quizás semanas después).\n\nSi analizas tu historia con la fecha de entrega, estarás planificando basándote en tus propios retrasos. La demanda real siempre se mide en la fecha en que el cliente levantó la mano.\n\n\n\n\n\n\nImportantPlan de Acción: Sincronización Operativa\n\n\n\n\nAuditoría de Reservas: Compara sistemáticamente la fecha de solicitud original con la fecha de salida física. El diferencial es tu Lead Time Interno de ineficiencia.\nLimpieza de Hoarding: Identifica reservas cargadas con excesiva antelación por “miedo” al desabasto. Ajusta esas señales para que coincidan con el cronograma real del proyecto.",
+    "text": "III. El Mundo Industrial: Proyectos y Clientes Internos\nEn la industria pesada, la manufactura compleja o la minería, el paradigma de la demanda cambia radicalmente. Tu cliente no es un extraño anónimo en la calle, sino un Ingeniero de Mantenimiento, un Líder de Proyectos o un Jefe de Planta. Aquí, la demanda no es una probabilidad estadística, sino una señal con “nombre y apellido”.\n\n2.5 El concepto PEP: Inventario con Dueño\nEn proyectos industriales (como la construcción de una planta o una reparación mayor), se utiliza a menudo el concepto de PEP (Proyecto / WBS - Work Breakdown Structure). Esto significa que el inventario está “etiquetado” contablemente para un destino específico.\nImagina que tienes 10 motores en el patio. Contablemente, el sistema dice “Stock = 10”. Sin embargo, 8 de esos motores ya están “prometidos” y reservados para el Proyecto PEP-2024 (una expansión crítica). Aunque físicamente los veas allí, no están disponibles para el mantenimiento diario de la operación actual.\nLa Trampa Arquitectónica: Si ignoras estas reservas contables al calcular tu “Demanda No Restringida”, cometerás errores fatales:\n\nCreerás que tienes stock suficiente cuando en realidad estás en un quiebre operativo para el área de mantenimiento.\nCausarás un accidente operativo o una detención de planta porque alguien “tomó prestado” el inventario del proyecto para una emergencia, asumiendo que el repuesto llegaría a tiempo después. El inventario PEP debe ser tratado como una demanda firme e independiente en tu arquitectura.\n\n\n\n2.6 Fecha de Necesidad vs. Fecha de Entrega: La Verdadera Señal\nEste es, quizás, el mayor error en la planificación industrial y de proyectos. La mayoría de los sistemas ERP registran la historia basándose en la Fecha de Salida de Almacén (cuándo se entregó el repuesto).\n\nFecha de Necesidad: Cuándo el ingeniero levantó la mano y pidió el repuesto para que la máquina no se detuviera.\nFecha de Entrega: Cuándo finalmente pudiste dárselo (quizás semanas después, tras un quiebre de stock o un retraso logístico).\n\nConsecuencia: Si analizas tu historia basándote en la fecha de entrega, estarás planificando basándote en tus propios retrasos. Estarás “desplazando” la demanda hacia el futuro de forma artificial. La demanda real (la voluntad del cliente interno) siempre se mide en la fecha de solicitud original. El diferencial entre ambas fechas no es demanda, es tu Lead Time Interno de ineficiencia.",
     "crumbs": [
       "I: El Diagnóstico",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. El Espejo de la Realidad: Ventas vs. Demanda</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. La Verdad Oculta: Ventas vs. Demanda</span>"
     ]
   },
   {
@@ -3050,6 +3050,94 @@
     "crumbs": [
       "IV: La Ciencia del Stock",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>11. El Pulso del Capital: Finanzas, Rotación y el Costo de la Incertidumbre</span>"
+    ]
+  },
+  {
+    "objectID": "cap-2-espejo-realidad.html#la-trampa-del-espejo-por-qué-las-ventas-no-son-demanda",
+    "href": "cap-2-espejo-realidad.html#la-trampa-del-espejo-por-qué-las-ventas-no-son-demanda",
+    "title": "2. La Verdad Oculta: Ventas vs. Demanda",
+    "section": "",
+    "text": "Venta: Es un evento transaccional condicionado. Es una coincidencia afortunada entre el deseo del cliente y la disponibilidad física del producto. Solo vendes lo que tienes el privilegio de tener en el estante en el momento preciso. La venta es “demanda restringida” por tus propias ineficiencias.\nDemanda No Restringida (Real): Es el flujo incesante del deseo de compra del cliente. Es independiente de tu capacidad de respuesta. La demanda no se detiene porque tú te hayas quedado sin existencias; simplemente se vuelve invisible para tus sistemas, o peor aún, se traslada silenciosamente a tu competencia.\n\n\n\nEl Círculo Vicioso de la Ineficiencia (Sesgo de Supervivencia)\nImagina que un cliente entra a tu tienda buscando comprar 10 unidades de un producto específico, pero tú solo tienes 2 en stock. El cliente compra esas 2 unidades porque las necesita con urgencia. Tu reporte de ventas dirá “2”. Si alimentas tu modelo con ese “2”, el modelo “aprenderá” que el mercado solo tiene apetito por 2 unidades. En el próximo ciclo, el sistema sugerirá comprar solo 2 unidades (o menos, si aplicas un factor de seguridad conservador), garantizando que vuelvas a quebrar el stock ante el próximo cliente que necesite 10.\nEste fenómeno se conoce como Sesgo de Supervivencia de Datos. Estamos optimizando la cadena para repetir nuestros fracasos pasados en lugar de capturar nuestro potencial futuro. El Arquitecto de la Demanda debe ser capaz de “descapar” este techo de cristal.",
+    "crumbs": [
+      "I: El Diagnóstico",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. La Verdad Oculta: Ventas vs. Demanda</span>"
+    ]
+  },
+  {
+    "objectID": "cap-2-espejo-realidad.html#la-anatomía-de-la-venta-perdida-lost-sales",
+    "href": "cap-2-espejo-realidad.html#la-anatomía-de-la-venta-perdida-lost-sales",
+    "title": "2. La Verdad Oculta: Ventas vs. Demanda",
+    "section": "2.2 La Anatomía de la Venta Perdida (Lost Sales)",
+    "text": "2.2 La Anatomía de la Venta Perdida (Lost Sales)\nComo Arquitectos de la Demanda, nuestra misión es reconstruir la señal a partir de los fragmentos de las ventas. Para ello, debemos identificar y cuantificar la Venta Perdida. Este concepto es la “materia oscura” de la logística: no se ve, pero ejerce una presión enorme sobre el resultado final.\nLa venta perdida se produce principalmente por tres fallos sistémicos:\n\nQuiebres de Stock (Stockouts): El inventario físico llegó a cero absoluto en el sistema y en la realidad. Es el fallo más evidente pero el más difícil de recuperar si no se marca el evento en la serie de tiempo.\nExhibición Deficiente e Inventario Fantasma (Ghost Inventory): Este es un problema de integridad de datos. Tu sistema dice que tienes 5 unidades, pero estas están en el fondo de una caja mal ubicada en la bodega, o rotas, o quizás fueron robadas. Para el cliente, el producto no existe. El sistema no genera una orden de compra porque “cree” que hay stock, pero no vendes porque no hay disponibilidad física. Es un quiebre silencioso.\nIncapacidad Logística y Promesa de Entrega: En el mundo del e-commerce, una promesa de entrega de 7 días cuando la competencia entrega en 2 es una venta perdida garantizada. El cliente “demanda” el producto, pero lo adquiere en otro lugar debido a la restricción de tu servicio.\n\n\nFórmulas de Reconstrucción del Arquitecto\nExisten métodos matemáticos para limpiar la señal de venta y estimar la demanda no restringida. Un Arquitecto no usa solo un método; los combina según la categoría.\n\nA. Método de Sustitución Temporal (Flat-line Correction)\nEste es el método estándar para productos de alta rotación. Si un producto tuvo stock cero durante $n$ días de un mes, no podemos promediar el mes completo incluyendo ceros. Debemos proyectar la tasa de venta de los días “saludables” sobre los días “enfermos”.\n\\[\n\\hat{D}_{\\text{total}} = \\left( \\frac{\\sum \\text{Ventas en días con stock}}{\\text{Días con stock}} \\right) \\times \\text{Días totales del periodo}\n\\]\nEjemplo: Si vendiste 100 unidades en los 20 días que tuviste stock, tu tasa de venta es 5 unidades/día. Si el mes tiene 30 días, tu Demanda No Restringida estimada es 150, no 100.\n\n\nB. Modelo de Tasa de Captura y Tráfico\nUtilizado en tiendas físicas donde conocemos el flujo de clientes (tráfico) gracias a sensores, pero el producto falló:\n$$\\hat{D} = \\text{Tráfico Total} \\times \\text{Tasa de Conversión Histórica del SKU}$$\nEste método es más preciso que la sustitución temporal porque detecta si el día del quiebre hubo un tráfico inusual (por ejemplo, un feriado) que habría disparado las ventas mucho más allá del promedio.",
+    "crumbs": [
+      "I: El Diagnóstico",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. La Verdad Oculta: Ventas vs. Demanda</span>"
+    ]
+  },
+  {
+    "objectID": "cap-2-espejo-realidad.html#simulador-el-efecto-mutilación-del-stockout",
+    "href": "cap-2-espejo-realidad.html#simulador-el-efecto-mutilación-del-stockout",
+    "title": "2. La Verdad Oculta: Ventas vs. Demanda",
+    "section": "2.3 Simulador: El Efecto “Mutilación” del Stockout",
+    "text": "2.3 Simulador: El Efecto “Mutilación” del Stockout\nUsa este simulador para visualizar cómo un quiebre de stock deforma la realidad. Observa cómo la señal azul (ventas) se vuelve “plana” cuando choca contra el techo del inventario, ocultando la verdadera forma de la demanda (línea gris).\n\n\njStat = require(\"jstat@1.9.6\")\nPlotly = require(\"plotly.js-dist-min@2.24.1\")\n\nviewof inventory_cap = Inputs.range([10, 150], {value: 80, step: 5, label: \"Capacidad de Inventario (Techo):\"})\nviewof demand_volatility = Inputs.range([5, 40], {value: 20, step: 5, label: \"Volatilidad de la Demanda:\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsim_demand_data = {\n  const data = [];\n  for (let i = 0; i &lt; 60; i++) {\n    const pattern = 100 + Math.sin(i/5) * 45; \n    const noise = jStat.normal.sample(0, demand_volatility);\n    const real_demand = Math.max(0, pattern + noise);\n    \n    const sales = Math.min(real_demand, inventory_cap);\n    data.push({ t: i, demand: real_demand, sales: sales });\n  }\n  return data;\n}\n\n{\n  const container = html`&lt;div style=\"width:100%; height:450px;\"&gt;&lt;/div&gt;`;\n  const traces = [\n    {\n      x: sim_demand_data.map(d =&gt; d.t),\n      y: sim_demand_data.map(d =&gt; d.demand),\n      name: 'Demanda No Restringida',\n      type: 'scatter', mode: 'lines', line: {color: '#cbd5e1', width: 2, dash: 'dot'}\n    },\n    {\n      x: sim_demand_data.map(d =&gt; d.t),\n      y: sim_demand_data.map(d =&gt; d.sales),\n      name: 'Venta Registrada (Mutilada)',\n      type: 'scatter', mode: 'lines', fill: 'tozeroy', line: {color: '#2563eb', width: 3}\n    }\n  ];\n  Plotly.newPlot(container, traces, {\n    title: 'Impacto del Inventario en la Señal de Datos',\n    template: 'plotly_white', \n    margin: {t:50}, \n    hovermode: 'x unified'\n  });\n  return container;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportantLa Mentira de los Datos Planos\n\n\n\nCuando la línea azul se vuelve plana, has alcanzado tu capacidad logística, no la del mercado. Si dejas que el algoritmo use esos datos, el modelo de pronóstico calculará una desviación estándar muy baja (porque el dato es plano y “predecible”). Esto te llevará a reducir el stock de seguridad, provocando aún más quiebres en el futuro. Es una espiral de muerte operativa.",
+    "crumbs": [
+      "I: El Diagnóstico",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. La Verdad Oculta: Ventas vs. Demanda</span>"
+    ]
+  },
+  {
+    "objectID": "cap-2-espejo-realidad.html#limpieza-de-la-señal-el-ruido-de-las-promociones",
+    "href": "cap-2-espejo-realidad.html#limpieza-de-la-señal-el-ruido-de-las-promociones",
+    "title": "2. La Verdad Oculta: Ventas vs. Demanda",
+    "section": "2.4 Limpieza de la Señal: El Ruido de las Promociones",
+    "text": "2.4 Limpieza de la Señal: El Ruido de las Promociones\nNo solo los quiebres ensucian la señal; los eventos extraordinarios crean “espejismos” de demanda. Las promociones agresivas inyectan un ruido que puede ser tan peligroso como un quiebre de stock si no se trata correctamente.\n\nEfecto Canibalización: Has puesto en oferta el “Detergente A”. Su venta sube un 400%, pero la del “Detergente B” cae un 50%. Si tu sistema no entiende que la caída del Producto B fue causada por la oferta del A, pensará que el Producto B está perdiendo relevancia y dejará de comprarlo, provocando un quiebre real cuando la promoción del A termine.\nEfecto Forward Buying (Compra Anticipada): Un descuento del 50% hace que tus clientes compren hoy lo que iban a consumir en los próximos tres meses. Verás un pico volcánico hoy, seguido de un “valle de la muerte” en los meses siguientes. Si el modelo no “suaviza” ese pico, sobreestimará la demanda futura y te dejará inundado de inventario.\nEfecto Halo: A veces, una promoción en pañales aumenta la venta de toallitas húmedas a precio completo. Este ruido positivo también debe ser identificado para entender qué demanda es orgánica y cuál es inducida.\n\n\nEl Protocolo de Limpieza del Arquitecto\nPara tener datos de alta fidelidad, debemos aplicar un protocolo de tres pasos:\n\nEtiquetado (Tagging): Cada día en tu base de datos debe tener un “flag” o etiqueta: ¿Hubo promoción? ¿Hubo evento climático? ¿Hubo huelga de transporte? Sin contexto, los datos son solo números mudos.\nDesestacionalización de Eventos: Mediante técnicas estadísticas (como la descomposición de series temporales), aislamos el “Volumen Base” (lo que se vende normalmente) del “Volumen Incremental” (lo causado por la oferta).\nTratamiento de Outliers (Valores Atípicos): Una venta inusualmente alta por una compra institucional única (ej. el gobierno comprando todo tu stock de mascarillas) no es una tendencia de mercado. Estos puntos deben ser “capados” o suavizados para que no distorsionen el promedio móvil del futuro.",
+    "crumbs": [
+      "I: El Diagnóstico",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. La Verdad Oculta: Ventas vs. Demanda</span>"
+    ]
+  },
+  {
+    "objectID": "cap-2-espejo-realidad.html#el-costo-financiero-de-la-ignorancia",
+    "href": "cap-2-espejo-realidad.html#el-costo-financiero-de-la-ignorancia",
+    "title": "2. La Verdad Oculta: Ventas vs. Demanda",
+    "section": "2.5 El Costo Financiero de la Ignorancia",
+    "text": "2.5 El Costo Financiero de la Ignorancia\nIgnorar la diferencia entre ventas y demanda no es solo un error académico; tiene consecuencias directas en la salud financiera de la compañía, conectando este análisis con lo que veremos en el Capítulo 11:\n\nE&O (Excess & Obsolete): Al no limpiar correctamente los picos promocionales o los outliers, el sistema ordena inventario para una demanda inexistente. Ese inventario se pudre en las bodegas, destruyendo el flujo de caja.\nDOH (Days on Hand): Un mal cálculo de la demanda real distorsiona la rotación. Crees que tienes inventario para 30 días basándote en ventas pasadas, pero si la demanda real es mayor, en realidad solo tienes cobertura para 15 días, aumentando el riesgo de quiebre inminente.\nImpacto en el Margen Bruto: La venta perdida no solo es ingreso que no entró; es un desperdicio del Costo de Adquisición de Cliente (CAC). Has pagado marketing para atraer al cliente y, cuando llegó, lo enviaste a la competencia con las manos vacías.",
+    "crumbs": [
+      "I: El Diagnóstico",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. La Verdad Oculta: Ventas vs. Demanda</span>"
+    ]
+  },
+  {
+    "objectID": "cap-2-espejo-realidad.html#limpieza-de-la-señal-el-ruido-de-las-promociones-y-eventos",
+    "href": "cap-2-espejo-realidad.html#limpieza-de-la-señal-el-ruido-de-las-promociones-y-eventos",
+    "title": "2. La Verdad Oculta: Ventas vs. Demanda",
+    "section": "2.4 Limpieza de la Señal: El Ruido de las Promociones y Eventos",
+    "text": "2.4 Limpieza de la Señal: El Ruido de las Promociones y Eventos\nLas promociones inyectan un ruido que puede ser tan peligroso como un quiebre de stock si no se trata quirúrgicamente:\n\nEfecto Canibalización: La oferta del Producto A destruye la venta del Producto B. Si no limpias la caída del B, el sistema creerá que el interés por el líder está muriendo y dejará de comprarlo.\nEfecto Forward Buying: El cliente aprovecha el descuento de hoy para comprar el suministro de los próximos 3 meses. Verás un pico masivo hoy seguido de un “valle de la muerte” en los meses siguientes.\nEfecto Halo: La promoción de pañales arrastra la venta de toallitas húmedas aunque estas no tengan descuento.",
+    "crumbs": [
+      "I: El Diagnóstico",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. La Verdad Oculta: Ventas vs. Demanda</span>"
+    ]
+  },
+  {
+    "objectID": "cap-2-espejo-realidad.html#el-costo-financiero-de-la-ignorancia-del-dato-al-pl",
+    "href": "cap-2-espejo-realidad.html#el-costo-financiero-de-la-ignorancia-del-dato-al-pl",
+    "title": "2. La Verdad Oculta: Ventas vs. Demanda",
+    "section": "2.7 El Costo Financiero de la Ignorancia: Del Dato al P&L",
+    "text": "2.7 El Costo Financiero de la Ignorancia: Del Dato al P&L\nIgnorar la diferencia entre ventas y demanda, o entre reservas y disponibilidad, conecta directamente con la salud financiera de la compañía. No es un problema de IT; es un problema de EBITDA.\n\nE&O (Excess & Obsolete): Picos promocionales o pedidos de proyectos mal cancelados generan compras excesivas. Ese inventario se pudre en la bodega, consumiendo el flujo de caja que la empresa necesita para operar.\nDOH (Days on Hand): Una demanda real subestimada hace que tu cobertura de días parezca mayor de lo que es. Crees que tienes stock para 30 días, pero la demanda real te lo consumirá en 10.\nCosto de Adquisición de Cliente (CAC) o Costo de Detención: En retail, pierdes al cliente. En industria, una venta perdida (un repuesto que no llegó en la Fecha de Necesidad) puede costar miles de dólares por hora en lucro cesante por planta detenida.",
+    "crumbs": [
+      "I: El Diagnóstico",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. La Verdad Oculta: Ventas vs. Demanda</span>"
+    ]
+  },
+  {
+    "objectID": "cap-2-espejo-realidad.html#important-plan-de-acción-sincronización-operativa",
+    "href": "cap-2-espejo-realidad.html#important-plan-de-acción-sincronización-operativa",
+    "title": "2. La Verdad Oculta: Ventas vs. Demanda",
+    "section": "Important Plan de Acción: Sincronización Operativa",
+    "text": "Important Plan de Acción: Sincronización Operativa\nComo Arquitecto de Suministros, tu primera intervención debe ser “higienizar” la señal de entrada:\n\nAuditoría de Reservas: Compara sistemáticamente la fecha de solicitud original con la fecha de salida física. Identifica la brecha de servicio.\nLimpieza de Hoarding (Acaparamiento): Identifica reservas cargadas en el sistema con excesiva antelación por “miedo” al desabasto por parte de los ingenieros. El miedo genera ruido; ajusta esas señales para que coincidan con el cronograma real del proyecto (Gantt).\nAlgoritmo de Relleno: Implementa la fórmula de Sustitución Temporal para los días de stockout antes de que el motor de pronóstico vea los datos.",
+    "crumbs": [
+      "I: El Diagnóstico",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2. La Verdad Oculta: Ventas vs. Demanda</span>"
     ]
   }
 ]
