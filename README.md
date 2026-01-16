@@ -64,11 +64,11 @@ Actualmente documento mis análisis y optimizaciones en el repositorio [**Planif
 
 ## 🛠️ Últimas actualizaciones en mis proyectos
 <!-- RECENT_ACTIVITY:START -->
-- [nicobravo933-Planner pushed nicobravo933-Planner](https://github.com/nicobravo933-Planner/nicobravo933-Planner/compare/dadb2f3d4e...066511f08d)
-- [nicobravo933-Planner pushed nicobravo933-Planner](https://github.com/nicobravo933-Planner/nicobravo933-Planner/compare/0a03e80628...e8ef22cf27)
-- [nicobravo933-Planner pushed nicobravo933-Planner](https://github.com/nicobravo933-Planner/nicobravo933-Planner/compare/712b3641db...0a03e80628)
-- [nicobravo933-Planner pushed nicobravo933-Planner](https://github.com/nicobravo933-Planner/nicobravo933-Planner/compare/ab53f93f46...bfdd979111)
-- [nicobravo933-Planner pushed nicobravo933-Planner](https://github.com/nicobravo933-Planner/nicobravo933-Planner/compare/9ac7d9405e...ab53f93f46)
+- [nicobravo933-Planner pushed Torre-de-control](https://github.com/nicobravo933-Planner/Torre-de-control/compare/8174cbc492...54e9146fdc)
+- [nicobravo933-Planner pushed Torre-de-control](https://github.com/nicobravo933-Planner/Torre-de-control/compare/6b109a4f0f...8174cbc492)
+- [nicobravo933-Planner pushed Torre-de-control](https://github.com/nicobravo933-Planner/Torre-de-control/compare/badb210305...6b109a4f0f)
+- [nicobravo933-Planner pushed Torre-de-control](https://github.com/nicobravo933-Planner/Torre-de-control/compare/c4a5536eaa...badb210305)
+- [nicobravo933-Planner pushed Torre-de-control](https://github.com/nicobravo933-Planner/Torre-de-control/compare/18206234e4...c4a5536eaa)
 <!-- RECENT_ACTIVITY:END -->
 
 ---
