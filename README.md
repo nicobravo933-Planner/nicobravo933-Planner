@@ -56,9 +56,9 @@ Actualmente documento mis análisis y optimizaciones en el repositorio [**Planif
 
 ## 📈 Estadísticas y Dominio Técnico
 
-![Estadísticas de Nicolás](https://github-readme-stats.vercel.app/api?username=nicobravo933-Planner&show_icons=true&theme=radical&count_private=true)
+![Estadísticas de Nicolás](https://github-readme-stats-eight-theta.vercel.app/api?username=nicobravo933-Planner&show_icons=true&theme=radical&count_private=true)
 
-![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=nicobravo933-Planner&layout=compact&theme=radical&hide_border=true&langs_count=6)
+![Lenguajes más usados](https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=nicobravo933-Planner&layout=compact&theme=radical&hide_border=true&langs_count=6)
 
 ---
 
