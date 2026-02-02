@@ -56,10 +56,12 @@ Actualmente documento mis análisis y optimizaciones en el repositorio [**Planif
 
 ## 📈 Estadísticas y Dominio Técnico
 
-![Estadísticas de Nicolás](https://github-readme-stats-eight-theta.vercel.app/api?username=nicobravo933-Planner&show_icons=true&theme=radical&count_private=true)
+<div align="center">
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=nicobravo933-Planner&show_icons=true&theme=radical&count_private=true" alt="Estadísticas de Nicolás" height="195" style="display: inline-block; margin-right: 10px;" />
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=nicobravo933-Planner&layout=compact&theme=radical&hide_border=true&langs_count=6" alt="Lenguajes más usados" height="195" style="display: inline-block;" />
+</div>
 
-![Lenguajes más usados](https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=nicobravo933-Planner&layout=compact&theme=radical&hide_border=true&langs_count=6)
-
+<br />
 ---
 
 ## 📫 Conectemos
