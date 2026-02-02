@@ -62,17 +62,6 @@ Actualmente documento mis análisis y optimizaciones en el repositorio [**Planif
 
 ---
 
-## 🛠️ Últimas actualizaciones en mis proyectos
-<!-- RECENT_ACTIVITY:START -->
-- [nicobravo933-Planner pushed Torre-de-control](https://github.com/nicobravo933-Planner/Torre-de-control/compare/5330f9060b...6f5d7d18b0)
-- [nicobravo933-Planner pushed Torre-de-control](https://github.com/nicobravo933-Planner/Torre-de-control/compare/63bf635a08...5330f9060b)
-- [nicobravo933-Planner pushed Torre-de-control](https://github.com/nicobravo933-Planner/Torre-de-control/compare/8443966518...63bf635a08)
-- [nicobravo933-Planner pushed Torre-de-control](https://github.com/nicobravo933-Planner/Torre-de-control/compare/587a59d75f...8443966518)
-- [nicobravo933-Planner pushed Torre-de-control](https://github.com/nicobravo933-Planner/Torre-de-control/compare/24cfee02cd...587a59d75f)
-<!-- RECENT_ACTIVITY:END -->
-
----
-
 ## 📫 Conectemos
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicolás-adrian-bravo-675070b8)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nicobravo933@gmail.com)
