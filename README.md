@@ -78,8 +78,9 @@ A continuación, destaco las herramientas analíticas y motores de decisión que
 ## 📈 Estadísticas y Dominio Técnico
 
 <div align="center">
-  <img src="https://ghchart.rshah.org/276DC3/nicobravo933-Planner" alt="Calendario de Actividad de Nicolás" width="80%" />
+  <img src="https://ghchart.rshah.org/40c463/nicobravo933-Planner" alt="Calendario de Actividad de Nicolás" width="100%" />
 </div>
+
 <br />
 
 ---
