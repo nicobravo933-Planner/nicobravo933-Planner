@@ -47,18 +47,33 @@ Soy un apasionado por la optimización operativa, especializado en transformar d
 
 ---
 
-## 🚀 Proyectos Destacados
-Actualmente documento mis análisis y optimizaciones en el repositorio [**Planificador**](https://github.com/nicobravo933-Planner/nicobravo933-Planner), donde aplico RMarkdown para generar soluciones de Supply Chain reproducibles.
+## 🚀 Proyectos Estratégicos e Ingeniería de Supply Chain
 
-> **Mi objetivo:** Transformar datos en decisiones que optimicen inventarios, reduzcan costos y eleven el nivel de servicio.
+A continuación, destaco las herramientas analíticas y motores de decisión que diseño y mantengo. Mi enfoque no es solo el frontend, sino la arquitectura de datos: **procesamiento paralelo, vectorización de scoring y manejo de cachés en Parquet** para reducir tiempos de consulta en millones de registros.
 
+| Proyecto & Repositorio | Arquitectura & Stack Core | Solución Operativa e Impacto |
+| :--- | :--- | :--- |
+| 📊 **[Benchmarking de Demanda](https://github.com/nicobravo933-Planner/FORECAST_DEPARTAMENTOS)** | `XGBoost`, `LightGBM`, `Streamlit`, `Quarto (Jinja2)` | Motor de forecasting dinámico que evalúa 10 modelos mediante *rolling window*. Automatiza el pipeline de datos, aplica winsorización MAD y genera reportes técnicos reproducibles. |
+| 🚛 **[Analytics de Tráfico & Bandas Horarias](https://github.com/nicobravo933-Planner/TRAFICO_VIAJES)** | `Python`, `Oracle ODBC`, `Streamlit`, `Plotly` | Convierte timestamps granulares de Wareflow en KPIs accionables. Identifica cuellos de botella (Gantt logístico) midiendo tiempos muertos, fricción CD vs Transporte y latencia de carga. |
+| 📦 **[Scoring de Pallets Vectorizado](https://github.com/nicobravo933-Planner/PUNTUACION_PALLETS)** | `Numpy`, `ThreadPoolExecutor`, `Parquet` | Sistema de priorización de despacho. Reduce el escaneo en BD de 3.9M a 200K registros mediante extracción paralela. Scoring vectorizado 50-100x más rápido que iteraciones nativas. |
+| 🗄️ **[Oracle Data Lake Explorer](https://github.com/nicobravo933-Planner/BASE_DATOS_LOGISU)** | `pyodbc nativo`, `Parquet`, `AG-Grid` | Explorador multi-owner de bases de datos operativas. Carga progresiva de +2,888 tablas en menos de 5 segundos eludiendo ORMs tradicionales (SQLAlchemy) para maximizar la performance. |
+| 📉 **[Tracker de Huecos Automático](https://github.com/nicobravo933-Planner/REPORTE_HUECOS)** | `Python`, `Cloudflare Tunnels`, `Streamlit` | Plataforma de consolidación de faltantes en la red de abastecimiento. Integra conexiones remotas seguras, envío automático por WhatsApp y consolidación de reportes TMS. |
+
+> **Nota:** Para métricas consolidadas multiplataforma, revisá las estadísticas dinámicas al pie del documento.
 ---
 
 ## 📈 Estadísticas y Dominio Técnico
 
 <div align="center">
-  <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=nicobravo933-Planner&show_icons=true&theme=radical&count_private=true" alt="Estadísticas de Nicolás" height="165" />
-  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=nicobravo933-Planner&layout=compact&theme=radical&hide_border=true&langs_count=6" alt="Lenguajes más usados" height="165" />
+  <a href="https://github.com/nicobravo933-Planner/FORECAST_DEPARTAMENTOS">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=nicobravo933-Planner&repo=FORECAST_DEPARTAMENTOS&theme=radical" alt="Forecast Engine" width="30%" />
+  </a>
+  <a href="https://github.com/nicobravo933-Planner/PUNTUACION_PALLETS">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=nicobravo933-Planner&repo=PUNTUACION_PALLETS&theme=radical" alt="Pallets Scoring" width="30%" />
+  </a>
+  <a href="https://github.com/nicobravo933-Planner/TRAFICO_VIAJES">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=nicobravo933-Planner&repo=TRAFICO_VIAJES&theme=radical" alt="Tráfico Logístico" width="30%" />
+  </a>
 </div>
 
 <br />
