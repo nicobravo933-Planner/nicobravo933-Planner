@@ -75,17 +75,11 @@ A continuación, destaco las herramientas analíticas y motores de decisión que
 > **Nota:** Para métricas consolidadas multiplataforma, revisá las estadísticas dinámicas al pie del documento.
 ---
 
-## 📈 Estadísticas y Dominio Técnico
-
 <div align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=nicobravo933-Planner&theme=radical&hide_border=true" alt="Racha de contribuciones" width="80%" />
 </div>
 <br />
 
-<div align="center">
-  <img src="https://ghchart.rshah.org/40c463/nicobravo933-Planner" alt="Calendario de Actividad de Nicolás" width="100%" />
-</div>
-<br />
 ---
 
 ## 📫 Contacto
