@@ -72,14 +72,6 @@ A continuación, destaco las herramientas analíticas y motores de decisión que
 | 🗄️ **[Oracle Data Lake Explorer](https://github.com/nicobravo933-Planner/BASE_DATOS_LOGISU)** | `pyodbc nativo`, `Parquet`, `AG-Grid` | Explorador multi-owner de bases de datos operativas. Carga progresiva de +2,888 tablas en menos de 5 segundos eludiendo ORMs tradicionales (SQLAlchemy) para maximizar la performance. |
 | 📉 **[Tracker de Huecos Automático](https://github.com/nicobravo933-Planner/REPORTE_HUECOS)** | `Python`, `Cloudflare Tunnels`, `Streamlit` | Plataforma de consolidación de faltantes en la red de abastecimiento. Integra conexiones remotas seguras, envío automático por WhatsApp y consolidación de reportes TMS. |
 
-> **Nota:** Para métricas consolidadas multiplataforma, revisá las estadísticas dinámicas al pie del documento.
----
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=nicobravo933-Planner&theme=radical&hide_border=true" alt="Racha de contribuciones" width="80%" />
-</div>
-<br />
-
 ---
 
 ## 📫 Contacto
