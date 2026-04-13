@@ -78,13 +78,12 @@ A continuación, destaco las herramientas analíticas y motores de decisión que
 ## 📈 Estadísticas y Dominio Técnico
 
 <div align="center">
-  <img src="https://ghchart.rshah.org/40c463/nicobravo933-Planner" alt="Calendario de Actividad de Nicolás" width="100%" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=nicobravo933-Planner&theme=radical&hide_border=true" alt="Racha de contribuciones" width="80%" />
 </div>
-
 <br />
 
 ---
 
-## 📫 Conectemos
+## 📫 Contacto
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicolás-adrian-bravo-675070b8)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nicobravo933@gmail.com)
