@@ -1,8 +1,6 @@
 # ¡Hola! Soy Nicolás 👋
 
-### Integro la planificación de materiales con la ciencia de datos para convertir la incertidumbre en decisiones rentables.
-
-Soy un apasionado por la optimización operativa, especializado en transformar datos complejos en estrategias accionables que impactan directamente en la rentabilidad y el nivel de servicio.
+### Un apasionado por los datos que conoce muy bien su relevancia e impacto en la cadena de suministro
 
 ---
 
