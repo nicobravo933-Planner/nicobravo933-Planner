@@ -1,6 +1,6 @@
 # ¡Hola! Soy Nicolás 👋
 
-### Un apasionado por los datos que conoce muy bien su relevancia e impacto en la cadena de suministro
+### Bienvenido a este espacio donde guardo y comparto diversos proyectos que voy construyendo diariamente.
 
 ---
 
