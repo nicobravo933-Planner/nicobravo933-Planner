@@ -26,6 +26,9 @@
 ![PostgreSQL](https://img.shields.io/badge/postgresql-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
 ![Parquet](https://img.shields.io/badge/Apache_Parquet-white?style=for-the-badge&logo=Apache%20Parquet&logoColor=blue)
+![VS Code](https://img.shields.io/badge/VS%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![GitHub Codespaces](https://img.shields.io/badge/GitHub%20Codespaces-%23181717.svg?style=for-the-badge&logo=github&logoColor=white)
+![GitLab Workspaces](https://img.shields.io/badge/GitLab%20Workspaces-%23FC6D26.svg?style=for-the-badge&logo=gitlab&logoColor=white)
 
 ### 📊 Ciencia de Datos & Machine Learning
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
