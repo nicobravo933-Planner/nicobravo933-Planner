@@ -77,6 +77,7 @@ Mi flujo de trabajo integra modelos de frontera y agentes autónomos para escala
 ![Gemini AI](https://img.shields.io/badge/Gemini_AI-Advanced-8E75B2?style=for-the-badge&logo=googlebard&logoColor=white)
 ![Cline](https://img.shields.io/badge/Cline-Autonomous_Agent-0A0A0A?style=for-the-badge)
 ![RooCode](https://img.shields.io/badge/RooCode-AI_Coding-2E7D32?style=for-the-badge)
+![Playwright](https://img.shields.io/badge/Playwright-%232EAD33.svg?style=for-the-badge&logo=playwright&logoColor=white)
 
 * **IDE & Agentes Autónomos:** Desarrollo nativamente en **Cursor**, orquestando agentes como **Cline** y **RooCode** para tareas de refactorización masiva, análisis de bases de código (ej. vectorización de datos en Parquet) y escritura autónoma de scripts.
 * **Diseño de Arquitectura & Debugging:** Apalanco **Claude Code** y **Gemini AI** como *pair-programmers* estratégicos para diseñar sistemas de alta concurrencia, optimizar queries SQL pesadas (cruces entre Oracle/Wareflow) y estructurar pipelines de Machine Learning.
